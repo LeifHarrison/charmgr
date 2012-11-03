@@ -1,0 +1,190 @@
+//
+//  CMBannerBox.m
+//  CharMgr
+//
+//  Created by Leif Harrison on 4/28/10.
+//  Copyright 2010 Ubermind, Inc. All rights reserved.
+//
+
+#import "CMBannerBox.h"
+
+@interface CMBannerBox ()
+
+@property (nonatomic, strong) UILabel *bannerLabel;
+
+@end
+
+@implementation CMBannerBox
+
+@synthesize bannerLabel;
+
+@synthesize bannerColor;
+@synthesize bannerTextColor;
+@synthesize bannerFont;
+@synthesize bannerTitle;
+@synthesize bannerHeight;
+
+- (id)initWithFrame:(CGRect)frame
+{
+	TRACE;
+
+    if ((self = [super initWithFrame:frame])) {
+		self.bannerColor = [UIColor colorWithWhite:0.2 alpha:1.0];
+		self.bannerTextColor = [UIColor whiteColor];
+		self.bannerFont = [UIFont fontWithName:@"Marker Felt" size:18.0];
+		self.bannerHeight = 26.0f;
+
+		[self createBannerLabel];
+    }
+    return self;
+}
+
+
+-(void)awakeFromNib 
+{
+	TRACE;
+	[super awakeFromNib];
+	
+	self.bannerColor = [UIColor colorWithWhite:0.2 alpha:1.0];
+	self.bannerTextColor = [UIColor whiteColor];
+	self.bannerFont = [UIFont fontWithName:@"Marker Felt" size:18.0];
+	self.bannerHeight = 26.0f;
+
+	self.layer.borderColor = self.bannerColor.CGColor;
+	self.layer.borderWidth = 1.5;
+	self.layer.cornerRadius = 8.0;
+
+	self.layer.shadowColor = [UIColor darkGrayColor].CGColor;
+	self.layer.shadowOffset = CGSizeMake(3.0,3.0);
+	//self.layer.shadowOpacity = 0.7;
+	self.layer.shadowRadius = 3.0;
+	self.layer.masksToBounds = YES;
+	
+	if (!self.bannerLabel) {
+		[self createBannerLabel];
+	}
+}
+
+- (void)setBannerTitle:(NSString *)aString
+{
+	if (bannerTitle != aString)
+	{
+		bannerTitle = aString;
+
+		if (self.bannerLabel) {
+			self.bannerLabel.text = aString;
+		}
+	}
+}
+
+- (void)setBannerFont:(UIFont *)aFont
+{
+	if (bannerFont != aFont)
+	{
+		bannerFont = aFont;
+		
+		if (self.bannerLabel) {
+			self.bannerLabel.font = aFont;
+		}
+	}
+}
+
+- (void)setBannerColor:(UIColor *)aColor
+{
+	if (bannerColor != aColor)
+	{
+		bannerColor = aColor;
+		
+		if (self.bannerLabel) {
+			self.bannerLabel.backgroundColor = aColor;
+		}
+
+		self.layer.borderColor =  aColor.CGColor;
+		//[self setNeedsDisplay];
+	}
+}
+
+- (void)setBannerTextColor:(UIColor *)aColor
+{
+	if (bannerTextColor != aColor)
+	{
+		bannerTextColor = aColor;
+		
+		if (self.bannerLabel) {
+			self.bannerLabel.textColor = aColor;
+		}
+	}
+}
+
+- (void)setHighlighted:(BOOL)highlighted
+{
+	LOG_DEBUG(@"highlighted = %d", highlighted);
+	if (highlighted != _highlighted) {
+		_highlighted = highlighted;
+		if (highlighted) {
+			self.layer.borderColor = [UIColor lightGrayColor].CGColor;
+			self.bannerLabel.backgroundColor = [UIColor lightGrayColor];
+		}
+		else {
+			self.layer.borderColor = self.bannerColor.CGColor;
+			self.bannerLabel.backgroundColor = self.bannerColor;
+		}
+		[self setNeedsDisplay];
+	}
+}
+
+- (void)layoutSubviews
+{
+	[super layoutSubviews];
+	
+	//CGRect bannerRect, contentRect;
+	//CGRectDivide(self.bounds, &bannerRect, &contentRect, self.bannerHeight, CGRectMinYEdge);
+
+	//LOG_DEBUG(@" frame = %@", NSStringFromCGRect(self.frame));
+	//LOG_DEBUG(@" bannerRect = %@", NSStringFromCGRect(bannerRect));
+	//LOG_DEBUG(@" contentRect = %@", NSStringFromCGRect(contentRect));
+
+	//self.bannerLabel.frame = bannerRect;
+}
+
+- (void)createBannerLabel
+{
+	CGRect bannerRect, contentRect;
+	CGRectDivide(self.bounds, &bannerRect, &contentRect, self.bannerHeight, CGRectMinYEdge);
+	
+	//LOG_DEBUG(@" frame = %@", NSStringFromCGRect(frame));
+	//LOG_DEBUG(@" bannerRect = %@", NSStringFromCGRect(bannerRect));
+	//LOG_DEBUG(@" contentRect = %@", NSStringFromCGRect(contentRect));
+	
+	self.bannerLabel = [[UILabel alloc] initWithFrame:bannerRect];
+	self.bannerLabel.autoresizingMask = UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleWidth;
+	self.bannerLabel.font = self.bannerFont;
+	self.bannerLabel.backgroundColor = self.bannerColor;
+	self.bannerLabel.textColor = [UIColor whiteColor];
+	self.bannerLabel.text = self.bannerTitle;
+	self.bannerLabel.textAlignment = UITextAlignmentCenter;
+	[self addSubview:bannerLabel];
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+	LOG_DEBUG(@"event = %@", event);
+	[super touchesBegan:touches withEvent:event];
+	self.highlighted = YES;
+}
+
+- (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
+{
+	LOG_DEBUG(@"event = %@", event);
+	[super touchesCancelled:touches withEvent:event];
+	self.highlighted = NO;
+}
+
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+	LOG_DEBUG(@"event = %@", event);
+	[super touchesEnded:touches withEvent:event];
+	self.highlighted = NO;
+}
+
+@end

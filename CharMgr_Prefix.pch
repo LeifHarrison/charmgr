@@ -1,0 +1,40 @@
+//
+// Prefix header for all source files of the 'CharMgr' target in the 'CharMgr' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+    #import <UIKit/UIKit.h>
+	#import <QuartzCore/QuartzCore.h>
+
+	#import "PFTypes.h"
+#endif
+
+#ifdef DEBUG
+
+#define TRACE NSLog(@"T=[0x%06x] %s",(unsigned int)[NSThread currentThread], __FUNCTION__)
+#define TRACE_BEGIN NSLog(@"T=[0x%06x] %s -- BEGIN --",(unsigned int)[NSThread currentThread], __FUNCTION__)
+#define TRACE_END NSLog(@"T=[0x%06x] %s -- END -- ",(unsigned int)[NSThread currentThread], __FUNCTION__)
+#define LOG_DEBUG(s,...) NSLog(@"T=[0x%06x] %s %@", (unsigned int)[NSThread currentThread], __FUNCTION__, [NSString stringWithFormat:s,##__VA_ARGS__])
+
+#else
+
+#define TRACE
+#define TRACE_BEGIN
+#define TRACE_END
+#define LOG_DEBUG(s,...)
+
+#endif
+
+
+#define kCMCurrentCharacterDefaultsKey @"CurrentCharacter"
+
+#define kCMAbilitiesUpdatedDateDefaultsKey	@"AbilitiesDateLastUpdated"
+#define kCMAlignmentsUpdatedDateDefaultsKey	@"AlignmentsDateLastUpdated"
+#define kCMClassesUpdatedDateDefaultsKey	@"ClassesDateLastUpdated"
+#define kCMFeatsUpdatedDateDefaultsKey		@"FeatsDateLastUpdated"
+#define kCMRacesUpdatedDateDefaultsKey		@"RacesDateLastUpdated"
+#define kCMSkillsUpdatedDateDefaultsKey		@"SkillsDateLastUpdated"
+#define kCMSpellsUpdatedDateDefaultsKey		@"SpellsDateLastUpdated"
+#define kCMTraitsUpdatedDateDefaultsKey		@"TraitsDateLastUpdated"
+

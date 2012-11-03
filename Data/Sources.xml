@@ -1,0 +1,8 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<Sources>
+	<Source index="0" abbreviation="Core" name="Pathfinder Core Rulebook" />
+	<Source index="1" abbreviation="APG"  name="Advanced Player Guide" />
+	<Source index="2" abbreviation="ARG"  name="Advanced Race Guide" />
+	<Source index="3" abbreviation="UM"   name="Ultimate Magic" />
+	<Source index="4" abbreviation="UC"   name="Ultimate Combat" />
+</Sources>

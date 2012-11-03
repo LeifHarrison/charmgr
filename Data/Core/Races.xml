@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Races>
+	<Race name="Dwarf" source="Core" size="Medium" type="Humanoid" subtype="Dwarf" speed="20">
+		<URL>http://paizo.com/pathfinderRPG/prd/races.html#dwarves</URL>
+		<AlternateURL>http://www.d20pfsrd.com/classes/core-races/Dwarf</AlternateURL>
+		<ShortDescription>These short and stocky defenders of mountain fortresses are often seen as stern and humorless. Known for mining the earth’s treasures and crafting magnificent items from ore and gemstones, they have an unrivaled affinity for the bounties of the deep earth. Dwarves also have a tendency toward traditionalism and isolation that sometimes manifests as xenophobia.</ShortDescription>
+		<LongDescription>Dwarves are a stoic but stern race, ensconced in cities carved from the hearts of mountains and fiercely determined to repel the depredations of savage races like orcs and goblins. More than any other race, dwarves have acquired a reputation as dour and humorless artisans of the earth. It could be said that their history shapes the dark disposition of many dwarves, for they reside in high mountains and dangerous realms below the earth, constantly at war with giants, goblins, and other such horrors.
+
+		Dwarves are lovers of history and tradition, and their long lifespan leads to far less in the way of generational shifts in attitudes, styles, fashions, and trends than shorter-lived races exhibit. If a thing is not broken, they do not fix it or change it; and if it is broken, they fix it rather than replace it. Thrifty as a rule, dwarves are loath to discard anything unless it is truly ruined and unable to be fixed. At the same time, dwarves' meticulous, near-obsessive attention to detail and durability in their craftsmanship makes that a rare occurrence, as the things they make are built to last. As a result, buildings, artwork, tools, housewares, garments, weapons, and virtually everything else made by dwarves still sees regular use at an age when such items would be relegated to museum pieces, dusty antique shelves, or junkyard fodder by other races. Taken together, these traits create the impression that dwarves are a race frozen in time.
+
+		Nothing could be further from the truth, however, as dwarves are both thoughtful and imaginative, willing to experiment, if always keen to refine and perfect a new technique or product before moving on to the next one. Dwarves have achieved feats of metallurgy, stonework, and engineering that have consistently outpaced the technological advances of other races, though some non-dwarven races have used magic to supplement and perfect their own creations to achieve the same ends through mystical rather than mundane means. They are also a race typified by stubborn courage and dedication to seeing tasks through to completion, whatever the risks. These traits have led dwarves to explore and settle in extreme environments that would cause other races to quail and retreat. From the darkest depths of the underworld to the highest mountain peaks, from rusting iron citadels along desolate rocky coasts to squat jungle ziggurats, dwarves have established their enclaves and redoubts, holding them against all comers or perishing to the last and leaving only their enduring monuments to stand as their legacy. While it is said that dwarves are not venturesome or inventive, it would be more accurate to say that they maintain a focus on and dedication to each task they undertake and every change they adopt, vetting such changes thoroughly before adopting them wholeheartedly. When faced with new circumstances and new needs, they react by applying tried and true tools and techniques systematically, using existing methods whenever possible rather than trying to invent novel solutions for every situation. If necessity requires, however, they throw themselves with equal vigor into developing the next perfect procedure for demolishing the obstacles that get in their way. Once their desired goal is obtained, they focus on consolidating each new piece of territory or conceptual advance. Dwarves thus rarely overextend themselves, but they also may miss opportunities to seize the initiative and maximize the advantages they create.</LongDescription>
+		<PhysicalDescription>Dwarves are a short and stocky race, and stand about a foot shorter than most humans, with wide, compact bodies that account for their burly appearance. Male and female dwarves pride themselves on the long length of their hair, and men often decorate their beards with a variety of clasps and intricate braids. Clean-shavenness on a male dwarf is a sure sign of madness, or worse—no one familiar with their race trusts a beardless dwarven man.</PhysicalDescription>
+		<Society>The great distances between dwarves' mountain citadels account for many of the cultural differences that exist within their society. Despite these schisms, dwarves throughout the world are characterized by their love of stonework, their passion for stone- and metal-based craftsmanship and architecture, and their fierce hatred of giants, orcs, and goblinoids. In some remote enclaves, such as those areas where these races are uncommon or unheard of, dwarves' fixation on security and safety combined with their rather pugnacious nature leads them to find enemies or at least rivals wherever they settle. While they are not precisely militaristic, they learned long ago that those without axes can be hewn apart by them, and thus dwarves everywhere are schooled to be ready to enforce their rights and claims by force of arms. When their patience with diplomacy is exhausted, dwarves do not hesitate to adopt what they call “aggressive negotiations.”</Society>
+		<Relations>Dwarves and orcs have long dwelt in proximity to one another, and share a history of violence as old as both races. Dwarves generally distrust and shun half-orcs. They find elves, gnomes, and halflings to be too frail, flighty, or “pretty” to be worthy of proper respect. It is with humans that dwarves share the strongest link, for humans' industrious nature and hearty appetites come closest to matching those of the dwarven ideal.</Relations>
+		<AlignmentAndReligion>Dwarves are driven by honor and tradition. While they are often stereotyped as standoffish, they have a strong sense of friendship and justice, and those who win their trust understand that while they work hard, they play even harder—especially when good ale is involved. Most dwarves are lawful good.</AlignmentAndReligion>
+		<Adventurers> Although dwarven adventurers are rare compared to humans, they can be found in most regions of the world. Dwarves often leave the confines of their redoubts to seek glory for their clans, to find wealth with which to enrich the fortress-homes of their birth, or to reclaim fallen dwarven citadels from racial enemies. Dwarven warfare is often characterized by tunnel fighting and melee combat, and as such most dwarves tend toward classes such as fighters and barbarians.</Adventurers>
+		<MaleNames>Dolgrin, Grunyar, Harsk, Kazmuk, Morgrym, Rogar</MaleNames>
+		<FemaleNames>Agna, Bodill, Ingra, Kotri, Rusilka, Yangrit</FemaleNames>
+		<RacialTraits></RacialTraits>
+		<AlternateRacialTraits></AlternateRacialTraits>
+		<FavoredClassOptions></FavoredClassOptions>
+	</Race>
+	<Race name="Elf" source="Core" size="Medium" type="Humanoid" subtype="Elf" speed="30">
+		<URL>http://paizo.com/pathfinderRPG/prd/races.html#dwarves</URL>
+		<AlternateURL>http://www.d20pfsrd.com/classes/core-races/Dwarf</AlternateURL>
+		<ShortDescription>Tall, noble, and often haughty, elves are long-lived and subtle masters of the wilderness. Elves excel in the arcane arts. Often they use their intrinsic link to nature to forge new spells and create wondrous items that, like their creators, seem nearly impervious to the ravages of time. A private and often introverted race, elves can give the impression they are indifferent to the plights of others.</ShortDescription>
+		<LongDescription></LongDescription>
+		<PhysicalDescription></PhysicalDescription>
+		<Society></Society>
+		<Relations></Relations>
+		<AlignmentAndReligion></AlignmentAndReligion>
+		<Adventurers></Adventurers>
+		<MaleNames></MaleNames>
+		<FemaleNames></FemaleNames>
+		<RacialTraits></RacialTraits>
+		<AlternateRacialTraits></AlternateRacialTraits>
+		<FavoredClassOptions></FavoredClassOptions>
+	</Race>
+	<Race name="Gnome" source="Core" size="Small" type="Humanoid" subtype="Gnome" speed="20">
+		<URL>http://paizo.com/pathfinderRPG/prd/races.html#dwarves</URL>
+		<AlternateURL>http://www.d20pfsrd.com/classes/core-races/Dwarf</AlternateURL>
+		<ShortDescription>Expatriates of the strange land of fey, these small folk have a reputation for flighty and eccentric behavior. Many gnomes are whimsical artisans and tinkers, creating strange devices powered by magic, alchemy, and their quirky imagination. Gnomes have an insatiable need for new experiences that often gets them in trouble.</ShortDescription>
+		<LongDescription></LongDescription>
+		<PhysicalDescription></PhysicalDescription>
+		<Society></Society>
+		<Relations></Relations>
+		<AlignmentAndReligion></AlignmentAndReligion>
+		<Adventurers></Adventurers>
+		<MaleNames></MaleNames>
+		<FemaleNames></FemaleNames>
+		<RacialTraits></RacialTraits>
+		<AlternateRacialTraits></AlternateRacialTraits>
+		<FavoredClassOptions></FavoredClassOptions>
+	</Race>
+	<Race name="Half Elf" source="Core" size="Medium" type="Humanoid" subtype="Human" speed="30">
+		<URL>http://paizo.com/pathfinderRPG/prd/races.html#dwarves</URL>
+		<AlternateURL>http://www.d20pfsrd.com/classes/core-races/Dwarf</AlternateURL>
+		<ShortDescription>Often caught between the worlds of their progenitor races, half-elves are a race of both grace and contradiction. Their dual heritage and natural gifts often create brilliant diplomats and peacemakers, but half-elves are often susceptible to an intense and even melancholic isolation, realizing that they are never truly part of elven or human society.</ShortDescription>
+		<LongDescription></LongDescription>
+		<PhysicalDescription></PhysicalDescription>
+		<Society></Society>
+		<Relations></Relations>
+		<AlignmentAndReligion></AlignmentAndReligion>
+		<Adventurers></Adventurers>
+		<MaleNames></MaleNames>
+		<FemaleNames></FemaleNames>
+		<RacialTraits></RacialTraits>
+		<AlternateRacialTraits></AlternateRacialTraits>
+		<FavoredClassOptions></FavoredClassOptions>
+	</Race>
+	<Race name="Half Orc" source="Core" size="Medium" type="Humanoid" subtype="Human" speed="30">
+		<URL>http://paizo.com/pathfinderRPG/prd/races.html#dwarves</URL>
+		<AlternateURL>http://www.d20pfsrd.com/classes/core-races/Dwarf</AlternateURL>
+		<ShortDescription>Often fierce and savage, sometimes noble and resolute, half-orcs can manifest the best and worst qualities of their parent races. Many half-orcs struggle to keep their more bestial natures in check in order to epitomize the most heroic values of humanity. Unfortunately, many outsiders see half-orcs as hopeless abominations devoid of civility, if not monsters unworthy of pity or parley.</ShortDescription>
+		<LongDescription></LongDescription>
+		<PhysicalDescription></PhysicalDescription>
+		<Society></Society>
+		<Relations></Relations>
+		<AlignmentAndReligion></AlignmentAndReligion>
+		<Adventurers></Adventurers>
+		<MaleNames></MaleNames>
+		<FemaleNames></FemaleNames>
+		<RacialTraits></RacialTraits>
+		<AlternateRacialTraits></AlternateRacialTraits>
+		<FavoredClassOptions></FavoredClassOptions>
+	</Race>
+	<Race name="Halfling" source="Core" size="Small" type="Humanoid" subtype="Human" speed="20">
+		<URL>http://paizo.com/pathfinderRPG/prd/races.html#dwarves</URL>
+		<AlternateURL>http://www.d20pfsrd.com/classes/core-races/Dwarf</AlternateURL>
+		<ShortDescription>Members of this diminutive race find strength in family, community, and their own innate and seemingly inexhaustible luck. While their fierce curiosity is sometimes at odds with their intrinsic common sense, half lings are eternal optimists and cunning opportunists with an incredible knack for getting out the worst situations.</ShortDescription>
+		<LongDescription></LongDescription>
+		<PhysicalDescription></PhysicalDescription>
+		<Society></Society>
+		<Relations></Relations>
+		<AlignmentAndReligion></AlignmentAndReligion>
+		<Adventurers></Adventurers>
+		<MaleNames></MaleNames>
+		<FemaleNames></FemaleNames>
+		<RacialTraits></RacialTraits>
+		<AlternateRacialTraits></AlternateRacialTraits>
+		<FavoredClassOptions></FavoredClassOptions>
+	</Race>
+	<Race name="Human" source="Core" size="Medium" type="Humanoid" subtype="Human" speed="30">
+		<URL>http://paizo.com/pathfinderRPG/prd/races.html#dwarves</URL>
+		<AlternateURL>http://www.d20pfsrd.com/classes/core-races/Dwarf</AlternateURL>
+		<ShortDescription>Ambitious, sometimes heroic, and always confident, humans have an ability to work together toward common goals that makes them a force to be reckoned with. Though short-lived compared to other races, their boundless energy and drive allow them to accomplish much in their brief lifetimes.</ShortDescription>
+		<LongDescription></LongDescription>
+		<PhysicalDescription></PhysicalDescription>
+		<Society></Society>
+		<Relations></Relations>
+		<AlignmentAndReligion></AlignmentAndReligion>
+		<Adventurers></Adventurers>
+		<MaleNames></MaleNames>
+		<FemaleNames></FemaleNames>
+		<RacialTraits></RacialTraits>
+		<AlternateRacialTraits></AlternateRacialTraits>
+		<FavoredClassOptions></FavoredClassOptions>
+	</Race>
+	<Race name="Catfolk" source="ARG" size="Medium" type="Humanoid" subtype="Human" speed="30">
+		<URL>http://paizo.com/pathfinderRPG/prd/advancedRaceGuide/featuredRaces/catfolk.html</URL>
+		<AlternateURL>http://www.d20pfsrd.com/races/other-races/featured-races/arg-catfolk</AlternateURL>
+		<ShortDescription>A race of graceful explorers, catfolk are both clannish and curious by nature. They tend to get along with races that treat them well and respect their boundaries. They love exploration, both physical and intellectual, and tend to be natural adventurers.</ShortDescription>
+		<LongDescription></LongDescription>
+		<PhysicalDescription></PhysicalDescription>
+		<Society></Society>
+		<Relations></Relations>
+		<AlignmentAndReligion></AlignmentAndReligion>
+		<Adventurers></Adventurers>
+		<MaleNames></MaleNames>
+		<FemaleNames></FemaleNames>
+		<Traits>
+            <Trait name="Ability Scores - Catfolk" displayName="+2 Dexterity, +2 Charisma, –2 Wisdom">
+                <ShortDescription>Catfolk are sociable and agile, but often lack common sense.</ShortDescription>
+            </Trait>
+            <Trait name="Type - Catfolk" displayName="Catfolk">
+                <ShortDescription>Catfolk are humanoids with the catfolk subtype.</ShortDescription>
+            </Trait>
+            <Trait name="Size - Catfolk" displayName="Medium">
+                <ShortDescription>Catfolk are Medium creatures and have no bonuses or penalties due to their size.</ShortDescription>
+            </Trait>
+            <Trait name="Speed - Catfolk" displayName="Normal Speed">
+                <ShortDescription>Catfolk have a base speed of 30 feet.</ShortDescription>
+            </Trait>
+            <Trait name="Low-Light Vision - Catfolk" displayName="Low-Light Vision">
+                <ShortDescription>In dim light, catfolk can see twice as far as humans.</ShortDescription>
+            </Trait>
+            <Trait name="Cat's Luck (Ex)" displayName="Cat's Luck (Ex)">
+                <ShortDescription>Once per day when a catfolk makes a Reflex saving throw, he can roll the saving throw twice and take the better result. He must decide to use this ability before the saving throw is attempted.</ShortDescription>
+            </Trait>
+            <Trait name="Natural Hunter" displayName="Natural Hunter">
+                <ShortDescription>Catfolk receive a +2 racial bonus on Perception, Stealth, and Survival checks.</ShortDescription>
+            </Trait>
+            <Trait name="Sprinter" displayName="Sprinter">
+                <ShortDescription>Catfolk are humanoids with the catfolk subtype.</ShortDescription>
+            </Trait>
+            <Trait name="Languages - Catfolk" displayName="Languages">
+                <ShortDescription>Catfolk begin play speaking Common and Catfolk. Catfolk with high Intelligence scores can choose from the following languages: Elven, Gnoll, Gnome, Goblin, Halfling, Orc, and Sylvan.</ShortDescription>
+            </Trait>
+        </Traits>
+		<AlternateTraits></AlternateTraits>
+		<FavoredClassOptions></FavoredClassOptions>
+	</Race>
+</Races>

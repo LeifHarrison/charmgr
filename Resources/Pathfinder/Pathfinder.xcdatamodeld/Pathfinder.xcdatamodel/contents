@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1811" systemVersion="11G63" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="PFAbility" representedClassName="PFAbility" syncable="YES">
+        <attribute name="abbreviation" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="abilityType" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="descriptionLong" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="descriptionShort" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="characterAbilities" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PFCharacterAbility" inverseName="ability" inverseEntity="PFCharacterAbility" syncable="YES"/>
+    </entity>
+    <entity name="PFAlignment" representedClassName="PFAlignment" syncable="YES">
+        <attribute name="abbreviation" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="alignmentType" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="descriptionShort" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="characters" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PFCharacter" inverseName="alignment" inverseEntity="PFCharacter" syncable="YES"/>
+    </entity>
+    <entity name="PFCharacter" representedClassName="PFCharacter" syncable="YES">
+        <attribute name="age" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="campaign" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="eyeColor" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="gender" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="hairColor" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="height" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="player" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="size" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="skinColor" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="weight" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="abilities" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PFCharacterAbility" inverseName="character" inverseEntity="PFCharacterAbility" syncable="YES"/>
+        <relationship name="alignment" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="PFAlignment" inverseName="characters" inverseEntity="PFAlignment" syncable="YES"/>
+        <relationship name="classes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PFCharacterClass" inverseName="character" inverseEntity="PFCharacterClass" syncable="YES"/>
+        <relationship name="race" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="PFRace" inverseName="characters" inverseEntity="PFRace" syncable="YES"/>
+        <relationship name="skills" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PFCharacterSkill" inverseName="character" inverseEntity="PFCharacterSkill" syncable="YES"/>
+    </entity>
+    <entity name="PFCharacterAbility" representedClassName="PFCharacterAbility" syncable="YES">
+        <attribute name="abilityScore" optional="YES" attributeType="Integer 16" defaultValueString="10" syncable="YES"/>
+        <attribute name="temporaryScore" optional="YES" attributeType="Integer 16" syncable="YES"/>
+        <relationship name="ability" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="PFAbility" inverseName="characterAbilities" inverseEntity="PFAbility" syncable="YES"/>
+        <relationship name="character" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="PFCharacter" inverseName="abilities" inverseEntity="PFCharacter" syncable="YES"/>
+    </entity>
+    <entity name="PFCharacterClass" representedClassName="PFCharacterClass" syncable="YES">
+        <attribute name="level" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="character" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="PFCharacter" inverseName="classes" inverseEntity="PFCharacter" syncable="YES"/>
+        <relationship name="classType" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="PFClassType" inverseName="characterClasses" inverseEntity="PFClassType" syncable="YES"/>
+    </entity>
+    <entity name="PFCharacterSkill" representedClassName="PFCharacterSkill" syncable="YES">
+        <attribute name="isClassSkill" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="miscellaneousModifier" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="ranks" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="skillDetail" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="character" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="PFCharacter" inverseName="skills" inverseEntity="PFCharacter" syncable="YES"/>
+        <relationship name="skill" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="PFSkill" inverseName="characterSkills" inverseEntity="PFSkill" syncable="YES"/>
+    </entity>
+    <entity name="PFClassType" representedClassName="PFClassType" syncable="YES">
+        <attribute name="descriptionShort" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="hitDieType" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="skillRanks" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="source" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="characterClasses" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PFCharacterClass" inverseName="classType" inverseEntity="PFCharacterClass" syncable="YES"/>
+        <relationship name="classSkills" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PFSkill" inverseName="classTypes" inverseEntity="PFSkill" syncable="YES"/>
+    </entity>
+    <entity name="PFFeat" representedClassName="PFFeat" syncable="YES">
+        <attribute name="benefitString" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="descriptionShort" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="normal" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="prerequisitesString" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="source" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="special" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <entity name="PFRace" representedClassName="PFRace" syncable="YES">
+        <attribute name="adventurers" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="alignmentAndReligion" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="descriptionLong" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="descriptionShort" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="namesFemale" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="namesMale" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="physicalDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="relations" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="size" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="society" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="source" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="speed" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="subtype" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="characters" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PFCharacter" inverseName="race" inverseEntity="PFCharacter" syncable="YES"/>
+        <relationship name="traits" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PFTrait" inverseName="race" inverseEntity="PFTrait" syncable="YES"/>
+    </entity>
+    <entity name="PFSkill" representedClassName="PFSkill" syncable="YES">
+        <attribute name="armorCheckPenalty" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="descriptionLong" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="descriptionShort" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="keyAbility" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="requiresDetail" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="untrained" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <relationship name="characterSkills" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PFCharacterSkill" inverseName="skill" inverseEntity="PFCharacterSkill" syncable="YES"/>
+        <relationship name="classTypes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PFClassType" inverseName="classSkills" inverseEntity="PFClassType" syncable="YES"/>
+    </entity>
+    <entity name="PFTrait" representedClassName="PFTrait" syncable="YES">
+        <attribute name="benefitsString" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="descriptionShort" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="displayName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="source" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="race" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="PFRace" inverseName="traits" inverseEntity="PFRace" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="PFAbility" positionX="160" positionY="192" width="128" height="135"/>
+        <element name="PFAlignment" positionX="160" positionY="192" width="128" height="120"/>
+        <element name="PFCharacter" positionX="0" positionY="0" width="128" height="285"/>
+        <element name="PFCharacterAbility" positionX="160" positionY="192" width="128" height="105"/>
+        <element name="PFCharacterClass" positionX="0" positionY="0" width="128" height="90"/>
+        <element name="PFCharacterSkill" positionX="160" positionY="192" width="128" height="135"/>
+        <element name="PFClassType" positionX="0" positionY="0" width="128" height="150"/>
+        <element name="PFFeat" positionX="160" positionY="192" width="128" height="165"/>
+        <element name="PFRace" positionX="0" positionY="0" width="128" height="300"/>
+        <element name="PFSkill" positionX="160" positionY="192" width="128" height="180"/>
+        <element name="PFTrait" positionX="160" positionY="192" width="128" height="150"/>
+    </elements>
+</model>

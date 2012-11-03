@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Classes>
+	<Class name="Barbarian" source="Core" hitDieType="12" skillRanksPerLevel="4">
+		<ShortDescription>The barbarian is a brutal berserker from beyond the edge of civilized lands.</ShortDescription>
+		<URL>http://paizo.com/pathfinderRPG/prd/classes/Barbarian.html</URL>
+		<AlternateURL>http://www.d20pfsrd.com/classes/core-classes/Barbarian</AlternateURL>
+	</Class>
+	<Class name="Bard" source="Core" hitDieType="8" skillRanksPerLevel="6">
+		<ShortDescription>The bard uses skill and spell alike to bolster his allies, confound his enemies, and build upon his fame.</ShortDescription>
+		<URL>http://paizo.com/pathfinderRPG/prd/classes/Bard.html</URL>
+		<AlternateURL>http://www.d20pfsrd.com/classes/core-classes/Bard</AlternateURL>
+	</Class>
+	<Class name="Cleric" source="Core" hitDieType="8" skillRanksPerLevel="2">
+		<ShortDescription>A devout follower of a deity, the cleric can heal wounds, raise the dead, and call down the wrath of the gods.</ShortDescription>
+		<URL>http://paizo.com/pathfinderRPG/prd/classes/Cleric.html</URL>
+		<AlternateURL>http://www.d20pfsrd.com/classes/core-classes/Cleric</AlternateURL>
+	</Class>
+	<Class name="Druid" source="Core" hitDieType="8" skillRanksPerLevel="4">
+		<ShortDescription>The druid is a worshiper of all things natural—a spellcaster, a friend to animals, and a skilled shapechanger.</ShortDescription>
+		<URL>http://paizo.com/pathfinderRPG/prd/classes/Druid.html</URL>
+		<AlternateURL>http://www.d20pfsrd.com/classes/core-classes/Druid</AlternateURL>
+	</Class>
+	<Class name="Fighter" source="Core" hitDieType="10" skillRanksPerLevel="2">
+		<ShortDescription>Brave and stalwart, the fighter is a master of all manner of arms and armor.</ShortDescription>
+		<URL>http://paizo.com/pathfinderRPG/prd/classes/Fighter.html</URL>
+		<AlternateURL>http://www.d20pfsrd.com/classes/core-classes/Fighter</AlternateURL>
+	</Class>
+	<Class name="Monk" source="Core" hitDieType="8" skillRanksPerLevel="4">
+		<ShortDescription>A student of martial arts, the monk trains his body to be his greatest weapon and defense.</ShortDescription>
+		<LongDescription>For the truly exemplary, martial skill transcends the battlefield—it is a lifestyle, a doctrine, a state of mind. These warrior-artists search out methods of battle beyond swords and shields, finding weapons within themselves just as capable of crippling or killing as any blade. These monks (so called since they adhere to ancient philosophies and strict martial disciplines) elevate their bodies to become weapons of war, from battle-minded ascetics to self-taught brawlers. Monks tread the path of discipline, and those with the will to endure that path discover within themselves not what they are, but what they are meant to be.</LongDescription>
+		<Role>Monks excel at overcoming even the most daunting perils, striking where it's least expected, and taking advantage of enemy vulnerabilities. Fleet of foot and skilled in combat, monks can navigate any battlefield with ease, aiding allies wherever they are needed most.</Role>
+		<ClassSkills>Acrobatics,Climb,Craft,Escape Artist,Intimidate,Knowledge (History),Knowledge (Religion),Perception,Perform,Profession,Ride,Sense Motive,Stealth,Swim</ClassSkills>
+		<URL>http://paizo.com/pathfinderRPG/prd/classes/Monk.html</URL>
+		<AlternateURL>http://www.d20pfsrd.com/classes/core-classes/Monk</AlternateURL>
+	</Class>
+	<Class name="Paladin" source="Core" hitDieType="10" skillRanksPerLevel="2">
+		<ShortDescription>The paladin is the knight in shining armor, a devoted follower of law and good.</ShortDescription>
+		<URL>http://paizo.com/pathfinderRPG/prd/classes/Paladin.html</URL>
+		<AlternateURL>http://www.d20pfsrd.com/classes/core-classes/Paladin</AlternateURL>
+	</Class>
+	<Class name="Ranger" source="Core" hitDieType="10" skillRanksPerLevel="6">
+		<ShortDescription>A tracker and hunter, the ranger is a creature of the wild and of tracking down his favored foes.</ShortDescription>
+		<URL>http://paizo.com/pathfinderRPG/prd/classes/Ranger.html</URL>
+		<AlternateURL>http://www.d20pfsrd.com/classes/core-classes/Ranger</AlternateURL>
+	</Class>
+	<Class name="Rogue" source="Core" hitDieType="8" skillRanksPerLevel="8">
+		<ShortDescription>The rogue is a thief and a scout, an opportunist capable of delivering brutal strikes against unwary foes.</ShortDescription>
+		<URL>http://paizo.com/pathfinderRPG/prd/classes/Rogue.html</URL>
+		<AlternateURL>http://www.d20pfsrd.com/classes/core-classes/Rogue</AlternateURL>
+	</Class>
+	<Class name="Sorcerer" source="Core" hitDieType="6" skillRanksPerLevel="2">
+		<ShortDescription>The spellcasting sorcerer is born with an innate knack for magic and has strange, eldritch powers.</ShortDescription>
+		<URL>http://paizo.com/pathfinderRPG/prd/classes/Sorcerer.html</URL>
+		<AlternateURL>http://www.d20pfsrd.com/classes/core-classes/Sorcerer</AlternateURL>
+	</Class>
+	<Class name="Wizard" source="Core" hitDieType="6" skillRanksPerLevel="2">
+		<ShortDescription>The wizard masters magic through constant study that gives him incredible magical power.</ShortDescription>
+		<URL>http://paizo.com/pathfinderRPG/prd/classes/Wizard.html</URL>
+		<AlternateURL>http://www.d20pfsrd.com/classes/core-classes/Wizard</AlternateURL>
+	</Class>
+</Classes>

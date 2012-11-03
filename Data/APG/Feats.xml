@@ -1,0 +1,1452 @@
+<xml version=1.1>
+<Feats>
+	<Feat name="Name" type="Type" source="Source">
+		<Prerequisites>Prerequisites</Prerequisites>
+		<Benefit>Summary</Benefit>
+	</Feat>
+	<Feat name="Agile Maneuvers" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>-</Prerequisites>
+		<Benefit>Use your Dex bonus when calculating your CMB</Benefit>
+	</Feat>
+	<Feat name="Arcane Armor Mastery" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>Arcane Armor Training, Armor Proficiency, Medium, caster level 7th</Prerequisites>
+		<Benefit>Reduce your arcane spell failure chance by 20%</Benefit>
+	</Feat>
+	<Feat name="Arcane Armor Training" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>Armor Proficiency, Light, caster level 3rd</Prerequisites>
+		<Benefit>Reduce your arcane spell failure chance by 10%</Benefit>
+	</Feat>
+	<Feat name="Arcane Strike" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>Ability to cast arcane spells</Prerequisites>
+		<Benefit>+1 damage and weapons are considered magic</Benefit>
+	</Feat>
+	<Feat name="Bleeding Critical" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>Critical Focus, base attack bonus +11</Prerequisites>
+		<Benefit>Whenever you score a critical hit, the target takes 2d6 bleed</Benefit>
+	</Feat>
+	<Feat name="Blind-Fight" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>-</Prerequisites>
+		<Benefit></Benefit>
+	</Feat>
+	<Feat name="Blinding Critical" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>Critical Focus, base attack bonus +15</Prerequisites>
+		<Benefit>Whenever you score a critical hit, the target is blinded</Benefit>
+	</Feat>
+	<Feat name="Catch Off-Guard" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>-</Prerequisites>
+		<Benefit>No penalties for improvised melee weapons</Benefit>
+	</Feat>
+	<Feat name="Channel Smite" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>Channel energy class feature</Prerequisites>
+		<Benefit>Channel energy through your attack</Benefit>
+	</Feat>
+	<Feat name="Cleave" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>Power Attack</Prerequisites>
+		<Benefit>Make an additional attack if the first one hits</Benefit>
+	</Feat>
+	<Feat name="Combat Expertise" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>Int 13</Prerequisites>
+		<Benefit>Trade attack bonus for AC bonus</Benefit>
+	</Feat>
+	<Feat name="Combat Reflexes" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>-</Prerequisites>
+		<Benefit>Make additional attacks of opportunity</Benefit>
+	</Feat>
+	<Feat name="Critical Focus" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>Base attack bonus +9</Prerequisites>
+		<Benefit>+4 bonus on attack rolls made to confirm critical hits</Benefit>
+	</Feat>
+	<Feat name="Critical Mastery" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>Any two critical feats, 14th-level fighter</Prerequisites>
+		<Benefit>Apply two effects to your critical hits</Benefit>
+	</Feat>
+	<Feat name="Dazzling Display" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>Weapon Focus</Prerequisites>
+		<Benefit>Intimidate all foes within 30 feet</Benefit>
+	</Feat>
+	<Feat name="Deadly Aim" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>Dex 13, base attack bonus +1</Prerequisites>
+		<Benefit>Trade ranged attack bonus for damage</Benefit>
+	</Feat>
+	<Feat name="Deadly Stroke" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>Greater Weapon Focus, Shatter Defenses, base attack bonus +11</Prerequisites>
+		<Benefit>Deal double damage plus 1 Conbleed </Benefit>
+	</Feat>
+	<Feat name="Deafening Critical" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>Critical Focus, base attack bonus +13</Prerequisites>
+		<Benefit>Whenever you score a critical hit, the target is deafened</Benefit>
+	</Feat>
+	<Feat name="Defensive Combat Training" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>-</Prerequisites>
+		<Benefit>Use your total Hit Dice as your base attack bonus for CMD</Benefit>
+	</Feat>
+	<Feat name="Deflect Arrows" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>Dex 13, Improved Unarmed Strike</Prerequisites>
+		<Benefit>Avoid one ranged attack per round</Benefit>
+	</Feat>
+	<Feat name="Disruptive" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>6th-level fighter</Prerequisites>
+		<Benefit>Increases the DC to cast spells adjacent to you</Benefit>
+	</Feat>
+	<Feat name="Dodge" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>Dex 13</Prerequisites>
+		<Benefit>+1 dodge bonus to AC</Benefit>
+	</Feat>
+	<Feat name="Double Slice" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>Two-Weapon Fighting</Prerequisites>
+		<Benefit>Add your Str bonus to off-hand damage rolls </Benefit>
+	</Feat>
+	<Feat name="Exhausting Critical" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>Tiring Critical, base attack bonus +15</Prerequisites>
+		<Benefit>Whenever you score a critical hit, the target is exhausted</Benefit>
+	</Feat>
+	<Feat name="Exotic Weapon Proficiency" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>Base attack bonus +1</Prerequisites>
+		<Benefit>No penalty on attacks made with one exotic weapon</Benefit>
+	</Feat>
+	<Feat name="Far Shot" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>Point Blank Shot</Prerequisites>
+		<Benefit>Decrease ranged penalties by half</Benefit>
+	</Feat>
+	<Feat name="Gorgon's Fist" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>Scorpion Style, base attack bonus +6</Prerequisites>
+		<Benefit>Stagger a foe whose speed is reduced</Benefit>
+	</Feat>
+	<Feat name="Great Cleave" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>Cleave, base attack bonus +4</Prerequisites>
+		<Benefit>Make an additional attack after each attack hits</Benefit>
+	</Feat>
+	<Feat name="Greater Bull Rush" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>Improved Bull Rush, base attack bonus +6</Prerequisites>
+		<Benefit>Enemies you bull rush provoke attacks of opportunity</Benefit>
+	</Feat>
+	<Feat name="Greater Disarm" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>Improved Disarm, base attack bonus +6</Prerequisites>
+		<Benefit>Disarmed weapons are knocked away from your enemy</Benefit>
+	</Feat>
+	<Feat name="Greater Feint" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>Improved Feint, base attack bonus +6</Prerequisites>
+		<Benefit>Enemies you feint lose their Dex bonus for 1 round</Benefit>
+	</Feat>
+	<Feat name="Greater Grapple" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>Improved Grapple, base attack bonus +6</Prerequisites>
+		<Benefit>Maintain your grapple as a move action</Benefit>
+	</Feat>
+	<Feat name="Greater Overrun" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>Improved Overrun, base attack bonus +6</Prerequisites>
+		<Benefit>Enemies you overrun provoke attacks of opportunity</Benefit>
+	</Feat>
+	<Feat name="Greater Penetrating Strike" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>Penetrating Strike, 16th-level fighter</Prerequisites>
+		<Benefit>Your attacks ignore 10 points of damage reduction</Benefit>
+	</Feat>
+	<Feat name="Greater Shield Focus" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>Shield Focus, 8th-level fighter</Prerequisites>
+		<Benefit>Gain a +1 bonus to your AC when using a shield</Benefit>
+	</Feat>
+	<Feat name="Greater Sunder" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>Improved Sunder, base attack bonus +6</Prerequisites>
+		<Benefit>Damage from sunder attempts transfers to your enemy</Benefit>
+	</Feat>
+	<Feat name="Greater Trip" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>Improved Trip, base attack bonus +6</Prerequisites>
+		<Benefit>Enemies you trip provoke attacks of opportunity </Benefit>
+	</Feat>
+	<Feat name="Greater Two-Weapon Fighting" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>Dex 19, Improved Two-Weapon Fighting, base attack bonus +11</Prerequisites>
+		<Benefit>Gain a third off-hand attack</Benefit>
+	</Feat>
+	<Feat name="Greater Vital Strike" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>Improved Vital Strike, base attack bonus +16</Prerequisites>
+		<Benefit>Deal four times the normal damage on a single attack</Benefit>
+	</Feat>
+	<Feat name="Greater Weapon Focus" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>Weapon Focus, 8th-level fighter</Prerequisites>
+		<Benefit>+1 bonus on attack rolls with one weapon</Benefit>
+	</Feat>
+	<Feat name="Greater Weapon Specialization" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>Weapon Specialization, 12th-level fighter</Prerequisites>
+		<Benefit>+2 bonus on damage rolls with one weapon</Benefit>
+	</Feat>
+	<Feat name="Improved Bull Rush" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>Power Attack</Prerequisites>
+		<Benefit>+2 bonus on bull rush attempts, no attack of opportunity</Benefit>
+	</Feat>
+	<Feat name="Improved Critical" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>Proficiency with weapon, base attack bonus +8</Prerequisites>
+		<Benefit>Double the threat range of one weapon</Benefit>
+	</Feat>
+	<Feat name="Improved Disarm" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>Combat Expertise</Prerequisites>
+		<Benefit>+2 bonus on disarm attempts, no attack of opportunity</Benefit>
+	</Feat>
+	<Feat name="Improved Feint" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>Combat Expertise</Prerequisites>
+		<Benefit>Feint as a move action</Benefit>
+	</Feat>
+	<Feat name="Improved Grapple" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>Dex 13, Improved Unarmed Strike</Prerequisites>
+		<Benefit>+2 bonus on grapple attempts, no attack of opportunity</Benefit>
+	</Feat>
+	<Feat name="Improved Initiative" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>-</Prerequisites>
+		<Benefit>+4 bonus on initiative checks</Benefit>
+	</Feat>
+	<Feat name="Improved Overrun" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>Power Attack</Prerequisites>
+		<Benefit>+2 bonus on overrun attempts, no attack of opportunity</Benefit>
+	</Feat>
+	<Feat name="Improved Precise Shot" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>Dex 19, Precise Shot, base attack bonus +11</Prerequisites>
+		<Benefit>No cover or concealment chance on ranged attacks</Benefit>
+	</Feat>
+	<Feat name="Improved Shield Bash" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>Shield Proficiency</Prerequisites>
+		<Benefit>Keep your shield bonus when shield bashing</Benefit>
+	</Feat>
+	<Feat name="Improved Sunder" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>Power Attack</Prerequisites>
+		<Benefit>+2 bonus on sunder attempts, no attack of opportunity</Benefit>
+	</Feat>
+	<Feat name="Improved Trip" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>Combat Expertise</Prerequisites>
+		<Benefit>+2 bonus on trip attempts, no attack of opportunity</Benefit>
+	</Feat>
+	<Feat name="Improved Two-Weapon Fighting" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>Dex 17, Two-Weapon Fighting, base attack bonus +6</Prerequisites>
+		<Benefit>Gain additional off-hand attack</Benefit>
+	</Feat>
+	<Feat name="Improved Unarmed Strike" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>-</Prerequisites>
+		<Benefit>Always considered armed</Benefit>
+	</Feat>
+	<Feat name="Improved Vital Strike" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>Vital Strike, base attack bonus +11</Prerequisites>
+		<Benefit>Deal three times the normal damage on a single attack</Benefit>
+	</Feat>
+	<Feat name="Improvised Weapon Mastery" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>Catch Off-Guard or Throw Anything, base attack bonus +8</Prerequisites>
+		<Benefit>Make an improvised weapon deadly</Benefit>
+	</Feat>
+	<Feat name="Intimidating Prowess" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>-</Prerequisites>
+		<Benefit>Add Str to Intimidate  in addition to Cha</Benefit>
+	</Feat>
+	<Feat name="Lightning Stance" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>Dex 17, Wind Stance, base attack bonus +11</Prerequisites>
+		<Benefit>Gain 50% concealment if you move</Benefit>
+	</Feat>
+	<Feat name="Lunge" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>Base attack bonus +6</Prerequisites>
+		<Benefit>Take a äóñ2 penalty to your AC to attack with reach</Benefit>
+	</Feat>
+	<Feat name="Manyshot" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>Dex 17, Rapid Shot, base attack bonus +6</Prerequisites>
+		<Benefit>Shoot two arrows simultaneously</Benefit>
+	</Feat>
+	<Feat name="Medusa's Wrath" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>Gorgon's Fist, base attack bonus +11</Prerequisites>
+		<Benefit>Make 2 extra attacks against a hindered foe</Benefit>
+	</Feat>
+	<Feat name="Mobility" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>Dodge</Prerequisites>
+		<Benefit>+4 AC against attacks of opportunity from movement</Benefit>
+	</Feat>
+	<Feat name="Mounted Archery" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>Mounted Combat</Prerequisites>
+		<Benefit>Halve the penalty for ranged attacks while mounted</Benefit>
+	</Feat>
+	<Feat name="Mounted Combat" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>Ride 1 rank</Prerequisites>
+		<Benefit>Avoid attacks on mount with Ride  check </Benefit>
+	</Feat>
+	<Feat name="Penetrating Strike" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>Weapon Focus, 12th-level fighter</Prerequisites>
+		<Benefit>Your attacks ignore 5 points of damage reduction</Benefit>
+	</Feat>
+	<Feat name="Pinpoint Targeting" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>Improved Precise Shot, base attack bonus +16</Prerequisites>
+		<Benefit>No armor or shield bonus on one ranged attack</Benefit>
+	</Feat>
+	<Feat name="Point Blank Shot" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>-</Prerequisites>
+		<Benefit>+1 attack and damage on targets within 30 feet</Benefit>
+	</Feat>
+	<Feat name="Power Attack" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>Str 13, base attack bonus +1</Prerequisites>
+		<Benefit>Trade melee attack bonus for damage</Benefit>
+	</Feat>
+	<Feat name="Precise Shot" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>Point Blank Shot</Prerequisites>
+		<Benefit>No penalty for shooting into melee</Benefit>
+	</Feat>
+	<Feat name="Quick Draw" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>Base attack bonus +1</Prerequisites>
+		<Benefit>Draw weapon as a free action</Benefit>
+	</Feat>
+	<Feat name="Rapid Reload" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>Weapon proficiency (crossbow)</Prerequisites>
+		<Benefit>Reload crossbow quickly</Benefit>
+	</Feat>
+	<Feat name="Rapid Shot" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>Dex 13, Point Blank Shot</Prerequisites>
+		<Benefit>Make one extra ranged attack</Benefit>
+	</Feat>
+	<Feat name="Ride-by Attack" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>Mounted Combat</Prerequisites>
+		<Benefit>Move before and after a charge attack while mounted</Benefit>
+	</Feat>
+	<Feat name="Scorpion Style" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>Improved Unarmed Strike</Prerequisites>
+		<Benefit>Reduce target's speed to 5 ft.</Benefit>
+	</Feat>
+	<Feat name="Shatter Defenses" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>Dazzling Display, base attack bonus +6</Prerequisites>
+		<Benefit>Hindered foes are flat-footed</Benefit>
+	</Feat>
+	<Feat name="Shield Focus" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>Shield Proficiency, base attack bonus +1</Prerequisites>
+		<Benefit>Gain a +1 bonus to your AC when using a shield</Benefit>
+	</Feat>
+	<Feat name="Shield Master" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>Shield Slam, base attack bonus +11</Prerequisites>
+		<Benefit>No two-weapon penalties when attacking with a shield</Benefit>
+	</Feat>
+	<Feat name="Shield Slam" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>Improved Shield Bash, Two-Weapon Fighting, base attack bonus +6</Prerequisites>
+		<Benefit>Free bull rush with a bash attack</Benefit>
+	</Feat>
+	<Feat name="Shot on the Run" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>Dex 13, Mobility, Point Blank Shot, base attack bonus +4</Prerequisites>
+		<Benefit>Make ranged attack at any point during movement</Benefit>
+	</Feat>
+	<Feat name="Sickening Critical" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>Critical Focus, base attack bonus +11</Prerequisites>
+		<Benefit>Whenever you score a critical hit, the target is sickened</Benefit>
+	</Feat>
+	<Feat name="Snatch Arrows" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>Dex 15, Deflect Arrows</Prerequisites>
+		<Benefit>Catch one ranged attack per round</Benefit>
+	</Feat>
+	<Feat name="Spellbreaker" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>Disruptive, 10th-level fighter</Prerequisites>
+		<Benefit>Enemies provoke attacks if their spells fail</Benefit>
+	</Feat>
+	<Feat name="Spirited Charge" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>Ride-By Attack</Prerequisites>
+		<Benefit>Double damage on a mounted charge</Benefit>
+	</Feat>
+	<Feat name="Spring Attack" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>Mobility, base attack bonus +4</Prerequisites>
+		<Benefit>Move before and after melee attack</Benefit>
+	</Feat>
+	<Feat name="Staggering Critical" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>Critical Focus, base attack bonus +13</Prerequisites>
+		<Benefit>Whenever you score a critical hit, the target is staggered</Benefit>
+	</Feat>
+	<Feat name="Stand Still" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>Combat Reflexes</Prerequisites>
+		<Benefit>Stop enemies from moving past you</Benefit>
+	</Feat>
+	<Feat name="Step Up" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>Base attack bonus +1</Prerequisites>
+		<Benefit>Take a 5-foot step as an immediate action</Benefit>
+	</Feat>
+	<Feat name="Strike Back" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>Base attack bonus +11</Prerequisites>
+		<Benefit>Attack foes that strike you while using reach</Benefit>
+	</Feat>
+	<Feat name="Stunning Critical" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>Staggering Critical, base attack bonus +17</Prerequisites>
+		<Benefit>Whenever you score a critical hit, the target is stunned</Benefit>
+	</Feat>
+	<Feat name="Stunning Fist" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>Dex 13, Wis 13, Improved Unarmed Strike, base attack bonus +8</Prerequisites>
+		<Benefit>Stun opponent with an unarmed strike</Benefit>
+	</Feat>
+	<Feat name="Throw Anything" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>-</Prerequisites>
+		<Benefit>No penalties for improvised ranged weapons</Benefit>
+	</Feat>
+	<Feat name="Tiring Critical" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>Critical Focus, base attack bonus +13</Prerequisites>
+		<Benefit>Whenever you score a critical hit, the target is fatigued</Benefit>
+	</Feat>
+	<Feat name="Tower Shield Proficiency" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>Shield Proficiency</Prerequisites>
+		<Benefit>No penalties on attack rolls when using a tower shield</Benefit>
+	</Feat>
+	<Feat name="Trample" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>Mounted Combat</Prerequisites>
+		<Benefit>Overrun targets while mounted</Benefit>
+	</Feat>
+	<Feat name="Two-Weapon Defense" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>Two-Weapon Fighting</Prerequisites>
+		<Benefit>Gain +1 shield bonus when fighting with two weapons</Benefit>
+	</Feat>
+	<Feat name="Two-Weapon Fighting" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>Dex 15</Prerequisites>
+		<Benefit>Reduce two-weapon fighting penalties</Benefit>
+	</Feat>
+	<Feat name="Two-Weapon Rend" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>Double Slice, Improved Two-Weapon Fighting, base attack bonus +11</Prerequisites>
+		<Benefit>Rend a foe hit by both your weapons</Benefit>
+	</Feat>
+	<Feat name="Unseat" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>Improved Bull Rush, Mounted Combat</Prerequisites>
+		<Benefit>Knock opponents from their mounts</Benefit>
+	</Feat>
+	<Feat name="Vital Strike" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>Base attack bonus +6</Prerequisites>
+		<Benefit>Deal twice the normal damage on a single attack</Benefit>
+	</Feat>
+	<Feat name="Weapon Finesse" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>-</Prerequisites>
+		<Benefit>Use Dex instead of Str on attack rolls with light weapons</Benefit>
+	</Feat>
+	<Feat name="Weapon Focus" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>Proficiency with weapon, base attack bonus +1</Prerequisites>
+		<Benefit>+1 bonus on attack rolls with one weapon</Benefit>
+	</Feat>
+	<Feat name="Weapon Specialization" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>Weapon Focus, 4th-level fighter</Prerequisites>
+		<Benefit>+2 bonus on damage rolls with one weapon</Benefit>
+	</Feat>
+	<Feat name="Whirlwind Attack" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>Dex 13, Combat Expertise, Spring Attack, base attack bonus +4</Prerequisites>
+		<Benefit>Make one melee attack against all foes within reach</Benefit>
+	</Feat>
+	<Feat name="Wind Stance" type="Combat" source="Pathfinder Core Rulebook">
+		<Prerequisites>Dex 15, Dodge, base attack bonus +6</Prerequisites>
+		<Benefit>Gain 20% concealment if you move</Benefit>
+	</Feat>
+	<Feat name="Bleeding Critical" type="Critical" source="Pathfinder Core Rulebook">
+		<Prerequisites>Critical Focus, base attack bonus +11</Prerequisites>
+		<Benefit>Whenever you score a critical hit, the target takes 2d6 bleed</Benefit>
+	</Feat>
+	<Feat name="Blinding Critical" type="Critical" source="Pathfinder Core Rulebook">
+		<Prerequisites>Critical Focus, base attack bonus +15</Prerequisites>
+		<Benefit>Whenever you score a critical hit, the target is blinded</Benefit>
+	</Feat>
+	<Feat name="Deafening Critical" type="Critical" source="Pathfinder Core Rulebook">
+		<Prerequisites>Critical Focus, base attack bonus +13</Prerequisites>
+		<Benefit>Whenever you score a critical hit, the target is deafened</Benefit>
+	</Feat>
+	<Feat name="Exhausting Critical" type="Critical" source="Pathfinder Core Rulebook">
+		<Prerequisites>Tiring Critical, base attack bonus +15</Prerequisites>
+		<Benefit>Whenever you score a critical hit, the target is exhausted</Benefit>
+	</Feat>
+	<Feat name="Sickening Critical" type="Critical" source="Pathfinder Core Rulebook">
+		<Prerequisites>Critical Focus, base attack bonus +11</Prerequisites>
+		<Benefit>Whenever you score a critical hit, the target is sickened</Benefit>
+	</Feat>
+	<Feat name="Staggering Critical" type="Critical" source="Pathfinder Core Rulebook">
+		<Prerequisites>Critical Focus, base attack bonus +13</Prerequisites>
+		<Benefit>Whenever you score a critical hit, the target is staggered</Benefit>
+	</Feat>
+	<Feat name="Stunning Critical" type="Critical" source="Pathfinder Core Rulebook">
+		<Prerequisites>Staggering Critical, base attack bonus +17</Prerequisites>
+		<Benefit>Whenever you score a critical hit, the target is stunned</Benefit>
+	</Feat>
+	<Feat name="Tiring Critical" type="Critical" source="Pathfinder Core Rulebook">
+		<Prerequisites>Critical Focus, base attack bonus +13</Prerequisites>
+		<Benefit>Whenever you score a critical hit, the target is fatigued</Benefit>
+	</Feat>
+	<Feat name="Acrobatic" type="General" source="Pathfinder Core Rulebook">
+		<Prerequisites>-</Prerequisites>
+		<Benefit>+2 bonus on Acrobatics  and Fly  checks</Benefit>
+	</Feat>
+	<Feat name="Acrobatic Steps" type="General" source="Pathfinder Core Rulebook">
+		<Prerequisites>Dex 15, Nimble Moves</Prerequisites>
+		<Benefit>Ignore 20 feet of difficult terrain when you move</Benefit>
+	</Feat>
+	<Feat name="Alertness" type="General" source="Pathfinder Core Rulebook">
+		<Prerequisites>-</Prerequisites>
+		<Benefit>+2 bonus on Perception  and Sense Motive checks </Benefit>
+	</Feat>
+	<Feat name="Alignment Channel" type="General" source="Pathfinder Core Rulebook">
+		<Prerequisites>Channel energy class feature</Prerequisites>
+		<Benefit>Channel energy can heal or harm outsiders</Benefit>
+	</Feat>
+	<Feat name="Animal Affinity" type="General" source="Pathfinder Core Rulebook">
+		<Prerequisites>-</Prerequisites>
+		<Benefit>+2 bonus on Handle Animal and Ride checks</Benefit>
+	</Feat>
+	<Feat name="Armor Proficiency, Heavy" type="General" source="Pathfinder Core Rulebook">
+		<Prerequisites>Armor Proficiency, Medium</Prerequisites>
+		<Benefit>No penalties on attack rolls while wearing heavy armor</Benefit>
+	</Feat>
+	<Feat name="Armor Proficiency, Light" type="General" source="Pathfinder Core Rulebook">
+		<Prerequisites>-</Prerequisites>
+		<Benefit>No penalties on attack rolls while wearing light armor</Benefit>
+	</Feat>
+	<Feat name="Armor Proficiency, Medium" type="General" source="Pathfinder Core Rulebook">
+		<Prerequisites>Armor Proficiency, Light</Prerequisites>
+		<Benefit>No penalties on attack rolls while wearing medium armor</Benefit>
+	</Feat>
+	<Feat name="Athletic" type="General" source="Pathfinder Core Rulebook">
+		<Prerequisites>-</Prerequisites>
+		<Benefit>+2 bonus on Climb and Swim  checks  </Benefit>
+	</Feat>
+	<Feat name="Augment Summoning" type="General" source="Pathfinder Core Rulebook">
+		<Prerequisites>Spell Focus (conjuration)</Prerequisites>
+		<Benefit>Summoned creatures gain +4 Str and Con</Benefit>
+	</Feat>
+	<Feat name="Combat Casting" type="General" source="Pathfinder Core Rulebook">
+		<Prerequisites>-</Prerequisites>
+		<Benefit>+4 bonus on concentration checks for casting defensively</Benefit>
+	</Feat>
+	<Feat name="Command Undead" type="General" source="Pathfinder Core Rulebook">
+		<Prerequisites>Channel negative energy class feature</Prerequisites>
+		<Benefit>Channel energy can be used to control undead</Benefit>
+	</Feat>
+	<Feat name="Deceitful" type="General" source="Pathfinder Core Rulebook">
+		<Prerequisites>-</Prerequisites>
+		<Benefit>+2 bonus on Bluff and Disguise checks </Benefit>
+	</Feat>
+	<Feat name="Deft Hands" type="General" source="Pathfinder Core Rulebook">
+		<Prerequisites>-</Prerequisites>
+		<Benefit>+2 bonus on Disable Device and Sleight of Hand checks</Benefit>
+	</Feat>
+	<Feat name="Diehard" type="General" source="Pathfinder Core Rulebook">
+		<Prerequisites>Endurance</Prerequisites>
+		<Benefit>Automatically stabilize and remain conscious below 0 hp</Benefit>
+	</Feat>
+	<Feat name="Elemental Channel" type="General" source="Pathfinder Core Rulebook">
+		<Prerequisites>Channel energy class feature</Prerequisites>
+		<Benefit>Channel energy can harm or heal elementals</Benefit>
+	</Feat>
+	<Feat name="Endurance" type="General" source="Pathfinder Core Rulebook">
+		<Prerequisites>-</Prerequisites>
+		<Benefit>+4 bonus on checks to avoid nonlethal damage</Benefit>
+	</Feat>
+	<Feat name="Eschew Materials" type="General" source="Pathfinder Core Rulebook">
+		<Prerequisites>-</Prerequisites>
+		<Benefit>Cast spells without material components</Benefit>
+	</Feat>
+	<Feat name="Extra Channel" type="General" source="Pathfinder Core Rulebook">
+		<Prerequisites>Channel energy class feature</Prerequisites>
+		<Benefit>Channel energy two additional times per day</Benefit>
+	</Feat>
+	<Feat name="Extra Ki" type="General" source="Pathfinder Core Rulebook">
+		<Prerequisites>Ki pool class feature</Prerequisites>
+		<Benefit>Increase your ki pool by 2 points </Benefit>
+	</Feat>
+	<Feat name="Extra Lay On Hands" type="General" source="Pathfinder Core Rulebook">
+		<Prerequisites>Lay on hands class feature</Prerequisites>
+		<Benefit>Use lay on hands two additional times per day</Benefit>
+	</Feat>
+	<Feat name="Extra Mercy" type="General" source="Pathfinder Core Rulebook">
+		<Prerequisites>Mercy class feature</Prerequisites>
+		<Benefit>Your lay on hands benefits from one additional mercy</Benefit>
+	</Feat>
+	<Feat name="Extra Performance" type="General" source="Pathfinder Core Rulebook">
+		<Prerequisites>Bardic performance class feature</Prerequisites>
+		<Benefit>Use bardic performance for 6 additional rounds per day</Benefit>
+	</Feat>
+	<Feat name="Extra Rage" type="General" source="Pathfinder Core Rulebook">
+		<Prerequisites>Rage class feature</Prerequisites>
+		<Benefit>Use rage for 6 additional rounds per day</Benefit>
+	</Feat>
+	<Feat name="Fleet" type="General" source="Pathfinder Core Rulebook">
+		<Prerequisites>-</Prerequisites>
+		<Benefit>Your base speed increases by 5 feet</Benefit>
+	</Feat>
+	<Feat name="Great Fortitude" type="General" source="Pathfinder Core Rulebook">
+		<Prerequisites>-</Prerequisites>
+		<Benefit>+2 on Fortitude saves </Benefit>
+	</Feat>
+	<Feat name="Greater Spell Focus" type="General" source="Pathfinder Core Rulebook">
+		<Prerequisites>Spell Focus</Prerequisites>
+		<Benefit>+1 bonus on save DCs for one school</Benefit>
+	</Feat>
+	<Feat name="Greater Spell Penetration" type="General" source="Pathfinder Core Rulebook">
+		<Prerequisites>Spell Penetration</Prerequisites>
+		<Benefit>+2 bonus on level checks to beat spell resistance</Benefit>
+	</Feat>
+	<Feat name="Improved Channel" type="General" source="Pathfinder Core Rulebook">
+		<Prerequisites>Channel energy class feature</Prerequisites>
+		<Benefit>+2 bonus on channel energy DC</Benefit>
+	</Feat>
+	<Feat name="Improved Counterspell" type="General" source="Pathfinder Core Rulebook">
+		<Prerequisites>-</Prerequisites>
+		<Benefit>Counterspell with spell of the same school</Benefit>
+	</Feat>
+	<Feat name="Improved Familiar" type="General" source="Pathfinder Core Rulebook">
+		<Prerequisites>Ability to acquire a familiar, see feat</Prerequisites>
+		<Benefit>Gain a more powerful familiar</Benefit>
+	</Feat>
+	<Feat name="Improved Great Fortitude" type="General" source="Pathfinder Core Rulebook">
+		<Prerequisites>Great Fortitude</Prerequisites>
+		<Benefit>Once per day, you may reroll a Fortitude save</Benefit>
+	</Feat>
+	<Feat name="Improved Iron Will" type="General" source="Pathfinder Core Rulebook">
+		<Prerequisites>Iron Will</Prerequisites>
+		<Benefit>Once per day, you may reroll a Will save </Benefit>
+	</Feat>
+	<Feat name="Improved Lightning Reflexes" type="General" source="Pathfinder Core Rulebook">
+		<Prerequisites>Lightning Reflexes</Prerequisites>
+		<Benefit>Once per day, you may reroll a Reflex save  </Benefit>
+	</Feat>
+	<Feat name="Iron Will" type="General" source="Pathfinder Core Rulebook">
+		<Prerequisites>-</Prerequisites>
+		<Benefit>+2 bonus on Will saves </Benefit>
+	</Feat>
+	<Feat name="Leadership" type="General" source="Pathfinder Core Rulebook">
+		<Prerequisites>Character level 7th</Prerequisites>
+		<Benefit>Gain a cohort and followers</Benefit>
+	</Feat>
+	<Feat name="Lightning Reflexes" type="General" source="Pathfinder Core Rulebook">
+		<Prerequisites>-</Prerequisites>
+		<Benefit>+2 bonus on Reflex saves </Benefit>
+	</Feat>
+	<Feat name="Magical Aptitude" type="General" source="Pathfinder Core Rulebook">
+		<Prerequisites>-</Prerequisites>
+		<Benefit>+2 bonus on Spellcraft  and Use Magic Device checks </Benefit>
+	</Feat>
+	<Feat name="Martial Weapon Proficiency" type="General" source="Pathfinder Core Rulebook">
+		<Prerequisites>-</Prerequisites>
+		<Benefit>No penalty on attacks made with one martial weapon</Benefit>
+	</Feat>
+	<Feat name="Master Craftsman" type="General" source="Pathfinder Core Rulebook">
+		<Prerequisites>5 ranks in any Craft or Profession skill</Prerequisites>
+		<Benefit>You can craft magic items without being a spellcaster</Benefit>
+	</Feat>
+	<Feat name="Natural Spell" type="General" source="Pathfinder Core Rulebook">
+		<Prerequisites>Wis 13, wild shape class feature</Prerequisites>
+		<Benefit>Cast spells while using wild shape</Benefit>
+	</Feat>
+	<Feat name="Nimble Moves" type="General" source="Pathfinder Core Rulebook">
+		<Prerequisites>Dex 13</Prerequisites>
+		<Benefit>Ignore 5 feet of difficult terrain when you move</Benefit>
+	</Feat>
+	<Feat name="Persuasive" type="General" source="Pathfinder Core Rulebook">
+		<Prerequisites>-</Prerequisites>
+		<Benefit>+2 bonus on Diplomacy and Intimidate checks</Benefit>
+	</Feat>
+	<Feat name="Run" type="General" source="Pathfinder Core Rulebook">
+		<Prerequisites>-</Prerequisites>
+		<Benefit>Run at 5 times your normal speed</Benefit>
+	</Feat>
+	<Feat name="Selective Channeling" type="General" source="Pathfinder Core Rulebook">
+		<Prerequisites>Cha 13, channel energy class feature</Prerequisites>
+		<Benefit>Choose whom to affect with channel energy</Benefit>
+	</Feat>
+	<Feat name="Self-Sufficient" type="General" source="Pathfinder Core Rulebook">
+		<Prerequisites>-</Prerequisites>
+		<Benefit>+2 bonus on Heal and Survival  checks </Benefit>
+	</Feat>
+	<Feat name="Shield Proficiency" type="General" source="Pathfinder Core Rulebook">
+		<Prerequisites>-</Prerequisites>
+		<Benefit>No penalties on attack rolls when using a shield</Benefit>
+	</Feat>
+	<Feat name="Simple Weapon Proficiency" type="General" source="Pathfinder Core Rulebook">
+		<Prerequisites>-</Prerequisites>
+		<Benefit>No penalty on attacks made with simple weapons</Benefit>
+	</Feat>
+	<Feat name="Skill Focus" type="General" source="Pathfinder Core Rulebook">
+		<Prerequisites>-</Prerequisites>
+		<Benefit>+3 bonus on one skill (+6 at 10 ranks)</Benefit>
+	</Feat>
+	<Feat name="Spell Focus" type="General" source="Pathfinder Core Rulebook">
+		<Prerequisites>-</Prerequisites>
+		<Benefit>+1 bonus on save DCs for one school</Benefit>
+	</Feat>
+	<Feat name="Spell Mastery" type="General" source="Pathfinder Core Rulebook">
+		<Prerequisites>1st-level Wizard</Prerequisites>
+		<Benefit>Prepare some spells without a spellbook</Benefit>
+	</Feat>
+	<Feat name="Spell Penetration" type="General" source="Pathfinder Core Rulebook">
+		<Prerequisites>-</Prerequisites>
+		<Benefit>+2 bonus on level checks to beat spell resistance</Benefit>
+	</Feat>
+	<Feat name="Stealthy" type="General" source="Pathfinder Core Rulebook">
+		<Prerequisites>-</Prerequisites>
+		<Benefit>+2 bonus on Escape Artist and Stealth checks</Benefit>
+	</Feat>
+	<Feat name="Toughness" type="General" source="Pathfinder Core Rulebook">
+		<Prerequisites>-</Prerequisites>
+		<Benefit>+3 hit points, +1 per Hit Die beyond 3</Benefit>
+	</Feat>
+	<Feat name="Turn Undead" type="General" source="Pathfinder Core Rulebook">
+		<Prerequisites>Channel positive energy class feature</Prerequisites>
+		<Benefit>Channel energy can be used to make undead flee</Benefit>
+	</Feat>
+	<Feat name="Brew Potion" type="Item Creation" source="Pathfinder Core Rulebook">
+		<Prerequisites>Caster level 3rd</Prerequisites>
+		<Benefit>Create magic potions</Benefit>
+	</Feat>
+	<Feat name="Craft Magic Arms and Armor" type="Item Creation" source="Pathfinder Core Rulebook">
+		<Prerequisites>Caster level 5th</Prerequisites>
+		<Benefit>Create magic armors, shields, and weapons</Benefit>
+	</Feat>
+	<Feat name="Craft Rod" type="Item Creation" source="Pathfinder Core Rulebook">
+		<Prerequisites>Caster level 9th</Prerequisites>
+		<Benefit>Create magic rods</Benefit>
+	</Feat>
+	<Feat name="Craft Staff" type="Item Creation" source="Pathfinder Core Rulebook">
+		<Prerequisites>Caster level 11th</Prerequisites>
+		<Benefit>Create magic staves</Benefit>
+	</Feat>
+	<Feat name="Craft Wand" type="Item Creation" source="Pathfinder Core Rulebook">
+		<Prerequisites>Caster level 5th</Prerequisites>
+		<Benefit>Create magic wands</Benefit>
+	</Feat>
+	<Feat name="Craft Wondrous Item" type="Item Creation" source="Pathfinder Core Rulebook">
+		<Prerequisites>Caster level 3rd</Prerequisites>
+		<Benefit>Create magic wondrous items</Benefit>
+	</Feat>
+	<Feat name="Forge Ring" type="Item Creation" source="Pathfinder Core Rulebook">
+		<Prerequisites>Caster level 7th</Prerequisites>
+		<Benefit>Create magic rings.</Benefit>
+	</Feat>
+	<Feat name="Scribe Scroll" type="Item Creation" source="Pathfinder Core Rulebook">
+		<Prerequisites>Caster level 1st</Prerequisites>
+		<Benefit>Create magic scrolls</Benefit>
+	</Feat>
+	<Feat name="Empower Spell" type="Metamagic" source="Pathfinder Core Rulebook">
+		<Prerequisites>-</Prerequisites>
+		<Benefit>Increase spell variables by 50%</Benefit>
+	</Feat>
+	<Feat name="Enlarge Spell" type="Metamagic" source="Pathfinder Core Rulebook">
+		<Prerequisites>-</Prerequisites>
+		<Benefit>Double spell range</Benefit>
+	</Feat>
+	<Feat name="Extend Spell" type="Metamagic" source="Pathfinder Core Rulebook">
+		<Prerequisites>-</Prerequisites>
+		<Benefit>Double spell duration</Benefit>
+	</Feat>
+	<Feat name="Heighten Spell" type="Metamagic" source="Pathfinder Core Rulebook">
+		<Prerequisites>-</Prerequisites>
+		<Benefit>Treat spell as a higher level</Benefit>
+	</Feat>
+	<Feat name="Maximize Spell" type="Metamagic" source="Pathfinder Core Rulebook">
+		<Prerequisites>-</Prerequisites>
+		<Benefit>Maximize spell variables</Benefit>
+	</Feat>
+	<Feat name="Quicken Spell" type="Metamagic" source="Pathfinder Core Rulebook">
+		<Prerequisites>-</Prerequisites>
+		<Benefit>Cast spell as a swift action</Benefit>
+	</Feat>
+	<Feat name="Silent Spell" type="Metamagic" source="Pathfinder Core Rulebook">
+		<Prerequisites>-</Prerequisites>
+		<Benefit>Cast spell without verbal components</Benefit>
+	</Feat>
+	<Feat name="Still Spell" type="Metamagic" source="Pathfinder Core Rulebook">
+		<Prerequisites>-</Prerequisites>
+		<Benefit>Cast spell without somatic components</Benefit>
+	</Feat>
+	<Feat name="Widen Spell" type="Metamagic" source="Pathfinder Core Rulebook">
+		<Prerequisites>-</Prerequisites>
+		<Benefit>Double spell area</Benefit>
+	</Feat>
+	<Feat name="Ability Focus" type="Monster" source="Pathfinder Core Rulebook">
+		<Prerequisites>Special attack.</Prerequisites>
+		<Benefit>+2 bonus to DC for saving throws against a monsters special ability.</Benefit>
+	</Feat>
+	<Feat name="Awesome Blow" type="Monster" source="Pathfinder Core Rulebook">
+		<Prerequisites>Str 25, Power Attack, Improved Bull Rush, size Large or larger.</Prerequisites>
+		<Benefit>Knock an opponent 10 feet away and prone.</Benefit>
+	</Feat>
+	<Feat name="Craft Construct" type="Monster" source="Pathfinder Core Rulebook">
+		<Prerequisites>Caster level 5th, Craft Magic Arms and Armor, Craft Wondrous Item.</Prerequisites>
+		<Benefit>You can create any construct whose prerequisites you meet.</Benefit>
+	</Feat>
+	<Feat name="Empower Spell-Like Ability" type="Monster" source="Pathfinder Core Rulebook">
+		<Prerequisites>Spell-like ability at caster level 6th or higher.</Prerequisites>
+		<Benefit>Choose one of the creature's spell-like abilities, subject to the restrictions below. The creature can use that ability as an empowered spell-like ability three times per day (or less, if the ability is normally usable only once or twice per day).</Benefit>
+	</Feat>
+	<Feat name="Flyby Attack" type="Monster" source="Pathfinder Core Rulebook">
+		<Prerequisites>Fly speed.</Prerequisites>
+		<Benefit>When flying, the creature can take a move action and another standard action at any point during the move. The creature cannot take a second move action during a round when it makes a flyby attack.</Benefit>
+	</Feat>
+	<Feat name="Hover" type="Monster" source="Pathfinder Core Rulebook">
+		<Prerequisites>Fly speed.</Prerequisites>
+		<Benefit>This creature can hover in place with ease and can kick up clouds of dust and debris.</Benefit>
+	</Feat>
+	<Feat name="Improved Natural Armor" type="Monster" source="Pathfinder Core Rulebook">
+		<Prerequisites>Natural armor, Con 13.</Prerequisites>
+		<Benefit>The creature's natural armor bonus increases by +1.</Benefit>
+	</Feat>
+	<Feat name="Improved Natural Attack" type="Monster" source="Pathfinder Core Rulebook">
+		<Prerequisites>Natural weapon, base attack bonus +4.</Prerequisites>
+		<Benefit>Increase damage from one of a creatures natural attacks by one step.</Benefit>
+	</Feat>
+	<Feat name="Multiattack" type="Monster" source="Pathfinder Core Rulebook">
+		<Prerequisites>Three or more natural attacks.</Prerequisites>
+		<Benefit>The creature's secondary attacks with natural weapons take only a äóñ2 penalty.</Benefit>
+	</Feat>
+	<Feat name="Multiweapon Fighting" type="Monster" source="Pathfinder Core Rulebook">
+		<Prerequisites>Dex 13, three or more hands.</Prerequisites>
+		<Benefit>Penalties for fighting with multiple weapons are reduced by äóñ2 with the primary hand and by äóñ6 with off hands.</Benefit>
+	</Feat>
+	<Feat name="Noxious Bite" type="Monster" source="Pathfinder Core Rulebook">
+		<Prerequisites>Acidic breath weapon, bite attack</Prerequisites>
+		<Benefit>Deal extra acid damage with your bite attack along with nauseating the enemy.</Benefit>
+	</Feat>
+	<Feat name="Quicken Spell-Like Ability" type="Monster" source="Pathfinder Core Rulebook">
+		<Prerequisites>Spell-like ability at CL 10th or higher.</Prerequisites>
+		<Benefit>One of a creatures spell-like abilities is usable as a swift action.</Benefit>
+	</Feat>
+	<Feat name="Snatch" type="Monster" source="Pathfinder Core Rulebook">
+		<Prerequisites>Size Huge or larger.</Prerequisites>
+		<Benefit>The creature can start a grapple when it hits with a claw or bite attack, as though it had the grab ability.</Benefit>
+	</Feat>
+	<Feat name="Wingover" type="Monster" source="Pathfinder Core Rulebook">
+		<Prerequisites>Fly speed.</Prerequisites>
+		<Benefit>Once each round, a creature with this feat can turn up to 180 degrees as a free action without making a Fly skill check. This free turn does not consume any additional movement from the creature.</Benefit>
+	</Feat>
+	<Feat name="Additional Traits" type="General" source="Advanced Players Guide">
+		<Prerequisites>„</Prerequisites>
+		<Benefit>Gain two additional character traits</Benefit>
+	</Feat>
+	<Feat name="Arcane Blast" type="General" source="Advanced Players Guide">
+		<Prerequisites>Arcane spellcaster, caster level 10th</Prerequisites>
+		<Benefit>Sacrifice a spell to make a ray attack</Benefit>
+	</Feat>
+	<Feat name="Arcane Shield" type="General" source="Advanced Players Guide">
+		<Prerequisites>Arcane spellcaster, caster level 10th</Prerequisites>
+		<Benefit>Sacrifice a spell to gain deflection bonus to AC</Benefit>
+	</Feat>
+	<Feat name="Arcane Talent" type="General" source="Advanced Players Guide">
+		<Prerequisites>Cha 10; elf, half-elf, or gnome</Prerequisites>
+		<Benefit>Cast a 0-level spell 3 times per day as a spell-like ability</Benefit>
+	</Feat>
+	<Feat name="Aspect of the Beast" type="General" source="Advanced Players Guide">
+		<Prerequisites>Wild shape class feature</Prerequisites>
+		<Benefit>Gain one of four bestial advantages</Benefit>
+	</Feat>
+	<Feat name="Bashing Finish" type="Combat" source="Advanced Players Guide">
+		<Prerequisites>Shield Master, Two-Weapon Fighting, base attack bonus +11</Prerequisites>
+		<Benefit>Make a free shield bash after a critical hit</Benefit>
+	</Feat>
+	<Feat name="Bloody Assault" type="Combat" source="Advanced Players Guide">
+		<Prerequisites>Power Attack, base attack bonus +6</Prerequisites>
+		<Benefit>Trade melee attack bonus for bleed damage</Benefit>
+	</Feat>
+	<Feat name="Bodyguard" type="Combat" source="Advanced Players Guide">
+		<Prerequisites>Combat Reflexes</Prerequisites>
+		<Benefit>Use attack of opportunity to add a bonus to adjacent ally's AC</Benefit>
+	</Feat>
+	<Feat name="In Harm's Way" type="Combat" source="Advanced Players Guide">
+		<Prerequisites>Bodyguard</Prerequisites>
+		<Benefit>Take the damage of a successful attack upon an adjacent ally</Benefit>
+	</Feat>
+	<Feat name="Breadth of Experience" type="General" source="Advanced Players Guide">
+		<Prerequisites>Dwarf, elf, or gnome; 100+ years old</Prerequisites>
+		<Benefit>+2 bonus on all Knowledge and Profession checks</Benefit>
+	</Feat>
+	<Feat name="Bull Rush Strike" type="Combat" source="Advanced Players Guide">
+		<Prerequisites>Improved Bull Rush, base attack bonus +9</Prerequisites>
+		<Benefit>Attempt a bull rush on a successful critical hit</Benefit>
+	</Feat>
+	<Feat name="Charge Through" type="Combat" source="Advanced Players Guide">
+		<Prerequisites>Improved Overrun, base attack bonus +1</Prerequisites>
+		<Benefit>Make overrun as free action while charging</Benefit>
+	</Feat>
+	<Feat name="Childlike" type="General" source="Advanced Players Guide">
+		<Prerequisites>Cha 13, halfling</Prerequisites>
+		<Benefit>+2 on Disguise checks to look like human child, take 10 on Bluff checks</Benefit>
+	</Feat>
+	<Feat name="Cockatrice Strike" type="Combat" source="Advanced Players Guide">
+		<Prerequisites>Medusa's Wrath, base attack bonus +16</Prerequisites>
+		<Benefit>Turn a target to stone with a critical hit</Benefit>
+	</Feat>
+	<Feat name="Combat Patrol" type="Combat" source="Advanced Players Guide">
+		<Prerequisites>Combat Reflexes, Mobility, base attack bonus +5</Prerequisites>
+		<Benefit>Increase threatened area for attack of opportunity</Benefit>
+	</Feat>
+	<Feat name="Cooperative Crafting" type="General" source="Advanced Players Guide">
+		<Prerequisites>1 rank in any Craft skill, any item creation feat</Prerequisites>
+		<Benefit>+2 bonus on Craft or Spellcraft checks while workingtogether</Benefit>
+	</Feat>
+	<Feat name="Cosmopolitan" type="General" source="Advanced Players Guide">
+		<Prerequisites>„</Prerequisites>
+		<Benefit>Read and speak two additional languages</Benefit>
+	</Feat>
+	<Feat name="Covering Defense" type="Combat" source="Advanced Players Guide">
+		<Prerequisites>Shield Focus, base attack bonus +6</Prerequisites>
+		<Benefit>Provide cover to an ally with total defense</Benefit>
+	</Feat>
+	<Feat name="Crippling Critical" type="Combat" source="Advanced Players Guide">
+		<Prerequisites>Critical Focus, base attack bonus +13</Prerequisites>
+		<Benefit>Whenever you score a critical hit, the target's speed is halved</Benefit>
+	</Feat>
+	<Feat name="Crossbow Mastery" type="Combat" source="Advanced Players Guide">
+		<Prerequisites>Dex 15, Rapid Reload, Rapid Shot</Prerequisites>
+		<Benefit>Reload crossbow as free action and make full attacks</Benefit>
+	</Feat>
+	<Feat name="Dastardly Finish" type="Combat" source="Advanced Players Guide">
+		<Prerequisites>Sneak attack +5d6</Prerequisites>
+		<Benefit>Deliver coup de grace to cowering or stunned target</Benefit>
+	</Feat>
+	<Feat name="Dazing Assault" type="Combat" source="Advanced Players Guide">
+		<Prerequisites>Power Attack, base attack bonus +11</Prerequisites>
+		<Benefit>Trade melee attack bonus to daze opponents</Benefit>
+	</Feat>
+	<Feat name="Deep Drinker" type="General" source="Advanced Players Guide">
+		<Prerequisites>Con 13, monk level 11, drunken ki class feature</Prerequisites>
+		<Benefit>Gain 2 temporary ki from drunken ki</Benefit>
+	</Feat>
+	<Feat name="Deepsight" type="General" source="Advanced Players Guide">
+		<Prerequisites>Darkvision 60 feet</Prerequisites>
+		<Benefit>Your darkvision has a range of 120 feet</Benefit>
+	</Feat>
+	<Feat name="Disarming Strike" type="Combat" source="Advanced Players Guide">
+		<Prerequisites>Improved Disarm, base attack bonus +9</Prerequisites>
+		<Benefit>Attempt a disarm on a successful critical hit</Benefit>
+	</Feat>
+	<Feat name="Disrupting Shot" type="Combat" source="Advanced Players Guide">
+		<Prerequisites>Dex 13, Point-Blank Shot, 6th-level fighter</Prerequisites>
+		<Benefit>Ranged attacks increase enemy's DC to cast spells</Benefit>
+	</Feat>
+	<Feat name="Diviner's Delving" type="General" source="Advanced Players Guide">
+		<Prerequisites>Spell Focus (divination)</Prerequisites>
+		<Benefit>+2 bonus on caster level checks with divinations</Benefit>
+	</Feat>
+	<Feat name="Eagle Eyes" type="General" source="Advanced Players Guide">
+		<Prerequisites>Wis 13, keen senses racial trait</Prerequisites>
+		<Benefit>Ignore up to _5 due to distance on visual Perception checks</Benefit>
+	</Feat>
+	<Feat name="Eclectic" type="General" source="Advanced Players Guide">
+		<Prerequisites>Human</Prerequisites>
+		<Benefit>Gain an additional favored class</Benefit>
+	</Feat>
+	<Feat name="Eldritch Claws" type="General" source="Advanced Players Guide">
+		<Prerequisites>Str 15, natural weapons, base attack bonus +6</Prerequisites>
+		<Benefit>Natural weapons treated as magic and silver</Benefit>
+	</Feat>
+	<Feat name="Elemental Fist" type="Combat" source="Advanced Players Guide">
+		<Prerequisites>Con 13, Wis 13, Improved Unarmed Strike, base attack bonus +8</Prerequisites>
+		<Benefit>Deal 1d6 energy damage with an unarmed strike</Benefit>
+	</Feat>
+	<Feat name="Elemental Focus" type="General" source="Advanced Players Guide">
+		<Prerequisites>„</Prerequisites>
+		<Benefit>+1 bonus on save DCs for one energy type</Benefit>
+	</Feat>
+	<Feat name="Greater Elemental Focus" type="General" source="Advanced Players Guide">
+		<Prerequisites>Elemental Focus</Prerequisites>
+		<Benefit>+1 bonus on save DCs for one energy type</Benefit>
+	</Feat>
+	<Feat name="Elven Accuracy" type="Combat" source="Advanced Players Guide">
+		<Prerequisites>Elf</Prerequisites>
+		<Benefit>Reroll miss chance due to concealment when using a bow</Benefit>
+	</Feat>
+	<Feat name="Enforcer" type="Combat" source="Advanced Players Guide">
+		<Prerequisites>Intimidate 1 rank</Prerequisites>
+		<Benefit>Demoralize opponent as free action when you inflict nonlethal damage</Benefit>
+	</Feat>
+	<Feat name="Expanded Arcana" type="General" source="Advanced Players Guide">
+		<Prerequisites>Caster level 1st, see feat</Prerequisites>
+		<Benefit>Add one or two spells to list of spells known</Benefit>
+	</Feat>
+	<Feat name="Extra Bombs" type="General" source="Advanced Players Guide">
+		<Prerequisites>Bomb class feature</Prerequisites>
+		<Benefit>Throw two additional bombs per day</Benefit>
+	</Feat>
+	<Feat name="Extra Discovery" type="General" source="Advanced Players Guide">
+		<Prerequisites>Discovery class feature</Prerequisites>
+		<Benefit>Gain one additional discovery</Benefit>
+	</Feat>
+	<Feat name="Extra Hex" type="General" source="Advanced Players Guide">
+		<Prerequisites>Hex class feature</Prerequisites>
+		<Benefit>Gain one additional hex</Benefit>
+	</Feat>
+	<Feat name="Extra Rage Power" type="General" source="Advanced Players Guide">
+		<Prerequisites>Rage power class feature</Prerequisites>
+		<Benefit>Gain one additional rage power</Benefit>
+	</Feat>
+	<Feat name="Extra Revelation" type="General" source="Advanced Players Guide">
+		<Prerequisites>Revelation class feature</Prerequisites>
+		<Benefit>Gain one additional revelation</Benefit>
+	</Feat>
+	<Feat name="Extra Rogue Talent" type="General" source="Advanced Players Guide">
+		<Prerequisites>Rogue talent class feature</Prerequisites>
+		<Benefit>Gain one additional rogue talent</Benefit>
+	</Feat>
+	<Feat name="Fast Drinker" type="General" source="Advanced Players Guide">
+		<Prerequisites>Con 18, drunken ki class feature</Prerequisites>
+		<Benefit>Drink as a swift action</Benefit>
+	</Feat>
+	<Feat name="Fast Healer" type="General" source="Advanced Players Guide">
+		<Prerequisites>Con 13, Diehard, Endurance</Prerequisites>
+		<Benefit>Regain additional hit points when healing</Benefit>
+	</Feat>
+	<Feat name="Favored Defense" type="General" source="Advanced Players Guide">
+		<Prerequisites>Favored enemy class feature</Prerequisites>
+		<Benefit>Bonus to CMD and AC when attacked by favored enemy</Benefit>
+	</Feat>
+	<Feat name="Fight On" type="General" source="Advanced Players Guide">
+		<Prerequisites>Con 13; dwarf, half-orc, or orc</Prerequisites>
+		<Benefit>Gain temporary hit points when reduced to 0</Benefit>
+	</Feat>
+	<Feat name="Focused Shot" type="Combat" source="Advanced Players Guide">
+		<Prerequisites>Int 13, Precise Shot</Prerequisites>
+		<Benefit>Add Int modifier on damage rolls with bows or crossbows</Benefit>
+	</Feat>
+	<Feat name="Following Step" type="Combat" source="Advanced Players Guide">
+		<Prerequisites>Dex 13, Step Up</Prerequisites>
+		<Benefit>Move up to 10 feet as an immediate action</Benefit>
+	</Feat>
+	<Feat name="Step Up and Strike" type="Combat" source="Advanced Players Guide">
+		<Prerequisites>Following Step, base attack bonus +6</Prerequisites>
+		<Benefit>Follow adjacent creature and attack as an immediate action</Benefit>
+	</Feat>
+	<Feat name="Furious Focus" type="Combat" source="Advanced Players Guide">
+		<Prerequisites>Str 13, Power Attack, base attack bonus +1</Prerequisites>
+		<Benefit>Do not take the Power Attack penalty on the first attack each round</Benefit>
+	</Feat>
+	<Feat name="Dreadful Carnage" type="Combat" source="Advanced Players Guide">
+		<Prerequisites>Str 15, Furious Focus, base attack bonus +11</Prerequisites>
+		<Benefit>Make a free Intimidate check when you knock down a foe</Benefit>
+	</Feat>
+	<Feat name="Gang Up" type="Combat" source="Advanced Players Guide">
+		<Prerequisites>Combat Expertise</Prerequisites>
+		<Benefit>Flank an opponent if at least two allies are adjacent to it</Benefit>
+	</Feat>
+	<Feat name="Team Up" type="Combat" source="Advanced Players Guide">
+		<Prerequisites>Gang-Up, base attack bonus +6</Prerequisites>
+		<Benefit>Aid another as a move action with two adjacent allies</Benefit>
+	</Feat>
+	<Feat name="Gnome Trickster" type="General" source="Advanced Players Guide">
+		<Prerequisites>Cha 13, gnome, gnome magic racial trait</Prerequisites>
+		<Benefit>Use mage hand and prestidigitation once per day</Benefit>
+	</Feat>
+	<Feat name="Go Unnoticed" type="General" source="Advanced Players Guide">
+		<Prerequisites>Dex 13, Small size or smaller</Prerequisites>
+		<Benefit>Make Stealth check against flat-footed opponents during first round of combat</Benefit>
+	</Feat>
+	<Feat name="Groundling" type="General" source="Advanced Players Guide">
+		<Prerequisites>Cha 13, gnome, gnome magic racial trait</Prerequisites>
+		<Benefit>Speak with burrowing animals as spell-like ability</Benefit>
+	</Feat>
+	<Feat name="Heroic Defiance" type="General" source="Advanced Players Guide">
+		<Prerequisites>Diehard, base Fortitude save +8</Prerequisites>
+		<Benefit>Once per day, delay onset of harmful condition for 1 round</Benefit>
+	</Feat>
+	<Feat name="Heroic Recovery" type="General" source="Advanced Players Guide">
+		<Prerequisites>Diehard, base Fortitude save +4</Prerequisites>
+		<Benefit>Once per day, gain new saving throw against harmful condition requiring Fort save</Benefit>
+	</Feat>
+	<Feat name="Improved Blind-Fight" type="Combat" source="Advanced Players Guide">
+		<Prerequisites>Perception 10 ranks, Blind-Fight</Prerequisites>
+		<Benefit>Ignore miss chance for less than total concealment</Benefit>
+	</Feat>
+	<Feat name="Greater Blind-Fight" type="Combat" source="Advanced Players Guide">
+		<Prerequisites>Perception 15 ranks, Improved Blind-Fight</Prerequisites>
+		<Benefit>Total concealment is considered normal concealment</Benefit>
+	</Feat>
+	<Feat name="Improved Dirty Trick" type="Combat" source="Advanced Players Guide">
+		<Prerequisites>Combat Expertise</Prerequisites>
+		<Benefit>+2 bonus on dirty trick attempts, no attack of opportunity</Benefit>
+	</Feat>
+	<Feat name="Greater Dirty Trick" type="Combat" source="Advanced Players Guide">
+		<Prerequisites>Improved Dirty Trick, base attack bonus +6</Prerequisites>
+		<Benefit>Dirty trick penalty lasts 1d4 rounds</Benefit>
+	</Feat>
+	<Feat name="Improved Drag" type="Combat" source="Advanced Players Guide">
+		<Prerequisites>Power Attack</Prerequisites>
+		<Benefit>+2 bonus on drag attempts, no attack of opportunity</Benefit>
+	</Feat>
+	<Feat name="Greater Drag" type="Combat" source="Advanced Players Guide">
+		<Prerequisites>Improved Drag, base attack bonus +6</Prerequisites>
+		<Benefit>Enemies you drag provoke attacks of opportunity</Benefit>
+	</Feat>
+	<Feat name="Improved Reposition" type="Combat" source="Advanced Players Guide">
+		<Prerequisites>Combat Expertise</Prerequisites>
+		<Benefit>+2 bonus on reposition attempts, no attack of opportunity</Benefit>
+	</Feat>
+	<Feat name="Greater Reposition" type="Combat" source="Advanced Players Guide">
+		<Prerequisites>Improved Reposition, base attack bonus +6</Prerequisites>
+		<Benefit>Enemies you reposition provoke attacks of opportunity</Benefit>
+	</Feat>
+	<Feat name="Improved Share Spells" type="General" source="Advanced Players Guide">
+		<Prerequisites>Spellcraft 10 ranks, see feat</Prerequisites>
+		<Benefit>Spells affect both you and your bonded creature</Benefit>
+	</Feat>
+	<Feat name="Improved Steal" type="Combat" source="Advanced Players Guide">
+		<Prerequisites>Combat Expertise</Prerequisites>
+		<Benefit>+2 bonus on steal attempts, no attack of opportunity</Benefit>
+	</Feat>
+	<Feat name="Greater Steal" type="Combat" source="Advanced Players Guide">
+		<Prerequisites>Improved Steal, base attack bonus +6</Prerequisites>
+		<Benefit>Enemies don't notice theft until after combat</Benefit>
+	</Feat>
+	<Feat name="Improved Stonecunning" type="General" source="Advanced Players Guide">
+		<Prerequisites>Wis 13, dwarf, stonecunning racial trait</Prerequisites>
+		<Benefit>+4 bonus on Perception checks to notice unusual stonework</Benefit>
+	</Feat>
+	<Feat name="Stone Sense" type="General" source="Advanced Players Guide">
+		<Prerequisites>Perception 10 ranks, Improved Stonecunning</Prerequisites>
+		<Benefit>Gain tremorsense 10 ft.</Benefit>
+	</Feat>
+	<Feat name="Ironguts" type="General" source="Advanced Players Guide">
+		<Prerequisites>Con 13; dwarf, half-orc, or orc</Prerequisites>
+		<Benefit>+2 on saves against nausea, sickening, and ingested poisons</Benefit>
+	</Feat>
+	<Feat name="Ironhide" type="General" source="Advanced Players Guide">
+		<Prerequisites>Con 13; dwarf, half-orc, or orc</Prerequisites>
+		<Benefit>+1 natural armor bonus to AC</Benefit>
+	</Feat>
+	<Feat name="Keen Scent" type="General" source="Advanced Players Guide">
+		<Prerequisites>Wis 13, half-orc or orc</Prerequisites>
+		<Benefit>Gain the scent special ability</Benefit>
+	</Feat>
+	<Feat name="Smell Fear" type="General" source="Advanced Players Guide">
+		<Prerequisites>Keen Scent, half-orc or orc</Prerequisites>
+		<Benefit>+4 on Perception checks to detect frightened creatures</Benefit>
+	</Feat>
+	<Feat name="Ki Throw" type="Combat" source="Advanced Players Guide">
+		<Prerequisites>Improved Trip, Improved Unarmed Strike</Prerequisites>
+		<Benefit>Throw opponent into adjacent square with a trip attack</Benefit>
+	</Feat>
+	<Feat name="Improved Ki Throw" type="Combat" source="Advanced Players Guide">
+		<Prerequisites>Improved Bull Rush, Ki Throw</Prerequisites>
+		<Benefit>Throw opponent into occupied square as a bull rush</Benefit>
+	</Feat>
+	<Feat name="Leaf Singer" type="General" source="Advanced Players Guide">
+		<Prerequisites>Cha 13, bardic performance, elf or half-elf</Prerequisites>
+		<Benefit>Gain benefits to bardic performance in forests and against fey</Benefit>
+	</Feat>
+	<Feat name="Light Step" type="General" source="Advanced Players Guide">
+		<Prerequisites>Acrobatic Steps, Nimble Moves, elf</Prerequisites>
+		<Benefit>Move normal speed in difficult terrain</Benefit>
+	</Feat>
+	<Feat name="Lingering Performance" type="General" source="Advanced Players Guide">
+		<Prerequisites>Bardic performance class ability</Prerequisites>
+		<Benefit>Bardic performance continues for 2 rounds after you stop performing</Benefit>
+	</Feat>
+	<Feat name="Low Profile" type="Combat" source="Advanced Players Guide">
+		<Prerequisites>Dex 13, Small size or smaller</Prerequisites>
+		<Benefit>+1 dodge bonus to AC against ranged attacks</Benefit>
+	</Feat>
+	<Feat name="Lucky Halfling" type="General" source="Advanced Players Guide">
+		<Prerequisites>Halfling</Prerequisites>
+		<Benefit>You may roll saving throw for an ally once per day</Benefit>
+	</Feat>
+	<Feat name="Master Alchemist" type="General" source="Advanced Players Guide">
+		<Prerequisites>Craft (alchemy) 5 ranks</Prerequisites>
+		<Benefit>+2 on Craft (alchemy) checks, and you can create alchemical items and poisons faster</Benefit>
+	</Feat>
+	<Feat name="Minor Spell Expertise" type="General" source="Advanced Players Guide">
+		<Prerequisites>Cast 4th-level spells</Prerequisites>
+		<Benefit>Cast 1st-level spell as spell-like ability 2/day</Benefit>
+	</Feat>
+	<Feat name="Major Spell Expertise" type="General" source="Advanced Players Guide">
+		<Prerequisites>Minor Spell Expertise, cast 9th-level spells</Prerequisites>
+		<Benefit>Cast 5th-level or lower spell as spell-like ability 2/day</Benefit>
+	</Feat>
+	<Feat name="Missile Shield" type="Combat" source="Advanced Players Guide">
+		<Prerequisites>Dex 13, Shield Focus</Prerequisites>
+		<Benefit>Deflect one ranged attack per round with shield</Benefit>
+	</Feat>
+	<Feat name="Ray Shield" type="Combat" source="Advanced Players Guide">
+		<Prerequisites>Dex 15, Missile Shield, Spellbreaker</Prerequisites>
+		<Benefit>Deflect one ranged touch attack per round with shield</Benefit>
+	</Feat>
+	<Feat name="Mounted Shield" type="Combat" source="Advanced Players Guide">
+		<Prerequisites>Mounted Combat, Shield Focus</Prerequisites>
+		<Benefit>Apply shield bonus to mount's AC</Benefit>
+	</Feat>
+	<Feat name="Parry Spell" type="General" source="Advanced Players Guide">
+		<Prerequisites>Spellcraft 15 ranks, Improved Counterspell</Prerequisites>
+		<Benefit>Reflect a counterspelled spell back on its caster</Benefit>
+	</Feat>
+	<Feat name="Parting Shot" type="Combat" source="Advanced Players Guide">
+		<Prerequisites>Shot on the Run, base attack bonus +6</Prerequisites>
+		<Benefit>Make a ranged attack when withdrawing</Benefit>
+	</Feat>
+	<Feat name="Pass for Human" type="General" source="Advanced Players Guide">
+		<Prerequisites>Half-elf, half-orc, or halfling</Prerequisites>
+		<Benefit>+10 on Disguise checks to look like a human</Benefit>
+	</Feat>
+	<Feat name="Perfect Strike" type="Combat" source="Advanced Players Guide">
+		<Prerequisites>Dex 13, Wis 13, Improved Unarmed Strike, base attack bonus +8</Prerequisites>
+		<Benefit>Roll twice for attacks with monk weapons and take the better roll</Benefit>
+	</Feat>
+	<Feat name="Point-Blank Master" type="Combat" source="Advanced Players Guide">
+		<Prerequisites>Weapon Specialization with a ranged weapon</Prerequisites>
+		<Benefit>Do not provoke attacks of opportunity while firing one ranged weapon</Benefit>
+	</Feat>
+	<Feat name="Practiced Tactician" type="General" source="Advanced Players Guide">
+		<Prerequisites>Tactician class feature</Prerequisites>
+		<Benefit>Use tactician ability one additional time per day</Benefit>
+	</Feat>
+	<Feat name="Preferred Spell" type="General" source="Advanced Players Guide">
+		<Prerequisites>Spellcraft 5 ranks, Heighten Spell</Prerequisites>
+		<Benefit>Spontaneously cast a specific spell</Benefit>
+	</Feat>
+	<Feat name="Punishing Kick" type="Combat" source="Advanced Players Guide">
+		<Prerequisites>Con 13, Wis 13, Improved Unarmed Strike, base attack bonus +8</Prerequisites>
+		<Benefit>Knock down or push back foes with unarmed strikes</Benefit>
+	</Feat>
+	<Feat name="Pushing Assault" type="Combat" source="Advanced Players Guide">
+		<Prerequisites>Str 15, Power Attack, base attack bonus +1</Prerequisites>
+		<Benefit>Push a foe back with a two-handed weapon</Benefit>
+	</Feat>
+	<Feat name="Racial Heritage" type="General" source="Advanced Players Guide">
+		<Prerequisites>Human</Prerequisites>
+		<Benefit>Affected as though both human and another race</Benefit>
+	</Feat>
+	<Feat name="Raging Vitality" type="General" source="Advanced Players Guide">
+		<Prerequisites>Con 15, rage class feature</Prerequisites>
+		<Benefit>+2 bonus to Con when raging, and continue raging if unconscious</Benefit>
+	</Feat>
+	<Feat name="Razortusk" type="General" source="Advanced Players Guide">
+		<Prerequisites>Half-orc</Prerequisites>
+		<Benefit>Gain bite attack</Benefit>
+	</Feat>
+	<Feat name="Rending Claws" type="Combat" source="Advanced Players Guide">
+		<Prerequisites>Str 13, two claw attacks, base attack bonus +6</Prerequisites>
+		<Benefit>Deal 1d6 extra damage if both claws hit</Benefit>
+	</Feat>
+	<Feat name="Repositioning Strike" type="Combat" source="Advanced Players Guide">
+		<Prerequisites>Improved Repostion, base attack bonus +9</Prerequisites>
+		<Benefit>Attempt a reposition attack on a successful critical hit</Benefit>
+	</Feat>
+	<Feat name="Saving Shield" type="Combat" source="Advanced Players Guide">
+		<Prerequisites>Shield Proficiency</Prerequisites>
+		<Benefit>Grant shield bonus to an adjacent ally</Benefit>
+	</Feat>
+	<Feat name="Second Chance" type="Combat" source="Advanced Players Guide">
+		<Prerequisites>Combat Expertise, base attack bonus +6</Prerequisites>
+		<Benefit>Exchange later attacks to reroll missed first attack</Benefit>
+	</Feat>
+	<Feat name="Improved Second Chance" type="Combat" source="Advanced Players Guide">
+		<Prerequisites>Second Chance, base attack bonus +11</Prerequisites>
+		<Benefit>Take a _5 penalty on later attacks to reroll missed attack</Benefit>
+	</Feat>
+	<Feat name="Shadow Strike" type="Combat" source="Advanced Players Guide">
+		<Prerequisites>Base attack bonus +1</Prerequisites>
+		<Benefit>Deal precision damage against targets with concealment</Benefit>
+	</Feat>
+	<Feat name="Shared Insight" type="General" source="Advanced Players Guide">
+		<Prerequisites>Wis 13, half-elf</Prerequisites>
+		<Benefit>Grant friendly creatures a +2 bonus on Perception checks</Benefit>
+	</Feat>
+	<Feat name="Sharp Senses" type="General" source="Advanced Players Guide">
+		<Prerequisites>Keen senses racial trait</Prerequisites>
+		<Benefit>+4 racial bonus on Perception checks</Benefit>
+	</Feat>
+	<Feat name="Shield of Swings" type="Combat" source="Advanced Players Guide">
+		<Prerequisites>Str 13, Power Attack, base attack bonus +1</Prerequisites>
+		<Benefit>Reduce damage with a two handed weapon to gain a +4 shield bonus</Benefit>
+	</Feat>
+	<Feat name="Shield Specialization" type="Combat" source="Advanced Players Guide">
+		<Prerequisites>Shield Focus, 4th-level fighter</Prerequisites>
+		<Benefit>+2 bonus to AC against criticals with one type of shield</Benefit>
+	</Feat>
+	<Feat name="Greater Shield Specialization" type="Combat" source="Advanced Players Guide">
+		<Prerequisites>Greater Shield Focus, Shield Specialization, 12th-level fighter</Prerequisites>
+		<Benefit>+2 bonus to AC against criticals, and negate critical hit once per day</Benefit>
+	</Feat>
+	<Feat name="Sidestep" type="Combat" source="Advanced Players Guide">
+		<Prerequisites>Dex 13, Dodge, Mobility</Prerequisites>
+		<Benefit>Make 5-foot step immediately after an opponent misses</Benefit>
+	</Feat>
+	<Feat name="Improved Sidestep" type="Combat" source="Advanced Players Guide">
+		<Prerequisites>Dex 15, Sidestep</Prerequisites>
+		<Benefit>Sidestep without using your 5-foot step on your next turn</Benefit>
+	</Feat>
+	<Feat name="Smash" type="Combat" source="Advanced Players Guide">
+		<Prerequisites>Power Attack, half-orc</Prerequisites>
+		<Benefit>Ignore 5 points of hardness when breaking an object</Benefit>
+	</Feat>
+	<Feat name="Sociable" type="General" source="Advanced Players Guide">
+		<Prerequisites>Cha 13, half-elf</Prerequisites>
+		<Benefit>Grant friendly creatures a +2 bonus on Diplomacy checks</Benefit>
+	</Feat>
+	<Feat name="Spell Perfection" type="General" source="Advanced Players Guide">
+		<Prerequisites>Spellcraft 15 ranks, 3 metamagic feats</Prerequisites>
+		<Benefit>Apply any metamagic feat to one spell without penalty, up to 9th level</Benefit>
+	</Feat>
+	<Feat name="Spider Step" type="General" source="Advanced Players Guide">
+		<Prerequisites>Acrobatics 6 ranks, Climb 6 ranks, 6th-level monk</Prerequisites>
+		<Benefit>Walk on walls or ceilings for half your slow fall distance</Benefit>
+	</Feat>
+	<Feat name="Cloud Step" type="General" source="Advanced Players Guide">
+		<Prerequisites>Spider Step, 12th-level monk</Prerequisites>
+		<Benefit>Air walk for half your slow fall distance</Benefit>
+	</Feat>
+	<Feat name="Stabbing Shot" type="Combat" source="Advanced Players Guide">
+		<Prerequisites>Rapid Shot, elf</Prerequisites>
+		<Benefit>Use arrow as a melee attack to push enemies back</Benefit>
+	</Feat>
+	<Feat name="Steel Soul" type="General" source="Advanced Players Guide">
+		<Prerequisites>Dwarf, hardy racial trait</Prerequisites>
+		<Benefit>+4 racial bonus on saves against spells and spell-like abilities</Benefit>
+	</Feat>
+	<Feat name="Stone-Faced" type="General" source="Advanced Players Guide">
+		<Prerequisites>Dwarf</Prerequisites>
+		<Benefit>+4 bonus on Bluff checks to lie or conceal motives</Benefit>
+	</Feat>
+	<Feat name="Stone Singer" type="General" source="Advanced Players Guide">
+		<Prerequisites>Cha 13, bardic performance, dwarf</Prerequisites>
+		<Benefit>Gain benefits to bardic performance underground and against earth creatures</Benefit>
+	</Feat>
+	<Feat name="Stunning Assault" type="Combat" source="Advanced Players Guide">
+		<Prerequisites>Power Attack, base attack bonus +16</Prerequisites>
+		<Benefit>Trade melee attack bonus to stun opponents</Benefit>
+	</Feat>
+	<Feat name="Summoner's Call" type="General" source="Advanced Players Guide">
+		<Prerequisites>Eidolon class feature</Prerequisites>
+		<Benefit>Your eidolon gets a bonus when summoned</Benefit>
+	</Feat>
+	<Feat name="Sundering Strike" type="Combat" source="Advanced Players Guide">
+		<Prerequisites>Improved Sunder, base attack bonus</Prerequisites>
+		<Benefit>+9 Attempt a sunder attack on a successful critical hit</Benefit>
+	</Feat>
+	<Feat name="Swift Aid" type="Combat" source="Advanced Players Guide">
+		<Prerequisites>Combat Expertise, base attack bonus</Prerequisites>
+		<Benefit>+6 Attempt to aid another as a swift action</Benefit>
+	</Feat>
+	<Feat name="Taunt" type="General" source="Advanced Players Guide">
+		<Prerequisites>Cha 13, Small size or smaller</Prerequisites>
+		<Benefit>Demoralize opponents with Bluff instead of Intimidate</Benefit>
+	</Feat>
+	<Feat name="Teleport Tactician" type="Combat" source="Advanced Players Guide">
+		<Prerequisites>Combat Reflexes, Disruptive, Spellbreaker</Prerequisites>
+		<Benefit>Teleporting creatures provoke attacks of opportunity</Benefit>
+	</Feat>
+	<Feat name="Tenacious Transmutation" type="General" source="Advanced Players Guide">
+		<Prerequisites>Spell Focus (transmutation)</Prerequisites>
+		<Benefit>+2 to DC to dispel your transmutations</Benefit>
+	</Feat>
+	<Feat name="Touch of Serenity" type="Combat" source="Advanced Players Guide">
+		<Prerequisites>Wis 18, Improved Unarmed Strike, base attack bonus +8</Prerequisites>
+		<Benefit>Foes hit by unarmed strikes cannot attack or cast spells</Benefit>
+	</Feat>
+	<Feat name="Trick Riding" type="Combat" source="Advanced Players Guide">
+		<Prerequisites>Ride rank 9, Mounted Combat</Prerequisites>
+		<Benefit>Automatically pass simple Ride skill checks</Benefit>
+	</Feat>
+	<Feat name="Mounted Skirmisher" type="Combat" source="Advanced Players Guide">
+		<Prerequisites>Ride rank 14, Trick Riding</Prerequisites>
+		<Benefit>Make a full attack if mount moves its speed or less</Benefit>
+	</Feat>
+	<Feat name="Tripping Strike" type="Combat" source="Advanced Players Guide">
+		<Prerequisites>Improved Trip, base attack bonus +9</Prerequisites>
+		<Benefit>Attempt a trip attack on a successful critical hit</Benefit>
+	</Feat>
+	<Feat name="Under and Over" type="Combat" source="Advanced Players Guide">
+		<Prerequisites>Agile Maneuvers, Small size or smaller</Prerequisites>
+		<Benefit>Failed grapples against you cause attacker to fall prone</Benefit>
+	</Feat>
+	<Feat name="Underfoot" type="Combat" source="Advanced Players Guide">
+		<Prerequisites>Dodge, Mobility, Small size or smaller</Prerequisites>
+		<Benefit>+4 on Acrobatics checks to move past larger opponents</Benefit>
+	</Feat>
+	<Feat name="Vermin Heart" type="General" source="Advanced Players Guide">
+		<Prerequisites>Wild empathy class feature</Prerequisites>
+		<Benefit>Target vermin with spells as if they were animals</Benefit>
+	</Feat>
+	<Feat name="War Singer" type="General" source="Advanced Players Guide">
+		<Prerequisites>Cha 13, bardic performance, half-orc or orc</Prerequisites>
+		<Benefit>Gain benefits to bardic performance on battlefields and against orcs</Benefit>
+	</Feat>
+	<Feat name="Well-Prepared" type="General" source="Advanced Players Guide">
+		<Prerequisites>Halfling</Prerequisites>
+		<Benefit>Retrieve a specific mundane item from your person</Benefit>
+	</Feat>
+	<Feat name="Bouncing Spell" type="Metamagic" source="Advanced Players Guide">
+		<Prerequisites>„</Prerequisites>
+		<Benefit>Redirect a spell that had no effect on initial target</Benefit>
+	</Feat>
+	<Feat name="Dazing Spell" type="Metamagic" source="Advanced Players Guide">
+		<Prerequisites>„</Prerequisites>
+		<Benefit>Daze creature with spell damage</Benefit>
+	</Feat>
+	<Feat name="Disruptive Spell" type="Metamagic" source="Advanced Players Guide">
+		<Prerequisites>„</Prerequisites>
+		<Benefit>Target of spell must make concentration check to cast a spell in the next round</Benefit>
+	</Feat>
+	<Feat name="Ectoplasmic Spell" type="Metamagic" source="Advanced Players Guide">
+		<Prerequisites>„</Prerequisites>
+		<Benefit>Spell fully affects incorporeal and ethereal creatures</Benefit>
+	</Feat>
+	<Feat name="Elemental Spell" type="Metamagic" source="Advanced Players Guide">
+		<Prerequisites>„</Prerequisites>
+		<Benefit>Inflict energy damage instead of regular spell damage</Benefit>
+	</Feat>
+	<Feat name="Focused Spell" type="Metamagic" source="Advanced Players Guide">
+		<Prerequisites>„</Prerequisites>
+		<Benefit>Increase save DC of spell for one target in a group</Benefit>
+	</Feat>
+	<Feat name="Intensified Spell" type="Metamagic" source="Advanced Players Guide">
+		<Prerequisites>„</Prerequisites>
+		<Benefit>Increase maximum damage dice by 5 levels</Benefit>
+	</Feat>
+	<Feat name="Lingering Spell" type="Metamagic" source="Advanced Players Guide">
+		<Prerequisites>„</Prerequisites>
+		<Benefit>Instantaneous area effect spell lasts for 1 round</Benefit>
+	</Feat>
+	<Feat name="Merciful Spell" type="Metamagic" source="Advanced Players Guide">
+		<Prerequisites>„</Prerequisites>
+		<Benefit>Spell inflicts nonlethal damage instead of lethal</Benefit>
+	</Feat>
+	<Feat name="Persistent Spell" type="Metamagic" source="Advanced Players Guide">
+		<Prerequisites>„</Prerequisites>
+		<Benefit>Creatures who saved against a spell must save again</Benefit>
+	</Feat>
+	<Feat name="Reach Spell" type="Metamagic" source="Advanced Players Guide">
+		<Prerequisites>„</Prerequisites>
+		<Benefit>Increase spell range to higher range category</Benefit>
+	</Feat>
+	<Feat name="Selective Spell" type="Metamagic" source="Advanced Players Guide">
+		<Prerequisites>Spellcraft 10 ranks</Prerequisites>
+		<Benefit>Exclude targets from an area effect spell</Benefit>
+	</Feat>
+	<Feat name="Sickening Spell" type="Metamagic" source="Advanced Players Guide">
+		<Prerequisites>„</Prerequisites>
+		<Benefit>Sicken creature with spell damage</Benefit>
+	</Feat>
+	<Feat name="Thundering Spell" type="Metamagic" source="Advanced Players Guide">
+		<Prerequisites>„</Prerequisites>
+		<Benefit>Deafen creature with spell damage</Benefit>
+	</Feat>
+	<Feat name="Allied Spellcaster" type="Teamwork" source="Advanced Players Guide">
+		<Prerequisites>Caster level 1st</Prerequisites>
+		<Benefit>+2 bonus on level checks to overcome spell resistance</Benefit>
+	</Feat>
+	<Feat name="Coordinated Defense" type="Teamwork" source="Advanced Players Guide">
+		<Prerequisites>„</Prerequisites>
+		<Benefit>+2 bonus to CMD</Benefit>
+	</Feat>
+	<Feat name="Coordinated Maneuvers" type="Teamwork" source="Advanced Players Guide">
+		<Prerequisites>„</Prerequisites>
+		<Benefit>+2 bonus on combat maneuver checks</Benefit>
+	</Feat>
+	<Feat name="Duck and Cover" type="Teamwork" source="Advanced Players Guide">
+		<Prerequisites>„</Prerequisites>
+		<Benefit>Take ally's result on Reflex saving throw</Benefit>
+	</Feat>
+	<Feat name="Lookout" type="Teamwork" source="Advanced Players Guide">
+		<Prerequisites>„</Prerequisites>
+		<Benefit>Act in surprise round if ally can act</Benefit>
+	</Feat>
+	<Feat name="Outflank" type="Teamwork" source="Advanced Players Guide">
+		<Prerequisites>Base attack bonus +4</Prerequisites>
+		<Benefit>Gain +4 bonus on attack rolls when flanking</Benefit>
+	</Feat>
+	<Feat name="Paired Opportunists" type="Teamwork" source="Advanced Players Guide">
+		<Prerequisites>„</Prerequisites>
+		<Benefit>+4 bonus on attacks of opportunity</Benefit>
+	</Feat>
+	<Feat name="Precise Strike" type="Teamwork" source="Advanced Players Guide">
+		<Prerequisites>Dex 13, base attack bonus +1</Prerequisites>
+		<Benefit>Deal +1d6 points of precision damage with melee attacks</Benefit>
+	</Feat>
+	<Feat name="Shield Wall" type="Teamwork" source="Advanced Players Guide">
+		<Prerequisites>Shield Proficiency</Prerequisites>
+		<Benefit>Increase your shield bonus to AC</Benefit>
+	</Feat>
+	<Feat name="Shielded Caster" type="Teamwork" source="Advanced Players Guide">
+		<Prerequisites>„</Prerequisites>
+		<Benefit>+4 bonus on concentration checks</Benefit>
+	</Feat>
+	<Feat name="Swap Places" type="Teamwork" source="Advanced Players Guide">
+		<Prerequisites>„</Prerequisites>
+		<Benefit>Switch places with an adjacent ally</Benefit>
+	</Feat>
+</Feats>
+</xml>

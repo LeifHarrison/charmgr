@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Skills>
+	<Skill name="Acrobatics" untrained="Yes" armorCheckPenalty="Yes" keyAbility="Dex">
+		<ShortDescription>You can keep your balance while traversing narrow or treacherous surfaces. You can also dive, flip, jump, and roll to avoid attacks and overcome obstacles.</ShortDescription>
+		<LongDescription></LongDescription>
+		<URL>http://paizo.com/pathfinderRPG/prd/skills/acrobatics.html</URL>
+	</Skill>
+	<Skill name="Appraise" untrained="Yes" armorCheckPenalty="No" keyAbility="Int">
+			<ShortDescription>You can evaluate the monetary value of an object.</ShortDescription>
+			<LongDescription></LongDescription>
+			<URL>http://paizo.com/pathfinderRPG/prd/skills/Appraise.html</URL>
+		</Skill>
+	<Skill name="Bluff" untrained="Yes" armorCheckPenalty="No" keyAbility="Cha">
+			<ShortDescription></ShortDescription>
+			<LongDescription></LongDescription>
+			<URL>http://paizo.com/pathfinderRPG/prd/skills/Bluff.html</URL>
+		</Skill>
+	<Skill name="Climb" untrained="Yes" armorCheckPenalty="Yes" keyAbility="Str">
+			<ShortDescription></ShortDescription>
+			<LongDescription></LongDescription>
+			<URL>http://paizo.com/pathfinderRPG/prd/skills/Climb.html</URL>
+		</Skill>
+	<Skill name="Craft" untrained="Yes" armorCheckPenalty="No" requiresDetail="Yes" keyAbility="Int">
+			<ShortDescription></ShortDescription>
+			<LongDescription></LongDescription>
+			<URL>http://paizo.com/pathfinderRPG/prd/skills/Craft.html</URL>
+		</Skill>
+	<Skill name="Diplomacy" untrained="Yes" armorCheckPenalty="No" keyAbility="Cha">
+			<ShortDescription></ShortDescription>
+			<LongDescription></LongDescription>
+			<URL>http://paizo.com/pathfinderRPG/prd/skills/Diplomacy.html</URL>
+		</Skill>
+	<Skill name="Disable Device" untrained="No" armorCheckPenalty="Yes" keyAbility="Dex">
+			<ShortDescription></ShortDescription>
+			<LongDescription></LongDescription>
+			<URL>http://paizo.com/pathfinderRPG/prd/skills/DisableDevice.html</URL>
+		</Skill>
+	<Skill name="Disguise" untrained="Yes" armorCheckPenalty="No" keyAbility="Cha">
+			<ShortDescription></ShortDescription>
+			<LongDescription></LongDescription>
+			<URL>http://paizo.com/pathfinderRPG/prd/skills/Disguise.html</URL>
+		</Skill>
+	<Skill name="Escape Artist" untrained="Yes" armorCheckPenalty="Yes" keyAbility="Dex">
+			<ShortDescription></ShortDescription>
+			<LongDescription></LongDescription>
+			<URL>http://paizo.com/pathfinderRPG/prd/skills/EscapeArtist.html</URL>
+		</Skill>
+	<Skill name="Fly" untrained="Yes" armorCheckPenalty="Yes" keyAbility="Dex">
+			<ShortDescription></ShortDescription>
+			<LongDescription></LongDescription>
+			<URL>http://paizo.com/pathfinderRPG/prd/skills/Fly.html</URL>
+		</Skill>
+	<Skill name="Handle Animal" untrained="No" armorCheckPenalty="No" keyAbility="Cha">
+			<ShortDescription></ShortDescription>
+			<LongDescription></LongDescription>
+			<URL>http://paizo.com/pathfinderRPG/prd/skills/HandleAnimal.html</URL>
+		</Skill>
+	<Skill name="Heal" untrained="Yes" armorCheckPenalty="No" keyAbility="Wis">
+			<ShortDescription></ShortDescription>
+			<LongDescription></LongDescription>
+			<URL>http://paizo.com/pathfinderRPG/prd/skills/Heal.html</URL>
+		</Skill>
+	<Skill name="Intimidate" untrained="Yes" armorCheckPenalty="No" keyAbility="Cha">
+			<ShortDescription></ShortDescription>
+			<LongDescription></LongDescription>
+			<URL>http://paizo.com/pathfinderRPG/prd/skills/Intimidate.html</URL>
+		</Skill>
+	<Skill name="Knowledge (Arcana)" untrained="No" armorCheckPenalty="" keyAbility="Int">
+			<ShortDescription></ShortDescription>
+			<LongDescription></LongDescription>
+			<URL>http://paizo.com/pathfinderRPG/prd/skills/Knowledge.html</URL>
+		</Skill>
+	<Skill name="Knowledge (Dungeoneering)" untrained="No" armorCheckPenalty="No" keyAbility="Int">
+			<ShortDescription></ShortDescription>
+			<LongDescription></LongDescription>
+			<URL>http://paizo.com/pathfinderRPG/prd/skills/Knowledge.html</URL>
+		</Skill>
+	<Skill name="Knowledge (Engineering)" untrained="No" armorCheckPenalty="No" keyAbility="Int">
+			<ShortDescription></ShortDescription>
+			<LongDescription></LongDescription>
+			<URL>http://paizo.com/pathfinderRPG/prd/skills/Knowledge.html</URL>
+		</Skill>
+	<Skill name="Knowledge (Geography)" untrained="No" armorCheckPenalty="No" keyAbility="Int">
+			<ShortDescription></ShortDescription>
+			<LongDescription></LongDescription>
+			<URL>http://paizo.com/pathfinderRPG/prd/skills/Knowledge.html</URL>
+		</Skill>
+	<Skill name="Knowledge (History)" untrained="No" armorCheckPenalty="No" keyAbility="Int">
+			<ShortDescription></ShortDescription>
+			<LongDescription></LongDescription>
+			<URL>http://paizo.com/pathfinderRPG/prd/skills/Knowledge.html</URL>
+		</Skill>
+	<Skill name="Knowledge (Local)" untrained="No" armorCheckPenalty="No" keyAbility="Int">
+			<ShortDescription></ShortDescription>
+			<LongDescription></LongDescription>
+			<URL>http://paizo.com/pathfinderRPG/prd/skills/Knowledge.html</URL>
+		</Skill>
+	<Skill name="Knowledge (Nature)" untrained="No" armorCheckPenalty="No" keyAbility="Int">
+			<ShortDescription></ShortDescription>
+			<LongDescription></LongDescription>
+			<URL>http://paizo.com/pathfinderRPG/prd/skills/Knowledge.html</URL>
+		</Skill>
+	<Skill name="Knowledge (Nobility)" untrained="No" armorCheckPenalty="No" keyAbility="Int">
+			<ShortDescription></ShortDescription>
+			<LongDescription></LongDescription>
+			<URL>http://paizo.com/pathfinderRPG/prd/skills/Knowledge.html</URL>
+		</Skill>
+	<Skill name="Knowledge (Planes)" untrained="No" armorCheckPenalty="No" keyAbility="Int">
+			<ShortDescription></ShortDescription>
+			<LongDescription></LongDescription>
+			<URL>http://paizo.com/pathfinderRPG/prd/skills/Knowledge.html</URL>
+		</Skill>
+	<Skill name="Knowledge (Religion)" untrained="No" armorCheckPenalty="No" keyAbility="Int">
+			<ShortDescription></ShortDescription>
+			<LongDescription></LongDescription>
+			<URL>http://paizo.com/pathfinderRPG/prd/skills/Knowledge.html</URL>
+		</Skill>
+	<Skill name="Linguistics" untrained="No" armorCheckPenalty="No" keyAbility="Int">
+			<ShortDescription></ShortDescription>
+			<LongDescription></LongDescription>
+			<URL>http://paizo.com/pathfinderRPG/prd/skills/Linguistics.html</URL>
+		</Skill>
+	<Skill name="Perception" untrained="Yes" armorCheckPenalty="No" keyAbility="Wis">
+			<ShortDescription></ShortDescription>
+			<LongDescription></LongDescription>
+			<URL>http://paizo.com/pathfinderRPG/prd/skills/Perception.html</URL>
+		</Skill>
+	<Skill name="Perform" untrained="Yes" armorCheckPenalty="No" requiresDetail="Yes" keyAbility="Cha">
+			<ShortDescription></ShortDescription>
+			<LongDescription></LongDescription>
+			<URL>http://paizo.com/pathfinderRPG/prd/skills/Perform.html</URL>
+		</Skill>
+	<Skill name="Profession" untrained="No" armorCheckPenalty="No" requiresDetail="Yes" keyAbility="Wis">
+			<ShortDescription></ShortDescription>
+			<LongDescription></LongDescription>
+			<URL>http://paizo.com/pathfinderRPG/prd/skills/Profession.html</URL>
+		</Skill>
+	<Skill name="Ride" untrained="Yes" armorCheckPenalty="Yes" keyAbility="Dex">
+			<ShortDescription></ShortDescription>
+			<LongDescription></LongDescription>
+			<URL>http://paizo.com/pathfinderRPG/prd/skills/Ride.html</URL>
+		</Skill>
+	<Skill name="Sense Motive" untrained="Yes" armorCheckPenalty="No" keyAbility="Wis">
+			<ShortDescription></ShortDescription>
+			<LongDescription></LongDescription>
+			<URL>http://paizo.com/pathfinderRPG/prd/skills/SenseMotive.html</URL>
+		</Skill>
+	<Skill name="Sleight of Hand" untrained="No" armorCheckPenalty="Yes" keyAbility="Dex">
+			<ShortDescription></ShortDescription>
+			<LongDescription></LongDescription>
+			<URL>http://paizo.com/pathfinderRPG/prd/skills/SleightofHand.html</URL>
+		</Skill>
+	<Skill name="Spellcraft" untrained="No" armorCheckPenalty="No" keyAbility="Int">
+			<ShortDescription></ShortDescription>
+			<LongDescription></LongDescription>
+			<URL>http://paizo.com/pathfinderRPG/prd/skills/Spellcraft.html</URL>
+		</Skill>
+	<Skill name="Stealth" untrained="Yes" armorCheckPenalty="Yes" keyAbility="Dex">
+			<ShortDescription></ShortDescription>
+			<LongDescription></LongDescription>
+			<URL>http://paizo.com/pathfinderRPG/prd/skills/Stealth.html</URL>
+		</Skill>
+	<Skill name="Survival" untrained="Yes" armorCheckPenalty="No" keyAbility="Wis">
+			<ShortDescription></ShortDescription>
+			<LongDescription></LongDescription>
+			<URL>http://paizo.com/pathfinderRPG/prd/skills/Survival.html</URL>
+		</Skill>
+	<Skill name="Swim" untrained="Yes" armorCheckPenalty="Yes" keyAbility="Str">
+			<ShortDescription></ShortDescription>
+			<LongDescription></LongDescription>
+			<URL>http://paizo.com/pathfinderRPG/prd/skills/Swim.html</URL>
+		</Skill>
+	<Skill name="Use Magic Device" untrained="No" armorCheckPenalty="No" keyAbility="Cha">
+			<ShortDescription></ShortDescription>
+			<LongDescription></LongDescription>
+			<URL>http://paizo.com/pathfinderRPG/prd/skills/UseMagicDevice.html</URL>
+		</Skill>
+</Skills>

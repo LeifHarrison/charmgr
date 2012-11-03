@@ -1,0 +1,783 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1D3623260D0F684500981E51 /* CMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* CMAppDelegate.m */; };
+		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
+		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		28216C970DB411BC00E5133A /* WHProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28216C960DB411BC00E5133A /* WHProfileViewController.m */; };
+		288765080DF74369002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765070DF74369002DB57D /* CoreGraphics.framework */; };
+		28AD73880D9D96C1002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD73870D9D96C1002E5188 /* MainWindow.xib */; };
+		28D4B068107A5DE70093E739 /* WHProfileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28D4B067107A5DE70093E739 /* WHProfileView.xib */; };
+		2900413916252EBE0050EDDB /* ProfileStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2900413816252EBE0050EDDB /* ProfileStoryboard.storyboard */; };
+		2900413B162530E20050EDDB /* CombatStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2900413A162530E20050EDDB /* CombatStoryboard.storyboard */; };
+		2900413D1625315C0050EDDB /* EquipmentStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2900413C1625315C0050EDDB /* EquipmentStoryboard.storyboard */; };
+		2900413F162531700050EDDB /* BackgroundStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2900413E162531700050EDDB /* BackgroundStoryboard.storyboard */; };
+		29004141162531890050EDDB /* NotesStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29004140162531890050EDDB /* NotesStoryboard.storyboard */; };
+		290041431625319D0050EDDB /* SpellsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 290041421625319D0050EDDB /* SpellsStoryboard.storyboard */; };
+		2902D08B161FED6D00C56E74 /* PFCharacterClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 2902D08A161FED6D00C56E74 /* PFCharacterClass.m */; };
+		2902D08E161FED6D00C56E74 /* PFCharacterAbility.m in Sources */ = {isa = PBXBuildFile; fileRef = 2902D08D161FED6D00C56E74 /* PFCharacterAbility.m */; };
+		2902D091161FED6D00C56E74 /* PFClassType.m in Sources */ = {isa = PBXBuildFile; fileRef = 2902D090161FED6D00C56E74 /* PFClassType.m */; };
+		2902D094161FED6D00C56E74 /* PFFeat.m in Sources */ = {isa = PBXBuildFile; fileRef = 2902D093161FED6D00C56E74 /* PFFeat.m */; };
+		2902D097161FED6D00C56E74 /* PFTrait.m in Sources */ = {isa = PBXBuildFile; fileRef = 2902D096161FED6D00C56E74 /* PFTrait.m */; };
+		2902D09A161FED6D00C56E74 /* PFSkill.m in Sources */ = {isa = PBXBuildFile; fileRef = 2902D099161FED6D00C56E74 /* PFSkill.m */; };
+		2902D09D161FED6D00C56E74 /* PFAlignment.m in Sources */ = {isa = PBXBuildFile; fileRef = 2902D09C161FED6D00C56E74 /* PFAlignment.m */; };
+		2902D0A0161FED6E00C56E74 /* PFRace.m in Sources */ = {isa = PBXBuildFile; fileRef = 2902D09F161FED6E00C56E74 /* PFRace.m */; };
+		2902D0A3161FED6E00C56E74 /* PFAbility.m in Sources */ = {isa = PBXBuildFile; fileRef = 2902D0A2161FED6E00C56E74 /* PFAbility.m */; };
+		2902D0A6161FEE6A00C56E74 /* PFDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2902D0A5161FEE6A00C56E74 /* PFDataManager.m */; };
+		2904429F1609875C008DAF11 /* PathfinderRoleplayingGame.png in Resources */ = {isa = PBXBuildFile; fileRef = 2904429E1609875C008DAF11 /* PathfinderRoleplayingGame.png */; };
+		290442A4160C3696008DAF11 /* PFInitiativeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 290442A3160C3696008DAF11 /* PFInitiativeViewController.m */; };
+		290442A7160C3782008DAF11 /* PFAttacksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 290442A6160C3782008DAF11 /* PFAttacksViewController.m */; };
+		290442AA160C392A008DAF11 /* PFEffectsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 290442A9160C392A008DAF11 /* PFEffectsViewController.m */; };
+		290639A116044D1900CCBBC7 /* PFCombatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 290639A016044D1900CCBBC7 /* PFCombatViewController.m */; };
+		2924A7EA1188A93A0001A732 /* Warhammer.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 2924A7E91188A93A0001A732 /* Warhammer.xcdatamodel */; };
+		2924A7F11188B2480001A732 /* CMBannerBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 2924A7F01188B2480001A732 /* CMBannerBox.m */; };
+		29362C1616253D860081EFA2 /* PFCreateCharacterChooseRaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29362C1516253D860081EFA2 /* PFCreateCharacterChooseRaceViewController.m */; };
+		29362C1916253D9D0081EFA2 /* PFCreateCharacterChooseClassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29362C1816253D9D0081EFA2 /* PFCreateCharacterChooseClassViewController.m */; };
+		29362C1C16253F9C0081EFA2 /* PFCreateCharacterInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29362C1B16253F9C0081EFA2 /* PFCreateCharacterInfoViewController.m */; };
+		2945352015F80B820012F88F /* paper_texture.png in Resources */ = {isa = PBXBuildFile; fileRef = 2945351F15F80B820012F88F /* paper_texture.png */; };
+		295F62DE1602EE7000EEF5ED /* PFSkillsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 295F62DC1602EE7000EEF5ED /* PFSkillsViewController.m */; };
+		295F62E31602EEDD00EEF5ED /* PFAbilitiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 295F62E11602EEDD00EEF5ED /* PFAbilitiesViewController.m */; };
+		295F62E81602EF0800EEF5ED /* PFFeaturesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 295F62E61602EF0800EEF5ED /* PFFeaturesViewController.m */; };
+		295F62F21602EFB000EEF5ED /* PFHealthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 295F62F01602EFB000EEF5ED /* PFHealthViewController.m */; };
+		295F62F71602EFCF00EEF5ED /* PFBaseAttackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 295F62F51602EFCF00EEF5ED /* PFBaseAttackViewController.m */; };
+		295F62FC1602EFF900EEF5ED /* PFCombatManeuversViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 295F62FA1602EFF900EEF5ED /* PFCombatManeuversViewController.m */; };
+		295F63011602F3C900EEF5ED /* PFMovementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 295F62FF1602F3C900EEF5ED /* PFMovementViewController.m */; };
+		295F63061602F41700EEF5ED /* PFArmorClassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 295F63041602F41700EEF5ED /* PFArmorClassViewController.m */; };
+		295F630B1602F46500EEF5ED /* PFSavingThrowsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 295F63091602F46500EEF5ED /* PFSavingThrowsViewController.m */; };
+		2962DEEA16228E1B00F11E0F /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 2962DEE916228E1B00F11E0F /* GDataXMLNode.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		2968E04F13BD0E0200811211 /* PFProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2968E04D13BD0E0200811211 /* PFProfileViewController.m */; };
+		2972FDB116325B9300B44692 /* PFCharacterSkill.m in Sources */ = {isa = PBXBuildFile; fileRef = 2972FDB016325B9300B44692 /* PFCharacterSkill.m */; };
+		297AA4AC163F948E0041C59D /* Data in Resources */ = {isa = PBXBuildFile; fileRef = 297AA4AB163F948E0041C59D /* Data */; };
+		297AA4AF1640F2F20041C59D /* PFRacialTraitTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 297AA4AE1640F2F20041C59D /* PFRacialTraitTableViewCell.m */; };
+		297AA4B216438FE70041C59D /* ReferenceStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 297AA4B116438FE70041C59D /* ReferenceStoryboard.storyboard */; };
+		298A9E08162E5FD30045F1D1 /* PFCreateCharacterChooseAlignmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 298A9E07162E5FD30045F1D1 /* PFCreateCharacterChooseAlignmentViewController.m */; };
+		298A9E0C162FC1810045F1D1 /* PFClassTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 298A9E0B162FC1810045F1D1 /* PFClassTableViewCell.m */; };
+		299ACDE615FA918000E114E0 /* Pathfinder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 299ACDE415FA918000E114E0 /* Pathfinder.xcdatamodeld */; };
+		299ACDE815FA975D00E114E0 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 299ACDE715FA975D00E114E0 /* CoreData.framework */; };
+		299ACDEB15FAABB500E114E0 /* PFCreateCharacterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 299ACDEA15FAABB500E114E0 /* PFCreateCharacterViewController.m */; };
+		299ACDEF15FAAE4C00E114E0 /* PFCharacter.m in Sources */ = {isa = PBXBuildFile; fileRef = 299ACDEE15FAAE4C00E114E0 /* PFCharacter.m */; };
+		29B7D65015F918250039C390 /* PFBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B7D64F15F918250039C390 /* PFBaseViewController.m */; };
+		29B7D65315F9186F0039C390 /* PFContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B7D65215F9186F0039C390 /* PFContainerViewController.m */; };
+		29B7D65615F918900039C390 /* PFCharacterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B7D65515F918900039C390 /* PFCharacterViewController.m */; };
+		29B7D6A515F938970039C390 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29B7D6A415F938970039C390 /* MainStoryboard.storyboard */; };
+		29B7D6D715F948C00039C390 /* CMRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B7D6D615F948C00039C390 /* CMRootViewController.m */; };
+		29CD513B1630BB5C001A639E /* PFAbilityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CD513A1630BB5C001A639E /* PFAbilityTableViewCell.m */; };
+		29CD513E1630CC96001A639E /* PFSkillTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CD513D1630CC95001A639E /* PFSkillTableViewCell.m */; };
+		29CEF8011188FA7600E2D442 /* CMProfileView.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CEF8001188FA7600E2D442 /* CMProfileView.m */; };
+		29DB695116293C340038FE79 /* PFClassesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29DB695016293C340038FE79 /* PFClassesViewController.m */; };
+		29E7A87715F9638700DEFF6A /* PFGearViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29E7A87615F9638700DEFF6A /* PFGearViewController.m */; };
+		29E7A87A15F963B900DEFF6A /* PFSpellsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29E7A87915F963B900DEFF6A /* PFSpellsViewController.m */; };
+		29E7A87D15F963DE00DEFF6A /* PFCompanionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29E7A87C15F963DE00DEFF6A /* PFCompanionsViewController.m */; };
+		29E7A88015F963FB00DEFF6A /* PFNotesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29E7A87F15F963FB00DEFF6A /* PFNotesViewController.m */; };
+		29E7A88315F964EB00DEFF6A /* CMMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29E7A88215F964EB00DEFF6A /* CMMainViewController.m */; };
+		29E7A88715F96DD600DEFF6A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29E7A88615F96DD600DEFF6A /* QuartzCore.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1D3623240D0F684500981E51 /* CMAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMAppDelegate.h; sourceTree = "<group>"; };
+		1D3623250D0F684500981E51 /* CMAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMAppDelegate.m; sourceTree = "<group>"; };
+		1D6058910D05DD3D006BFB54 /* CharMgr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CharMgr.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		28216C950DB411BC00E5133A /* WHProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WHProfileViewController.h; sourceTree = "<group>"; };
+		28216C960DB411BC00E5133A /* WHProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WHProfileViewController.m; sourceTree = "<group>"; };
+		288765070DF74369002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		28A0AB4B0D9B1048005BE974 /* CharMgr_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharMgr_Prefix.pch; sourceTree = "<group>"; };
+		28AD73870D9D96C1002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		28D4B067107A5DE70093E739 /* WHProfileView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = WHProfileView.xib; path = Warhammer/WHProfileView.xib; sourceTree = "<group>"; };
+		2900413816252EBE0050EDDB /* ProfileStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = ProfileStoryboard.storyboard; path = Resources/Pathfinder/ProfileStoryboard.storyboard; sourceTree = "<group>"; };
+		2900413A162530E20050EDDB /* CombatStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = CombatStoryboard.storyboard; path = Resources/Pathfinder/CombatStoryboard.storyboard; sourceTree = "<group>"; };
+		2900413C1625315C0050EDDB /* EquipmentStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = EquipmentStoryboard.storyboard; path = Resources/Pathfinder/EquipmentStoryboard.storyboard; sourceTree = "<group>"; };
+		2900413E162531700050EDDB /* BackgroundStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = BackgroundStoryboard.storyboard; path = Resources/Pathfinder/BackgroundStoryboard.storyboard; sourceTree = "<group>"; };
+		29004140162531890050EDDB /* NotesStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = NotesStoryboard.storyboard; path = Resources/Pathfinder/NotesStoryboard.storyboard; sourceTree = "<group>"; };
+		290041421625319D0050EDDB /* SpellsStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = SpellsStoryboard.storyboard; path = Resources/Pathfinder/SpellsStoryboard.storyboard; sourceTree = "<group>"; };
+		2902D089161FED6D00C56E74 /* PFCharacterClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFCharacterClass.h; path = Pathfinder/Model/PFCharacterClass.h; sourceTree = "<group>"; };
+		2902D08A161FED6D00C56E74 /* PFCharacterClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFCharacterClass.m; path = Pathfinder/Model/PFCharacterClass.m; sourceTree = "<group>"; };
+		2902D08C161FED6D00C56E74 /* PFCharacterAbility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFCharacterAbility.h; path = Pathfinder/Model/PFCharacterAbility.h; sourceTree = "<group>"; };
+		2902D08D161FED6D00C56E74 /* PFCharacterAbility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFCharacterAbility.m; path = Pathfinder/Model/PFCharacterAbility.m; sourceTree = "<group>"; };
+		2902D08F161FED6D00C56E74 /* PFClassType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFClassType.h; path = Pathfinder/Model/PFClassType.h; sourceTree = "<group>"; };
+		2902D090161FED6D00C56E74 /* PFClassType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFClassType.m; path = Pathfinder/Model/PFClassType.m; sourceTree = "<group>"; };
+		2902D092161FED6D00C56E74 /* PFFeat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFFeat.h; path = Pathfinder/Model/PFFeat.h; sourceTree = "<group>"; };
+		2902D093161FED6D00C56E74 /* PFFeat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFFeat.m; path = Pathfinder/Model/PFFeat.m; sourceTree = "<group>"; };
+		2902D095161FED6D00C56E74 /* PFTrait.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFTrait.h; path = Pathfinder/Model/PFTrait.h; sourceTree = "<group>"; };
+		2902D096161FED6D00C56E74 /* PFTrait.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFTrait.m; path = Pathfinder/Model/PFTrait.m; sourceTree = "<group>"; };
+		2902D098161FED6D00C56E74 /* PFSkill.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFSkill.h; path = Pathfinder/Model/PFSkill.h; sourceTree = "<group>"; };
+		2902D099161FED6D00C56E74 /* PFSkill.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFSkill.m; path = Pathfinder/Model/PFSkill.m; sourceTree = "<group>"; };
+		2902D09B161FED6D00C56E74 /* PFAlignment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFAlignment.h; path = Pathfinder/Model/PFAlignment.h; sourceTree = "<group>"; };
+		2902D09C161FED6D00C56E74 /* PFAlignment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFAlignment.m; path = Pathfinder/Model/PFAlignment.m; sourceTree = "<group>"; };
+		2902D09E161FED6E00C56E74 /* PFRace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFRace.h; path = Pathfinder/Model/PFRace.h; sourceTree = "<group>"; };
+		2902D09F161FED6E00C56E74 /* PFRace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFRace.m; path = Pathfinder/Model/PFRace.m; sourceTree = "<group>"; };
+		2902D0A1161FED6E00C56E74 /* PFAbility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFAbility.h; path = Pathfinder/Model/PFAbility.h; sourceTree = "<group>"; };
+		2902D0A2161FED6E00C56E74 /* PFAbility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFAbility.m; path = Pathfinder/Model/PFAbility.m; sourceTree = "<group>"; };
+		2902D0A4161FEE6A00C56E74 /* PFDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFDataManager.h; path = Pathfinder/PFDataManager.h; sourceTree = "<group>"; };
+		2902D0A5161FEE6A00C56E74 /* PFDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFDataManager.m; path = Pathfinder/PFDataManager.m; sourceTree = "<group>"; };
+		2904429E1609875C008DAF11 /* PathfinderRoleplayingGame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = PathfinderRoleplayingGame.png; path = Resources/images/PathfinderRoleplayingGame.png; sourceTree = "<group>"; };
+		290442A2160C3696008DAF11 /* PFInitiativeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFInitiativeViewController.h; path = Pathfinder/Containers/PFInitiativeViewController.h; sourceTree = "<group>"; };
+		290442A3160C3696008DAF11 /* PFInitiativeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFInitiativeViewController.m; path = Pathfinder/Containers/PFInitiativeViewController.m; sourceTree = "<group>"; };
+		290442A5160C3782008DAF11 /* PFAttacksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFAttacksViewController.h; path = Pathfinder/Containers/PFAttacksViewController.h; sourceTree = "<group>"; };
+		290442A6160C3782008DAF11 /* PFAttacksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFAttacksViewController.m; path = Pathfinder/Containers/PFAttacksViewController.m; sourceTree = "<group>"; };
+		290442A8160C3929008DAF11 /* PFEffectsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFEffectsViewController.h; path = Pathfinder/Containers/PFEffectsViewController.h; sourceTree = "<group>"; };
+		290442A9160C392A008DAF11 /* PFEffectsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFEffectsViewController.m; path = Pathfinder/Containers/PFEffectsViewController.m; sourceTree = "<group>"; };
+		2906399F16044D1900CCBBC7 /* PFCombatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFCombatViewController.h; path = Pathfinder/Pages/PFCombatViewController.h; sourceTree = "<group>"; };
+		290639A016044D1900CCBBC7 /* PFCombatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFCombatViewController.m; path = Pathfinder/Pages/PFCombatViewController.m; sourceTree = "<group>"; };
+		2924A7E91188A93A0001A732 /* Warhammer.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; name = Warhammer.xcdatamodel; path = ../Resources/Warhammer/Warhammer.xcdatamodel; sourceTree = "<group>"; };
+		2924A7EF1188B2480001A732 /* CMBannerBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMBannerBox.h; sourceTree = "<group>"; };
+		2924A7F01188B2480001A732 /* CMBannerBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMBannerBox.m; sourceTree = "<group>"; };
+		29362C1416253D860081EFA2 /* PFCreateCharacterChooseRaceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFCreateCharacterChooseRaceViewController.h; path = Pathfinder/PFCreateCharacterChooseRaceViewController.h; sourceTree = "<group>"; };
+		29362C1516253D860081EFA2 /* PFCreateCharacterChooseRaceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFCreateCharacterChooseRaceViewController.m; path = Pathfinder/PFCreateCharacterChooseRaceViewController.m; sourceTree = "<group>"; };
+		29362C1716253D9D0081EFA2 /* PFCreateCharacterChooseClassViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFCreateCharacterChooseClassViewController.h; path = Pathfinder/PFCreateCharacterChooseClassViewController.h; sourceTree = "<group>"; };
+		29362C1816253D9D0081EFA2 /* PFCreateCharacterChooseClassViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFCreateCharacterChooseClassViewController.m; path = Pathfinder/PFCreateCharacterChooseClassViewController.m; sourceTree = "<group>"; };
+		29362C1A16253F9C0081EFA2 /* PFCreateCharacterInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFCreateCharacterInfoViewController.h; path = Pathfinder/PFCreateCharacterInfoViewController.h; sourceTree = "<group>"; };
+		29362C1B16253F9C0081EFA2 /* PFCreateCharacterInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFCreateCharacterInfoViewController.m; path = Pathfinder/PFCreateCharacterInfoViewController.m; sourceTree = "<group>"; };
+		2945351F15F80B820012F88F /* paper_texture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = paper_texture.png; path = Resources/images/paper_texture.png; sourceTree = "<group>"; };
+		295F62DB1602EE7000EEF5ED /* PFSkillsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFSkillsViewController.h; path = Pathfinder/Containers/PFSkillsViewController.h; sourceTree = "<group>"; };
+		295F62DC1602EE7000EEF5ED /* PFSkillsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFSkillsViewController.m; path = Pathfinder/Containers/PFSkillsViewController.m; sourceTree = "<group>"; };
+		295F62E01602EEDD00EEF5ED /* PFAbilitiesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFAbilitiesViewController.h; path = Pathfinder/Containers/PFAbilitiesViewController.h; sourceTree = "<group>"; };
+		295F62E11602EEDD00EEF5ED /* PFAbilitiesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFAbilitiesViewController.m; path = Pathfinder/Containers/PFAbilitiesViewController.m; sourceTree = "<group>"; };
+		295F62E51602EF0800EEF5ED /* PFFeaturesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFFeaturesViewController.h; path = Pathfinder/Containers/PFFeaturesViewController.h; sourceTree = "<group>"; };
+		295F62E61602EF0800EEF5ED /* PFFeaturesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFFeaturesViewController.m; path = Pathfinder/Containers/PFFeaturesViewController.m; sourceTree = "<group>"; };
+		295F62EF1602EFB000EEF5ED /* PFHealthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFHealthViewController.h; path = Pathfinder/Containers/PFHealthViewController.h; sourceTree = "<group>"; };
+		295F62F01602EFB000EEF5ED /* PFHealthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFHealthViewController.m; path = Pathfinder/Containers/PFHealthViewController.m; sourceTree = "<group>"; };
+		295F62F41602EFCE00EEF5ED /* PFBaseAttackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFBaseAttackViewController.h; path = Pathfinder/Containers/PFBaseAttackViewController.h; sourceTree = "<group>"; };
+		295F62F51602EFCF00EEF5ED /* PFBaseAttackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFBaseAttackViewController.m; path = Pathfinder/Containers/PFBaseAttackViewController.m; sourceTree = "<group>"; };
+		295F62F91602EFF900EEF5ED /* PFCombatManeuversViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFCombatManeuversViewController.h; path = Pathfinder/Containers/PFCombatManeuversViewController.h; sourceTree = "<group>"; };
+		295F62FA1602EFF900EEF5ED /* PFCombatManeuversViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFCombatManeuversViewController.m; path = Pathfinder/Containers/PFCombatManeuversViewController.m; sourceTree = "<group>"; };
+		295F62FE1602F3C900EEF5ED /* PFMovementViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFMovementViewController.h; path = Pathfinder/Containers/PFMovementViewController.h; sourceTree = "<group>"; };
+		295F62FF1602F3C900EEF5ED /* PFMovementViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFMovementViewController.m; path = Pathfinder/Containers/PFMovementViewController.m; sourceTree = "<group>"; };
+		295F63031602F41700EEF5ED /* PFArmorClassViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFArmorClassViewController.h; path = Pathfinder/Containers/PFArmorClassViewController.h; sourceTree = "<group>"; };
+		295F63041602F41700EEF5ED /* PFArmorClassViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFArmorClassViewController.m; path = Pathfinder/Containers/PFArmorClassViewController.m; sourceTree = "<group>"; };
+		295F63081602F46500EEF5ED /* PFSavingThrowsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFSavingThrowsViewController.h; path = Pathfinder/Containers/PFSavingThrowsViewController.h; sourceTree = "<group>"; };
+		295F63091602F46500EEF5ED /* PFSavingThrowsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFSavingThrowsViewController.m; path = Pathfinder/Containers/PFSavingThrowsViewController.m; sourceTree = "<group>"; };
+		2962DEE816228E1B00F11E0F /* GDataXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataXMLNode.h; sourceTree = "<group>"; };
+		2962DEE916228E1B00F11E0F /* GDataXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDataXMLNode.m; sourceTree = "<group>"; };
+		2968E04C13BD0E0200811211 /* PFProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFProfileViewController.h; path = Pathfinder/Pages/PFProfileViewController.h; sourceTree = "<group>"; };
+		2968E04D13BD0E0200811211 /* PFProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFProfileViewController.m; path = Pathfinder/Pages/PFProfileViewController.m; sourceTree = "<group>"; };
+		2972FDAF16325B9300B44692 /* PFCharacterSkill.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFCharacterSkill.h; path = Pathfinder/Model/PFCharacterSkill.h; sourceTree = "<group>"; };
+		2972FDB016325B9300B44692 /* PFCharacterSkill.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFCharacterSkill.m; path = Pathfinder/Model/PFCharacterSkill.m; sourceTree = "<group>"; };
+		297AA4AB163F948E0041C59D /* Data */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Data; sourceTree = "<group>"; };
+		297AA4AD1640F2F20041C59D /* PFRacialTraitTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFRacialTraitTableViewCell.h; path = Pathfinder/Cells/PFRacialTraitTableViewCell.h; sourceTree = "<group>"; };
+		297AA4AE1640F2F20041C59D /* PFRacialTraitTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFRacialTraitTableViewCell.m; path = Pathfinder/Cells/PFRacialTraitTableViewCell.m; sourceTree = "<group>"; };
+		297AA4B116438FE70041C59D /* ReferenceStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = ReferenceStoryboard.storyboard; path = Resources/Pathfinder/ReferenceStoryboard.storyboard; sourceTree = "<group>"; };
+		298A9E01162D06300045F1D1 /* PFTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PFTypes.h; path = Pathfinder/Model/PFTypes.h; sourceTree = "<group>"; };
+		298A9E06162E5FD30045F1D1 /* PFCreateCharacterChooseAlignmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFCreateCharacterChooseAlignmentViewController.h; path = Pathfinder/PFCreateCharacterChooseAlignmentViewController.h; sourceTree = "<group>"; };
+		298A9E07162E5FD30045F1D1 /* PFCreateCharacterChooseAlignmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFCreateCharacterChooseAlignmentViewController.m; path = Pathfinder/PFCreateCharacterChooseAlignmentViewController.m; sourceTree = "<group>"; };
+		298A9E0A162FC1810045F1D1 /* PFClassTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFClassTableViewCell.h; path = Pathfinder/Cells/PFClassTableViewCell.h; sourceTree = "<group>"; };
+		298A9E0B162FC1810045F1D1 /* PFClassTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFClassTableViewCell.m; path = Pathfinder/Cells/PFClassTableViewCell.m; sourceTree = "<group>"; };
+		299ACDE515FA918000E114E0 /* Pathfinder.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Pathfinder.xcdatamodel; sourceTree = "<group>"; };
+		299ACDE715FA975D00E114E0 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		299ACDE915FAABB500E114E0 /* PFCreateCharacterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFCreateCharacterViewController.h; path = Pathfinder/PFCreateCharacterViewController.h; sourceTree = "<group>"; };
+		299ACDEA15FAABB500E114E0 /* PFCreateCharacterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFCreateCharacterViewController.m; path = Pathfinder/PFCreateCharacterViewController.m; sourceTree = "<group>"; };
+		299ACDED15FAAE4C00E114E0 /* PFCharacter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFCharacter.h; path = Pathfinder/Model/PFCharacter.h; sourceTree = "<group>"; };
+		299ACDEE15FAAE4C00E114E0 /* PFCharacter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFCharacter.m; path = Pathfinder/Model/PFCharacter.m; sourceTree = "<group>"; };
+		29B7D64E15F918250039C390 /* PFBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFBaseViewController.h; path = Pathfinder/PFBaseViewController.h; sourceTree = "<group>"; };
+		29B7D64F15F918250039C390 /* PFBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFBaseViewController.m; path = Pathfinder/PFBaseViewController.m; sourceTree = "<group>"; };
+		29B7D65115F9186F0039C390 /* PFContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFContainerViewController.h; path = Pathfinder/PFContainerViewController.h; sourceTree = "<group>"; };
+		29B7D65215F9186F0039C390 /* PFContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFContainerViewController.m; path = Pathfinder/PFContainerViewController.m; sourceTree = "<group>"; };
+		29B7D65415F918900039C390 /* PFCharacterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFCharacterViewController.h; path = Pathfinder/Containers/PFCharacterViewController.h; sourceTree = "<group>"; };
+		29B7D65515F918900039C390 /* PFCharacterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFCharacterViewController.m; path = Pathfinder/Containers/PFCharacterViewController.m; sourceTree = "<group>"; };
+		29B7D6A415F938970039C390 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
+		29B7D6D515F948C00039C390 /* CMRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMRootViewController.h; sourceTree = "<group>"; };
+		29B7D6D615F948C00039C390 /* CMRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMRootViewController.m; sourceTree = "<group>"; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		29CD51391630BB5C001A639E /* PFAbilityTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFAbilityTableViewCell.h; path = Pathfinder/Cells/PFAbilityTableViewCell.h; sourceTree = "<group>"; };
+		29CD513A1630BB5C001A639E /* PFAbilityTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFAbilityTableViewCell.m; path = Pathfinder/Cells/PFAbilityTableViewCell.m; sourceTree = "<group>"; };
+		29CD513C1630CC95001A639E /* PFSkillTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFSkillTableViewCell.h; path = Pathfinder/Cells/PFSkillTableViewCell.h; sourceTree = "<group>"; };
+		29CD513D1630CC95001A639E /* PFSkillTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFSkillTableViewCell.m; path = Pathfinder/Cells/PFSkillTableViewCell.m; sourceTree = "<group>"; };
+		29CEF7FF1188FA7600E2D442 /* CMProfileView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMProfileView.h; sourceTree = "<group>"; };
+		29CEF8001188FA7600E2D442 /* CMProfileView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMProfileView.m; sourceTree = "<group>"; };
+		29DB694F16293C340038FE79 /* PFClassesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFClassesViewController.h; path = Pathfinder/Containers/PFClassesViewController.h; sourceTree = "<group>"; };
+		29DB695016293C340038FE79 /* PFClassesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFClassesViewController.m; path = Pathfinder/Containers/PFClassesViewController.m; sourceTree = "<group>"; };
+		29E7A87515F9638700DEFF6A /* PFGearViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFGearViewController.h; path = Pathfinder/Pages/PFGearViewController.h; sourceTree = "<group>"; };
+		29E7A87615F9638700DEFF6A /* PFGearViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFGearViewController.m; path = Pathfinder/Pages/PFGearViewController.m; sourceTree = "<group>"; };
+		29E7A87815F963B900DEFF6A /* PFSpellsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFSpellsViewController.h; path = Pathfinder/Pages/PFSpellsViewController.h; sourceTree = "<group>"; };
+		29E7A87915F963B900DEFF6A /* PFSpellsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFSpellsViewController.m; path = Pathfinder/Pages/PFSpellsViewController.m; sourceTree = "<group>"; };
+		29E7A87B15F963DE00DEFF6A /* PFCompanionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFCompanionsViewController.h; path = Pathfinder/Pages/PFCompanionsViewController.h; sourceTree = "<group>"; };
+		29E7A87C15F963DE00DEFF6A /* PFCompanionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFCompanionsViewController.m; path = Pathfinder/Pages/PFCompanionsViewController.m; sourceTree = "<group>"; };
+		29E7A87E15F963FB00DEFF6A /* PFNotesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFNotesViewController.h; path = Pathfinder/Pages/PFNotesViewController.h; sourceTree = "<group>"; };
+		29E7A87F15F963FB00DEFF6A /* PFNotesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFNotesViewController.m; path = Pathfinder/Pages/PFNotesViewController.m; sourceTree = "<group>"; };
+		29E7A88115F964EB00DEFF6A /* CMMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMMainViewController.h; sourceTree = "<group>"; };
+		29E7A88215F964EB00DEFF6A /* CMMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMMainViewController.m; sourceTree = "<group>"; };
+		29E7A88615F96DD600DEFF6A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		8D1107310486CEB800E47090 /* CharMgr-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "CharMgr-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1D60588F0D05DD3D006BFB54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				299ACDE815FA975D00E114E0 /* CoreData.framework in Frameworks */,
+				29E7A88715F96DD600DEFF6A /* QuartzCore.framework in Frameworks */,
+				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
+				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
+				288765080DF74369002DB57D /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				29B7D64D15F916820039C390 /* Pathfinder */,
+				2968E04113BD0D1A00811211 /* Warhammer */,
+				1D3623240D0F684500981E51 /* CMAppDelegate.h */,
+				1D3623250D0F684500981E51 /* CMAppDelegate.m */,
+				29B7D6D515F948C00039C390 /* CMRootViewController.h */,
+				29B7D6D615F948C00039C390 /* CMRootViewController.m */,
+				29E7A88115F964EB00DEFF6A /* CMMainViewController.h */,
+				29E7A88215F964EB00DEFF6A /* CMMainViewController.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1D6058910D05DD3D006BFB54 /* CharMgr.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		290442A0160C3550008DAF11 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				298A9E09162FC1430045F1D1 /* Cells */,
+				295F62E01602EEDD00EEF5ED /* PFAbilitiesViewController.h */,
+				295F62E11602EEDD00EEF5ED /* PFAbilitiesViewController.m */,
+				29B7D65415F918900039C390 /* PFCharacterViewController.h */,
+				29B7D65515F918900039C390 /* PFCharacterViewController.m */,
+				29DB694F16293C340038FE79 /* PFClassesViewController.h */,
+				29DB695016293C340038FE79 /* PFClassesViewController.m */,
+				295F62E51602EF0800EEF5ED /* PFFeaturesViewController.h */,
+				295F62E61602EF0800EEF5ED /* PFFeaturesViewController.m */,
+				295F62DB1602EE7000EEF5ED /* PFSkillsViewController.h */,
+				295F62DC1602EE7000EEF5ED /* PFSkillsViewController.m */,
+			);
+			name = Profile;
+			sourceTree = "<group>";
+		};
+		290442A1160C3585008DAF11 /* Combat */ = {
+			isa = PBXGroup;
+			children = (
+				295F63031602F41700EEF5ED /* PFArmorClassViewController.h */,
+				295F63041602F41700EEF5ED /* PFArmorClassViewController.m */,
+				290442A5160C3782008DAF11 /* PFAttacksViewController.h */,
+				290442A6160C3782008DAF11 /* PFAttacksViewController.m */,
+				295F62F41602EFCE00EEF5ED /* PFBaseAttackViewController.h */,
+				295F62F51602EFCF00EEF5ED /* PFBaseAttackViewController.m */,
+				295F62F91602EFF900EEF5ED /* PFCombatManeuversViewController.h */,
+				295F62FA1602EFF900EEF5ED /* PFCombatManeuversViewController.m */,
+				290442A8160C3929008DAF11 /* PFEffectsViewController.h */,
+				290442A9160C392A008DAF11 /* PFEffectsViewController.m */,
+				295F62EF1602EFB000EEF5ED /* PFHealthViewController.h */,
+				295F62F01602EFB000EEF5ED /* PFHealthViewController.m */,
+				290442A2160C3696008DAF11 /* PFInitiativeViewController.h */,
+				290442A3160C3696008DAF11 /* PFInitiativeViewController.m */,
+				295F62FE1602F3C900EEF5ED /* PFMovementViewController.h */,
+				295F62FF1602F3C900EEF5ED /* PFMovementViewController.m */,
+				295F63081602F46500EEF5ED /* PFSavingThrowsViewController.h */,
+				295F63091602F46500EEF5ED /* PFSavingThrowsViewController.m */,
+			);
+			name = Combat;
+			sourceTree = "<group>";
+		};
+		290639A21606E4E900CCBBC7 /* Custom Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Custom Cells";
+			sourceTree = "<group>";
+		};
+		2945351E15F80B760012F88F /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				2904429E1609875C008DAF11 /* PathfinderRoleplayingGame.png */,
+				2945351F15F80B820012F88F /* paper_texture.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		295F62DA1602EDFF00EEF5ED /* Containers */ = {
+			isa = PBXGroup;
+			children = (
+				290442A1160C3585008DAF11 /* Combat */,
+				290442A0160C3550008DAF11 /* Profile */,
+			);
+			name = Containers;
+			sourceTree = "<group>";
+		};
+		295F630D1602F53B00EEF5ED /* Pages */ = {
+			isa = PBXGroup;
+			children = (
+				2906399F16044D1900CCBBC7 /* PFCombatViewController.h */,
+				290639A016044D1900CCBBC7 /* PFCombatViewController.m */,
+				29E7A87B15F963DE00DEFF6A /* PFCompanionsViewController.h */,
+				29E7A87C15F963DE00DEFF6A /* PFCompanionsViewController.m */,
+				29E7A87515F9638700DEFF6A /* PFGearViewController.h */,
+				29E7A87615F9638700DEFF6A /* PFGearViewController.m */,
+				29E7A87E15F963FB00DEFF6A /* PFNotesViewController.h */,
+				29E7A87F15F963FB00DEFF6A /* PFNotesViewController.m */,
+				2968E04C13BD0E0200811211 /* PFProfileViewController.h */,
+				2968E04D13BD0E0200811211 /* PFProfileViewController.m */,
+				29E7A87815F963B900DEFF6A /* PFSpellsViewController.h */,
+				29E7A87915F963B900DEFF6A /* PFSpellsViewController.m */,
+			);
+			name = Pages;
+			sourceTree = "<group>";
+		};
+		2962DEE616228DED00F11E0F /* GData */ = {
+			isa = PBXGroup;
+			children = (
+				2962DEE716228E1B00F11E0F /* XMLSupport */,
+			);
+			name = GData;
+			sourceTree = "<group>";
+		};
+		2962DEE716228E1B00F11E0F /* XMLSupport */ = {
+			isa = PBXGroup;
+			children = (
+				2962DEE816228E1B00F11E0F /* GDataXMLNode.h */,
+				2962DEE916228E1B00F11E0F /* GDataXMLNode.m */,
+			);
+			path = XMLSupport;
+			sourceTree = "<group>";
+		};
+		2968E04113BD0D1A00811211 /* Warhammer */ = {
+			isa = PBXGroup;
+			children = (
+				29F5419115F960320096E4E6 /* Custom Views */,
+				28216C950DB411BC00E5133A /* WHProfileViewController.h */,
+				28216C960DB411BC00E5133A /* WHProfileViewController.m */,
+				28D4B067107A5DE70093E739 /* WHProfileView.xib */,
+				2924A7E91188A93A0001A732 /* Warhammer.xcdatamodel */,
+			);
+			name = Warhammer;
+			sourceTree = "<group>";
+		};
+		297AA4B016438FBA0041C59D /* Reference */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Reference;
+			sourceTree = "<group>";
+		};
+		298A9E09162FC1430045F1D1 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				29CD51391630BB5C001A639E /* PFAbilityTableViewCell.h */,
+				29CD513A1630BB5C001A639E /* PFAbilityTableViewCell.m */,
+				298A9E0A162FC1810045F1D1 /* PFClassTableViewCell.h */,
+				298A9E0B162FC1810045F1D1 /* PFClassTableViewCell.m */,
+				297AA4AD1640F2F20041C59D /* PFRacialTraitTableViewCell.h */,
+				297AA4AE1640F2F20041C59D /* PFRacialTraitTableViewCell.m */,
+				29CD513C1630CC95001A639E /* PFSkillTableViewCell.h */,
+				29CD513D1630CC95001A639E /* PFSkillTableViewCell.m */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		299ACDE315FA914A00E114E0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				299ACDE415FA918000E114E0 /* Pathfinder.xcdatamodeld */,
+				2902D0A1161FED6E00C56E74 /* PFAbility.h */,
+				2902D0A2161FED6E00C56E74 /* PFAbility.m */,
+				2902D09B161FED6D00C56E74 /* PFAlignment.h */,
+				2902D09C161FED6D00C56E74 /* PFAlignment.m */,
+				299ACDED15FAAE4C00E114E0 /* PFCharacter.h */,
+				299ACDEE15FAAE4C00E114E0 /* PFCharacter.m */,
+				2902D08C161FED6D00C56E74 /* PFCharacterAbility.h */,
+				2902D08D161FED6D00C56E74 /* PFCharacterAbility.m */,
+				2902D089161FED6D00C56E74 /* PFCharacterClass.h */,
+				2902D08A161FED6D00C56E74 /* PFCharacterClass.m */,
+				2972FDAF16325B9300B44692 /* PFCharacterSkill.h */,
+				2972FDB016325B9300B44692 /* PFCharacterSkill.m */,
+				2902D08F161FED6D00C56E74 /* PFClassType.h */,
+				2902D090161FED6D00C56E74 /* PFClassType.m */,
+				2902D092161FED6D00C56E74 /* PFFeat.h */,
+				2902D093161FED6D00C56E74 /* PFFeat.m */,
+				2902D09E161FED6E00C56E74 /* PFRace.h */,
+				2902D09F161FED6E00C56E74 /* PFRace.m */,
+				2902D098161FED6D00C56E74 /* PFSkill.h */,
+				2902D099161FED6D00C56E74 /* PFSkill.m */,
+				2902D095161FED6D00C56E74 /* PFTrait.h */,
+				2902D096161FED6D00C56E74 /* PFTrait.m */,
+				298A9E01162D06300045F1D1 /* PFTypes.h */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		299ACDEC15FAAC0800E114E0 /* Creation */ = {
+			isa = PBXGroup;
+			children = (
+				298A9E06162E5FD30045F1D1 /* PFCreateCharacterChooseAlignmentViewController.h */,
+				298A9E07162E5FD30045F1D1 /* PFCreateCharacterChooseAlignmentViewController.m */,
+				29362C1716253D9D0081EFA2 /* PFCreateCharacterChooseClassViewController.h */,
+				29362C1816253D9D0081EFA2 /* PFCreateCharacterChooseClassViewController.m */,
+				29362C1416253D860081EFA2 /* PFCreateCharacterChooseRaceViewController.h */,
+				29362C1516253D860081EFA2 /* PFCreateCharacterChooseRaceViewController.m */,
+				29362C1A16253F9C0081EFA2 /* PFCreateCharacterInfoViewController.h */,
+				29362C1B16253F9C0081EFA2 /* PFCreateCharacterInfoViewController.m */,
+				299ACDE915FAABB500E114E0 /* PFCreateCharacterViewController.h */,
+				299ACDEA15FAABB500E114E0 /* PFCreateCharacterViewController.m */,
+			);
+			name = Creation;
+			sourceTree = "<group>";
+		};
+		29B7D64D15F916820039C390 /* Pathfinder */ = {
+			isa = PBXGroup;
+			children = (
+				297AA4B016438FBA0041C59D /* Reference */,
+				295F62DA1602EDFF00EEF5ED /* Containers */,
+				299ACDEC15FAAC0800E114E0 /* Creation */,
+				290639A21606E4E900CCBBC7 /* Custom Cells */,
+				29CEF7FE1188FA4B00E2D442 /* Custom Views */,
+				299ACDE315FA914A00E114E0 /* Model */,
+				295F630D1602F53B00EEF5ED /* Pages */,
+				29B7D64E15F918250039C390 /* PFBaseViewController.h */,
+				29B7D64F15F918250039C390 /* PFBaseViewController.m */,
+				29B7D65115F9186F0039C390 /* PFContainerViewController.h */,
+				29B7D65215F9186F0039C390 /* PFContainerViewController.m */,
+				2902D0A4161FEE6A00C56E74 /* PFDataManager.h */,
+				2902D0A5161FEE6A00C56E74 /* PFDataManager.m */,
+			);
+			name = Pathfinder;
+			sourceTree = "<group>";
+		};
+		29B7D65915F919600039C390 /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				29B7D6A415F938970039C390 /* MainStoryboard.storyboard */,
+				28AD73870D9D96C1002E5188 /* MainWindow.xib */,
+				2900413816252EBE0050EDDB /* ProfileStoryboard.storyboard */,
+				2900413A162530E20050EDDB /* CombatStoryboard.storyboard */,
+				2900413C1625315C0050EDDB /* EquipmentStoryboard.storyboard */,
+				2900413E162531700050EDDB /* BackgroundStoryboard.storyboard */,
+				29004140162531890050EDDB /* NotesStoryboard.storyboard */,
+				290041421625319D0050EDDB /* SpellsStoryboard.storyboard */,
+				297AA4B116438FE70041C59D /* ReferenceStoryboard.storyboard */,
+			);
+			name = Interface;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* CharMgr */ = {
+			isa = PBXGroup;
+			children = (
+				080E96DDFE201D6D7F000001 /* Classes */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = CharMgr;
+			sourceTree = "<group>";
+			usesTabs = 1;
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				2962DEE616228DED00F11E0F /* GData */,
+				28A0AB4B0D9B1048005BE974 /* CharMgr_Prefix.pch */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				297AA4AB163F948E0041C59D /* Data */,
+				29B7D65915F919600039C390 /* Interface */,
+				2945351E15F80B760012F88F /* Images */,
+				8D1107310486CEB800E47090 /* CharMgr-Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				299ACDE715FA975D00E114E0 /* CoreData.framework */,
+				288765070DF74369002DB57D /* CoreGraphics.framework */,
+				1D30AB110D05D00D00671497 /* Foundation.framework */,
+				29E7A88615F96DD600DEFF6A /* QuartzCore.framework */,
+				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		29CEF7FE1188FA4B00E2D442 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				2924A7EF1188B2480001A732 /* CMBannerBox.h */,
+				2924A7F01188B2480001A732 /* CMBannerBox.m */,
+			);
+			name = "Custom Views";
+			sourceTree = "<group>";
+		};
+		29F5419115F960320096E4E6 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				29CEF7FF1188FA7600E2D442 /* CMProfileView.h */,
+				29CEF8001188FA7600E2D442 /* CMProfileView.m */,
+			);
+			name = "Custom Views";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1D6058900D05DD3D006BFB54 /* CharMgr */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "CharMgr" */;
+			buildPhases = (
+				1D60588D0D05DD3D006BFB54 /* Resources */,
+				1D60588E0D05DD3D006BFB54 /* Sources */,
+				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CharMgr;
+			productName = CharMgr;
+			productReference = 1D6058910D05DD3D006BFB54 /* CharMgr.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = CM;
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "Leif Harrison";
+			};
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "CharMgr" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 29B97314FDCFA39411CA2CEA /* CharMgr */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1D6058900D05DD3D006BFB54 /* CharMgr */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1D60588D0D05DD3D006BFB54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28AD73880D9D96C1002E5188 /* MainWindow.xib in Resources */,
+				28D4B068107A5DE70093E739 /* WHProfileView.xib in Resources */,
+				2945352015F80B820012F88F /* paper_texture.png in Resources */,
+				29B7D6A515F938970039C390 /* MainStoryboard.storyboard in Resources */,
+				2904429F1609875C008DAF11 /* PathfinderRoleplayingGame.png in Resources */,
+				2900413916252EBE0050EDDB /* ProfileStoryboard.storyboard in Resources */,
+				2900413B162530E20050EDDB /* CombatStoryboard.storyboard in Resources */,
+				2900413D1625315C0050EDDB /* EquipmentStoryboard.storyboard in Resources */,
+				2900413F162531700050EDDB /* BackgroundStoryboard.storyboard in Resources */,
+				29004141162531890050EDDB /* NotesStoryboard.storyboard in Resources */,
+				290041431625319D0050EDDB /* SpellsStoryboard.storyboard in Resources */,
+				297AA4AC163F948E0041C59D /* Data in Resources */,
+				297AA4B216438FE70041C59D /* ReferenceStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1D60588E0D05DD3D006BFB54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
+				1D3623260D0F684500981E51 /* CMAppDelegate.m in Sources */,
+				28216C970DB411BC00E5133A /* WHProfileViewController.m in Sources */,
+				2924A7EA1188A93A0001A732 /* Warhammer.xcdatamodel in Sources */,
+				2924A7F11188B2480001A732 /* CMBannerBox.m in Sources */,
+				29CEF8011188FA7600E2D442 /* CMProfileView.m in Sources */,
+				2968E04F13BD0E0200811211 /* PFProfileViewController.m in Sources */,
+				29B7D65015F918250039C390 /* PFBaseViewController.m in Sources */,
+				29B7D65315F9186F0039C390 /* PFContainerViewController.m in Sources */,
+				29B7D65615F918900039C390 /* PFCharacterViewController.m in Sources */,
+				29B7D6D715F948C00039C390 /* CMRootViewController.m in Sources */,
+				29E7A87715F9638700DEFF6A /* PFGearViewController.m in Sources */,
+				29E7A87A15F963B900DEFF6A /* PFSpellsViewController.m in Sources */,
+				29E7A87D15F963DE00DEFF6A /* PFCompanionsViewController.m in Sources */,
+				29E7A88015F963FB00DEFF6A /* PFNotesViewController.m in Sources */,
+				29E7A88315F964EB00DEFF6A /* CMMainViewController.m in Sources */,
+				299ACDE615FA918000E114E0 /* Pathfinder.xcdatamodeld in Sources */,
+				299ACDEB15FAABB500E114E0 /* PFCreateCharacterViewController.m in Sources */,
+				299ACDEF15FAAE4C00E114E0 /* PFCharacter.m in Sources */,
+				295F62DE1602EE7000EEF5ED /* PFSkillsViewController.m in Sources */,
+				295F62E31602EEDD00EEF5ED /* PFAbilitiesViewController.m in Sources */,
+				295F62E81602EF0800EEF5ED /* PFFeaturesViewController.m in Sources */,
+				295F62F21602EFB000EEF5ED /* PFHealthViewController.m in Sources */,
+				295F62F71602EFCF00EEF5ED /* PFBaseAttackViewController.m in Sources */,
+				295F62FC1602EFF900EEF5ED /* PFCombatManeuversViewController.m in Sources */,
+				295F63011602F3C900EEF5ED /* PFMovementViewController.m in Sources */,
+				295F63061602F41700EEF5ED /* PFArmorClassViewController.m in Sources */,
+				295F630B1602F46500EEF5ED /* PFSavingThrowsViewController.m in Sources */,
+				290639A116044D1900CCBBC7 /* PFCombatViewController.m in Sources */,
+				290442A4160C3696008DAF11 /* PFInitiativeViewController.m in Sources */,
+				290442A7160C3782008DAF11 /* PFAttacksViewController.m in Sources */,
+				290442AA160C392A008DAF11 /* PFEffectsViewController.m in Sources */,
+				2902D08B161FED6D00C56E74 /* PFCharacterClass.m in Sources */,
+				2902D08E161FED6D00C56E74 /* PFCharacterAbility.m in Sources */,
+				2902D091161FED6D00C56E74 /* PFClassType.m in Sources */,
+				2902D094161FED6D00C56E74 /* PFFeat.m in Sources */,
+				2902D097161FED6D00C56E74 /* PFTrait.m in Sources */,
+				2902D09A161FED6D00C56E74 /* PFSkill.m in Sources */,
+				2902D09D161FED6D00C56E74 /* PFAlignment.m in Sources */,
+				2902D0A0161FED6E00C56E74 /* PFRace.m in Sources */,
+				2902D0A3161FED6E00C56E74 /* PFAbility.m in Sources */,
+				2902D0A6161FEE6A00C56E74 /* PFDataManager.m in Sources */,
+				2962DEEA16228E1B00F11E0F /* GDataXMLNode.m in Sources */,
+				29362C1616253D860081EFA2 /* PFCreateCharacterChooseRaceViewController.m in Sources */,
+				29362C1916253D9D0081EFA2 /* PFCreateCharacterChooseClassViewController.m in Sources */,
+				29362C1C16253F9C0081EFA2 /* PFCreateCharacterInfoViewController.m in Sources */,
+				29DB695116293C340038FE79 /* PFClassesViewController.m in Sources */,
+				298A9E08162E5FD30045F1D1 /* PFCreateCharacterChooseAlignmentViewController.m in Sources */,
+				298A9E0C162FC1810045F1D1 /* PFClassTableViewCell.m in Sources */,
+				29CD513B1630BB5C001A639E /* PFAbilityTableViewCell.m in Sources */,
+				29CD513E1630CC96001A639E /* PFSkillTableViewCell.m in Sources */,
+				2972FDB116325B9300B44692 /* PFCharacterSkill.m in Sources */,
+				297AA4AF1640F2F20041C59D /* PFRacialTraitTableViewCell.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1D6058940D05DD3E006BFB54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = CharMgr_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INFOPLIST_FILE = "CharMgr-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				PRODUCT_NAME = CharMgr;
+				PROVISIONING_PROFILE = "";
+			};
+			name = Debug;
+		};
+		1D6058950D05DD3E006BFB54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = CharMgr_Prefix.pch;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INFOPLIST_FILE = "CharMgr-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				PRODUCT_NAME = CharMgr;
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
+				OTHER_LDFLAGS = "-lxml2";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				OTHER_LDFLAGS = "-lxml2";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "CharMgr" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D6058940D05DD3E006BFB54 /* Debug */,
+				1D6058950D05DD3E006BFB54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "CharMgr" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		299ACDE415FA918000E114E0 /* Pathfinder.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				299ACDE515FA918000E114E0 /* Pathfinder.xcdatamodel */,
+			);
+			currentVersion = 299ACDE515FA918000E114E0 /* Pathfinder.xcdatamodel */;
+			name = Pathfinder.xcdatamodeld;
+			path = ../Resources/Pathfinder/Pathfinder.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}
