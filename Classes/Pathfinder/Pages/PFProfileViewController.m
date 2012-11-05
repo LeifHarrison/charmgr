@@ -124,12 +124,12 @@ static const CGRect PFCharacterViewFrame = { { 10, 10 }, { 400, 235 } };
 		controller.delegate = self;
 		controller.character = self.character;
 		[self.containers addObject:controller];
-/*
+
 	    UIGestureRecognizer *gesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(containerViewLongPress:)];
 		gesture.delegate = controller;
 		[controller.view addGestureRecognizer:gesture];
 		[self.gestures addObject:gesture];
-*/
+
 	}
 }
 
@@ -172,12 +172,9 @@ static const CGRect PFCharacterViewFrame = { { 10, 10 }, { 400, 235 } };
 - (void)transitionContainer:(PFContainerViewController*)container
 					toState:(PFContainerViewState)newState
 {
-	LOG_DEBUG(@"container = %@, newState = %d", container, newState);
+	LOG_DEBUG(@"newState = %d, container = %@", newState, container);
 
 	UIView *containerView = container.view.superview;
-	LOG_DEBUG(@"container.view = %@", container.view);
-	LOG_DEBUG(@"containerView = %@", containerView);
-	LOG_DEBUG(@"containerView.transform = %@", NSStringFromCGAffineTransform(containerView.transform));
 
 	[container willTransitionToState:newState];
 	[self.view bringSubviewToFront:containerView];
@@ -192,22 +189,13 @@ static const CGRect PFCharacterViewFrame = { { 10, 10 }, { 400, 235 } };
 			self.activeContainerOriginalCenter = containerCenter;
 			LOG_DEBUG(@"activeContainerOriginalCenter = %@", NSStringFromCGPoint(self.activeContainerOriginalCenter));
 			
-			//CGFloat offsetX = viewCenter.x - containerCenter.x;
-			//CGFloat offsetY = viewCenter.y - 60 - containerCenter.y;
-			//LOG_DEBUG(@"offsetX = %lf, offsetY = %lf", offsetX, offsetY);
-			
-			//transform = CGAffineTransformTranslate(transform, offsetX, offsetY);
-			//transform = CGAffineTransformScale(transform, 1.2, 1.2);
 			containerView.center = viewCenter;
 		}
 		else {
 			LOG_DEBUG(@"activeContainerOriginalCenter = %@", NSStringFromCGPoint(self.activeContainerOriginalCenter));
 			containerView.center = self.activeContainerOriginalCenter;
 		}
-		
-        //self.characterViewController.view = 1.0;
-		//containerView.transform = transform;
-		
+				
 		[container animateTransitionToState:newState];
     };
     

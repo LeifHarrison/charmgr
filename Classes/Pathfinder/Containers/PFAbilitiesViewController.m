@@ -200,9 +200,11 @@ static const CGRect kAbilitiesViewEditRect   = { { 0, 0}, { 305, 240} };
 	[super animateTransitionToState:newState];
 	if (newState == PFContainerViewStateEditing) {
 		self.view.superview.bounds = kAbilitiesViewEditRect;
+		self.view.bounds = kAbilitiesViewEditRect;
 	}
 	else {
 		self.view.superview.bounds = kAbilitiesViewStaticRect;
+		self.view.bounds = kAbilitiesViewStaticRect;
 	}
 }
 

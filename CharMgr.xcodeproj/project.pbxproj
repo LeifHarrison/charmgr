@@ -38,6 +38,8 @@
 		290639A116044D1900CCBBC7 /* PFCombatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 290639A016044D1900CCBBC7 /* PFCombatViewController.m */; };
 		2924A7EA1188A93A0001A732 /* Warhammer.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 2924A7E91188A93A0001A732 /* Warhammer.xcdatamodel */; };
 		2924A7F11188B2480001A732 /* CMBannerBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 2924A7F01188B2480001A732 /* CMBannerBox.m */; };
+		293194271646112C00B10D70 /* PFReferenceFeatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 293194261646112C00B10D70 /* PFReferenceFeatsViewController.m */; };
+		2931942B16462A2900B10D70 /* PFSelectRaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2931942A16462A2900B10D70 /* PFSelectRaceViewController.m */; };
 		29362C1616253D860081EFA2 /* PFCreateCharacterChooseRaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29362C1516253D860081EFA2 /* PFCreateCharacterChooseRaceViewController.m */; };
 		29362C1916253D9D0081EFA2 /* PFCreateCharacterChooseClassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29362C1816253D9D0081EFA2 /* PFCreateCharacterChooseClassViewController.m */; };
 		29362C1C16253F9C0081EFA2 /* PFCreateCharacterInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29362C1B16253F9C0081EFA2 /* PFCreateCharacterInfoViewController.m */; };
@@ -130,6 +132,10 @@
 		2924A7E91188A93A0001A732 /* Warhammer.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; name = Warhammer.xcdatamodel; path = ../Resources/Warhammer/Warhammer.xcdatamodel; sourceTree = "<group>"; };
 		2924A7EF1188B2480001A732 /* CMBannerBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMBannerBox.h; sourceTree = "<group>"; };
 		2924A7F01188B2480001A732 /* CMBannerBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMBannerBox.m; sourceTree = "<group>"; };
+		293194251646112C00B10D70 /* PFReferenceFeatsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFReferenceFeatsViewController.h; path = Pathfinder/Reference/PFReferenceFeatsViewController.h; sourceTree = "<group>"; };
+		293194261646112C00B10D70 /* PFReferenceFeatsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFReferenceFeatsViewController.m; path = Pathfinder/Reference/PFReferenceFeatsViewController.m; sourceTree = "<group>"; };
+		2931942916462A2900B10D70 /* PFSelectRaceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFSelectRaceViewController.h; path = Pathfinder/Containers/Profile/Detail/PFSelectRaceViewController.h; sourceTree = "<group>"; };
+		2931942A16462A2900B10D70 /* PFSelectRaceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFSelectRaceViewController.m; path = Pathfinder/Containers/Profile/Detail/PFSelectRaceViewController.m; sourceTree = "<group>"; };
 		29362C1416253D860081EFA2 /* PFCreateCharacterChooseRaceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFCreateCharacterChooseRaceViewController.h; path = Pathfinder/PFCreateCharacterChooseRaceViewController.h; sourceTree = "<group>"; };
 		29362C1516253D860081EFA2 /* PFCreateCharacterChooseRaceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFCreateCharacterChooseRaceViewController.m; path = Pathfinder/PFCreateCharacterChooseRaceViewController.m; sourceTree = "<group>"; };
 		29362C1716253D9D0081EFA2 /* PFCreateCharacterChooseClassViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFCreateCharacterChooseClassViewController.h; path = Pathfinder/PFCreateCharacterChooseClassViewController.h; sourceTree = "<group>"; };
@@ -250,6 +256,7 @@
 		290442A0160C3550008DAF11 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				29319428164629CA00B10D70 /* Detail */,
 				298A9E09162FC1430045F1D1 /* Cells */,
 				295F62E01602EEDD00EEF5ED /* PFAbilitiesViewController.h */,
 				295F62E11602EEDD00EEF5ED /* PFAbilitiesViewController.m */,
@@ -295,6 +302,15 @@
 			children = (
 			);
 			name = "Custom Cells";
+			sourceTree = "<group>";
+		};
+		29319428164629CA00B10D70 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				2931942916462A2900B10D70 /* PFSelectRaceViewController.h */,
+				2931942A16462A2900B10D70 /* PFSelectRaceViewController.m */,
+			);
+			name = Detail;
 			sourceTree = "<group>";
 		};
 		2945351E15F80B760012F88F /* Images */ = {
@@ -366,6 +382,8 @@
 		297AA4B016438FBA0041C59D /* Reference */ = {
 			isa = PBXGroup;
 			children = (
+				293194251646112C00B10D70 /* PFReferenceFeatsViewController.h */,
+				293194261646112C00B10D70 /* PFReferenceFeatsViewController.m */,
 			);
 			name = Reference;
 			sourceTree = "<group>";
@@ -436,13 +454,13 @@
 		29B7D64D15F916820039C390 /* Pathfinder */ = {
 			isa = PBXGroup;
 			children = (
-				297AA4B016438FBA0041C59D /* Reference */,
 				295F62DA1602EDFF00EEF5ED /* Containers */,
 				299ACDEC15FAAC0800E114E0 /* Creation */,
 				290639A21606E4E900CCBBC7 /* Custom Cells */,
 				29CEF7FE1188FA4B00E2D442 /* Custom Views */,
 				299ACDE315FA914A00E114E0 /* Model */,
 				295F630D1602F53B00EEF5ED /* Pages */,
+				297AA4B016438FBA0041C59D /* Reference */,
 				29B7D64E15F918250039C390 /* PFBaseViewController.h */,
 				29B7D64F15F918250039C390 /* PFBaseViewController.m */,
 				29B7D65115F9186F0039C390 /* PFContainerViewController.h */,
@@ -456,15 +474,15 @@
 		29B7D65915F919600039C390 /* Interface */ = {
 			isa = PBXGroup;
 			children = (
-				29B7D6A415F938970039C390 /* MainStoryboard.storyboard */,
-				28AD73870D9D96C1002E5188 /* MainWindow.xib */,
-				2900413816252EBE0050EDDB /* ProfileStoryboard.storyboard */,
+				2900413E162531700050EDDB /* BackgroundStoryboard.storyboard */,
 				2900413A162530E20050EDDB /* CombatStoryboard.storyboard */,
 				2900413C1625315C0050EDDB /* EquipmentStoryboard.storyboard */,
-				2900413E162531700050EDDB /* BackgroundStoryboard.storyboard */,
+				29B7D6A415F938970039C390 /* MainStoryboard.storyboard */,
+				28AD73870D9D96C1002E5188 /* MainWindow.xib */,
 				29004140162531890050EDDB /* NotesStoryboard.storyboard */,
-				290041421625319D0050EDDB /* SpellsStoryboard.storyboard */,
+				2900413816252EBE0050EDDB /* ProfileStoryboard.storyboard */,
 				297AA4B116438FE70041C59D /* ReferenceStoryboard.storyboard */,
+				290041421625319D0050EDDB /* SpellsStoryboard.storyboard */,
 			);
 			name = Interface;
 			sourceTree = "<group>";
@@ -663,6 +681,8 @@
 				29CD513E1630CC96001A639E /* PFSkillTableViewCell.m in Sources */,
 				2972FDB116325B9300B44692 /* PFCharacterSkill.m in Sources */,
 				297AA4AF1640F2F20041C59D /* PFRacialTraitTableViewCell.m in Sources */,
+				293194271646112C00B10D70 /* PFReferenceFeatsViewController.m in Sources */,
+				2931942B16462A2900B10D70 /* PFSelectRaceViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

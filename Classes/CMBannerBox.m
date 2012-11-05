@@ -135,12 +135,13 @@
 
 - (void)layoutSubviews
 {
+	//TRACE;
 	[super layoutSubviews];
 	
 	//CGRect bannerRect, contentRect;
 	//CGRectDivide(self.bounds, &bannerRect, &contentRect, self.bannerHeight, CGRectMinYEdge);
 
-	//LOG_DEBUG(@" frame = %@", NSStringFromCGRect(self.frame));
+	LOG_DEBUG(@" frame = %@", NSStringFromCGRect(self.frame));
 	//LOG_DEBUG(@" bannerRect = %@", NSStringFromCGRect(bannerRect));
 	//LOG_DEBUG(@" contentRect = %@", NSStringFromCGRect(contentRect));
 
@@ -165,7 +166,7 @@
 	self.bannerLabel.textAlignment = UITextAlignmentCenter;
 	[self addSubview:bannerLabel];
 }
-
+/*
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
 	LOG_DEBUG(@"event = %@", event);
@@ -186,5 +187,5 @@
 	[super touchesEnded:touches withEvent:event];
 	self.highlighted = NO;
 }
-
+*/
 @end

@@ -120,6 +120,10 @@
 	if (newState == PFContainerViewStateStatic) {
 		[self setEditableFieldsEnabled:NO];
 	}
+	else if (newState == PFContainerViewStateEditing) {
+		self.raceButton.hidden = NO;
+		self.raceButton.alpha = 0.0;
+	}
 }
 
 - (void)didTransitionToState:(PFContainerViewState)newState;
@@ -128,6 +132,23 @@
 	//LOG_DEBUG(@"parentViewController = %@", self.parentViewController);
 	[super didTransitionToState:newState];
 	
+	void (^animations) (void) = ^{
+		if (newState == PFContainerViewStateEditing) {
+			self.raceButton.alpha = 1.0;
+			self.raceLabel.alpha = 0.0;
+		}
+		else {
+		}
+    };
+    void (^completion) (BOOL) = ^(BOOL finished) {
+		if (newState == PFContainerViewStateEditing) {
+			self.raceButton.enabled = YES;
+		}
+    };
+    [UIView animateWithDuration:0.3
+					 animations:animations
+					 completion:completion];
+
 	if (newState == PFContainerViewStateEditing) {
 		[self setEditableFieldsEnabled:YES];
 	}
@@ -139,5 +160,19 @@
 	[super animateTransitionToState:newState];
 	// Default implementation does nothing
 }
+
+
+//------------------------------------------------------------------------------
+#pragma mark - Storyboard
+//------------------------------------------------------------------------------
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+	LOG_DEBUG(@"seque = %@, sender = %@", segue.identifier, sender);
+	
+	//if ([segue.identifier hasSuffix:@"Container"]) {
+	//}
+}
+
 
 @end

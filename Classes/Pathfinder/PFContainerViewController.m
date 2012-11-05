@@ -8,6 +8,9 @@
 
 #import "PFContainerViewController.h"
 
+
+#define HEADER_BUTTON_ANIMATION_DURATION 0.2
+
 @interface PFContainerViewController ()
 
 @end
@@ -48,6 +51,10 @@
     self.view.backgroundColor = [UIColor colorWithRed:245.0/255 green:240.0/255 blue:203.0/255 alpha:0.5];
 	
 	self.doneButton = [UIButton buttonWithType:UIButtonTypeCustom];
+	self.doneButton.layer.borderColor = [UIColor darkGrayColor].CGColor;
+	self.doneButton.layer.borderWidth = 1;
+	self.doneButton.layer.cornerRadius = 9.0;
+	self.doneButton.backgroundColor = [UIColor lightGrayColor];
 	self.doneButton.frame = CGRectMake(8, 3, 55, 20);
 	self.doneButton.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin;
 	self.doneButton.titleLabel.font = [UIFont systemFontOfSize:12];
@@ -58,6 +65,10 @@
 	[self.view addSubview:self.doneButton];
 	
 	self.cancelButton = [UIButton buttonWithType:UIButtonTypeCustom];
+	self.cancelButton.layer.borderColor = [UIColor darkGrayColor].CGColor;
+	self.cancelButton.layer.borderWidth = 1;
+	self.cancelButton.layer.cornerRadius = 9.0;
+	self.cancelButton.backgroundColor = [UIColor lightGrayColor];
 	self.cancelButton.frame = CGRectMake(8, 3, 55, 20);
 	self.cancelButton.autoresizingMask = UIViewAutoresizingFlexibleRightMargin;
 	self.cancelButton.titleLabel.font = [UIFont systemFontOfSize:12];
@@ -121,7 +132,7 @@
 
 - (void)willTransitionToState:(PFContainerViewState)newState;
 {
-	LOG_DEBUG(@"newState = %d", newState);
+	//LOG_DEBUG(@"newState = %d", newState);
 	void (^animations) (void) = ^{
 		if (newState == PFContainerViewStateStatic) {
 			self.doneButton.alpha = 0.0;
@@ -130,12 +141,14 @@
     };
     void (^completion) (BOOL) = ^(BOOL finished) {
     };
-    [UIView animateWithDuration:0.5 animations:animations completion:completion];
+    [UIView animateWithDuration:HEADER_BUTTON_ANIMATION_DURATION
+					 animations:animations
+					 completion:completion];
 }
 
 - (void)didTransitionToState:(PFContainerViewState)newState;
 {
-	LOG_DEBUG(@"newState = %d", newState);
+	//LOG_DEBUG(@"newState = %d", newState);
 	void (^animations) (void) = ^{
 		if (newState == PFContainerViewStateEditing) {
 			self.doneButton.alpha = 1.0;
@@ -150,12 +163,14 @@
 			self.cancelButton.enabled = YES;
 		}
     };
-    [UIView animateWithDuration:0.5 animations:animations completion:completion];
+    [UIView animateWithDuration:HEADER_BUTTON_ANIMATION_DURATION
+					 animations:animations
+					 completion:completion];
 }
 
 - (void)animateTransitionToState:(PFContainerViewState)newState;
 {
-	LOG_DEBUG(@"newState = %d", newState);
+	//LOG_DEBUG(@"newState = %d", newState);
 	if (newState == PFContainerViewStateEditing) {
 		self.view.backgroundColor = [UIColor colorWithRed:245.0/255 green:240.0/255 blue:203.0/255 alpha:1.0];
 	}

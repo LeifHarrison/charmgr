@@ -171,7 +171,7 @@ enum {
 	else if (indexPath.section == kPFFeaturesTableViewSectionFeats) {
 		cellIdentifier = @"FeatCell";
 	}
-	LOG_DEBUG(@"indexPath = %@, cell identifier = %@", indexPath, cellIdentifier);
+	//LOG_DEBUG(@"indexPath = %@, cell identifier = %@", indexPath, cellIdentifier);
 
     UITableViewCell *cell = nil;
 	if (cellIdentifier) {

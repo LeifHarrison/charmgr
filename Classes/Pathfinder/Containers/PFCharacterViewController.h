@@ -19,4 +19,6 @@
 @property (nonatomic, strong) IBOutlet UILabel *raceLabel;
 @property (nonatomic, strong) IBOutlet UILabel *sizeLabel;
 
+@property (nonatomic, strong) IBOutlet UIButton *raceButton;
+
 @end
