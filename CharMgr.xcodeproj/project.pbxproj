@@ -80,6 +80,8 @@
 		29E7A88015F963FB00DEFF6A /* PFNotesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29E7A87F15F963FB00DEFF6A /* PFNotesViewController.m */; };
 		29E7A88315F964EB00DEFF6A /* CMMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29E7A88215F964EB00DEFF6A /* CMMainViewController.m */; };
 		29E7A88715F96DD600DEFF6A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29E7A88615F96DD600DEFF6A /* QuartzCore.framework */; };
+		29F0660A16479BA00088BA86 /* PFDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29F0660916479BA00088BA86 /* PFDetailViewController.m */; };
+		29F0660E1648F0B00088BA86 /* PFReferenceFeatCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 29F0660D1648F0B00088BA86 /* PFReferenceFeatCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -211,6 +213,10 @@
 		29E7A88115F964EB00DEFF6A /* CMMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMMainViewController.h; sourceTree = "<group>"; };
 		29E7A88215F964EB00DEFF6A /* CMMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMMainViewController.m; sourceTree = "<group>"; };
 		29E7A88615F96DD600DEFF6A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		29F0660816479BA00088BA86 /* PFDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFDetailViewController.h; path = Pathfinder/PFDetailViewController.h; sourceTree = "<group>"; };
+		29F0660916479BA00088BA86 /* PFDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFDetailViewController.m; path = Pathfinder/PFDetailViewController.m; sourceTree = "<group>"; };
+		29F0660C1648F0B00088BA86 /* PFReferenceFeatCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFReferenceFeatCell.h; path = Pathfinder/Reference/Cells/PFReferenceFeatCell.h; sourceTree = "<group>"; };
+		29F0660D1648F0B00088BA86 /* PFReferenceFeatCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFReferenceFeatCell.m; path = Pathfinder/Reference/Cells/PFReferenceFeatCell.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* CharMgr-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "CharMgr-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -382,6 +388,7 @@
 		297AA4B016438FBA0041C59D /* Reference */ = {
 			isa = PBXGroup;
 			children = (
+				29F0660B1648F0830088BA86 /* Cells */,
 				293194251646112C00B10D70 /* PFReferenceFeatsViewController.h */,
 				293194261646112C00B10D70 /* PFReferenceFeatsViewController.m */,
 			);
@@ -467,6 +474,8 @@
 				29B7D65215F9186F0039C390 /* PFContainerViewController.m */,
 				2902D0A4161FEE6A00C56E74 /* PFDataManager.h */,
 				2902D0A5161FEE6A00C56E74 /* PFDataManager.m */,
+				29F0660816479BA00088BA86 /* PFDetailViewController.h */,
+				29F0660916479BA00088BA86 /* PFDetailViewController.m */,
 			);
 			name = Pathfinder;
 			sourceTree = "<group>";
@@ -540,6 +549,15 @@
 				2924A7F01188B2480001A732 /* CMBannerBox.m */,
 			);
 			name = "Custom Views";
+			sourceTree = "<group>";
+		};
+		29F0660B1648F0830088BA86 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				29F0660C1648F0B00088BA86 /* PFReferenceFeatCell.h */,
+				29F0660D1648F0B00088BA86 /* PFReferenceFeatCell.m */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 		29F5419115F960320096E4E6 /* Custom Views */ = {
@@ -683,6 +701,8 @@
 				297AA4AF1640F2F20041C59D /* PFRacialTraitTableViewCell.m in Sources */,
 				293194271646112C00B10D70 /* PFReferenceFeatsViewController.m in Sources */,
 				2931942B16462A2900B10D70 /* PFSelectRaceViewController.m in Sources */,
+				29F0660A16479BA00088BA86 /* PFDetailViewController.m in Sources */,
+				29F0660E1648F0B00088BA86 /* PFReferenceFeatCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

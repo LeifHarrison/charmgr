@@ -175,7 +175,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Wi1-9O-2MW" kind="popover" popoverAnchorView="PDE-EG-HYL" id="rp1-eH-UfN">
+                                    <segue destination="Wi1-9O-2MW" kind="popover" identifier="RaceDetail" popoverAnchorView="PDE-EG-HYL" id="rp1-eH-UfN">
                                         <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                     </segue>
                                 </connections>
@@ -695,10 +695,10 @@ Level</string>
             </objects>
             <point key="canvasLocation" x="402" y="-880"/>
         </scene>
-        <!--View Controller-->
+        <!--Select Race View Controller-->
         <scene sceneID="V91-zR-juc">
             <objects>
-                <viewController id="Wi1-9O-2MW" sceneMemberID="viewController">
+                <viewController id="Wi1-9O-2MW" customClass="PFSelectRaceViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7Mk-du-zlX">
                         <rect key="frame" x="0.0" y="20" width="300" height="400"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -718,15 +718,49 @@ Level</string>
                                 <rect key="frame" x="8" y="9" width="286" height="335"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RaceCell" textLabel="9tB-cM-oH4" detailTextLabel="aWa-6Y-4jR" style="IBUITableViewCellStyleSubtitle" id="AHK-av-OeR">
+                                        <rect key="frame" x="0.0" y="22" width="286" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="286" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9tB-cM-oH4">
+                                                    <rect key="frame" x="10" y="2" width="38" height="22"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Detail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="aWa-6Y-4jR">
+                                                    <rect key="frame" x="10" y="24" width="36" height="18"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Wi1-9O-2MW" id="h20-5M-D4c"/>
+                                    <outlet property="delegate" destination="Wi1-9O-2MW" id="QAA-Hm-fZU"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="tableView" destination="Wuf-GP-azg" id="lc8-7A-rOK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HeA-Bz-gaY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="836" y="-1218"/>
+            <point key="canvasLocation" x="829" y="-1401"/>
         </scene>
     </scenes>
     <classes>
@@ -790,6 +824,9 @@ Level</string>
                 <relationship kind="outlet" name="doneButton" candidateClass="UIButton"/>
             </relationships>
         </class>
+        <class className="PFDetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PFDetailViewController.h"/>
+        </class>
         <class className="PFFeaturesViewController" superclassName="PFContainerViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PFFeaturesViewController.h"/>
             <relationships>
@@ -804,6 +841,13 @@ Level</string>
             <relationships>
                 <relationship kind="outlet" name="traitDescriptionLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="traitNameLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="PFSelectRaceViewController" superclassName="PFDetailViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PFSelectRaceViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="temporarySwitch" candidateClass="UISwitch"/>
             </relationships>
         </class>
         <class className="PFSkillTableViewCell" superclassName="UITableViewCell">

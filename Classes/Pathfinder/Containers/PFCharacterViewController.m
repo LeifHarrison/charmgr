@@ -169,7 +169,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
 	LOG_DEBUG(@"seque = %@, sender = %@", segue.identifier, sender);
-	
+	[super prepareForSegue:segue sender:sender];
 	//if ([segue.identifier hasSuffix:@"Container"]) {
 	//}
 }

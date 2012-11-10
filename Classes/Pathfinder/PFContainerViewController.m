@@ -8,6 +8,7 @@
 
 #import "PFContainerViewController.h"
 
+#import "PFDetailViewController.h"
 
 #define HEADER_BUTTON_ANIMATION_DURATION 0.2
 
@@ -177,6 +178,22 @@
 	else {
 		self.view.backgroundColor = [UIColor colorWithRed:245.0/255 green:240.0/255 blue:203.0/255 alpha:0.5];
 	}
+}
+
+//------------------------------------------------------------------------------
+#pragma mark - Storyboard
+//------------------------------------------------------------------------------
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+	LOG_DEBUG(@"seque = %@, sender = %@", segue.identifier, sender);
+	
+	if ([segue.identifier hasSuffix:@"Detail"]) {
+		PFDetailViewController *controller = segue.destinationViewController;
+		//controller.delegate = self;
+		controller.character = self.character;
+	}
+	
 }
 
 

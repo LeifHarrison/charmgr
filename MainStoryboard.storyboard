@@ -89,10 +89,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="kIW-l0-o0R">
-                                <rect key="frame" x="686" y="941" width="62" height="44"/>
+                                <rect key="frame" x="653" y="941" width="95" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Prefs">
+                                <state key="normal" title="Settings">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -104,7 +104,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="pgq-8V-IIz">
-                                <rect key="frame" x="581" y="941" width="97" height="44"/>
+                                <rect key="frame" x="550" y="941" width="95" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Reference">
@@ -577,64 +577,6 @@
     <resources>
         <image name="PathfinderRoleplayingGame.png" width="1112" height="286"/>
     </resources>
-    <classes>
-        <class className="CMMainViewController" superclassName="PFBaseViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CMMainViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="showPreferencesView:"/>
-                <relationship kind="action" name="showReferenceView:"/>
-                <relationship kind="outlet" name="charactersTableView" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="createCharacterButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="CMRootViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CMRootViewController.h"/>
-        </class>
-        <class className="PFBaseViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PFBaseViewController.h"/>
-        </class>
-        <class className="PFCreateCharacterChooseAlignmentViewController" superclassName="PFCreateCharacterViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PFCreateCharacterChooseAlignmentViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="save:"/>
-                <relationship kind="outlet" name="descriptionTextView" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="PFCreateCharacterChooseClassViewController" superclassName="PFCreateCharacterViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PFCreateCharacterChooseClassViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="save:"/>
-                <relationship kind="outlet" name="descriptionTextView" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="PFCreateCharacterChooseRaceViewController" superclassName="PFCreateCharacterViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PFCreateCharacterChooseRaceViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="save:"/>
-                <relationship kind="outlet" name="descriptionTextView" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="genderControl" candidateClass="UISegmentedControl"/>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="PFCreateCharacterInfoViewController" superclassName="PFCreateCharacterViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PFCreateCharacterInfoViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="save:"/>
-                <relationship kind="outlet" name="campaignField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="nameField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="playerField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="PFCreateCharacterViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PFCreateCharacterViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cancel:"/>
-                <relationship kind="action" name="save:"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>
