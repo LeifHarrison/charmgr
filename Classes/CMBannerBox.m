@@ -133,38 +133,31 @@
 	}
 }
 
-- (void)layoutSubviews
-{
-	//TRACE;
-	[super layoutSubviews];
-	
-	//CGRect bannerRect, contentRect;
-	//CGRectDivide(self.bounds, &bannerRect, &contentRect, self.bannerHeight, CGRectMinYEdge);
-
-	LOG_DEBUG(@" frame = %@", NSStringFromCGRect(self.frame));
-	//LOG_DEBUG(@" bannerRect = %@", NSStringFromCGRect(bannerRect));
-	//LOG_DEBUG(@" contentRect = %@", NSStringFromCGRect(contentRect));
-
-	//self.bannerLabel.frame = bannerRect;
-}
-
 - (void)createBannerLabel
 {
 	CGRect bannerRect, contentRect;
 	CGRectDivide(self.bounds, &bannerRect, &contentRect, self.bannerHeight, CGRectMinYEdge);
 	
+	UIView *containerView = [[UIView alloc] initWithFrame:bannerRect];
+	containerView.autoresizingMask = UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleWidth;
+	containerView.backgroundColor = self.bannerColor;
 	//LOG_DEBUG(@" frame = %@", NSStringFromCGRect(frame));
 	//LOG_DEBUG(@" bannerRect = %@", NSStringFromCGRect(bannerRect));
 	//LOG_DEBUG(@" contentRect = %@", NSStringFromCGRect(contentRect));
-	
+	[self addSubview:containerView];
+
 	self.bannerLabel = [[UILabel alloc] initWithFrame:bannerRect];
-	self.bannerLabel.autoresizingMask = UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleWidth;
+	//self.bannerLabel.autoresizingMask = UIViewAutoresizingNone;
+	self.bannerLabel.autoresizingMask = UIViewAutoresizingFlexibleBottomMargin |
+										UIViewAutoresizingFlexibleTopMargin |
+										UIViewAutoresizingFlexibleLeftMargin |
+										UIViewAutoresizingFlexibleRightMargin;
 	self.bannerLabel.font = self.bannerFont;
-	self.bannerLabel.backgroundColor = self.bannerColor;
+	self.bannerLabel.backgroundColor = [UIColor clearColor];
 	self.bannerLabel.textColor = [UIColor whiteColor];
 	self.bannerLabel.text = self.bannerTitle;
 	self.bannerLabel.textAlignment = UITextAlignmentCenter;
-	[self addSubview:bannerLabel];
+	[containerView addSubview:self.bannerLabel];
 }
 /*
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
