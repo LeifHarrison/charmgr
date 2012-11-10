@@ -7,8 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+
 #import <CoreData/CoreData.h>
 
+@class GDataXMLElement;
 
 @interface PFFeat : NSManagedObject
 
@@ -20,5 +22,11 @@
 @property (nonatomic, retain) NSString * special;
 @property (nonatomic, retain) NSString * normal;
 @property (nonatomic, retain) NSString * source;
+
++ (PFFeat *)insertedInstanceWithElement:(GDataXMLElement *)anElement
+				  inManagedObjectContext:(NSManagedObjectContext*)moc;
+
++ (NSArray*)fetchAllInContext:(NSManagedObjectContext*)moc;
++ (PFFeat*)fetchWithName:(NSString *)aName inContext:(NSManagedObjectContext*)moc;
 
 @end

@@ -138,7 +138,7 @@
 		};
 	}
 		
-	LOG_DEBUG(@"newInstance = %@", newInstance);
+	//LOG_DEBUG(@"newInstance = %@", newInstance);
 	return newInstance;
 }
 

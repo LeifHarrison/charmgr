@@ -42,7 +42,7 @@
 	NSArray *elements = [doc.rootElement elementsForName:@"Ability"];
 	for (GDataXMLElement *anElement in elements) {
 		PFAbility *newInstance = [PFAbility insertedInstanceWithElement:anElement inManagedObjectContext:moc];
-		LOG_DEBUG(@"newInstance = %@", newInstance.name);
+		//LOG_DEBUG(@"newInstance = %@", newInstance.name);
 	}
 	
 	if (![moc save:&error]) {
@@ -71,7 +71,7 @@
 	NSArray *elements = [doc.rootElement elementsForName:@"Alignment"];
 	for (GDataXMLElement *anElement in elements) {
 		PFAlignment *newInstance = [PFAlignment insertedInstanceWithElement:anElement inManagedObjectContext:moc];
-		LOG_DEBUG(@"newInstance = %@", newInstance.name);
+		//LOG_DEBUG(@"newInstance = %@", newInstance.name);
 	}
 	
 	if (![moc save:&error]) {
@@ -100,7 +100,7 @@
 	NSArray *elements = [doc.rootElement elementsForName:@"Class"];
 	for (GDataXMLElement *anElement in elements) {
 		PFClassType *newInstance = [PFClassType insertedInstanceWithElement:anElement inManagedObjectContext:moc];
-		LOG_DEBUG(@"newInstance = %@", newInstance.name);
+		//LOG_DEBUG(@"newInstance = %@", newInstance.name);
 	}
 	
 	if (![moc save:&error]) {
@@ -129,7 +129,7 @@
 	NSArray *elements = [doc.rootElement elementsForName:@"Race"];
 	for (GDataXMLElement *anElement in elements) {
 		PFRace *newInstance = [PFRace insertedInstanceWithElement:anElement inManagedObjectContext:moc];
-		LOG_DEBUG(@"newInstance = %@", newInstance.name);
+		//LOG_DEBUG(@"newInstance = %@", newInstance.name);
 	}
 	
 	if (![moc save:&error]) {
@@ -158,8 +158,41 @@
 	NSArray *elements = [doc.rootElement elementsForName:@"Skill"];
 	for (GDataXMLElement *anElement in elements) {
 		PFSkill *newInstance = [PFSkill insertedInstanceWithElement:anElement inManagedObjectContext:moc];
-		LOG_DEBUG(@"newInstance = %@", newInstance.name);
+		//LOG_DEBUG(@"newInstance = %@", newInstance.name);
 	}
+	
+	if (![moc save:&error]) {
+		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+		abort();
+	}
+	
+}
+
+- (void)importFeatsAsXML;
+{
+	LOG_DEBUG(@"Importing feats...");
+	CMAppDelegate *appDelegate = (CMAppDelegate*)[[UIApplication sharedApplication] delegate];
+	NSManagedObjectContext *moc = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
+	[moc setPersistentStoreCoordinator:[appDelegate persistentStoreCoordinator]];
+	
+	NSString *filePath = [[NSBundle mainBundle] pathForResource:@"Feats" ofType:@"xml" inDirectory:@"Data/Core"];
+    NSData *xmlData = [[NSMutableData alloc] initWithContentsOfFile:filePath];
+    NSError *error;
+	
+    GDataXMLDocument *doc = [[GDataXMLDocument alloc] initWithData:xmlData options:0 error:&error];
+    if (doc == nil) { return; }
+	
+    //NSLog(@"%@", doc.rootElement);
+	NSInteger importCount = 0;
+	
+	NSArray *elements = [doc.rootElement elementsForName:@"Feat"];
+	for (GDataXMLElement *anElement in elements) {
+		PFFeat *newInstance = [PFFeat insertedInstanceWithElement:anElement inManagedObjectContext:moc];
+		//LOG_DEBUG(@"newInstance = %@", newInstance.name);
+		if (newInstance) importCount++;
+	}
+	
+	LOG_DEBUG(@"  %d feats imported.", importCount);
 	
 	if (![moc save:&error]) {
 		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);

@@ -69,7 +69,7 @@
         <attribute name="prerequisitesString" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="source" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="special" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="type" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="PFRace" representedClassName="PFRace" syncable="YES">
         <attribute name="adventurers" optional="YES" attributeType="String" syncable="YES"/>

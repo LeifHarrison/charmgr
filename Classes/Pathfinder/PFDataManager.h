@@ -12,8 +12,9 @@
 
 - (void)importAbilitiesAsXML;
 - (void)importAlignmentsAsXML;
-- (void)importClassTypesAsXML;
 - (void)importRacesAsXML;
+- (void)importClassTypesAsXML;
 - (void)importSkillsAsXML;
+- (void)importFeatsAsXML;
 
 @end

@@ -104,6 +104,13 @@
 		[userDefaults setObject:[NSDate date] forKey:kCMClassesUpdatedDateDefaultsKey];
 	}
 	
+	NSDate *featsLastUpdated = [userDefaults objectForKey:kCMFeatsUpdatedDateDefaultsKey];
+	LOG_DEBUG(@"featsLastUpdated = %@", featsLastUpdated);
+	if (!featsLastUpdated) {
+		[self.dataManager importFeatsAsXML];
+		[userDefaults setObject:[NSDate date] forKey:kCMFeatsUpdatedDateDefaultsKey];
+	}
+	
 	[userDefaults synchronize];
 
     return YES;

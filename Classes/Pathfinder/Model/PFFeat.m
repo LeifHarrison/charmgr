@@ -60,13 +60,59 @@
 		newInstance.benefitString = firstElement.stringValue;
 	};
 	
-	elements = [anElement elementsForName:@"ShortDescription"];
+	elements = [anElement elementsForName:@"Normal"];
 	if (elements.count > 0) {
 		GDataXMLElement *firstElement = (GDataXMLElement *) [elements objectAtIndex:0];
-		newInstance.descriptionShort = firstElement.stringValue;
+		newInstance.normal = firstElement.stringValue;
 	};
 	
 	return newInstance;
+}
+
+//------------------------------------------------------------------------------
+#pragma mark - Fetching
+//------------------------------------------------------------------------------
+
++ (NSArray*)fetchAllInContext:(NSManagedObjectContext*)moc
+{
+	NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"PFFeat"
+														 inManagedObjectContext:moc];
+	NSFetchRequest *request = [[NSFetchRequest alloc] init];
+	[request setEntity:entityDescription];
+	
+	// Set sort orderings...
+	NSSortDescriptor *typeSortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES];
+	request.sortDescriptors = [NSArray arrayWithObject:typeSortDescriptor];
+	
+	NSError *error = nil;
+	NSArray *array = [moc executeFetchRequest:request error:&error];
+	if (!array) {
+		LOG_DEBUG(@"Error fetching skill!");
+	}
+	
+	return array;
+}
+
++ (PFFeat*)fetchWithName:(NSString *)aName inContext:(NSManagedObjectContext*)moc;
+{
+	NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"PFFeat"
+														 inManagedObjectContext:moc];
+	NSFetchRequest *request = [[NSFetchRequest alloc] init];
+	[request setEntity:entityDescription];
+	
+	NSPredicate *predicate = [NSPredicate predicateWithFormat: @"name like[cd] %@", aName];
+	[request setPredicate:predicate];
+	
+	NSError *error = nil;
+	NSArray *array = [moc executeFetchRequest:request error:&error];
+	if (!array) {
+		LOG_DEBUG(@"Error fetching skill with name '%@'!", aName);
+	}
+	
+	if (array.count > 0)
+		return [array objectAtIndex:0];
+	
+	return nil;
 }
 
 
