@@ -65,6 +65,9 @@
 		299ACDE815FA975D00E114E0 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 299ACDE715FA975D00E114E0 /* CoreData.framework */; };
 		299ACDEB15FAABB500E114E0 /* PFCreateCharacterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 299ACDEA15FAABB500E114E0 /* PFCreateCharacterViewController.m */; };
 		299ACDEF15FAAE4C00E114E0 /* PFCharacter.m in Sources */ = {isa = PBXBuildFile; fileRef = 299ACDEE15FAAE4C00E114E0 /* PFCharacter.m */; };
+		29A51A411650B8B800952BB2 /* PFSelectGenderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29A51A401650B8B800952BB2 /* PFSelectGenderViewController.m */; };
+		29A51A441650B8D700952BB2 /* PFSelectSizeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29A51A431650B8D700952BB2 /* PFSelectSizeViewController.m */; };
+		29A51A471650B8F400952BB2 /* PFSelectAlignmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29A51A461650B8F400952BB2 /* PFSelectAlignmentViewController.m */; };
 		29B7D65015F918250039C390 /* PFBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B7D64F15F918250039C390 /* PFBaseViewController.m */; };
 		29B7D65315F9186F0039C390 /* PFContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B7D65215F9186F0039C390 /* PFContainerViewController.m */; };
 		29B7D65615F918900039C390 /* PFCharacterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B7D65515F918900039C390 /* PFCharacterViewController.m */; };
@@ -184,6 +187,12 @@
 		299ACDEA15FAABB500E114E0 /* PFCreateCharacterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFCreateCharacterViewController.m; path = Pathfinder/PFCreateCharacterViewController.m; sourceTree = "<group>"; };
 		299ACDED15FAAE4C00E114E0 /* PFCharacter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFCharacter.h; path = Pathfinder/Model/PFCharacter.h; sourceTree = "<group>"; };
 		299ACDEE15FAAE4C00E114E0 /* PFCharacter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFCharacter.m; path = Pathfinder/Model/PFCharacter.m; sourceTree = "<group>"; };
+		29A51A3F1650B8B800952BB2 /* PFSelectGenderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFSelectGenderViewController.h; path = Pathfinder/Containers/Profile/Detail/PFSelectGenderViewController.h; sourceTree = "<group>"; };
+		29A51A401650B8B800952BB2 /* PFSelectGenderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFSelectGenderViewController.m; path = Pathfinder/Containers/Profile/Detail/PFSelectGenderViewController.m; sourceTree = "<group>"; };
+		29A51A421650B8D700952BB2 /* PFSelectSizeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFSelectSizeViewController.h; path = Pathfinder/Containers/Profile/Detail/PFSelectSizeViewController.h; sourceTree = "<group>"; };
+		29A51A431650B8D700952BB2 /* PFSelectSizeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFSelectSizeViewController.m; path = Pathfinder/Containers/Profile/Detail/PFSelectSizeViewController.m; sourceTree = "<group>"; };
+		29A51A451650B8F400952BB2 /* PFSelectAlignmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFSelectAlignmentViewController.h; path = Pathfinder/Containers/Profile/Detail/PFSelectAlignmentViewController.h; sourceTree = "<group>"; };
+		29A51A461650B8F400952BB2 /* PFSelectAlignmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFSelectAlignmentViewController.m; path = Pathfinder/Containers/Profile/Detail/PFSelectAlignmentViewController.m; sourceTree = "<group>"; };
 		29B7D64E15F918250039C390 /* PFBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFBaseViewController.h; path = Pathfinder/PFBaseViewController.h; sourceTree = "<group>"; };
 		29B7D64F15F918250039C390 /* PFBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFBaseViewController.m; path = Pathfinder/PFBaseViewController.m; sourceTree = "<group>"; };
 		29B7D65115F9186F0039C390 /* PFContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFContainerViewController.h; path = Pathfinder/PFContainerViewController.h; sourceTree = "<group>"; };
@@ -315,6 +324,12 @@
 			children = (
 				2931942916462A2900B10D70 /* PFSelectRaceViewController.h */,
 				2931942A16462A2900B10D70 /* PFSelectRaceViewController.m */,
+				29A51A3F1650B8B800952BB2 /* PFSelectGenderViewController.h */,
+				29A51A401650B8B800952BB2 /* PFSelectGenderViewController.m */,
+				29A51A421650B8D700952BB2 /* PFSelectSizeViewController.h */,
+				29A51A431650B8D700952BB2 /* PFSelectSizeViewController.m */,
+				29A51A451650B8F400952BB2 /* PFSelectAlignmentViewController.h */,
+				29A51A461650B8F400952BB2 /* PFSelectAlignmentViewController.m */,
 			);
 			name = Detail;
 			sourceTree = "<group>";
@@ -703,6 +718,9 @@
 				2931942B16462A2900B10D70 /* PFSelectRaceViewController.m in Sources */,
 				29F0660A16479BA00088BA86 /* PFDetailViewController.m in Sources */,
 				29F0660E1648F0B00088BA86 /* PFReferenceFeatCell.m in Sources */,
+				29A51A411650B8B800952BB2 /* PFSelectGenderViewController.m in Sources */,
+				29A51A441650B8D700952BB2 /* PFSelectSizeViewController.m in Sources */,
+				29A51A471650B8F400952BB2 /* PFSelectAlignmentViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

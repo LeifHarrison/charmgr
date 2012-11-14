@@ -76,7 +76,6 @@ enum {
 - (void)viewWillAppear:(BOOL)animated
 {
 	[super viewWillAppear:animated];
-	self.racialTraits = [self.character.race.traits allObjects];
 	[self updateUI];
 }
 
@@ -98,6 +97,7 @@ enum {
 - (void)updateUI
 {
 	[super updateUI];
+	self.racialTraits = [self.character.race.traits allObjects];
 	[self.tableView reloadData];
 }
 

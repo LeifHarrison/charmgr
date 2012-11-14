@@ -202,6 +202,7 @@ static const CGRect PFCharacterViewFrame = { { 10, 10 }, { 400, 235 } };
     
     void (^completion) (BOOL) = ^(BOOL finished) {
 		//[self.view bringSubviewToFront:containerView];
+		
 		container.state = newState;
 		[container didTransitionToState:newState];
 		if (newState == PFContainerViewStateStatic) {
@@ -230,6 +231,7 @@ static const CGRect PFCharacterViewFrame = { { 10, 10 }, { 400, 235 } };
 	}
 	else {
 		[[self.character managedObjectContext] rollback];
+		[containerViewController updateUI];
 	}
 }
 

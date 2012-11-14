@@ -54,11 +54,11 @@
 	self.layer.borderWidth = 1.5;
 	self.layer.cornerRadius = 8.0;
 
-	self.layer.shadowColor = [UIColor darkGrayColor].CGColor;
-	self.layer.shadowOffset = CGSizeMake(3.0,3.0);
-	//self.layer.shadowOpacity = 0.7;
-	self.layer.shadowRadius = 3.0;
-	self.layer.masksToBounds = YES;
+	//self.layer.masksToBounds = NO;
+	//self.layer.shadowColor = [UIColor darkGrayColor].CGColor;
+	//self.layer.shadowOffset = CGSizeMake(0,0);
+	//self.layer.shadowOpacity = 0.0;
+	//self.layer.shadowRadius = 5.0;
 	
 	if (!self.bannerLabel) {
 		[self createBannerLabel];

@@ -8,7 +8,10 @@
 
 #import "PFContainerViewController.h"
 
+#import "PFDetailViewController.h"
+
 @interface PFCharacterViewController : PFContainerViewController
+	<UIPopoverControllerDelegate, PFDetailViewControllerDelegate>
 
 @property (nonatomic, strong) IBOutlet UITextField *characterField;
 @property (nonatomic, strong) IBOutlet UITextField *playerField;
@@ -20,5 +23,10 @@
 @property (nonatomic, strong) IBOutlet UILabel *sizeLabel;
 
 @property (nonatomic, strong) IBOutlet UIButton *raceButton;
+@property (nonatomic, strong) IBOutlet UIButton *genderButton;
+@property (nonatomic, strong) IBOutlet UIButton *sizeButton;
+@property (nonatomic, strong) IBOutlet UIButton *alignmentButton;
+
+@property (nonatomic, weak) UIPopoverController *detailPopover;
 
 @end

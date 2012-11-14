@@ -186,7 +186,8 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-	LOG_DEBUG(@"seque = %@, sender = %@", segue.identifier, sender);
+	LOG_DEBUG(@"segue = %@, sender = %@", segue.identifier, sender);
+	LOG_DEBUG(@"source = %@, destination = %@", segue.sourceViewController, segue.destinationViewController);
 	
 	if ([segue.identifier hasSuffix:@"Detail"]) {
 		PFDetailViewController *controller = segue.destinationViewController;
