@@ -21,7 +21,10 @@
 //------------------------------------------------------------------------------
 
 static const CGRect kAbilitiesViewStaticRect = { { 0, 0}, { 205, 240} };
-static const CGRect kAbilitiesViewEditRect   = { { 0, 0}, { 305, 240} };
+static const CGRect kAbilitiesViewEditRect   = { { 0, 0}, { 305, 264} };
+
+static const CGFloat kAbilitiesViewRowHeightEditing = 32.0f;
+static const CGFloat kAbilitiesViewRowHeightStatic = 28.0f;
 
 //------------------------------------------------------------------------------
 #pragma mark - Private Interface Declaration
@@ -201,10 +204,16 @@ static const CGRect kAbilitiesViewEditRect   = { { 0, 0}, { 305, 240} };
 	if (newState == PFContainerViewStateEditing) {
 		self.view.superview.bounds = kAbilitiesViewEditRect;
 		self.view.bounds = kAbilitiesViewEditRect;
+		[self.tableView beginUpdates];
+		self.tableView.rowHeight = kAbilitiesViewRowHeightEditing;
+		[self.tableView endUpdates];
 	}
 	else {
 		self.view.superview.bounds = kAbilitiesViewStaticRect;
 		self.view.bounds = kAbilitiesViewStaticRect;
+		[self.tableView beginUpdates];
+		self.tableView.rowHeight = kAbilitiesViewRowHeightStatic;
+		[self.tableView endUpdates];
 	}
 }
 
