@@ -9,16 +9,18 @@
 #import "PFProfileViewController.h"
 
 #import "CMBannerBox.h"
+#import "CMRootViewController.h"
 
 #import "PFContainerViewController.h"
-
 #import "PFAbilitiesViewController.h"
 #import "PFCharacterViewController.h"
 #import "PFSkillsViewController.h"
 
 #import "PFCharacter.h"
 
-static const CGRect PFCharacterViewFrame = { { 10, 10 }, { 400, 235 } };
+//------------------------------------------------------------------------------
+#pragma mark - Private Interface Declaration
+//------------------------------------------------------------------------------
 
 @interface PFProfileViewController ()
 
@@ -30,9 +32,15 @@ static const CGRect PFCharacterViewFrame = { { 10, 10 }, { 400, 235 } };
 
 @end
 
+//==============================================================================
+// Class Implementation
+//==============================================================================
+
 @implementation PFProfileViewController
 
- // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
+//------------------------------------------------------------------------------
+#pragma mark - Initialization
+//------------------------------------------------------------------------------
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -77,26 +85,29 @@ static const CGRect PFCharacterViewFrame = { { 10, 10 }, { 400, 235 } };
     [super viewDidLoad];
 }
 
-- (void)viewDidUnload
-{
-	TRACE;
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
-}
-
-
 //------------------------------------------------------------------------------
 #pragma mark - Interface Orientation
 //------------------------------------------------------------------------------
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+- (NSUInteger)supportedInterfaceOrientations
 {
-	TRACE;
-    // Overriden to allow any orientation.
-    return YES;
+    return UIInterfaceOrientationMaskAll;
 }
 
+- (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation duration:(NSTimeInterval)duration
+{
+	LOG_DEBUG(@"frame = %@", NSStringFromCGRect(self.view.frame));
+	if (UIInterfaceOrientationIsPortrait(interfaceOrientation)) {
+		for (PFContainerViewController *controller in self.containers) {
+			controller.view.superview.frame = controller.staticFramePortrait;
+		}
+	}
+	else {
+		for (PFContainerViewController *controller in self.containers) {
+			controller.view.superview.frame = controller.staticFrameLandscape;
+		}
+	}
+}
 
 //------------------------------------------------------------------------------
 #pragma mark - Memory Management
@@ -118,19 +129,26 @@ static const CGRect PFCharacterViewFrame = { { 10, 10 }, { 400, 235 } };
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-	LOG_DEBUG(@"seque = %@, sender = %@", segue.identifier, sender);
+	//LOG_DEBUG(@"seque = %@, sender = %@", segue.identifier, sender);
 	
 	if ([segue.identifier hasSuffix:@"Container"]) {
 		PFContainerViewController *controller = segue.destinationViewController;
 		controller.delegate = self;
 		controller.character = self.character;
 		[self.containers addObject:controller];
-
+/*
 	    UIGestureRecognizer *gesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(containerViewLongPress:)];
 		gesture.delegate = controller;
 		[controller.view addGestureRecognizer:gesture];
 		[self.gestures addObject:gesture];
-
+*/
+	    UIGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(containerViewTapped:)];
+		gesture.delegate = controller;
+		gesture.cancelsTouchesInView = YES;
+		gesture.delaysTouchesEnded = YES;
+		[controller.view addGestureRecognizer:gesture];
+		[self.gestures addObject:gesture];
+		
 	}
 }
 
@@ -138,6 +156,18 @@ static const CGRect PFCharacterViewFrame = { { 10, 10 }, { 400, 235 } };
 //------------------------------------------------------------------------------
 #pragma mark - Gestures
 //------------------------------------------------------------------------------
+
+- (void)containerViewTapped:(UIGestureRecognizer*)gesture
+{
+	LOG_DEBUG(@"gesture.state = %d", gesture.state);
+	if (gesture.state == UIGestureRecognizerStateEnded) {
+		PFContainerViewController *controller = (PFContainerViewController*)gesture.delegate;
+		//[controller.view removeGestureRecognizer:gesture];
+		[self setContainerTapGesturesEnabled:NO excludingGesture:nil];
+		[self transitionContainer:controller
+						  toState:PFContainerViewStateEditing];
+	}
+}
 
 - (void)containerViewLongPress:(UIGestureRecognizer*)gesture
 {
@@ -150,7 +180,6 @@ static const CGRect PFCharacterViewFrame = { { 10, 10 }, { 400, 235 } };
 						  toState:PFContainerViewStateEditing];
 	}
 }
-
 
 //------------------------------------------------------------------------------
 #pragma mark - Private
@@ -177,6 +206,12 @@ static const CGRect PFCharacterViewFrame = { { 10, 10 }, { 400, 235 } };
 
 	UIView *containerView = container.view.superview;
 
+	CMRootViewController *rootController = (CMRootViewController *)[[self.view window] rootViewController];
+	LOG_DEBUG(@"rootController = %@", rootController);
+	if (newState == PFContainerViewStateEditing) {
+		[rootController setPageTurningEnabled:NO];
+	}
+	
 	[container willTransitionToState:newState];
 	[self.view bringSubviewToFront:containerView];
 	
@@ -191,10 +226,16 @@ static const CGRect PFCharacterViewFrame = { { 10, 10 }, { 400, 235 } };
 			LOG_DEBUG(@"activeContainerOriginalCenter = %@", NSStringFromCGPoint(self.activeContainerOriginalCenter));
 			
 			containerView.center = viewCenter;
+			containerView.bounds = container.editingBounds;
+			containerView.layer.shadowOpacity = 0.7;
 		}
 		else {
 			LOG_DEBUG(@"activeContainerOriginalCenter = %@", NSStringFromCGPoint(self.activeContainerOriginalCenter));
-			containerView.center = self.activeContainerOriginalCenter;
+			if (UIInterfaceOrientationIsPortrait(self.interfaceOrientation))
+				containerView.frame = [container staticFramePortrait];
+			else
+				containerView.frame = [container staticFrameLandscape];
+			containerView.layer.shadowOpacity = 0.0;
 		}
 				
 		[container animateTransitionToState:newState];
@@ -202,11 +243,15 @@ static const CGRect PFCharacterViewFrame = { { 10, 10 }, { 400, 235 } };
     
     void (^completion) (BOOL) = ^(BOOL finished) {
 		//[self.view bringSubviewToFront:containerView];
-		
+
 		container.state = newState;
 		[container didTransitionToState:newState];
 		if (newState == PFContainerViewStateStatic) {
 			[self setContainerTapGesturesEnabled:YES excludingGesture:nil];
+			[rootController setPageTurningEnabled:YES];
+		}
+		else {
+			containerView.layer.shadowOpacity = 0.7;
 		}
     };
 	

@@ -8,21 +8,25 @@
 
 #import "CMBannerBox.h"
 
+//------------------------------------------------------------------------------
+#pragma mark - Private Interface Declaration
+//------------------------------------------------------------------------------
+
 @interface CMBannerBox ()
 
 @property (nonatomic, strong) UILabel *bannerLabel;
 
 @end
 
+//==============================================================================
+// Class Implementation
+//==============================================================================
+
 @implementation CMBannerBox
 
-@synthesize bannerLabel;
-
-@synthesize bannerColor;
-@synthesize bannerTextColor;
-@synthesize bannerFont;
-@synthesize bannerTitle;
-@synthesize bannerHeight;
+//------------------------------------------------------------------------------
+#pragma mark - Initialization
+//------------------------------------------------------------------------------
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -39,37 +43,40 @@
     return self;
 }
 
+//------------------------------------------------------------------------------
+#pragma mark - NSCoding
+//------------------------------------------------------------------------------
 
--(void)awakeFromNib 
+- (id)initWithCoder:(NSCoder *)aDecoder
 {
-	TRACE;
-	[super awakeFromNib];
-	
-	self.bannerColor = [UIColor colorWithWhite:0.2 alpha:1.0];
-	self.bannerTextColor = [UIColor whiteColor];
-	self.bannerFont = [UIFont fontWithName:@"Marker Felt" size:18.0];
-	self.bannerHeight = 26.0f;
-
-	self.layer.borderColor = self.bannerColor.CGColor;
-	self.layer.borderWidth = 1.5;
-	self.layer.cornerRadius = 8.0;
-
-	//self.layer.masksToBounds = NO;
-	//self.layer.shadowColor = [UIColor darkGrayColor].CGColor;
-	//self.layer.shadowOffset = CGSizeMake(0,0);
-	//self.layer.shadowOpacity = 0.0;
-	//self.layer.shadowRadius = 5.0;
-	
-	if (!self.bannerLabel) {
-		[self createBannerLabel];
+	//TRACE;
+	if (self = [super initWithCoder:aDecoder])
+	{
+		self.bannerColor = [UIColor colorWithWhite:0.2 alpha:1.0];
+		self.bannerTextColor = [UIColor whiteColor];
+		self.bannerFont = [UIFont fontWithName:@"Marker Felt" size:18.0];
+		self.bannerHeight = 26.0f;
+		
+		self.layer.borderColor = self.bannerColor.CGColor;
+		self.layer.borderWidth = 1.5;
+		self.layer.cornerRadius = 8.0;
+		
+		if (!self.bannerLabel) {
+			[self createBannerLabel];
+		}
 	}
+	return self;
 }
+
+//------------------------------------------------------------------------------
+#pragma mark - Implemented Properties
+//------------------------------------------------------------------------------
 
 - (void)setBannerTitle:(NSString *)aString
 {
-	if (bannerTitle != aString)
+	if (_bannerTitle != aString)
 	{
-		bannerTitle = aString;
+		_bannerTitle = aString;
 
 		if (self.bannerLabel) {
 			self.bannerLabel.text = aString;
@@ -79,9 +86,9 @@
 
 - (void)setBannerFont:(UIFont *)aFont
 {
-	if (bannerFont != aFont)
+	if (_bannerFont != aFont)
 	{
-		bannerFont = aFont;
+		_bannerFont = aFont;
 		
 		if (self.bannerLabel) {
 			self.bannerLabel.font = aFont;
@@ -91,9 +98,9 @@
 
 - (void)setBannerColor:(UIColor *)aColor
 {
-	if (bannerColor != aColor)
+	if (_bannerColor != aColor)
 	{
-		bannerColor = aColor;
+		_bannerColor = aColor;
 		
 		if (self.bannerLabel) {
 			self.bannerLabel.backgroundColor = aColor;
@@ -106,9 +113,9 @@
 
 - (void)setBannerTextColor:(UIColor *)aColor
 {
-	if (bannerTextColor != aColor)
+	if (_bannerTextColor != aColor)
 	{
-		bannerTextColor = aColor;
+		_bannerTextColor = aColor;
 		
 		if (self.bannerLabel) {
 			self.bannerLabel.textColor = aColor;
@@ -132,6 +139,10 @@
 		[self setNeedsDisplay];
 	}
 }
+
+//------------------------------------------------------------------------------
+#pragma mark - Private
+//------------------------------------------------------------------------------
 
 - (void)createBannerLabel
 {

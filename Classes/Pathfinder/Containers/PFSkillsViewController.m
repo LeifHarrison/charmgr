@@ -16,6 +16,14 @@
 #import "PFSkill.h"
 
 //------------------------------------------------------------------------------
+#pragma mark - Constants
+//------------------------------------------------------------------------------
+
+static const CGRect kPFSkillsViewFramePortrait		= { { 360, 255 }, { 398, 739 } };
+static const CGRect kPFSkillsViewFrameLandscape		= { { 616,  10 }, { 398, 728 } };
+static const CGRect kPFSkillsViewBoundsEditing		= { {   0,   0 }, { 398, 739 } };
+
+//------------------------------------------------------------------------------
 #pragma mark - Private Interface Declaration
 //------------------------------------------------------------------------------
 
@@ -159,6 +167,28 @@
 {
 	UIView *header = (UIView*)[tableView dequeueReusableCellWithIdentifier:@"SkillsSectionHeader"];
 	return header;
+}
+
+//------------------------------------------------------------------------------
+#pragma mark - Frame Sizes (for different states)
+//------------------------------------------------------------------------------
+
+- (CGRect)staticFramePortrait;
+{
+	// Default implementation just returns our current view frame
+	return kPFSkillsViewFramePortrait;
+}
+
+- (CGRect)staticFrameLandscape;
+{
+	// Default implementation just returns our current view frame
+	return kPFSkillsViewFrameLandscape;
+}
+
+- (CGRect)editingBounds;
+{
+	// Default implementation just returns our current view frame
+	return kPFSkillsViewBoundsEditing;
 }
 
 @end

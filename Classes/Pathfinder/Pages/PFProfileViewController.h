@@ -13,10 +13,10 @@
 
 @class CMBannerBox;
 
-@class PFAbilitiesViewController;
-@class PFCharacterViewController;
-@class PFClassesViewController;
-@class PFSkillsViewController;
+//@class PFAbilitiesViewController;
+//@class PFCharacterViewController;
+//@class PFClassesViewController;
+//@class PFSkillsViewController;
 
 @interface PFProfileViewController : PFBaseViewController <PFContainerViewControllerDelegate>
 {

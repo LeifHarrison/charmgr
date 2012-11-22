@@ -8,6 +8,11 @@
 
 #import "PFCharacterViewController.h"
 
+#import "PFSelectAlignmentViewController.h"
+#import "PFSelectGenderViewController.h"
+#import "PFSelectRaceViewController.h"
+#import "PFSelectSizeViewController.h"
+
 #import "PFAlignment.h"
 #import "PFCharacter.h"
 #import "PFCharacterClass.h"
@@ -16,13 +21,36 @@
 
 #import "CMBannerBox.h"
 
+#import "NSArray+CMExtensions.h"
+
+//------------------------------------------------------------------------------
+#pragma mark - Constants
+//------------------------------------------------------------------------------
+
+static const CGRect kPFCharacterViewFramePortrait	= { {  10,  10 }, { 238, 240 } };
+static const CGRect kPFCharacterViewFrameLandscape	= { {  10,  10 }, { 285, 238 } };
+static const CGRect kPFCharacterViewBoundsEditing	= { {   0,   0 }, { 268, 258 } };
+
+static const CGFloat kPFCharacterViewLabelsInsetX		= 15.0f;
+static const CGFloat kPFCharacterViewSpacingX			= 5.0f;
+static const CGFloat kPFCharacterViewInsetY				= 35.0f;
+static const CGFloat kPFCharacterViewSpacingYStatic		= 7.0f;
+static const CGFloat kPFCharacterViewSpacingYEditing	= 5.0f;
+static const CGFloat kPFCharacterViewHeightStatic		= 20.0f;
+static const CGFloat kPFCharacterViewHeightEditing		= 26.0f;
+static const CGFloat kPFCharacterViewTitleWidthStatic	= 70.0f;
+static const CGFloat kPFCharacterViewTitleWidthEditing	= 80.0f;
+static const CGFloat kPFCharacterViewValueWidthStatic	= 140.0f;
+static const CGFloat kPFCharacterViewValueWidthEditing	= 160.0f;
+
 //------------------------------------------------------------------------------
 #pragma mark - Private Interface Declaration
 //------------------------------------------------------------------------------
 
 @interface PFCharacterViewController ()
 
-@property (nonatomic, strong) IBOutlet NSArray *editableFields;
+@property (nonatomic, strong) UIPopoverController *detailPopover;
+@property (nonatomic, strong) NSArray *editableFields;
 
 @end
 
@@ -57,33 +85,27 @@
     
     [(CMBannerBox*)self.view setBannerTitle:@"Character"];
 	
+	self.titleLabels = [self.titleLabels sortByUIViewOriginY];
+	self.valueFields = [self.valueFields sortByUIViewOriginY];
+	
 	self.editableFields = @[_characterField, _playerField, _campaignField];
 	[self setEditableFieldsEnabled:NO];
-
-	self.raceButton.layer.borderColor = [UIColor lightGrayColor].CGColor;
+	
+	self.raceButton.layer.borderColor = [UIColor clearColor].CGColor;
 	self.raceButton.layer.borderWidth = 1.0f;
 	self.raceButton.layer.cornerRadius = 5.0f;
-	self.raceButton.alpha = 0.0;
 
-	self.genderButton.layer.borderColor = [UIColor lightGrayColor].CGColor;
+	self.genderButton.layer.borderColor = [UIColor clearColor].CGColor;
 	self.genderButton.layer.borderWidth = 1.0f;
 	self.genderButton.layer.cornerRadius = 5.0f;
-	self.genderButton.alpha = 0.0;
 
-	self.sizeButton.layer.borderColor = [UIColor lightGrayColor].CGColor;
+	self.sizeButton.layer.borderColor = [UIColor clearColor].CGColor;
 	self.sizeButton.layer.borderWidth = 1.0f;
 	self.sizeButton.layer.cornerRadius = 5.0f;
-	self.sizeButton.alpha = 0.0;
 
-	self.alignmentButton.layer.borderColor = [UIColor lightGrayColor].CGColor;
+	self.alignmentButton.layer.borderColor = [UIColor clearColor].CGColor;
 	self.alignmentButton.layer.borderWidth = 1.0f;
 	self.alignmentButton.layer.cornerRadius = 5.0f;
-	self.alignmentButton.alpha = 0.0;
-
-	for (UITextField *aField in self.editableFields) {
-		//aField.frame = CGRectInset(aField.frame, 0, 3);
-	}
-	
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -105,16 +127,11 @@
 	self.playerField.text = self.character.player;
 	self.campaignField.text = self.character.campaign;
 	
-	self.genderLabel.text = self.character.genderDescription;
-	self.raceLabel.text = self.character.race.name;
-	self.sizeLabel.text = self.character.race.size;
-	self.alignmentLabel.text = self.character.alignment.name;
-	
-	LOG_DEBUG(@"race = %@", self.character.race.name);
 	[self.raceButton setTitle:self.character.race.name forState:UIControlStateNormal];
 	[self.genderButton setTitle:self.character.genderDescription forState:UIControlStateNormal];
-	[self.sizeButton setTitle:self.character.race.size forState:UIControlStateNormal];
+	[self.sizeButton setTitle:self.character.sizeDescription forState:UIControlStateNormal];
 	[self.alignmentButton setTitle:self.character.alignment.name forState:UIControlStateNormal];
+	
 }
 
 - (void)setEditableFieldsEnabled:(BOOL)enabled
@@ -128,6 +145,70 @@
 	}
 }
 
+- (void)layoutSubviewsForState:(PFContainerViewState)state;
+{
+	LOG_DEBUG(@"state = %d", state);
+	if (state == PFContainerViewStateStatic) {
+		CGFloat currentY = kPFCharacterViewInsetY;
+		for (UIView *aView in self.titleLabels) {
+			aView.frame = CGRectMake(kPFCharacterViewLabelsInsetX, currentY, kPFCharacterViewTitleWidthStatic, kPFCharacterViewHeightStatic);
+			//LOG_DEBUG(@"viewFrame = %@, view = %@", NSStringFromCGRect(viewFrame), aView);
+			currentY = CGRectGetMaxY(aView.frame) + kPFCharacterViewSpacingYStatic;
+		}
+
+		currentY = kPFCharacterViewInsetY;
+		for (UIView *aView in self.valueFields) {
+			CGFloat viewX = kPFCharacterViewLabelsInsetX + kPFCharacterViewTitleWidthStatic + kPFCharacterViewSpacingX;
+			aView.frame = CGRectMake(viewX, currentY, kPFCharacterViewValueWidthStatic, kPFCharacterViewHeightStatic);
+			//LOG_DEBUG(@"viewFrame = %@, view = %@", NSStringFromCGRect(viewFrame), aView);
+			currentY = CGRectGetMaxY(aView.frame) + kPFCharacterViewSpacingYStatic;
+		}
+	}
+	else {
+		CGFloat currentY = kPFCharacterViewInsetY;
+		for (UIView *aView in self.titleLabels) {
+			aView.frame = CGRectMake(kPFCharacterViewLabelsInsetX, currentY, kPFCharacterViewTitleWidthEditing, kPFCharacterViewHeightEditing);
+			//LOG_DEBUG(@"viewFrame = %@, view = %@", NSStringFromCGRect(viewFrame), aView);
+			currentY = CGRectGetMaxY(aView.frame) + kPFCharacterViewSpacingYEditing;
+		}
+
+		currentY = kPFCharacterViewInsetY;
+		for (UIView *aView in self.valueFields) {
+			CGFloat viewX = kPFCharacterViewLabelsInsetX + kPFCharacterViewTitleWidthEditing + kPFCharacterViewSpacingX;
+			aView.frame = CGRectMake(viewX, currentY, kPFCharacterViewValueWidthEditing, kPFCharacterViewHeightEditing);
+			//LOG_DEBUG(@"viewFrame = %@, view = %@", NSStringFromCGRect(viewFrame), aView);
+			currentY = CGRectGetMaxY(aView.frame) + kPFCharacterViewSpacingYEditing;
+		}
+	}
+}
+
+//------------------------------------------------------------------------------
+#pragma mark - Actions
+//------------------------------------------------------------------------------
+
+
+//------------------------------------------------------------------------------
+#pragma mark - Frame Sizes (for different states)
+//------------------------------------------------------------------------------
+
+- (CGRect)staticFramePortrait;
+{
+	// Default implementation just returns our current view frame
+	return kPFCharacterViewFramePortrait;
+}
+
+- (CGRect)staticFrameLandscape;
+{
+	// Default implementation just returns our current view frame
+	return kPFCharacterViewFrameLandscape;
+}
+
+- (CGRect)editingBounds;
+{
+	// Default implementation just returns our current view frame
+	return kPFCharacterViewBoundsEditing;
+}
+
 //------------------------------------------------------------------------------
 #pragma mark - State Transitions
 //------------------------------------------------------------------------------
@@ -139,24 +220,10 @@
 
 	if (newState == PFContainerViewStateStatic) {
 		[self setEditableFieldsEnabled:NO];
-/*
-		void (^animations) (void) = ^{
-			self.raceButton.alpha = 0.0;
-			self.genderButton.alpha = 0.0;
-			self.sizeButton.alpha = 0.0;
-			self.alignmentButton.alpha = 0.0;
-
-			self.raceLabel.alpha = 1.0;
-			self.genderLabel.alpha = 1.0;
-			self.sizeLabel.alpha = 1.0;
-			self.alignmentLabel.alpha = 1.0;
-		};
-		void (^completion) (BOOL) = ^(BOOL finished) {
-		};
-		[UIView animateWithDuration:0.3
-						 animations:animations
-						 completion:completion];
-*/
+		[self.raceButton setEnabled:NO];
+		[self.genderButton setEnabled:NO];
+		[self.sizeButton setEnabled:NO];
+		[self.alignmentButton setEnabled:NO];
 	}
 }
 
@@ -167,25 +234,11 @@
 	[super didTransitionToState:newState];
 
 	if (newState == PFContainerViewStateEditing) {
-/*
-		void (^animations) (void) = ^{
-			self.raceButton.alpha = 1.0;
-			self.genderButton.alpha = 1.0;
-			self.sizeButton.alpha = 1.0;
-			self.alignmentButton.alpha = 1.0;
-
-			self.raceLabel.alpha = 0.0;
-			self.genderLabel.alpha = 0.0;
-			self.sizeLabel.alpha = 0.0;
-			self.alignmentLabel.alpha = 0.0;
-		};
-		void (^completion) (BOOL) = ^(BOOL finished) {
-		};
-		[UIView animateWithDuration:0.3
-						 animations:animations
-						 completion:completion];
-*/
 		[self setEditableFieldsEnabled:YES];
+		[self.raceButton setEnabled:YES];
+		[self.genderButton setEnabled:YES];
+		[self.sizeButton setEnabled:YES];
+		[self.alignmentButton setEnabled:YES];
 	}
 }
 
@@ -194,30 +247,27 @@
 	LOG_DEBUG(@"newState = %d", newState);
 	[super animateTransitionToState:newState];
 
-	if (newState == PFContainerViewStateEditing) {
-		self.raceButton.alpha = 1.0;
-		self.genderButton.alpha = 1.0;
-		self.sizeButton.alpha = 1.0;
-		self.alignmentButton.alpha = 1.0;
-		
-		self.raceLabel.alpha = 0.0;
-		self.genderLabel.alpha = 0.0;
-		self.sizeLabel.alpha = 0.0;
-		self.alignmentLabel.alpha = 0.0;
-	}
-	else {
-		self.raceButton.alpha = 0.0;
-		self.genderButton.alpha = 0.0;
-		self.sizeButton.alpha = 0.0;
-		self.alignmentButton.alpha = 0.0;
-		
-		self.raceLabel.alpha = 1.0;
-		self.genderLabel.alpha = 1.0;
-		self.sizeLabel.alpha = 1.0;
-		self.alignmentLabel.alpha = 1.0;
-	}
+	[self layoutSubviewsForState:newState];
+
+	[self configureButton:self.raceButton forState:newState];
+	[self configureButton:self.genderButton forState:newState];
+	[self configureButton:self.sizeButton forState:newState];
+	[self configureButton:self.alignmentButton forState:newState];
 }
 
+- (void)configureButton:(UIButton *)aButton forState:(PFContainerViewState)aState;
+{
+	if (aState == PFContainerViewStateEditing) {
+		[aButton setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
+		aButton.titleEdgeInsets = UIEdgeInsetsMake(0, 7, 0, 0);
+		aButton.layer.borderColor = [UIColor lightGrayColor].CGColor;
+	}
+	else {
+		[aButton setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
+		aButton.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 0);
+		aButton.layer.borderColor = [UIColor clearColor].CGColor;
+	}
+}
 
 //------------------------------------------------------------------------------
 #pragma mark - Storyboard
@@ -241,8 +291,13 @@
     {
 		PFDetailViewController *controller = segue.destinationViewController;
 		controller.delegate = self;
+		controller.character = self.character;
 	}
 }
+
+//------------------------------------------------------------------------------
+#pragma mark - UIPopoverController Delegate
+//------------------------------------------------------------------------------
 
 - (void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController;
 {
@@ -250,6 +305,10 @@
 	self.detailPopover = nil;
 	[self updateUI];
 }
+
+//------------------------------------------------------------------------------
+#pragma mark - PFDetailViewController Delegate
+//------------------------------------------------------------------------------
 
 - (void)detailViewControllerDidFinish:(PFDetailViewController*)viewController
 {

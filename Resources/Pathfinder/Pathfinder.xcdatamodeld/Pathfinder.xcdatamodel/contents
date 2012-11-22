@@ -81,7 +81,7 @@
         <attribute name="namesMale" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="physicalDescription" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="relations" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="size" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="size" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="society" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="source" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="speed" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>

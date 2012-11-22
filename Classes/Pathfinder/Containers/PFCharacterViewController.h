@@ -13,20 +13,16 @@
 @interface PFCharacterViewController : PFContainerViewController
 	<UIPopoverControllerDelegate, PFDetailViewControllerDelegate>
 
+@property (nonatomic, strong) IBOutletCollection(UIView) NSArray *titleLabels;
+@property (nonatomic, strong) IBOutletCollection(UIView) NSArray *valueFields;
+
 @property (nonatomic, strong) IBOutlet UITextField *characterField;
 @property (nonatomic, strong) IBOutlet UITextField *playerField;
 @property (nonatomic, strong) IBOutlet UITextField *campaignField;
 
-@property (nonatomic, strong) IBOutlet UILabel *alignmentLabel;
-@property (nonatomic, strong) IBOutlet UILabel *genderLabel;
-@property (nonatomic, strong) IBOutlet UILabel *raceLabel;
-@property (nonatomic, strong) IBOutlet UILabel *sizeLabel;
-
-@property (nonatomic, strong) IBOutlet UIButton *raceButton;
-@property (nonatomic, strong) IBOutlet UIButton *genderButton;
-@property (nonatomic, strong) IBOutlet UIButton *sizeButton;
 @property (nonatomic, strong) IBOutlet UIButton *alignmentButton;
-
-@property (nonatomic, weak) UIPopoverController *detailPopover;
+@property (nonatomic, strong) IBOutlet UIButton *genderButton;
+@property (nonatomic, strong) IBOutlet UIButton *raceButton;
+@property (nonatomic, strong) IBOutlet UIButton *sizeButton;
 
 @end

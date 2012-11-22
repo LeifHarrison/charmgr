@@ -59,7 +59,7 @@
 	newInstance.name = name;
 	
 	newInstance.source = [[anElement attributeForName:@"source"] stringValue];
-	newInstance.size = [[anElement attributeForName:@"size"] stringValue];
+	newInstance.size = PFSizeTypeFromString([[anElement attributeForName:@"size"] stringValue]);
 	newInstance.type = [[anElement attributeForName:@"type"] stringValue];
 	newInstance.subtype = [[anElement attributeForName:@"subtype"] stringValue];
 	newInstance.speed = [[[anElement attributeForName:@"speed"] stringValue] intValue];

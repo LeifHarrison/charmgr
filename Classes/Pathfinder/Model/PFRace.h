@@ -27,7 +27,7 @@
 @property (nonatomic, retain) NSString * adventurers;
 @property (nonatomic, retain) NSString * namesFemale;
 @property (nonatomic, retain) NSString * namesMale;
-@property (nonatomic, retain) NSString * size;
+@property (nonatomic) int16_t size;
 @property (nonatomic, retain) NSString * source;
 @property (nonatomic) int16_t speed;
 @property (nonatomic, retain) NSString * subtype;

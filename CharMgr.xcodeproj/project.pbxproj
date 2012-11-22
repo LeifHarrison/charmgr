@@ -36,6 +36,8 @@
 		290442A7160C3782008DAF11 /* PFAttacksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 290442A6160C3782008DAF11 /* PFAttacksViewController.m */; };
 		290442AA160C392A008DAF11 /* PFEffectsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 290442A9160C392A008DAF11 /* PFEffectsViewController.m */; };
 		290639A116044D1900CCBBC7 /* PFCombatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 290639A016044D1900CCBBC7 /* PFCombatViewController.m */; };
+		29245D96165A1B0F00F6078A /* PFSelectClassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29245D95165A1B0F00F6078A /* PFSelectClassViewController.m */; };
+		29245D9B165B495E00F6078A /* NSArray+CMExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 29245D9A165B495E00F6078A /* NSArray+CMExtensions.m */; };
 		2924A7EA1188A93A0001A732 /* Warhammer.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 2924A7E91188A93A0001A732 /* Warhammer.xcdatamodel */; };
 		2924A7F11188B2480001A732 /* CMBannerBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 2924A7F01188B2480001A732 /* CMBannerBox.m */; };
 		293194271646112C00B10D70 /* PFReferenceFeatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 293194261646112C00B10D70 /* PFReferenceFeatsViewController.m */; };
@@ -85,6 +87,7 @@
 		29E7A88715F96DD600DEFF6A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29E7A88615F96DD600DEFF6A /* QuartzCore.framework */; };
 		29F0660A16479BA00088BA86 /* PFDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29F0660916479BA00088BA86 /* PFDetailViewController.m */; };
 		29F0660E1648F0B00088BA86 /* PFReferenceFeatCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 29F0660D1648F0B00088BA86 /* PFReferenceFeatCell.m */; };
+		29FD6888165DEBDA002F2794 /* PFTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = 29FD6887165DEBDA002F2794 /* PFTypes.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -134,6 +137,10 @@
 		290442A9160C392A008DAF11 /* PFEffectsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFEffectsViewController.m; path = Pathfinder/Containers/PFEffectsViewController.m; sourceTree = "<group>"; };
 		2906399F16044D1900CCBBC7 /* PFCombatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFCombatViewController.h; path = Pathfinder/Pages/PFCombatViewController.h; sourceTree = "<group>"; };
 		290639A016044D1900CCBBC7 /* PFCombatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFCombatViewController.m; path = Pathfinder/Pages/PFCombatViewController.m; sourceTree = "<group>"; };
+		29245D94165A1B0F00F6078A /* PFSelectClassViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFSelectClassViewController.h; path = Pathfinder/Containers/Profile/Detail/PFSelectClassViewController.h; sourceTree = "<group>"; };
+		29245D95165A1B0F00F6078A /* PFSelectClassViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFSelectClassViewController.m; path = Pathfinder/Containers/Profile/Detail/PFSelectClassViewController.m; sourceTree = "<group>"; };
+		29245D99165B495E00F6078A /* NSArray+CMExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSArray+CMExtensions.h"; path = "Extensions/NSArray+CMExtensions.h"; sourceTree = "<group>"; };
+		29245D9A165B495E00F6078A /* NSArray+CMExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSArray+CMExtensions.m"; path = "Extensions/NSArray+CMExtensions.m"; sourceTree = "<group>"; };
 		2924A7E91188A93A0001A732 /* Warhammer.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; name = Warhammer.xcdatamodel; path = ../Resources/Warhammer/Warhammer.xcdatamodel; sourceTree = "<group>"; };
 		2924A7EF1188B2480001A732 /* CMBannerBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMBannerBox.h; sourceTree = "<group>"; };
 		2924A7F01188B2480001A732 /* CMBannerBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMBannerBox.m; sourceTree = "<group>"; };
@@ -226,6 +233,7 @@
 		29F0660916479BA00088BA86 /* PFDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFDetailViewController.m; path = Pathfinder/PFDetailViewController.m; sourceTree = "<group>"; };
 		29F0660C1648F0B00088BA86 /* PFReferenceFeatCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFReferenceFeatCell.h; path = Pathfinder/Reference/Cells/PFReferenceFeatCell.h; sourceTree = "<group>"; };
 		29F0660D1648F0B00088BA86 /* PFReferenceFeatCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFReferenceFeatCell.m; path = Pathfinder/Reference/Cells/PFReferenceFeatCell.m; sourceTree = "<group>"; };
+		29FD6887165DEBDA002F2794 /* PFTypes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFTypes.m; sourceTree = SOURCE_ROOT; };
 		8D1107310486CEB800E47090 /* CharMgr-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "CharMgr-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -248,6 +256,7 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				29245D97165B48F300F6078A /* Extensions */,
 				29B7D64D15F916820039C390 /* Pathfinder */,
 				2968E04113BD0D1A00811211 /* Warhammer */,
 				1D3623240D0F684500981E51 /* CMAppDelegate.h */,
@@ -319,17 +328,28 @@
 			name = "Custom Cells";
 			sourceTree = "<group>";
 		};
+		29245D97165B48F300F6078A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				29245D99165B495E00F6078A /* NSArray+CMExtensions.h */,
+				29245D9A165B495E00F6078A /* NSArray+CMExtensions.m */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
 		29319428164629CA00B10D70 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
-				2931942916462A2900B10D70 /* PFSelectRaceViewController.h */,
-				2931942A16462A2900B10D70 /* PFSelectRaceViewController.m */,
-				29A51A3F1650B8B800952BB2 /* PFSelectGenderViewController.h */,
-				29A51A401650B8B800952BB2 /* PFSelectGenderViewController.m */,
-				29A51A421650B8D700952BB2 /* PFSelectSizeViewController.h */,
-				29A51A431650B8D700952BB2 /* PFSelectSizeViewController.m */,
 				29A51A451650B8F400952BB2 /* PFSelectAlignmentViewController.h */,
 				29A51A461650B8F400952BB2 /* PFSelectAlignmentViewController.m */,
+				29245D94165A1B0F00F6078A /* PFSelectClassViewController.h */,
+				29245D95165A1B0F00F6078A /* PFSelectClassViewController.m */,
+				29A51A3F1650B8B800952BB2 /* PFSelectGenderViewController.h */,
+				29A51A401650B8B800952BB2 /* PFSelectGenderViewController.m */,
+				2931942916462A2900B10D70 /* PFSelectRaceViewController.h */,
+				2931942A16462A2900B10D70 /* PFSelectRaceViewController.m */,
+				29A51A421650B8D700952BB2 /* PFSelectSizeViewController.h */,
+				29A51A431650B8D700952BB2 /* PFSelectSizeViewController.m */,
 			);
 			name = Detail;
 			sourceTree = "<group>";
@@ -452,6 +472,7 @@
 				2902D095161FED6D00C56E74 /* PFTrait.h */,
 				2902D096161FED6D00C56E74 /* PFTrait.m */,
 				298A9E01162D06300045F1D1 /* PFTypes.h */,
+				29FD6887165DEBDA002F2794 /* PFTypes.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -721,6 +742,9 @@
 				29A51A411650B8B800952BB2 /* PFSelectGenderViewController.m in Sources */,
 				29A51A441650B8D700952BB2 /* PFSelectSizeViewController.m in Sources */,
 				29A51A471650B8F400952BB2 /* PFSelectAlignmentViewController.m in Sources */,
+				29245D96165A1B0F00F6078A /* PFSelectClassViewController.m in Sources */,
+				29245D9B165B495E00F6078A /* NSArray+CMExtensions.m in Sources */,
+				29FD6888165DEBDA002F2794 /* PFTypes.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

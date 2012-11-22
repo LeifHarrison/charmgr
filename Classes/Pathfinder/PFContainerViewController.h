@@ -30,6 +30,10 @@ typedef enum {
 
 - (void)updateUI;
 
+- (CGRect)staticFramePortrait;
+- (CGRect)staticFrameLandscape;
+- (CGRect)editingBounds;
+
 - (void)willTransitionToState:(PFContainerViewState)newState;
 - (void)didTransitionToState:(PFContainerViewState)newState;
 

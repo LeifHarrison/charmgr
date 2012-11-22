@@ -86,6 +86,16 @@
     self.cancelButton.frame = CGRectOffset(self.cancelButton.bounds, 8, 3);
 	CGFloat doneX = CGRectGetMaxX(self.view.bounds) - CGRectGetWidth(self.doneButton.bounds) - 8;
     self.doneButton.frame = CGRectOffset(self.doneButton.bounds, doneX, 3);
+
+	UIView *containerView = [self.view superview];
+	//LOG_DEBUG(@"view = %@, containerView = %@", self.view, containerView);
+	containerView.layer.cornerRadius = self.view.layer.cornerRadius;
+	//LOG_DEBUG(@"corner radius = %lf", containerView.layer.cornerRadius);
+	containerView.layer.masksToBounds = NO;
+	containerView.layer.shadowColor = [UIColor blackColor].CGColor;
+	containerView.layer.shadowOffset = CGSizeMake(0,8);
+	containerView.layer.shadowOpacity = 0.0;
+	containerView.layer.shadowRadius = 10.0;
 }
 
 - (void)viewDidUnload
@@ -126,6 +136,27 @@
 	// Default implementation does nothing
 }
 
+//------------------------------------------------------------------------------
+#pragma mark - Frame Sizes (for different states)
+//------------------------------------------------------------------------------
+
+- (CGRect)staticFramePortrait;
+{
+	// Default implementation just returns our current view frame
+	return self.view.frame;
+}
+
+- (CGRect)staticFrameLandscape;
+{
+	// Default implementation just returns our current view frame
+	return self.view.frame;
+}
+
+- (CGRect)editingBounds;
+{
+	// Default implementation just returns our current view frame
+	return self.view.frame;
+}
 
 //------------------------------------------------------------------------------
 #pragma mark - State Transitions
@@ -186,8 +217,8 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-	LOG_DEBUG(@"segue = %@, sender = %@", segue.identifier, sender);
-	LOG_DEBUG(@"source = %@, destination = %@", segue.sourceViewController, segue.destinationViewController);
+	//LOG_DEBUG(@"segue = %@, sender = %@", segue.identifier, sender);
+	//LOG_DEBUG(@"source = %@, destination = %@", segue.sourceViewController, segue.destinationViewController);
 	
 	if ([segue.identifier hasSuffix:@"Detail"]) {
 		PFDetailViewController *controller = segue.destinationViewController;

@@ -31,6 +31,7 @@
 @dynamic campaign;
 
 @dynamic gender;
+@dynamic size;
 
 @dynamic alignment;
 @dynamic race;
@@ -48,24 +49,12 @@
 
 - (NSString*)genderDescription;
 {
-	switch (self.gender) {
-		case kPFGenderTypeMale:
-			return @"Male";
-			break;
-			
-		case kPFGenderTypeFemale:
-			return @"Female";
-			break;
-			
-		case kPFGenderTypeOther:
-			return @"Other";
-			break;
-			
-		default:
-			break;
-	}
-	
-	return @"Unknown";
+	return NSStringFromPFGenderType(self.gender);
+}
+
+- (NSString*)sizeDescription;
+{
+	return NSStringFromPFSizeType(self.size);
 }
 
 - (NSArray *)sortedAbilities;
@@ -98,6 +87,26 @@
 			return anAbility;
 	}
 	return nil;
+}
+
+- (NSInteger)currentXP;
+{
+	return 0;
+}
+
+- (NSInteger)nextLevelXP;
+{
+	return 0;
+}
+
+- (NSInteger)levelAdjustment;
+{
+	return 0;
+}
+
+- (NSInteger)effectiveLevel;
+{
+	return 0;
 }
 
 - (NSArray *)sortedSkills;

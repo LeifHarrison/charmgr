@@ -37,9 +37,24 @@ typedef enum {
 } PFAlignmentType;
 
 typedef enum {
+	kPFSizeTypeFine,
+	kPFSizeTypeDiminutive,
+	kPFSizeTypeTiny,
 	kPFSizeTypeSmall,
 	kPFSizeTypeMedium,
-	kPFSizeTypeLarge
+	kPFSizeTypeLarge,
+	kPFSizeTypeHuge,
+	kPFSizeTypeColossal,
+	kPFSizeTypeGargantuan
 } PFSizeType;
+
+// Alignment and Ability have their own classes, so no need for mapping
+// functions
+
+extern NSString *NSStringFromPFGenderType(PFGenderType genderType);
+extern PFGenderType PFGenderTypeFromString(NSString *aString);
+
+extern NSString *NSStringFromPFSizeType(PFSizeType sizeType);
+extern PFSizeType PFSizeTypeFromString(NSString *aString);
 
 #endif

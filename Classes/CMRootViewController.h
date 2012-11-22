@@ -16,4 +16,6 @@
 @property (nonatomic, strong) CMMainViewController *mainViewController;
 @property (nonatomic, strong) NSArray *characterViewControllers;
 
+- (void)setPageTurningEnabled:(BOOL)flag;
+
 @end

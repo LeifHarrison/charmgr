@@ -221,6 +221,7 @@
 	
 	PFRace *aRace = [self.fetchedResultsController objectAtIndexPath:self.tableView.indexPathForSelectedRow];
 	self.character.race = aRace;
+	self.character.size = aRace.size;
 	self.character.gender = self.genderControl.selectedSegmentIndex;
 	
     [super save:sender];

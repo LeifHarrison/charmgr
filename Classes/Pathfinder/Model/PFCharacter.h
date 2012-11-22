@@ -22,6 +22,7 @@
 @property (nonatomic, retain) NSString * campaign;
 
 @property (nonatomic) int16_t gender;
+@property (nonatomic) int16_t size;
 
 @property (nonatomic, retain) PFAlignment *alignment;
 @property (nonatomic, retain) PFRace *race;
@@ -31,14 +32,31 @@
 @property (nonatomic, retain) NSSet *skills;
 
 - (NSString*)genderDescription;
+- (NSString*)sizeDescription;
+
+// Abilities
 
 - (NSArray *)sortedAbilities;
 - (PFCharacterAbility *)abilityWithName:(NSString*)aName;
 - (PFCharacterAbility *)abilityWithAbbreviation:(NSString*)anAbbreviation;
 - (PFCharacterAbility *)abilityWithType:(PFAbilityType)aType;
 
+// Classes
+
+// Experience/Level
+
+- (NSInteger)currentXP;
+- (NSInteger)nextLevelXP;
+
+- (NSInteger)levelAdjustment;
+- (NSInteger)effectiveLevel;
+
+// Skills
+
 - (NSArray *)sortedSkills;
 - (PFCharacterSkill *)skillWithName:(NSString *)aName;
+
+// Fetching
 
 + (PFCharacter*)fetchCharacterWithName:(NSString *)aName context:(NSManagedObjectContext*)moc;
 

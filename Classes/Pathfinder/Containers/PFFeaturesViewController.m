@@ -31,6 +31,10 @@ enum {
 	kPFFeaturesTableViewSectionCount
 };
 
+static const CGRect kPFFeaturesViewFramePortrait	= { {  10, 255 }, { 345, 739 } };
+static const CGRect kPFFeaturesViewFrameLandscape	= { { 300,  10 }, { 311, 728 } };
+static const CGRect kPFFeaturesViewBoundsEditing	= { {   0,   0 }, { 345, 739 } };
+
 //------------------------------------------------------------------------------
 #pragma mark - Private Interface Declaration
 //------------------------------------------------------------------------------
@@ -188,5 +192,26 @@ enum {
 #pragma mark - UITableViewDelegate
 //------------------------------------------------------------------------------
 
+//------------------------------------------------------------------------------
+#pragma mark - Frame Sizes (for different states)
+//------------------------------------------------------------------------------
+
+- (CGRect)staticFramePortrait;
+{
+	// Default implementation just returns our current view frame
+	return kPFFeaturesViewFramePortrait;
+}
+
+- (CGRect)staticFrameLandscape;
+{
+	// Default implementation just returns our current view frame
+	return kPFFeaturesViewFrameLandscape;
+}
+
+- (CGRect)editingBounds;
+{
+	// Default implementation just returns our current view frame
+	return kPFFeaturesViewBoundsEditing;
+}
 
 @end

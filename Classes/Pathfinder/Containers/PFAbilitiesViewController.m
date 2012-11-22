@@ -20,8 +20,9 @@
 #pragma mark - Constants
 //------------------------------------------------------------------------------
 
-static const CGRect kAbilitiesViewStaticRect = { { 0, 0}, { 205, 240} };
-static const CGRect kAbilitiesViewEditRect   = { { 0, 0}, { 305, 264} };
+static const CGRect kPFAbilitiesViewFramePortrait	= { { 253,  10 }, { 215, 240 } };
+static const CGRect kPFAbilitiesViewFrameLandscape	= { {  10, 253 }, { 285, 240 } };
+static const CGRect kPFAbilitiesViewBoundsEditing	= { {   0,   0 }, { 305, 264 } };
 
 static const CGFloat kAbilitiesViewRowHeightEditing = 32.0f;
 static const CGFloat kAbilitiesViewRowHeightStatic = 28.0f;
@@ -167,6 +168,28 @@ static const CGFloat kAbilitiesViewRowHeightStatic = 28.0f;
 }
 
 //------------------------------------------------------------------------------
+#pragma mark - Frame Sizes (for different states)
+//------------------------------------------------------------------------------
+
+- (CGRect)staticFramePortrait;
+{
+	// Default implementation just returns our current view frame
+	return kPFAbilitiesViewFramePortrait;
+}
+
+- (CGRect)staticFrameLandscape;
+{
+	// Default implementation just returns our current view frame
+	return kPFAbilitiesViewFrameLandscape;
+}
+
+- (CGRect)editingBounds;
+{
+	// Default implementation just returns our current view frame
+	return kPFAbilitiesViewBoundsEditing;
+}
+
+//------------------------------------------------------------------------------
 #pragma mark - State Transitions
 //------------------------------------------------------------------------------
 
@@ -202,18 +225,19 @@ static const CGFloat kAbilitiesViewRowHeightStatic = 28.0f;
 	//TRACE;
 	[super animateTransitionToState:newState];
 	if (newState == PFContainerViewStateEditing) {
-		self.view.superview.bounds = kAbilitiesViewEditRect;
-		self.view.bounds = kAbilitiesViewEditRect;
+		self.view.superview.bounds = kPFAbilitiesViewBoundsEditing;
+		self.view.bounds = kPFAbilitiesViewBoundsEditing;
 		[self.tableView beginUpdates];
 		self.tableView.rowHeight = kAbilitiesViewRowHeightEditing;
 		[self.tableView endUpdates];
 	}
 	else {
-		self.view.superview.bounds = kAbilitiesViewStaticRect;
-		self.view.bounds = kAbilitiesViewStaticRect;
+		//self.view.superview.bounds = kPFAbilitiesViewFramePortrait;
+		//self.view.bounds = kPFAbilitiesViewFramePortrait;
 		[self.tableView beginUpdates];
 		self.tableView.rowHeight = kAbilitiesViewRowHeightStatic;
 		[self.tableView endUpdates];
+		
 	}
 }
 

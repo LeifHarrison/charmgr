@@ -79,6 +79,22 @@
 	[self.view addSubview:self.pageViewController.view];
 	[self.pageViewController didMoveToParentViewController:self];
 
+	self.view.gestureRecognizers = self.pageViewController.gestureRecognizers;
+	
+	// Find the tap gesture recognizer so we can remove it!
+	UIGestureRecognizer* tapRecognizer = nil;
+	for (UIGestureRecognizer* recognizer in self.pageViewController.gestureRecognizers) {
+		if ( [recognizer isKindOfClass:[UITapGestureRecognizer class]] ) {
+			tapRecognizer = recognizer;
+			break;
+		}
+	}
+	
+	if ( tapRecognizer ) {
+		[self.view removeGestureRecognizer:tapRecognizer];
+		[self.pageViewController.view removeGestureRecognizer:tapRecognizer];
+	}
+	
 	[self.pageViewController setViewControllers:@[self.mainViewController]
 									  direction:UIPageViewControllerNavigationDirectionForward
 									   animated:NO
@@ -121,6 +137,16 @@
 	return YES;
 }
 
+//------------------------------------------------------------------------------
+#pragma mark - Public Methods
+//------------------------------------------------------------------------------
+
+- (void)setPageTurningEnabled:(BOOL)flag;
+{
+	for (UIGestureRecognizer *gesture in self.pageViewController.gestureRecognizers) {
+		gesture.enabled = flag;
+	}
+}
 
 //------------------------------------------------------------------------------
 #pragma mark - Private Methods
