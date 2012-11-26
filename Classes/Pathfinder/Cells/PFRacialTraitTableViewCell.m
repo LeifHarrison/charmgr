@@ -8,7 +8,15 @@
 
 #import "PFRacialTraitTableViewCell.h"
 
+//==============================================================================
+// Class Implementation
+//==============================================================================
+
 @implementation PFRacialTraitTableViewCell
+
+//------------------------------------------------------------------------------
+#pragma mark - Initialization
+//------------------------------------------------------------------------------
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {

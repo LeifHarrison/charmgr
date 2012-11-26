@@ -152,11 +152,6 @@ static const CGFloat kAbilitiesViewRowHeightStatic = 28.0f;
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-}
-
-
 //------------------------------------------------------------------------------
 #pragma mark - UITableViewDelegate
 //------------------------------------------------------------------------------
@@ -199,9 +194,9 @@ static const CGFloat kAbilitiesViewRowHeightStatic = 28.0f;
 	[super willTransitionToState:newState];
 	
 	if (newState == PFContainerViewStateStatic) {
-		for (PFAbilityTableViewCell *aCell in self.tableView.visibleCells) {
-			[aCell setContainerState:newState animated:YES];
-		}
+		//for (PFAbilityTableViewCell *aCell in self.tableView.visibleCells) {
+		//	[aCell setContainerState:newState animated:YES];
+		//}
 		//[self setEditableFieldsEnabled:NO];
 	}
 }
@@ -225,8 +220,8 @@ static const CGFloat kAbilitiesViewRowHeightStatic = 28.0f;
 	//TRACE;
 	[super animateTransitionToState:newState];
 	if (newState == PFContainerViewStateEditing) {
-		self.view.superview.bounds = kPFAbilitiesViewBoundsEditing;
-		self.view.bounds = kPFAbilitiesViewBoundsEditing;
+		//self.view.superview.bounds = kPFAbilitiesViewBoundsEditing;
+		//self.view.bounds = kPFAbilitiesViewBoundsEditing;
 		[self.tableView beginUpdates];
 		self.tableView.rowHeight = kAbilitiesViewRowHeightEditing;
 		[self.tableView endUpdates];

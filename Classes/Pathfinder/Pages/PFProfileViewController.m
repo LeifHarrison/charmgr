@@ -238,6 +238,7 @@
 			containerView.layer.shadowOpacity = 0.0;
 		}
 				
+		//container.state = newState;
 		[container animateTransitionToState:newState];
     };
     
@@ -255,7 +256,11 @@
 		}
     };
 	
-    [UIView animateWithDuration:0.5 animations:animations completion:completion];
+    [UIView animateWithDuration:0.5
+						  delay:0.0
+						options:UIViewAnimationOptionLayoutSubviews | UIViewAnimationOptionAllowAnimatedContent | UIViewAnimationOptionCurveEaseInOut
+					 animations:animations
+					 completion:completion];
 }
 
 - (void)containerViewController:(PFContainerViewController*)containerViewController

@@ -26,6 +26,9 @@ static const CGRect kPFClassesViewFramePortrait		= { { 473,  10 }, { 285, 240 } 
 static const CGRect kPFClassesViewFrameLandscape	= { {  10, 498 }, { 285, 240 } };
 static const CGRect kPFClassesViewBoundsEditing		= { {   0,   0 }, { 385, 270 } };
 
+static const CGFloat kClassesViewRowHeightEditing = 31.0f;
+static const CGFloat kClassesViewRowHeightStatic = 25.0f;
+
 //------------------------------------------------------------------------------
 #pragma mark - Private Interface Declaration
 //------------------------------------------------------------------------------
@@ -68,8 +71,7 @@ static const CGRect kPFClassesViewBoundsEditing		= { {   0,   0 }, { 385, 270 } 
 	
 	//self.tableView.layer.borderColor = [UIColor redColor].CGColor;
 	//self.tableView.layer.borderWidth = 1.0f;
-	self.view.userInteractionEnabled = YES;
-
+	
 	self.footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 30)];
 	self.footerView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
 	self.footerView.userInteractionEnabled = YES;
@@ -122,10 +124,13 @@ static const CGRect kPFClassesViewBoundsEditing		= { {   0,   0 }, { 385, 270 } 
 {
 	PFCharacterClass *characterClass = (PFCharacterClass *)[self.character.classes.allObjects objectAtIndex:indexPath.row];
 	PFClassTableViewCell *classCell = (PFClassTableViewCell*)cell;
+	classCell.characterClass = characterClass;
+	classCell.containerState = self.state;
 	classCell.classNameLabel.text = characterClass.classType.name;
 	classCell.hitDieTypeLabel.text = characterClass.classType.hitDieTypeDescription;
 	classCell.skillRanksLabel.text = [NSString stringWithFormat:@"%d", characterClass.classType.skillRanks];
-	classCell.levelLabel.text = [NSString stringWithFormat:@"%d", characterClass.level];
+	classCell.levelTextField.text = [NSString stringWithFormat:@"%d", characterClass.level];
+	classCell.levelStepper.value = characterClass.level;
 }
 
 //------------------------------------------------------------------------------
@@ -169,6 +174,7 @@ static const CGRect kPFClassesViewBoundsEditing		= { {   0,   0 }, { 385, 270 } 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+	LOG_DEBUG(@"indexPath = %@", indexPath);
     static NSString *CellIdentifier = @"ClassesCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 	
@@ -224,12 +230,16 @@ static const CGRect kPFClassesViewBoundsEditing		= { {   0,   0 }, { 385, 270 } 
 	LOG_DEBUG(@"newState = %d", newState);
 	[super willTransitionToState:newState];
 	
+	
 	if (newState == PFContainerViewStateStatic) {
 		[self.tableView setScrollEnabled:NO];
-		[self.tableView beginUpdates];
 		[self.tableView setTableFooterView:nil];
 		self.tableView.sectionFooterHeight = 0.0f;
-		[self.tableView endUpdates];
+
+		for (PFClassTableViewCell *aCell in self.tableView.visibleCells) {
+			[aCell setContainerState:newState animated:YES];
+		}
+
 	}
 }
 
@@ -240,12 +250,15 @@ static const CGRect kPFClassesViewBoundsEditing		= { {   0,   0 }, { 385, 270 } 
 	[super didTransitionToState:newState];
 	
 	if (newState == PFContainerViewStateEditing) {
-		//[self.tableView beginUpdates];
 		[self.tableView setTableFooterView:self.footerView];
 		self.tableView.sectionFooterHeight = 30.0f;
-		//[self.tableView endUpdates];
 		[self.tableView setScrollEnabled:YES];
-		LOG_DEBUG(@"footerView = %@", self.tableView.tableFooterView);
+		//LOG_DEBUG(@"footerView = %@", self.tableView.tableFooterView);
+
+		for (PFClassTableViewCell *aCell in self.tableView.visibleCells) {
+			[aCell setContainerState:newState animated:YES];
+		}
+		
 	}
 }
 
@@ -255,11 +268,17 @@ static const CGRect kPFClassesViewBoundsEditing		= { {   0,   0 }, { 385, 270 } 
 	[super animateTransitionToState:newState];
 	
 	if (newState == PFContainerViewStateEditing) {
+		[self.tableView beginUpdates];
+		self.tableView.rowHeight = kClassesViewRowHeightEditing;
+		[self.tableView endUpdates];
 	}
 	else {
+		[self.tableView beginUpdates];
+		self.tableView.rowHeight = kClassesViewRowHeightStatic;
+		[self.tableView endUpdates];
 	}
+	
 }
-
 
 //------------------------------------------------------------------------------
 #pragma mark - Storyboard

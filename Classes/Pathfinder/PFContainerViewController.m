@@ -165,6 +165,7 @@
 - (void)willTransitionToState:(PFContainerViewState)newState;
 {
 	//LOG_DEBUG(@"newState = %d", newState);
+/*
 	void (^animations) (void) = ^{
 		if (newState == PFContainerViewStateStatic) {
 			self.doneButton.alpha = 0.0;
@@ -176,6 +177,7 @@
     [UIView animateWithDuration:HEADER_BUTTON_ANIMATION_DURATION
 					 animations:animations
 					 completion:completion];
+*/
 }
 
 - (void)didTransitionToState:(PFContainerViewState)newState;
@@ -207,6 +209,8 @@
 		self.view.backgroundColor = [UIColor colorWithRed:245.0/255 green:240.0/255 blue:203.0/255 alpha:1.0];
 	}
 	else {
+		self.doneButton.alpha = 0.0;
+		self.cancelButton.alpha = 0.0;
 		self.view.backgroundColor = [UIColor colorWithRed:245.0/255 green:240.0/255 blue:203.0/255 alpha:0.5];
 	}
 }

@@ -21,7 +21,10 @@
 
 static const CGRect kPFSkillsViewFramePortrait		= { { 360, 255 }, { 398, 739 } };
 static const CGRect kPFSkillsViewFrameLandscape		= { { 616,  10 }, { 398, 728 } };
-static const CGRect kPFSkillsViewBoundsEditing		= { {   0,   0 }, { 398, 739 } };
+static const CGRect kPFSkillsViewBoundsEditing		= { {   0,   0 }, { 498, 739 } };
+
+static const CGFloat kSkillsViewRowHeightEditing = 29.0f;
+static const CGFloat kSkillsViewRowHeightStatic = 20.0f;
 
 //------------------------------------------------------------------------------
 #pragma mark - Private Interface Declaration
@@ -98,11 +101,14 @@ static const CGRect kPFSkillsViewBoundsEditing		= { {   0,   0 }, { 398, 739 } }
 {
 	PFCharacterSkill *characterSkill = (PFCharacterSkill *)[self.sortedSkills objectAtIndex:indexPath.row];
 	PFSkillTableViewCell *skillCell = (PFSkillTableViewCell*)cell;
+	skillCell.characterSkill = characterSkill;
+	skillCell.containerState = self.state;
 	skillCell.skillNameLabel.text = [characterSkill skillName];
 	skillCell.classSkillLabel.text = characterSkill.isClassSkill ? @"x" : @"";
-	skillCell.skillBonusLabel.text = [characterSkill skillBonusString];
-	skillCell.skillRanksLabel.text = [NSString stringWithFormat:@"%d", characterSkill.ranks];
 	skillCell.abilityModifierLabel.text = [characterSkill keyAbilityAbbreviation];
+	skillCell.skillBonusLabel.text = [characterSkill skillBonusString];
+	skillCell.skillRanksTextField.text = [NSString stringWithFormat:@"%d", characterSkill.ranks];
+	skillCell.skillRanksStepper.value = characterSkill.ranks;
 	
 	if (characterSkill.skill.untrained) {
 		skillCell.skillNameLabel.font = [UIFont italicSystemFontOfSize:14.0];
@@ -189,6 +195,65 @@ static const CGRect kPFSkillsViewBoundsEditing		= { {   0,   0 }, { 398, 739 } }
 {
 	// Default implementation just returns our current view frame
 	return kPFSkillsViewBoundsEditing;
+}
+
+//------------------------------------------------------------------------------
+#pragma mark - State Transitions
+//------------------------------------------------------------------------------
+
+- (void)willTransitionToState:(PFContainerViewState)newState;
+{
+	LOG_DEBUG(@"newState = %d", newState);
+	[super willTransitionToState:newState];
+	
+	
+	if (newState == PFContainerViewStateStatic) {
+		[self.tableView setScrollEnabled:NO];
+		//[self.tableView setTableFooterView:nil];
+		//self.tableView.sectionFooterHeight = 0.0f;
+		
+		for (PFSkillTableViewCell *aCell in self.tableView.visibleCells) {
+			[aCell setContainerState:newState animated:YES];
+		}
+		
+	}
+}
+
+- (void)didTransitionToState:(PFContainerViewState)newState;
+{
+	LOG_DEBUG(@"newState = %d", newState);
+	//LOG_DEBUG(@"parentViewController = %@", self.parentViewController);
+	[super didTransitionToState:newState];
+	
+	if (newState == PFContainerViewStateEditing) {
+		//[self.tableView setTableFooterView:self.footerView];
+		//self.tableView.sectionFooterHeight = 30.0f;
+		[self.tableView setScrollEnabled:YES];
+		LOG_DEBUG(@"footerView = %@", self.tableView.tableFooterView);
+		
+		for (PFSkillTableViewCell *aCell in self.tableView.visibleCells) {
+			[aCell setContainerState:newState animated:YES];
+		}
+		
+	}
+}
+
+- (void)animateTransitionToState:(PFContainerViewState)newState;
+{
+	LOG_DEBUG(@"newState = %d", newState);
+	[super animateTransitionToState:newState];
+	
+	if (newState == PFContainerViewStateEditing) {
+		[self.tableView beginUpdates];
+		self.tableView.rowHeight = kSkillsViewRowHeightEditing;
+		[self.tableView endUpdates];
+	}
+	else {
+		[self.tableView beginUpdates];
+		self.tableView.rowHeight = kSkillsViewRowHeightStatic;
+		[self.tableView endUpdates];
+	}
+	
 }
 
 @end

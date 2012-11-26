@@ -10,7 +10,15 @@
 
 #import "PFCharacterAbility.h"
 
+//==============================================================================
+// Class Implementation
+//==============================================================================
+
 @implementation PFAbilityTableViewCell
+
+//------------------------------------------------------------------------------
+#pragma mark - Initialization
+//------------------------------------------------------------------------------
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -22,12 +30,20 @@
     return self;
 }
 
+//------------------------------------------------------------------------------
+#pragma mark - Selection
+//------------------------------------------------------------------------------
+
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
 }
+
+//------------------------------------------------------------------------------
+#pragma mark - Reuse
+//------------------------------------------------------------------------------
 
 - (void)prepareForReuse
 {
@@ -41,6 +57,10 @@
 	self.abilityBonusTextField.text = @"";
 }
 
+//------------------------------------------------------------------------------
+#pragma mark - Actions
+//------------------------------------------------------------------------------
+
 - (IBAction)stepperValueChanged:(id)sender;
 {
 	LOG_DEBUG(@"value = %0.2lf", self.abilityStepper.value);
@@ -48,6 +68,10 @@
 	self.abilityScoreTextField.text = self.characterAbility.abilityScore.stringValue;
 	self.abilityBonusTextField.text = self.characterAbility.abilityBonus.stringValue;
 }
+
+//------------------------------------------------------------------------------
+#pragma mark - Container State
+//------------------------------------------------------------------------------
 
 - (void)setContainerState:(PFContainerViewState)newState;
 {
