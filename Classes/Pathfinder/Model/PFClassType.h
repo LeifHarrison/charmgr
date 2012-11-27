@@ -13,14 +13,16 @@
 
 @class PFCharacterClass;
 @class PFSkill;
+@class PFSource;
 
 @interface PFClassType : NSManagedObject
 
 @property (nonatomic, retain) NSString * name;
-@property (nonatomic, retain) NSString * source;
 @property (nonatomic, retain) NSString * descriptionShort;
 @property (nonatomic) int16_t hitDieType;
 @property (nonatomic) int16_t skillRanks;
+
+@property (nonatomic, retain) PFSource *source;
 
 @property (nonatomic, retain) NSSet *characterClasses;
 @property (nonatomic, retain) NSSet *classSkills;

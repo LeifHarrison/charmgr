@@ -66,9 +66,27 @@
 #endif
 */
 	self.dataManager = [[PFDataManager alloc] init];
+	[self importReferenceData];
 	
-	NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    return YES;
+}
 
+
+//------------------------------------------------------------------------------
+#pragma mark - Private Methods
+//------------------------------------------------------------------------------
+
+- (void)importReferenceData
+{
+	NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+	
+	NSDate *sourcesLastUpdated = [userDefaults objectForKey:kCMSourcesUpdatedDateDefaultsKey];
+	LOG_DEBUG(@"sourcesLastUpdated = %@", sourcesLastUpdated);
+	if (!sourcesLastUpdated) {
+		[self.dataManager importSourcesAsXML];
+		[userDefaults setObject:[NSDate date] forKey:kCMSourcesUpdatedDateDefaultsKey];
+	}
+	
 	NSDate *abilitiesLastUpdated = [userDefaults objectForKey:kCMAbilitiesUpdatedDateDefaultsKey];
 	LOG_DEBUG(@"abilitiesLastUpdated = %@", abilitiesLastUpdated);
 	if (!abilitiesLastUpdated) {
@@ -112,10 +130,8 @@
 	}
 	
 	[userDefaults synchronize];
-
-    return YES;
+	
 }
-
 
 - (void)saveContext
 {
@@ -134,7 +150,9 @@
 }
 
 
-#pragma mark - Core Data stack
+//------------------------------------------------------------------------------
+#pragma mark - Core Data Stack
+//------------------------------------------------------------------------------
 
 /*
  Returns the managed object context for the application.
@@ -229,7 +247,9 @@
 }
 
 
-#pragma mark - Application's documents directory
+//------------------------------------------------------------------------------
+#pragma mark - Application Documents Directory
+//------------------------------------------------------------------------------
 
 // Returns the URL to the application's Documents directory.
 - (NSURL *)applicationDocumentsDirectory

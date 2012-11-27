@@ -1,38 +1,38 @@
 //
-//  PFFeat.m
+//  PFSource.m
 //  CharMgr
 //
-//  Created by Leif Harrison on 10/5/12.
+//  Created by Leif Harrison on 11/26/12.
 //  Copyright (c) 2012 Leif Harrison. All rights reserved.
 //
 
-#import "PFFeat.h"
-
 #import "PFSource.h"
+#import "PFClassType.h"
+#import "PFFeat.h"
+#import "PFRace.h"
+#import "PFTrait.h"
 
 #import "GDataXMLNode.h"
 
-
-@implementation PFFeat
+@implementation PFSource
 
 //------------------------------------------------------------------------------
 #pragma mark - Properties
 //------------------------------------------------------------------------------
 
 @dynamic name;
-@dynamic type;
-@dynamic descriptionShort;
-@dynamic prerequisitesString;
-@dynamic benefitString;
-@dynamic special;
-@dynamic normal;
-@dynamic source;
+@dynamic index;
+@dynamic abbreviation;
+@dynamic classTypes;
+@dynamic races;
+@dynamic feats;
+@dynamic traits;
 
 //------------------------------------------------------------------------------
 #pragma mark - Creation/Inserting
 //------------------------------------------------------------------------------
 
-+ (PFFeat *)insertedInstanceWithElement:(GDataXMLElement *)anElement
++ (PFSource *)insertedInstanceWithElement:(GDataXMLElement *)anElement
 				  inManagedObjectContext:(NSManagedObjectContext*)moc;
 {
 	NSString *name = [[anElement attributeForName:@"name"] stringValue];
@@ -41,45 +41,24 @@
 		return nil;
 	}
 	
-	PFFeat *newInstance = (PFFeat *)[NSEntityDescription insertNewObjectForEntityForName:@"PFFeat"
-																	inManagedObjectContext:moc];
+	PFSource *newInstance = (PFSource *)[NSEntityDescription insertNewObjectForEntityForName:@"PFSource"
+																	  inManagedObjectContext:moc];
 	newInstance.name = name;
 	
-	newInstance.type = [[anElement attributeForName:@"type"] stringValue];
-	
-	NSString *sourceAbbreviation = [[anElement attributeForName:@"source"] stringValue];
-	newInstance.source = [PFSource fetchWithAbbreviation:sourceAbbreviation inContext:moc];
-	
-	NSArray *elements = nil;
-	
-	elements = [anElement elementsForName:@"Prerequisites"];
-	if (elements.count > 0) {
-		GDataXMLElement *firstElement = (GDataXMLElement *) [elements objectAtIndex:0];
-		newInstance.prerequisitesString = firstElement.stringValue;
-	};
-	
-	elements = [anElement elementsForName:@"Benefit"];
-	if (elements.count > 0) {
-		GDataXMLElement *firstElement = (GDataXMLElement *) [elements objectAtIndex:0];
-		newInstance.benefitString = firstElement.stringValue;
-	};
-	
-	elements = [anElement elementsForName:@"Normal"];
-	if (elements.count > 0) {
-		GDataXMLElement *firstElement = (GDataXMLElement *) [elements objectAtIndex:0];
-		newInstance.normal = firstElement.stringValue;
-	};
+	newInstance.abbreviation = [[anElement attributeForName:@"abbreviation"] stringValue];
+	newInstance.index = [[[anElement attributeForName:@"index"] stringValue] intValue];
 	
 	return newInstance;
 }
+
 
 //------------------------------------------------------------------------------
 #pragma mark - Fetching
 //------------------------------------------------------------------------------
 
-+ (NSArray*)fetchAllInContext:(NSManagedObjectContext*)moc
++ (NSArray*)fetchAllInContext:(NSManagedObjectContext*)moc;
 {
-	NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"PFFeat"
+	NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"PFSource"
 														 inManagedObjectContext:moc];
 	NSFetchRequest *request = [[NSFetchRequest alloc] init];
 	[request setEntity:entityDescription];
@@ -97,14 +76,14 @@
 	return array;
 }
 
-+ (PFFeat*)fetchWithName:(NSString *)aName inContext:(NSManagedObjectContext*)moc;
++ (PFSource*)fetchWithAbbreviation:(NSString *)aName inContext:(NSManagedObjectContext*)moc;
 {
-	NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"PFFeat"
+	NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"PFSource"
 														 inManagedObjectContext:moc];
 	NSFetchRequest *request = [[NSFetchRequest alloc] init];
 	[request setEntity:entityDescription];
 	
-	NSPredicate *predicate = [NSPredicate predicateWithFormat: @"name like[cd] %@", aName];
+	NSPredicate *predicate = [NSPredicate predicateWithFormat: @"abbreviation like[cd] %@", aName];
 	[request setPredicate:predicate];
 	
 	NSError *error = nil;
@@ -118,6 +97,5 @@
 	
 	return nil;
 }
-
 
 @end

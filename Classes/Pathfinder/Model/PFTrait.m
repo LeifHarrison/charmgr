@@ -8,6 +8,8 @@
 
 #import "PFTrait.h"
 
+#import "PFSource.h"
+
 #import "GDataXMLNode.h"
 
 @implementation PFTrait

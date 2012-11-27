@@ -13,6 +13,7 @@
 #import "PFReferenceFeatCell.h"
 
 #import "PFFeat.h"
+#import "PFSource.h"
 
 //------------------------------------------------------------------------------
 #pragma mark - Private Interface Declaration
@@ -133,7 +134,7 @@
     // Create and initialize the fetch results controller.
     _fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
 																	managedObjectContext:self.managedObjectContext
-																	  sectionNameKeyPath:@"source"
+																	  sectionNameKeyPath:@"source.name"
 																			   cacheName:@"Feats"];
     _fetchedResultsController.delegate = self;
     
@@ -148,7 +149,7 @@
     PFFeat *feat = [self.fetchedResultsController objectAtIndexPath:indexPath];
     featCell.featNameLabel.text = feat.name;
     featCell.featTypeLabel.text = feat.type;
-	featCell.featSourceLabel.text = feat.source;
+	featCell.featSourceLabel.text = feat.source.abbreviation;
 	featCell.prerequisitesLabel.text = feat.prerequisitesString;
 	featCell.benefitLabel.text = feat.benefitString;
 }
@@ -224,7 +225,7 @@
 	
 	self.featNameLabel.text = selectedFeat.name;
 	self.featTypeLabel.text = selectedFeat.type;
-	self.featSourceLabel.text = selectedFeat.source;
+	self.featSourceLabel.text = selectedFeat.source.name;
 
 	self.prerequisitesTextView.text = selectedFeat.prerequisitesString;
 	self.benefitTextView.text = selectedFeat.benefitString;

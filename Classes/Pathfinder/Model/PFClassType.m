@@ -9,6 +9,7 @@
 #import "PFClassType.h"
 #import "PFCharacterClass.h"
 #import "PFSkill.h"
+#import "PFSource.h"
 
 #import "GDataXMLNode.h"
 
@@ -42,8 +43,10 @@
 	
 	newInstance.hitDieType = [[[anElement attributeForName:@"hitDieType"] stringValue] intValue];
 	newInstance.skillRanks = [[[anElement attributeForName:@"skillRanksPerLevel"] stringValue] intValue];
-	newInstance.source = [[anElement attributeForName:@"source"] stringValue];
-	
+
+	NSString *sourceAbbreviation = [[anElement attributeForName:@"source"] stringValue];
+	newInstance.source = [PFSource fetchWithAbbreviation:sourceAbbreviation inContext:moc];
+
 	NSArray *elements = [anElement elementsForName:@"ShortDescription"];
 	if (elements.count > 0) {
 		GDataXMLElement *firstElement = (GDataXMLElement *) [elements objectAtIndex:0];

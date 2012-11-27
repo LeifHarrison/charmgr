@@ -12,6 +12,8 @@
 
 @class GDataXMLElement;
 
+@class PFSource;
+
 @interface PFFeat : NSManagedObject
 
 @property (nonatomic, retain) NSString * name;
@@ -21,7 +23,8 @@
 @property (nonatomic, retain) NSString * benefitString;
 @property (nonatomic, retain) NSString * special;
 @property (nonatomic, retain) NSString * normal;
-@property (nonatomic, retain) NSString * source;
+
+@property (nonatomic, retain) PFSource *source;
 
 + (PFFeat *)insertedInstanceWithElement:(GDataXMLElement *)anElement
 				  inManagedObjectContext:(NSManagedObjectContext*)moc;

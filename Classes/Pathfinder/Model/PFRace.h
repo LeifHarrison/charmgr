@@ -11,6 +11,7 @@
 #import <CoreData/CoreData.h>
 
 @class PFCharacter;
+@class PFSource;
 @class PFTrait;
 
 @class GDataXMLElement;
@@ -28,10 +29,11 @@
 @property (nonatomic, retain) NSString * namesFemale;
 @property (nonatomic, retain) NSString * namesMale;
 @property (nonatomic) int16_t size;
-@property (nonatomic, retain) NSString * source;
 @property (nonatomic) int16_t speed;
 @property (nonatomic, retain) NSString * subtype;
 @property (nonatomic, retain) NSString * type;
+
+@property (nonatomic, retain) PFSource *source;
 
 @property (nonatomic, retain) NSSet *characters;
 @property (nonatomic, retain) NSSet *traits;

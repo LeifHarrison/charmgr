@@ -75,6 +75,7 @@
 		29B7D65615F918900039C390 /* PFCharacterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B7D65515F918900039C390 /* PFCharacterViewController.m */; };
 		29B7D6A515F938970039C390 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29B7D6A415F938970039C390 /* MainStoryboard.storyboard */; };
 		29B7D6D715F948C00039C390 /* CMRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B7D6D615F948C00039C390 /* CMRootViewController.m */; };
+		29CA4E8B1664A1F300223AF3 /* PFSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CA4E8A1664A1F300223AF3 /* PFSource.m */; };
 		29CD513B1630BB5C001A639E /* PFAbilityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CD513A1630BB5C001A639E /* PFAbilityTableViewCell.m */; };
 		29CD513E1630CC96001A639E /* PFSkillTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CD513D1630CC95001A639E /* PFSkillTableViewCell.m */; };
 		29CEF8011188FA7600E2D442 /* CMProfileView.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CEF8001188FA7600E2D442 /* CMProfileView.m */; };
@@ -210,6 +211,8 @@
 		29B7D6D515F948C00039C390 /* CMRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMRootViewController.h; sourceTree = "<group>"; };
 		29B7D6D615F948C00039C390 /* CMRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMRootViewController.m; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		29CA4E891664A1F200223AF3 /* PFSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFSource.h; path = Pathfinder/Model/PFSource.h; sourceTree = "<group>"; };
+		29CA4E8A1664A1F300223AF3 /* PFSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFSource.m; path = Pathfinder/Model/PFSource.m; sourceTree = "<group>"; };
 		29CD51391630BB5C001A639E /* PFAbilityTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFAbilityTableViewCell.h; path = Pathfinder/Cells/PFAbilityTableViewCell.h; sourceTree = "<group>"; };
 		29CD513A1630BB5C001A639E /* PFAbilityTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFAbilityTableViewCell.m; path = Pathfinder/Cells/PFAbilityTableViewCell.m; sourceTree = "<group>"; };
 		29CD513C1630CC95001A639E /* PFSkillTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFSkillTableViewCell.h; path = Pathfinder/Cells/PFSkillTableViewCell.h; sourceTree = "<group>"; };
@@ -469,6 +472,8 @@
 				2902D09F161FED6E00C56E74 /* PFRace.m */,
 				2902D098161FED6D00C56E74 /* PFSkill.h */,
 				2902D099161FED6D00C56E74 /* PFSkill.m */,
+				29CA4E891664A1F200223AF3 /* PFSource.h */,
+				29CA4E8A1664A1F300223AF3 /* PFSource.m */,
 				2902D095161FED6D00C56E74 /* PFTrait.h */,
 				2902D096161FED6D00C56E74 /* PFTrait.m */,
 				298A9E01162D06300045F1D1 /* PFTypes.h */,
@@ -745,6 +750,7 @@
 				29245D96165A1B0F00F6078A /* PFSelectClassViewController.m in Sources */,
 				29245D9B165B495E00F6078A /* NSArray+CMExtensions.m in Sources */,
 				29FD6888165DEBDA002F2794 /* PFTypes.m in Sources */,
+				29CA4E8B1664A1F300223AF3 /* PFSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

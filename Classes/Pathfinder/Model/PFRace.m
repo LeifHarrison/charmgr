@@ -9,6 +9,7 @@
 #import "PFRace.h"
 
 #import "PFCharacter.h"
+#import "PFSource.h"
 #import "PFTrait.h"
 
 #import "GDataXMLNode.h"
@@ -58,7 +59,9 @@
 	PFRace *newInstance = (PFRace *)[NSEntityDescription insertNewObjectForEntityForName:@"PFRace" inManagedObjectContext:moc];
 	newInstance.name = name;
 	
-	newInstance.source = [[anElement attributeForName:@"source"] stringValue];
+	NSString *sourceAbbreviation = [[anElement attributeForName:@"source"] stringValue];
+	newInstance.source = [PFSource fetchWithAbbreviation:sourceAbbreviation inContext:moc];
+
 	newInstance.size = PFSizeTypeFromString([[anElement attributeForName:@"size"] stringValue]);
 	newInstance.type = [[anElement attributeForName:@"type"] stringValue];
 	newInstance.subtype = [[anElement attributeForName:@"subtype"] stringValue];

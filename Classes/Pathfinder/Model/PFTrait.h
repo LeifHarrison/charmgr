@@ -11,6 +11,7 @@
 #import <CoreData/CoreData.h>
 
 @class PFRace;
+@class PFSource;
 
 @class GDataXMLElement;
 
@@ -23,8 +24,8 @@
 @property (nonatomic) int16_t type;
 @property (nonatomic, retain) NSString * benefitsString;
 @property (nonatomic, retain) NSString * descriptionShort;
-@property (nonatomic, retain) NSString * source;
 
+@property (nonatomic, retain) PFSource *source;
 @property (nonatomic, retain) PFRace *race;
 
 // Creation
