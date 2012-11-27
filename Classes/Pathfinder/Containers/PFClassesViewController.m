@@ -117,6 +117,13 @@ static const CGFloat kClassesViewRowHeightStatic = 25.0f;
 - (void)updateUI
 {
 	[super updateUI];
+	
+	self.levelAdjustmentTextField.text = [NSString stringWithFormat:@"%d", self.character.levelAdjustment];
+	self.effectiveLevelTextField.text = [NSString stringWithFormat:@"%d", self.character.effectiveLevel];
+
+	self.currentXPLabel.text = [NSString stringWithFormat:@"%d", self.character.currentXP];
+	self.nextLevelXPLabel.text = [NSString stringWithFormat:@"%d", self.character.nextLevelXP];
+
 	[self.tableView reloadData];
 }
 

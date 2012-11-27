@@ -783,6 +783,10 @@ Level</string>
                     </view>
                     <toolbarItems/>
                     <connections>
+                        <outlet property="currentXPLabel" destination="fh5-S2-En3" id="7Es-52-1Ch"/>
+                        <outlet property="effectiveLevelTextField" destination="Tm4-JW-arV" id="Sna-d6-TOz"/>
+                        <outlet property="levelAdjustmentTextField" destination="yqW-yj-IoM" id="h0D-hn-qAm"/>
+                        <outlet property="nextLevelXPLabel" destination="yQA-TA-ziV" id="xzU-S8-biE"/>
                         <outlet property="tableView" destination="CgD-XU-o2R" id="xF1-dd-01T"/>
                         <outlet property="view" destination="mUU-dF-oVv" id="Xwn-w5-iPp"/>
                     </connections>
@@ -864,6 +868,9 @@ Level</string>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="segmentedControl" destination="OVV-o9-c5A" id="eYV-Xv-NHi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fn6-vM-01c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1070,6 +1077,10 @@ Level</string>
         <class className="PFClassesViewController" superclassName="PFContainerViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PFClassesViewController.h"/>
             <relationships>
+                <relationship kind="outlet" name="currentXPLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="effectiveLevelTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="levelAdjustmentTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="nextLevelXPLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
             </relationships>
         </class>
@@ -1115,6 +1126,7 @@ Level</string>
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PFSelectGenderViewController.h"/>
             <relationships>
                 <relationship kind="action" name="genderChanged:"/>
+                <relationship kind="outlet" name="segmentedControl" candidateClass="UISegmentedControl"/>
             </relationships>
         </class>
         <class className="PFSelectRaceViewController" superclassName="PFDetailViewController">

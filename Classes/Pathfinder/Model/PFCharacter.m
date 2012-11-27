@@ -106,7 +106,11 @@
 
 - (NSInteger)effectiveLevel;
 {
-	return 0;
+	NSInteger level = self.levelAdjustment;
+	for (PFCharacterClass *aClass in self.classes) {
+		level += aClass.level;
+	}
+	return level;
 }
 
 - (NSArray *)sortedSkills;
