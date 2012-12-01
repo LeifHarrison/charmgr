@@ -54,19 +54,27 @@
     [super viewDidLoad];
 
 	self.tableView.layer.borderColor = [UIColor darkGrayColor].CGColor;
-	self.tableView.layer.borderWidth = 1.0f;
+	self.tableView.layer.borderWidth = 1.5f;
 	self.tableView.layer.cornerRadius = 5.0f;
 
+	self.detailContainerView.backgroundColor = [UIColor colorWithWhite:0.9 alpha:1.0];
 	self.detailContainerView.layer.borderColor = [UIColor darkGrayColor].CGColor;
-	self.detailContainerView.layer.borderWidth = 1.0f;
+	self.detailContainerView.layer.borderWidth = 1.5f;
 	self.detailContainerView.layer.cornerRadius = 5.0f;
 	
+	//self.prerequisitesTextView.layer.borderColor = [UIColor redColor].CGColor;
+	//self.prerequisitesTextView.layer.borderWidth = 1.0f;
+	//self.benefitTextView.layer.borderColor = [UIColor redColor].CGColor;
+	//self.benefitTextView.layer.borderWidth = 1.0f;
+
 	self.featNameLabel.text = @"";
 	self.featTypeLabel.text = @"";
 	self.featSourceLabel.text = @"";
 	self.prerequisitesTextView.text = @"";
 	self.benefitTextView.text = @"";
 
+	LOG_DEBUG(@"benefitTextView insets = %@", NSStringFromUIEdgeInsets(self.benefitTextView.contentInset));
+	
 	self.managedObjectContext = [(CMAppDelegate*)[[UIApplication sharedApplication] delegate] managedObjectContext];
 	
 	NSError *error = nil;
@@ -135,7 +143,7 @@
     _fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
 																	managedObjectContext:self.managedObjectContext
 																	  sectionNameKeyPath:@"source.name"
-																			   cacheName:@"Feats"];
+																			   cacheName:nil];
     _fetchedResultsController.delegate = self;
     
     // Memory management.
@@ -219,6 +227,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+	if ([self.searchTextField isFirstResponder])
+		[self.searchTextField resignFirstResponder];
 
 	PFFeat *selectedFeat = [self.fetchedResultsController objectAtIndexPath:indexPath];
 	LOG_DEBUG(@"selectedFeat = %@", selectedFeat);
@@ -226,8 +236,7 @@
 	self.featNameLabel.text = selectedFeat.name;
 	self.featTypeLabel.text = selectedFeat.type;
 	self.featSourceLabel.text = selectedFeat.source.name;
-
-	self.prerequisitesTextView.text = selectedFeat.prerequisitesString;
+	self.prerequisitesTextView.text = selectedFeat.prerequisitesString;	
 	self.benefitTextView.text = selectedFeat.benefitString;
 }
 
@@ -237,6 +246,7 @@
 
 - (void)controllerWillChangeContent:(NSFetchedResultsController *)controller
 {
+	TRACE;
     // The fetch controller is about to start sending change notifications, so prepare the table view for updates.
     [self.tableView beginUpdates];
 }
@@ -248,6 +258,7 @@
 	 forChangeType:(NSFetchedResultsChangeType)type
 	  newIndexPath:(NSIndexPath *)newIndexPath
 {
+	TRACE;
     UITableView *tableView = self.tableView;
 	
     switch(type) {
@@ -277,6 +288,7 @@
 		   atIndex:(NSUInteger)sectionIndex
 	 forChangeType:(NSFetchedResultsChangeType)type
 {
+	TRACE;
     UITableView *tableView = self.tableView;
 	
     switch(type) {
@@ -294,9 +306,58 @@
 
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
 {
+	TRACE;
     // The fetch controller has sent all current change notifications, so tell the table view to process all updates.
     [self.tableView endUpdates];
 }
 
+//------------------------------------------------------------------------------
+#pragma mark - UITextField Delegate
+//------------------------------------------------------------------------------
+
+- (void)updateSearchWithString:(NSString *)searchString
+{
+	LOG_DEBUG(@"searchString = %@", searchString);
+	//NSFetchRequest *fetchRequest = self.fetchedResultsController.fetchRequest;
+
+	// Create and configure a fetch request with the Book entity.
+    //NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    //NSEntityDescription *entity = [NSEntityDescription entityForName:@"PFFeat" inManagedObjectContext:self.managedObjectContext];
+    //[fetchRequest setEntity:entity];
+    
+	NSPredicate *searchPredicate = [NSPredicate predicateWithFormat:@"name contains[cd] %@", searchString];
+	self.fetchedResultsController.fetchRequest.predicate = searchPredicate;
+	//LOG_DEBUG(@"searchPredicate = %@", searchPredicate);
+
+    // Create the sort descriptors array.
+    //NSSortDescriptor *nameDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
+    //NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:nameDescriptor, nil];
+    //[fetchRequest setSortDescriptors:sortDescriptors];
+
+	[NSFetchedResultsController deleteCacheWithName:@"Feats"];
+	
+	NSError *error = nil;
+	//LOG_DEBUG(@"fetchedResultsController = %@", self.fetchedResultsController);
+    if ([self.fetchedResultsController performFetch:&error]) {
+		//LOG_DEBUG(@"fetchedObjects = %@", self.fetchedResultsController.fetchedObjects);
+		[self.tableView reloadData];
+    }
+	else {
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+	}
+	
+}
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
+	LOG_DEBUG(@"textField.text = %@, string = %@ %@", textField.text, string, NSStringFromRange(range));
+	NSString *searchText = [textField.text stringByReplacingCharactersInRange:range withString:string];
+	LOG_DEBUG(@"searchText = %@", searchText);
+	
+	[NSObject cancelPreviousPerformRequestsWithTarget:self];
+	[self performSelector:@selector(updateSearchWithString:) withObject:searchText afterDelay:0.2];
+	
+	return YES;
+}
 
 @end

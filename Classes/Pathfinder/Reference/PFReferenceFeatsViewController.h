@@ -13,6 +13,8 @@
 @interface PFReferenceFeatsViewController : UIViewController
 	<NSFetchedResultsControllerDelegate, UITableViewDataSource, UITableViewDelegate>
 
+@property (nonatomic, strong) IBOutlet UITextField *searchTextField;
+
 @property (nonatomic, strong) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) IBOutlet UIView *detailContainerView;
 
