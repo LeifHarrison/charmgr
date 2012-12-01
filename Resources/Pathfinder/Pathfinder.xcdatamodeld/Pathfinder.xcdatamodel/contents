@@ -90,7 +90,14 @@
         <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="characters" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PFCharacter" inverseName="race" inverseEntity="PFCharacter" syncable="YES"/>
         <relationship name="source" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="PFSource" inverseName="races" inverseEntity="PFSource" syncable="YES"/>
-        <relationship name="traits" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PFTrait" inverseName="race" inverseEntity="PFTrait" syncable="YES"/>
+        <relationship name="traits" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PFRacialTrait" inverseName="race" inverseEntity="PFRacialTrait" syncable="YES"/>
+    </entity>
+    <entity name="PFRacialTrait" representedClassName="PFRacialTrait" syncable="YES">
+        <attribute name="descriptionShort" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="displayName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sortOrder" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="race" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="PFRace" inverseName="traits" inverseEntity="PFRace" syncable="YES"/>
     </entity>
     <entity name="PFSkill" representedClassName="PFSkill" syncable="YES">
         <attribute name="armorCheckPenalty" optional="YES" attributeType="Boolean" syncable="YES"/>
@@ -118,7 +125,6 @@
         <attribute name="displayName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="type" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <relationship name="race" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="PFRace" inverseName="traits" inverseEntity="PFRace" syncable="YES"/>
         <relationship name="source" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="PFSource" inverseName="traits" inverseEntity="PFSource" syncable="YES"/>
     </entity>
     <elements>
@@ -132,7 +138,8 @@
         <element name="PFFeat" positionX="160" positionY="192" width="128" height="180"/>
         <element name="PFRace" positionX="0" positionY="0" width="128" height="300"/>
         <element name="PFSkill" positionX="160" positionY="192" width="128" height="180"/>
-        <element name="PFTrait" positionX="160" positionY="192" width="128" height="150"/>
         <element name="PFSource" positionX="160" positionY="192" width="128" height="150"/>
+        <element name="PFTrait" positionX="160" positionY="192" width="128" height="135"/>
+        <element name="PFRacialTrait" positionX="160" positionY="192" width="128" height="120"/>
     </elements>
 </model>

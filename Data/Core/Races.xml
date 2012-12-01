@@ -129,31 +129,31 @@
 		<MaleNames></MaleNames>
 		<FemaleNames></FemaleNames>
 		<Traits>
-            <Trait name="Ability Scores - Catfolk" displayName="+2 Dexterity, +2 Charisma, –2 Wisdom">
+            <Trait sortOrder="1" name="Ability Scores - Catfolk" displayName="+2 Dexterity, +2 Charisma, –2 Wisdom">
                 <ShortDescription>Catfolk are sociable and agile, but often lack common sense.</ShortDescription>
             </Trait>
-            <Trait name="Type - Catfolk" displayName="Catfolk">
+            <Trait sortOrder="2" name="Type - Catfolk" displayName="Catfolk">
                 <ShortDescription>Catfolk are humanoids with the catfolk subtype.</ShortDescription>
             </Trait>
-            <Trait name="Size - Catfolk" displayName="Medium">
+            <Trait sortOrder="3" name="Size - Catfolk" displayName="Medium">
                 <ShortDescription>Catfolk are Medium creatures and have no bonuses or penalties due to their size.</ShortDescription>
             </Trait>
-            <Trait name="Speed - Catfolk" displayName="Normal Speed">
+            <Trait sortOrder="4" name="Speed - Catfolk" displayName="Normal Speed">
                 <ShortDescription>Catfolk have a base speed of 30 feet.</ShortDescription>
             </Trait>
-            <Trait name="Low-Light Vision - Catfolk" displayName="Low-Light Vision">
+            <Trait sortOrder="5" name="Low-Light Vision - Catfolk" displayName="Low-Light Vision">
                 <ShortDescription>In dim light, catfolk can see twice as far as humans.</ShortDescription>
             </Trait>
-            <Trait name="Cat's Luck (Ex)" displayName="Cat's Luck (Ex)">
+            <Trait sortOrder="6" name="Cat's Luck (Ex)" displayName="Cat's Luck (Ex)">
                 <ShortDescription>Once per day when a catfolk makes a Reflex saving throw, he can roll the saving throw twice and take the better result. He must decide to use this ability before the saving throw is attempted.</ShortDescription>
             </Trait>
-            <Trait name="Natural Hunter" displayName="Natural Hunter">
+            <Trait sortOrder="7" name="Natural Hunter" displayName="Natural Hunter">
                 <ShortDescription>Catfolk receive a +2 racial bonus on Perception, Stealth, and Survival checks.</ShortDescription>
             </Trait>
-            <Trait name="Sprinter" displayName="Sprinter">
+            <Trait sortOrder="8" name="Sprinter" displayName="Sprinter">
                 <ShortDescription>Catfolk are humanoids with the catfolk subtype.</ShortDescription>
             </Trait>
-            <Trait name="Languages - Catfolk" displayName="Languages">
+            <Trait sortOrder="9" name="Languages - Catfolk" displayName="Languages">
                 <ShortDescription>Catfolk begin play speaking Common and Catfolk. Catfolk with high Intelligence scores can choose from the following languages: Elven, Gnoll, Gnome, Goblin, Halfling, Orc, and Sylvan.</ShortDescription>
             </Trait>
         </Traits>

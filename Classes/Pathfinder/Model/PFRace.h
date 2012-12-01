@@ -12,7 +12,7 @@
 
 @class PFCharacter;
 @class PFSource;
-@class PFTrait;
+@class PFRacialTrait;
 
 @class GDataXMLElement;
 
@@ -41,6 +41,8 @@
 + (PFRace *)insertedInstanceWithElement:(GDataXMLElement *)anElement
 				 inManagedObjectContext:(NSManagedObjectContext*)moc;
 
+- (NSArray *)sortedTraits;
+
 @end
 
 @interface PFRace (CoreDataGeneratedAccessors)
@@ -50,8 +52,8 @@
 - (void)addCharacters:(NSSet *)values;
 - (void)removeCharacters:(NSSet *)values;
 
-- (void)addTraitsObject:(PFTrait *)value;
-- (void)removeTraitsObject:(PFTrait *)value;
+- (void)addTraitsObject:(PFRacialTrait *)value;
+- (void)removeTraitsObject:(PFRacialTrait *)value;
 - (void)addTraits:(NSSet *)values;
 - (void)removeTraits:(NSSet *)values;
 

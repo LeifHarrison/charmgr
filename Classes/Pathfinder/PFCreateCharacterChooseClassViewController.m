@@ -116,7 +116,7 @@
     // Create and initialize the fetch results controller.
     _fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
 																	managedObjectContext:self.managedObjectContext
-																	  sectionNameKeyPath:@"source"
+																	  sectionNameKeyPath:@"source.name"
 																			   cacheName:@"Classes"];
     _fetchedResultsController.delegate = self;
     

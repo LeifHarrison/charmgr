@@ -79,6 +79,8 @@
 		29CD513B1630BB5C001A639E /* PFAbilityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CD513A1630BB5C001A639E /* PFAbilityTableViewCell.m */; };
 		29CD513E1630CC96001A639E /* PFSkillTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CD513D1630CC95001A639E /* PFSkillTableViewCell.m */; };
 		29CEF8011188FA7600E2D442 /* CMProfileView.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CEF8001188FA7600E2D442 /* CMProfileView.m */; };
+		29D960561668787200C57CA1 /* PFRacialTrait.m in Sources */ = {isa = PBXBuildFile; fileRef = 29D960551668787200C57CA1 /* PFRacialTrait.m */; };
+		29D960591669CA4600C57CA1 /* PFContainerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 29D960581669CA4600C57CA1 /* PFContainerCell.m */; };
 		29DB695116293C340038FE79 /* PFClassesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29DB695016293C340038FE79 /* PFClassesViewController.m */; };
 		29E7A87715F9638700DEFF6A /* PFGearViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29E7A87615F9638700DEFF6A /* PFGearViewController.m */; };
 		29E7A87A15F963B900DEFF6A /* PFSpellsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29E7A87915F963B900DEFF6A /* PFSpellsViewController.m */; };
@@ -219,6 +221,10 @@
 		29CD513D1630CC95001A639E /* PFSkillTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFSkillTableViewCell.m; path = Pathfinder/Cells/PFSkillTableViewCell.m; sourceTree = "<group>"; };
 		29CEF7FF1188FA7600E2D442 /* CMProfileView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMProfileView.h; sourceTree = "<group>"; };
 		29CEF8001188FA7600E2D442 /* CMProfileView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMProfileView.m; sourceTree = "<group>"; };
+		29D960541668787200C57CA1 /* PFRacialTrait.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFRacialTrait.h; path = Pathfinder/Model/PFRacialTrait.h; sourceTree = "<group>"; };
+		29D960551668787200C57CA1 /* PFRacialTrait.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFRacialTrait.m; path = Pathfinder/Model/PFRacialTrait.m; sourceTree = "<group>"; };
+		29D960571669CA4600C57CA1 /* PFContainerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFContainerCell.h; path = Pathfinder/Cells/PFContainerCell.h; sourceTree = "<group>"; };
+		29D960581669CA4600C57CA1 /* PFContainerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFContainerCell.m; path = Pathfinder/Cells/PFContainerCell.m; sourceTree = "<group>"; };
 		29DB694F16293C340038FE79 /* PFClassesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFClassesViewController.h; path = Pathfinder/Containers/PFClassesViewController.h; sourceTree = "<group>"; };
 		29DB695016293C340038FE79 /* PFClassesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFClassesViewController.m; path = Pathfinder/Containers/PFClassesViewController.m; sourceTree = "<group>"; };
 		29E7A87515F9638700DEFF6A /* PFGearViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFGearViewController.h; path = Pathfinder/Pages/PFGearViewController.h; sourceTree = "<group>"; };
@@ -327,6 +333,8 @@
 		290639A21606E4E900CCBBC7 /* Custom Cells */ = {
 			isa = PBXGroup;
 			children = (
+				29D960571669CA4600C57CA1 /* PFContainerCell.h */,
+				29D960581669CA4600C57CA1 /* PFContainerCell.m */,
 			);
 			name = "Custom Cells";
 			sourceTree = "<group>";
@@ -470,6 +478,8 @@
 				2902D093161FED6D00C56E74 /* PFFeat.m */,
 				2902D09E161FED6E00C56E74 /* PFRace.h */,
 				2902D09F161FED6E00C56E74 /* PFRace.m */,
+				29D960541668787200C57CA1 /* PFRacialTrait.h */,
+				29D960551668787200C57CA1 /* PFRacialTrait.m */,
 				2902D098161FED6D00C56E74 /* PFSkill.h */,
 				2902D099161FED6D00C56E74 /* PFSkill.m */,
 				29CA4E891664A1F200223AF3 /* PFSource.h */,
@@ -751,6 +761,8 @@
 				29245D9B165B495E00F6078A /* NSArray+CMExtensions.m in Sources */,
 				29FD6888165DEBDA002F2794 /* PFTypes.m in Sources */,
 				29CA4E8B1664A1F300223AF3 /* PFSource.m in Sources */,
+				29D960561668787200C57CA1 /* PFRacialTrait.m in Sources */,
+				29D960591669CA4600C57CA1 /* PFContainerCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -6,11 +6,13 @@
 //  Copyright (c) 2012 Leif Harrison. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "PFContainerCell.h"
 
-@interface PFRacialTraitTableViewCell : UITableViewCell
+@interface PFRacialTraitTableViewCell : PFContainerCell
 
 @property (nonatomic, strong) IBOutlet UILabel *traitNameLabel;
 @property (nonatomic, strong) IBOutlet UILabel *traitDescriptionLabel;
+
++ (CGFloat)rowHeightForState:(PFContainerViewState)aState;
 
 @end

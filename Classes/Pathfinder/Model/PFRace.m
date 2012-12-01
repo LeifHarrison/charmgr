@@ -10,7 +10,7 @@
 
 #import "PFCharacter.h"
 #import "PFSource.h"
-#import "PFTrait.h"
+#import "PFRacialTrait.h"
 
 #import "GDataXMLNode.h"
 
@@ -134,8 +134,7 @@
 				// Fetch existing trait, if there is one
 				//NSString *traitName = [[anElement attributeForName:@"name"] stringValue];
 				
-				PFTrait *aTrait = [PFTrait insertedInstanceWithElement:traitElement inManagedObjectContext:moc];
-				aTrait.source = newInstance.source;
+				PFRacialTrait *aTrait = [PFRacialTrait insertedInstanceWithElement:traitElement inManagedObjectContext:moc];
 				aTrait.race = newInstance;
 			}
 		};
@@ -144,5 +143,16 @@
 	//LOG_DEBUG(@"newInstance = %@", newInstance);
 	return newInstance;
 }
+
+//------------------------------------------------------------------------------
+#pragma mark - General
+//------------------------------------------------------------------------------
+
+- (NSArray *)sortedTraits;
+{
+	NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"sortOrder" ascending:YES];
+	return [self.traits.allObjects sortedArrayUsingDescriptors:@[sort]];
+}
+
 
 @end

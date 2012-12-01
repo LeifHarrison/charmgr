@@ -108,7 +108,7 @@
     [fetchRequest setEntity:entity];
     
     // Create the sort descriptors array.
-    NSSortDescriptor *nameDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
+    NSSortDescriptor *nameDescriptor = [[NSSortDescriptor alloc] initWithKey:@"alignmentType" ascending:YES];
     NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:nameDescriptor, nil];
     [fetchRequest setSortDescriptors:sortDescriptors];
     

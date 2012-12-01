@@ -15,7 +15,7 @@
 #import "PFClassType.h"
 #import "PFFeat.h"
 #import "PFRace.h"
-#import "PFTrait.h"
+#import "PFRacialTrait.h"
 
 #import "PFRacialTraitTableViewCell.h"
 
@@ -27,7 +27,6 @@
 enum {
 	kPFFeaturesTableViewSectionRacialTraits,
 	kPFFeaturesTableViewSectionClassFeatures,
-	kPFFeaturesTableViewSectionFeats,
 	kPFFeaturesTableViewSectionCount
 };
 
@@ -101,7 +100,7 @@ static const CGRect kPFFeaturesViewBoundsEditing	= { {   0,   0 }, { 345, 739 } 
 - (void)updateUI
 {
 	[super updateUI];
-	self.racialTraits = [self.character.race.traits allObjects];
+	self.racialTraits = [self.character.race sortedTraits];
 	[self.tableView reloadData];
 }
 
@@ -109,13 +108,12 @@ static const CGRect kPFFeaturesViewBoundsEditing	= { {   0,   0 }, { 345, 739 } 
 {
 	if (indexPath.section == kPFFeaturesTableViewSectionRacialTraits) {
 		PFRacialTraitTableViewCell *traitCell = (PFRacialTraitTableViewCell *)cell;
-		PFTrait *aTrait = [self.racialTraits objectAtIndex:indexPath.row];
+		PFRacialTrait *aTrait = [self.racialTraits objectAtIndex:indexPath.row];
+		traitCell.containerState = self.state;
 		traitCell.traitNameLabel.text = aTrait.displayName;
 		traitCell.traitDescriptionLabel.text = aTrait.descriptionShort;
 	}
 	else if (indexPath.section == kPFFeaturesTableViewSectionClassFeatures) {
-	}
-	else if (indexPath.section == kPFFeaturesTableViewSectionFeats) {
 	}
 }
 
@@ -132,14 +130,11 @@ static const CGRect kPFFeaturesViewBoundsEditing	= { {   0,   0 }, { 345, 739 } 
 
 - (NSString *)tableView:(UITableView *)aTableView titleForHeaderInSection:(NSInteger)section
 {
-	if (section == kPFFeaturesTableViewSectionRacialTraits) {
+	if ((section == kPFFeaturesTableViewSectionRacialTraits) && (self.racialTraits.count > 0)) {
 		return @"Racial Traits";
 	}
-	else if (section == kPFFeaturesTableViewSectionClassFeatures) {
+	else if ((section == kPFFeaturesTableViewSectionClassFeatures) && (self.classFeatures.count > 0)) {
 		return @"Class Features";
-	}
-	else if (section == kPFFeaturesTableViewSectionFeats) {
-		return @"Feats";
 	}
 	else {
 		return nil;
@@ -155,9 +150,6 @@ static const CGRect kPFFeaturesViewBoundsEditing	= { {   0,   0 }, { 345, 739 } 
 	else if (section == kPFFeaturesTableViewSectionClassFeatures) {
 		rowCount = self.classFeatures.count;
 	}
-	else if (section == kPFFeaturesTableViewSectionFeats) {
-		rowCount = self.characterFeats.count;
-	}
 	LOG_DEBUG(@"section = %d, rows = %d", section, rowCount);
 	return rowCount;
 }
@@ -171,9 +163,6 @@ static const CGRect kPFFeaturesViewBoundsEditing	= { {   0,   0 }, { 345, 739 } 
 	}
 	else if (indexPath.section == kPFFeaturesTableViewSectionClassFeatures) {
 		cellIdentifier = @"ClassFeatureCell";
-	}
-	else if (indexPath.section == kPFFeaturesTableViewSectionFeats) {
-		cellIdentifier = @"FeatCell";
 	}
 	//LOG_DEBUG(@"indexPath = %@, cell identifier = %@", indexPath, cellIdentifier);
 
@@ -191,6 +180,21 @@ static const CGRect kPFFeaturesViewBoundsEditing	= { {   0,   0 }, { 345, 739 } 
 //------------------------------------------------------------------------------
 #pragma mark - UITableViewDelegate
 //------------------------------------------------------------------------------
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	CGFloat cellHeight = 0;
+	
+	if (indexPath.section == kPFFeaturesTableViewSectionRacialTraits) {
+		cellHeight = [PFRacialTraitTableViewCell rowHeightForState:self.state];
+	}
+	else if (indexPath.section == kPFFeaturesTableViewSectionClassFeatures) {
+		cellHeight = 30;
+	}
+
+	LOG_DEBUG(@"indexPath = %@, cellHeight = %lf", indexPath, cellHeight);
+	return cellHeight;
+}
 
 //------------------------------------------------------------------------------
 #pragma mark - Frame Sizes (for different states)
@@ -212,6 +216,61 @@ static const CGRect kPFFeaturesViewBoundsEditing	= { {   0,   0 }, { 345, 739 } 
 {
 	// Default implementation just returns our current view frame
 	return kPFFeaturesViewBoundsEditing;
+}
+
+//------------------------------------------------------------------------------
+#pragma mark - State Transitions
+//------------------------------------------------------------------------------
+
+- (void)willTransitionToState:(PFContainerViewState)newState;
+{
+	LOG_DEBUG(@"newState = %d", newState);
+	[super willTransitionToState:newState];
+	
+	
+	if (newState == PFContainerViewStateStatic) {
+		[self.tableView setScrollEnabled:NO];
+		
+		for (PFContainerCell *aCell in self.tableView.visibleCells) {
+			[aCell setContainerState:newState animated:YES];
+		}
+		
+	}
+}
+
+- (void)didTransitionToState:(PFContainerViewState)newState;
+{
+	LOG_DEBUG(@"newState = %d", newState);
+	//LOG_DEBUG(@"parentViewController = %@", self.parentViewController);
+	[super didTransitionToState:newState];
+	
+	if (newState == PFContainerViewStateEditing) {
+		[self.tableView setScrollEnabled:YES];
+		
+		for (PFContainerCell *aCell in self.tableView.visibleCells) {
+			[aCell setContainerState:newState animated:YES];
+		}
+		
+	}
+}
+
+- (void)animateTransitionToState:(PFContainerViewState)newState;
+{
+	LOG_DEBUG(@"newState = %d", newState);
+	[super animateTransitionToState:newState];
+
+	if (newState == PFContainerViewStateEditing) {
+		[self.tableView beginUpdates];
+		for (PFContainerCell *aCell in self.tableView.visibleCells) {
+			[aCell setContainerState:newState];
+		}
+		[self.tableView endUpdates];
+	}
+	else {
+		for (PFContainerCell *aCell in self.tableView.visibleCells) {
+			[aCell setContainerState:newState];
+		}
+	}
 }
 
 @end
