@@ -81,6 +81,8 @@
 		29CEF8011188FA7600E2D442 /* CMProfileView.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CEF8001188FA7600E2D442 /* CMProfileView.m */; };
 		29D960561668787200C57CA1 /* PFRacialTrait.m in Sources */ = {isa = PBXBuildFile; fileRef = 29D960551668787200C57CA1 /* PFRacialTrait.m */; };
 		29D960591669CA4600C57CA1 /* PFContainerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 29D960581669CA4600C57CA1 /* PFContainerCell.m */; };
+		29D9605C166B223700C57CA1 /* PFClassFeature.m in Sources */ = {isa = PBXBuildFile; fileRef = 29D9605B166B223700C57CA1 /* PFClassFeature.m */; };
+		29D9605F166B27EF00C57CA1 /* PFClassFeatureCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 29D9605E166B27EF00C57CA1 /* PFClassFeatureCell.m */; };
 		29DB695116293C340038FE79 /* PFClassesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29DB695016293C340038FE79 /* PFClassesViewController.m */; };
 		29E7A87715F9638700DEFF6A /* PFGearViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29E7A87615F9638700DEFF6A /* PFGearViewController.m */; };
 		29E7A87A15F963B900DEFF6A /* PFSpellsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29E7A87915F963B900DEFF6A /* PFSpellsViewController.m */; };
@@ -225,6 +227,10 @@
 		29D960551668787200C57CA1 /* PFRacialTrait.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFRacialTrait.m; path = Pathfinder/Model/PFRacialTrait.m; sourceTree = "<group>"; };
 		29D960571669CA4600C57CA1 /* PFContainerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFContainerCell.h; path = Pathfinder/Cells/PFContainerCell.h; sourceTree = "<group>"; };
 		29D960581669CA4600C57CA1 /* PFContainerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFContainerCell.m; path = Pathfinder/Cells/PFContainerCell.m; sourceTree = "<group>"; };
+		29D9605A166B223600C57CA1 /* PFClassFeature.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFClassFeature.h; path = Pathfinder/Model/PFClassFeature.h; sourceTree = "<group>"; };
+		29D9605B166B223700C57CA1 /* PFClassFeature.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFClassFeature.m; path = Pathfinder/Model/PFClassFeature.m; sourceTree = "<group>"; };
+		29D9605D166B27EF00C57CA1 /* PFClassFeatureCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFClassFeatureCell.h; path = Pathfinder/Cells/PFClassFeatureCell.h; sourceTree = "<group>"; };
+		29D9605E166B27EF00C57CA1 /* PFClassFeatureCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFClassFeatureCell.m; path = Pathfinder/Cells/PFClassFeatureCell.m; sourceTree = "<group>"; };
 		29DB694F16293C340038FE79 /* PFClassesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFClassesViewController.h; path = Pathfinder/Containers/PFClassesViewController.h; sourceTree = "<group>"; };
 		29DB695016293C340038FE79 /* PFClassesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFClassesViewController.m; path = Pathfinder/Containers/PFClassesViewController.m; sourceTree = "<group>"; };
 		29E7A87515F9638700DEFF6A /* PFGearViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFGearViewController.h; path = Pathfinder/Pages/PFGearViewController.h; sourceTree = "<group>"; };
@@ -446,6 +452,8 @@
 			children = (
 				29CD51391630BB5C001A639E /* PFAbilityTableViewCell.h */,
 				29CD513A1630BB5C001A639E /* PFAbilityTableViewCell.m */,
+				29D9605D166B27EF00C57CA1 /* PFClassFeatureCell.h */,
+				29D9605E166B27EF00C57CA1 /* PFClassFeatureCell.m */,
 				298A9E0A162FC1810045F1D1 /* PFClassTableViewCell.h */,
 				298A9E0B162FC1810045F1D1 /* PFClassTableViewCell.m */,
 				297AA4AD1640F2F20041C59D /* PFRacialTraitTableViewCell.h */,
@@ -472,6 +480,8 @@
 				2902D08A161FED6D00C56E74 /* PFCharacterClass.m */,
 				2972FDAF16325B9300B44692 /* PFCharacterSkill.h */,
 				2972FDB016325B9300B44692 /* PFCharacterSkill.m */,
+				29D9605A166B223600C57CA1 /* PFClassFeature.h */,
+				29D9605B166B223700C57CA1 /* PFClassFeature.m */,
 				2902D08F161FED6D00C56E74 /* PFClassType.h */,
 				2902D090161FED6D00C56E74 /* PFClassType.m */,
 				2902D092161FED6D00C56E74 /* PFFeat.h */,
@@ -763,6 +773,8 @@
 				29CA4E8B1664A1F300223AF3 /* PFSource.m in Sources */,
 				29D960561668787200C57CA1 /* PFRacialTrait.m in Sources */,
 				29D960591669CA4600C57CA1 /* PFContainerCell.m in Sources */,
+				29D9605C166B223700C57CA1 /* PFClassFeature.m in Sources */,
+				29D9605F166B27EF00C57CA1 /* PFClassFeatureCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

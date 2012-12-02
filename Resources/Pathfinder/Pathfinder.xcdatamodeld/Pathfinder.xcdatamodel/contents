@@ -53,6 +53,13 @@
         <relationship name="character" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="PFCharacter" inverseName="skills" inverseEntity="PFCharacter" syncable="YES"/>
         <relationship name="skill" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="PFSkill" inverseName="characterSkills" inverseEntity="PFSkill" syncable="YES"/>
     </entity>
+    <entity name="PFClassFeature" representedClassName="PFClassFeature" syncable="YES">
+        <attribute name="benefit" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="level" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="classType" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="PFClassType" inverseName="features" inverseEntity="PFClassType" syncable="YES"/>
+    </entity>
     <entity name="PFClassType" representedClassName="PFClassType" syncable="YES">
         <attribute name="descriptionShort" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="hitDieType" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
@@ -60,6 +67,7 @@
         <attribute name="skillRanks" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <relationship name="characterClasses" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PFCharacterClass" inverseName="classType" inverseEntity="PFCharacterClass" syncable="YES"/>
         <relationship name="classSkills" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PFSkill" inverseName="classTypes" inverseEntity="PFSkill" syncable="YES"/>
+        <relationship name="features" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PFClassFeature" inverseName="classType" inverseEntity="PFClassFeature" syncable="YES"/>
         <relationship name="source" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="PFSource" inverseName="classTypes" inverseEntity="PFSource" syncable="YES"/>
     </entity>
     <entity name="PFFeat" representedClassName="PFFeat" syncable="YES">
@@ -134,12 +142,13 @@
         <element name="PFCharacterAbility" positionX="160" positionY="192" width="128" height="105"/>
         <element name="PFCharacterClass" positionX="0" positionY="0" width="128" height="90"/>
         <element name="PFCharacterSkill" positionX="160" positionY="192" width="128" height="135"/>
-        <element name="PFClassType" positionX="0" positionY="0" width="128" height="150"/>
+        <element name="PFClassType" positionX="0" positionY="0" width="128" height="165"/>
         <element name="PFFeat" positionX="160" positionY="192" width="128" height="180"/>
         <element name="PFRace" positionX="0" positionY="0" width="128" height="300"/>
         <element name="PFSkill" positionX="160" positionY="192" width="128" height="180"/>
         <element name="PFSource" positionX="160" positionY="192" width="128" height="150"/>
         <element name="PFTrait" positionX="160" positionY="192" width="128" height="135"/>
         <element name="PFRacialTrait" positionX="160" positionY="192" width="128" height="120"/>
+        <element name="PFClassFeature" positionX="160" positionY="192" width="128" height="120"/>
     </elements>
 </model>

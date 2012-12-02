@@ -7,13 +7,19 @@
 //
 
 #import "PFClassType.h"
+
 #import "PFCharacterClass.h"
+#import "PFClassFeature.h"
 #import "PFSkill.h"
 #import "PFSource.h"
 
 #import "GDataXMLNode.h"
 
 @implementation PFClassType
+
+//------------------------------------------------------------------------------
+#pragma mark - Properties
+//------------------------------------------------------------------------------
 
 @dynamic name;
 @dynamic source;
@@ -23,11 +29,20 @@
 
 @dynamic characterClasses;
 @dynamic classSkills;
+@dynamic features;
+
+//------------------------------------------------------------------------------
+#pragma mark - General
+//------------------------------------------------------------------------------
 
 - (NSString*)hitDieTypeDescription;
 {
 	return [NSString stringWithFormat:@"d%d", self.hitDieType];
 }
+
+//------------------------------------------------------------------------------
+#pragma mark - Creation
+//------------------------------------------------------------------------------
 
 + (PFClassType *)insertedInstanceWithElement:(GDataXMLElement *)anElement
 					  inManagedObjectContext:(NSManagedObjectContext*)moc;
@@ -64,9 +79,25 @@
 		}
 	};
 	
+	GDataXMLElement *featuresArrayElement = nil;
+	elements = [anElement elementsForName:@"Features"];
+	if (elements.count > 0) {
+		featuresArrayElement = [elements objectAtIndex:0];
+		
+		elements = [featuresArrayElement elementsForName:@"Feature"];
+		if (elements.count > 0) {
+			for (GDataXMLElement *featureElement in elements) {
+				// Fetch existing feature, if there is one
+				//NSString *featureName = [[anElement attributeForName:@"name"] stringValue];
+				
+				PFClassFeature *aFeature = [PFClassFeature insertedInstanceWithElement:featureElement inManagedObjectContext:moc];
+				aFeature.classType = newInstance;
+			}
+		};
+	}
+	
 	//LOG_DEBUG(@"newInstance = %@", newInstance);
 	return newInstance;
 }
-
 
 @end

@@ -93,3 +93,35 @@ PFSizeType PFSizeTypeFromString(NSString *aString)
 	else
 		return kPFSizeTypeMedium;
 }
+
+static NSString const * kPFSpecialAbilityTypeNoneString = @"";
+static NSString const * kPFSpecialAbilityTypeExtraordinaryString = @"Ex";
+static NSString const * kPFSpecialAbilityTypeSpellLikeString = @"Sp";
+static NSString const * kPFSpecialAbilityTypeSupernaturalString = @"Su";
+
+NSString *NSStringFromPFSpecialAbilityType(PFSpecialAbilityType SpecialAbilityType)
+{
+	switch (SpecialAbilityType) {
+		case kPFSpecialAbilityTypeExtraordinary :
+			return (NSString *)kPFSpecialAbilityTypeExtraordinaryString;
+		case kPFSpecialAbilityTypeSpellLike :
+			return (NSString *)kPFSpecialAbilityTypeSpellLikeString;
+		case kPFSpecialAbilityTypeSupernatural :
+			return (NSString *)kPFSpecialAbilityTypeSupernaturalString;
+		default :
+			return (NSString *)kPFSpecialAbilityTypeNoneString;
+	}
+}
+
+PFSpecialAbilityType PFSpecialAbilityTypeFromString(NSString *aString)
+{
+	if ([kPFSpecialAbilityTypeExtraordinaryString isEqual:aString])
+		return kPFSpecialAbilityTypeExtraordinary;
+	else if ([kPFSpecialAbilityTypeSpellLikeString isEqual:aString])
+		return kPFSpecialAbilityTypeSpellLike;
+	else if ([kPFSpecialAbilityTypeSupernaturalString isEqual:aString])
+		return kPFSpecialAbilityTypeSupernatural;
+	else
+		return kPFSpecialAbilityTypeNone;
+}
+

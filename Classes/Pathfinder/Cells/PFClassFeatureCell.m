@@ -1,20 +1,14 @@
 //
-//  PFRacialTraitTableViewCell.m
+//  PFClassFeatureCell.m
 //  CharMgr
 //
-//  Created by Leif Harrison on 10/30/12.
+//  Created by Leif Harrison on 12/1/12.
 //  Copyright (c) 2012 Leif Harrison. All rights reserved.
 //
 
-#import "PFRacialTraitTableViewCell.h"
+#import "PFClassFeatureCell.h"
 
-#import "PFRacialTrait.h"
-
-//==============================================================================
-// Class Implementation
-//==============================================================================
-
-@implementation PFRacialTraitTableViewCell
+@implementation PFClassFeatureCell
 
 //------------------------------------------------------------------------------
 #pragma mark - Initialization
@@ -68,23 +62,6 @@
 }
 
 //------------------------------------------------------------------------------
-#pragma mark - Layout
-//------------------------------------------------------------------------------
-
-- (void)layoutSubviews
-{
-	[super layoutSubviews];
-	
-	CGRect descriptionRect = self.traitDescriptionLabel.frame;
-	NSString *descriptionText = self.traitDescriptionLabel.text;
-	CGSize descriptionSize = [descriptionText sizeWithFont:self.traitDescriptionLabel.font
-												 constrainedToSize:CGSizeMake(descriptionRect.size.width, 600)
-													 lineBreakMode:NSLineBreakByWordWrapping];
-	descriptionRect.size.height = descriptionSize.height;
-	self.traitDescriptionLabel.frame = descriptionRect;
-}
-
-//------------------------------------------------------------------------------
 #pragma mark - Container State
 //------------------------------------------------------------------------------
 
@@ -93,10 +70,8 @@
 	[super setContainerState:newState];
 	
 	if (newState == PFContainerViewStateStatic) {
-		self.traitDescriptionLabel.alpha = 0.0f;
 	}
 	else {
-		self.traitDescriptionLabel.alpha = 1.0f;
 	}
 }
 
@@ -111,20 +86,13 @@
     [UIView animateWithDuration: (animated ? 0.3 : 0.0) animations:animations completion:completion];
 }
 
-+ (CGFloat)rowHeightForState:(PFContainerViewState)aState
-					   trait:(PFRacialTrait*)aTrait
-				   cellWidth:(CGFloat)cellWidth;
++ (CGFloat)rowHeightForState:(PFContainerViewState)aState;
 {
 	if (aState == PFContainerViewStateStatic) {
 		return 20;
 	}
 	else {
-		CGFloat maxWidth = cellWidth - (2 * 10);
-		CGSize descriptionSize = [aTrait.descriptionShort sizeWithFont:[UIFont systemFontOfSize:10]
-													  constrainedToSize:CGSizeMake(maxWidth, 600)
-														  lineBreakMode:NSLineBreakByWordWrapping];
-		CGFloat height = 18 + descriptionSize.height + 2;
-		return height;
+		return 30;
 	}
 }
 

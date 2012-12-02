@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Feats>
     <Feat name="Acrobatic" type="General" source="Core">
         <Prerequisites>-</Prerequisites>
@@ -69,7 +69,7 @@
     <Feat name="Catch Off-Guard" type="Combat" source="Core">
         <Prerequisites>-</Prerequisites>
         <Benefit>You do not suffer any penalties for using an improvised melee weapon. Unarmed opponents are flat-footed against any attacks you make with an improvised melee weapon.</Benefit>
-        <Normal>You take a &amp;ndash;4 penalty on attack rolls made with an improvised weapon.</Normal>
+        <Normal>You take a -4 penalty on attack rolls made with an improvised weapon.</Normal>
     </Feat>
     <Feat name="Channel Smite" type="Combat" source="Core">
         <Prerequisites>Channel energy class feature.</Prerequisites>
@@ -81,7 +81,7 @@
     </Feat>
     <Feat name="Combat Expertise" type="Combat" source="Core">
         <Prerequisites>Int 13.</Prerequisites>
-        <Benefit>You can choose to take a &amp;ndash;1 penalty on melee attack rolls and combat maneuver checks to gain a +1 dodge bonus to your Armor Class. When your base attack bonus reaches +4, and every +4 thereafter, the penalty increases by &amp;ndash;1 and the dodge bonus increases by +1. You can only choose to use this feat when you declare that you are making an attack or a full-attack action with a melee weapon. The effects of this feat last until your next turn.</Benefit>
+        <Benefit>You can choose to take a -1 penalty on melee attack rolls and combat maneuver checks to gain a +1 dodge bonus to your Armor Class. When your base attack bonus reaches +4, and every +4 thereafter, the penalty increases by -1 and the dodge bonus increases by +1. You can only choose to use this feat when you declare that you are making an attack or a full-attack action with a melee weapon. The effects of this feat last until your next turn.</Benefit>
     </Feat>
     <Feat name="Improved Disarm" type="Combat" source="Core">
         <Prerequisites>Int 13, Combat Expertise.</Prerequisites>
@@ -182,7 +182,7 @@
     </Feat>
     <Feat name="Deadly Aim" type="Combat" source="Core">
         <Prerequisites>Dex 13, base attack bonus +1.</Prerequisites>
-        <Benefit>You can choose to take a &amp;ndash;1 penalty on all ranged attack rolls to gain a +2 bonus on all ranged damage rolls. When your base attack bonus reaches +4, and every +4 thereafter, the penalty increases by &amp;ndash;1 and the bonus to damage increases by +2. You must choose to use this feat before making an attack roll and its effects last until your next turn. The bonus damage does not apply to touch attacks or effects that do not deal hit point damage.</Benefit>
+        <Benefit>You can choose to take a -1 penalty on all ranged attack rolls to gain a +2 bonus on all ranged damage rolls. When your base attack bonus reaches +4, and every +4 thereafter, the penalty increases by -1 and the bonus to damage increases by +2. You must choose to use this feat before making an attack roll and its effects last until your next turn. The bonus damage does not apply to touch attacks or effects that do not deal hit point damage.</Benefit>
     </Feat>
     <Feat name="Deceitful" type="General" source="Core">
         <Prerequisites>-</Prerequisites>
@@ -249,7 +249,7 @@
         <Prerequisites>Base attack bonus +1.</Prerequisites>
         <Benefit>You make attack rolls with the weapon normally.</Benefit>
         <Special>You can gain Exotic Weapon Proficiency multiple times. Each time you take the feat, it applies to a new type of exotic weapon.</Special>
-        <Normal>A character who uses a weapon with which he is not proficient takes a &amp;ndash;4 penalty on attack rolls.</Normal>
+        <Normal>A character who uses a weapon with which he is not proficient takes a -4 penalty on attack rolls.</Normal>
     </Feat>
     <Feat name="Extra Channel" type="General" source="Core">
         <Prerequisites>Channel energy class feature.</Prerequisites>
@@ -318,7 +318,7 @@
     </Feat>
     <Feat name="Improved Unarmed Strike" type="Combat" source="Core">
         <Prerequisites>-</Prerequisites>
-        <Benefit>You are considered to be armed even when unarmed&amp;mdash;you do not provoke attacks of opportunity when you attack foes while unarmed. Your unarmed strikes can deal lethal or nonlethal damage, at your choice.</Benefit>
+        <Benefit>You are considered to be armed even when unarmed-you do not provoke attacks of opportunity when you attack foes while unarmed. Your unarmed strikes can deal lethal or nonlethal damage, at your choice.</Benefit>
         <Normal>Without this feat, you are considered unarmed when attacking with an unarmed strike, and you can deal only nonlethal damage with such an attack.</Normal>
     </Feat>
     <Feat name="Deflect Arrows" type="Combat" source="Core">
@@ -353,12 +353,12 @@
     </Feat>
     <Feat name="Stunning Fist" type="Combat" source="Core">
         <Prerequisites>Dex 13, Wis 13, Improved Unarmed Strike, base attack bonus +8.</Prerequisites>
-        <Benefit>You must declare that you are using this feat before you make your attack roll (thus, a failed attack roll ruins the attempt). Stunning Fist forces a foe damaged by your unarmed attack to make a Fortitude saving throw (DC 10 + 1/2 your character level + your Wis modifier), in addition to dealing damage normally. A defender who fails this saving throw is stunned for 1 round (until just before your next turn). A stunned character drops everything held, can't take actions, loses any Dexterity bonus to AC, and takes a &amp;ndash;2 penalty to AC. You may attempt a stunning attack once per day for every four levels you have attained (but see Special), and no more than once per round. Constructs, oozes, plants, undead, incorporeal creatures, and creatures immune to critical hits cannot be stunned.</Benefit>
+        <Benefit>You must declare that you are using this feat before you make your attack roll (thus, a failed attack roll ruins the attempt). Stunning Fist forces a foe damaged by your unarmed attack to make a Fortitude saving throw (DC 10 + 1/2 your character level + your Wis modifier), in addition to dealing damage normally. A defender who fails this saving throw is stunned for 1 round (until just before your next turn). A stunned character drops everything held, can't take actions, loses any Dexterity bonus to AC, and takes a -2 penalty to AC. You may attempt a stunning attack once per day for every four levels you have attained (but see Special), and no more than once per round. Constructs, oozes, plants, undead, incorporeal creatures, and creatures immune to critical hits cannot be stunned.</Benefit>
         <Special>A monk receives Stunning Fist as a bonus feat at 1st level, even if he does not meet the prerequisites. A monk may attempt a stunning attack a number of times per day equal to his monk level, plus one more time per day for every four levels he has in classes other than monk.</Special>
     </Feat>
     <Feat name="Improvised Weapon Mastery" type="Combat" source="Core">
         <Prerequisites>Catch Off-Guard or Throw Anything, base attack bonus +8.</Prerequisites>
-        <Benefit>You do not suffer any penalties for using an improvised weapon. Increase the amount of damage dealt by the improvised weapon by one step (for example, 1d4 becomes 1d6) to a maximum of 1d8 (2d6 if the improvised weapon is two-handed). The improvised weapon has a critical threat range of 19&amp;ndash;20, with a critical multiplier of &amp;times;2.</Benefit>
+        <Benefit>You do not suffer any penalties for using an improvised weapon. Increase the amount of damage dealt by the improvised weapon by one step (for example, 1d4 becomes 1d6) to a maximum of 1d8 (2d6 if the improvised weapon is two-handed). The improvised weapon has a critical threat range of 19-20, with a critical multiplier of x2.</Benefit>
     </Feat>
     <Feat name="Intimidating Prowess" type="General" source="Core">
         <Prerequisites>-</Prerequisites>
@@ -386,7 +386,7 @@
     </Feat>
     <Feat name="Lunge" type="Combat" source="Core">
         <Prerequisites>Base attack bonus +6.</Prerequisites>
-        <Benefit>You can increase the reach of your melee attacks by 5 feet until the end of your turn by taking a &amp;ndash;2 penalty to your AC until your next turn. You must decide to use this ability before any attacks are made.</Benefit>
+        <Benefit>You can increase the reach of your melee attacks by 5 feet until the end of your turn by taking a -2 penalty to your AC until your next turn. You must decide to use this ability before any attacks are made.</Benefit>
     </Feat>
     <Feat name="Magical Aptitude" type="General" source="Core">
         <Prerequisites>-</Prerequisites>
@@ -396,7 +396,7 @@
         <Prerequisites>-</Prerequisites>
         <Benefit>You make attack rolls with the selected weapon normally (without the non-proficient penalty).</Benefit>
         <Special>Barbarians, fighters, paladins, and rangers are proficient with all martial weapons. They need not select this feat.</Special>
-        <Normal>When using a weapon with which you are not proficient, you take a &amp;ndash;4 penalty on attack rolls.</Normal>
+        <Normal>When using a weapon with which you are not proficient, you take a -4 penalty on attack rolls.</Normal>
     </Feat>
     <Feat name="Master Craftsman" type="General" source="Core">
         <Prerequisites>5 ranks in any Craft or Profession skill.</Prerequisites>
@@ -409,7 +409,7 @@
     </Feat>
     <Feat name="Mounted Archery" type="Combat" source="Core">
         <Prerequisites>Ride 1 rank, Mounted Combat.</Prerequisites>
-        <Benefit>The penalty you take when using a ranged weapon while mounted is halved: &amp;ndash;2 instead of &amp;ndash;4 if your mount is taking a double move, and &amp;ndash;4 instead of &amp;ndash;8 if your mount is running.</Benefit>
+        <Benefit>The penalty you take when using a ranged weapon while mounted is halved: -2 instead of -4 if your mount is taking a double move, and -4 instead of -8 if your mount is running.</Benefit>
     </Feat>
     <Feat name="Ride-By Attack" type="Combat" source="Core">
         <Prerequisites>Ride 1 rank, Mounted Combat.</Prerequisites>
@@ -449,12 +449,12 @@
     </Feat>
     <Feat name="Far Shot" type="Combat" source="Core">
         <Prerequisites>Point-Blank Shot.</Prerequisites>
-        <Benefit>You only suffer a &amp;ndash;1 penalty per full range increment between you and your target when using a ranged weapon.</Benefit>
-        <Normal>You suffer a &amp;ndash;2 penalty per full range increment between you and your target.</Normal>
+        <Benefit>You only suffer a -1 penalty per full range increment between you and your target when using a ranged weapon.</Benefit>
+        <Normal>You suffer a -2 penalty per full range increment between you and your target.</Normal>
     </Feat>
     <Feat name="Precise Shot" type="Combat" source="Core">
         <Prerequisites>Point-Blank Shot.</Prerequisites>
-        <Benefit>You can shoot or throw ranged weapons at an opponent engaged in melee without taking the standard &amp;ndash;4 penalty on your attack roll.</Benefit>
+        <Benefit>You can shoot or throw ranged weapons at an opponent engaged in melee without taking the standard -4 penalty on your attack roll.</Benefit>
     </Feat>
     <Feat name="Improved PreciseShot" type="Combat" source="Core">
         <Prerequisites>Dex 19, Point-Blank Shot, Precise Shot, base attack bonus +11.</Prerequisites>
@@ -472,7 +472,7 @@
     </Feat>
     <Feat name="Rapid Shot" type="Combat" source="Core">
         <Prerequisites>Dex 13, Point-Blank Shot.</Prerequisites>
-        <Benefit>When making a full-attack action with a ranged weapon, you can fire one additional time this round. All of your attack rolls take a &amp;ndash;2 penalty when using Rapid Shot.</Benefit>
+        <Benefit>When making a full-attack action with a ranged weapon, you can fire one additional time this round. All of your attack rolls take a -2 penalty when using Rapid Shot.</Benefit>
     </Feat>
     <Feat name="Manyshot" type="Combat" source="Core">
         <Prerequisites>Dex 17, Point-Blank Shot, Rapid Shot, base attack bonus +6.</Prerequisites>
@@ -480,15 +480,15 @@
     </Feat>
     <Feat name="Power Attack" type="Combat" source="Core">
         <Prerequisites>Str 13, base attack bonus +1.</Prerequisites>
-        <Benefit>You can choose to take a &amp;ndash;1 penalty on all melee attack rolls and combat maneuver checks to gain a +2 bonus on all melee damage rolls. This bonus to damage is increased by half (+50%) if you are making an attack with a two-handed weapon, a one handed weapon using two hands, or a primary natural weapon that adds 1-1/2 times your Strength modifier on damage rolls. This bonus to damage is halved (&amp;ndash;50%) if you are making an attack with an off-hand weapon or secondary natural weapon. When your base attack bonus reaches +4, and every 4 points thereafter, the penalty increases by &amp;ndash;1 and the bonus to damage increases by +2. You must choose to use this feat before making an attack roll, and its effects last until your next turn. The bonus damage does not apply to touch attacks or effects that do not deal hit point damage.</Benefit>
+        <Benefit>You can choose to take a -1 penalty on all melee attack rolls and combat maneuver checks to gain a +2 bonus on all melee damage rolls. This bonus to damage is increased by half (+50%) if you are making an attack with a two-handed weapon, a one handed weapon using two hands, or a primary natural weapon that adds 1-1/2 times your Strength modifier on damage rolls. This bonus to damage is halved (-50%) if you are making an attack with an off-hand weapon or secondary natural weapon. When your base attack bonus reaches +4, and every 4 points thereafter, the penalty increases by -1 and the bonus to damage increases by +2. You must choose to use this feat before making an attack roll, and its effects last until your next turn. The bonus damage does not apply to touch attacks or effects that do not deal hit point damage.</Benefit>
     </Feat>
     <Feat name="Cleave" type="Combat" source="Core">
         <Prerequisites>Str 13, Power Attack, base attack bonus +1.</Prerequisites>
-        <Benefit>As a standard action, you can make a single attack at your full base attack bonus against a foe within reach. If you hit, you deal damage normally and can make an additional attack (using your full base attack bonus) against a foe that is adjacent to the first and also within reach. You can only make one additional attack per round with this feat. When you use this feat, you take a &amp;ndash;2 penalty to your Armor Class until your next turn.</Benefit>
+        <Benefit>As a standard action, you can make a single attack at your full base attack bonus against a foe within reach. If you hit, you deal damage normally and can make an additional attack (using your full base attack bonus) against a foe that is adjacent to the first and also within reach. You can only make one additional attack per round with this feat. When you use this feat, you take a -2 penalty to your Armor Class until your next turn.</Benefit>
     </Feat>
     <Feat name="Great Cleave" type="Combat" source="Core">
         <Prerequisites>Str 13, Cleave, Power Attack, base attack bonus +4.</Prerequisites>
-        <Benefit>As a standard action, you can make a single attack at your full base attack bonus against a foe within reach. If you hit, you deal damage normally and can make an additional attack (using your full base attack bonus) against a foe that is adjacent to the previous foe and also within reach. If you hit, you can continue to make attacks against foes adjacent to the previous foe, so long as they are within your reach. You cannot attack an individual foe more than once during this attack action. When you use this feat, you take a &amp;ndash;2 penalty to your Armor Class until your next turn.</Benefit>
+        <Benefit>As a standard action, you can make a single attack at your full base attack bonus against a foe within reach. If you hit, you deal damage normally and can make an additional attack (using your full base attack bonus) against a foe that is adjacent to the previous foe and also within reach. If you hit, you can continue to make attacks against foes adjacent to the previous foe, so long as they are within your reach. You cannot attack an individual foe more than once during this attack action. When you use this feat, you take a -2 penalty to your Armor Class until your next turn.</Benefit>
     </Feat>
     <Feat name="Improved Bull Rush" type="Combat" source="Core">
         <Prerequisites>Str 13, Power Attack, base attack bonus +1.</Prerequisites>
@@ -581,7 +581,7 @@
         <Prerequisites>-</Prerequisites>
         <Benefit>You make attack rolls with simple weapons without penalty.</Benefit>
         <Special>All characters except for druids, monks, and wizards are automatically proficient with all simple weapons. They need not select this feat.</Special>
-        <Normal>When using a weapon with which you are not proficient, you take a &amp;ndash;4 penalty on attack rolls.</Normal>
+        <Normal>When using a weapon with which you are not proficient, you take a -4 penalty on attack rolls.</Normal>
     </Feat>
     <Feat name="Skill Focus" type="General" source="Core">
         <Prerequisites>-</Prerequisites>
@@ -626,7 +626,7 @@
     <Feat name="Throw Anything" type="Combat" source="Core">
         <Prerequisites>-</Prerequisites>
         <Benefit>You do not suffer any penalties for using an improvised ranged weapon. You receive a +1 circumstance bonus on attack rolls made with thrown splash weapons.</Benefit>
-        <Normal>You take a &amp;ndash;4 penalty on attack rolls made with an improvised weapon.</Normal>
+        <Normal>You take a -4 penalty on attack rolls made with an improvised weapon.</Normal>
     </Feat>
     <Feat name="Toughness" type="General" source="Core">
         <Prerequisites>-</Prerequisites>
@@ -639,7 +639,7 @@
     <Feat name="Two-Weapon Fighting" type="Combat" source="Core">
         <Prerequisites>Dex 15.</Prerequisites>
         <Benefit>Your penalties on attack rolls for fighting with two weapons are reduced. The penalty for your primary hand lessens by 2 and the one for your off hand lessens by 6. See Two-Weapon Fighting in Combat.</Benefit>
-        <Normal>If you wield a second weapon in your off hand, you can get one extra attack per round with that weapon. When fighting in this way you suffer a &amp;ndash;6 penalty with your regular attack or attacks with your primary hand and a &amp;ndash;10 penalty to the attack with your off hand. If your off-hand weapon is light, the penalties are reduced by 2 each. An unarmed strike is always considered light.</Normal>
+        <Normal>If you wield a second weapon in your off hand, you can get one extra attack per round with that weapon. When fighting in this way you suffer a -6 penalty with your regular attack or attacks with your primary hand and a -10 penalty to the attack with your off hand. If your off-hand weapon is light, the penalties are reduced by 2 each. An unarmed strike is always considered light.</Normal>
     </Feat>
     <Feat name="Double Slice" type="Combat" source="Core">
         <Prerequisites>Dex 15, Two-Weapon Fighting.</Prerequisites>
@@ -652,12 +652,12 @@
     </Feat>
     <Feat name="Improved Two-Weapon Fighting" type="Combat" source="Core">
         <Prerequisites>Dex 17, Two-Weapon Fighting, base attack bonus +6.</Prerequisites>
-        <Benefit>In addition to the standard single extra attack you get with an off-hand weapon, you get a second attack with it, albeit at a &amp;ndash;5 penalty.</Benefit>
+        <Benefit>In addition to the standard single extra attack you get with an off-hand weapon, you get a second attack with it, albeit at a -5 penalty.</Benefit>
         <Normal>Without this feat, you can only get a single extra attack with an off-hand weapon.</Normal>
     </Feat>
     <Feat name="Greater Two-Weapon Fighting" type="Combat" source="Core">
         <Prerequisites>Dex 19, Improved Two-Weapon Fighting, Two-Weapon Fighting, base attack bonus +11.</Prerequisites>
-        <Benefit>You get a third attack with your off-hand weapon, albeit at a &amp;ndash;10 penalty.</Benefit>
+        <Benefit>You get a third attack with your off-hand weapon, albeit at a -10 penalty.</Benefit>
     </Feat>
     <Feat name="Two-Weapon Defense" type="Combat" source="Core">
         <Prerequisites>Dex 15, Two-Weapon Fighting.</Prerequisites>
@@ -704,11 +704,11 @@
     </Feat>
     <Feat name="Penetrating Strike" type="Combat" source="Core">
         <Prerequisites>Weapon Focus, base attack bonus +1, 12th-level fighter, proficiency with weapon.</Prerequisites>
-        <Benefit>Your attacks with weapons selected with Weapon Focus ignore up to 5 points of damage reduction. This feat does not apply to damage reduction without a type (such as DR 10/&amp;mdash;).</Benefit>
+        <Benefit>Your attacks with weapons selected with Weapon Focus ignore up to 5 points of damage reduction. This feat does not apply to damage reduction without a type (such as DR 10/-).</Benefit>
     </Feat>
     <Feat name="Greater Penetrating Strike" type="Combat" source="Core">
         <Prerequisites>Penetrating Strike, Weapon Focus, 16th-level fighter.</Prerequisites>
-        <Benefit>Your attacks with weapons selected with Weapon Focus ignore up to 10 points of damage reduction. This amount is reduced to 5 points for damage reduction without a type (such as DR 10/&amp;mdash;).</Benefit>
+        <Benefit>Your attacks with weapons selected with Weapon Focus ignore up to 10 points of damage reduction. This amount is reduced to 5 points for damage reduction without a type (such as DR 10/-).</Benefit>
     </Feat>
     <Feat name="Weapon Specialization" type="Combat" source="Core">
         <Prerequisites>Proficiency with selected weapon, Weapon Focus with selected weapon, fighter level 4th.</Prerequisites>

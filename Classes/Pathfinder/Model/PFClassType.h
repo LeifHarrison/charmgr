@@ -12,6 +12,7 @@
 @class GDataXMLElement;
 
 @class PFCharacterClass;
+@class PFClassFeature;
 @class PFSkill;
 @class PFSource;
 
@@ -25,6 +26,7 @@
 @property (nonatomic, retain) PFSource *source;
 
 @property (nonatomic, retain) NSSet *characterClasses;
+@property (nonatomic, retain) NSSet *features;
 @property (nonatomic, retain) NSSet *classSkills;
 
 + (PFClassType *)insertedInstanceWithElement:(GDataXMLElement *)anElement
@@ -45,5 +47,10 @@
 - (void)removeClassSkillsObject:(PFSkill *)value;
 - (void)addClassSkills:(NSSet *)values;
 - (void)removeClassSkills:(NSSet *)values;
+
+- (void)addFeaturesObject:(PFClassFeature *)value;
+- (void)removeFeaturesObject:(PFClassFeature *)value;
+- (void)addFeatures:(NSSet *)values;
+- (void)removeFeatures:(NSSet *)values;
 
 @end

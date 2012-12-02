@@ -227,7 +227,7 @@
 			
 			containerView.center = viewCenter;
 			containerView.bounds = container.editingBounds;
-			containerView.layer.shadowOpacity = 0.7;
+			//containerView.layer.shadowOpacity = 0.7;
 		}
 		else {
 			LOG_DEBUG(@"activeContainerOriginalCenter = %@", NSStringFromCGPoint(self.activeContainerOriginalCenter));
@@ -235,10 +235,10 @@
 				containerView.frame = [container staticFramePortrait];
 			else
 				containerView.frame = [container staticFrameLandscape];
-			containerView.layer.shadowOpacity = 0.0;
+			//containerView.layer.shadowOpacity = 0.0;
 		}
 				
-		//container.state = newState;
+		container.state = newState;
 		[container animateTransitionToState:newState];
     };
     
@@ -252,7 +252,7 @@
 			[rootController setPageTurningEnabled:YES];
 		}
 		else {
-			containerView.layer.shadowOpacity = 0.7;
+			//containerView.layer.shadowOpacity = 0.7;
 		}
     };
 	

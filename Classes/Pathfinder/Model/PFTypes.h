@@ -48,6 +48,14 @@ typedef enum {
 	kPFSizeTypeGargantuan
 } PFSizeType;
 
+typedef enum {
+	kPFSpecialAbilityTypeNone,
+	kPFSpecialAbilityTypeExtraordinary,
+	kPFSpecialAbilityTypeSpellLike,
+	kPFSpecialAbilityTypeSupernatural
+} PFSpecialAbilityType;
+
+
 // Alignment and Ability have their own classes, so no need for mapping
 // functions
 
@@ -56,5 +64,8 @@ extern PFGenderType PFGenderTypeFromString(NSString *aString);
 
 extern NSString *NSStringFromPFSizeType(PFSizeType sizeType);
 extern PFSizeType PFSizeTypeFromString(NSString *aString);
+
+extern NSString *NSStringFromPFSpecialAbilityType(PFSpecialAbilityType specialAbilityType);
+extern PFSpecialAbilityType PFSpecialAbilityTypeFromString(NSString *aString);
 
 #endif

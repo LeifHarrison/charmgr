@@ -12,11 +12,13 @@
 
 #import "PFCharacter.h"
 #import "PFCharacterClass.h"
+#import "PFClassFeature.h"
 #import "PFClassType.h"
 #import "PFFeat.h"
 #import "PFRace.h"
 #import "PFRacialTrait.h"
 
+#import "PFClassFeatureCell.h"
 #import "PFRacialTraitTableViewCell.h"
 
 
@@ -100,7 +102,28 @@ static const CGRect kPFFeaturesViewBoundsEditing	= { {   0,   0 }, { 345, 739 } 
 - (void)updateUI
 {
 	[super updateUI];
+	
 	self.racialTraits = [self.character.race sortedTraits];
+	
+	self.classFeatures = nil;
+	for (PFCharacterClass *aClass in self.character.classes) {
+		NSArray *classFeatures = aClass.classType.features.allObjects;
+		if (!self.classFeatures) {
+			self.classFeatures = [classFeatures copy];
+		}
+		else {
+			self.classFeatures = [self.classFeatures arrayByAddingObjectsFromArray:classFeatures];
+		}
+	}
+	
+	if (self.classFeatures.count > 0) {
+		NSSortDescriptor *levelSort = [NSSortDescriptor sortDescriptorWithKey:@"level" ascending:YES];
+		NSSortDescriptor *classSort = [NSSortDescriptor sortDescriptorWithKey:@"class" ascending:YES];
+		NSSortDescriptor *nameSort = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES];
+		self.classFeatures = [self.classFeatures sortedArrayUsingDescriptors:@[levelSort, classSort, nameSort]];
+	}
+
+	
 	[self.tableView reloadData];
 }
 
@@ -114,6 +137,11 @@ static const CGRect kPFFeaturesViewBoundsEditing	= { {   0,   0 }, { 345, 739 } 
 		traitCell.traitDescriptionLabel.text = aTrait.descriptionShort;
 	}
 	else if (indexPath.section == kPFFeaturesTableViewSectionClassFeatures) {
+		PFClassFeatureCell *featureCell = (PFClassFeatureCell *)cell;
+		PFClassFeature *aFeature = [self.classFeatures objectAtIndex:indexPath.row];
+		//cell.containerState = self.state;
+		featureCell.featureNameLabel.text = aFeature.nameAndTypeDescription;
+		featureCell.featureLevelLabel.text = aFeature.levelDescription;
 	}
 }
 
@@ -186,10 +214,11 @@ static const CGRect kPFFeaturesViewBoundsEditing	= { {   0,   0 }, { 345, 739 } 
 	CGFloat cellHeight = 0;
 	
 	if (indexPath.section == kPFFeaturesTableViewSectionRacialTraits) {
-		cellHeight = [PFRacialTraitTableViewCell rowHeightForState:self.state];
+		PFRacialTrait *aTrait = [self.racialTraits objectAtIndex:indexPath.row];
+		cellHeight = [PFRacialTraitTableViewCell rowHeightForState:self.state trait:aTrait cellWidth:self.tableView.bounds.size.width];
 	}
 	else if (indexPath.section == kPFFeaturesTableViewSectionClassFeatures) {
-		cellHeight = 30;
+		cellHeight = [PFClassFeatureCell rowHeightForState:self.state];
 	}
 
 	LOG_DEBUG(@"indexPath = %@, cellHeight = %lf", indexPath, cellHeight);
@@ -230,6 +259,7 @@ static const CGRect kPFFeaturesViewBoundsEditing	= { {   0,   0 }, { 345, 739 } 
 	
 	if (newState == PFContainerViewStateStatic) {
 		[self.tableView setScrollEnabled:NO];
+		[self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
 		
 		for (PFContainerCell *aCell in self.tableView.visibleCells) {
 			[aCell setContainerState:newState animated:YES];
@@ -246,6 +276,8 @@ static const CGRect kPFFeaturesViewBoundsEditing	= { {   0,   0 }, { 345, 739 } 
 	
 	if (newState == PFContainerViewStateEditing) {
 		[self.tableView setScrollEnabled:YES];
+		[self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleSingleLine];
+		[self.tableView setSeparatorColor:[UIColor colorWithWhite:0.0 alpha:0.2]];
 		
 		for (PFContainerCell *aCell in self.tableView.visibleCells) {
 			[aCell setContainerState:newState animated:YES];
