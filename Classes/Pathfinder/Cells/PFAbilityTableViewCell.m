@@ -75,9 +75,8 @@
 
 - (void)setContainerState:(PFContainerViewState)newState;
 {
-	if (newState != _containerState) {
-		_containerState = newState;
-	}
+	[super setContainerState:newState];
+
 	if (newState == PFContainerViewStateEditing) {
 		self.abilityStepper.alpha = 1.0;
 	}

@@ -22,6 +22,10 @@
 
 #import <CoreData/CoreData.h>
 
+//==============================================================================
+// Class Implementation
+//==============================================================================
+
 @implementation PFDataManager
 
 - (void)importAbilitiesAsXML;

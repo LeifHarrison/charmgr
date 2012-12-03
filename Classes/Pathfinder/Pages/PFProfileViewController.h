@@ -6,19 +6,9 @@
 //  Copyright (c) 2012 Leif Harrison. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "PFPageContentViewController.h"
 
-#import "PFBaseViewController.h"
-#import "PFContainerViewController.h"
-
-@class CMBannerBox;
-
-//@class PFAbilitiesViewController;
-//@class PFCharacterViewController;
-//@class PFClassesViewController;
-//@class PFSkillsViewController;
-
-@interface PFProfileViewController : PFBaseViewController <PFContainerViewControllerDelegate>
+@interface PFProfileViewController : PFPageContentViewController
 {
 }
 

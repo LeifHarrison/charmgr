@@ -94,9 +94,7 @@
 
 - (void)setContainerState:(PFContainerViewState)newState;
 {
-	if (newState != _containerState) {
-		_containerState = newState;
-	}
+	[super setContainerState:newState];
 
 	if (newState == PFContainerViewStateEditing) {
 		self.levelTextField.layer.borderColor = [UIColor darkGrayColor].CGColor;

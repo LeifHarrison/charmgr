@@ -62,7 +62,9 @@
 																				inManagedObjectContext:moc];
 	newInstance.name = name;
 	newInstance.level = [[[anElement attributeForName:@"level"] stringValue] intValue];
-	newInstance.type = [[[anElement attributeForName:@"type"] stringValue] intValue];
+	
+	NSString *typeString = [[anElement attributeForName:@"type"] stringValue];
+	newInstance.type = PFSpecialAbilityTypeFromString(typeString);
 	
 	NSArray *elements = nil;
 	

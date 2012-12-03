@@ -6,16 +6,13 @@
 //  Copyright (c) 2012 Leif Harrison. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-
-#import "PFContainerViewController.h" // for PFContainerViewState
+#import "PFContainerCell.h"
 
 #import "PFCharacterSkill.h"
 
-@interface PFSkillTableViewCell : UITableViewCell
+@interface PFSkillTableViewCell : PFContainerCell
 
 @property (nonatomic, strong) PFCharacterSkill *characterSkill;
-@property (nonatomic, assign) PFContainerViewState containerState;
 
 @property (nonatomic, strong) IBOutlet UILabel *skillNameLabel;
 @property (nonatomic, strong) IBOutlet UILabel *skillBonusLabel;
@@ -28,7 +25,5 @@
 @property (nonatomic, strong) IBOutlet UIStepper *skillRanksStepper;
 
 - (IBAction)stepperValueChanged:(id)sender;
-
-- (void)setContainerState:(PFContainerViewState)newState animated:(BOOL)animated;
 
 @end

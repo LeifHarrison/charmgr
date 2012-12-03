@@ -72,9 +72,7 @@
 - (void)setContainerState:(PFContainerViewState)newState;
 {
 	//LOG_DEBUG(@"newState = %d", newState);
-	if (newState != _containerState) {
-		_containerState = newState;
-	}
+	[super setContainerState:newState];
 	
 	if (newState == PFContainerViewStateEditing) {
 		self.skillRanksTextField.layer.borderColor = [UIColor darkGrayColor].CGColor;

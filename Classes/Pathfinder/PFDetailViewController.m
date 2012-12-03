@@ -8,11 +8,23 @@
 
 #import "PFDetailViewController.h"
 
+//------------------------------------------------------------------------------
+#pragma mark - Private Interface Declaration
+//------------------------------------------------------------------------------
+
 @interface PFDetailViewController ()
 
 @end
 
+//==============================================================================
+// Class Implementation
+//==============================================================================
+
 @implementation PFDetailViewController
+
+//------------------------------------------------------------------------------
+#pragma mark - Initialization
+//------------------------------------------------------------------------------
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -23,11 +35,19 @@
     return self;
 }
 
+//------------------------------------------------------------------------------
+#pragma mark - View Lifecycle
+//------------------------------------------------------------------------------
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 }
+
+//------------------------------------------------------------------------------
+#pragma mark - Memory Management
+//------------------------------------------------------------------------------
 
 - (void)didReceiveMemoryWarning
 {

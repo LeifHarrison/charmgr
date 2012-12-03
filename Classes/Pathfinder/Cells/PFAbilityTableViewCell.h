@@ -6,13 +6,11 @@
 //  Copyright (c) 2012 Leif Harrison. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-
-#import "PFContainerViewController.h" // for PFContainerViewState
+#import "PFContainerCell.h"
 
 @class PFCharacterAbility;
 
-@interface PFAbilityTableViewCell : UITableViewCell
+@interface PFAbilityTableViewCell : PFContainerCell
 
 @property (nonatomic, strong) PFCharacterAbility *characterAbility;
 
@@ -23,10 +21,6 @@
 @property (nonatomic, strong) IBOutlet UITextField *temporaryBonusTextField;
 @property (nonatomic, strong) IBOutlet UIStepper *abilityStepper;
 
-@property (nonatomic, assign) PFContainerViewState containerState;
-
 - (IBAction)stepperValueChanged:(id)sender;
-
-- (void)setContainerState:(PFContainerViewState)newState animated:(BOOL)animated;
 
 @end

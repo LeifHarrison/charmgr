@@ -6,13 +6,11 @@
 //  Copyright (c) 2012 Leif Harrison. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-
-#import "PFContainerViewController.h" // for PFContainerViewState
+#import "PFContainerCell.h"
 
 #import "PFCharacterClass.h"
 
-@interface PFClassTableViewCell : UITableViewCell
+@interface PFClassTableViewCell : PFContainerCell
 
 @property (nonatomic, strong) PFCharacterClass *characterClass;
 
@@ -23,10 +21,6 @@
 @property (nonatomic, strong) IBOutlet UITextField *levelTextField;
 @property (nonatomic, strong) IBOutlet UIStepper *levelStepper;
 
-@property (nonatomic, assign) PFContainerViewState containerState;
-
 - (IBAction)stepperValueChanged:(id)sender;
-
-- (void)setContainerState:(PFContainerViewState)newState animated:(BOOL)animated;
 
 @end
