@@ -10,11 +10,31 @@
 
 #import "CMBannerBox.h"
 
+//------------------------------------------------------------------------------
+#pragma mark - Constants
+//------------------------------------------------------------------------------
+
+static const CGRect kPFMovementViewFramePortrait	= { { 548, 493 }, { 205, 180 } };
+static const CGRect kPFMovementViewFrameLandscape	= { { 758,  15 }, { 205, 180 } };
+static const CGRect kPFMovementViewBoundsEditing	= { {   0,   0 }, { 205, 180 } };
+
+//------------------------------------------------------------------------------
+#pragma mark - Private Interface Declaration
+//------------------------------------------------------------------------------
+
 @interface PFMovementViewController ()
 
 @end
 
+//==============================================================================
+// Class Implementation
+//==============================================================================
+
 @implementation PFMovementViewController
+
+//------------------------------------------------------------------------------
+#pragma mark - Initialization
+//------------------------------------------------------------------------------
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -25,6 +45,10 @@
     return self;
 }
 
+//------------------------------------------------------------------------------
+#pragma mark - View Lifecycle
+//------------------------------------------------------------------------------
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -32,10 +56,74 @@
     [(CMBannerBox*)self.view setBannerTitle:@"Movement"];
 }
 
+//------------------------------------------------------------------------------
+#pragma mark - Memory Management
+//------------------------------------------------------------------------------
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+//------------------------------------------------------------------------------
+#pragma mark - Private
+//------------------------------------------------------------------------------
+
+- (void)updateUI
+{
+	[super updateUI];
+}
+
+//------------------------------------------------------------------------------
+#pragma mark - Frame Sizes (for different states)
+//------------------------------------------------------------------------------
+
+- (CGRect)staticFramePortrait;
+{
+	return kPFMovementViewFramePortrait;
+}
+
+- (CGRect)staticFrameLandscape;
+{
+	return kPFMovementViewFrameLandscape;
+}
+
+- (CGRect)editingBounds;
+{
+	return kPFMovementViewBoundsEditing;
+}
+
+//------------------------------------------------------------------------------
+#pragma mark - State Transitions
+//------------------------------------------------------------------------------
+
+- (void)willTransitionToState:(PFContainerViewState)newState;
+{
+	//TRACE;
+	[super willTransitionToState:newState];
+	
+	if (newState == PFContainerViewStateStatic) {
+	}
+}
+
+- (void)didTransitionToState:(PFContainerViewState)newState;
+{
+	//TRACE;
+	[super didTransitionToState:newState];
+	
+	if (newState == PFContainerViewStateEditing) {
+	}
+}
+
+- (void)animateTransitionToState:(PFContainerViewState)newState;
+{
+	//TRACE;
+	[super animateTransitionToState:newState];
+	if (newState == PFContainerViewStateEditing) {
+	}
+	else {
+	}
 }
 
 @end

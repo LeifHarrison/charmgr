@@ -152,7 +152,7 @@ static const CGRect kPFFeaturesViewBoundsEditing	= { {   0,   0 }, { 345, 739 } 
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-	LOG_DEBUG(@"sections = %d", kPFFeaturesTableViewSectionCount);
+	//LOG_DEBUG(@"sections = %d", kPFFeaturesTableViewSectionCount);
     return kPFFeaturesTableViewSectionCount;
 }
 
@@ -178,7 +178,7 @@ static const CGRect kPFFeaturesViewBoundsEditing	= { {   0,   0 }, { 345, 739 } 
 	else if (section == kPFFeaturesTableViewSectionClassFeatures) {
 		rowCount = self.classFeatures.count;
 	}
-	LOG_DEBUG(@"section = %d, rows = %d", section, rowCount);
+	//LOG_DEBUG(@"section = %d, rows = %d", section, rowCount);
 	return rowCount;
 }
 
@@ -221,7 +221,7 @@ static const CGRect kPFFeaturesViewBoundsEditing	= { {   0,   0 }, { 345, 739 } 
 		cellHeight = [PFClassFeatureCell rowHeightForState:self.state];
 	}
 
-	LOG_DEBUG(@"indexPath = %@, cellHeight = %lf", indexPath, cellHeight);
+	//LOG_DEBUG(@"indexPath = %@, cellHeight = %lf", indexPath, cellHeight);
 	return cellHeight;
 }
 
@@ -253,7 +253,7 @@ static const CGRect kPFFeaturesViewBoundsEditing	= { {   0,   0 }, { 345, 739 } 
 
 - (void)willTransitionToState:(PFContainerViewState)newState;
 {
-	LOG_DEBUG(@"newState = %d", newState);
+	//LOG_DEBUG(@"newState = %d", newState);
 	[super willTransitionToState:newState];
 	
 	
@@ -270,8 +270,7 @@ static const CGRect kPFFeaturesViewBoundsEditing	= { {   0,   0 }, { 345, 739 } 
 
 - (void)didTransitionToState:(PFContainerViewState)newState;
 {
-	LOG_DEBUG(@"newState = %d", newState);
-	//LOG_DEBUG(@"parentViewController = %@", self.parentViewController);
+	//LOG_DEBUG(@"newState = %d", newState);
 	[super didTransitionToState:newState];
 	
 	if (newState == PFContainerViewStateEditing) {
@@ -288,7 +287,7 @@ static const CGRect kPFFeaturesViewBoundsEditing	= { {   0,   0 }, { 345, 739 } 
 
 - (void)animateTransitionToState:(PFContainerViewState)newState;
 {
-	LOG_DEBUG(@"newState = %d", newState);
+	//LOG_DEBUG(@"newState = %d", newState);
 	[super animateTransitionToState:newState];
 
 	if (newState == PFContainerViewStateEditing) {

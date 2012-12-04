@@ -38,13 +38,24 @@
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
+	TRACE;
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+		self.containers = [NSMutableArray array];
+		self.gestures = [NSMutableArray array];
     }
     return self;
 }
 
+- (void)awakeFromNib
+{
+	TRACE;
+	[super awakeFromNib];
+	
+	if (!self.containers) self.containers = [NSMutableArray array];
+	if (!self.gestures) self.gestures = [NSMutableArray array];
+
+}
 
 //------------------------------------------------------------------------------
 #pragma mark - View Lifecycle
@@ -52,6 +63,7 @@
 
 - (void)viewDidLoad
 {
+	TRACE;
     [super viewDidLoad];
 	
     self.view.layer.contents = (id)[UIImage imageNamed:@"paper_texture"].CGImage;
@@ -59,8 +71,6 @@
 	//LOG_DEBUG(@"frame = %@", NSStringFromCGRect(self.view.frame));
 	//LOG_DEBUG(@"layer frame = %@", NSStringFromCGRect(self.view.layer.frame));
 	
-	self.containers = [NSMutableArray array];
-	self.gestures = [NSMutableArray array];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -114,20 +124,20 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-	//LOG_DEBUG(@"seque = %@, sender = %@", segue.identifier, sender);
+	LOG_DEBUG(@"seque = %@, sender = %@", segue.identifier, sender);
 	
 	if ([segue.identifier hasSuffix:@"Container"]) {
 		PFContainerViewController *controller = segue.destinationViewController;
 		controller.delegate = self;
 		controller.character = self.character;
 		[self.containers addObject:controller];
-		/*
-		 UIGestureRecognizer *gesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(containerViewLongPress:)];
-		 gesture.delegate = controller;
-		 [controller.view addGestureRecognizer:gesture];
-		 [self.gestures addObject:gesture];
-		 */
-	    UIGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(containerViewTapped:)];
+		
+//		UIGestureRecognizer *gesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(containerViewLongPress:)];
+//		gesture.delegate = controller;
+//		[controller.view addGestureRecognizer:gesture];
+//		[self.gestures addObject:gesture];
+		
+		UIGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(containerViewTapped:)];
 		gesture.delegate = controller;
 		gesture.cancelsTouchesInView = YES;
 		gesture.delaysTouchesEnded = YES;
