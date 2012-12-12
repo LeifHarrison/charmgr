@@ -118,13 +118,17 @@ static const CGFloat kClassesViewRowHeightStatic = 25.0f;
 {
 	[super updateUI];
 	
+	[self updateFields];
+	[self.tableView reloadData];
+}
+
+- (void)updateFields
+{
 	self.levelAdjustmentTextField.text = [NSString stringWithFormat:@"%d", self.character.levelAdjustment];
 	self.effectiveLevelTextField.text = [NSString stringWithFormat:@"%d", self.character.effectiveLevel];
-
-	self.currentXPLabel.text = [NSString stringWithFormat:@"%d", self.character.currentXP];
+	
+	self.currentXPLabel.text = [NSString stringWithFormat:@"%d", self.character.experiencePoints];
 	self.nextLevelXPLabel.text = [NSString stringWithFormat:@"%d", self.character.nextLevelXP];
-
-	[self.tableView reloadData];
 }
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
@@ -138,6 +142,8 @@ static const CGFloat kClassesViewRowHeightStatic = 25.0f;
 	classCell.skillRanksLabel.text = [NSString stringWithFormat:@"%d", characterClass.classType.skillRanks];
 	classCell.levelTextField.text = [NSString stringWithFormat:@"%d", characterClass.level];
 	classCell.levelStepper.value = characterClass.level;
+	
+	[classCell.levelStepper addTarget:self action:@selector(stepperValueChanged:) forControlEvents:UIControlEventValueChanged];
 }
 
 //------------------------------------------------------------------------------
@@ -146,8 +152,8 @@ static const CGFloat kClassesViewRowHeightStatic = 25.0f;
 
 - (void)addClassButtonTapped:(id)sender;
 {
-	UIButton *button = (UIButton*)sender;
 	LOG_DEBUG(@"sender = %@", sender);
+	UIButton *button = (UIButton*)sender;
 	
 	PFSelectClassViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"SelectClassDetailController"];
 	controller.character = self.character;
@@ -161,6 +167,12 @@ static const CGFloat kClassesViewRowHeightStatic = 25.0f;
 										inView:button.superview
 					  permittedArrowDirections:UIPopoverArrowDirectionAny
 									  animated:YES];
+}
+
+- (IBAction)stepperValueChanged:(id)sender;
+{
+	LOG_DEBUG(@"sender = %@", sender);
+	[self updateFields];
 }
 
 //------------------------------------------------------------------------------
@@ -193,6 +205,14 @@ static const CGFloat kClassesViewRowHeightStatic = 25.0f;
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
+	LOG_DEBUG(@"indexPath = %@", indexPath);
+	PFClassTableViewCell *cell = (PFClassTableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
+	
+	[self.tableView beginUpdates];
+	[self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+	[self.character removeClassesObject:cell.characterClass];
+	[self.tableView endUpdates];
+	[self updateFields];
 }
 
 
@@ -204,6 +224,21 @@ static const CGFloat kClassesViewRowHeightStatic = 25.0f;
 {
 	UIView *header = (UIView*)[tableView dequeueReusableCellWithIdentifier:@"ClassesHeader"];
 	return header;
+}
+
+- (void)tableView:(UITableView *)tableView willBeginEditingRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	LOG_DEBUG(@"indexPath = %@", indexPath);
+	PFClassTableViewCell *cell = (PFClassTableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
+	cell.levelStepper.alpha = 0.0;
+
+}
+
+- (void)tableView:(UITableView *)tableView didEndEditingRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	LOG_DEBUG(@"indexPath = %@", indexPath);
+	PFClassTableViewCell *cell = (PFClassTableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
+	cell.levelStepper.alpha = 1.0;
 }
 
 //------------------------------------------------------------------------------
