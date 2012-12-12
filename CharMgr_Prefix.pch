@@ -28,6 +28,7 @@
 
 
 #define kCMCurrentCharacterDefaultsKey @"CurrentCharacter"
+#define kCMCurrentPageDefaultsKey	   @"CurrentPage"
 
 #define kCMAbilitiesUpdatedDateDefaultsKey	@"AbilitiesDateLastUpdated"
 #define kCMAlignmentsUpdatedDateDefaultsKey	@"AlignmentsDateLastUpdated"

@@ -34,10 +34,6 @@
 #pragma mark - Properties
 //------------------------------------------------------------------------------
 
-@synthesize pageViewController;
-@synthesize mainViewController;
-
-
 //------------------------------------------------------------------------------
 #pragma mark - Initialization
 //------------------------------------------------------------------------------
@@ -162,10 +158,13 @@
 		LOG_DEBUG(@"pages = %@", pages);
 		self.characterViewControllers = pages;
 		
-		[pageViewController setViewControllers:[NSArray arrayWithObject:[pages objectAtIndex:0]]
-									 direction:UIPageViewControllerNavigationDirectionForward
-									  animated:YES
-									completion:nil];
+		NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+		NSInteger pageIndex = [userDefaults integerForKey:kCMCurrentPageDefaultsKey];
+
+		[self.pageViewController setViewControllers:[NSArray arrayWithObject:[pages objectAtIndex:pageIndex]]
+										  direction:UIPageViewControllerNavigationDirectionForward
+										   animated:YES
+										 completion:nil];
 	}
 }
 
@@ -192,6 +191,7 @@
 			return nil;
 		}
 	}
+	
 }
 
 - (UIViewController *)pageViewController:(UIPageViewController *)aPageViewController viewControllerAfterViewController:(UIViewController *)viewController
@@ -218,6 +218,25 @@
 	}
 }
 
+//------------------------------------------------------------------------------
+#pragma mark - UIPageViewControllerDelegate
+//------------------------------------------------------------------------------
+
+- (void)pageViewController:(UIPageViewController *)pageViewController
+		didFinishAnimating:(BOOL)finished
+   previousViewControllers:(NSArray *)previousViewControllers
+	   transitionCompleted:(BOOL)completed;
+{
+	if (completed) {
+		NSArray *viewControllers = pageViewController.viewControllers;
+		NSInteger pageIndex = [self indexOfCharacterPageViewController:[viewControllers objectAtIndex:0]];
+		
+		NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+		[userDefaults setInteger:pageIndex forKey:kCMCurrentPageDefaultsKey];
+		[userDefaults synchronize];
+	}
+	
+}
 
 //------------------------------------------------------------------------------
 #pragma mark - Page Management
