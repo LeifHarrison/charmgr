@@ -90,15 +90,16 @@
 	self.cancelButton.alpha = 0.0;
 	[self.cancelButton addTarget:self action:@selector(cancel:) forControlEvents:UIControlEventTouchUpInside];
 	[self.view addSubview:self.cancelButton];
+	
+	[self layoutForState:self.state];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
 	[super viewWillAppear:animated];
-    self.cancelButton.frame = CGRectOffset(self.cancelButton.bounds, 8, 3);
-	CGFloat doneX = CGRectGetMaxX(self.view.bounds) - CGRectGetWidth(self.doneButton.bounds) - 8;
-    self.doneButton.frame = CGRectOffset(self.doneButton.bounds, doneX, 3);
-
+	
+	[self layoutForState:self.state];
+	
 	UIView *containerView = [self.view superview];
 	//LOG_DEBUG(@"view = %@, containerView = %@", self.view, containerView);
 	containerView.layer.cornerRadius = self.view.layer.cornerRadius;
@@ -134,16 +135,27 @@
 - (void)cancel:(id)sender
 {
 	TRACE;
+	[self updateUI];
 	[self.delegate containerViewController:self didFinishWithSave:NO];
 }
 
 - (void)done:(id)sender
 {
 	TRACE;
+	[self saveChanges];
 	[self.delegate containerViewController:self didFinishWithSave:YES];
 }
 
+//------------------------------------------------------------------------------
+#pragma mark - Updating/Saving
+//------------------------------------------------------------------------------
+
 - (void)updateUI;
+{
+	// Default implementation does nothing
+}
+
+- (void)saveChanges;
 {
 	// Default implementation does nothing
 }
@@ -217,6 +229,9 @@
 - (void)animateTransitionToState:(PFContainerViewState)newState;
 {
 	//LOG_DEBUG(@"newState = %d", newState);
+	
+	[self layoutForState:newState];
+	
 	if (newState == PFContainerViewStateEditing) {
 		self.view.backgroundColor = [UIColor colorWithRed:245.0/255 green:240.0/255 blue:203.0/255 alpha:1.0];
 	}
@@ -225,6 +240,13 @@
 		self.cancelButton.alpha = 0.0;
 		self.view.backgroundColor = [UIColor colorWithRed:245.0/255 green:240.0/255 blue:203.0/255 alpha:0.5];
 	}
+}
+
+- (void)layoutForState:(PFContainerViewState)newState;
+{
+    self.cancelButton.frame = CGRectOffset(self.cancelButton.bounds, 8, 3);
+	CGFloat doneX = CGRectGetMaxX(self.view.bounds) - CGRectGetWidth(self.doneButton.bounds) - 8;
+    self.doneButton.frame = CGRectOffset(self.doneButton.bounds, doneX, 3);
 }
 
 //------------------------------------------------------------------------------

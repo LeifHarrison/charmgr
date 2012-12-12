@@ -71,6 +71,14 @@
 	//LOG_DEBUG(@"frame = %@", NSStringFromCGRect(self.view.frame));
 	//LOG_DEBUG(@"layer frame = %@", NSStringFromCGRect(self.view.layer.frame));
 	
+	for (PFContainerViewController *aContainer in self.containers) {
+		UIView *containerView = aContainer.view.superview;
+		if (UIInterfaceOrientationIsPortrait(self.interfaceOrientation))
+			containerView.frame = [aContainer staticFramePortrait];
+		else
+			containerView.frame = [aContainer staticFrameLandscape];
+	}
+	
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -78,6 +86,11 @@
 	[super viewWillAppear:animated];
 	//LOG_DEBUG(@"frame = %@", NSStringFromCGRect(self.view.frame));
 	//LOG_DEBUG(@"layer frame = %@", NSStringFromCGRect(self.view.layer.frame));
+
+	for (PFContainerViewController *aContainer in self.containers) {
+		[aContainer updateUI];
+	}
+	
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -127,23 +140,22 @@
 	LOG_DEBUG(@"seque = %@, sender = %@", segue.identifier, sender);
 	
 	if ([segue.identifier hasSuffix:@"Container"]) {
-		PFContainerViewController *controller = segue.destinationViewController;
-		controller.delegate = self;
-		controller.character = self.character;
-		[self.containers addObject:controller];
+		PFContainerViewController *container = segue.destinationViewController;
+		container.delegate = self;
+		container.character = self.character;
+		[self.containers addObject:container];
 		
 //		UIGestureRecognizer *gesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(containerViewLongPress:)];
-//		gesture.delegate = controller;
-//		[controller.view addGestureRecognizer:gesture];
+//		gesture.delegate = container;
+//		[container.view addGestureRecognizer:gesture];
 //		[self.gestures addObject:gesture];
 		
 		UIGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(containerViewTapped:)];
-		gesture.delegate = controller;
+		gesture.delegate = container;
 		gesture.cancelsTouchesInView = YES;
 		gesture.delaysTouchesEnded = YES;
-		[controller.view addGestureRecognizer:gesture];
+		[container.view addGestureRecognizer:gesture];
 		[self.gestures addObject:gesture];
-		
 	}
 }
 

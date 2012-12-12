@@ -29,6 +29,7 @@ typedef enum {
 @property (nonatomic, weak) id <PFContainerViewControllerDelegate> delegate;
 
 - (void)updateUI;
+- (void)saveChanges;
 
 - (CGRect)staticFramePortrait;
 - (CGRect)staticFrameLandscape;
@@ -36,8 +37,8 @@ typedef enum {
 
 - (void)willTransitionToState:(PFContainerViewState)newState;
 - (void)didTransitionToState:(PFContainerViewState)newState;
-
 - (void)animateTransitionToState:(PFContainerViewState)newState;
+- (void)layoutForState:(PFContainerViewState)newState;
 
 @end
 
