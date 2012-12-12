@@ -149,6 +149,20 @@
     }
 }
 
+- (void)clearDefaults
+{
+	
+	NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+	[userDefaults removeObjectForKey:kCMCurrentCharacterDefaultsKey];
+	[userDefaults removeObjectForKey:kCMSourcesUpdatedDateDefaultsKey];
+	[userDefaults removeObjectForKey:kCMAbilitiesUpdatedDateDefaultsKey];
+	[userDefaults removeObjectForKey:kCMAlignmentsUpdatedDateDefaultsKey];
+	[userDefaults removeObjectForKey:kCMSkillsUpdatedDateDefaultsKey];
+	[userDefaults removeObjectForKey:kCMRacesUpdatedDateDefaultsKey];
+	[userDefaults removeObjectForKey:kCMClassesUpdatedDateDefaultsKey];
+	[userDefaults removeObjectForKey:kCMFeatsUpdatedDateDefaultsKey];
+	[userDefaults synchronize];
+}
 
 //------------------------------------------------------------------------------
 #pragma mark - Core Data Stack
@@ -219,6 +233,8 @@
 		if ([fileManager fileExistsAtPath:[storeURL path]]) {
 			NSError *error = nil;
 			[fileManager removeItemAtPath:[storeURL path] error:&error];
+
+			[self clearDefaults];
 		}
 		if (![persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:options error:&error]) {
 			NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
