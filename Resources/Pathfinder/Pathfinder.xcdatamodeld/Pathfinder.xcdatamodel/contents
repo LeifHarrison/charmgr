@@ -18,15 +18,23 @@
     <entity name="PFCharacter" representedClassName="PFCharacter" syncable="YES">
         <attribute name="age" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="campaign" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="experiencePoints" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="eyeColor" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fortitudeMiscBonus" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="gender" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="hairColor" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="height" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="hitPoints" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="initiativeMiscBonus" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nonLethalWounds" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="player" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="reflexMiscBonus" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="size" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="skinColor" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="weight" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="willMiscBonus" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="wounds" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <relationship name="abilities" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PFCharacterAbility" inverseName="character" inverseEntity="PFCharacterAbility" syncable="YES"/>
         <relationship name="alignment" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="PFAlignment" inverseName="characters" inverseEntity="PFAlignment" syncable="YES"/>
         <relationship name="classes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PFCharacterClass" inverseName="character" inverseEntity="PFCharacterClass" syncable="YES"/>
@@ -138,17 +146,17 @@
     <elements>
         <element name="PFAbility" positionX="160" positionY="192" width="128" height="135"/>
         <element name="PFAlignment" positionX="160" positionY="192" width="128" height="120"/>
-        <element name="PFCharacter" positionX="0" positionY="0" width="128" height="300"/>
+        <element name="PFCharacter" positionX="0" positionY="0" width="128" height="420"/>
         <element name="PFCharacterAbility" positionX="160" positionY="192" width="128" height="105"/>
         <element name="PFCharacterClass" positionX="0" positionY="0" width="128" height="90"/>
         <element name="PFCharacterSkill" positionX="160" positionY="192" width="128" height="135"/>
+        <element name="PFClassFeature" positionX="160" positionY="192" width="128" height="120"/>
         <element name="PFClassType" positionX="0" positionY="0" width="128" height="165"/>
         <element name="PFFeat" positionX="160" positionY="192" width="128" height="180"/>
         <element name="PFRace" positionX="0" positionY="0" width="128" height="300"/>
+        <element name="PFRacialTrait" positionX="160" positionY="192" width="128" height="120"/>
         <element name="PFSkill" positionX="160" positionY="192" width="128" height="180"/>
         <element name="PFSource" positionX="160" positionY="192" width="128" height="150"/>
         <element name="PFTrait" positionX="160" positionY="192" width="128" height="135"/>
-        <element name="PFRacialTrait" positionX="160" positionY="192" width="128" height="120"/>
-        <element name="PFClassFeature" positionX="160" positionY="192" width="128" height="120"/>
     </elements>
 </model>

@@ -24,6 +24,17 @@
 @property (nonatomic) int16_t gender;
 @property (nonatomic) int16_t size;
 
+@property (nonatomic) int32_t experiencePoints;
+@property (nonatomic) int16_t hitPoints;
+@property (nonatomic) int16_t wounds;
+@property (nonatomic) int16_t nonLethalWounds;
+
+@property (nonatomic) int16_t fortitudeMiscBonus;
+@property (nonatomic) int16_t reflexMiscBonus;
+@property (nonatomic) int16_t willMiscBonus;
+
+@property (nonatomic) int16_t initiativeMiscBonus;
+
 @property (nonatomic, retain) PFAlignment *alignment;
 @property (nonatomic, retain) PFRace *race;
 
@@ -45,11 +56,48 @@
 
 // Experience/Level
 
-- (NSInteger)currentXP;
 - (NSInteger)nextLevelXP;
 
 - (NSInteger)levelAdjustment;
 - (NSInteger)effectiveLevel;
+
+// Saving Throws
+
+- (NSInteger)fortitudeBonus;
+- (NSInteger)fortitudeBaseBonus;
+- (NSInteger)fortitudeAbilityBonus;
+- (NSInteger)fortitudeRacialBonus;
+
+- (NSInteger)reflexBonus;
+- (NSInteger)reflexBaseBonus;
+- (NSInteger)reflexAbilityBonus;
+- (NSInteger)reflexRacialBonus;
+
+- (NSInteger)willBonus;
+- (NSInteger)willBaseBonus;
+- (NSInteger)willAbilityBonus;
+- (NSInteger)willRacialBonus;
+
+// Initiative
+
+- (NSInteger)initiativeBonus;
+- (NSInteger)initiativeAbilityBonus;
+- (NSInteger)initiativeFeatBonus;
+- (NSInteger)initiativeTrainingBonus;
+
+// Armor Class
+
+- (NSInteger)armorClass;
+- (NSInteger)armorClassAbilityModifier;
+- (NSInteger)armorClassDodgeModifier;
+- (NSInteger)armorClassDeflectionModifier;
+- (NSInteger)armorClassArmorModifier;
+- (NSInteger)armorClassShieldModifier;
+- (NSInteger)armorClassNaturalArmorModifier;
+- (NSInteger)armorClassSizeModifier;
+
+- (NSInteger)flatFootedArmorClass;
+- (NSInteger)touchArmorClass;
 
 // Skills
 

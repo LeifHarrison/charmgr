@@ -33,6 +33,15 @@
 @dynamic gender;
 @dynamic size;
 
+@dynamic experiencePoints;
+@dynamic hitPoints;
+@dynamic wounds;
+@dynamic nonLethalWounds;
+@dynamic fortitudeMiscBonus;
+@dynamic reflexMiscBonus;
+@dynamic willMiscBonus;
+@dynamic initiativeMiscBonus;
+
 @dynamic alignment;
 @dynamic race;
 
@@ -44,7 +53,7 @@
 
 
 //------------------------------------------------------------------------------
-#pragma mark - General Methods
+#pragma mark - Physical Description
 //------------------------------------------------------------------------------
 
 - (NSString*)genderDescription;
@@ -56,6 +65,10 @@
 {
 	return NSStringFromPFSizeType(self.size);
 }
+
+//------------------------------------------------------------------------------
+#pragma mark - Abilities
+//------------------------------------------------------------------------------
 
 - (NSArray *)sortedAbilities;
 {
@@ -89,14 +102,48 @@
 	return nil;
 }
 
-- (NSInteger)currentXP;
+//------------------------------------------------------------------------------
+#pragma mark - Experience/Level
+//------------------------------------------------------------------------------
+
+- (NSInteger)xpForLevel:(NSInteger)level
 {
-	return 0;
+	if (level < 2)
+		return 0;
+	if (level == 2)
+		return 2000;
+	else if (level == 3)
+		return 5000;
+	else
+		return [self xpForLevel:level-1] + ( 2 * ([self xpForLevel:level-2] - [self xpForLevel:level-3]) );
+}
+
+- (NSInteger)roundIntegerValue:(NSInteger)value toNearest:(NSInteger)roundToNearest
+{
+	NSInteger result = value;
+	
+	if ((result % roundToNearest) >= (roundToNearest/2))
+		result = result + (roundToNearest - (result % roundToNearest));
+	else
+		result = result - (result % roundToNearest);
+	
+	return result;
 }
 
 - (NSInteger)nextLevelXP;
 {
-	return 0;
+	NSInteger nextLevel = self.effectiveLevel+1;
+	NSInteger xpForLevel = [self xpForLevel:nextLevel];
+	LOG_DEBUG(@"xpForLevel = %d", xpForLevel);
+	
+	if (nextLevel > 16) {
+		xpForLevel = [self roundIntegerValue:xpForLevel toNearest:50000];
+	}
+	else if (nextLevel > 9) {
+		xpForLevel = [self roundIntegerValue:xpForLevel toNearest:5000];
+	}
+
+	return xpForLevel;
 }
 
 - (NSInteger)levelAdjustment;
@@ -112,6 +159,158 @@
 	}
 	return level;
 }
+
+//------------------------------------------------------------------------------
+#pragma mark - Saving Throws
+//------------------------------------------------------------------------------
+
+- (NSInteger)fortitudeBonus;
+{
+	return [self fortitudeBaseBonus] + [self fortitudeAbilityBonus] + [self fortitudeRacialBonus] + self.fortitudeMiscBonus;
+}
+
+- (NSInteger)fortitudeBaseBonus;
+{
+	return 0;
+}
+
+- (NSInteger)fortitudeAbilityBonus;
+{
+	return [[[self abilityWithType:kPFAbilityTypeConstitution] abilityBonus] integerValue];
+}
+
+- (NSInteger)fortitudeRacialBonus;
+{
+	return 0;
+}
+
+
+- (NSInteger)reflexBonus;
+{
+	return [self reflexBaseBonus] + [self reflexAbilityBonus] + [self reflexRacialBonus] + self.reflexMiscBonus;
+}
+
+- (NSInteger)reflexBaseBonus;
+{
+	return 0;
+}
+
+- (NSInteger)reflexAbilityBonus;
+{
+	return [[[self abilityWithType:kPFAbilityTypeDexterity] abilityBonus] integerValue];
+}
+
+- (NSInteger)reflexRacialBonus;
+{
+	return 0;
+}
+
+
+- (NSInteger)willBonus;
+{
+	return [self willBaseBonus] + [self willAbilityBonus] + [self willRacialBonus] + self.willMiscBonus;
+}
+
+- (NSInteger)willBaseBonus;
+{
+	return 0;
+}
+
+- (NSInteger)willAbilityBonus;
+{
+	return [[[self abilityWithType:kPFAbilityTypeWisdom] abilityBonus] integerValue];
+}
+
+- (NSInteger)willRacialBonus;
+{
+	return 0;
+}
+
+
+//------------------------------------------------------------------------------
+#pragma mark - Initiative
+//------------------------------------------------------------------------------
+
+- (NSInteger)initiativeBonus;
+{
+	return 0;
+}
+
+- (NSInteger)initiativeAbilityBonus;
+{
+	return 0;
+}
+
+- (NSInteger)initiativeFeatBonus;
+{
+	return 0;
+}
+
+- (NSInteger)initiativeTrainingBonus;
+{
+	return 0;
+}
+
+
+//------------------------------------------------------------------------------
+#pragma mark - Armor Class
+//------------------------------------------------------------------------------
+
+- (NSInteger)armorClass;
+{
+	return 0;
+}
+
+- (NSInteger)armorClassAbilityModifier;
+{
+	return 0;
+}
+
+- (NSInteger)armorClassDodgeModifier;
+{
+	return 0;
+}
+
+- (NSInteger)armorClassDeflectionModifier;
+{
+	return 0;
+}
+
+- (NSInteger)armorClassArmorModifier;
+{
+	return 0;
+}
+
+- (NSInteger)armorClassShieldModifier;
+{
+	return 0;
+}
+
+- (NSInteger)armorClassNaturalArmorModifier;
+{
+	return 0;
+}
+
+- (NSInteger)armorClassSizeModifier;
+{
+	return 0;
+}
+
+
+- (NSInteger)flatFootedArmorClass;
+{
+	return 0;
+}
+
+- (NSInteger)touchArmorClass;
+{
+	return 0;
+}
+
+
+//------------------------------------------------------------------------------
+#pragma mark - Skills
+//------------------------------------------------------------------------------
 
 - (NSArray *)sortedSkills;
 {
