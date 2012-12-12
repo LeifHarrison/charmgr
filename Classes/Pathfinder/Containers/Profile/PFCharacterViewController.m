@@ -115,6 +115,7 @@ static const CGFloat kPFCharacterViewValueWidthEditing	= 160.0f;
 	[self updateUI];
 }
 
+
 //------------------------------------------------------------------------------
 #pragma mark - Private
 //------------------------------------------------------------------------------
@@ -132,6 +133,13 @@ static const CGFloat kPFCharacterViewValueWidthEditing	= 160.0f;
 	[self.sizeButton setTitle:self.character.sizeDescription forState:UIControlStateNormal];
 	[self.alignmentButton setTitle:self.character.alignment.name forState:UIControlStateNormal];
 	
+}
+
+- (void)saveChanges
+{
+	self.character.name = self.characterField.text;
+	self.character.player = self.playerField.text;
+	self.character.campaign = self.campaignField.text;
 }
 
 - (void)setEditableFieldsEnabled:(BOOL)enabled
