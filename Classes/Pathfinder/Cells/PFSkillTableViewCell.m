@@ -44,7 +44,7 @@
 
 - (void)prepareForReuse
 {
-	TRACE;
+	//TRACE;
 	[super prepareForReuse];
 	
 	self.containerState = PFContainerViewStateStatic;

@@ -10,4 +10,8 @@
 
 @interface PFHealthViewController : PFContainerViewController
 
+@property (nonatomic, strong) IBOutlet UITextField *hitPointsField;
+@property (nonatomic, strong) IBOutlet UITextField *woundsField;
+@property (nonatomic, strong) IBOutlet UITextField *nonLethalField;
+
 @end

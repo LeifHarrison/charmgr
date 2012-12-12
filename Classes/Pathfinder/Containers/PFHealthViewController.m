@@ -10,6 +10,8 @@
 
 #import "CMBannerBox.h"
 
+#import "PFCharacter.h"
+
 //------------------------------------------------------------------------------
 #pragma mark - Constants
 //------------------------------------------------------------------------------
@@ -73,6 +75,16 @@ static const CGRect kPFHealthViewBoundsEditing	= { {   0,   0 }, { 305,  85 } };
 - (void)updateUI
 {
 	[super updateUI];
+	self.hitPointsField.text = [NSString stringWithFormat:@"%d", self.character.hitPoints];
+	self.woundsField.text = [NSString stringWithFormat:@"%d", self.character.wounds];
+	self.nonLethalField.text = [NSString stringWithFormat:@"%d", self.character.nonLethalWounds];
+}
+
+- (void)saveChanges
+{
+	self.character.hitPoints = [self.hitPointsField.text intValue];
+	self.character.wounds = [self.woundsField.text intValue];
+	self.character.nonLethalWounds = [self.nonLethalField.text intValue];
 }
 
 //------------------------------------------------------------------------------
@@ -104,6 +116,9 @@ static const CGRect kPFHealthViewBoundsEditing	= { {   0,   0 }, { 305,  85 } };
 	[super willTransitionToState:newState];
 	
 	if (newState == PFContainerViewStateStatic) {
+		[self.hitPointsField setEnabled:NO];
+		[self.woundsField setEnabled:NO];
+		[self.nonLethalField setEnabled:NO];
 	}
 }
 
@@ -113,6 +128,9 @@ static const CGRect kPFHealthViewBoundsEditing	= { {   0,   0 }, { 305,  85 } };
 	[super didTransitionToState:newState];
 	
 	if (newState == PFContainerViewStateEditing) {
+		[self.hitPointsField setEnabled:YES];
+		[self.woundsField setEnabled:YES];
+		[self.nonLethalField setEnabled:YES];
 	}
 }
 
