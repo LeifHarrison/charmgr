@@ -25,7 +25,11 @@
 @dynamic source;
 @dynamic descriptionShort;
 @dynamic hitDieType;
-@dynamic skillRanks;
+@dynamic skillRanksPerLevel;
+@dynamic baseAttackBonusType;
+@dynamic fortitudeSaveBonusType;
+@dynamic reflexSaveBonusType;
+@dynamic willSaveBonusType;
 
 @dynamic characterClasses;
 @dynamic classSkills;
@@ -57,7 +61,11 @@
 	newInstance.name = name;
 	
 	newInstance.hitDieType = [[[anElement attributeForName:@"hitDieType"] stringValue] intValue];
-	newInstance.skillRanks = [[[anElement attributeForName:@"skillRanksPerLevel"] stringValue] intValue];
+	newInstance.skillRanksPerLevel = [[[anElement attributeForName:@"skillRanksPerLevel"] stringValue] intValue];
+	newInstance.baseAttackBonusType = [[[anElement attributeForName:@"baseAttackBonusType"] stringValue] intValue];
+	newInstance.fortitudeSaveBonusType = [[[anElement attributeForName:@"fortitudeSaveBonusType"] stringValue] intValue];
+	newInstance.reflexSaveBonusType = [[[anElement attributeForName:@"reflexSaveBonusType"] stringValue] intValue];
+	newInstance.willSaveBonusType = [[[anElement attributeForName:@"willSaveBonusType"] stringValue] intValue];
 
 	NSString *sourceAbbreviation = [[anElement attributeForName:@"source"] stringValue];
 	newInstance.source = [PFSource fetchWithAbbreviation:sourceAbbreviation inContext:moc];

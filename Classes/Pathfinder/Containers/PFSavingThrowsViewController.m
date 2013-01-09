@@ -16,22 +16,22 @@
 #pragma mark - Constants
 //------------------------------------------------------------------------------
 
-static const CGRect kPFSavingThrowsViewFramePortrait	= { {  15, 105 }, { 305,  85 } };
-static const CGRect kPFSavingThrowsViewFrameLandscape	= { {  15, 105 }, { 305,  85 } };
-static const CGRect kPFSavingThrowsViewBoundsEditing	= { {   0,   0 }, { 400, 180 } };
+static const CGRect kPFSavingThrowsViewFramePortrait	= { {  15, 110 }, { 305,  90 } };
+static const CGRect kPFSavingThrowsViewFrameLandscape	= { {  15, 110 }, { 305,  90 } };
+static const CGRect kPFSavingThrowsViewBoundsEditing	= { {   0,   0 }, { 400, 195 } };
 
-static const CGRect kPFFortitudeLabelStatic		= { {  10,  34 }, {  85,  15 } };
-static const CGRect kPFFortitudeLabelEditing	= { {  10,  34 }, {  70,  15 } };
-static const CGRect kPFFortitudeFieldStatic		= { {  10,  50 }, {  85,  25 } };
-static const CGRect kPFFortitudeFieldEditing	= { {  10,  50 }, {  50,  25 } };
-static const CGRect kPFReflexLabelStatic		= { { 110,  34 }, {  85,  15 } };
-static const CGRect kPFReflexLabelEditing		= { {  10,  79 }, {  70,  15 } };
-static const CGRect kPFReflexFieldStatic		= { { 110,  50 }, {  85,  25 } };
-static const CGRect kPFReflexFieldEditing		= { {  10,  95 }, {  50,  25 } };
-static const CGRect kPFWillLabelStatic			= { { 210,  34 }, {  85,  15 } };
-static const CGRect kPFWillLabelEditing			= { {  10, 124 }, {  70,  15 } };
-static const CGRect kPFWillFieldStatic			= { { 210,  50 }, {  85,  25 } };
-static const CGRect kPFWillFieldEditing			= { {  10, 140 }, {  50,  25 } };
+static const CGRect kPFFortitudeLabelStatic		= { {  10,  35 }, {  85,  15 } };
+static const CGRect kPFFortitudeLabelEditing	= { {  10,  35 }, {  70,  15 } };
+static const CGRect kPFFortitudeFieldStatic		= { {  10,  50 }, {  85,  30 } };
+static const CGRect kPFFortitudeFieldEditing	= { {  10,  50 }, {  50,  30 } };
+static const CGRect kPFReflexLabelStatic		= { { 110,  35 }, {  85,  15 } };
+static const CGRect kPFReflexLabelEditing		= { {  10,  90 }, {  70,  15 } };
+static const CGRect kPFReflexFieldStatic		= { { 110,  50 }, {  85,  30 } };
+static const CGRect kPFReflexFieldEditing		= { {  10, 105 }, {  50,  30 } };
+static const CGRect kPFWillLabelStatic			= { { 210,  35 }, {  85,  15 } };
+static const CGRect kPFWillLabelEditing			= { {  10, 140 }, {  70,  15 } };
+static const CGRect kPFWillFieldStatic			= { { 210,  50 }, {  85,  30 } };
+static const CGRect kPFWillFieldEditing			= { {  10, 155 }, {  50,  30 } };
 
 //------------------------------------------------------------------------------
 #pragma mark - Private Interface Declaration
@@ -93,21 +93,21 @@ static const CGRect kPFWillFieldEditing			= { {  10, 140 }, {  50,  25 } };
 	
 	self.fortitudeSaveField.text = [NSString stringWithFormat:@"%d", self.character.fortitudeBonus];
 	self.fortitudeBaseField.text = [NSString stringWithFormat:@"%d", self.character.fortitudeBaseBonus];
-	self.fortitudeAbilityField.text = [NSString stringWithFormat:@"%d", self.character.fortitudeAbilityBonus];
+	self.fortitudeAbilityField.text = [NSString stringWithFormat:@"%d", [self.character constitutionBonus]];
 	self.fortitudeRacialField.text = [NSString stringWithFormat:@"%d", self.character.fortitudeRacialBonus];
 	self.fortitudeMiscField.text = [NSString stringWithFormat:@"%d", self.character.fortitudeMiscBonus];
 	//self.fortitudeTempField.text = [NSString stringWithFormat:@"%d", self.character.fortitudeTempBonus];
 	
 	self.reflexSaveField.text = [NSString stringWithFormat:@"%d", self.character.reflexBonus];
 	self.reflexBaseField.text = [NSString stringWithFormat:@"%d", self.character.reflexBaseBonus];
-	self.reflexAbilityField.text = [NSString stringWithFormat:@"%d", self.character.reflexAbilityBonus];
+	self.reflexAbilityField.text = [NSString stringWithFormat:@"%d", [self.character dexterityBonus]];
 	self.reflexRacialField.text = [NSString stringWithFormat:@"%d", self.character.reflexRacialBonus];
 	self.reflexMiscField.text = [NSString stringWithFormat:@"%d", self.character.reflexMiscBonus];
 	//self.reflexTempField.text = [NSString stringWithFormat:@"%d", self.character.reflexTempBonus];
 	
 	self.willSaveField.text = [NSString stringWithFormat:@"%d", self.character.willBonus];
 	self.willBaseField.text = [NSString stringWithFormat:@"%d", self.character.willBaseBonus];
-	self.willAbilityField.text = [NSString stringWithFormat:@"%d", self.character.willAbilityBonus];
+	self.willAbilityField.text = [NSString stringWithFormat:@"%d", [self.character wisdomBonus]];
 	self.willRacialField.text = [NSString stringWithFormat:@"%d", self.character.willRacialBonus];
 	self.willMiscField.text = [NSString stringWithFormat:@"%d", self.character.willMiscBonus];
 	//self.willTempField.text = [NSString stringWithFormat:@"%d", self.character.willTempBonus];

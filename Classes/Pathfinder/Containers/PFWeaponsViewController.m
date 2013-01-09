@@ -1,12 +1,12 @@
 //
-//  PFBaseAttackViewController.m
+//  PFWeaponsViewController.m
 //  CharMgr
 //
-//  Created by Leif Harrison on 9/13/12.
+//  Created by Leif Harrison on 9/20/12.
 //  Copyright (c) 2012 Leif Harrison. All rights reserved.
 //
 
-#import "PFBaseAttackViewController.h"
+#import "PFWeaponsViewController.h"
 
 #import "CMBannerBox.h"
 
@@ -14,15 +14,15 @@
 #pragma mark - Constants
 //------------------------------------------------------------------------------
 
-static const CGRect kPFBaseAttackViewFramePortrait	= { {  15, 385 }, { 305, 100 } };
-static const CGRect kPFBaseAttackViewFrameLandscape	= { {  15, 385 }, { 305, 100 } };
-static const CGRect kPFBaseAttackViewBoundsEditing	= { {   0,   0 }, { 305, 100 } };
+static const CGRect kPFWeaponsViewFramePortrait	 = { { 325,  15 }, { 428, 470 } };
+static const CGRect kPFWeaponsViewFrameLandscape = { { 325,  15 }, { 428, 470 } };
+static const CGRect kPFWeaponsViewBoundsEditing	 = { {   0,   0 }, { 428, 470 } };
 
 //------------------------------------------------------------------------------
 #pragma mark - Private Interface Declaration
 //------------------------------------------------------------------------------
 
-@interface PFBaseAttackViewController ()
+@interface PFWeaponsViewController ()
 
 @end
 
@@ -30,7 +30,7 @@ static const CGRect kPFBaseAttackViewBoundsEditing	= { {   0,   0 }, { 305, 100 
 // Class Implementation
 //==============================================================================
 
-@implementation PFBaseAttackViewController
+@implementation PFWeaponsViewController
 
 //------------------------------------------------------------------------------
 #pragma mark - Initialization
@@ -53,7 +53,7 @@ static const CGRect kPFBaseAttackViewBoundsEditing	= { {   0,   0 }, { 305, 100 
 {
     [super viewDidLoad];
 	
-    [(CMBannerBox*)self.view setBannerTitle:@"Base Attack"];
+    [(CMBannerBox*)self.view setBannerTitle:@"Weapons"];
 }
 
 //------------------------------------------------------------------------------
@@ -81,17 +81,17 @@ static const CGRect kPFBaseAttackViewBoundsEditing	= { {   0,   0 }, { 305, 100 
 
 - (CGRect)staticFramePortrait;
 {
-	return kPFBaseAttackViewFramePortrait;
+	return kPFWeaponsViewFramePortrait;
 }
 
 - (CGRect)staticFrameLandscape;
 {
-	return kPFBaseAttackViewFrameLandscape;
+	return kPFWeaponsViewFrameLandscape;
 }
 
 - (CGRect)editingBounds;
 {
-	return kPFBaseAttackViewBoundsEditing;
+	return kPFWeaponsViewBoundsEditing;
 }
 
 //------------------------------------------------------------------------------

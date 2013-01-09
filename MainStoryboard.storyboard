@@ -577,6 +577,57 @@
     <resources>
         <image name="PathfinderRoleplayingGame.png" width="1112" height="286"/>
     </resources>
+    <classes>
+        <class className="CMMainViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CMMainViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="showPreferencesView:"/>
+                <relationship kind="action" name="showReferenceView:"/>
+                <relationship kind="outlet" name="charactersTableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="createCharacterButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="CMRootViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CMRootViewController.h"/>
+        </class>
+        <class className="PFCreateCharacterChooseAlignmentViewController" superclassName="PFCreateCharacterViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PFCreateCharacterChooseAlignmentViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="descriptionTextView" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="PFCreateCharacterChooseClassViewController" superclassName="PFCreateCharacterViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PFCreateCharacterChooseClassViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="descriptionTextView" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="PFCreateCharacterChooseRaceViewController" superclassName="PFCreateCharacterViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PFCreateCharacterChooseRaceViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="descriptionTextView" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="genderControl" candidateClass="UISegmentedControl"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="PFCreateCharacterInfoViewController" superclassName="PFCreateCharacterViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PFCreateCharacterInfoViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="campaignField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="nameField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="playerField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="PFCreateCharacterViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PFCreateCharacterViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="cancel:"/>
+                <relationship kind="action" name="save:"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>

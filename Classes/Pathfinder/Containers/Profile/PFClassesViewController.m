@@ -139,7 +139,7 @@ static const CGFloat kClassesViewRowHeightStatic = 25.0f;
 	classCell.containerState = self.state;
 	classCell.classNameLabel.text = characterClass.classType.name;
 	classCell.hitDieTypeLabel.text = characterClass.classType.hitDieTypeDescription;
-	classCell.skillRanksLabel.text = [NSString stringWithFormat:@"%d", characterClass.classType.skillRanks];
+	classCell.skillRanksLabel.text = [NSString stringWithFormat:@"%d", characterClass.classType.skillRanksPerLevel];
 	classCell.levelTextField.text = [NSString stringWithFormat:@"%d", characterClass.level];
 	classCell.levelStepper.value = characterClass.level;
 	

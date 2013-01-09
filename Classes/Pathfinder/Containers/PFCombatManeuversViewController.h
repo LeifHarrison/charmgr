@@ -10,14 +10,6 @@
 
 @interface PFCombatManeuversViewController : PFContainerViewController
 
-@property (nonatomic, strong) IBOutlet UILabel *cmbTitleLabel;
-@property (nonatomic, strong) IBOutlet UILabel *cmbSubtitleLabel;
-@property (nonatomic, strong) IBOutlet UITextField *cmbField;
-@property (nonatomic, strong) IBOutlet UITextField *cmbStrengthModifierField;
-@property (nonatomic, strong) IBOutlet UITextField *cmbBaseAttackBonusField;
-@property (nonatomic, strong) IBOutlet UITextField *cmbSizeModifierField;
-@property (nonatomic, strong) IBOutlet UITextField *cmbMiscModifierField;
-
 @property (nonatomic, strong) IBOutlet UILabel *cmdTitleLabel;
 @property (nonatomic, strong) IBOutlet UILabel *cmdSubtitleLabel;
 @property (nonatomic, strong) IBOutlet UITextField *cmdField;

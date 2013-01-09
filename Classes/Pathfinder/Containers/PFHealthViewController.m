@@ -16,9 +16,9 @@
 #pragma mark - Constants
 //------------------------------------------------------------------------------
 
-static const CGRect kPFHealthViewFramePortrait	= { {  15,  15 }, { 305,  85 } };
-static const CGRect kPFHealthViewFrameLandscape	= { {  15,  15 }, { 305,  85 } };
-static const CGRect kPFHealthViewBoundsEditing	= { {   0,   0 }, { 305,  85 } };
+static const CGRect kPFHealthViewFramePortrait	= { {  15,  15 }, { 305,  90 } };
+static const CGRect kPFHealthViewFrameLandscape	= { {  15,  15 }, { 305,  90 } };
+static const CGRect kPFHealthViewBoundsEditing	= { {   0,   0 }, { 305,  90 } };
 
 //------------------------------------------------------------------------------
 #pragma mark - Private Interface Declaration

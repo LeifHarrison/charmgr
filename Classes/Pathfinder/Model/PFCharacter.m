@@ -14,6 +14,7 @@
 #import "PFCharacterAbility.h"
 #import "PFCharacterClass.h"
 #import "PFCharacterSkill.h"
+#import "PFClassType.h"
 #import "PFRace.h"
 #import "PFSkill.h"
 
@@ -66,6 +67,32 @@
 	return NSStringFromPFSizeType(self.size);
 }
 
+- (NSInteger)sizeModifier
+{
+	switch (self.size) {
+		case kPFSizeTypeFine :
+			return 8;
+		case kPFSizeTypeDiminutive :
+			return 4;
+		case kPFSizeTypeTiny :
+			return 2;
+		case kPFSizeTypeSmall :
+			return 1;
+		case kPFSizeTypeMedium :
+			return 0;
+		case kPFSizeTypeLarge :
+			return -1;
+		case kPFSizeTypeHuge :
+			return -2;
+		case kPFSizeTypeColossal :
+			return -4;
+		case kPFSizeTypeGargantuan :
+			return -8;
+		default :
+			return 0;
+	}
+}
+
 //------------------------------------------------------------------------------
 #pragma mark - Abilities
 //------------------------------------------------------------------------------
@@ -100,6 +127,36 @@
 			return anAbility;
 	}
 	return nil;
+}
+
+- (NSInteger)strengthBonus;
+{
+	return [[[self abilityWithType:kPFAbilityTypeStrength] abilityBonus] integerValue];
+}
+
+- (NSInteger)dexterityBonus;
+{
+	return [[[self abilityWithType:kPFAbilityTypeDexterity] abilityBonus] integerValue];
+}
+
+- (NSInteger)constitutionBonus;
+{
+	return [[[self abilityWithType:kPFAbilityTypeConstitution] abilityBonus] integerValue];
+}
+
+- (NSInteger)intelligenceBonus;
+{
+	return [[[self abilityWithType:kPFAbilityTypeIntelligence] abilityBonus] integerValue];
+}
+
+- (NSInteger)wisdomBonus;
+{
+	return [[[self abilityWithType:kPFAbilityTypeWisdom] abilityBonus] integerValue];
+}
+
+- (NSInteger)charismaBonus;
+{
+	return [[[self abilityWithType:kPFAbilityTypeCharisma] abilityBonus] integerValue];
 }
 
 //------------------------------------------------------------------------------
@@ -166,17 +223,25 @@
 
 - (NSInteger)fortitudeBonus;
 {
-	return [self fortitudeBaseBonus] + [self fortitudeAbilityBonus] + [self fortitudeRacialBonus] + self.fortitudeMiscBonus;
+	return [self fortitudeBaseBonus] + [self constitutionBonus] + [self fortitudeRacialBonus] + self.fortitudeMiscBonus;
 }
 
 - (NSInteger)fortitudeBaseBonus;
 {
-	return 0;
-}
-
-- (NSInteger)fortitudeAbilityBonus;
-{
-	return [[[self abilityWithType:kPFAbilityTypeConstitution] abilityBonus] integerValue];
+	NSInteger bonus = 0;
+	for (PFCharacterClass *aClass in self.classes) {
+		switch (aClass.classType.fortitudeSaveBonusType) {
+			case kPFSavingThrowBonusTypeLow :
+				bonus += (NSInteger)((double)aClass.level * 0.5);
+				break;
+			case kPFSavingThrowBonusTypeHigh:
+				bonus += 2 + (NSInteger)((double)aClass.level * 0.75);
+				break;
+			default:
+				break;
+		}
+	}
+	return bonus;
 }
 
 - (NSInteger)fortitudeRacialBonus;
@@ -187,17 +252,25 @@
 
 - (NSInteger)reflexBonus;
 {
-	return [self reflexBaseBonus] + [self reflexAbilityBonus] + [self reflexRacialBonus] + self.reflexMiscBonus;
+	return [self reflexBaseBonus] + [self dexterityBonus] + [self reflexRacialBonus] + self.reflexMiscBonus;
 }
 
 - (NSInteger)reflexBaseBonus;
 {
-	return 0;
-}
-
-- (NSInteger)reflexAbilityBonus;
-{
-	return [[[self abilityWithType:kPFAbilityTypeDexterity] abilityBonus] integerValue];
+	NSInteger bonus = 0;
+	for (PFCharacterClass *aClass in self.classes) {
+		switch (aClass.classType.reflexSaveBonusType) {
+			case kPFSavingThrowBonusTypeLow :
+				bonus += (NSInteger)((double)aClass.level * 0.5);
+				break;
+			case kPFSavingThrowBonusTypeHigh:
+				bonus += 2 + (NSInteger)((double)aClass.level * 0.75);
+				break;
+			default:
+				break;
+		}
+	}
+	return bonus;
 }
 
 - (NSInteger)reflexRacialBonus;
@@ -208,17 +281,25 @@
 
 - (NSInteger)willBonus;
 {
-	return [self willBaseBonus] + [self willAbilityBonus] + [self willRacialBonus] + self.willMiscBonus;
+	return [self willBaseBonus] + [self wisdomBonus] + [self willRacialBonus] + self.willMiscBonus;
 }
 
 - (NSInteger)willBaseBonus;
 {
-	return 0;
-}
-
-- (NSInteger)willAbilityBonus;
-{
-	return [[[self abilityWithType:kPFAbilityTypeWisdom] abilityBonus] integerValue];
+	NSInteger bonus = 0;
+	for (PFCharacterClass *aClass in self.classes) {
+		switch (aClass.classType.willSaveBonusType) {
+			case kPFSavingThrowBonusTypeLow :
+				bonus += (NSInteger)((double)aClass.level * 0.5);
+				break;
+			case kPFSavingThrowBonusTypeHigh:
+				bonus += 2 + (NSInteger)((double)aClass.level * 0.75);
+				break;
+			default:
+				break;
+		}
+	}
+	return bonus;
 }
 
 - (NSInteger)willRacialBonus;
@@ -233,12 +314,7 @@
 
 - (NSInteger)initiativeBonus;
 {
-	return 0;
-}
-
-- (NSInteger)initiativeAbilityBonus;
-{
-	return 0;
+	return [self dexterityBonus] + [self initiativeFeatBonus] + [self initiativeTrainingBonus] + self.initiativeMiscBonus;
 }
 
 - (NSInteger)initiativeFeatBonus;
@@ -251,6 +327,113 @@
 	return 0;
 }
 
+//------------------------------------------------------------------------------
+#pragma mark - Base Attack Bonus
+//------------------------------------------------------------------------------
+
+- (NSInteger)numberOfAttacks
+{
+	return 1 + (([self baseAttackBonusForAttackNumber:1] - 1) / 5);
+}
+
+- (NSInteger)baseAttackBonus;
+{
+	return [self baseAttackBonusForAttackNumber:1];
+}
+
+- (NSInteger)meleeAttackBonus;
+{
+	return [self meleeAttackBonusForAttackNumber:1];
+}
+
+- (NSInteger)rangedAttackBonus;
+{
+	return [self rangedAttackBonusForAttackNumber:1];
+}
+
+- (NSInteger)baseAttackBonusForAttackNumber:(NSInteger)attackNumber
+{
+	NSInteger baseAttack = 0;
+	for (PFCharacterClass *aClass in self.classes) {
+		NSInteger classBonus = 0;
+		NSInteger attackModifier = 5 * (attackNumber - 1);
+		switch (aClass.classType.baseAttackBonusType) {
+			case kPFBaseAttackBonusTypeLow :
+				classBonus = ((NSInteger)((double)aClass.level * 0.5)) - attackModifier;
+				break;
+			case kPFBaseAttackBonusTypeMedium :
+				classBonus = ((NSInteger)((double)aClass.level * 0.75)) - attackModifier;
+				break;
+			case kPFBaseAttackBonusTypeHigh :
+				classBonus = aClass.level - attackModifier;
+				break;
+			default:
+				break;
+		}
+		if (classBonus > 0) baseAttack += classBonus;
+	}
+	
+	return baseAttack;
+}
+
+- (NSInteger)meleeAttackBonusForAttackNumber:(NSInteger)attackNumber
+{
+	return [self baseAttackBonusForAttackNumber:attackNumber] + [self strengthBonus];
+}
+
+- (NSInteger)rangedAttackBonusForAttackNumber:(NSInteger)attackNumber
+{
+	return [self baseAttackBonusForAttackNumber:attackNumber] + [self dexterityBonus];
+}
+
+- (NSString *)baseAttackBonusDescription
+{
+	NSString *descriptionString = [NSString stringWithFormat:@"+%d", [self baseAttackBonusForAttackNumber:1]];
+	for (NSInteger attackNumber=2; attackNumber <= [self numberOfAttacks]; attackNumber++)
+	{
+		descriptionString = [descriptionString stringByAppendingFormat:@"/+%d", [self baseAttackBonusForAttackNumber:attackNumber]];
+	}
+	return descriptionString;
+}
+
+- (NSString *)meleeAttackBonusDescription
+{
+	NSString *descriptionString = [NSString stringWithFormat:@"+%d", [self meleeAttackBonusForAttackNumber:1]];
+	for (NSInteger attackNumber=2; attackNumber <= [self numberOfAttacks]; attackNumber++)
+	{
+		descriptionString = [descriptionString stringByAppendingFormat:@"/+%d", [self meleeAttackBonusForAttackNumber:attackNumber]];
+	}
+	return descriptionString;
+}
+
+- (NSString *)rangedAttackBonusDescription
+{
+	NSString *descriptionString = [NSString stringWithFormat:@"+%d", [self rangedAttackBonusForAttackNumber:1]];
+	for (NSInteger attackNumber=2; attackNumber <= [self numberOfAttacks]; attackNumber++)
+	{
+		descriptionString = [descriptionString stringByAppendingFormat:@"/+%d", [self rangedAttackBonusForAttackNumber:attackNumber]];
+	}
+	return descriptionString;
+}
+
+//------------------------------------------------------------------------------
+#pragma mark - Combat Manuevers (CMB/CMD)
+//------------------------------------------------------------------------------
+
+- (NSInteger)combatManueverBonus;
+{
+	return [self strengthBonus] + [self baseAttackBonusForAttackNumber:1] - [self sizeModifier]; // + self.cmbMiscModifier
+}
+
+- (NSInteger)combatManueverDefence;
+{
+	return 10 + [self strengthBonus] + [self dexterityBonus] + [self dodgeBonus] + [self deflectionBonus] + [self baseAttackBonusForAttackNumber:1] - [self sizeModifier]; // + self.cmdMiscModifier
+}
+
+- (NSInteger)flatFootedCMD;
+{
+	return 10 + [self strengthBonus] + [self deflectionBonus] + [self baseAttackBonusForAttackNumber:1] - [self sizeModifier]; // + self.cmdMiscModifier
+}
 
 //------------------------------------------------------------------------------
 #pragma mark - Armor Class
@@ -258,55 +441,48 @@
 
 - (NSInteger)armorClass;
 {
-	return 0;
+	return 10 + [self armorBonus] + [self shieldBonus] + [self dexterityBonus] + [self enhancementBonus] + [self deflectionBonus] + [self naturalArmorBonus] + [self dodgeBonus] + [self sizeModifier];
 }
-
-- (NSInteger)armorClassAbilityModifier;
-{
-	return 0;
-}
-
-- (NSInteger)armorClassDodgeModifier;
-{
-	return 0;
-}
-
-- (NSInteger)armorClassDeflectionModifier;
-{
-	return 0;
-}
-
-- (NSInteger)armorClassArmorModifier;
-{
-	return 0;
-}
-
-- (NSInteger)armorClassShieldModifier;
-{
-	return 0;
-}
-
-- (NSInteger)armorClassNaturalArmorModifier;
-{
-	return 0;
-}
-
-- (NSInteger)armorClassSizeModifier;
-{
-	return 0;
-}
-
 
 - (NSInteger)flatFootedArmorClass;
 {
-	return 0;
+	return 10 + [self armorBonus] + [self shieldBonus] + [self enhancementBonus] + [self deflectionBonus] + [self naturalArmorBonus] + [self sizeModifier];
 }
 
 - (NSInteger)touchArmorClass;
 {
+	return 10 + [self dexterityBonus] + [self dodgeBonus] + [self deflectionBonus] + [self sizeModifier];
+}
+
+- (NSInteger)armorBonus;
+{
 	return 0;
 }
 
+- (NSInteger)shieldBonus;
+{
+	return 0;
+}
+
+- (NSInteger)enhancementBonus;
+{
+	return 0;
+}
+
+- (NSInteger)dodgeBonus;
+{
+	return 0;
+}
+
+- (NSInteger)deflectionBonus;
+{
+	return 0;
+}
+
+- (NSInteger)naturalArmorBonus;
+{
+	return 0;
+}
 
 //------------------------------------------------------------------------------
 #pragma mark - Skills

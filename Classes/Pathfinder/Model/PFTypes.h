@@ -55,6 +55,17 @@ typedef enum {
 	kPFSpecialAbilityTypeSupernatural
 } PFSpecialAbilityType;
 
+typedef enum {
+	kPFBaseAttackBonusTypeLow,		// bonus = 1/2 level
+	kPFBaseAttackBonusTypeMedium,	// bonus = 3/4 level
+	kPFBaseAttackBonusTypeHigh,		// bonus = level
+} PFBaseAttackBonusType;
+
+typedef enum {
+	kPFSavingThrowBonusTypeLow,	// bonus = 1/3 level
+	kPFSavingThrowBonusTypeHigh,	// bonus = 2 + 1/2 level
+} PFSavingThrowBonusType;
+
 
 // Alignment and Ability have their own classes, so no need for mapping
 // functions

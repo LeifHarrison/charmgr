@@ -152,32 +152,24 @@ static const CGRect kPFFlatFootedCMDFieldEditing	= { {  10, 165 }, {  50,  25 } 
 	LOG_DEBUG(@"state = %d", aState);
 	[super layoutForState:aState];
 	if (aState == PFContainerViewStateEditing) {
-		self.cmbTitleLabel.frame = kPFCMBLabelEditing;
-		self.cmbField.frame = kPFCMBFieldEditing;
 		self.cmdTitleLabel.frame = kPFCMDLabelEditing;
 		self.cmdField.frame = kPFCMDFieldEditing;
 		self.flatFootedCMDTitleLabel.frame = kPFFlatFootedCMDLabelEditing;
 		self.flatFootedCMDField.frame = kPFFlatFootedCMDFieldEditing;
 
-		self.cmbTitleLabel.text = @"COMBAT MANUEVER";
 		self.cmdTitleLabel.text = @"COMBAT MANUEVER";
 		
-		self.cmbSubtitleLabel.alpha = 1.0f;
 		self.cmdSubtitleLabel.alpha = 1.0f;
 		self.flatFootedCMDSubtitleLabel.alpha = 1.0f;
 	}
 	else {
-		self.cmbTitleLabel.frame = kPFCMBLabelStatic;
-		self.cmbField.frame = kPFCMBFieldStatic;
 		self.cmdTitleLabel.frame = kPFCMDLabelStatic;
 		self.cmdField.frame = kPFCMDFieldStatic;
 		self.flatFootedCMDTitleLabel.frame = kPFFlatFootedCMDLabelStatic;
 		self.flatFootedCMDField.frame = kPFFlatFootedCMDFieldStatic;
 		
-		self.cmbTitleLabel.text = @"CMB";
 		self.cmdTitleLabel.text = @"CMD";
 		
-		self.cmbSubtitleLabel.alpha = 0.0f;
 		self.cmdSubtitleLabel.alpha = 0.0f;
 		self.flatFootedCMDSubtitleLabel.alpha = 0.0f;
 	}

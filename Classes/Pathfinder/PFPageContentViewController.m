@@ -218,6 +218,9 @@
 	if (newState == PFContainerViewStateEditing) {
 		[rootController setPageTurningEnabled:NO];
 	}
+	else {
+		containerView.layer.shadowOpacity = 0.0;
+	}
 	
 	[container willTransitionToState:newState];
 	[self.view bringSubviewToFront:containerView];
@@ -231,9 +234,15 @@
 			CGPoint containerCenter = containerView.center;
 			self.activeContainerOriginalCenter = containerCenter;
 			LOG_DEBUG(@"activeContainerOriginalCenter = %@", NSStringFromCGPoint(self.activeContainerOriginalCenter));
-			
-			containerView.center = viewCenter;
-			containerView.bounds = container.editingBounds;
+
+			CGRect editingRect = container.editingBounds;
+			editingRect.origin.x = viewCenter.x - (editingRect.size.width / 2);
+			editingRect.origin.y = viewCenter.y - (editingRect.size.height / 2);
+
+			//containerView.center = viewCenter;
+			//containerView.bounds = container.editingBounds;
+			containerView.frame = CGRectIntegral(editingRect);
+			LOG_DEBUG(@"containerView.frame = %@", NSStringFromCGRect(containerView.frame));
 			//containerView.layer.shadowOpacity = 0.7;
 		}
 		else {
@@ -259,7 +268,7 @@
 			[rootController setPageTurningEnabled:YES];
 		}
 		else {
-			//containerView.layer.shadowOpacity = 0.7;
+			containerView.layer.shadowOpacity = 0.7;
 		}
     };
 	

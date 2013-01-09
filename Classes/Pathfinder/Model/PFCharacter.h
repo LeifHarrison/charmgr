@@ -44,6 +44,7 @@
 
 - (NSString*)genderDescription;
 - (NSString*)sizeDescription;
+- (NSInteger)sizeModifier;
 
 // Abilities
 
@@ -51,6 +52,13 @@
 - (PFCharacterAbility *)abilityWithName:(NSString*)aName;
 - (PFCharacterAbility *)abilityWithAbbreviation:(NSString*)anAbbreviation;
 - (PFCharacterAbility *)abilityWithType:(PFAbilityType)aType;
+
+- (NSInteger)strengthBonus;
+- (NSInteger)dexterityBonus;
+- (NSInteger)constitutionBonus;
+- (NSInteger)intelligenceBonus;
+- (NSInteger)wisdomBonus;
+- (NSInteger)charismaBonus;
 
 // Classes
 
@@ -65,39 +73,57 @@
 
 - (NSInteger)fortitudeBonus;
 - (NSInteger)fortitudeBaseBonus;
-- (NSInteger)fortitudeAbilityBonus;
 - (NSInteger)fortitudeRacialBonus;
 
 - (NSInteger)reflexBonus;
 - (NSInteger)reflexBaseBonus;
-- (NSInteger)reflexAbilityBonus;
 - (NSInteger)reflexRacialBonus;
 
 - (NSInteger)willBonus;
 - (NSInteger)willBaseBonus;
-- (NSInteger)willAbilityBonus;
 - (NSInteger)willRacialBonus;
 
 // Initiative
 
 - (NSInteger)initiativeBonus;
-- (NSInteger)initiativeAbilityBonus;
 - (NSInteger)initiativeFeatBonus;
 - (NSInteger)initiativeTrainingBonus;
+
+// Base Attack Bonus
+
+- (NSInteger)numberOfAttacks;
+
+- (NSInteger)baseAttackBonus;
+- (NSInteger)meleeAttackBonus;
+- (NSInteger)rangedAttackBonus;
+
+- (NSInteger)baseAttackBonusForAttackNumber:(NSInteger)attackNumber;
+- (NSInteger)meleeAttackBonusForAttackNumber:(NSInteger)attackNumber;
+- (NSInteger)rangedAttackBonusForAttackNumber:(NSInteger)attackNumber;
+
+// String description of all attack bonuses (for multiple attacks)
+- (NSString *)baseAttackBonusDescription;
+- (NSString *)meleeAttackBonusDescription;
+- (NSString *)rangedAttackBonusDescription;
+
+// Combat Manuevers (CMB/CMD)
+
+- (NSInteger)combatManueverBonus;
+- (NSInteger)combatManueverDefence;
+- (NSInteger)flatFootedCMD;
 
 // Armor Class
 
 - (NSInteger)armorClass;
-- (NSInteger)armorClassAbilityModifier;
-- (NSInteger)armorClassDodgeModifier;
-- (NSInteger)armorClassDeflectionModifier;
-- (NSInteger)armorClassArmorModifier;
-- (NSInteger)armorClassShieldModifier;
-- (NSInteger)armorClassNaturalArmorModifier;
-- (NSInteger)armorClassSizeModifier;
-
 - (NSInteger)flatFootedArmorClass;
 - (NSInteger)touchArmorClass;
+
+- (NSInteger)enhancementBonus;
+- (NSInteger)dodgeBonus;
+- (NSInteger)deflectionBonus;
+- (NSInteger)armorBonus;
+- (NSInteger)shieldBonus;
+- (NSInteger)naturalArmorBonus;
 
 // Skills
 

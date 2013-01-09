@@ -15,6 +15,7 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="characters" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PFCharacter" inverseName="alignment" inverseEntity="PFCharacter" syncable="YES"/>
     </entity>
+    <entity name="PFArmor" syncable="YES"/>
     <entity name="PFCharacter" representedClassName="PFCharacter" syncable="YES">
         <attribute name="age" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="campaign" optional="YES" attributeType="String" syncable="YES"/>
@@ -69,10 +70,14 @@
         <relationship name="classType" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="PFClassType" inverseName="features" inverseEntity="PFClassType" syncable="YES"/>
     </entity>
     <entity name="PFClassType" representedClassName="PFClassType" syncable="YES">
+        <attribute name="baseAttackBonusType" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="descriptionShort" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fortitudeSaveBonusType" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="hitDieType" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="skillRanks" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="reflexSaveBonusType" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="skillRanksPerLevel" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="willSaveBonusType" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <relationship name="characterClasses" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PFCharacterClass" inverseName="classType" inverseEntity="PFCharacterClass" syncable="YES"/>
         <relationship name="classSkills" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PFSkill" inverseName="classTypes" inverseEntity="PFSkill" syncable="YES"/>
         <relationship name="features" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PFClassFeature" inverseName="classType" inverseEntity="PFClassFeature" syncable="YES"/>
@@ -143,6 +148,20 @@
         <attribute name="type" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <relationship name="source" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="PFSource" inverseName="traits" inverseEntity="PFSource" syncable="YES"/>
     </entity>
+    <entity name="PFWeapon" syncable="YES">
+        <attribute name="category" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="classification" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cost" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="criticalDamage" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="criticalThreat" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="damageMedium" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="damageSmall" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="range" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="special" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="weight" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <elements>
         <element name="PFAbility" positionX="160" positionY="192" width="128" height="135"/>
         <element name="PFAlignment" positionX="160" positionY="192" width="128" height="120"/>
@@ -151,12 +170,14 @@
         <element name="PFCharacterClass" positionX="0" positionY="0" width="128" height="90"/>
         <element name="PFCharacterSkill" positionX="160" positionY="192" width="128" height="135"/>
         <element name="PFClassFeature" positionX="160" positionY="192" width="128" height="120"/>
-        <element name="PFClassType" positionX="0" positionY="0" width="128" height="165"/>
+        <element name="PFClassType" positionX="0" positionY="0" width="128" height="225"/>
         <element name="PFFeat" positionX="160" positionY="192" width="128" height="180"/>
         <element name="PFRace" positionX="0" positionY="0" width="128" height="300"/>
         <element name="PFRacialTrait" positionX="160" positionY="192" width="128" height="120"/>
         <element name="PFSkill" positionX="160" positionY="192" width="128" height="180"/>
         <element name="PFSource" positionX="160" positionY="192" width="128" height="150"/>
         <element name="PFTrait" positionX="160" positionY="192" width="128" height="135"/>
+        <element name="PFWeapon" positionX="160" positionY="192" width="128" height="225"/>
+        <element name="PFArmor" positionX="160" positionY="192" width="128" height="45"/>
     </elements>
 </model>
