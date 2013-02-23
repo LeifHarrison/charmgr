@@ -161,6 +161,8 @@
 		NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
 		NSInteger pageIndex = [userDefaults integerForKey:kCMCurrentPageDefaultsKey];
 
+		if (pageIndex == NSNotFound) pageIndex = 0;
+		
 		[self.pageViewController setViewControllers:[NSArray arrayWithObject:[pages objectAtIndex:pageIndex]]
 										  direction:UIPageViewControllerNavigationDirectionForward
 										   animated:YES
