@@ -42,6 +42,7 @@
 @property (nonatomic, retain) NSSet *classes;
 @property (nonatomic, retain) NSSet *skills;
 
+- (NSString*)classSummaryDescription;
 - (NSString*)genderDescription;
 - (NSString*)sizeDescription;
 - (NSInteger)sizeModifier;

@@ -40,12 +40,14 @@
 		29245D9B165B495E00F6078A /* NSArray+CMExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 29245D9A165B495E00F6078A /* NSArray+CMExtensions.m */; };
 		2924A7EA1188A93A0001A732 /* Warhammer.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 2924A7E91188A93A0001A732 /* Warhammer.xcdatamodel */; };
 		2924A7F11188B2480001A732 /* CMBannerBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 2924A7F01188B2480001A732 /* CMBannerBox.m */; };
+		2929ECF416D5E4E2000396FC /* PFCharacterSelectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2929ECF316D5E4E2000396FC /* PFCharacterSelectionCell.m */; };
 		293194271646112C00B10D70 /* PFReferenceFeatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 293194261646112C00B10D70 /* PFReferenceFeatsViewController.m */; };
 		2931942B16462A2900B10D70 /* PFSelectRaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2931942A16462A2900B10D70 /* PFSelectRaceViewController.m */; };
 		29362C1616253D860081EFA2 /* PFCreateCharacterChooseRaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29362C1516253D860081EFA2 /* PFCreateCharacterChooseRaceViewController.m */; };
 		29362C1916253D9D0081EFA2 /* PFCreateCharacterChooseClassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29362C1816253D9D0081EFA2 /* PFCreateCharacterChooseClassViewController.m */; };
 		29362C1C16253F9C0081EFA2 /* PFCreateCharacterInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29362C1B16253F9C0081EFA2 /* PFCreateCharacterInfoViewController.m */; };
 		2945352015F80B820012F88F /* paper_texture.png in Resources */ = {isa = PBXBuildFile; fileRef = 2945351F15F80B820012F88F /* paper_texture.png */; };
+		294C549216D33AF700620879 /* CGGeometry+CMExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 294C549116D33AF700620879 /* CGGeometry+CMExtensions.m */; };
 		295F62DE1602EE7000EEF5ED /* PFSkillsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 295F62DC1602EE7000EEF5ED /* PFSkillsViewController.m */; };
 		295F62E31602EEDD00EEF5ED /* PFAbilitiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 295F62E11602EEDD00EEF5ED /* PFAbilitiesViewController.m */; };
 		295F62E81602EF0800EEF5ED /* PFFeaturesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 295F62E61602EF0800EEF5ED /* PFFeaturesViewController.m */; };
@@ -149,6 +151,8 @@
 		2924A7E91188A93A0001A732 /* Warhammer.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; name = Warhammer.xcdatamodel; path = ../Resources/Warhammer/Warhammer.xcdatamodel; sourceTree = "<group>"; };
 		2924A7EF1188B2480001A732 /* CMBannerBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMBannerBox.h; sourceTree = "<group>"; };
 		2924A7F01188B2480001A732 /* CMBannerBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMBannerBox.m; sourceTree = "<group>"; };
+		2929ECF216D5E4E2000396FC /* PFCharacterSelectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFCharacterSelectionCell.h; sourceTree = "<group>"; };
+		2929ECF316D5E4E2000396FC /* PFCharacterSelectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFCharacterSelectionCell.m; sourceTree = "<group>"; };
 		293194251646112C00B10D70 /* PFReferenceFeatsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFReferenceFeatsViewController.h; path = Pathfinder/Reference/PFReferenceFeatsViewController.h; sourceTree = "<group>"; };
 		293194261646112C00B10D70 /* PFReferenceFeatsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFReferenceFeatsViewController.m; path = Pathfinder/Reference/PFReferenceFeatsViewController.m; sourceTree = "<group>"; };
 		2931942916462A2900B10D70 /* PFSelectRaceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFSelectRaceViewController.h; path = Pathfinder/Containers/Profile/Detail/PFSelectRaceViewController.h; sourceTree = "<group>"; };
@@ -160,6 +164,8 @@
 		29362C1A16253F9C0081EFA2 /* PFCreateCharacterInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFCreateCharacterInfoViewController.h; path = Pathfinder/Creation/PFCreateCharacterInfoViewController.h; sourceTree = "<group>"; };
 		29362C1B16253F9C0081EFA2 /* PFCreateCharacterInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFCreateCharacterInfoViewController.m; path = Pathfinder/Creation/PFCreateCharacterInfoViewController.m; sourceTree = "<group>"; };
 		2945351F15F80B820012F88F /* paper_texture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = paper_texture.png; path = Resources/images/paper_texture.png; sourceTree = "<group>"; };
+		294C549016D33AF700620879 /* CGGeometry+CMExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CGGeometry+CMExtensions.h"; sourceTree = "<group>"; };
+		294C549116D33AF700620879 /* CGGeometry+CMExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CGGeometry+CMExtensions.m"; sourceTree = "<group>"; };
 		295F62DB1602EE7000EEF5ED /* PFSkillsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFSkillsViewController.h; path = Pathfinder/Containers/Profile/PFSkillsViewController.h; sourceTree = "<group>"; };
 		295F62DC1602EE7000EEF5ED /* PFSkillsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFSkillsViewController.m; path = Pathfinder/Containers/Profile/PFSkillsViewController.m; sourceTree = "<group>"; };
 		295F62E01602EEDD00EEF5ED /* PFAbilitiesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFAbilitiesViewController.h; path = Pathfinder/Containers/Profile/PFAbilitiesViewController.h; sourceTree = "<group>"; };
@@ -271,6 +277,7 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				2929ECF116D5E4B4000396FC /* Cells */,
 				29245D97165B48F300F6078A /* Extensions */,
 				29B7D64D15F916820039C390 /* Pathfinder */,
 				2968E04113BD0D1A00811211 /* Warhammer */,
@@ -328,10 +335,21 @@
 		29245D97165B48F300F6078A /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				294C549016D33AF700620879 /* CGGeometry+CMExtensions.h */,
+				294C549116D33AF700620879 /* CGGeometry+CMExtensions.m */,
 				29245D99165B495E00F6078A /* NSArray+CMExtensions.h */,
 				29245D9A165B495E00F6078A /* NSArray+CMExtensions.m */,
 			);
 			name = Extensions;
+			sourceTree = "<group>";
+		};
+		2929ECF116D5E4B4000396FC /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				2929ECF216D5E4E2000396FC /* PFCharacterSelectionCell.h */,
+				2929ECF316D5E4E2000396FC /* PFCharacterSelectionCell.m */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 		29319428164629CA00B10D70 /* Detail */ = {
@@ -815,6 +833,8 @@
 				29D960591669CA4600C57CA1 /* PFContainerCell.m in Sources */,
 				29D9605C166B223700C57CA1 /* PFClassFeature.m in Sources */,
 				29D9605F166B27EF00C57CA1 /* PFClassFeatureCell.m in Sources */,
+				294C549216D33AF700620879 /* CGGeometry+CMExtensions.m in Sources */,
+				2929ECF416D5E4E2000396FC /* PFCharacterSelectionCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

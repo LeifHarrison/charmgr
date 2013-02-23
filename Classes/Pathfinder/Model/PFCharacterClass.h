@@ -18,4 +18,6 @@
 @property (nonatomic, retain) PFCharacter *character;
 @property (nonatomic, retain) PFClassType *classType;
 
+- (NSString *)classSummaryDescription;
+
 @end

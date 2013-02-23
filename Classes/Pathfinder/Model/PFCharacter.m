@@ -52,6 +52,19 @@
 @dynamic classes;
 @dynamic skills;
 
+//------------------------------------------------------------------------------
+#pragma mark - General Description
+//------------------------------------------------------------------------------
+
+- (NSString*)classSummaryDescription;
+{
+	NSMutableString *classSummaryString = [[NSMutableString alloc] init];
+	for (PFCharacterClass *aClass in self.classes) {
+		[classSummaryString appendFormat:@"%@%@", (classSummaryString.length > 0 ? @"/" : @""), [aClass classSummaryDescription] ];
+	}
+	
+	return [NSString stringWithString:classSummaryString];
+}
 
 //------------------------------------------------------------------------------
 #pragma mark - Physical Description

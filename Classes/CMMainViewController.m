@@ -18,12 +18,15 @@
 #import "PFNotesViewController.h"
 #import "PFProfileViewController.h"
 
+#import "PFCharacterSelectionCell.h"
+
 #import "PFAbility.h"
 #import "PFCharacter.h"
 #import "PFCharacterAbility.h"
 #import "PFCharacterClass.h"
 #import "PFCharacterSkill.h"
 #import "PFClassType.h"
+#import "PFRace.h"
 #import "PFSkill.h"
 
 #import <CoreData/CoreData.h>
@@ -138,7 +141,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"CharacterCell";
+    static NSString *CellIdentifier = @"PFCharacterCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 
     // Configure the cell.
@@ -264,8 +267,12 @@
 {
     // Configure the cell to show the book's title
     PFCharacter *character = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.text = character.name;
-	cell.detailTextLabel.text = character.campaign;
+	PFCharacterSelectionCell *charCell = (PFCharacterSelectionCell*)cell;
+	
+    charCell.characterNameLabel.text = character.name;
+	charCell.campaignLabel.text = character.campaign;
+	charCell.classSummaryLabel.text = [character classSummaryDescription];
+	charCell.raceLabel.text = character.race.name;
 }
 
 - (NSArray *)createViewControllersForCharacter:(PFCharacter*)aCharacter
