@@ -182,7 +182,7 @@ static const CGRect kPFCMBFieldRects[]				= { { {  210, 135 }, {  85,  30 } }, {
 {
 	LOG_DEBUG(@"state = %d", aState);
 	[super layoutForState:aState];
-
+/*
 	self.initiativeTitleLabel.alpha = 0.0f;
 	self.initiativeSubtitleLabel.alpha = 0.0f;
 	self.initiativeField.alpha = 0.0f;
@@ -201,7 +201,7 @@ static const CGRect kPFCMBFieldRects[]				= { { {  210, 135 }, {  85,  30 } }, {
 	self.cmbTitleLabel.alpha = 0.0f;
 	self.cmbSubtitleLabel.alpha = 0.0f;
 	self.cmbField.alpha = 0.0f;
-
+*/
 	self.initiativeTitleLabel.frame = kPFInitiativeTitleRects[aState];
 	self.initiativeSubtitleLabel.frame = kPFInitiativeSubtitleRects[aState];
 	self.initiativeField.frame = kPFInitiativeFieldRects[aState];
@@ -225,7 +225,7 @@ static const CGRect kPFCMBFieldRects[]				= { { {  210, 135 }, {  85,  30 } }, {
 	self.cmbTitleLabel.frame = kPFCMBTitleRects[aState];
 	self.cmbSubtitleLabel.frame = kPFCMBSubtitleRects[aState];
 	self.cmbField.frame = kPFCMBFieldRects[aState];
-
+/*
 	self.initiativeTitleLabel.alpha = 1.0f;
 	self.initiativeSubtitleLabel.alpha = 1.0f;
 	self.initiativeField.alpha = 1.0f;
@@ -244,8 +244,7 @@ static const CGRect kPFCMBFieldRects[]				= { { {  210, 135 }, {  85,  30 } }, {
 	self.cmbTitleLabel.alpha = 1.0f;
 	self.cmbSubtitleLabel.alpha = 1.0f;
 	self.cmbField.alpha = 1.0f;
-	
-
+*/
 	if (aState == PFContainerViewStateEditing) {
 		self.editingContainer.alpha = 1.0f;
 

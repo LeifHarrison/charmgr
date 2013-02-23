@@ -274,7 +274,7 @@
 	
     [UIView animateWithDuration:0.5
 						  delay:0.0
-						options:UIViewAnimationOptionLayoutSubviews | UIViewAnimationOptionAllowAnimatedContent | UIViewAnimationOptionCurveEaseInOut
+						options:UIViewAnimationOptionCurveEaseInOut
 					 animations:animations
 					 completion:completion];
 }

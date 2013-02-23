@@ -32,9 +32,9 @@ static const CGRect kPFTouchACTitleRects[]			= { { { 210,  35 }, {  85,  15 } },
 static const CGRect kPFTouchACSubtitleRects[]		= { { { 210,  49 }, {  85,  15 } }, { {  57, 150 }, {  85,  15 } } };
 static const CGRect kPFTouchACFieldRects[]			= { { { 210,  65 }, {  85,  30 } }, { {  10, 165 }, {  50,  30 } } };
 
-static const CGRect kPFCMDTitleRects[]				= { { {  10, 105 }, {  90,  15 } }, { {  10, 220 }, {  90,  15 } } };
-static const CGRect kPFCMDSubtitleRects[]			= { { {  10, 119 }, {  85,  15 } }, { {  10, 234 }, {  85,  15 } } };
-static const CGRect kPFCMDFieldRects[]				= { { {  10, 135 }, {  85,  30 } }, { {  10, 250 }, {  50,  30 } } };
+static const CGRect kPFCMDTitleRects[]				= { { {  10, 119 }, {  90,  15 } }, { {  10, 230 }, {  90,  15 } } };
+static const CGRect kPFCMDSubtitleRects[]			= { { {  10, 119 }, {  85,  15 } }, { {  10, 230 }, {  85,  15 } } };
+static const CGRect kPFCMDFieldRects[]				= { { {  10, 135 }, {  85,  30 } }, { {  10, 245 }, {  50,  30 } } };
 
 static const CGRect kPFFlatFootedCMDTitleRects[]	= { { { 110, 105 }, {  85,  15 } }, { {  10, 285 }, {  85,  15 } } };
 static const CGRect kPFFlatFootedCMDSubtitleRects[]	= { { { 110, 119 }, {  85,  15 } }, { {  98, 285 }, {  85,  15 } } };

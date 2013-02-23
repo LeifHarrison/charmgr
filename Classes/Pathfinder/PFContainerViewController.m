@@ -10,11 +10,18 @@
 
 #import "PFDetailViewController.h"
 
+#import "CMBannerBox.h"
+
 //------------------------------------------------------------------------------
 #pragma mark - Constants
 //------------------------------------------------------------------------------
 
 #define HEADER_BUTTON_ANIMATION_DURATION 0.2
+
+static const CGFloat kPFContainerViewButtonInsetX = 8.0f;
+static const CGFloat kPFContainerViewButtonInsetY = 5.0f;
+static const CGFloat kPFContainerViewButtonWidth = 55.0f;
+static const CGFloat kPFContainerViewButtonHeight = 20.0f;
 
 //------------------------------------------------------------------------------
 #pragma mark - Private Interface Declaration
@@ -68,7 +75,7 @@
 	self.doneButton.layer.borderWidth = 1;
 	self.doneButton.layer.cornerRadius = 9.0;
 	self.doneButton.backgroundColor = [UIColor lightGrayColor];
-	self.doneButton.frame = CGRectMake(8, 3, 55, 20);
+	self.doneButton.frame = CGRectMake(kPFContainerViewButtonInsetX, kPFContainerViewButtonInsetY, kPFContainerViewButtonWidth, kPFContainerViewButtonHeight);
 	self.doneButton.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin;
 	self.doneButton.titleLabel.font = [UIFont systemFontOfSize:12];
 	[self.doneButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
@@ -82,7 +89,7 @@
 	self.cancelButton.layer.borderWidth = 1;
 	self.cancelButton.layer.cornerRadius = 9.0;
 	self.cancelButton.backgroundColor = [UIColor lightGrayColor];
-	self.cancelButton.frame = CGRectMake(8, 3, 55, 20);
+	self.cancelButton.frame = CGRectMake(kPFContainerViewButtonInsetX, kPFContainerViewButtonInsetY, kPFContainerViewButtonWidth, kPFContainerViewButtonHeight);
 	self.cancelButton.autoresizingMask = UIViewAutoresizingFlexibleRightMargin;
 	self.cancelButton.titleLabel.font = [UIFont systemFontOfSize:12];
 	[self.cancelButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
@@ -234,19 +241,21 @@
 	
 	if (newState == PFContainerViewStateEditing) {
 		self.view.backgroundColor = [UIColor colorWithRed:245.0/255 green:240.0/255 blue:203.0/255 alpha:1.0];
+		//[(CMBannerBox*)self.view setSelected:YES];
 	}
 	else {
 		self.doneButton.alpha = 0.0;
 		self.cancelButton.alpha = 0.0;
+		//[(CMBannerBox*)self.view setSelected:NO];
 		self.view.backgroundColor = [UIColor colorWithRed:245.0/255 green:240.0/255 blue:203.0/255 alpha:0.5];
 	}
 }
 
 - (void)layoutForState:(PFContainerViewState)newState;
 {
-    self.cancelButton.frame = CGRectOffset(self.cancelButton.bounds, 8, 3);
-	CGFloat doneX = CGRectGetMaxX(self.view.bounds) - CGRectGetWidth(self.doneButton.bounds) - 8;
-    self.doneButton.frame = CGRectOffset(self.doneButton.bounds, doneX, 3);
+    self.cancelButton.frame = CGRectOffset(self.cancelButton.bounds, kPFContainerViewButtonInsetX, kPFContainerViewButtonInsetY);
+	CGFloat doneX = CGRectGetMaxX(self.view.bounds) - CGRectGetWidth(self.doneButton.bounds) - kPFContainerViewButtonInsetX;
+    self.doneButton.frame = CGRectOffset(self.doneButton.bounds, doneX, kPFContainerViewButtonInsetY);
 }
 
 //------------------------------------------------------------------------------
