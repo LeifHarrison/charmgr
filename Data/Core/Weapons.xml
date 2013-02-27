@@ -1,0 +1,81 @@
+<xml version=1.0>
+<Weapons>
+	<Weapon name="Gauntlet" class="Simple" category="Unarmed" type="B" dmgS="1d2" dmgM="1d3" critThreat="20" critDmg="x2" range="" cost="2 gp" weight="1 lb." special="" />
+	<Weapon name="Unarmed strike" class="Simple" category="Unarmed" type="B" dmgS="1d2" dmgM="1d3" critThreat="20" critDmg="x2" range="" cost="" weight="" special="nonlethal" />
+	<Weapon name="Dagger" class="Simple" category="Light Melee" type="P or S" dmgS="1d3" dmgM="1d4" critThreat="19-20" critDmg="x2" range="10 ft." cost="2 gp" weight="1 lb." special="" />
+	<Weapon name="Dagger, punching" class="Simple" category="Light Melee" type="P" dmgS="1d3" dmgM="1d4" critThreat="20" critDmg="x3" range="" cost="2 gp" weight="1 lb." special="" />
+	<Weapon name="Gauntlet, spiked" class="Simple" category="Light Melee" type="P" dmgS="1d3" dmgM="1d4" critThreat="20" critDmg="x2" range="" cost="5 gp" weight="1 lb." special="" />
+	<Weapon name="Mace, light" class="Simple" category="Light Melee" type="B" dmgS="1d4" dmgM="1d6" critThreat="20" critDmg="x2" range="" cost="5 gp" weight="4 lbs." special="" />
+	<Weapon name="Sickle" class="Simple" category="Light Melee" type="S" dmgS="1d4" dmgM="1d6" critThreat="20" critDmg="x2" range="" cost="6 gp" weight="2 lbs." special="trip" />
+	<Weapon name="Club" class="Simple" category="One-Handed Melee" type="B" dmgS="1d4" dmgM="1d6" critThreat="20" critDmg="x2" range="10 ft." cost="" weight="3 lbs." special="" />
+	<Weapon name="Mace, heavy" class="Simple" category="One-Handed Melee" type="B" dmgS="1d6" dmgM="1d8" critThreat="20" critDmg="x2" range="" cost="12 gp" weight="8 lbs." special="" />
+	<Weapon name="Morningstar" class="Simple" category="One-Handed Melee" type="B and P" dmgS="1d6" dmgM="1d8" critThreat="20" critDmg="x2" range="" cost="8 gp" weight="6 lbs." special="" />
+	<Weapon name="Shortspear" class="Simple" category="One-Handed Melee" type="P" dmgS="1d4" dmgM="1d6" critThreat="20" critDmg="x2" range="20 ft." cost="1 gp" weight="3 lbs." special="" />
+	<Weapon name="Longspear" class="Simple" category="Two-Handed Melee" type="P" dmgS="1d6" dmgM="1d8" critThreat="20" critDmg="x3" range="" cost="5 gp" weight="9 lbs." special="brace, reach" />
+	<Weapon name="Quarterstaff" class="Simple" category="Two-Handed Melee" type="B" dmgS="1d4/1d4" dmgM="1d6/1d6" critThreat="20" critDmg="x2" range="" cost="" weight="4 lbs." special="double, monk" />
+	<Weapon name="Spear" class="Simple" category="Two-Handed Melee" type="P" dmgS="1d6" dmgM="1d8" critThreat="20" critDmg="x3" range="20 ft." cost="2 gp" weight="6 lbs." special="brace" />
+	<Weapon name="Blowgun" class="Simple" category="Ranged" type="P" dmgS="1" dmgM="1d2" critThreat="20" critDmg="x2" range="20 ft." cost="2 gp" weight="1 lb." special="" />
+	<Weapon name="Crossbow, heavy" class="Simple" category="Ranged" type="P" dmgS="1d8" dmgM="1d10" critThreat="19-20" critDmg="x2" range="120 ft." cost="50 gp" weight="8 lbs." special="" />
+	<Weapon name="Crossbow, light" class="Simple" category="Ranged" type="P" dmgS="1d6" dmgM="1d8" critThreat="19-20" critDmg="x2" range="80 ft." cost="35 gp" weight="4 lbs." special="" />
+	<Weapon name="Dart" class="Simple" category="Ranged" type="P" dmgS="1d3" dmgM="1d4" critThreat="20" critDmg="x2" range="20 ft." cost="5 sp" weight="1/2 lb." special="" />
+	<Weapon name="Javelin" class="Simple" category="Ranged" type="P" dmgS="1d4" dmgM="1d6" critThreat="20" critDmg="x2" range="30 ft." cost="1 gp" weight="2 lbs." special="" />
+	<Weapon name="Sling" class="Simple" category="Ranged" type="B" dmgS="1d3" dmgM="1d4" critThreat="20" critDmg="x2" range="50 ft." cost="" weight="" special="" />
+	<Weapon name="Axe, throwing" class="Martial" category="Light Melee" type="S" dmgS="1d4" dmgM="1d6" critThreat="20" critDmg="x2" range="10 ft." cost="8 gp" weight="2 lbs." special="" />
+	<Weapon name="Hammer, light" class="Martial" category="Light Melee" type="B" dmgS="1d3" dmgM="1d4" critThreat="20" critDmg="x2" range="20 ft." cost="1 gp" weight="2 lbs." special="" />
+	<Weapon name="Handaxe" class="Martial" category="Light Melee" type="S" dmgS="1d4" dmgM="1d6" critThreat="20" critDmg="x3" range="" cost="6 gp" weight="3 lbs." special="" />
+	<Weapon name="Kukri" class="Martial" category="Light Melee" type="S" dmgS="1d3" dmgM="1d4" critThreat="18-20" critDmg="x2" range="" cost="8 gp" weight="2 lbs." special="" />
+	<Weapon name="Pick, light" class="Martial" category="Light Melee" type="P" dmgS="1d3" dmgM="1d4" critThreat="20" critDmg="x4" range="" cost="4 gp" weight="3 lbs." special="" />
+	<Weapon name="Sap" class="Martial" category="Light Melee" type="B" dmgS="1d4" dmgM="1d6" critThreat="20" critDmg="x2" range="" cost="1 gp" weight="2 lbs." special="nonlethal" />
+	<Weapon name="Shield, light" class="Martial" category="Light Melee" type="B" dmgS="1d2" dmgM="1d3" critThreat="20" critDmg="x2" range="" cost="special" weight="special" special="" />
+	<Weapon name="Spiked armor" class="Martial" category="Light Melee" type="P" dmgS="1d4" dmgM="1d6" critThreat="20" critDmg="x2" range="" cost="special" weight="special" special="" />
+	<Weapon name="Spiked shield, light" class="Martial" category="Light Melee" type="P" dmgS="1d3" dmgM="1d4" critThreat="20" critDmg="x2" range="" cost="special" weight="special" special="" />
+	<Weapon name="Starknife" class="Martial" category="Light Melee" type="P" dmgS="1d3" dmgM="1d4" critThreat="20" critDmg="x3" range="20 ft." cost="24 gp" weight="3 lbs." special="" />
+	<Weapon name="Sword, short" class="Martial" category="Light Melee" type="P" dmgS="1d4" dmgM="1d6" critThreat="19-20" critDmg="x2" range="" cost="10 gp" weight="2 lbs." special="" />
+	<Weapon name="Battleaxe" class="Martial" category="One-Handed Melee" type="S" dmgS="1d6" dmgM="1d8" critThreat="20" critDmg="x3" range="" cost="10 gp" weight="6 lbs." special="" />
+	<Weapon name="Flail" class="Martial" category="One-Handed Melee" type="B" dmgS="1d6" dmgM="1d8" critThreat="20" critDmg="x2" range="" cost="8 gp" weight="5 lbs." special="disarm, trip" />
+	<Weapon name="Longsword" class="Martial" category="One-Handed Melee" type="S" dmgS="1d6" dmgM="1d8" critThreat="19-20" critDmg="x2" range="" cost="15 gp" weight="4 lbs." special="" />
+	<Weapon name="Pick, heavy" class="Martial" category="One-Handed Melee" type="P" dmgS="1d4" dmgM="1d6" critThreat="20" critDmg="x4" range="" cost="8 gp" weight="6 lbs." special="" />
+	<Weapon name="Rapier" class="Martial" category="One-Handed Melee" type="P" dmgS="1d4" dmgM="1d6" critThreat="18-20" critDmg="x2" range="" cost="20 gp" weight="2 lbs." special="" />
+	<Weapon name="Scimitar" class="Martial" category="One-Handed Melee" type="S" dmgS="1d4" dmgM="1d6" critThreat="18-20" critDmg="x2" range="" cost="15 gp" weight="4 lbs." special="" />
+	<Weapon name="Shield, heavy" class="Martial" category="One-Handed Melee" type="B" dmgS="1d3" dmgM="1d4" critThreat="20" critDmg="x2" range="" cost="special" weight="special" special="" />
+	<Weapon name="Spiked shield, heavy" class="Martial" category="One-Handed Melee" type="P" dmgS="1d4" dmgM="1d6" critThreat="20" critDmg="x2" range="" cost="special" weight="special" special="" />
+	<Weapon name="Trident" class="Martial" category="One-Handed Melee" type="P" dmgS="1d6" dmgM="1d8" critThreat="20" critDmg="x2" range="10 ft." cost="15 gp" weight="4 lbs." special="brace" />
+	<Weapon name="Warhammer" class="Martial" category="One-Handed Melee" type="B" dmgS="1d6" dmgM="1d8" critThreat="20" critDmg="x3" range="" cost="12 gp" weight="5 lbs." special="" />
+	<Weapon name="Falchion" class="Martial" category="Two-Handed Melee" type="S" dmgS="1d6" dmgM="2d4" critThreat="18-20" critDmg="x2" range="" cost="75 gp" weight="8 lbs." special="" />
+	<Weapon name="Glaive" class="Martial" category="Two-Handed Melee" type="S" dmgS="1d8" dmgM="1d10" critThreat="20" critDmg="x3" range="" cost="8 gp" weight="10 lbs." special="reach" />
+	<Weapon name="Greataxe" class="Martial" category="Two-Handed Melee" type="S" dmgS="1d10" dmgM="1d12" critThreat="20" critDmg="x3" range="" cost="20 gp" weight="12 lbs." special="" />
+	<Weapon name="Greatclub" class="Martial" category="Two-Handed Melee" type="B" dmgS="1d8" dmgM="1d10" critThreat="20" critDmg="x2" range="" cost="5 gp" weight="8 lbs." special="" />
+	<Weapon name="Flail, heavy" class="Martial" category="Two-Handed Melee" type="B" dmgS="1d8" dmgM="1d10" critThreat="19-20" critDmg="x2" range="" cost="15 gp" weight="10 lbs." special="disarm, trip" />
+	<Weapon name="Greatsword" class="Martial" category="Two-Handed Melee" type="S" dmgS="1d10" dmgM="2d6" critThreat="19-20" critDmg="x2" range="" cost="50 gp" weight="8 lbs." special="" />
+	<Weapon name="Guisarme" class="Martial" category="Two-Handed Melee" type="S" dmgS="1d6" dmgM="2d4" critThreat="20" critDmg="x3" range="" cost="9 gp" weight="12 lbs." special="reach, trip" />
+	<Weapon name="Halberd" class="Martial" category="Two-Handed Melee" type="P or S" dmgS="1d8" dmgM="1d10" critThreat="20" critDmg="x3" range="" cost="10 gp" weight="12 lbs." special="brace, trip" />
+	<Weapon name="Lance" class="Martial" category="Two-Handed Melee" type="P" dmgS="1d6" dmgM="1d8" critThreat="20" critDmg="x3" range="" cost="10 gp" weight="10 lbs." special="reach" />
+	<Weapon name="Ranseur" class="Martial" category="Two-Handed Melee" type="P" dmgS="1d6" dmgM="2d4" critThreat="20" critDmg="x3" range="" cost="10 gp" weight="12 lbs." special="disarm, reach" />
+	<Weapon name="Scythe" class="Martial" category="Two-Handed Melee" type="P or S" dmgS="1d6" dmgM="2d4" critThreat="20" critDmg="x4" range="" cost="18 gp" weight="10 lbs." special="trip" />
+	<Weapon name="Longbow" class="Martial" category="Ranged" type="P" dmgS="1d6" dmgM="1d8" critThreat="20" critDmg="x3" range="100 ft." cost="75 gp" weight="3 lbs." special="" />
+	<Weapon name="Longbow, composite" class="Martial" category="Ranged" type="P" dmgS="1d6" dmgM="1d8" critThreat="20" critDmg="x3" range="110 ft." cost="100 gp" weight="3 lbs." special="" />
+	<Weapon name="Shortbow" class="Martial" category="Ranged" type="P" dmgS="1d4" dmgM="1d6" critThreat="20" critDmg="x3" range="60 ft." cost="30 gp" weight="2 lbs." special="" />
+	<Weapon name="Shortbow, composite" class="Martial" category="Ranged" type="P" dmgS="1d4" dmgM="1d6" critThreat="20" critDmg="x3" range="70 ft." cost="75 gp" weight="2 lbs." special="" />
+	<Weapon name="Kama" class="Exotic" category="Light Melee" type="S" dmgS="1d4" dmgM="1d6" critThreat="20" critDmg="x2" range="" cost="2 gp" weight="2 lbs." special=" monk, trip" />
+	<Weapon name="Nunchaku" class="Exotic" category="Light Melee" type="B" dmgS="1d4" dmgM="1d6" critThreat="20" critDmg="x2" range="" cost="2 gp" weight="2 lbs." special="disarm, monk" />
+	<Weapon name="Sai" class="Exotic" category="Light Melee" type="B" dmgS="1d3" dmgM="1d4" critThreat="20" critDmg="x2" range="" cost="1 gp" weight="1 lb." special="disarm, monk" />
+	<Weapon name="Siangham" class="Exotic" category="Light Melee" type="P" dmgS="1d4" dmgM="1d6" critThreat="20" critDmg="x2" range="" cost="3 gp" weight="1 lb." special="monk" />
+	<Weapon name="Sword, bastard" class="Exotic" category="One-Handed Melee" type="S" dmgS="1d8" dmgM="1d10" critThreat="19-20" critDmg="x2" range="" cost="35 gp" weight="6 lbs." special="" />
+	<Weapon name="Waraxe, dwarven" class="Exotic" category="One-Handed Melee" type="S" dmgS="1d8" dmgM="1d10" critThreat="20" critDmg="x3" range="" cost="30 gp" weight="8 lbs." special="" />
+	<Weapon name="Whip" class="Exotic" category="One-Handed Melee" type="S" dmgS="1d2" dmgM="1d3" critThreat="20" critDmg="x2" range="" cost="1 gp" weight="2 lbs." special="disarm, nonlethal, reach, trip" />
+	<Weapon name="Axe, orc double" class="Exotic" category="Two-Handed Melee" type="S" dmgS="1d6/1d6" dmgM="1d8/1d8" critThreat="20" critDmg="x3" range="" cost="60 gp" weight="15 lbs." special="double" />
+	<Weapon name="Chain, spiked" class="Exotic" category="Two-Handed Melee" type="P" dmgS="1d6" dmgM="2d4" critThreat="20" critDmg="x2" range="" cost="25 gp" weight="10 lbs." special="disarm, trip" />
+	<Weapon name="Curve blade, elven" class="Exotic" category="Two-Handed Melee" type="S" dmgS="1d8" dmgM="1d10" critThreat="18-20" critDmg="x2" range="" cost="80 gp" weight="7 lbs." special="" />
+	<Weapon name="Flail, dire" class="Exotic" category="Two-Handed Melee" type="B" dmgS="1d6/1d6" dmgM="1d8/1d8" critThreat="20" critDmg="x2" range="" cost="90 gp" weight="10 lbs." special="disarm, double, trip" />
+	<Weapon name="Hammer, gnome hooked" class="Exotic" category="Two-Handed Melee" type="B or P" dmgS="1d6/1d4" dmgM="1d8/1d6" critThreat="x3/x4" critDmg="x3/x4" range="" cost="20 gp" weight="6 lbs." special="double, trip" />
+	<Weapon name="Sword, two-bladed" class="Exotic" category="Two-Handed Melee" type="S" dmgS="1d6/1d6" dmgM="1d8/1d8" critThreat="19-20" critDmg="x2" range="" cost="100 gp" weight="10 lbs." special="double" />
+	<Weapon name="Urgrosh, dwarven" class="Exotic" category="Two-Handed Melee" type="P or S" dmgS="1d6/1d4" dmgM="1d8/1d6" critThreat="20" critDmg="x3" range="" cost="50 gp" weight="12 lbs." special="brace, double" />
+	<Weapon name="Bolas" class="Exotic" category="Ranged" type="B" dmgS="1d3" dmgM="1d4" critThreat="20" critDmg="x2" range="10 ft." cost="5 gp" weight="2 lbs." special="nonlethal, trip" />
+	<Weapon name="Crossbow, hand" class="Exotic" category="Ranged" type="P" dmgS="1d3" dmgM="1d4" critThreat="19-20" critDmg="x2" range="30 ft." cost="100 gp" weight="2 lbs." special="" />
+	<Weapon name="Crossbow, repeating heavy" class="Exotic" category="Ranged" type="P" dmgS="1d8" dmgM="1d10" critThreat="19-20" critDmg="x2" range="120 ft." cost="400 gp" weight="12 lbs." special="" />
+	<Weapon name="Crossbow, repeating light" class="Exotic" category="Ranged" type="P" dmgS="1d6" dmgM="1d8" critThreat="19-20" critDmg="x2" range="80 ft." cost="250 gp" weight="6 lbs." special="" />
+	<Weapon name="Net" class="Exotic" category="Ranged" type="" dmgS="" dmgM="" critThreat="" critDmg="" range="10 ft." cost="20 gp" weight="6 lbs." special="" />
+	<Weapon name="Shuriken (5)" class="Exotic" category="Ranged" type="P" dmgS="1" dmgM="1d2" critThreat="20" critDmg="x2" range="10 ft." cost="1 gp" weight="1/2 lb." special="monk" />
+	<Weapon name="Sling staff, halfling" class="Exotic" category="Ranged" type="B" dmgS="1d6" dmgM="1d8" critThreat="20" critDmg="x3" range="80 ft." cost="20 gp" weight="3 lbs." special="" />
+</Weapons>
+</xml>
