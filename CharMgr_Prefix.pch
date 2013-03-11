@@ -39,4 +39,5 @@
 #define kCMSourcesUpdatedDateDefaultsKey	@"SourcesDateLastUpdated"
 #define kCMSpellsUpdatedDateDefaultsKey		@"SpellsDateLastUpdated"
 #define kCMTraitsUpdatedDateDefaultsKey		@"TraitsDateLastUpdated"
+#define kCMWeaponsUpdatedDateDefaultsKey	@"WeaponsDateLastUpdated"
 

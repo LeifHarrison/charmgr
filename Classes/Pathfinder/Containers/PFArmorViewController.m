@@ -1,12 +1,12 @@
 //
-//  PFCombatManeuversViewController.m
+//  PFArmorViewController.m
 //  CharMgr
 //
 //  Created by Leif Harrison on 9/13/12.
 //  Copyright (c) 2012 Leif Harrison. All rights reserved.
 //
 
-#import "PFCombatManeuversViewController.h"
+#import "PFArmorViewController.h"
 
 #import "CMBannerBox.h"
 
@@ -14,28 +14,15 @@
 #pragma mark - Constants
 //------------------------------------------------------------------------------
 
-static const CGRect kPFCombatManeuversViewFramePortrait	 = { {  15, 493 }, { 305,  85 } };
-static const CGRect kPFCombatManeuversViewFrameLandscape = { {  15, 493 }, { 305,  85 } };
-static const CGRect kPFCombatManeuversViewBoundsEditing	 = { {   0,   0 }, { 575, 200 } };
-
-static const CGRect kPFCMBLabelStatic				= { {  10,  34 }, {  85,  15 } };
-static const CGRect kPFCMBLabelEditing				= { {  10,  30 }, { 135,  15 } };
-static const CGRect kPFCMBFieldStatic				= { {  10,  50 }, {  85,  25 } };
-static const CGRect kPFCMBFieldEditing				= { {  10,  60 }, {  50,  25 } };
-static const CGRect kPFCMDLabelStatic				= { { 110,  34 }, {  85,  15 } };
-static const CGRect kPFCMDLabelEditing				= { {  10,  90 }, { 135,  15 } };
-static const CGRect kPFCMDFieldStatic				= { { 110,  50 }, {  85,  25 } };
-static const CGRect kPFCMDFieldEditing				= { {  10, 120 }, {  50,  25 } };
-static const CGRect kPFFlatFootedCMDLabelStatic		= { { 210,  34 }, {  85,  15 } };
-static const CGRect kPFFlatFootedCMDLabelEditing	= { {  10, 150 }, { 125,  15 } };
-static const CGRect kPFFlatFootedCMDFieldStatic		= { { 210,  50 }, {  85,  25 } };
-static const CGRect kPFFlatFootedCMDFieldEditing	= { {  10, 165 }, {  50,  25 } };
+static const CGRect kViewFramePortrait	 = { { 325,  15 }, { 428, 200 } };
+static const CGRect kViewFrameLandscape  = { { 325,  15 }, { 428, 200 } };
+static const CGRect kViewBoundsEditing	 = { {   0,   0 }, { 428, 250 } };
 
 //------------------------------------------------------------------------------
 #pragma mark - Private Interface Declaration
 //------------------------------------------------------------------------------
 
-@interface PFCombatManeuversViewController ()
+@interface PFArmorViewController ()
 
 @end
 
@@ -43,7 +30,7 @@ static const CGRect kPFFlatFootedCMDFieldEditing	= { {  10, 165 }, {  50,  25 } 
 // Class Implementation
 //==============================================================================
 
-@implementation PFCombatManeuversViewController
+@implementation PFArmorViewController
 
 //------------------------------------------------------------------------------
 #pragma mark - Initialization
@@ -65,10 +52,8 @@ static const CGRect kPFFlatFootedCMDFieldEditing	= { {  10, 165 }, {  50,  25 } 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	
-	self.editingContainer.alpha = 0.0f;
-	
-    [(CMBannerBox*)self.view setBannerTitle:@"Combat Maneuvers"];
+		
+    [(CMBannerBox*)self.view setBannerTitle:@"Armor"];
 }
 
 //------------------------------------------------------------------------------
@@ -100,17 +85,17 @@ static const CGRect kPFFlatFootedCMDFieldEditing	= { {  10, 165 }, {  50,  25 } 
 
 - (CGRect)staticFramePortrait;
 {
-	return kPFCombatManeuversViewFramePortrait;
+	return kViewFramePortrait;
 }
 
 - (CGRect)staticFrameLandscape;
 {
-	return kPFCombatManeuversViewFrameLandscape;
+	return kViewFrameLandscape;
 }
 
 - (CGRect)editingBounds;
 {
-	return kPFCombatManeuversViewBoundsEditing;
+	return kViewBoundsEditing;
 }
 
 //------------------------------------------------------------------------------
@@ -140,10 +125,8 @@ static const CGRect kPFFlatFootedCMDFieldEditing	= { {  10, 165 }, {  50,  25 } 
 	//TRACE;
 	[super animateTransitionToState:newState];
 	if (newState == PFContainerViewStateEditing) {
-		self.editingContainer.alpha = 1.0f;
 	}
 	else {
-		self.editingContainer.alpha = 0.0f;
 	}
 }
 
@@ -152,26 +135,8 @@ static const CGRect kPFFlatFootedCMDFieldEditing	= { {  10, 165 }, {  50,  25 } 
 	LOG_DEBUG(@"state = %d", aState);
 	[super layoutForState:aState];
 	if (aState == PFContainerViewStateEditing) {
-		self.cmdTitleLabel.frame = kPFCMDLabelEditing;
-		self.cmdField.frame = kPFCMDFieldEditing;
-		self.flatFootedCMDTitleLabel.frame = kPFFlatFootedCMDLabelEditing;
-		self.flatFootedCMDField.frame = kPFFlatFootedCMDFieldEditing;
-
-		self.cmdTitleLabel.text = @"COMBAT MANUEVER";
-		
-		self.cmdSubtitleLabel.alpha = 1.0f;
-		self.flatFootedCMDSubtitleLabel.alpha = 1.0f;
 	}
 	else {
-		self.cmdTitleLabel.frame = kPFCMDLabelStatic;
-		self.cmdField.frame = kPFCMDFieldStatic;
-		self.flatFootedCMDTitleLabel.frame = kPFFlatFootedCMDLabelStatic;
-		self.flatFootedCMDField.frame = kPFFlatFootedCMDFieldStatic;
-		
-		self.cmdTitleLabel.text = @"CMD";
-		
-		self.cmdSubtitleLabel.alpha = 0.0f;
-		self.flatFootedCMDSubtitleLabel.alpha = 0.0f;
 	}
 }
 

@@ -14,6 +14,7 @@
 @class PFCharacterClass;
 @class PFCharacterSkill;
 @class PFRace;
+@class PFWeapon;
 
 @interface PFCharacter : NSManagedObject
 
@@ -41,6 +42,7 @@
 @property (nonatomic, retain) NSSet *abilities;
 @property (nonatomic, retain) NSSet *classes;
 @property (nonatomic, retain) NSSet *skills;
+@property (nonatomic, retain) NSSet *weapons;
 
 - (NSString*)classSummaryDescription;
 - (NSString*)genderDescription;
@@ -153,5 +155,10 @@
 - (void)removeSkillsObject:(PFCharacterSkill *)value;
 - (void)addSkills:(NSSet *)values;
 - (void)removeSkills:(NSSet *)values;
+
+- (void)addWeaponsObject:(PFWeapon *)value;
+- (void)removeWeaponsObject:(PFWeapon *)value;
+- (void)addWeapons:(NSSet *)values;
+- (void)removeWeapons:(NSSet *)values;
 
 @end

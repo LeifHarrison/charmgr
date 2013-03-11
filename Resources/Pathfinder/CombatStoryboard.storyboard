@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="11G63" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="MYI-Yv-gUv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C60" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="MYI-Yv-gUv">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
         <!--Combat View Controller-->
@@ -26,39 +26,47 @@
                                     <segue destination="tEd-aI-fxd" kind="embed" identifier="SavingThrowsContainer" id="hlZ-qP-i4O"/>
                                 </connections>
                             </containerView>
-                            <containerView contentMode="scaleToFill" id="0kF-Rk-HHf">
-                                <rect key="frame" x="325" y="15" width="428" height="470"/>
+                            <containerView contentMode="scaleToFill" id="0kF-Rk-HHf" userLabel="Weapons">
+                                <rect key="frame" x="325" y="173" width="428" height="470"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <segue destination="zIy-g5-kOG" kind="embed" identifier="AttacksContainer" id="kRt-yU-4aX"/>
                                 </connections>
                             </containerView>
-                            <containerView contentMode="scaleToFill" id="jIB-q2-1Oi">
+                            <containerView contentMode="scaleToFill" id="jIB-q2-1Oi" userLabel="Movement">
                                 <rect key="frame" x="548" y="493" width="205" height="180"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <segue destination="6G3-Ub-g1m" kind="embed" identifier="MovementContainer" id="i9G-FJ-6SD"/>
                                 </connections>
                             </containerView>
-                            <containerView contentMode="scaleToFill" id="jYb-DD-eUY">
+                            <containerView contentMode="scaleToFill" id="jYb-DD-eUY" userLabel="Attacks">
                                 <rect key="frame" x="15" y="308" width="335" height="315"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <segue destination="USB-Tq-guL" kind="embed" identifier="BaseAttackContainer" id="xEU-KK-kCd"/>
                                 </connections>
                             </containerView>
-                            <containerView contentMode="scaleToFill" id="lPE-qh-ajA">
+                            <containerView contentMode="scaleToFill" id="lPE-qh-ajA" userLabel="Defense">
                                 <rect key="frame" x="15" y="631" width="640" height="340"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <segue destination="naH-lj-95Z" kind="embed" identifier="ArmorClassContainer" id="u2Y-EP-rLr"/>
                                 </connections>
                             </containerView>
-                            <containerView contentMode="scaleToFill" id="jY3-yf-PUM">
+                            <containerView contentMode="scaleToFill" id="jY3-yf-PUM" userLabel="Effects">
                                 <rect key="frame" x="548" y="681" width="205" height="303"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <segue destination="OFh-b9-ibZ" kind="embed" identifier="EffectsContainer" id="fUW-Ok-Zz7"/>
+                                </connections>
+                            </containerView>
+                            <containerView contentMode="scaleToFill" id="5lC-NY-ihi" userLabel="Armor">
+                                <rect key="frame" x="325" y="15" width="428" height="200"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <segue destination="QnV-Rb-ZmV" kind="embed" identifier="ArmorContainer" id="n0S-Ph-ldn"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -232,7 +240,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mQY-Lj-ACY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="378" y="-652"/>
+            <point key="canvasLocation" x="-46" y="-354"/>
         </scene>
         <!--Movement View Controller-->
         <scene sceneID="Zsu-eB-lar">
@@ -318,7 +326,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CRD-mJ-O3K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="601" y="39"/>
+            <point key="canvasLocation" x="-1487" y="367"/>
         </scene>
         <!--Attacks View Controller-->
         <scene sceneID="Gtn-6V-J8I">
@@ -770,7 +778,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CFn-JC-nNp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="24" y="-45"/>
+            <point key="canvasLocation" x="-1552" y="-89"/>
         </scene>
         <!--Defense View Controller-->
         <scene sceneID="2Rc-C1-YL7">
@@ -1611,7 +1619,7 @@ ARMOR CLASS</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bg5-lE-zpi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="24" y="425"/>
+            <point key="canvasLocation" x="-1794" y="-530"/>
         </scene>
         <!--Saving Throws View Controller-->
         <scene sceneID="WhF-RS-mTv">
@@ -1925,7 +1933,7 @@ ARMOR CLASS</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YMu-UY-BzS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="24" y="-481"/>
+            <point key="canvasLocation" x="-1698" y="-841"/>
         </scene>
         <!--Effects View Controller-->
         <scene sceneID="l2C-YV-yAW">
@@ -1940,7 +1948,7 @@ ARMOR CLASS</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WXH-JN-TPJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="595" y="307"/>
+            <point key="canvasLocation" x="-67" y="305"/>
         </scene>
         <!--Health View Controller-->
         <scene sceneID="DQf-aG-n2J">
@@ -2001,12 +2009,136 @@ ARMOR CLASS</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xvT-13-2nf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="24" y="-652"/>
+            <point key="canvasLocation" x="-1154" y="-889"/>
+        </scene>
+        <!--Armor View Controller-->
+        <scene sceneID="8JN-eo-SKm">
+            <objects>
+                <viewController id="QnV-Rb-ZmV" customClass="PFArmorViewController" sceneMemberID="viewController">
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="yQe-e1-yAT" customClass="CMBannerBox">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="200"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Type" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="b4P-B2-G4q">
+                                <rect key="frame" x="193" y="39" width="30" height="15"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Armor" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JYU-uB-p8L">
+                                <rect key="frame" x="8" y="41" width="39" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Max Speed" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eM3-8D-Jne">
+                                <rect key="frame" x="232" y="98" width="44" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Max Dex Bonus" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0ln-qc-4pQ">
+                                <rect key="frame" x="8" y="96" width="53" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Armor Check Penalty" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rz1-zw-a1T">
+                                <rect key="frame" x="65" y="99" width="78" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Arcane Spell Failure" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RO8-Tg-oZT">
+                                <rect key="frame" x="153" y="98" width="70" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Weight" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="VID-ia-E2S">
+                                <rect key="frame" x="285" y="117" width="38" height="15"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Armor Bonus" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Wml-uu-RxM">
+                                <rect key="frame" x="234" y="33" width="40" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Studded Leather" borderStyle="line" placeholder="STR" minimumFontSize="17" id="So8-wN-WY3">
+                                <rect key="frame" x="8" y="67" width="160" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="+2" borderStyle="line" placeholder="STR" textAlignment="center" minimumFontSize="17" id="T7x-ON-3R1">
+                                <rect key="frame" x="14" y="132" width="40" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="-3" borderStyle="line" placeholder="STR" textAlignment="center" minimumFontSize="17" id="7n2-7j-ufS">
+                                <rect key="frame" x="84" y="132" width="40" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="20%" borderStyle="line" placeholder="STR" textAlignment="center" minimumFontSize="17" id="In4-sf-5IH">
+                                <rect key="frame" x="168" y="132" width="50" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="+3" borderStyle="line" placeholder="STR" textAlignment="center" minimumFontSize="17" id="vXm-tM-JfM">
+                                <rect key="frame" x="234" y="65" width="40" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="30 ft." borderStyle="line" placeholder="STR" textAlignment="center" minimumFontSize="17" id="4BX-Pt-euk">
+                                <rect key="frame" x="232" y="132" width="50" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="30 lbs." borderStyle="line" placeholder="STR" textAlignment="center" minimumFontSize="17" id="dpW-NV-KH4">
+                                <rect key="frame" x="278" y="132" width="60" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="M" borderStyle="line" placeholder="STR" textAlignment="center" minimumFontSize="17" id="GBV-ds-mDj">
+                                <rect key="frame" x="179" y="65" width="40" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Swm-HZ-cBr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-87" y="-752"/>
         </scene>
     </scenes>
     <classes>
         <class className="CMBannerBox" superclassName="UIView">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CMBannerBox.h"/>
+        </class>
+        <class className="PFArmorViewController" superclassName="PFContainerViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PFArmorViewController.h"/>
         </class>
         <class className="PFAttacksViewController" superclassName="PFContainerViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PFAttacksViewController.h"/>

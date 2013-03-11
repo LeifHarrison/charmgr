@@ -129,6 +129,13 @@
 		[userDefaults setObject:[NSDate date] forKey:kCMFeatsUpdatedDateDefaultsKey];
 	}
 	
+	NSDate *weaponsLastUpdated = [userDefaults objectForKey:kCMWeaponsUpdatedDateDefaultsKey];
+	LOG_DEBUG(@"weaponsLastUpdated = %@", weaponsLastUpdated);
+	if (!weaponsLastUpdated) {
+		[self.dataManager importWeaponsAsXML];
+		[userDefaults setObject:[NSDate date] forKey:kCMWeaponsUpdatedDateDefaultsKey];
+	}
+	
 	[userDefaults synchronize];
 	
 }
@@ -151,8 +158,8 @@
 
 - (void)clearDefaults
 {
-	
 	NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+
 	[userDefaults removeObjectForKey:kCMCurrentCharacterDefaultsKey];
 	[userDefaults removeObjectForKey:kCMSourcesUpdatedDateDefaultsKey];
 	[userDefaults removeObjectForKey:kCMAbilitiesUpdatedDateDefaultsKey];
@@ -161,6 +168,8 @@
 	[userDefaults removeObjectForKey:kCMRacesUpdatedDateDefaultsKey];
 	[userDefaults removeObjectForKey:kCMClassesUpdatedDateDefaultsKey];
 	[userDefaults removeObjectForKey:kCMFeatsUpdatedDateDefaultsKey];
+	[userDefaults removeObjectForKey:kCMWeaponsUpdatedDateDefaultsKey];
+
 	[userDefaults synchronize];
 }
 

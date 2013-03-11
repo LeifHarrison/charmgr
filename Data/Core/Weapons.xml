@@ -1,4 +1,4 @@
-<xml version=1.0>
+<?xml version="1.0" encoding="UTF-8"?>
 <Weapons>
 	<Weapon name="Gauntlet" class="Simple" category="Unarmed" type="B" dmgS="1d2" dmgM="1d3" critThreat="20" critDmg="x2" range="" cost="2 gp" weight="1 lb." special="" />
 	<Weapon name="Unarmed strike" class="Simple" category="Unarmed" type="B" dmgS="1d2" dmgM="1d3" critThreat="20" critDmg="x2" range="" cost="" weight="" special="nonlethal" />
@@ -78,4 +78,3 @@
 	<Weapon name="Shuriken (5)" class="Exotic" category="Ranged" type="P" dmgS="1" dmgM="1d2" critThreat="20" critDmg="x2" range="10 ft." cost="1 gp" weight="1/2 lb." special="monk" />
 	<Weapon name="Sling staff, halfling" class="Exotic" category="Ranged" type="B" dmgS="1d6" dmgM="1d8" critThreat="20" critDmg="x3" range="80 ft." cost="20 gp" weight="3 lbs." special="" />
 </Weapons>
-</xml>

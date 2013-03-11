@@ -14,8 +14,8 @@
 #pragma mark - Constants
 //------------------------------------------------------------------------------
 
-static const CGRect kPFWeaponsViewFramePortrait	 = { { 325,  15 }, { 428, 470 } };
-static const CGRect kPFWeaponsViewFrameLandscape = { { 325,  15 }, { 428, 470 } };
+static const CGRect kPFWeaponsViewFramePortrait	 = { { 325, 225 }, { 428, 470 } };
+static const CGRect kPFWeaponsViewFrameLandscape = { { 325, 225 }, { 428, 470 } };
 static const CGRect kPFWeaponsViewBoundsEditing	 = { {   0,   0 }, { 428, 470 } };
 
 //------------------------------------------------------------------------------

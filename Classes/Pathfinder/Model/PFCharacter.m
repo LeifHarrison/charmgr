@@ -51,6 +51,7 @@
 @dynamic abilities;
 @dynamic classes;
 @dynamic skills;
+@dynamic weapons;
 
 //------------------------------------------------------------------------------
 #pragma mark - General Description

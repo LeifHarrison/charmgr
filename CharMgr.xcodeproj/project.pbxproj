@@ -53,7 +53,7 @@
 		295F62E81602EF0800EEF5ED /* PFFeaturesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 295F62E61602EF0800EEF5ED /* PFFeaturesViewController.m */; };
 		295F62F21602EFB000EEF5ED /* PFHealthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 295F62F01602EFB000EEF5ED /* PFHealthViewController.m */; };
 		295F62F71602EFCF00EEF5ED /* PFAttacksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 295F62F51602EFCF00EEF5ED /* PFAttacksViewController.m */; };
-		295F62FC1602EFF900EEF5ED /* PFCombatManeuversViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 295F62FA1602EFF900EEF5ED /* PFCombatManeuversViewController.m */; };
+		295F62FC1602EFF900EEF5ED /* PFArmorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 295F62FA1602EFF900EEF5ED /* PFArmorViewController.m */; };
 		295F63011602F3C900EEF5ED /* PFMovementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 295F62FF1602F3C900EEF5ED /* PFMovementViewController.m */; };
 		295F63061602F41700EEF5ED /* PFDefenseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 295F63041602F41700EEF5ED /* PFDefenseViewController.m */; };
 		295F630B1602F46500EEF5ED /* PFSavingThrowsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 295F63091602F46500EEF5ED /* PFSavingThrowsViewController.m */; };
@@ -63,6 +63,7 @@
 		297AA4AC163F948E0041C59D /* Data in Resources */ = {isa = PBXBuildFile; fileRef = 297AA4AB163F948E0041C59D /* Data */; };
 		297AA4AF1640F2F20041C59D /* PFRacialTraitTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 297AA4AE1640F2F20041C59D /* PFRacialTraitTableViewCell.m */; };
 		297AA4B216438FE70041C59D /* ReferenceStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 297AA4B116438FE70041C59D /* ReferenceStoryboard.storyboard */; };
+		297E7ACD16DDCEAF00099FF4 /* PFWeapon.m in Sources */ = {isa = PBXBuildFile; fileRef = 297E7ACC16DDCEAF00099FF4 /* PFWeapon.m */; };
 		298A9E08162E5FD30045F1D1 /* PFCreateCharacterChooseAlignmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 298A9E07162E5FD30045F1D1 /* PFCreateCharacterChooseAlignmentViewController.m */; };
 		298A9E0C162FC1810045F1D1 /* PFClassTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 298A9E0B162FC1810045F1D1 /* PFClassTableViewCell.m */; };
 		299ACDE615FA918000E114E0 /* Pathfinder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 299ACDE415FA918000E114E0 /* Pathfinder.xcdatamodeld */; };
@@ -178,8 +179,8 @@
 		295F62F01602EFB000EEF5ED /* PFHealthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFHealthViewController.m; path = Pathfinder/Containers/PFHealthViewController.m; sourceTree = "<group>"; };
 		295F62F41602EFCE00EEF5ED /* PFAttacksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFAttacksViewController.h; path = Pathfinder/Containers/PFAttacksViewController.h; sourceTree = "<group>"; };
 		295F62F51602EFCF00EEF5ED /* PFAttacksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFAttacksViewController.m; path = Pathfinder/Containers/PFAttacksViewController.m; sourceTree = "<group>"; };
-		295F62F91602EFF900EEF5ED /* PFCombatManeuversViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFCombatManeuversViewController.h; path = Pathfinder/Containers/PFCombatManeuversViewController.h; sourceTree = "<group>"; };
-		295F62FA1602EFF900EEF5ED /* PFCombatManeuversViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFCombatManeuversViewController.m; path = Pathfinder/Containers/PFCombatManeuversViewController.m; sourceTree = "<group>"; };
+		295F62F91602EFF900EEF5ED /* PFArmorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFArmorViewController.h; path = Pathfinder/Containers/PFArmorViewController.h; sourceTree = "<group>"; };
+		295F62FA1602EFF900EEF5ED /* PFArmorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFArmorViewController.m; path = Pathfinder/Containers/PFArmorViewController.m; sourceTree = "<group>"; };
 		295F62FE1602F3C900EEF5ED /* PFMovementViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFMovementViewController.h; path = Pathfinder/Containers/PFMovementViewController.h; sourceTree = "<group>"; };
 		295F62FF1602F3C900EEF5ED /* PFMovementViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFMovementViewController.m; path = Pathfinder/Containers/PFMovementViewController.m; sourceTree = "<group>"; };
 		295F63031602F41700EEF5ED /* PFDefenseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFDefenseViewController.h; path = Pathfinder/Containers/PFDefenseViewController.h; sourceTree = "<group>"; };
@@ -196,6 +197,8 @@
 		297AA4AD1640F2F20041C59D /* PFRacialTraitTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFRacialTraitTableViewCell.h; path = Pathfinder/Cells/PFRacialTraitTableViewCell.h; sourceTree = "<group>"; };
 		297AA4AE1640F2F20041C59D /* PFRacialTraitTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFRacialTraitTableViewCell.m; path = Pathfinder/Cells/PFRacialTraitTableViewCell.m; sourceTree = "<group>"; };
 		297AA4B116438FE70041C59D /* ReferenceStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = ReferenceStoryboard.storyboard; path = ../Resources/Pathfinder/ReferenceStoryboard.storyboard; sourceTree = "<group>"; };
+		297E7ACB16DDCEAF00099FF4 /* PFWeapon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFWeapon.h; path = Pathfinder/Model/PFWeapon.h; sourceTree = "<group>"; };
+		297E7ACC16DDCEAF00099FF4 /* PFWeapon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFWeapon.m; path = Pathfinder/Model/PFWeapon.m; sourceTree = "<group>"; };
 		298A9E01162D06300045F1D1 /* PFTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PFTypes.h; path = Pathfinder/Model/PFTypes.h; sourceTree = "<group>"; };
 		298A9E06162E5FD30045F1D1 /* PFCreateCharacterChooseAlignmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFCreateCharacterChooseAlignmentViewController.h; path = Pathfinder/Creation/PFCreateCharacterChooseAlignmentViewController.h; sourceTree = "<group>"; };
 		298A9E07162E5FD30045F1D1 /* PFCreateCharacterChooseAlignmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFCreateCharacterChooseAlignmentViewController.m; path = Pathfinder/Creation/PFCreateCharacterChooseAlignmentViewController.m; sourceTree = "<group>"; };
@@ -389,8 +392,8 @@
 			children = (
 				295F62F41602EFCE00EEF5ED /* PFAttacksViewController.h */,
 				295F62F51602EFCF00EEF5ED /* PFAttacksViewController.m */,
-				295F62F91602EFF900EEF5ED /* PFCombatManeuversViewController.h */,
-				295F62FA1602EFF900EEF5ED /* PFCombatManeuversViewController.m */,
+				295F62F91602EFF900EEF5ED /* PFArmorViewController.h */,
+				295F62FA1602EFF900EEF5ED /* PFArmorViewController.m */,
 				295F63031602F41700EEF5ED /* PFDefenseViewController.h */,
 				295F63041602F41700EEF5ED /* PFDefenseViewController.m */,
 				290442A8160C3929008DAF11 /* PFEffectsViewController.h */,
@@ -569,6 +572,8 @@
 				2902D096161FED6D00C56E74 /* PFTrait.m */,
 				298A9E01162D06300045F1D1 /* PFTypes.h */,
 				29FD6887165DEBDA002F2794 /* PFTypes.m */,
+				297E7ACB16DDCEAF00099FF4 /* PFWeapon.h */,
+				297E7ACC16DDCEAF00099FF4 /* PFWeapon.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -797,7 +802,7 @@
 				295F62E81602EF0800EEF5ED /* PFFeaturesViewController.m in Sources */,
 				295F62F21602EFB000EEF5ED /* PFHealthViewController.m in Sources */,
 				295F62F71602EFCF00EEF5ED /* PFAttacksViewController.m in Sources */,
-				295F62FC1602EFF900EEF5ED /* PFCombatManeuversViewController.m in Sources */,
+				295F62FC1602EFF900EEF5ED /* PFArmorViewController.m in Sources */,
 				295F63011602F3C900EEF5ED /* PFMovementViewController.m in Sources */,
 				295F63061602F41700EEF5ED /* PFDefenseViewController.m in Sources */,
 				295F630B1602F46500EEF5ED /* PFSavingThrowsViewController.m in Sources */,
@@ -843,6 +848,7 @@
 				29D9605F166B27EF00C57CA1 /* PFClassFeatureCell.m in Sources */,
 				294C549216D33AF700620879 /* CGGeometry+CMExtensions.m in Sources */,
 				2929ECF416D5E4E2000396FC /* PFCharacterSelectionCell.m in Sources */,
+				297E7ACD16DDCEAF00099FF4 /* PFWeapon.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

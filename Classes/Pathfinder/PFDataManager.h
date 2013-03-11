@@ -17,5 +17,6 @@
 - (void)importRacesAsXML;
 - (void)importSkillsAsXML;
 - (void)importSourcesAsXML;
+- (void)importWeaponsAsXML;
 
 @end

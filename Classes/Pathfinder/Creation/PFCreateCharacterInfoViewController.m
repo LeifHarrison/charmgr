@@ -55,15 +55,15 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    self.parentViewController.view.superview.bounds = CGRectMake(0, 0, 400, 550);
+    //self.parentViewController.view.superview.bounds = CGRectMake(0, 0, 400, 550);
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
 	
-	CGPoint centerPoint = CGPointMake([[UIScreen mainScreen] bounds].size.width/2, [[UIScreen mainScreen] bounds].size.height/2);
-	self.parentViewController.view.superview.center = centerPoint;
+	//CGPoint centerPoint = CGPointMake([[UIScreen mainScreen] bounds].size.width/2, [[UIScreen mainScreen] bounds].size.height/2);
+	//self.parentViewController.view.superview.center = centerPoint;
 }
 
 - (BOOL)disablesAutomaticKeyboardDismissal {

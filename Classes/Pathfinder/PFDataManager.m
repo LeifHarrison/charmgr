@@ -19,6 +19,7 @@
 #import "PFSkill.h"
 #import "PFSource.h"
 #import "PFTrait.h"
+#import "PFWeapon.h"
 
 #import <CoreData/CoreData.h>
 
@@ -251,6 +252,42 @@
 	}
 	
 	LOG_DEBUG(@"  %d sources imported.", importCount);
+	
+	if (![moc save:&error]) {
+		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+		abort();
+	}
+	
+}
+
+- (void)importWeaponsAsXML;
+{
+	LOG_DEBUG(@"Importing weapons...");
+	CMAppDelegate *appDelegate = (CMAppDelegate*)[[UIApplication sharedApplication] delegate];
+	NSManagedObjectContext *moc = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
+	[moc setPersistentStoreCoordinator:[appDelegate persistentStoreCoordinator]];
+	
+	NSString *filePath = [[NSBundle mainBundle] pathForResource:@"Weapons" ofType:@"xml" inDirectory:@"Data/Core"];
+    NSData *xmlData = [[NSMutableData alloc] initWithContentsOfFile:filePath];
+    NSError *error;
+	
+    GDataXMLDocument *doc = [[GDataXMLDocument alloc] initWithData:xmlData options:0 error:&error];
+    if (doc == nil) {
+		if (error) NSLog(@"Error parsing XML: %@, %@", error, [error userInfo]);
+		return;
+	}
+	
+    //NSLog(@"%@", doc.rootElement);
+	NSInteger importCount = 0;
+	
+	NSArray *elements = [doc.rootElement elementsForName:@"Weapon"];
+	for (GDataXMLElement *anElement in elements) {
+		PFWeapon *newInstance = [PFWeapon insertedInstanceWithElement:anElement inManagedObjectContext:moc];
+		//LOG_DEBUG(@"newInstance = %@", newInstance.name);
+		if (newInstance) importCount++;
+	}
+	
+	LOG_DEBUG(@"  %d weapons imported.", importCount);
 	
 	if (![moc save:&error]) {
 		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
