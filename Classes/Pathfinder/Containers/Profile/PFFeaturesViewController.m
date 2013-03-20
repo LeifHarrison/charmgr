@@ -75,7 +75,7 @@ static const CGRect kPFFeaturesViewBoundsEditing	= { {   0,   0 }, { 345, 739 } 
 {
     [super viewDidLoad];
 	
-    [(CMBannerBox*)self.view setBannerTitle:@"Feats & Special Abilities"];
+    //[(CMBannerBox*)self.view setBannerTitle:@"Feats & Special Abilities"];
 }
 
 - (void)viewWillAppear:(BOOL)animated

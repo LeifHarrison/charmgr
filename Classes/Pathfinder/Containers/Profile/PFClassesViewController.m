@@ -354,6 +354,10 @@ static const CGFloat kClassesViewRowHeightStatic = 25.0f;
 	[self updateUI];
 }
 
+//------------------------------------------------------------------------------
+#pragma mark - PFDetailViewController Delegate
+//------------------------------------------------------------------------------
+
 - (void)detailViewControllerDidFinish:(PFDetailViewController*)viewController
 {
 	if (self.detailPopover) [self.detailPopover dismissPopoverAnimated:YES];

@@ -11,7 +11,6 @@
 @interface PFDefenseViewController : PFContainerViewController
 
 @property (nonatomic, strong) IBOutlet UILabel *armorClassTitleLabel;
-@property (nonatomic, strong) IBOutlet UILabel *armorClassSubtitleLabel;
 @property (nonatomic, strong) IBOutlet UITextField *armorClassField;
 @property (nonatomic, strong) IBOutlet UITextField *armorClassDexterityField;
 @property (nonatomic, strong) IBOutlet UITextField *armorClassDodgeField;
@@ -23,7 +22,6 @@
 //@property (nonatomic, strong) IBOutlet UITextField *armorClassEnhancementField;
 
 @property (nonatomic, strong) IBOutlet UILabel *flatFootedACTitleLabel;
-@property (nonatomic, strong) IBOutlet UILabel *flatFootedACSubtitleLabel;
 @property (nonatomic, strong) IBOutlet UITextField *flatFootedACField;
 @property (nonatomic, strong) IBOutlet UITextField *flatFootedACDeflectionField;
 @property (nonatomic, strong) IBOutlet UITextField *flatFootedACArmorField;
@@ -33,7 +31,6 @@
 //@property (nonatomic, strong) IBOutlet UITextField *flatFootedACEnhancementField;
 
 @property (nonatomic, strong) IBOutlet UILabel *touchACTitleLabel;
-@property (nonatomic, strong) IBOutlet UILabel *touchACSubtitleLabel;
 @property (nonatomic, strong) IBOutlet UITextField *touchACField;
 @property (nonatomic, strong) IBOutlet UITextField *touchACDexterityField;
 @property (nonatomic, strong) IBOutlet UITextField *touchACDodgeField;
@@ -42,7 +39,6 @@
 //@property (nonatomic, strong) IBOutlet UITextField *touchACEnhancementField;
 
 @property (nonatomic, strong) IBOutlet UILabel *cmdTitleLabel;
-@property (nonatomic, strong) IBOutlet UILabel *cmdSubtitleLabel;
 @property (nonatomic, strong) IBOutlet UITextField *cmdField;
 @property (nonatomic, strong) IBOutlet UITextField *cmdStrengthField;
 @property (nonatomic, strong) IBOutlet UITextField *cmdDexterityField;
@@ -53,7 +49,6 @@
 @property (nonatomic, strong) IBOutlet UITextField *cmdMiscField;
 
 @property (nonatomic, strong) IBOutlet UILabel *flatFootedCMDTitleLabel;
-@property (nonatomic, strong) IBOutlet UILabel *flatFootedCMDSubtitleLabel;
 @property (nonatomic, strong) IBOutlet UITextField *flatFootedCMDField;
 @property (nonatomic, strong) IBOutlet UITextField *flatFootedCMDStrengthField;
 @property (nonatomic, strong) IBOutlet UITextField *flatFootedCMDDeflectionField;

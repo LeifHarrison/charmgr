@@ -13,8 +13,8 @@
 @class PFCharacterAbility;
 @class PFCharacterClass;
 @class PFCharacterSkill;
+@class PFCharacterWeapon;
 @class PFRace;
-@class PFWeapon;
 
 @interface PFCharacter : NSManagedObject
 
@@ -156,8 +156,8 @@
 - (void)addSkills:(NSSet *)values;
 - (void)removeSkills:(NSSet *)values;
 
-- (void)addWeaponsObject:(PFWeapon *)value;
-- (void)removeWeaponsObject:(PFWeapon *)value;
+- (void)addWeaponsObject:(PFCharacterWeapon *)value;
+- (void)removeWeaponsObject:(PFCharacterWeapon *)value;
 - (void)addWeapons:(NSSet *)values;
 - (void)removeWeapons:(NSSet *)values;
 

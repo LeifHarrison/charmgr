@@ -14,9 +14,9 @@
 #pragma mark - Constants
 //------------------------------------------------------------------------------
 
-static const CGRect kPFMovementViewFramePortrait	= { { 548, 493 }, { 205, 180 } };
-static const CGRect kPFMovementViewFrameLandscape	= { { 758,  15 }, { 205, 180 } };
-static const CGRect kPFMovementViewBoundsEditing	= { {   0,   0 }, { 205, 180 } };
+static const CGRect kPFMovementViewFramePortrait	= { {  15, 565 }, { 305, 150 } };
+static const CGRect kPFMovementViewFrameLandscape	= { {  15, 565 }, { 305, 150 } };
+static const CGRect kPFMovementViewBoundsEditing	= { {   0,   0 }, { 305, 150 } };
 
 //------------------------------------------------------------------------------
 #pragma mark - Private Interface Declaration

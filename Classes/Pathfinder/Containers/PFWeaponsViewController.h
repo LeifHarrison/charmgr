@@ -8,6 +8,11 @@
 
 #import "PFContainerViewController.h"
 
+#import "PFDetailViewController.h"
+
 @interface PFWeaponsViewController : PFContainerViewController
+	<UIPopoverControllerDelegate, PFDetailViewControllerDelegate>
+
+@property (nonatomic, strong) IBOutlet UITableView *tableView;
 
 @end

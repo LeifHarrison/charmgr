@@ -14,8 +14,8 @@
 #pragma mark - Constants
 //------------------------------------------------------------------------------
 
-static const CGRect kPFEffectsViewFramePortrait	 = { { 548, 681 }, { 205, 303 } };
-static const CGRect kPFEffectsViewFrameLandscape = { { 758, 200 }, { 205, 285 } };
+static const CGRect kPFEffectsViewFramePortrait	 = { {  15, 720 }, { 305, 275 } };
+static const CGRect kPFEffectsViewFrameLandscape = { { 758, 200 }, { 305, 275 } };
 static const CGRect kPFEffectsViewBoundsEditing	 = { {   0,   0 }, { 205, 303 } };
 
 //------------------------------------------------------------------------------

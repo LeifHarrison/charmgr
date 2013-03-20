@@ -82,7 +82,7 @@
 {
     [super viewDidLoad];
 	
-	self.view.layer.contents = (id)[UIImage imageNamed:@"paper_texture"].CGImage;
+	self.view.layer.contents = (id)[UIImage imageNamed:@"paper_texture3"].CGImage;
 	self.view.layer.contentsGravity = kCAGravityResize;
 
 	self.createCharacterButton.tintColor = [UIColor brownColor];

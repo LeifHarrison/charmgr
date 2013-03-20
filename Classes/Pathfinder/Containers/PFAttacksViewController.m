@@ -17,33 +17,27 @@
 #pragma mark - Constants
 //------------------------------------------------------------------------------
 
-static const CGRect kPFAttacksViewFramePortrait		= { {  15, 205 }, { 305, 175 } };
-static const CGRect kPFAttacksViewFrameLandscape	= { {  15, 205 }, { 305, 175 } };
-static const CGRect kPFAttacksViewBoundsEditing		= { {   0,   0 }, { 335, 315 } };
+static const CGRect kPFAttacksViewFramePortrait		= { {  15, 205 }, { 305, 155 } };
+static const CGRect kPFAttacksViewFrameLandscape	= { {  15, 205 }, { 305, 155 } };
+static const CGRect kPFAttacksViewBoundsEditing		= { {   0,   0 }, { 355, 315 } };
 
-static const CGRect kPFInitiativeTitleRects[]		= { { {  10,  35 }, {  85,  15 } }, { {  10,  35 }, {  85,  15 } } };
-static const CGRect kPFInitiativeSubtitleRects[]	= { { {  10,  49 }, {  85,  15 } }, { {  10,  49 }, {  85,  15 } } };
-static const CGRect kPFInitiativeFieldRects[]		= { { {  10,  65 }, {  85,  30 } }, { {  10,  65 }, {  50,  30 } } };
+static const CGRect kPFInitiativeTitleRects[]		= { { {  10,  40 }, {  85,  15 } }, { {  10,  50 }, {  85,  15 } } };
+static const CGRect kPFInitiativeFieldRects[]		= { { {  10,  55 }, {  85,  30 } }, { {  10,  65 }, {  70,  30 } } };
 
-static const CGRect kPFBaseAttackTitleRects[]		= { { {  110,  35 }, {  85,  15 } }, { { 110,  35 }, {  85,  15 } } };
-static const CGRect kPFBaseAttackSubtitleRects[]	= { { {  110,  49 }, {  85,  15 } }, { { 110,  49 }, {  85,  15 } } };
-static const CGRect kPFBaseAttackFieldRects[]		= { { {  110,  65 }, {  85,  30 } }, { { 110,  65 }, {  85,  30 } } };
+static const CGRect kPFBaseAttackTitleRects[]		= { { {  110,  40 }, {  90,  15 } }, { { 110,  50 }, {  90,  15 } } };
+static const CGRect kPFBaseAttackFieldRects[]		= { { {  110,  55 }, {  85,  30 } }, { { 110,  65 }, {  70,  30 } } };
 
-static const CGRect kPFNumAttacksTitleRects[]		= { { {  210,  35 }, {  85,  30 } }, { { 210,  35 }, {  85,  30 } } };
-static const CGRect kPFNumAttacksSubtitleRects[]	= { { {  210,  49 }, {  85,  15 } }, { { 210,  49 }, {  85,  15 } } };
-static const CGRect kPFNumAttacksFieldRects[]		= { { {  210,  65 }, {  85,  30 } }, { { 210,  65 }, {  85,  30 } } };
+static const CGRect kPFNumAttacksTitleRects[]		= { { {  210,  40 }, {  85,  15 } }, { { 210,  50 }, {  85,  30 } } };
+static const CGRect kPFNumAttacksFieldRects[]		= { { {  210,  55 }, {  85,  30 } }, { { 210,  65 }, {  70,  30 } } };
 
-static const CGRect kPFMeleeAttackTitleRects[]		= { { {  10, 105 }, {  85,  15 } }, { {  10, 105 }, {  85,  15 } } };
-static const CGRect kPFMeleeAttackSubtitleRects[]	= { { {  10, 119 }, {  85,  15 } }, { {  10, 119 }, {  85,  15 } } };
-static const CGRect kPFMeleeAttackFieldRects[]		= { { {  10, 135 }, {  85,  30 } }, { {  10, 135 }, {  50,  30 } } };
+static const CGRect kPFMeleeAttackTitleRects[]		= { { {  10,  95 }, {  85,  15 } }, { {  10, 120 }, {  85,  15 } } };
+static const CGRect kPFMeleeAttackFieldRects[]		= { { {  10, 110 }, {  85,  30 } }, { {  10, 135 }, {  70,  30 } } };
 
-static const CGRect kPFRangedAttackTitleRects[]		= { { {  110, 105 }, {  85,  15 } }, { {  10, 175 }, {  85,  15 } } };
-static const CGRect kPFRangedAttackSubtitleRects[]	= { { {  110, 119 }, {  85,  15 } }, { {  10, 189 }, {  85,  15 } } };
-static const CGRect kPFRangedAttackFieldRects[]		= { { {  110, 135 }, {  85,  30 } }, { {  10, 205 }, {  50,  30 } } };
+static const CGRect kPFRangedAttackTitleRects[]		= { { {  110,  95 }, {  85,  15 } }, { {  10, 190 }, {  85,  15 } } };
+static const CGRect kPFRangedAttackFieldRects[]		= { { {  110, 110 }, {  85,  30 } }, { {  10, 205 }, {  70,  30 } } };
 
-static const CGRect kPFCMBTitleRects[]				= { { {  210, 105 }, {  90,  15 } }, { {  10, 245 }, {  90,  15 } } };
-static const CGRect kPFCMBSubtitleRects[]			= { { {  210, 119 }, {  85,  15 } }, { {  10, 259 }, {  85,  15 } } };
-static const CGRect kPFCMBFieldRects[]				= { { {  210, 135 }, {  85,  30 } }, { {  10, 275 }, {  50,  30 } } };
+static const CGRect kPFCMBTitleRects[]				= { { {  210,  95 }, {  85,  15 } }, { {  10, 260 }, {  85,  15 } } };
+static const CGRect kPFCMBFieldRects[]				= { { {  210, 110 }, {  85,  30 } }, { {  10, 275 }, {  70,  30 } } };
 
 //------------------------------------------------------------------------------
 #pragma mark - Private Interface Declaration
@@ -203,11 +197,9 @@ static const CGRect kPFCMBFieldRects[]				= { { {  210, 135 }, {  85,  30 } }, {
 	self.cmbField.alpha = 0.0f;
 */
 	self.initiativeTitleLabel.frame = kPFInitiativeTitleRects[aState];
-	self.initiativeSubtitleLabel.frame = kPFInitiativeSubtitleRects[aState];
 	self.initiativeField.frame = kPFInitiativeFieldRects[aState];
 
 	self.baseAttackTitleLabel.frame = kPFBaseAttackTitleRects[aState];
-	self.baseAttackSubtitleLabel.frame = kPFBaseAttackSubtitleRects[aState];
 	self.baseAttackField.frame = kPFBaseAttackFieldRects[aState];
 
 	self.numberOfAttacksTitleLabel.frame = kPFNumAttacksTitleRects[aState];
@@ -215,15 +207,12 @@ static const CGRect kPFCMBFieldRects[]				= { { {  210, 135 }, {  85,  30 } }, {
 	self.numberOfAttacksField.frame = kPFNumAttacksFieldRects[aState];
 
 	self.meleeAttackTitleLabel.frame = kPFMeleeAttackTitleRects[aState];
-	self.meleeAttackSubtitleLabel.frame = kPFMeleeAttackSubtitleRects[aState];
 	self.meleeAttackField.frame = kPFMeleeAttackFieldRects[aState];
 
 	self.rangedAttackTitleLabel.frame = kPFRangedAttackTitleRects[aState];
-	self.rangedAttackSubtitleLabel.frame = kPFRangedAttackSubtitleRects[aState];
 	self.rangedAttackField.frame = kPFRangedAttackFieldRects[aState];
 
 	self.cmbTitleLabel.frame = kPFCMBTitleRects[aState];
-	self.cmbSubtitleLabel.frame = kPFCMBSubtitleRects[aState];
 	self.cmbField.frame = kPFCMBFieldRects[aState];
 /*
 	self.initiativeTitleLabel.alpha = 1.0f;
@@ -249,7 +238,6 @@ static const CGRect kPFCMBFieldRects[]				= { { {  210, 135 }, {  85,  30 } }, {
 		self.editingContainer.alpha = 1.0f;
 
 		self.baseAttackTitleLabel.alpha = 0.0f;
-		self.baseAttackSubtitleLabel.alpha = 0.0f;
 		self.baseAttackField.alpha = 0.0f;
 		self.numberOfAttacksTitleLabel.alpha = 0.0f;
 		//self.numberOfAttacksSubtitleLabel.alpha = 0.0f;
@@ -259,7 +247,6 @@ static const CGRect kPFCMBFieldRects[]				= { { {  210, 135 }, {  85,  30 } }, {
 		self.editingContainer.alpha = 0.0f;
 		
 		self.baseAttackTitleLabel.alpha = 1.0f;
-		self.baseAttackSubtitleLabel.alpha = 1.0f;
 		self.baseAttackField.alpha = 1.0f;
 		self.numberOfAttacksTitleLabel.alpha = 1.0f;
 		//self.numberOfAttacksSubtitleLabel.alpha = 1.0f;

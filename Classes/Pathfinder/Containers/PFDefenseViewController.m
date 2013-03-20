@@ -21,28 +21,19 @@ static const CGRect kPFDefenseViewFrameLandscape	= { {  15, 385 }, { 305, 175 } 
 static const CGRect kPFDefenseViewBoundsEditing		= { {   0,   0 }, { 640, 340 } };
 
 static const CGRect kPFArmorClassTitleRects[]		= { { {  10,  35 }, {  90,  30 } }, { {  10,  35 }, {  90,  30 } } };
-static const CGRect kPFArmorClassSubtitleRects[]	= { { {  10,  49 }, {  85,  15 } }, { {  10,  49 }, {  85,  15 } } };
-static const CGRect kPFArmorClassFieldRects[]		= { { {  10,  65 }, {  85,  30 } }, { {  10,  65 }, {  50,  30 } } };
+static const CGRect kPFArmorClassFieldRects[]		= { { {  10,  65 }, {  85,  30 } }, { {  10,  65 }, {  70,  30 } } };
 
 static const CGRect kPFFlatFootedACTitleRects[]		= { { { 110,  35 }, {  85,  15 } }, { {  10, 100 }, {  85,  15 } } };
-static const CGRect kPFFlatFootedACSubtitleRects[]	= { { { 110,  49 }, {  85,  15 } }, { {  98, 100 }, {  85,  15 } } };
-static const CGRect kPFFlatFootedACFieldRects[]		= { { { 110,  65 }, {  85,  30 } }, { {  10, 115 }, {  50,  30 } } };
+static const CGRect kPFFlatFootedACFieldRects[]		= { { { 110,  65 }, {  85,  30 } }, { {  10, 115 }, {  70,  30 } } };
 
 static const CGRect kPFTouchACTitleRects[]			= { { { 210,  35 }, {  85,  15 } }, { {  10, 150 }, {  85,  15 } } };
-static const CGRect kPFTouchACSubtitleRects[]		= { { { 210,  49 }, {  85,  15 } }, { {  57, 150 }, {  85,  15 } } };
-static const CGRect kPFTouchACFieldRects[]			= { { { 210,  65 }, {  85,  30 } }, { {  10, 165 }, {  50,  30 } } };
+static const CGRect kPFTouchACFieldRects[]			= { { { 210,  65 }, {  85,  30 } }, { {  10, 165 }, {  70,  30 } } };
 
 static const CGRect kPFCMDTitleRects[]				= { { {  10, 119 }, {  90,  15 } }, { {  10, 230 }, {  90,  15 } } };
-static const CGRect kPFCMDSubtitleRects[]			= { { {  10, 119 }, {  85,  15 } }, { {  10, 230 }, {  85,  15 } } };
-static const CGRect kPFCMDFieldRects[]				= { { {  10, 135 }, {  85,  30 } }, { {  10, 245 }, {  50,  30 } } };
+static const CGRect kPFCMDFieldRects[]				= { { {  10, 135 }, {  85,  30 } }, { {  10, 245 }, {  70,  30 } } };
 
 static const CGRect kPFFlatFootedCMDTitleRects[]	= { { { 110, 105 }, {  85,  15 } }, { {  10, 285 }, {  85,  15 } } };
-static const CGRect kPFFlatFootedCMDSubtitleRects[]	= { { { 110, 119 }, {  85,  15 } }, { {  98, 285 }, {  85,  15 } } };
-static const CGRect kPFFlatFootedCMDFieldRects[]	= { { { 110, 135 }, {  85,  30 } }, { {  10, 300 }, {  50,  30 } } };
-
-//static const CGRect kPFCMBTitleRects[]				= { { {  210, 105 }, {  85,  15 } }, { {  10, 245 }, {  85,  15 } } };
-//static const CGRect kPFCMBSubtitleRects[]			= { { {  210, 119 }, {  85,  15 } }, { {  10, 259 }, {  85,  15 } } };
-//static const CGRect kPFCMBFieldRects[]				= { { {  210, 135 }, {  85,  30 } }, { {  10, 275 }, {  50,  30 } } };
+static const CGRect kPFFlatFootedCMDFieldRects[]	= { { { 110, 135 }, {  85,  30 } }, { {  10, 300 }, {  70,  30 } } };
 
 //------------------------------------------------------------------------------
 #pragma mark - Private Interface Declaration
@@ -201,23 +192,18 @@ static const CGRect kPFFlatFootedCMDFieldRects[]	= { { { 110, 135 }, {  85,  30 
 	//self.armorClassTitleLabel.alpha = 0.0f;
 	
 	self.armorClassTitleLabel.frame = kPFArmorClassTitleRects[aState];
-	self.armorClassSubtitleLabel.frame = kPFArmorClassSubtitleRects[aState];
 	self.armorClassField.frame = kPFArmorClassFieldRects[aState];
 	
 	self.flatFootedACTitleLabel.frame = kPFFlatFootedACTitleRects[aState];
-	self.flatFootedACSubtitleLabel.frame = kPFFlatFootedACSubtitleRects[aState];
 	self.flatFootedACField.frame = kPFFlatFootedACFieldRects[aState];
 	
 	self.touchACTitleLabel.frame = kPFTouchACTitleRects[aState];
-	self.touchACSubtitleLabel.frame = kPFTouchACSubtitleRects[aState];
 	self.touchACField.frame = kPFTouchACFieldRects[aState];
 	
 	self.cmdTitleLabel.frame = kPFCMDTitleRects[aState];
-	self.cmdSubtitleLabel.frame = kPFCMDSubtitleRects[aState];
 	self.cmdField.frame = kPFCMDFieldRects[aState];
 	
 	self.flatFootedCMDTitleLabel.frame = kPFFlatFootedCMDTitleRects[aState];
-	self.flatFootedCMDSubtitleLabel.frame = kPFFlatFootedCMDSubtitleRects[aState];
 	self.flatFootedCMDField.frame = kPFFlatFootedCMDFieldRects[aState];
 	
 	//self.armorClassTitleLabel.alpha = 1.0f;

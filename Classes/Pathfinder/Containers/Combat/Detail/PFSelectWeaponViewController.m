@@ -1,39 +1,32 @@
 //
-//  PFChooseClassViewController.m
+//  PFSelectWeaponViewController.m
 //  CharMgr
 //
-//  Created by Leif Harrison on 10/9/12.
-//  Copyright (c) 2012 Leif Harrison. All rights reserved.
+//  Created by Leif Harrison on 3/17/13.
+//  Copyright (c) 2013 Leif Harrison. All rights reserved.
 //
 
-#import "PFCreateCharacterChooseClassViewController.h"
+#import "PFSelectWeaponViewController.h"
 
 #import "PFCharacter.h"
-#import "PFCharacterClass.h"
-#import "PFClassType.h"
-
+#import "PFCharacterWeapon.h"
+#import "PFWeapon.h"
 
 //------------------------------------------------------------------------------
 #pragma mark - Private Interface Declaration
 //------------------------------------------------------------------------------
 
-@interface PFCreateCharacterChooseClassViewController ()
+@interface PFSelectWeaponViewController ()
 
 @property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 
 @end
 
-
 //==============================================================================
 // Class Implementation
 //==============================================================================
 
-@implementation PFCreateCharacterChooseClassViewController
-
-//------------------------------------------------------------------------------
-#pragma mark - Properties
-//------------------------------------------------------------------------------
-
+@implementation PFSelectWeaponViewController
 
 //------------------------------------------------------------------------------
 #pragma mark - Initialization
@@ -48,7 +41,6 @@
     return self;
 }
 
-
 //------------------------------------------------------------------------------
 #pragma mark - View Lifecycle
 //------------------------------------------------------------------------------
@@ -58,15 +50,16 @@
     [super viewDidLoad];
 	
 	self.tableView.backgroundColor = [UIColor lightGrayColor];
-	self.tableView.layer.borderColor = [UIColor darkGrayColor].CGColor;
-	self.tableView.layer.borderWidth = 1.5f;
-	self.tableView.layer.cornerRadius = 4.0f;
+	//self.tableView.layer.borderColor = [UIColor darkGrayColor].CGColor;
+	//self.tableView.layer.borderWidth = 1.5f;
+	//self.tableView.layer.cornerRadius = 4.0f;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+	[super viewWillAppear:animated];
 	
-	self.descriptionTextView.backgroundColor = [UIColor clearColor];
-	self.descriptionTextView.layer.borderColor = [UIColor darkGrayColor].CGColor;
-	self.descriptionTextView.layer.borderWidth = 1.5f;
-	self.descriptionTextView.layer.cornerRadius = 4.0f;
-	
+	LOG_DEBUG(@"start fetching...");
 	NSError *error = nil;
     if (![[self fetchedResultsController] performFetch:&error]) {
         // Replace this implementation with code to handle the error appropriately.
@@ -75,12 +68,10 @@
 		// You should not use this function in a shipping application, although
 		// it may be useful during development.
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-        abort();
+        //abort();
     }
-
-	self.descriptionTextView.text = @"";
+	LOG_DEBUG(@"end fetching...");
 }
-
 
 //------------------------------------------------------------------------------
 #pragma mark - Memory Management
@@ -105,20 +96,20 @@
     
     // Create and configure a fetch request with the Book entity.
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"PFClassType" inManagedObjectContext:self.managedObjectContext];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"PFWeapon" inManagedObjectContext:self.character.managedObjectContext];
     [fetchRequest setEntity:entity];
     
     // Create the sort descriptors array.
-    NSSortDescriptor *sourceDescriptor = [[NSSortDescriptor alloc] initWithKey:@"source.name" ascending:YES];
+    NSSortDescriptor *categoryDescriptor = [[NSSortDescriptor alloc] initWithKey:@"category" ascending:YES];
     NSSortDescriptor *nameDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
-    NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sourceDescriptor, nameDescriptor, nil];
+    NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:categoryDescriptor, nameDescriptor, nil];
     [fetchRequest setSortDescriptors:sortDescriptors];
     
     // Create and initialize the fetch results controller.
     _fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
-																	managedObjectContext:self.managedObjectContext
-																	  sectionNameKeyPath:@"source.name"
-																			   cacheName:@"Classes"];
+																	managedObjectContext:self.character.managedObjectContext
+																	  sectionNameKeyPath:@"category"
+																			   cacheName:@"Weapons"];
     _fetchedResultsController.delegate = self;
     
     // Memory management.
@@ -128,8 +119,8 @@
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
-    PFClassType *aClass = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.text = aClass.name;
+    PFWeapon *aWeapon = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    cell.textLabel.text = aWeapon.name;
 }
 
 
@@ -159,7 +150,7 @@
             
         case NSFetchedResultsChangeDelete:
             [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
-							 withRowAnimation:UITableViewRowAnimationFade];
+								  withRowAnimation:UITableViewRowAnimationFade];
             break;
             
         case NSFetchedResultsChangeUpdate:
@@ -168,9 +159,9 @@
             
         case NSFetchedResultsChangeMove:
             [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
-							 withRowAnimation:UITableViewRowAnimationFade];
+								  withRowAnimation:UITableViewRowAnimationFade];
             [self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath]
-							 withRowAnimation:UITableViewRowAnimationFade];
+								  withRowAnimation:UITableViewRowAnimationFade];
             break;
     }
 }
@@ -180,7 +171,7 @@
   didChangeSection:(id <NSFetchedResultsSectionInfo>)sectionInfo
 		   atIndex:(NSUInteger)sectionIndex
 	 forChangeType:(NSFetchedResultsChangeType)type
-{	
+{
     switch(type) {
             
         case NSFetchedResultsChangeInsert:
@@ -223,7 +214,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)aTableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"ClassCell";
+    static NSString *CellIdentifier = @"WeaponCell";
     UITableViewCell *cell = [aTableView dequeueReusableCellWithIdentifier:CellIdentifier];
 	
     // Configure the cell.
@@ -238,28 +229,6 @@
     return [[[self.fetchedResultsController sections] objectAtIndex:section] name];
 }
 
-- (void)tableView:(UITableView *)aTableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        
-        // Delete the managed object.
-        NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
-        [context deleteObject:[self.fetchedResultsController objectAtIndexPath:indexPath]];
-        
-        NSError *error;
-        if (![context save:&error]) {
-            /*
-             Replace this implementation with code to handle the error appropriately.
-             
-             abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-             */
-            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-            abort();
-        }
-    }
-}
-
-
 //------------------------------------------------------------------------------
 #pragma mark - UITableViewDelegate
 //------------------------------------------------------------------------------
@@ -267,8 +236,15 @@
 - (void)tableView:(UITableView *)aTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	LOG_DEBUG(@"indexPath = %@", indexPath);
-    PFClassType *aClass = [self.fetchedResultsController objectAtIndexPath:indexPath];
-	self.descriptionTextView.text = aClass.descriptionShort;
+    PFWeapon *selectedWeapon = [self.fetchedResultsController objectAtIndexPath:indexPath];
+	LOG_DEBUG(@"selectedWeapon = %@", selectedWeapon);
+
+	PFCharacterWeapon *newCharWeapon = (PFCharacterWeapon *)[NSEntityDescription insertNewObjectForEntityForName:@"PFCharacterWeapon"
+																					   inManagedObjectContext:self.character.managedObjectContext];
+	newCharWeapon.character = self.character;
+	newCharWeapon.weapon = selectedWeapon;
+	
+	[self.delegate detailViewControllerDidFinish:self];
 }
 
 
@@ -276,40 +252,8 @@
 #pragma mark - Actions
 //------------------------------------------------------------------------------
 
-- (IBAction)save:(id)sender
-{
-	TRACE;
-	
-	PFClassType *aClassType = [self.fetchedResultsController objectAtIndexPath:self.tableView.indexPathForSelectedRow];
-
-	PFCharacterClass *newCharClass = (PFCharacterClass *)[NSEntityDescription insertNewObjectForEntityForName:@"PFCharacterClass"
-																					   inManagedObjectContext:self.managedObjectContext];
-	newCharClass.character = self.character;
-	newCharClass.classType = aClassType;
-	newCharClass.level = 1;
-	
-    [super save:sender];
-}
-
-
 //------------------------------------------------------------------------------
 #pragma mark - Storyboard
 //------------------------------------------------------------------------------
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-	LOG_DEBUG(@"seque = %@, sender = %@", segue.identifier, sender);
-	[super prepareForSegue:segue sender:sender];
-	
-	if ([segue.identifier hasSuffix:@"NextController"]) {
-		PFClassType *aClassType = [self.fetchedResultsController objectAtIndexPath:self.tableView.indexPathForSelectedRow];
-
-		PFCharacterClass *newCharClass = (PFCharacterClass *)[NSEntityDescription insertNewObjectForEntityForName:@"PFCharacterClass"
-																						   inManagedObjectContext:self.managedObjectContext];
-		newCharClass.character = self.character;
-		newCharClass.classType = aClassType;
-		newCharClass.level = 1;
-	}
-}
 
 @end

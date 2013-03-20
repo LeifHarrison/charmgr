@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2057" systemVersion="12C60" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2061" systemVersion="12D78" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="PFAbility" representedClassName="PFAbility" syncable="YES">
         <attribute name="abbreviation" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="abilityType" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
@@ -42,7 +42,7 @@
         <relationship name="feats" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PFFeat" inverseName="characters" inverseEntity="PFFeat" syncable="YES"/>
         <relationship name="race" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="PFRace" inverseName="characters" inverseEntity="PFRace" syncable="YES"/>
         <relationship name="skills" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PFCharacterSkill" inverseName="character" inverseEntity="PFCharacterSkill" syncable="YES"/>
-        <relationship name="weapons" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PFWeapon" inverseName="characters" inverseEntity="PFWeapon" syncable="YES"/>
+        <relationship name="weapons" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PFCharacterWeapon" inverseName="character" inverseEntity="PFCharacterWeapon" syncable="YES"/>
     </entity>
     <entity name="PFCharacterAbility" representedClassName="PFCharacterAbility" syncable="YES">
         <attribute name="abilityScore" optional="YES" attributeType="Integer 16" defaultValueString="10" syncable="YES"/>
@@ -62,6 +62,12 @@
         <attribute name="skillDetail" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="character" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="PFCharacter" inverseName="skills" inverseEntity="PFCharacter" syncable="YES"/>
         <relationship name="skill" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="PFSkill" inverseName="characterSkills" inverseEntity="PFSkill" syncable="YES"/>
+    </entity>
+    <entity name="PFCharacterWeapon" representedClassName="PFCharacterWeapon" syncable="YES">
+        <attribute name="additionalDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="properties" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="character" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="PFCharacter" inverseName="weapons" inverseEntity="PFCharacter" syncable="YES"/>
+        <relationship name="weapon" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="PFWeapon" inverseName="characterWeapons" inverseEntity="PFWeapon" syncable="YES"/>
     </entity>
     <entity name="PFClassFeature" representedClassName="PFClassFeature" syncable="YES">
         <attribute name="benefit" optional="YES" attributeType="String" syncable="YES"/>
@@ -158,12 +164,13 @@
         <attribute name="criticalThreat" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="damageMedium" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="damageSmall" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="descriptionShort" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="range" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="special" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="weight" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="characters" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PFCharacter" inverseName="weapons" inverseEntity="PFCharacter" syncable="YES"/>
+        <relationship name="characterWeapons" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PFCharacterWeapon" inverseName="weapon" inverseEntity="PFCharacterWeapon" syncable="YES"/>
         <relationship name="source" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="PFSource" inverseName="weapons" inverseEntity="PFSource" syncable="YES"/>
     </entity>
     <elements>
@@ -182,6 +189,7 @@
         <element name="PFSkill" positionX="160" positionY="192" width="128" height="180"/>
         <element name="PFSource" positionX="160" positionY="192" width="128" height="165"/>
         <element name="PFTrait" positionX="160" positionY="192" width="128" height="135"/>
-        <element name="PFWeapon" positionX="160" positionY="192" width="128" height="255"/>
+        <element name="PFWeapon" positionX="160" positionY="192" width="128" height="270"/>
+        <element name="PFCharacterWeapon" positionX="160" positionY="192" width="128" height="105"/>
     </elements>
 </model>

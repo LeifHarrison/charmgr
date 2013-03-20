@@ -64,6 +64,9 @@
 		297AA4AF1640F2F20041C59D /* PFRacialTraitTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 297AA4AE1640F2F20041C59D /* PFRacialTraitTableViewCell.m */; };
 		297AA4B216438FE70041C59D /* ReferenceStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 297AA4B116438FE70041C59D /* ReferenceStoryboard.storyboard */; };
 		297E7ACD16DDCEAF00099FF4 /* PFWeapon.m in Sources */ = {isa = PBXBuildFile; fileRef = 297E7ACC16DDCEAF00099FF4 /* PFWeapon.m */; };
+		297FC5DF16F58030002C3504 /* PFWeaponTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 297FC5DE16F58030002C3504 /* PFWeaponTableViewCell.m */; };
+		297FC5E316F65FF6002C3504 /* PFSelectWeaponViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 297FC5E216F65FF6002C3504 /* PFSelectWeaponViewController.m */; };
+		297FC5E616F6C74C002C3504 /* PFCharacterWeapon.m in Sources */ = {isa = PBXBuildFile; fileRef = 297FC5E516F6C74C002C3504 /* PFCharacterWeapon.m */; };
 		298A9E08162E5FD30045F1D1 /* PFCreateCharacterChooseAlignmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 298A9E07162E5FD30045F1D1 /* PFCreateCharacterChooseAlignmentViewController.m */; };
 		298A9E0C162FC1810045F1D1 /* PFClassTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 298A9E0B162FC1810045F1D1 /* PFClassTableViewCell.m */; };
 		299ACDE615FA918000E114E0 /* Pathfinder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 299ACDE415FA918000E114E0 /* Pathfinder.xcdatamodeld */; };
@@ -199,6 +202,12 @@
 		297AA4B116438FE70041C59D /* ReferenceStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = ReferenceStoryboard.storyboard; path = ../Resources/Pathfinder/ReferenceStoryboard.storyboard; sourceTree = "<group>"; };
 		297E7ACB16DDCEAF00099FF4 /* PFWeapon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFWeapon.h; path = Pathfinder/Model/PFWeapon.h; sourceTree = "<group>"; };
 		297E7ACC16DDCEAF00099FF4 /* PFWeapon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFWeapon.m; path = Pathfinder/Model/PFWeapon.m; sourceTree = "<group>"; };
+		297FC5DD16F58030002C3504 /* PFWeaponTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFWeaponTableViewCell.h; path = Pathfinder/Cells/PFWeaponTableViewCell.h; sourceTree = "<group>"; };
+		297FC5DE16F58030002C3504 /* PFWeaponTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFWeaponTableViewCell.m; path = Pathfinder/Cells/PFWeaponTableViewCell.m; sourceTree = "<group>"; };
+		297FC5E116F65FF6002C3504 /* PFSelectWeaponViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFSelectWeaponViewController.h; path = Pathfinder/Containers/Combat/Detail/PFSelectWeaponViewController.h; sourceTree = "<group>"; };
+		297FC5E216F65FF6002C3504 /* PFSelectWeaponViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFSelectWeaponViewController.m; path = Pathfinder/Containers/Combat/Detail/PFSelectWeaponViewController.m; sourceTree = "<group>"; };
+		297FC5E416F6C74C002C3504 /* PFCharacterWeapon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFCharacterWeapon.h; path = Pathfinder/Model/PFCharacterWeapon.h; sourceTree = "<group>"; };
+		297FC5E516F6C74C002C3504 /* PFCharacterWeapon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFCharacterWeapon.m; path = Pathfinder/Model/PFCharacterWeapon.m; sourceTree = "<group>"; };
 		298A9E01162D06300045F1D1 /* PFTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PFTypes.h; path = Pathfinder/Model/PFTypes.h; sourceTree = "<group>"; };
 		298A9E06162E5FD30045F1D1 /* PFCreateCharacterChooseAlignmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFCreateCharacterChooseAlignmentViewController.h; path = Pathfinder/Creation/PFCreateCharacterChooseAlignmentViewController.h; sourceTree = "<group>"; };
 		298A9E07162E5FD30045F1D1 /* PFCreateCharacterChooseAlignmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFCreateCharacterChooseAlignmentViewController.m; path = Pathfinder/Creation/PFCreateCharacterChooseAlignmentViewController.m; sourceTree = "<group>"; };
@@ -322,7 +331,9 @@
 		290442A1160C3585008DAF11 /* Combat */ = {
 			isa = PBXGroup;
 			children = (
+				297FC5DC16F57FDE002C3504 /* Cells */,
 				294E02AB167C5665003199CE /* Containers */,
+				297FC5E016F65F99002C3504 /* Detail */,
 				2900413A162530E20050EDDB /* CombatStoryboard.storyboard */,
 				2906399F16044D1900CCBBC7 /* PFCombatViewController.h */,
 				290639A016044D1900CCBBC7 /* PFCombatViewController.m */,
@@ -521,6 +532,24 @@
 			name = Reference;
 			sourceTree = "<group>";
 		};
+		297FC5DC16F57FDE002C3504 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				297FC5DD16F58030002C3504 /* PFWeaponTableViewCell.h */,
+				297FC5DE16F58030002C3504 /* PFWeaponTableViewCell.m */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		297FC5E016F65F99002C3504 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				297FC5E116F65FF6002C3504 /* PFSelectWeaponViewController.h */,
+				297FC5E216F65FF6002C3504 /* PFSelectWeaponViewController.m */,
+			);
+			name = Detail;
+			sourceTree = "<group>";
+		};
 		298A9E09162FC1430045F1D1 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -554,6 +583,8 @@
 				2902D08A161FED6D00C56E74 /* PFCharacterClass.m */,
 				2972FDAF16325B9300B44692 /* PFCharacterSkill.h */,
 				2972FDB016325B9300B44692 /* PFCharacterSkill.m */,
+				297FC5E416F6C74C002C3504 /* PFCharacterWeapon.h */,
+				297FC5E516F6C74C002C3504 /* PFCharacterWeapon.m */,
 				29D9605A166B223600C57CA1 /* PFClassFeature.h */,
 				29D9605B166B223700C57CA1 /* PFClassFeature.m */,
 				2902D08F161FED6D00C56E74 /* PFClassType.h */,
@@ -849,6 +880,9 @@
 				294C549216D33AF700620879 /* CGGeometry+CMExtensions.m in Sources */,
 				2929ECF416D5E4E2000396FC /* PFCharacterSelectionCell.m in Sources */,
 				297E7ACD16DDCEAF00099FF4 /* PFWeapon.m in Sources */,
+				297FC5DF16F58030002C3504 /* PFWeaponTableViewCell.m in Sources */,
+				297FC5E316F65FF6002C3504 /* PFSelectWeaponViewController.m in Sources */,
+				297FC5E616F6C74C002C3504 /* PFCharacterWeapon.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -899,10 +933,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				OTHER_LDFLAGS = "-lxml2";
@@ -915,10 +954,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
