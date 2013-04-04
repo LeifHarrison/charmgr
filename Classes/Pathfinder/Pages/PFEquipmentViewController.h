@@ -1,5 +1,5 @@
 //
-//  PFGearViewController.h
+//  PFEquipmentViewController.h
 //  CharMgr
 //
 //  Created by Leif Harrison on 9/6/12.
@@ -8,6 +8,6 @@
 
 #import "PFPageContentViewController.h"
 
-@interface PFGearViewController : PFPageContentViewController
+@interface PFEquipmentViewController : PFPageContentViewController
 
 @end

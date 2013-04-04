@@ -16,4 +16,6 @@
 
 @property (nonatomic, strong) PFCharacter *character;
 
+@property (nonatomic, strong) NSMutableArray *containers;
+
 @end

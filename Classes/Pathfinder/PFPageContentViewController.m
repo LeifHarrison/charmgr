@@ -18,7 +18,6 @@
 
 @interface PFPageContentViewController ()
 
-@property (nonatomic, strong) NSMutableArray *containers;
 @property (nonatomic, strong) NSMutableArray *gestures;
 @property (nonatomic, assign) CGPoint activeContainerOriginalCenter;
 
@@ -145,17 +144,17 @@
 		container.character = self.character;
 		[self.containers addObject:container];
 		
-//		UIGestureRecognizer *gesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(containerViewLongPress:)];
-//		gesture.delegate = container;
-//		[container.view addGestureRecognizer:gesture];
-//		[self.gestures addObject:gesture];
-		
-		UIGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(containerViewTapped:)];
+		UIGestureRecognizer *gesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(containerViewLongPress:)];
 		gesture.delegate = container;
-		gesture.cancelsTouchesInView = YES;
-		gesture.delaysTouchesEnded = YES;
 		[container.view addGestureRecognizer:gesture];
 		[self.gestures addObject:gesture];
+		
+//		UIGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(containerViewTapped:)];
+//		gesture.delegate = container;
+//		gesture.cancelsTouchesInView = YES;
+//		gesture.delaysTouchesEnded = YES;
+//		[container.view addGestureRecognizer:gesture];
+//		[self.gestures addObject:gesture];
 	}
 }
 

@@ -14,7 +14,7 @@
 #import "PFCreateCharacterViewController.h"
 
 #import "PFCombatViewController.h"
-#import "PFGearViewController.h"
+#import "PFEquipmentViewController.h"
 #import "PFNotesViewController.h"
 #import "PFProfileViewController.h"
 
@@ -292,7 +292,7 @@
 	[pages addObject:combatViewController];
 	
 	storyboard = [UIStoryboard storyboardWithName:@"EquipmentStoryboard" bundle:[NSBundle mainBundle]];
-	PFGearViewController *gearViewController = [storyboard instantiateViewControllerWithIdentifier:@"PFGearViewController"];
+	PFEquipmentViewController *gearViewController = [storyboard instantiateViewControllerWithIdentifier:@"PFGearViewController"];
 	LOG_DEBUG(@"gearViewController = %@", gearViewController);
 	gearViewController.character = aCharacter;
 	[pages addObject:gearViewController];

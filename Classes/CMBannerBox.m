@@ -57,6 +57,8 @@
 	//TRACE;
 	if (self = [super initWithCoder:aDecoder])
 	{
+		self.clipsToBounds = YES;
+		
 		self.bannerColor = [UIColor colorWithWhite:0.2 alpha:1.0];
 		self.bannerTextColor = [UIColor whiteColor];
 		self.bannerFont = [UIFont fontWithName:@"Marker Felt" size:18.0];
