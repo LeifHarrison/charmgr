@@ -14,8 +14,8 @@
 #pragma mark - Constants
 //------------------------------------------------------------------------------
 
-static const CGRect kViewFramePortrait	 = { { 325,  15 }, { 428, 200 } };
-static const CGRect kViewFrameLandscape  = { { 325,  15 }, { 428, 200 } };
+static const CGRect kViewFramePortrait	 = { { 325,  10 }, { 428, 200 } };
+static const CGRect kViewFrameLandscape  = { { 325,  10 }, { 428, 200 } };
 static const CGRect kViewBoundsEditing	 = { {   0,   0 }, { 428, 250 } };
 
 //------------------------------------------------------------------------------

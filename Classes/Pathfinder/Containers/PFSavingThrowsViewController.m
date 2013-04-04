@@ -16,22 +16,18 @@
 #pragma mark - Constants
 //------------------------------------------------------------------------------
 
-static const CGRect kPFSavingThrowsViewFramePortrait	= { {  15, 110 }, { 305,  90 } };
-static const CGRect kPFSavingThrowsViewFrameLandscape	= { {  15, 110 }, { 305,  90 } };
+static const CGRect kPFSavingThrowsViewFramePortrait	= { {  10, 120 }, { 305, 100 } };
+static const CGRect kPFSavingThrowsViewFrameLandscape	= { {  10, 120 }, { 305, 100 } };
 static const CGRect kPFSavingThrowsViewBoundsEditing	= { {   0,   0 }, { 400, 195 } };
 
-static const CGRect kPFFortitudeLabelStatic		= { {  10,  35 }, {  85,  15 } };
-static const CGRect kPFFortitudeLabelEditing	= { {  10,  35 }, {  70,  15 } };
-static const CGRect kPFFortitudeFieldStatic		= { {  10,  50 }, {  85,  30 } };
-static const CGRect kPFFortitudeFieldEditing	= { {  10,  50 }, {  50,  30 } };
-static const CGRect kPFReflexLabelStatic		= { { 110,  35 }, {  85,  15 } };
-static const CGRect kPFReflexLabelEditing		= { {  10,  90 }, {  70,  15 } };
-static const CGRect kPFReflexFieldStatic		= { { 110,  50 }, {  85,  30 } };
-static const CGRect kPFReflexFieldEditing		= { {  10, 105 }, {  50,  30 } };
-static const CGRect kPFWillLabelStatic			= { { 210,  35 }, {  85,  15 } };
-static const CGRect kPFWillLabelEditing			= { {  10, 140 }, {  70,  15 } };
-static const CGRect kPFWillFieldStatic			= { { 210,  50 }, {  85,  30 } };
-static const CGRect kPFWillFieldEditing			= { {  10, 155 }, {  50,  30 } };
+static const CGRect kPFFortitudeTitleRects[]	= { { {  10,  40 }, {  85,  15 } }, { {  10,  40 }, {  70,  15 } } };
+static const CGRect kPFFortitudeFieldRects[]	= { { {  10,  55 }, {  85,  30 } }, { {  10,  55 }, {  50,  30 } } };
+
+static const CGRect kPFReflexTitleRects[]		= { { { 110,  40 }, {  85,  15 } }, { {  10,  90 }, {  70,  15 } } };
+static const CGRect kPFReflexFieldRects[]		= { { { 110,  55 }, {  85,  30 } }, { {  10, 105 }, {  50,  30 } } };
+
+static const CGRect kPFWillTitleRects[]			= { { { 210,  40 }, {  85,  15 } }, { {  10, 140 }, {  70,  15 } } };
+static const CGRect kPFWillFieldRects[]			= { { { 210,  55 }, {  85,  30 } }, { {  10, 155 }, {  50,  30 } } };
 
 //------------------------------------------------------------------------------
 #pragma mark - Private Interface Declaration
@@ -189,22 +185,15 @@ static const CGRect kPFWillFieldEditing			= { {  10, 155 }, {  50,  30 } };
 {
 	LOG_DEBUG(@"state = %d", aState);
 	[super layoutForState:aState];
-	if (aState == PFContainerViewStateEditing) {
-		self.fortitudeSaveLabel.frame = kPFFortitudeLabelEditing;
-		self.fortitudeSaveField.frame = kPFFortitudeFieldEditing;
-		self.reflexSaveLabel.frame = kPFReflexLabelEditing;
-		self.reflexSaveField.frame = kPFReflexFieldEditing;
-		self.willSaveLabel.frame = kPFWillLabelEditing;
-		self.willSaveField.frame = kPFWillFieldEditing;
-	}
-	else {
-		self.fortitudeSaveLabel.frame = kPFFortitudeLabelStatic;
-		self.fortitudeSaveField.frame = kPFFortitudeFieldStatic;
-		self.reflexSaveLabel.frame = kPFReflexLabelStatic;
-		self.reflexSaveField.frame = kPFReflexFieldStatic;
-		self.willSaveLabel.frame = kPFWillLabelStatic;
-		self.willSaveField.frame = kPFWillFieldStatic;
-	}
+
+	self.fortitudeSaveLabel.frame = kPFFortitudeTitleRects[aState];
+	self.fortitudeSaveField.frame = kPFFortitudeFieldRects[aState];
+
+	self.reflexSaveLabel.frame = kPFReflexTitleRects[aState];
+	self.reflexSaveField.frame = kPFReflexFieldRects[aState];
+
+	self.willSaveLabel.frame = kPFWillTitleRects[aState];
+	self.willSaveField.frame = kPFWillFieldRects[aState];
 }
 
 @end

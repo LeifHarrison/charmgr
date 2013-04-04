@@ -17,8 +17,8 @@
 #pragma mark - Constants
 //------------------------------------------------------------------------------
 
-static const CGRect kPFAttacksViewFramePortrait		= { {  15, 205 }, { 305, 155 } };
-static const CGRect kPFAttacksViewFrameLandscape	= { {  15, 205 }, { 305, 155 } };
+static const CGRect kPFAttacksViewFramePortrait		= { {  10, 230 }, { 305, 155 } };
+static const CGRect kPFAttacksViewFrameLandscape	= { {  10, 230 }, { 305, 155 } };
 static const CGRect kPFAttacksViewBoundsEditing		= { {   0,   0 }, { 355, 315 } };
 
 static const CGRect kPFInitiativeTitleRects[]		= { { {  10,  40 }, {  85,  15 } }, { {  10,  50 }, {  85,  15 } } };

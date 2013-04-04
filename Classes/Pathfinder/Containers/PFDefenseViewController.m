@@ -16,24 +16,24 @@
 #pragma mark - Constants
 //------------------------------------------------------------------------------
 
-static const CGRect kPFDefenseViewFramePortrait		= { {  15, 385 }, { 305, 175 } };
-static const CGRect kPFDefenseViewFrameLandscape	= { {  15, 385 }, { 305, 175 } };
-static const CGRect kPFDefenseViewBoundsEditing		= { {   0,   0 }, { 640, 340 } };
+static const CGRect kPFDefenseViewFramePortrait		= { {  10, 395 }, { 305, 155 } };
+static const CGRect kPFDefenseViewFrameLandscape	= { {  10, 395 }, { 305, 155 } };
+static const CGRect kPFDefenseViewBoundsEditing		= { {   0,   0 }, { 660, 340 } };
 
-static const CGRect kPFArmorClassTitleRects[]		= { { {  10,  35 }, {  90,  30 } }, { {  10,  35 }, {  90,  30 } } };
-static const CGRect kPFArmorClassFieldRects[]		= { { {  10,  65 }, {  85,  30 } }, { {  10,  65 }, {  70,  30 } } };
+static const CGRect kPFArmorClassTitleRects[]		= { { {  10,  40 }, {  90,  15 } }, { {  10,  50 }, {  90,  15 } } };
+static const CGRect kPFArmorClassFieldRects[]		= { { {  10,  55 }, {  85,  30 } }, { {  10,  65 }, {  70,  30 } } };
 
-static const CGRect kPFFlatFootedACTitleRects[]		= { { { 110,  35 }, {  85,  15 } }, { {  10, 100 }, {  85,  15 } } };
-static const CGRect kPFFlatFootedACFieldRects[]		= { { { 110,  65 }, {  85,  30 } }, { {  10, 115 }, {  70,  30 } } };
+static const CGRect kPFFlatFootedACTitleRects[]		= { { { 110,  40 }, {  85,  15 } }, { {  10, 100 }, {  85,  15 } } };
+static const CGRect kPFFlatFootedACFieldRects[]		= { { { 110,  55 }, {  85,  30 } }, { {  10, 115 }, {  70,  30 } } };
 
-static const CGRect kPFTouchACTitleRects[]			= { { { 210,  35 }, {  85,  15 } }, { {  10, 150 }, {  85,  15 } } };
-static const CGRect kPFTouchACFieldRects[]			= { { { 210,  65 }, {  85,  30 } }, { {  10, 165 }, {  70,  30 } } };
+static const CGRect kPFTouchACTitleRects[]			= { { { 210,  40 }, {  85,  15 } }, { {  10, 150 }, {  85,  15 } } };
+static const CGRect kPFTouchACFieldRects[]			= { { { 210,  55 }, {  85,  30 } }, { {  10, 165 }, {  70,  30 } } };
 
-static const CGRect kPFCMDTitleRects[]				= { { {  10, 119 }, {  90,  15 } }, { {  10, 230 }, {  90,  15 } } };
-static const CGRect kPFCMDFieldRects[]				= { { {  10, 135 }, {  85,  30 } }, { {  10, 245 }, {  70,  30 } } };
+static const CGRect kPFCMDTitleRects[]				= { { {  10,  95 }, {  90,  15 } }, { {  10, 230 }, {  90,  15 } } };
+static const CGRect kPFCMDFieldRects[]				= { { {  10, 110 }, {  85,  30 } }, { {  10, 245 }, {  70,  30 } } };
 
-static const CGRect kPFFlatFootedCMDTitleRects[]	= { { { 110, 105 }, {  85,  15 } }, { {  10, 285 }, {  85,  15 } } };
-static const CGRect kPFFlatFootedCMDFieldRects[]	= { { { 110, 135 }, {  85,  30 } }, { {  10, 300 }, {  70,  30 } } };
+static const CGRect kPFFlatFootedCMDTitleRects[]	= { { { 110,  95 }, {  85,  15 } }, { {  10, 285 }, {  85,  15 } } };
+static const CGRect kPFFlatFootedCMDFieldRects[]	= { { { 110, 110 }, {  85,  30 } }, { {  10, 300 }, {  70,  30 } } };
 
 //------------------------------------------------------------------------------
 #pragma mark - Private Interface Declaration

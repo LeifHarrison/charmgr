@@ -14,8 +14,8 @@
 #pragma mark - Constants
 //------------------------------------------------------------------------------
 
-static const CGRect kPFInitiativeViewFramePortrait	= { {  15, 290 }, { 305,  90 } };
-static const CGRect kPFInitiativeViewFrameLandscape	= { {  15, 290 }, { 305,  90 } };
+static const CGRect kPFInitiativeViewFramePortrait	= { {  10, 290 }, { 305,  90 } };
+static const CGRect kPFInitiativeViewFrameLandscape	= { {  10, 290 }, { 305,  90 } };
 static const CGRect kPFInitiativeViewBoundsEditing	= { {   0,   0 }, { 305,  90 } };
 
 //------------------------------------------------------------------------------
