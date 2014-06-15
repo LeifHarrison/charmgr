@@ -8,6 +8,12 @@
 
 #import "PFProfileViewController.h"
 
+#import "PFAbilitiesViewController.h"
+#import "PFCharacterViewController.h"
+#import "PFClassesViewController.h"
+#import "PFClassFeaturesViewController.h"
+#import "PFSkillsViewController.h"
+
 //------------------------------------------------------------------------------
 #pragma mark - Private Interface Declaration
 //------------------------------------------------------------------------------
@@ -47,6 +53,14 @@
 {
 	TRACE;
     [super viewDidLoad];
+	
+//	BOOL isPortrait = UIInterfaceOrientationIsPortrait(self.interfaceOrientation) ;
+//	
+//	PFAbilitiesViewController *abilitiesController = [[PFAbilitiesViewController alloc] initWithNibName:@"PFAbilitiesView" bundle:nil];
+//	[self.containers addObject:abilitiesController];
+//	abilitiesController.view.frame = isPortrait ? [abilitiesController staticFramePortrait] : [abilitiesController staticFrameLandscape];
+//	[self.view addSubview:abilitiesController.view];
+
 }
 
 //------------------------------------------------------------------------------

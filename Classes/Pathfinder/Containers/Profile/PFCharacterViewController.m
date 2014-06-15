@@ -28,12 +28,12 @@
 //------------------------------------------------------------------------------
 
 static const CGRect kPFCharacterViewFramePortrait	= { {  10,  10 }, { 238, 240 } };
-static const CGRect kPFCharacterViewFrameLandscape	= { {  10,  10 }, { 285, 238 } };
-static const CGRect kPFCharacterViewBoundsEditing	= { {   0,   0 }, { 268, 258 } };
+static const CGRect kPFCharacterViewFrameLandscape	= { {  10,  10 }, { 285, 240 } };
+static const CGRect kPFCharacterViewBoundsEditing	= { {   0,   0 }, { 268, 265 } };
 
 static const CGFloat kPFCharacterViewLabelsInsetX		= 15.0f;
 static const CGFloat kPFCharacterViewSpacingX			= 5.0f;
-static const CGFloat kPFCharacterViewInsetY				= 35.0f;
+static const CGFloat kPFCharacterViewInsetY				= 40.0f;
 static const CGFloat kPFCharacterViewSpacingYStatic		= 7.0f;
 static const CGFloat kPFCharacterViewSpacingYEditing	= 5.0f;
 static const CGFloat kPFCharacterViewHeightStatic		= 20.0f;

@@ -1,12 +1,12 @@
 //
-//  PFFeaturesViewController.m
+//  PFClassFeaturesViewController.m
 //  CharMgr
 //
 //  Created by Leif Harrison on 9/13/12.
 //  Copyright (c) 2012 Leif Harrison. All rights reserved.
 //
 
-#import "PFFeaturesViewController.h"
+#import "PFClassFeaturesViewController.h"
 
 #import "CMBannerBox.h"
 
@@ -27,22 +27,20 @@
 //------------------------------------------------------------------------------
 
 enum {
-	kPFFeaturesTableViewSectionRacialTraits,
 	kPFFeaturesTableViewSectionClassFeatures,
 	kPFFeaturesTableViewSectionCount
 };
 
-static const CGRect kPFFeaturesViewFramePortrait	= { {  10, 255 }, { 345, 739 } };
-static const CGRect kPFFeaturesViewFrameLandscape	= { { 300,  10 }, { 311, 728 } };
-static const CGRect kPFFeaturesViewBoundsEditing	= { {   0,   0 }, { 345, 739 } };
+static const CGRect kPFFeaturesViewFramePortrait	= { {  10, 255 }, { 345, 480 } };
+static const CGRect kPFFeaturesViewFrameLandscape	= { { 300,  10 }, { 311, 480 } };
+static const CGRect kPFFeaturesViewBoundsEditing	= { {   0,   0 }, { 345, 480 } };
 
 //------------------------------------------------------------------------------
 #pragma mark - Private Interface Declaration
 //------------------------------------------------------------------------------
 
-@interface PFFeaturesViewController ()
+@interface PFClassFeaturesViewController ()
 
-@property (nonatomic, strong) NSArray *racialTraits;
 @property (nonatomic, strong) NSArray *classFeatures;
 @property (nonatomic, strong) NSArray *characterFeats;
 
@@ -52,7 +50,7 @@ static const CGRect kPFFeaturesViewBoundsEditing	= { {   0,   0 }, { 345, 739 } 
 // Class Implementation
 //==============================================================================
 
-@implementation PFFeaturesViewController
+@implementation PFClassFeaturesViewController
 
 //------------------------------------------------------------------------------
 #pragma mark - Initialization
@@ -75,7 +73,7 @@ static const CGRect kPFFeaturesViewBoundsEditing	= { {   0,   0 }, { 345, 739 } 
 {
     [super viewDidLoad];
 	
-    //[(CMBannerBox*)self.view setBannerTitle:@"Feats & Special Abilities"];
+    [(CMBannerBox*)self.view setBannerTitle:@"Class Features"];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -103,11 +101,12 @@ static const CGRect kPFFeaturesViewBoundsEditing	= { {   0,   0 }, { 345, 739 } 
 {
 	[super updateUI];
 	
-	self.racialTraits = [self.character.race sortedTraits];
-	
 	self.classFeatures = nil;
 	for (PFCharacterClass *aClass in self.character.classes) {
 		NSArray *classFeatures = aClass.classType.features.allObjects;
+		
+		classFeatures = [classFeatures filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"level <= %d", aClass.level]];
+		
 		if (!self.classFeatures) {
 			self.classFeatures = [classFeatures copy];
 		}
@@ -129,14 +128,7 @@ static const CGRect kPFFeaturesViewBoundsEditing	= { {   0,   0 }, { 345, 739 } 
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
-	if (indexPath.section == kPFFeaturesTableViewSectionRacialTraits) {
-		PFRacialTraitTableViewCell *traitCell = (PFRacialTraitTableViewCell *)cell;
-		PFRacialTrait *aTrait = [self.racialTraits objectAtIndex:indexPath.row];
-		traitCell.containerState = self.state;
-		traitCell.traitNameLabel.text = aTrait.displayName;
-		traitCell.traitDescriptionLabel.text = aTrait.descriptionShort;
-	}
-	else if (indexPath.section == kPFFeaturesTableViewSectionClassFeatures) {
+	if (indexPath.section == kPFFeaturesTableViewSectionClassFeatures) {
 		PFClassFeatureCell *featureCell = (PFClassFeatureCell *)cell;
 		PFClassFeature *aFeature = [self.classFeatures objectAtIndex:indexPath.row];
 		//cell.containerState = self.state;
@@ -156,26 +148,10 @@ static const CGRect kPFFeaturesViewBoundsEditing	= { {   0,   0 }, { 345, 739 } 
     return kPFFeaturesTableViewSectionCount;
 }
 
-- (NSString *)tableView:(UITableView *)aTableView titleForHeaderInSection:(NSInteger)section
-{
-	if ((section == kPFFeaturesTableViewSectionRacialTraits) && (self.racialTraits.count > 0)) {
-		return @"Racial Traits";
-	}
-	else if ((section == kPFFeaturesTableViewSectionClassFeatures) && (self.classFeatures.count > 0)) {
-		return @"Class Features";
-	}
-	else {
-		return nil;
-	}
-}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
 	NSInteger rowCount = 0;
-	if (section == kPFFeaturesTableViewSectionRacialTraits) {
-		rowCount = self.racialTraits.count;
-	}
-	else if (section == kPFFeaturesTableViewSectionClassFeatures) {
+	if (section == kPFFeaturesTableViewSectionClassFeatures) {
 		rowCount = self.classFeatures.count;
 	}
 	//LOG_DEBUG(@"section = %d, rows = %d", section, rowCount);
@@ -186,10 +162,7 @@ static const CGRect kPFFeaturesViewBoundsEditing	= { {   0,   0 }, { 345, 739 } 
 {
     NSString *cellIdentifier = nil;
 	
-	if (indexPath.section == kPFFeaturesTableViewSectionRacialTraits) {
-		cellIdentifier = @"RacialTraitCell";
-	}
-	else if (indexPath.section == kPFFeaturesTableViewSectionClassFeatures) {
+	if (indexPath.section == kPFFeaturesTableViewSectionClassFeatures) {
 		cellIdentifier = @"ClassFeatureCell";
 	}
 	//LOG_DEBUG(@"indexPath = %@, cell identifier = %@", indexPath, cellIdentifier);
@@ -213,11 +186,7 @@ static const CGRect kPFFeaturesViewBoundsEditing	= { {   0,   0 }, { 345, 739 } 
 {
 	CGFloat cellHeight = 0;
 	
-	if (indexPath.section == kPFFeaturesTableViewSectionRacialTraits) {
-		PFRacialTrait *aTrait = [self.racialTraits objectAtIndex:indexPath.row];
-		cellHeight = [PFRacialTraitTableViewCell rowHeightForState:self.state trait:aTrait cellWidth:self.tableView.bounds.size.width];
-	}
-	else if (indexPath.section == kPFFeaturesTableViewSectionClassFeatures) {
+	if (indexPath.section == kPFFeaturesTableViewSectionClassFeatures) {
 		cellHeight = [PFClassFeatureCell rowHeightForState:self.state];
 	}
 

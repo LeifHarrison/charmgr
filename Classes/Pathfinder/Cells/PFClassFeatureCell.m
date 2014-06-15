@@ -89,10 +89,10 @@
 + (CGFloat)rowHeightForState:(PFContainerViewState)aState;
 {
 	if (aState == PFContainerViewStateStatic) {
-		return 20;
+		return 18;
 	}
 	else {
-		return 30;
+		return 26;
 	}
 }
 

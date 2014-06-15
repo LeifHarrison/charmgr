@@ -1,5 +1,5 @@
 //
-//  PFFeaturesViewController.h
+//  PFClassFeaturesViewController.h
 //  CharMgr
 //
 //  Created by Leif Harrison on 9/13/12.
@@ -8,7 +8,7 @@
 
 #import "PFContainerViewController.h"
 
-@interface PFFeaturesViewController : PFContainerViewController
+@interface PFClassFeaturesViewController : PFContainerViewController
 
 @property (nonatomic, strong) IBOutlet UITableView *tableView;
 

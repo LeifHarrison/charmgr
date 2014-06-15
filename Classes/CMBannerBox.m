@@ -146,28 +146,32 @@
 		[self setNeedsDisplay];
 	}
 }
-/*
+
 - (void)setSelected:(BOOL)selected
 {
 	LOG_DEBUG(@"selected = %d", selected);
 	if (selected != _selected) {
 		_selected = selected;
 		if (selected) {
-			self.bannerHeight = 35.0f;
+//			self.bannerHeight = 35.0f;
+			self.layer.borderColor = [UIColor darkGrayColor].CGColor;
+			self.bannerBackground.backgroundColor = [UIColor darkGrayColor];
 		}
 		else {
-			self.bannerHeight = PFDefaultBannerHeight;
+//			self.bannerHeight = PFDefaultBannerHeight;
+			self.layer.borderColor = self.bannerColor.CGColor;
+			self.bannerBackground.backgroundColor = self.bannerColor;
 		}
 		
-		CGRect bannerFrame = self.bannerBackground.frame;
-		bannerFrame.size.height = self.bannerHeight;
-		self.bannerBackground.frame = bannerFrame;
-		
-		self.bannerLabel.frame = CGRectCenteredInRect(self.bannerLabel.frame, bannerFrame);
-		[self setNeedsDisplay];
+//		CGRect bannerFrame = self.bannerBackground.frame;
+//		bannerFrame.size.height = self.bannerHeight;
+//		self.bannerBackground.frame = bannerFrame;
+//		
+//		self.bannerLabel.frame = CGRectCenteredInRect(self.bannerLabel.frame, bannerFrame);
+//		[self setNeedsDisplay];
 	}
 }
-*/
+
 //------------------------------------------------------------------------------
 #pragma mark - Private
 //------------------------------------------------------------------------------
@@ -202,9 +206,9 @@
 {
 	LOG_DEBUG(@"event = %@", event);
 	[super touchesBegan:touches withEvent:event];
-	if (!self.selected) {
-		self.highlighted = YES;
-	}
+//	if (!self.selected) {
+//		self.highlighted = YES;
+//	}
 }
 
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event

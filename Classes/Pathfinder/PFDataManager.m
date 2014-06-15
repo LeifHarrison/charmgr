@@ -260,7 +260,7 @@
 	
 }
 
-- (void)importWeaponsAsXML;
+- (BOOL)importWeaponsAsXML;
 {
 	LOG_DEBUG(@"Importing weapons...");
 	CMAppDelegate *appDelegate = (CMAppDelegate*)[[UIApplication sharedApplication] delegate];
@@ -274,7 +274,7 @@
     GDataXMLDocument *doc = [[GDataXMLDocument alloc] initWithData:xmlData options:0 error:&error];
     if (doc == nil) {
 		if (error) NSLog(@"Error parsing XML: %@, %@", error, [error userInfo]);
-		return;
+		return NO;
 	}
 	
     //NSLog(@"%@", doc.rootElement);
@@ -291,9 +291,11 @@
 	
 	if (![moc save:&error]) {
 		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-		abort();
+		[moc rollback];
+		return NO;
 	}
 	
+	return YES;
 }
 
 @end

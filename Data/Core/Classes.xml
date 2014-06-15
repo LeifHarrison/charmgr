@@ -76,6 +76,48 @@
             <Feature level="3" name="Still Mind" type="Ex">
                 <Benefit>A monk of 3rd level or higher gains a +2 bonus on saving throws against enchantment spells and effects.</Benefit>
             </Feature>
+            <Feature level="4" name="Ki Pool" type="Su">
+                <Benefit></Benefit>
+            </Feature>
+            <Feature level="4" name="Slow Fall" type="Ex">
+                <Benefit></Benefit>
+            </Feature>
+            <Feature level="5" name="High Jump" type="Ex">
+                <Benefit></Benefit>
+            </Feature>
+            <Feature level="5" name="Purity of Body" type="Ex">
+                <Benefit></Benefit>
+            </Feature>
+            <Feature level="7" name="Wholeness of Body" type="Su">
+                <Benefit></Benefit>
+            </Feature>
+            <Feature level="9" name="Improved Evasion" type="Ex">
+                <Benefit></Benefit>
+            </Feature>
+            <Feature level="11" name="Diamond Body" type="Su">
+                <Benefit></Benefit>
+            </Feature>
+            <Feature level="12" name="Abundant Step" type="Su">
+                <Benefit></Benefit>
+            </Feature>
+            <Feature level="13" name="Diamond Soul" type="Ex">
+                <Benefit></Benefit>
+            </Feature>
+            <Feature level="15" name="Quivering Palm" type="Su">
+                <Benefit></Benefit>
+            </Feature>
+            <Feature level="17" name="Timeless Body " type="Ex">
+                <Benefit></Benefit>
+            </Feature>
+            <Feature level="17" name="Tongue of the Sun and Moon" type="Ex">
+                <Benefit></Benefit>
+            </Feature>
+            <Feature level="19" name="Empty Body" type="Ex">
+                <Benefit></Benefit>
+            </Feature>
+            <Feature level="20" name="Perfect Self" type="Ex">
+                <Benefit></Benefit>
+            </Feature>
         </Features>
 	</Class>
 	<Class name="Paladin" source="Core" hitDieType="10" skillRanksPerLevel="2">

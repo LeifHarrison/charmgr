@@ -221,8 +221,9 @@
 	UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"ReferenceStoryboard" bundle:[NSBundle mainBundle]];
 	UIViewController *referenceViewController = [storyboard instantiateViewControllerWithIdentifier:@"ReferenceTabBarController"];
 	referenceViewController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+	referenceViewController.modalPresentationStyle = UIModalPresentationFullScreen;
 	LOG_DEBUG(@"referenceViewController = %@", referenceViewController);
-	[self presentModalViewController:referenceViewController animated:YES];
+	[self presentViewController:referenceViewController animated:YES completion:^{}];
 }
 
 - (IBAction)showPreferencesView:(id)sender;
@@ -463,7 +464,8 @@
 	}
     
     // Dismiss the modal view to return to the main list
-    [self dismissModalViewControllerAnimated:YES];
+    //[self dismissModalViewControllerAnimated:YES];
+	[self dismissViewControllerAnimated:YES completion:^{}];
 }
 
 

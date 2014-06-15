@@ -169,11 +169,6 @@ static const CGFloat kSkillsViewRowHeightStatic = 20.0f;
 #pragma mark - UITableViewDelegate
 //------------------------------------------------------------------------------
 
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-{
-	UIView *header = (UIView*)[tableView dequeueReusableCellWithIdentifier:@"SkillsSectionHeader"];
-	return header;
-}
 
 //------------------------------------------------------------------------------
 #pragma mark - Frame Sizes (for different states)

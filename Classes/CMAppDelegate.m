@@ -132,8 +132,9 @@
 	NSDate *weaponsLastUpdated = [userDefaults objectForKey:kCMWeaponsUpdatedDateDefaultsKey];
 	LOG_DEBUG(@"weaponsLastUpdated = %@", weaponsLastUpdated);
 	if (!weaponsLastUpdated) {
-		[self.dataManager importWeaponsAsXML];
-		[userDefaults setObject:[NSDate date] forKey:kCMWeaponsUpdatedDateDefaultsKey];
+		if ([self.dataManager importWeaponsAsXML]) {
+			[userDefaults setObject:[NSDate date] forKey:kCMWeaponsUpdatedDateDefaultsKey];
+		}
 	}
 	
 	[userDefaults synchronize];

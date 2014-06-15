@@ -31,7 +31,6 @@
 		2902D0A0161FED6E00C56E74 /* PFRace.m in Sources */ = {isa = PBXBuildFile; fileRef = 2902D09F161FED6E00C56E74 /* PFRace.m */; };
 		2902D0A3161FED6E00C56E74 /* PFAbility.m in Sources */ = {isa = PBXBuildFile; fileRef = 2902D0A2161FED6E00C56E74 /* PFAbility.m */; };
 		2902D0A6161FEE6A00C56E74 /* PFDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2902D0A5161FEE6A00C56E74 /* PFDataManager.m */; };
-		2904429F1609875C008DAF11 /* PathfinderRoleplayingGame.png in Resources */ = {isa = PBXBuildFile; fileRef = 2904429E1609875C008DAF11 /* PathfinderRoleplayingGame.png */; };
 		290442A4160C3696008DAF11 /* PFInitiativeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 290442A3160C3696008DAF11 /* PFInitiativeViewController.m */; };
 		290442A7160C3782008DAF11 /* PFWeaponsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 290442A6160C3782008DAF11 /* PFWeaponsViewController.m */; };
 		290442AA160C392A008DAF11 /* PFEffectsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 290442A9160C392A008DAF11 /* PFEffectsViewController.m */; };
@@ -53,10 +52,11 @@
 		29362C1916253D9D0081EFA2 /* PFCreateCharacterChooseClassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29362C1816253D9D0081EFA2 /* PFCreateCharacterChooseClassViewController.m */; };
 		29362C1C16253F9C0081EFA2 /* PFCreateCharacterInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29362C1B16253F9C0081EFA2 /* PFCreateCharacterInfoViewController.m */; };
 		2945352015F80B820012F88F /* paper_texture.png in Resources */ = {isa = PBXBuildFile; fileRef = 2945351F15F80B820012F88F /* paper_texture.png */; };
+		2946DBF0194AAD6700295F90 /* PathfinderRoleplayingGame.png in Resources */ = {isa = PBXBuildFile; fileRef = 2946DBEF194AAD6700295F90 /* PathfinderRoleplayingGame.png */; };
 		294C549216D33AF700620879 /* CGGeometry+CMExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 294C549116D33AF700620879 /* CGGeometry+CMExtensions.m */; };
 		295F62DE1602EE7000EEF5ED /* PFSkillsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 295F62DC1602EE7000EEF5ED /* PFSkillsViewController.m */; };
 		295F62E31602EEDD00EEF5ED /* PFAbilitiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 295F62E11602EEDD00EEF5ED /* PFAbilitiesViewController.m */; };
-		295F62E81602EF0800EEF5ED /* PFFeaturesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 295F62E61602EF0800EEF5ED /* PFFeaturesViewController.m */; };
+		295F62E81602EF0800EEF5ED /* PFClassFeaturesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 295F62E61602EF0800EEF5ED /* PFClassFeaturesViewController.m */; };
 		295F62F21602EFB000EEF5ED /* PFHealthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 295F62F01602EFB000EEF5ED /* PFHealthViewController.m */; };
 		295F62F71602EFCF00EEF5ED /* PFAttacksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 295F62F51602EFCF00EEF5ED /* PFAttacksViewController.m */; };
 		295F62FC1602EFF900EEF5ED /* PFArmorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 295F62FA1602EFF900EEF5ED /* PFArmorViewController.m */; };
@@ -153,7 +153,6 @@
 		2902D0A2161FED6E00C56E74 /* PFAbility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFAbility.m; path = Pathfinder/Model/PFAbility.m; sourceTree = "<group>"; };
 		2902D0A4161FEE6A00C56E74 /* PFDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFDataManager.h; path = Pathfinder/PFDataManager.h; sourceTree = "<group>"; };
 		2902D0A5161FEE6A00C56E74 /* PFDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFDataManager.m; path = Pathfinder/PFDataManager.m; sourceTree = "<group>"; };
-		2904429E1609875C008DAF11 /* PathfinderRoleplayingGame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = PathfinderRoleplayingGame.png; path = Resources/images/PathfinderRoleplayingGame.png; sourceTree = "<group>"; };
 		290442A2160C3696008DAF11 /* PFInitiativeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFInitiativeViewController.h; path = Pathfinder/Containers/PFInitiativeViewController.h; sourceTree = "<group>"; };
 		290442A3160C3696008DAF11 /* PFInitiativeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFInitiativeViewController.m; path = Pathfinder/Containers/PFInitiativeViewController.m; sourceTree = "<group>"; };
 		290442A5160C3782008DAF11 /* PFWeaponsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFWeaponsViewController.h; path = Pathfinder/Containers/PFWeaponsViewController.h; sourceTree = "<group>"; };
@@ -188,14 +187,15 @@
 		29362C1A16253F9C0081EFA2 /* PFCreateCharacterInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFCreateCharacterInfoViewController.h; path = Pathfinder/Creation/PFCreateCharacterInfoViewController.h; sourceTree = "<group>"; };
 		29362C1B16253F9C0081EFA2 /* PFCreateCharacterInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFCreateCharacterInfoViewController.m; path = Pathfinder/Creation/PFCreateCharacterInfoViewController.m; sourceTree = "<group>"; };
 		2945351F15F80B820012F88F /* paper_texture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = paper_texture.png; path = Resources/images/paper_texture.png; sourceTree = "<group>"; };
+		2946DBEF194AAD6700295F90 /* PathfinderRoleplayingGame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = PathfinderRoleplayingGame.png; path = Resources/images/PathfinderRoleplayingGame.png; sourceTree = "<group>"; };
 		294C549016D33AF700620879 /* CGGeometry+CMExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CGGeometry+CMExtensions.h"; sourceTree = "<group>"; };
 		294C549116D33AF700620879 /* CGGeometry+CMExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CGGeometry+CMExtensions.m"; sourceTree = "<group>"; };
 		295F62DB1602EE7000EEF5ED /* PFSkillsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFSkillsViewController.h; path = Pathfinder/Containers/Profile/PFSkillsViewController.h; sourceTree = "<group>"; };
 		295F62DC1602EE7000EEF5ED /* PFSkillsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFSkillsViewController.m; path = Pathfinder/Containers/Profile/PFSkillsViewController.m; sourceTree = "<group>"; };
 		295F62E01602EEDD00EEF5ED /* PFAbilitiesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFAbilitiesViewController.h; path = Pathfinder/Containers/Profile/PFAbilitiesViewController.h; sourceTree = "<group>"; };
 		295F62E11602EEDD00EEF5ED /* PFAbilitiesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFAbilitiesViewController.m; path = Pathfinder/Containers/Profile/PFAbilitiesViewController.m; sourceTree = "<group>"; };
-		295F62E51602EF0800EEF5ED /* PFFeaturesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFFeaturesViewController.h; path = Pathfinder/Containers/Profile/PFFeaturesViewController.h; sourceTree = "<group>"; };
-		295F62E61602EF0800EEF5ED /* PFFeaturesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFFeaturesViewController.m; path = Pathfinder/Containers/Profile/PFFeaturesViewController.m; sourceTree = "<group>"; };
+		295F62E51602EF0800EEF5ED /* PFClassFeaturesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFClassFeaturesViewController.h; path = Pathfinder/Containers/Profile/PFClassFeaturesViewController.h; sourceTree = "<group>"; };
+		295F62E61602EF0800EEF5ED /* PFClassFeaturesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFClassFeaturesViewController.m; path = Pathfinder/Containers/Profile/PFClassFeaturesViewController.m; sourceTree = "<group>"; };
 		295F62EF1602EFB000EEF5ED /* PFHealthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFHealthViewController.h; path = Pathfinder/Containers/PFHealthViewController.h; sourceTree = "<group>"; };
 		295F62F01602EFB000EEF5ED /* PFHealthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFHealthViewController.m; path = Pathfinder/Containers/PFHealthViewController.m; sourceTree = "<group>"; };
 		295F62F41602EFCE00EEF5ED /* PFAttacksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFAttacksViewController.h; path = Pathfinder/Containers/PFAttacksViewController.h; sourceTree = "<group>"; };
@@ -422,7 +422,7 @@
 			children = (
 				29D403EB16DDBE1A002A5A56 /* paper_texture2.png */,
 				29D403EC16DDBE1A002A5A56 /* paper_texture3.png */,
-				2904429E1609875C008DAF11 /* PathfinderRoleplayingGame.png */,
+				2946DBEF194AAD6700295F90 /* PathfinderRoleplayingGame.png */,
 				2945351F15F80B820012F88F /* paper_texture.png */,
 			);
 			name = Images;
@@ -462,8 +462,8 @@
 				29B7D65515F918900039C390 /* PFCharacterViewController.m */,
 				29DB694F16293C340038FE79 /* PFClassesViewController.h */,
 				29DB695016293C340038FE79 /* PFClassesViewController.m */,
-				295F62E51602EF0800EEF5ED /* PFFeaturesViewController.h */,
-				295F62E61602EF0800EEF5ED /* PFFeaturesViewController.m */,
+				295F62E51602EF0800EEF5ED /* PFClassFeaturesViewController.h */,
+				295F62E61602EF0800EEF5ED /* PFClassFeaturesViewController.m */,
 				295F62DB1602EE7000EEF5ED /* PFSkillsViewController.h */,
 				295F62DC1602EE7000EEF5ED /* PFSkillsViewController.m */,
 			);
@@ -813,7 +813,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = CM;
-				LastUpgradeCheck = 0450;
+				LastUpgradeCheck = 0600;
 				ORGANIZATIONNAME = "Leif Harrison";
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "CharMgr" */;
@@ -844,7 +844,6 @@
 				28D4B068107A5DE70093E739 /* WHProfileView.xib in Resources */,
 				2945352015F80B820012F88F /* paper_texture.png in Resources */,
 				29B7D6A515F938970039C390 /* MainStoryboard.storyboard in Resources */,
-				2904429F1609875C008DAF11 /* PathfinderRoleplayingGame.png in Resources */,
 				2900413916252EBE0050EDDB /* ProfileStoryboard.storyboard in Resources */,
 				2900413B162530E20050EDDB /* CombatStoryboard.storyboard in Resources */,
 				2900413D1625315C0050EDDB /* EquipmentStoryboard.storyboard in Resources */,
@@ -859,6 +858,7 @@
 				293372A3170008AF003A1013 /* PFEquippedItemsView.xib in Resources */,
 				293372A51700090D003A1013 /* PFInventoryView.xib in Resources */,
 				293372A717000935003A1013 /* PFMoneyView.xib in Resources */,
+				2946DBF0194AAD6700295F90 /* PathfinderRoleplayingGame.png in Resources */,
 				293372A91700094E003A1013 /* PFPotionsView.xib in Resources */,
 				293372AB17000969003A1013 /* PFScrollsView.xib in Resources */,
 			);
@@ -892,7 +892,7 @@
 				299ACDEF15FAAE4C00E114E0 /* PFCharacter.m in Sources */,
 				295F62DE1602EE7000EEF5ED /* PFSkillsViewController.m in Sources */,
 				295F62E31602EEDD00EEF5ED /* PFAbilitiesViewController.m in Sources */,
-				295F62E81602EF0800EEF5ED /* PFFeaturesViewController.m in Sources */,
+				295F62E81602EF0800EEF5ED /* PFClassFeaturesViewController.m in Sources */,
 				295F62F21602EFB000EEF5ED /* PFHealthViewController.m in Sources */,
 				295F62F71602EFCF00EEF5ED /* PFAttacksViewController.m in Sources */,
 				295F62FC1602EFF900EEF5ED /* PFArmorViewController.m in Sources */,
@@ -971,7 +971,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "CharMgr-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = CharMgr;
 				PROVISIONING_PROFILE = "";
 			};
@@ -989,7 +989,7 @@
 				GCC_PREFIX_HEADER = CharMgr_Prefix.pch;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "CharMgr-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = CharMgr;
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
@@ -1000,18 +1000,25 @@
 		C01FCF4F08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-lxml2";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
@@ -1021,16 +1028,22 @@
 		C01FCF5008A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";

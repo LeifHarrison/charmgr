@@ -196,6 +196,13 @@ static const CGFloat kPFContainerViewButtonHeight = 20.0f;
 - (void)willTransitionToState:(PFContainerViewState)newState;
 {
 	//LOG_DEBUG(@"newState = %d", newState);
+	
+	if (newState == PFContainerViewStateEditing) {
+		[(CMBannerBox*)self.view setSelected:YES];
+	}
+	else {
+		[(CMBannerBox*)self.view setSelected:NO];
+	}
 /*
 	void (^animations) (void) = ^{
 		if (newState == PFContainerViewStateStatic) {

@@ -178,7 +178,7 @@
 - (void)containerViewLongPress:(UIGestureRecognizer*)gesture
 {
 	LOG_DEBUG(@"gesture.state = %d", gesture.state);
-	if (gesture.state == UIGestureRecognizerStateEnded) {
+	if (gesture.state == UIGestureRecognizerStateBegan) {
 		PFContainerViewController *controller = (PFContainerViewController*)gesture.delegate;
 		//[controller.view removeGestureRecognizer:gesture];
 		[self setContainerTapGesturesEnabled:NO excludingGesture:nil];

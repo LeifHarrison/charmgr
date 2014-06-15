@@ -8,7 +8,7 @@
 
 #import "PFWeaponTableViewCell.h"
 
-#define PFWeaponTableViewCellDividerHeight 2.0f
+#define PFWeaponTableViewCellDividerHeight 1.0f
 #define PFWeaponTableViewCellDividerInset  5.0f
 
 //------------------------------------------------------------------------------
@@ -55,8 +55,9 @@
 {
 	//self.dividerImageView = [[UIImageView alloc] initWithImage:nil];
 	self.dividerImageView = [[UIView alloc] initWithFrame:CGRectZero];
-	self.dividerImageView.layer.borderColor = [UIColor darkGrayColor].CGColor;
-	self.dividerImageView.layer.borderWidth = 1.5f;
+	
+	self.dividerImageView.layer.borderColor = [UIColor lightGrayColor].CGColor;
+	self.dividerImageView.layer.borderWidth = 1.0f;
 	[self addSubview:self.dividerImageView];	
 }
 @end
