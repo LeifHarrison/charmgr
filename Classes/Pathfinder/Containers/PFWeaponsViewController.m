@@ -168,7 +168,7 @@ static const CGRect kPFWeaponsViewBoundsEditing	 = { {   0,   0 }, { 428, 470 } 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-	LOG_DEBUG(@"tableView = %@, section = %d, rows = %d", tableView, section, self.character.classes.count);
+	LOG_DEBUG(@"tableView = %@, section = %ld, rows = %lu", tableView, section, (unsigned long)self.character.classes.count);
     return self.character.weapons.count;
 	return 0;
 }

@@ -205,7 +205,7 @@
 {
 	NSInteger nextLevel = self.effectiveLevel+1;
 	NSInteger xpForLevel = [self xpForLevel:nextLevel];
-	LOG_DEBUG(@"xpForLevel = %d", xpForLevel);
+	LOG_DEBUG(@"xpForLevel = %ld", xpForLevel);
 	
 	if (nextLevel > 16) {
 		xpForLevel = [self roundIntegerValue:xpForLevel toNearest:50000];
@@ -402,30 +402,30 @@
 
 - (NSString *)baseAttackBonusDescription
 {
-	NSString *descriptionString = [NSString stringWithFormat:@"+%d", [self baseAttackBonusForAttackNumber:1]];
+	NSString *descriptionString = [NSString stringWithFormat:@"+%ld", (long)[self baseAttackBonusForAttackNumber:1]];
 	for (NSInteger attackNumber=2; attackNumber <= [self numberOfAttacks]; attackNumber++)
 	{
-		descriptionString = [descriptionString stringByAppendingFormat:@"/+%d", [self baseAttackBonusForAttackNumber:attackNumber]];
+		descriptionString = [descriptionString stringByAppendingFormat:@"/+%ld", (long)[self baseAttackBonusForAttackNumber:attackNumber]];
 	}
 	return descriptionString;
 }
 
 - (NSString *)meleeAttackBonusDescription
 {
-	NSString *descriptionString = [NSString stringWithFormat:@"+%d", [self meleeAttackBonusForAttackNumber:1]];
+	NSString *descriptionString = [NSString stringWithFormat:@"+%ld", (long)[self meleeAttackBonusForAttackNumber:1]];
 	for (NSInteger attackNumber=2; attackNumber <= [self numberOfAttacks]; attackNumber++)
 	{
-		descriptionString = [descriptionString stringByAppendingFormat:@"/+%d", [self meleeAttackBonusForAttackNumber:attackNumber]];
+		descriptionString = [descriptionString stringByAppendingFormat:@"/+%ld", (long)[self meleeAttackBonusForAttackNumber:attackNumber]];
 	}
 	return descriptionString;
 }
 
 - (NSString *)rangedAttackBonusDescription
 {
-	NSString *descriptionString = [NSString stringWithFormat:@"+%d", [self rangedAttackBonusForAttackNumber:1]];
+	NSString *descriptionString = [NSString stringWithFormat:@"+%ld", (long)[self rangedAttackBonusForAttackNumber:1]];
 	for (NSInteger attackNumber=2; attackNumber <= [self numberOfAttacks]; attackNumber++)
 	{
-		descriptionString = [descriptionString stringByAppendingFormat:@"/+%d", [self rangedAttackBonusForAttackNumber:attackNumber]];
+		descriptionString = [descriptionString stringByAppendingFormat:@"/+%ld", (long)[self rangedAttackBonusForAttackNumber:attackNumber]];
 	}
 	return descriptionString;
 }

@@ -87,24 +87,24 @@ static const CGRect kPFWillFieldRects[]			= { { { 210,  55 }, {  85,  30 } }, { 
 {
 	[super updateUI];
 	
-	self.fortitudeSaveField.text = [NSString stringWithFormat:@"%d", self.character.fortitudeBonus];
-	self.fortitudeBaseField.text = [NSString stringWithFormat:@"%d", self.character.fortitudeBaseBonus];
-	self.fortitudeAbilityField.text = [NSString stringWithFormat:@"%d", [self.character constitutionBonus]];
-	self.fortitudeRacialField.text = [NSString stringWithFormat:@"%d", self.character.fortitudeRacialBonus];
+	self.fortitudeSaveField.text = [NSString stringWithFormat:@"%ld", (long)self.character.fortitudeBonus];
+	self.fortitudeBaseField.text = [NSString stringWithFormat:@"%ld", (long)self.character.fortitudeBaseBonus];
+	self.fortitudeAbilityField.text = [NSString stringWithFormat:@"%ld", (long)[self.character constitutionBonus]];
+	self.fortitudeRacialField.text = [NSString stringWithFormat:@"%ld", (long)self.character.fortitudeRacialBonus];
 	self.fortitudeMiscField.text = [NSString stringWithFormat:@"%d", self.character.fortitudeMiscBonus];
 	//self.fortitudeTempField.text = [NSString stringWithFormat:@"%d", self.character.fortitudeTempBonus];
 	
-	self.reflexSaveField.text = [NSString stringWithFormat:@"%d", self.character.reflexBonus];
-	self.reflexBaseField.text = [NSString stringWithFormat:@"%d", self.character.reflexBaseBonus];
-	self.reflexAbilityField.text = [NSString stringWithFormat:@"%d", [self.character dexterityBonus]];
-	self.reflexRacialField.text = [NSString stringWithFormat:@"%d", self.character.reflexRacialBonus];
+	self.reflexSaveField.text = [NSString stringWithFormat:@"%ld", (long)self.character.reflexBonus];
+	self.reflexBaseField.text = [NSString stringWithFormat:@"%ld", (long)self.character.reflexBaseBonus];
+	self.reflexAbilityField.text = [NSString stringWithFormat:@"%ld", (long)[self.character dexterityBonus]];
+	self.reflexRacialField.text = [NSString stringWithFormat:@"%ld", (long)self.character.reflexRacialBonus];
 	self.reflexMiscField.text = [NSString stringWithFormat:@"%d", self.character.reflexMiscBonus];
 	//self.reflexTempField.text = [NSString stringWithFormat:@"%d", self.character.reflexTempBonus];
 	
-	self.willSaveField.text = [NSString stringWithFormat:@"%d", self.character.willBonus];
-	self.willBaseField.text = [NSString stringWithFormat:@"%d", self.character.willBaseBonus];
-	self.willAbilityField.text = [NSString stringWithFormat:@"%d", [self.character wisdomBonus]];
-	self.willRacialField.text = [NSString stringWithFormat:@"%d", self.character.willRacialBonus];
+	self.willSaveField.text = [NSString stringWithFormat:@"%ld", (long)self.character.willBonus];
+	self.willBaseField.text = [NSString stringWithFormat:@"%ld", (long)self.character.willBaseBonus];
+	self.willAbilityField.text = [NSString stringWithFormat:@"%ld", (long)[self.character wisdomBonus]];
+	self.willRacialField.text = [NSString stringWithFormat:@"%ld", (long)self.character.willRacialBonus];
 	self.willMiscField.text = [NSString stringWithFormat:@"%d", self.character.willMiscBonus];
 	//self.willTempField.text = [NSString stringWithFormat:@"%d", self.character.willTempBonus];
 }

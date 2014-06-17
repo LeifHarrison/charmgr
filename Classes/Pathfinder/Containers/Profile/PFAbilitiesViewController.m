@@ -137,7 +137,7 @@ static const CGFloat kAbilitiesViewRowHeightStatic = 28.0f;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-	LOG_DEBUG(@"section = %d, rows = %d", section, self.sortedAbilities.count);
+	LOG_DEBUG(@"section = %ld, rows = %lu", section, (unsigned long)self.sortedAbilities.count);
     return self.sortedAbilities.count;
 }
 

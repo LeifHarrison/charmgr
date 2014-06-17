@@ -91,45 +91,45 @@ static const CGRect kPFFlatFootedCMDFieldRects[]	= { { { 110, 110 }, {  85,  30 
 {
 	[super updateUI];
 
-	self.armorClassField.text = [NSString stringWithFormat:@"%d", [self.character armorClass]];
-	self.armorClassDexterityField.text = [NSString stringWithFormat:@"%d", [self.character dexterityBonus]];
-	self.armorClassDodgeField.text = [NSString stringWithFormat:@"%d", [self.character dodgeBonus]];
-	self.armorClassDeflectionField.text = [NSString stringWithFormat:@"%d", [self.character deflectionBonus]];
-	self.armorClassArmorField.text = [NSString stringWithFormat:@"%d", [self.character armorBonus]];
-	self.armorClassShieldField.text = [NSString stringWithFormat:@"%d", [self.character shieldBonus]];
-	self.armorClassNaturalArmorField.text = [NSString stringWithFormat:@"%d", [self.character naturalArmorBonus]];
-	self.armorClassSizeField.text = [NSString stringWithFormat:@"%d", [self.character sizeModifier]];
+	self.armorClassField.text = [NSString stringWithFormat:@"%ld", (long)[self.character armorClass]];
+	self.armorClassDexterityField.text = [NSString stringWithFormat:@"%ld", (long)[self.character dexterityBonus]];
+	self.armorClassDodgeField.text = [NSString stringWithFormat:@"%ld", (long)[self.character dodgeBonus]];
+	self.armorClassDeflectionField.text = [NSString stringWithFormat:@"%ld", (long)[self.character deflectionBonus]];
+	self.armorClassArmorField.text = [NSString stringWithFormat:@"%ld", (long)[self.character armorBonus]];
+	self.armorClassShieldField.text = [NSString stringWithFormat:@"%ld", (long)[self.character shieldBonus]];
+	self.armorClassNaturalArmorField.text = [NSString stringWithFormat:@"%ld", (long)[self.character naturalArmorBonus]];
+	self.armorClassSizeField.text = [NSString stringWithFormat:@"%ld", (long)[self.character sizeModifier]];
 	//self.armorClassEnhancementField.text = [NSString stringWithFormat:@"%d", [self.character armorClass]];
 	
-	self.flatFootedACField.text = [NSString stringWithFormat:@"%d", [self.character flatFootedArmorClass]];
-	self.flatFootedACDeflectionField.text = [NSString stringWithFormat:@"%d", [self.character deflectionBonus]];
-	self.flatFootedACArmorField.text = [NSString stringWithFormat:@"%d", [self.character armorBonus]];
-	self.flatFootedACShieldField.text = [NSString stringWithFormat:@"%d", [self.character shieldBonus]];
-	self.flatFootedACNaturalArmorField.text = [NSString stringWithFormat:@"%d", [self.character naturalArmorBonus]];
-	self.flatFootedACSizeField.text = [NSString stringWithFormat:@"%d", [self.character sizeModifier]];
+	self.flatFootedACField.text = [NSString stringWithFormat:@"%ld", (long)[self.character flatFootedArmorClass]];
+	self.flatFootedACDeflectionField.text = [NSString stringWithFormat:@"%ld", (long)[self.character deflectionBonus]];
+	self.flatFootedACArmorField.text = [NSString stringWithFormat:@"%ld", (long)[self.character armorBonus]];
+	self.flatFootedACShieldField.text = [NSString stringWithFormat:@"%ld", (long)[self.character shieldBonus]];
+	self.flatFootedACNaturalArmorField.text = [NSString stringWithFormat:@"%ld", (long)[self.character naturalArmorBonus]];
+	self.flatFootedACSizeField.text = [NSString stringWithFormat:@"%ld", (long)[self.character sizeModifier]];
 	//flatFootedACEnhancementField.text = [NSString stringWithFormat:@"%d", [self.character armorClass]];
 	
-	self.touchACField.text = [NSString stringWithFormat:@"%d", [self.character touchArmorClass]];
-	self.touchACDexterityField.text = [NSString stringWithFormat:@"%d", [self.character dexterityBonus]];
-	self.touchACDodgeField.text = [NSString stringWithFormat:@"%d", [self.character dodgeBonus]];
-	self.touchACDeflectionField.text = [NSString stringWithFormat:@"%d", [self.character deflectionBonus]];
-	self.touchACSizeField.text = [NSString stringWithFormat:@"%d", [self.character sizeModifier]];
+	self.touchACField.text = [NSString stringWithFormat:@"%ld", (long)[self.character touchArmorClass]];
+	self.touchACDexterityField.text = [NSString stringWithFormat:@"%ld", (long)[self.character dexterityBonus]];
+	self.touchACDodgeField.text = [NSString stringWithFormat:@"%ld", (long)[self.character dodgeBonus]];
+	self.touchACDeflectionField.text = [NSString stringWithFormat:@"%ld", (long)[self.character deflectionBonus]];
+	self.touchACSizeField.text = [NSString stringWithFormat:@"%ld", (long)[self.character sizeModifier]];
 	//self.touchACEnhancementField.text = [NSString stringWithFormat:@"%d", [self.character armorClass]];
 	
-	self.cmdField.text = [NSString stringWithFormat:@"%d", [self.character combatManueverDefence]];
-	self.cmdStrengthField.text = [NSString stringWithFormat:@"%d", [self.character strengthBonus]];
-	self.cmdDexterityField.text = [NSString stringWithFormat:@"%d", [self.character dexterityBonus]];
-	self.cmdDodgeField.text = [NSString stringWithFormat:@"%d", [self.character dodgeBonus]];
-	self.cmdDeflectionField.text = [NSString stringWithFormat:@"%d", [self.character deflectionBonus]];
-	self.cmdBaseAttackField.text = [NSString stringWithFormat:@"%d", [self.character baseAttackBonusForAttackNumber:1]];
-	self.cmdSizeField.text = [NSString stringWithFormat:@"%d", [self.character sizeModifier]];
+	self.cmdField.text = [NSString stringWithFormat:@"%ld", (long)[self.character combatManueverDefence]];
+	self.cmdStrengthField.text = [NSString stringWithFormat:@"%ld", (long)[self.character strengthBonus]];
+	self.cmdDexterityField.text = [NSString stringWithFormat:@"%ld", (long)[self.character dexterityBonus]];
+	self.cmdDodgeField.text = [NSString stringWithFormat:@"%ld", (long)[self.character dodgeBonus]];
+	self.cmdDeflectionField.text = [NSString stringWithFormat:@"%ld", (long)[self.character deflectionBonus]];
+	self.cmdBaseAttackField.text = [NSString stringWithFormat:@"%ld", (long)[self.character baseAttackBonusForAttackNumber:1]];
+	self.cmdSizeField.text = [NSString stringWithFormat:@"%ld", (long)[self.character sizeModifier]];
 	//self.cmdMiscField.text = [NSString stringWithFormat:@"%d", [self.character armorClass]];
 	
-	self.flatFootedCMDField.text = [NSString stringWithFormat:@"%d", [self.character flatFootedCMD]];
-	self.flatFootedCMDStrengthField.text = [NSString stringWithFormat:@"%d", [self.character strengthBonus]];
-	self.flatFootedCMDDeflectionField.text = [NSString stringWithFormat:@"%d", [self.character deflectionBonus]];
-	self.flatFootedCMDBaseAttackField.text = [NSString stringWithFormat:@"%d", [self.character baseAttackBonusForAttackNumber:1]];
-	self.flatFootedCMDSizeField.text = [NSString stringWithFormat:@"%d", [self.character sizeModifier]];
+	self.flatFootedCMDField.text = [NSString stringWithFormat:@"%ld", (long)[self.character flatFootedCMD]];
+	self.flatFootedCMDStrengthField.text = [NSString stringWithFormat:@"%ld", (long)[self.character strengthBonus]];
+	self.flatFootedCMDDeflectionField.text = [NSString stringWithFormat:@"%ld", (long)[self.character deflectionBonus]];
+	self.flatFootedCMDBaseAttackField.text = [NSString stringWithFormat:@"%ld", (long)[self.character baseAttackBonusForAttackNumber:1]];
+	self.flatFootedCMDSizeField.text = [NSString stringWithFormat:@"%ld", (long)[self.character sizeModifier]];
 	//self.flatFootedCMDMiscField.text = [NSString stringWithFormat:@"%d", [self.character armorClass]];
 }
 

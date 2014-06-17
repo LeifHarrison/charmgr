@@ -21,18 +21,18 @@
 - (NSString *)attackBonusDescription
 {
 	if ([self.weapon.category isEqualToString:@"Ranged"]) {
-		NSString *descriptionString = [NSString stringWithFormat:@"+%d", [self.character rangedAttackBonusForAttackNumber:1]];
+		NSString *descriptionString = [NSString stringWithFormat:@"+%ld", (long)[self.character rangedAttackBonusForAttackNumber:1]];
 		for (NSInteger attackNumber=2; attackNumber <= [self.character numberOfAttacks]; attackNumber++)
 		{
-			descriptionString = [descriptionString stringByAppendingFormat:@"/+%d", [self.character rangedAttackBonusForAttackNumber:attackNumber]];
+			descriptionString = [descriptionString stringByAppendingFormat:@"/+%ld", (long)[self.character rangedAttackBonusForAttackNumber:attackNumber]];
 		}
 		return descriptionString;
 	}
 	else {
-		NSString *descriptionString = [NSString stringWithFormat:@"+%d", [self.character meleeAttackBonusForAttackNumber:1]];
+		NSString *descriptionString = [NSString stringWithFormat:@"+%ld", (long)[self.character meleeAttackBonusForAttackNumber:1]];
 		for (NSInteger attackNumber=2; attackNumber <= [self.character numberOfAttacks]; attackNumber++)
 		{
-			descriptionString = [descriptionString stringByAppendingFormat:@"/+%d", [self.character meleeAttackBonusForAttackNumber:attackNumber]];
+			descriptionString = [descriptionString stringByAppendingFormat:@"/+%ld", (long)[self.character meleeAttackBonusForAttackNumber:attackNumber]];
 		}
 		return descriptionString;
 	}

@@ -124,11 +124,11 @@ static const CGFloat kClassesViewRowHeightStatic = 25.0f;
 
 - (void)updateFields
 {
-	self.levelAdjustmentTextField.text = [NSString stringWithFormat:@"%d", self.character.levelAdjustment];
-	self.effectiveLevelTextField.text = [NSString stringWithFormat:@"%d", self.character.effectiveLevel];
+	self.levelAdjustmentTextField.text = [NSString stringWithFormat:@"%ld", (long)self.character.levelAdjustment];
+	self.effectiveLevelTextField.text = [NSString stringWithFormat:@"%ld", (long)self.character.effectiveLevel];
 	
 	self.currentXPLabel.text = [NSString stringWithFormat:@"%d", self.character.experiencePoints];
-	self.nextLevelXPLabel.text = [NSString stringWithFormat:@"%d", self.character.nextLevelXP];
+	self.nextLevelXPLabel.text = [NSString stringWithFormat:@"%ld", (long)self.character.nextLevelXP];
 }
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
@@ -187,7 +187,7 @@ static const CGFloat kClassesViewRowHeightStatic = 25.0f;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-	LOG_DEBUG(@"section = %d, rows = %d", section, self.character.classes.count);
+	LOG_DEBUG(@"section = %ld, rows = %lu", (long)section, (unsigned long)self.character.classes.count);
     return self.character.classes.count;
 }
 

@@ -126,7 +126,7 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-	LOG_DEBUG(@"sections = %d", [[self.fetchedResultsController sections] count]);
+	LOG_DEBUG(@"sections = %lu", (unsigned long)[[self.fetchedResultsController sections] count]);
     return [[self.fetchedResultsController sections] count];
 }
 
@@ -135,7 +135,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     id <NSFetchedResultsSectionInfo> sectionInfo = [[self.fetchedResultsController sections] objectAtIndex:section];
-	LOG_DEBUG(@"section = %d, rows = %d", section, [sectionInfo numberOfObjects]);
+	LOG_DEBUG(@"section = %ld, rows = %lu", (long)section, [sectionInfo numberOfObjects]);
     return [sectionInfo numberOfObjects];
 }
 

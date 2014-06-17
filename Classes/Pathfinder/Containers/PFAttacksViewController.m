@@ -95,30 +95,30 @@ static const CGRect kPFCMBFieldRects[]				= { { {  210, 110 }, {  85,  30 } }, {
 {
 	[super updateUI];
 	
-	self.initiativeField.text = [NSString stringWithFormat:@"%d", self.character.initiativeBonus];
-	self.initiativeDexterityField.text = [NSString stringWithFormat:@"%d", [self.character dexterityBonus]];
-	self.initiativeFeatsField.text = [NSString stringWithFormat:@"%d", self.character.initiativeFeatBonus];
-	self.initiativeTrainingField.text = [NSString stringWithFormat:@"%d", self.character.initiativeTrainingBonus];
+	self.initiativeField.text = [NSString stringWithFormat:@"%ld", (long)self.character.initiativeBonus];
+	self.initiativeDexterityField.text = [NSString stringWithFormat:@"%ld", (long)[self.character dexterityBonus]];
+	self.initiativeFeatsField.text = [NSString stringWithFormat:@"%ld", (long)self.character.initiativeFeatBonus];
+	self.initiativeTrainingField.text = [NSString stringWithFormat:@"%ld", (long)self.character.initiativeTrainingBonus];
 	self.initiativeMiscField.text = [NSString stringWithFormat:@"%d", self.character.initiativeMiscBonus];
 
 	//self.baseAttackField.text = [self.character baseAttackBonusDescription];
-	self.baseAttackField.text = [NSString stringWithFormat:@"%d", [self.character baseAttackBonusForAttackNumber:1]];
-	self.numberOfAttacksField.text = [NSString stringWithFormat:@"%d", self.character.numberOfAttacks];
+	self.baseAttackField.text = [NSString stringWithFormat:@"%ld", (long)[self.character baseAttackBonusForAttackNumber:1]];
+	self.numberOfAttacksField.text = [NSString stringWithFormat:@"%ld", (long)self.character.numberOfAttacks];
 	
-	self.meleeAttackField.text = [NSString stringWithFormat:@"%d", [self.character meleeAttackBonusForAttackNumber:1]];
-	self.meleeAttackBaseField.text = [NSString stringWithFormat:@"%d", [self.character baseAttackBonusForAttackNumber:1]];
-	self.meleeAttackStrengthField.text = [NSString stringWithFormat:@"%d", [self.character strengthBonus]];
+	self.meleeAttackField.text = [NSString stringWithFormat:@"%ld", (long)[self.character meleeAttackBonusForAttackNumber:1]];
+	self.meleeAttackBaseField.text = [NSString stringWithFormat:@"%ld", (long)[self.character baseAttackBonusForAttackNumber:1]];
+	self.meleeAttackStrengthField.text = [NSString stringWithFormat:@"%ld", (long)[self.character strengthBonus]];
 	self.meleeAttackSizeField.text = [NSString stringWithFormat:@"%d", 0];
 	
-	self.rangedAttackField.text = [NSString stringWithFormat:@"%d", [self.character rangedAttackBonusForAttackNumber:1]];
-	self.rangedAttackBaseField.text = [NSString stringWithFormat:@"%d", [self.character baseAttackBonusForAttackNumber:1]];
-	self.rangedAttackDexterityField.text = [NSString stringWithFormat:@"%d", [self.character dexterityBonus]];
+	self.rangedAttackField.text = [NSString stringWithFormat:@"%ld", (long)[self.character rangedAttackBonusForAttackNumber:1]];
+	self.rangedAttackBaseField.text = [NSString stringWithFormat:@"%ld", (long)[self.character baseAttackBonusForAttackNumber:1]];
+	self.rangedAttackDexterityField.text = [NSString stringWithFormat:@"%ld", (long)[self.character dexterityBonus]];
 	self.rangedAttackSizeField.text = [NSString stringWithFormat:@"%d", 0];
 	
-	self.cmbField.text = [NSString stringWithFormat:@"%d", self.character.combatManueverBonus];
-	self.cmbStrengthModifierField.text = [NSString stringWithFormat:@"%d", [self.character strengthBonus]];
-	self.cmbBaseAttackBonusField.text = [NSString stringWithFormat:@"%d", [self.character baseAttackBonusForAttackNumber:1]];
-	self.cmbSizeModifierField.text = [NSString stringWithFormat:@"%d", [self.character sizeModifier]];
+	self.cmbField.text = [NSString stringWithFormat:@"%ld", (long)self.character.combatManueverBonus];
+	self.cmbStrengthModifierField.text = [NSString stringWithFormat:@"%ld", (long)[self.character strengthBonus]];
+	self.cmbBaseAttackBonusField.text = [NSString stringWithFormat:@"%ld", (long)[self.character baseAttackBonusForAttackNumber:1]];
+	self.cmbSizeModifierField.text = [NSString stringWithFormat:@"%ld", (long)[self.character sizeModifier]];
 }
 
 //------------------------------------------------------------------------------

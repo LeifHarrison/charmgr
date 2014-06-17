@@ -93,7 +93,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-	LOG_DEBUG(@"section = %d, rows = %d", section, self.sizesArray.count);
+	LOG_DEBUG(@"section = %ld, rows = %lu", section, self.sizesArray.count);
     return self.sizesArray.count;
 }
 

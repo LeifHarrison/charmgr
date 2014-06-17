@@ -198,7 +198,7 @@
 	self.bannerLabel.backgroundColor = [UIColor clearColor];
 	self.bannerLabel.textColor = [UIColor whiteColor];
 	self.bannerLabel.text = self.bannerTitle;
-	self.bannerLabel.textAlignment = UITextAlignmentCenter;
+	self.bannerLabel.textAlignment = NSTextAlignmentCenter;
 	[self.bannerBackground addSubview:self.bannerLabel];
 }
 

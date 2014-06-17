@@ -20,22 +20,22 @@
 //------------------------------------------------------------------------------
 
 static const CGPoint kPFInventoryViewOriginPortrait			= {  10,  10 };
-static const CGPoint kPFInventoryViewOriginLandscape		= {  10,  10 };
+//static const CGPoint kPFInventoryViewOriginLandscape		= {  10,  10 };
 
 static const CGPoint kPFEncumbranceViewOriginPortrait		= {  10, 550 };
-static const CGPoint kPFEncumbranceViewOriginLandscape		= {  10, 550 };
+//static const CGPoint kPFEncumbranceViewOriginLandscape		= {  10, 550 };
 
 static const CGPoint kPFMoneyViewOriginPortrait				= {  10, 735 };
-static const CGPoint kPFMoneyViewOriginLandscape			= {  10, 735 };
+//static const CGPoint kPFMoneyViewOriginLandscape			= {  10, 735 };
 
 static const CGPoint kPFPotionsViewOriginPortrait			= { 265, 735 };
-static const CGPoint kPFPotionsViewOriginLandscape			= { 265, 735 };
+//static const CGPoint kPFPotionsViewOriginLandscape			= { 265, 735 };
 
 static const CGPoint kPFScrollsViewOriginPortrait			= { 520, 735 };
-static const CGPoint kPFScrollsViewOriginLandscape			= { 520, 735 };
+//static const CGPoint kPFScrollsViewOriginLandscape			= { 520, 735 };
 
 static const CGPoint kPFEquippedItemsViewOriginPortrait		= { 350,  10 };
-static const CGPoint kPFEquippedItemsViewOriginLandscape	= { 350,  10 };
+//static const CGPoint kPFEquippedItemsViewOriginLandscape	= { 350,  10 };
 
 @interface PFEquipmentViewController ()
 

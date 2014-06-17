@@ -53,7 +53,7 @@
 		if (newInstance) importCount++;
 	}
 	
-	LOG_DEBUG(@"  %d abilities imported.", importCount);
+	LOG_DEBUG(@"  %ld abilities imported.", importCount);
 	
 	if (![moc save:&error]) {
 		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
@@ -86,7 +86,7 @@
 		if (newInstance) importCount++;
 	}
 	
-	LOG_DEBUG(@"  %d alignments imported.", importCount);
+	LOG_DEBUG(@"  %ld alignments imported.", (long)importCount);
 	
 	if (![moc save:&error]) {
 		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
@@ -119,7 +119,7 @@
 		if (newInstance) importCount++;
 	}
 	
-	LOG_DEBUG(@"  %d classes imported.", importCount);
+	LOG_DEBUG(@"  %ld classes imported.", (long)importCount);
 	
 	if (![moc save:&error]) {
 		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
@@ -152,7 +152,7 @@
 		if (newInstance) importCount++;
 	}
 	
-	LOG_DEBUG(@"  %d feats imported.", importCount);
+	LOG_DEBUG(@"  %ld feats imported.", (long)importCount);
 	
 	if (![moc save:&error]) {
 		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
@@ -185,7 +185,7 @@
 		if (newInstance) importCount++;
 	}
 	
-	LOG_DEBUG(@"  %d races imported.", importCount);
+	LOG_DEBUG(@"  %ld races imported.", (long)importCount);
 	
 	if (![moc save:&error]) {
 		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
@@ -218,7 +218,7 @@
 		if (newInstance) importCount++;
 	}
 	
-	LOG_DEBUG(@"  %d skills imported.", importCount);
+	LOG_DEBUG(@"  %ld skills imported.", (long)importCount);
 	
 	if (![moc save:&error]) {
 		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
@@ -251,7 +251,7 @@
 		if (newInstance) importCount++;
 	}
 	
-	LOG_DEBUG(@"  %d sources imported.", importCount);
+	LOG_DEBUG(@"  %ld sources imported.", (long)importCount);
 	
 	if (![moc save:&error]) {
 		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
@@ -287,7 +287,7 @@
 		if (newInstance) importCount++;
 	}
 	
-	LOG_DEBUG(@"  %d weapons imported.", importCount);
+	LOG_DEBUG(@"  %ld weapons imported.", (long)importCount);
 	
 	if (![moc save:&error]) {
 		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);

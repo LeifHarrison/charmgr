@@ -133,7 +133,7 @@ static const CGFloat kSkillsViewRowHeightStatic = 20.0f;
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-	LOG_DEBUG(@"section = %d, rows = %d", section, self.sortedSkills.count);
+	LOG_DEBUG(@"section = %ld, rows = %lu", section, self.sortedSkills.count);
     return self.sortedSkills.count;
 }
 
