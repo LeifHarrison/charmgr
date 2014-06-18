@@ -51,6 +51,12 @@
 		29362C1616253D860081EFA2 /* PFCreateCharacterChooseRaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29362C1516253D860081EFA2 /* PFCreateCharacterChooseRaceViewController.m */; };
 		29362C1916253D9D0081EFA2 /* PFCreateCharacterChooseClassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29362C1816253D9D0081EFA2 /* PFCreateCharacterChooseClassViewController.m */; };
 		29362C1C16253F9C0081EFA2 /* PFCreateCharacterInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29362C1B16253F9C0081EFA2 /* PFCreateCharacterInfoViewController.m */; };
+		293B59131950E184002564A8 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 293B59081950E184002564A8 /* LICENSE.txt */; };
+		293B59141950E184002564A8 /* NSData+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 293B590A1950E184002564A8 /* NSData+MD5.m */; };
+		293B59151950E184002564A8 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 293B590C1950E184002564A8 /* NSString+MD5.m */; };
+		293B59161950E184002564A8 /* PDFView.m in Sources */ = {isa = PBXBuildFile; fileRef = 293B590E1950E184002564A8 /* PDFView.m */; };
+		293B59171950E184002564A8 /* UIImage+PDF.m in Sources */ = {isa = PBXBuildFile; fileRef = 293B59101950E184002564A8 /* UIImage+PDF.m */; };
+		293B59181950E184002564A8 /* UIView+Image.m in Sources */ = {isa = PBXBuildFile; fileRef = 293B59121950E184002564A8 /* UIView+Image.m */; };
 		2945352015F80B820012F88F /* paper_texture.png in Resources */ = {isa = PBXBuildFile; fileRef = 2945351F15F80B820012F88F /* paper_texture.png */; };
 		2946DBF0194AAD6700295F90 /* PathfinderRoleplayingGame.png in Resources */ = {isa = PBXBuildFile; fileRef = 2946DBEF194AAD6700295F90 /* PathfinderRoleplayingGame.png */; };
 		294C549216D33AF700620879 /* CGGeometry+CMExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 294C549116D33AF700620879 /* CGGeometry+CMExtensions.m */; };
@@ -187,6 +193,17 @@
 		29362C1816253D9D0081EFA2 /* PFCreateCharacterChooseClassViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFCreateCharacterChooseClassViewController.m; path = Pathfinder/Creation/PFCreateCharacterChooseClassViewController.m; sourceTree = "<group>"; };
 		29362C1A16253F9C0081EFA2 /* PFCreateCharacterInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFCreateCharacterInfoViewController.h; path = Pathfinder/Creation/PFCreateCharacterInfoViewController.h; sourceTree = "<group>"; };
 		29362C1B16253F9C0081EFA2 /* PFCreateCharacterInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFCreateCharacterInfoViewController.m; path = Pathfinder/Creation/PFCreateCharacterInfoViewController.m; sourceTree = "<group>"; };
+		293B59081950E184002564A8 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		293B59091950E184002564A8 /* NSData+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+MD5.h"; sourceTree = "<group>"; };
+		293B590A1950E184002564A8 /* NSData+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+MD5.m"; sourceTree = "<group>"; };
+		293B590B1950E184002564A8 /* NSString+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5.h"; sourceTree = "<group>"; };
+		293B590C1950E184002564A8 /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5.m"; sourceTree = "<group>"; };
+		293B590D1950E184002564A8 /* PDFView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDFView.h; sourceTree = "<group>"; };
+		293B590E1950E184002564A8 /* PDFView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDFView.m; sourceTree = "<group>"; };
+		293B590F1950E184002564A8 /* UIImage+PDF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+PDF.h"; sourceTree = "<group>"; };
+		293B59101950E184002564A8 /* UIImage+PDF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+PDF.m"; sourceTree = "<group>"; };
+		293B59111950E184002564A8 /* UIView+Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Image.h"; sourceTree = "<group>"; };
+		293B59121950E184002564A8 /* UIView+Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Image.m"; sourceTree = "<group>"; };
 		2945351F15F80B820012F88F /* paper_texture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = paper_texture.png; path = Resources/images/paper_texture.png; sourceTree = "<group>"; };
 		2946DBEF194AAD6700295F90 /* PathfinderRoleplayingGame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = PathfinderRoleplayingGame.png; path = Resources/images/PathfinderRoleplayingGame.png; sourceTree = "<group>"; };
 		294C549016D33AF700620879 /* CGGeometry+CMExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CGGeometry+CMExtensions.h"; sourceTree = "<group>"; };
@@ -328,6 +345,7 @@
 				2929ECF116D5E4B4000396FC /* Cells */,
 				29245D97165B48F300F6078A /* Extensions */,
 				29B7D64D15F916820039C390 /* Pathfinder */,
+				293B59071950E184002564A8 /* UIImage+PDF */,
 				2968E04113BD0D1A00811211 /* Warhammer */,
 				1D3623240D0F684500981E51 /* CMAppDelegate.h */,
 				1D3623250D0F684500981E51 /* CMAppDelegate.m */,
@@ -417,6 +435,24 @@
 				29A51A431650B8D700952BB2 /* PFSelectSizeViewController.m */,
 			);
 			name = Detail;
+			sourceTree = "<group>";
+		};
+		293B59071950E184002564A8 /* UIImage+PDF */ = {
+			isa = PBXGroup;
+			children = (
+				293B59081950E184002564A8 /* LICENSE.txt */,
+				293B59091950E184002564A8 /* NSData+MD5.h */,
+				293B590A1950E184002564A8 /* NSData+MD5.m */,
+				293B590B1950E184002564A8 /* NSString+MD5.h */,
+				293B590C1950E184002564A8 /* NSString+MD5.m */,
+				293B590D1950E184002564A8 /* PDFView.h */,
+				293B590E1950E184002564A8 /* PDFView.m */,
+				293B590F1950E184002564A8 /* UIImage+PDF.h */,
+				293B59101950E184002564A8 /* UIImage+PDF.m */,
+				293B59111950E184002564A8 /* UIView+Image.h */,
+				293B59121950E184002564A8 /* UIView+Image.m */,
+			);
+			path = "UIImage+PDF";
 			sourceTree = "<group>";
 		};
 		2945351E15F80B760012F88F /* Images */ = {
@@ -844,6 +880,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2963ED4D19511257006C198F /* browntexturedleather_edited.jpg in Resources */,
+				293B59131950E184002564A8 /* LICENSE.txt in Resources */,
 				28AD73880D9D96C1002E5188 /* MainWindow.xib in Resources */,
 				28D4B068107A5DE70093E739 /* WHProfileView.xib in Resources */,
 				2945352015F80B820012F88F /* paper_texture.png in Resources */,
@@ -888,11 +925,13 @@
 				29B7D6D715F948C00039C390 /* CMRootViewController.m in Sources */,
 				29E7A87715F9638700DEFF6A /* PFEquipmentViewController.m in Sources */,
 				29E7A87A15F963B900DEFF6A /* PFSpellsViewController.m in Sources */,
+				293B59181950E184002564A8 /* UIView+Image.m in Sources */,
 				29E7A87D15F963DE00DEFF6A /* PFCompanionsViewController.m in Sources */,
 				29E7A88015F963FB00DEFF6A /* PFNotesViewController.m in Sources */,
 				29E7A88315F964EB00DEFF6A /* CMMainViewController.m in Sources */,
 				299ACDE615FA918000E114E0 /* Pathfinder.xcdatamodeld in Sources */,
 				299ACDEB15FAABB500E114E0 /* PFCreateCharacterViewController.m in Sources */,
+				293B59171950E184002564A8 /* UIImage+PDF.m in Sources */,
 				299ACDEF15FAAE4C00E114E0 /* PFCharacter.m in Sources */,
 				295F62DE1602EE7000EEF5ED /* PFSkillsViewController.m in Sources */,
 				295F62E31602EEDD00EEF5ED /* PFAbilitiesViewController.m in Sources */,
@@ -912,6 +951,7 @@
 				2902D091161FED6D00C56E74 /* PFClassType.m in Sources */,
 				2902D094161FED6D00C56E74 /* PFFeat.m in Sources */,
 				2902D097161FED6D00C56E74 /* PFTrait.m in Sources */,
+				293B59141950E184002564A8 /* NSData+MD5.m in Sources */,
 				2902D09A161FED6D00C56E74 /* PFSkill.m in Sources */,
 				2902D09D161FED6D00C56E74 /* PFAlignment.m in Sources */,
 				2902D0A0161FED6E00C56E74 /* PFRace.m in Sources */,
@@ -930,6 +970,8 @@
 				297AA4AF1640F2F20041C59D /* PFRacialTraitTableViewCell.m in Sources */,
 				293194271646112C00B10D70 /* PFReferenceFeatsViewController.m in Sources */,
 				2931942B16462A2900B10D70 /* PFSelectRaceViewController.m in Sources */,
+				293B59151950E184002564A8 /* NSString+MD5.m in Sources */,
+				293B59161950E184002564A8 /* PDFView.m in Sources */,
 				29F0660A16479BA00088BA86 /* PFDetailViewController.m in Sources */,
 				29F0660E1648F0B00088BA86 /* PFReferenceFeatCell.m in Sources */,
 				29A51A411650B8B800952BB2 /* PFSelectGenderViewController.m in Sources */,
