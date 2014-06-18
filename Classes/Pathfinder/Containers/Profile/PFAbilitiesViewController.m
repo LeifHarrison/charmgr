@@ -73,6 +73,7 @@ static const CGFloat kAbilitiesViewRowHeightStatic = 28.0f;
 - (void)viewWillAppear:(BOOL)animated
 {
 	[super viewWillAppear:animated];
+	self.tableView.backgroundColor = [UIColor clearColor];
 	self.sortedAbilities = self.character.sortedAbilities;
 	[self updateUI];
 }
@@ -145,7 +146,8 @@ static const CGFloat kAbilitiesViewRowHeightStatic = 28.0f;
 {
     static NSString *CellIdentifier = @"AbilityCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-	
+	cell.backgroundColor = [UIColor clearColor];
+
     // Configure the cell.
     [self configureCell:cell atIndexPath:indexPath];
 	
@@ -159,6 +161,7 @@ static const CGFloat kAbilitiesViewRowHeightStatic = 28.0f;
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
 	UIView *header = (UIView*)[tableView dequeueReusableCellWithIdentifier:@"AbilityHeader"];
+	header.backgroundColor = [UIColor clearColor];
 	return header;
 }
 

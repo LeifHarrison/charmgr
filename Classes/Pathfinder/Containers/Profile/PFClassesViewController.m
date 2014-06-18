@@ -196,7 +196,8 @@ static const CGFloat kClassesViewRowHeightStatic = 25.0f;
 	LOG_DEBUG(@"indexPath = %@", indexPath);
     static NSString *CellIdentifier = @"ClassesCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-	
+	cell.backgroundColor = [UIColor clearColor];
+
     // Configure the cell.
     [self configureCell:cell atIndexPath:indexPath];
 	
@@ -223,6 +224,7 @@ static const CGFloat kClassesViewRowHeightStatic = 25.0f;
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
 	UIView *header = (UIView*)[tableView dequeueReusableCellWithIdentifier:@"ClassesHeader"];
+	header.backgroundColor = [UIColor clearColor];
 	return header;
 }
 

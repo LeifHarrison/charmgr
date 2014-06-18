@@ -141,7 +141,8 @@ static const CGFloat kSkillsViewRowHeightStatic = 20.0f;
 {
     static NSString *CellIdentifier = @"SkillsCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-	
+	cell.backgroundColor = [UIColor clearColor];
+
     // Configure the cell.
     [self configureCell:cell atIndexPath:indexPath];
 	

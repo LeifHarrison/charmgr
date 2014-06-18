@@ -175,7 +175,9 @@ static const CGRect kPFFeaturesViewBoundsEditing	= { {   0,   0 }, { 345, 480 } 
 		[self configureCell:cell atIndexPath:indexPath];
 	}
 	
-    return cell;
+	cell.backgroundColor = [UIColor clearColor];
+
+	return cell;
 }
 
 //------------------------------------------------------------------------------
