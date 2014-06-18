@@ -15,8 +15,9 @@
 @interface CMMainViewController : UIViewController
 	<NSFetchedResultsControllerDelegate, PFCreateCharacterViewControllerDelegate, UITableViewDataSource, UITableViewDelegate>
 
-@property (nonatomic, strong) IBOutlet UITableView *charactersTableView;
-@property (nonatomic, strong) IBOutlet UIButton *createCharacterButton;
+@property (nonatomic) IBOutlet UIView *charactersContainer;
+@property (nonatomic) IBOutlet UITableView *charactersTableView;
+@property (nonatomic) IBOutlet UIButton *createCharacterButton;
 
 - (IBAction)showReferenceView:(id)sender;
 - (IBAction)showPreferencesView:(id)sender;

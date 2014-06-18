@@ -37,8 +37,8 @@
 
 @interface CMMainViewController ()
 
-@property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
-@property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic) NSFetchedResultsController *fetchedResultsController;
+@property (nonatomic) NSManagedObjectContext *managedObjectContext;
 
 @end
 
@@ -82,15 +82,23 @@
 {
     [super viewDidLoad];
 	
-	self.view.layer.contents = (id)[UIImage imageNamed:@"paper_texture3"].CGImage;
+	self.view.layer.contents = (id)[UIImage imageNamed:@"browntexturedleather_edited.jpg"].CGImage;
 	self.view.layer.contentsGravity = kCAGravityResize;
 
-	self.createCharacterButton.tintColor = [UIColor brownColor];
-	[self.createCharacterButton setBackgroundImage:nil forState:UIControlStateNormal];
-	
-	self.charactersTableView.layer.borderColor = [UIColor lightGrayColor].CGColor;
-	self.charactersTableView.layer.borderWidth = 2.0f;
-	self.charactersTableView.layer.cornerRadius = 6.0f;
+	//self.createCharacterButton.tintColor = [UIColor brownColor];
+	//[self.createCharacterButton setBackgroundImage:nil forState:UIControlStateNormal];
+
+	//self.charactersTableView.backgroundColor = [UIColor colorWithWhite:0.9 alpha:0.8];
+	self.charactersTableView.backgroundColor = [UIColor clearColor];
+	self.charactersContainer.backgroundColor = [UIColor clearColor];
+	self.charactersContainer.layer.borderColor = [UIColor lightGrayColor].CGColor;
+	self.charactersContainer.layer.borderWidth = 2.0f;
+	self.charactersContainer.layer.cornerRadius = 6.0f;
+
+	UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
+	UIVisualEffectView *blurEffectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
+	[blurEffectView setFrame:self.charactersContainer.bounds];
+	[self.charactersContainer insertSubview:blurEffectView belowSubview:self.charactersTableView];
 
 	self.managedObjectContext = [(CMAppDelegate*)[[UIApplication sharedApplication] delegate] managedObjectContext];
 
@@ -143,7 +151,8 @@
 {
     static NSString *CellIdentifier = @"PFCharacterCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-
+	cell.backgroundColor = [UIColor clearColor];
+	
     // Configure the cell.
     [self configureCell:cell atIndexPath:indexPath];
 
