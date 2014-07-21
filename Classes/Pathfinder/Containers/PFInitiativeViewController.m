@@ -94,36 +94,4 @@ static const CGRect kPFInitiativeViewBoundsEditing	= { {   0,   0 }, { 305,  90 
 	return kPFInitiativeViewBoundsEditing;
 }
 
-//------------------------------------------------------------------------------
-#pragma mark - State Transitions
-//------------------------------------------------------------------------------
-
-- (void)willTransitionToState:(PFContainerViewState)newState;
-{
-	//TRACE;
-	[super willTransitionToState:newState];
-	
-	if (newState == PFContainerViewStateStatic) {
-	}
-}
-
-- (void)didTransitionToState:(PFContainerViewState)newState;
-{
-	//TRACE;
-	[super didTransitionToState:newState];
-	
-	if (newState == PFContainerViewStateEditing) {
-	}
-}
-
-- (void)animateTransitionToState:(PFContainerViewState)newState;
-{
-	//TRACE;
-	[super animateTransitionToState:newState];
-	if (newState == PFContainerViewStateEditing) {
-	}
-	else {
-	}
-}
-
 @end

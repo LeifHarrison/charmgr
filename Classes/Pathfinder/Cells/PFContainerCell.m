@@ -26,15 +26,4 @@
     // Configure the view for the selected state
 }
 
-- (void)setContainerState:(PFContainerViewState)newState animated:(BOOL)animated;
-{
-	// Default implementation just sets the container state
-	[self setContainerState:newState];
-	
-	// Subclasses should not call super, but should instead call
-	// [self setContainerState:newState] in the animation block and/or the
-	// completion block of any animations
-}
-
-
 @end

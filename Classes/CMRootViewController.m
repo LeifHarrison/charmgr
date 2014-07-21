@@ -56,6 +56,9 @@
 {
     [super viewDidLoad];
 
+	//[[UITabBarItem appearance] setTitleTextAttributes: aNSDictionaryOfTextAttributes];
+	[[UITabBarItem appearance] setTitlePositionAdjustment:UIOffsetMake(0.0, -18.0)];
+
 	//LOG_DEBUG(@"frame = %@", NSStringFromCGRect(self.view.frame));
 	//self.view.layer.borderColor = [UIColor redColor].CGColor;
 	//self.view.layer.borderWidth = 1.0f;
@@ -123,6 +126,14 @@
     // Release any retained subviews of the main view.
 }
 
+//------------------------------------------------------------------------------
+#pragma mark - Layout
+//------------------------------------------------------------------------------
+
+- (BOOL)prefersStatusBarHidden
+{
+	return YES;
+}
 
 //------------------------------------------------------------------------------
 #pragma mark - Interface Orientation

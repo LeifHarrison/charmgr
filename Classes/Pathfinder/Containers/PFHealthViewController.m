@@ -106,42 +106,4 @@ static const CGRect kPFHealthViewBoundsEditing	= { {   0,   0 }, { 305,  100 } }
 	return kPFHealthViewBoundsEditing;
 }
 
-//------------------------------------------------------------------------------
-#pragma mark - State Transitions
-//------------------------------------------------------------------------------
-
-- (void)willTransitionToState:(PFContainerViewState)newState;
-{
-	//TRACE;
-	[super willTransitionToState:newState];
-	
-	if (newState == PFContainerViewStateStatic) {
-		[self.hitPointsField setEnabled:NO];
-		[self.woundsField setEnabled:NO];
-		[self.nonLethalField setEnabled:NO];
-	}
-}
-
-- (void)didTransitionToState:(PFContainerViewState)newState;
-{
-	//TRACE;
-	[super didTransitionToState:newState];
-	
-	if (newState == PFContainerViewStateEditing) {
-		[self.hitPointsField setEnabled:YES];
-		[self.woundsField setEnabled:YES];
-		[self.nonLethalField setEnabled:YES];
-	}
-}
-
-- (void)animateTransitionToState:(PFContainerViewState)newState;
-{
-	//TRACE;
-	[super animateTransitionToState:newState];
-	if (newState == PFContainerViewStateEditing) {
-	}
-	else {
-	}
-}
-
 @end

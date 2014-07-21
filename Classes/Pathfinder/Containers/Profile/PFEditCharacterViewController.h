@@ -1,17 +1,14 @@
 //
-//  PFCharacterViewController.h
+//  PFEditCharacterViewController.h
 //  CharMgr
 //
-//  Created by Leif Harrison on 9/6/12.
-//
+//  Created by Leif Harrison on 7/16/14.
+//  Copyright (c) 2014 Leif Harrison. All rights reserved.
 //
 
 #import "PFContainerViewController.h"
 
-#import "PFDetailViewController.h"
-
-@interface PFCharacterViewController : PFContainerViewController
-	<UIPopoverControllerDelegate, PFDetailViewControllerDelegate>
+@interface PFEditCharacterViewController : PFContainerViewController
 
 @property (nonatomic, strong) IBOutletCollection(UIView) NSArray *titleLabels;
 @property (nonatomic, strong) IBOutletCollection(UIView) NSArray *valueFields;

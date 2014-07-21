@@ -98,46 +98,4 @@ static const CGRect kViewBoundsEditing	 = { {   0,   0 }, { 428, 250 } };
 	return kViewBoundsEditing;
 }
 
-//------------------------------------------------------------------------------
-#pragma mark - State Transitions
-//------------------------------------------------------------------------------
-
-- (void)willTransitionToState:(PFContainerViewState)newState;
-{
-	//TRACE;
-	[super willTransitionToState:newState];
-	
-	if (newState == PFContainerViewStateStatic) {
-	}
-}
-
-- (void)didTransitionToState:(PFContainerViewState)newState;
-{
-	//TRACE;
-	[super didTransitionToState:newState];
-	
-	if (newState == PFContainerViewStateEditing) {
-	}
-}
-
-- (void)animateTransitionToState:(PFContainerViewState)newState;
-{
-	//TRACE;
-	[super animateTransitionToState:newState];
-	if (newState == PFContainerViewStateEditing) {
-	}
-	else {
-	}
-}
-
-- (void)layoutForState:(PFContainerViewState)aState
-{
-	LOG_DEBUG(@"state = %d", aState);
-	[super layoutForState:aState];
-	if (aState == PFContainerViewStateEditing) {
-	}
-	else {
-	}
-}
-
 @end

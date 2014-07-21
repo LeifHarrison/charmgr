@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6185.7" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="K87-n2-R9R">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6181.2"/>
+    </dependencies>
+    <scenes>
+        <!--Character View Controller-->
+        <scene sceneID="5vV-4w-Qso">
+            <objects>
+                <viewController id="K87-n2-R9R" customClass="PFCharacterViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="z2e-k7-pFK"/>
+                        <viewControllerLayoutGuide type="bottom" id="7vR-2s-j9h"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="4ZI-4J-Hj5" customClass="CMBannerBox">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" misplaced="YES" text="Character" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WlQ-iv-739">
+                                <rect key="frame" x="15" y="45" width="73" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="73" id="2os-EB-ZgY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="16"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="3" contentMode="left" misplaced="YES" text="Race" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wlG-GB-Q3z">
+                                <rect key="frame" x="53" y="123" width="35" height="21"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="16"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="5" contentMode="left" misplaced="YES" text="Size" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WP2-Aw-yiK">
+                                <rect key="frame" x="59" y="175" width="29" height="21"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="16"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="4" contentMode="left" misplaced="YES" text="Gender" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vaI-Wg-kEr">
+                                <rect key="frame" x="38" y="149" width="50" height="21"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="16"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="6" contentMode="left" misplaced="YES" text="Alignment" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wog-xz-gSJ">
+                                <rect key="frame" x="15" y="201" width="73" height="21"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="16"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Marcus Aurelius" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="KSv-Fl-7sl">
+                                <rect key="frame" x="93" y="48" width="377" height="18"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="left" misplaced="YES" text="Player" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L8m-aX-9O7">
+                                <rect key="frame" x="43" y="71" width="45" height="21"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="16"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="left" misplaced="YES" text="Campaign" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Al-1m-QKC">
+                                <rect key="frame" x="18" y="97" width="70" height="21"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="16"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Leif Harrison" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4T1-9t-FIa">
+                                <rect key="frame" x="93" y="74" width="377" height="18"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Darkipelago" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lva-KQ-cQB">
+                                <rect key="frame" x="93" y="100" width="377" height="18"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xn1-Zo-F55">
+                                <rect key="frame" x="93" y="120" width="377" height="30"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="16"/>
+                                <state key="normal" title="Catfolk">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NXM-Or-Rq4">
+                                <rect key="frame" x="93" y="146" width="377" height="30"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="16"/>
+                                <state key="normal" title="Male">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vq9-zU-Rqs">
+                                <rect key="frame" x="93" y="172" width="377" height="30"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="16"/>
+                                <state key="normal" title="Medium">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7dK-I8-Aco">
+                                <rect key="frame" x="93" y="198" width="377" height="30"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="16"/>
+                                <state key="normal" title="Lawful Neutral">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="WP2-Aw-yiK" firstAttribute="trailing" secondItem="vaI-Wg-kEr" secondAttribute="trailing" id="3LF-kK-O06"/>
+                            <constraint firstAttribute="trailing" secondItem="NXM-Or-Rq4" secondAttribute="trailing" constant="10" id="4gX-p1-Gel"/>
+                            <constraint firstItem="4T1-9t-FIa" firstAttribute="leading" secondItem="L8m-aX-9O7" secondAttribute="trailing" constant="5" id="4yH-Vy-4W5"/>
+                            <constraint firstItem="WP2-Aw-yiK" firstAttribute="top" secondItem="vaI-Wg-kEr" secondAttribute="bottom" constant="5" id="5Vk-Sw-nGt"/>
+                            <constraint firstItem="xn1-Zo-F55" firstAttribute="baseline" secondItem="wlG-GB-Q3z" secondAttribute="baseline" id="64s-K3-0y4"/>
+                            <constraint firstItem="WP2-Aw-yiK" firstAttribute="baseline" secondItem="vq9-zU-Rqs" secondAttribute="baseline" id="81Q-pt-6oC"/>
+                            <constraint firstAttribute="trailing" secondItem="vq9-zU-Rqs" secondAttribute="trailing" constant="10" id="BbR-T1-qHf"/>
+                            <constraint firstAttribute="trailing" secondItem="xn1-Zo-F55" secondAttribute="trailing" constant="10" id="Dhs-5W-kJ7"/>
+                            <constraint firstItem="L8m-aX-9O7" firstAttribute="trailing" secondItem="4Al-1m-QKC" secondAttribute="trailing" id="GIx-Iv-ZfP"/>
+                            <constraint firstItem="4Al-1m-QKC" firstAttribute="top" secondItem="L8m-aX-9O7" secondAttribute="bottom" constant="5" id="GNb-u4-q4x"/>
+                            <constraint firstItem="WlQ-iv-739" firstAttribute="leading" secondItem="4ZI-4J-Hj5" secondAttribute="leading" constant="15" id="HY5-2t-K55"/>
+                            <constraint firstItem="KSv-Fl-7sl" firstAttribute="leading" secondItem="WlQ-iv-739" secondAttribute="trailing" constant="5" id="Ipp-3q-deJ"/>
+                            <constraint firstItem="vaI-Wg-kEr" firstAttribute="top" secondItem="wlG-GB-Q3z" secondAttribute="bottom" constant="5" id="K0N-Nm-Kcu"/>
+                            <constraint firstItem="KSv-Fl-7sl" firstAttribute="baseline" secondItem="WlQ-iv-739" secondAttribute="baseline" id="NTr-0q-brE"/>
+                            <constraint firstItem="4T1-9t-FIa" firstAttribute="baseline" secondItem="L8m-aX-9O7" secondAttribute="baseline" id="Obe-Ni-PB3"/>
+                            <constraint firstItem="xn1-Zo-F55" firstAttribute="leading" secondItem="wlG-GB-Q3z" secondAttribute="trailing" constant="5" id="Pq4-Sy-F9h"/>
+                            <constraint firstItem="Wog-xz-gSJ" firstAttribute="trailing" secondItem="WP2-Aw-yiK" secondAttribute="trailing" id="VJn-jQ-edC"/>
+                            <constraint firstItem="4Al-1m-QKC" firstAttribute="baseline" secondItem="Lva-KQ-cQB" secondAttribute="baseline" id="VTb-me-e6A"/>
+                            <constraint firstAttribute="trailing" secondItem="4T1-9t-FIa" secondAttribute="trailing" constant="10" id="VkI-I8-kmR"/>
+                            <constraint firstItem="WlQ-iv-739" firstAttribute="trailing" secondItem="L8m-aX-9O7" secondAttribute="trailing" id="XKu-M1-GRb"/>
+                            <constraint firstAttribute="trailing" secondItem="KSv-Fl-7sl" secondAttribute="trailing" constant="10" id="XXR-8J-wn4"/>
+                            <constraint firstItem="7dK-I8-Aco" firstAttribute="baseline" secondItem="Wog-xz-gSJ" secondAttribute="baseline" id="YBm-cG-L8A"/>
+                            <constraint firstItem="Wog-xz-gSJ" firstAttribute="top" secondItem="WP2-Aw-yiK" secondAttribute="bottom" constant="5" id="Z31-db-p3f"/>
+                            <constraint firstItem="wlG-GB-Q3z" firstAttribute="trailing" secondItem="4Al-1m-QKC" secondAttribute="trailing" id="bII-ej-Wjb"/>
+                            <constraint firstItem="vq9-zU-Rqs" firstAttribute="leading" secondItem="WP2-Aw-yiK" secondAttribute="trailing" constant="5" id="cLv-Pe-Tiz"/>
+                            <constraint firstItem="wlG-GB-Q3z" firstAttribute="trailing" secondItem="vaI-Wg-kEr" secondAttribute="trailing" id="cXG-gX-ddM"/>
+                            <constraint firstItem="L8m-aX-9O7" firstAttribute="top" secondItem="WlQ-iv-739" secondAttribute="bottom" constant="5" id="cmC-jB-x60"/>
+                            <constraint firstAttribute="trailing" secondItem="7dK-I8-Aco" secondAttribute="trailing" constant="10" id="dns-B3-QuU"/>
+                            <constraint firstItem="WlQ-iv-739" firstAttribute="top" secondItem="z2e-k7-pFK" secondAttribute="bottom" constant="45" id="hEM-0V-sOm"/>
+                            <constraint firstItem="Lva-KQ-cQB" firstAttribute="leading" secondItem="4Al-1m-QKC" secondAttribute="trailing" constant="5" id="hKH-ON-slN"/>
+                            <constraint firstItem="7dK-I8-Aco" firstAttribute="leading" secondItem="Wog-xz-gSJ" secondAttribute="trailing" constant="5" id="iwN-F9-cRy"/>
+                            <constraint firstItem="vaI-Wg-kEr" firstAttribute="baseline" secondItem="NXM-Or-Rq4" secondAttribute="baseline" id="sL8-rs-IaK"/>
+                            <constraint firstAttribute="trailing" secondItem="Lva-KQ-cQB" secondAttribute="trailing" constant="10" id="xtQ-rF-F97"/>
+                            <constraint firstItem="wlG-GB-Q3z" firstAttribute="top" secondItem="4Al-1m-QKC" secondAttribute="bottom" constant="5" id="yqn-u5-wYj"/>
+                            <constraint firstItem="NXM-Or-Rq4" firstAttribute="leading" secondItem="vaI-Wg-kEr" secondAttribute="trailing" constant="5" id="zYQ-fk-rD1"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="bannerTitle" value="Profile"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="bannerHeight">
+                                <real key="value" value="22"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <toolbarItems/>
+                    <connections>
+                        <outlet property="alignmentButton" destination="7dK-I8-Aco" id="2GL-CW-z7X"/>
+                        <outlet property="campaignField" destination="Lva-KQ-cQB" id="Y7w-Ai-Q99"/>
+                        <outlet property="characterField" destination="KSv-Fl-7sl" id="YyK-hB-e9e"/>
+                        <outlet property="genderButton" destination="NXM-Or-Rq4" id="nMC-pj-Omj"/>
+                        <outlet property="playerField" destination="4T1-9t-FIa" id="RU8-V3-tk1"/>
+                        <outlet property="raceButton" destination="xn1-Zo-F55" id="tMn-Hz-fFu"/>
+                        <outlet property="sizeButton" destination="vq9-zU-Rqs" id="37U-6W-bXb"/>
+                        <outletCollection property="titleLabels" destination="WlQ-iv-739" id="sgw-Z8-DRU"/>
+                        <outletCollection property="titleLabels" destination="L8m-aX-9O7" id="Pwk-dc-d5T"/>
+                        <outletCollection property="titleLabels" destination="4Al-1m-QKC" id="JaX-jl-eYl"/>
+                        <outletCollection property="titleLabels" destination="wlG-GB-Q3z" id="q1f-j6-Rls"/>
+                        <outletCollection property="titleLabels" destination="vaI-Wg-kEr" id="0cr-SE-rxd"/>
+                        <outletCollection property="titleLabels" destination="WP2-Aw-yiK" id="9Uy-kf-7xF"/>
+                        <outletCollection property="titleLabels" destination="Wog-xz-gSJ" id="jpL-DA-iII"/>
+                        <outletCollection property="valueFields" destination="KSv-Fl-7sl" id="r2q-aY-G1f"/>
+                        <outletCollection property="valueFields" destination="4T1-9t-FIa" id="QYG-FR-EqG"/>
+                        <outletCollection property="valueFields" destination="Lva-KQ-cQB" id="f4F-2g-cBr"/>
+                        <outletCollection property="valueFields" destination="xn1-Zo-F55" id="wdM-pw-HfD"/>
+                        <outletCollection property="valueFields" destination="NXM-Or-Rq4" id="4GK-8s-HRv"/>
+                        <outletCollection property="valueFields" destination="vq9-zU-Rqs" id="sCu-6p-5p2"/>
+                        <outletCollection property="valueFields" destination="7dK-I8-Aco" id="6Wz-CI-PHG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nCE-lP-nVS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-430" y="-1467"/>
+        </scene>
+    </scenes>
+</document>

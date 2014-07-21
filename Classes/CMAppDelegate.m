@@ -9,9 +9,11 @@
 #import "CMAppDelegate.h"
 
 #import "PFDataManager.h"
+#import "PFSource.h"
 
 #import <CoreData/CoreData.h>
 
+//#define DELETE_STORE
 
 //------------------------------------------------------------------------------
 #pragma mark - Private Interface Declaration
@@ -53,18 +55,18 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    TRACE;
-/*
-#ifdef DEBUG
+#ifdef DELETE_STORE
 	NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"Pathfinder.CDBStore"];
     NSFileManager *fileManager = [NSFileManager defaultManager];
     // If the expected store doesn't exist, copy the default store.
     if ([fileManager fileExistsAtPath:[storeURL path]]) {
+		LOG_DEBUG(@"Removing CoreData data store...");
 		NSError *error = nil;
 		[fileManager removeItemAtPath:[storeURL path] error:&error];
 	}
+	[self clearDefaults];
 #endif
-*/
+
 	self.dataManager = [[PFDataManager alloc] init];
 	[self importReferenceData];
 	
@@ -79,66 +81,40 @@
 - (void)importReferenceData
 {
 	NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-	
-	NSDate *sourcesLastUpdated = [userDefaults objectForKey:kCMSourcesUpdatedDateDefaultsKey];
-	LOG_DEBUG(@"sourcesLastUpdated = %@", sourcesLastUpdated);
-	if (!sourcesLastUpdated) {
-		[self.dataManager importSourcesAsXML];
-		[userDefaults setObject:[NSDate date] forKey:kCMSourcesUpdatedDateDefaultsKey];
+
+	CMAppDelegate *appDelegate = (CMAppDelegate*)[[UIApplication sharedApplication] delegate];
+	NSManagedObjectContext *moc = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
+	[moc setPersistentStoreCoordinator:[appDelegate persistentStoreCoordinator]];
+
+	[self.dataManager importSourcesInManagedObjectContext:moc];
+	NSError *error = nil;
+	if (![moc save:&error]) {
+		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+		abort();
 	}
-	
-	NSDate *abilitiesLastUpdated = [userDefaults objectForKey:kCMAbilitiesUpdatedDateDefaultsKey];
-	LOG_DEBUG(@"abilitiesLastUpdated = %@", abilitiesLastUpdated);
-	if (!abilitiesLastUpdated) {
-		[self.dataManager importAbilitiesAsXML];
-		[userDefaults setObject:[NSDate date] forKey:kCMAbilitiesUpdatedDateDefaultsKey];
+
+	// General stuff from Core rules
+	[self.dataManager importAbilitiesInManagedObjectContext:moc];
+	[self.dataManager importAlignmentsInManagedObjectContext:moc];
+	[self.dataManager importSkillsInManagedObjectContext:moc];
+
+	if (![moc save:&error]) {
+		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+		abort();
 	}
-	
-	NSDate *alignmentsLastUpdated = [userDefaults objectForKey:kCMAlignmentsUpdatedDateDefaultsKey];
-	LOG_DEBUG(@"alignmentsLastUpdated = %@", alignmentsLastUpdated);
-	if (!alignmentsLastUpdated) {
-		[self.dataManager importAlignmentsAsXML];
-		[userDefaults setObject:[NSDate date] forKey:kCMAlignmentsUpdatedDateDefaultsKey];
-	}
-	
-	NSDate *skillsLastUpdated = [userDefaults objectForKey:kCMSkillsUpdatedDateDefaultsKey];
-	LOG_DEBUG(@"skillsLastUpdated = %@", skillsLastUpdated);
-	if (!skillsLastUpdated) {
-		[self.dataManager importSkillsAsXML];
-		[userDefaults setObject:[NSDate date] forKey:kCMSkillsUpdatedDateDefaultsKey];
-	}
-	
-	NSDate *racesLastUpdated = [userDefaults objectForKey:kCMRacesUpdatedDateDefaultsKey];
-	LOG_DEBUG(@"racesLastUpdated = %@", racesLastUpdated);
-	if (!racesLastUpdated) {
-		[self.dataManager importRacesAsXML];
-		[userDefaults setObject:[NSDate date] forKey:kCMRacesUpdatedDateDefaultsKey];
-	}
-	
-	NSDate *classesLastUpdated = [userDefaults objectForKey:kCMClassesUpdatedDateDefaultsKey];
-	LOG_DEBUG(@"classesLastUpdated = %@", classesLastUpdated);
-	if (!classesLastUpdated) {
-		[self.dataManager importClassTypesAsXML];
-		[userDefaults setObject:[NSDate date] forKey:kCMClassesUpdatedDateDefaultsKey];
-	}
-	
-	NSDate *featsLastUpdated = [userDefaults objectForKey:kCMFeatsUpdatedDateDefaultsKey];
-	LOG_DEBUG(@"featsLastUpdated = %@", featsLastUpdated);
-	if (!featsLastUpdated) {
-		[self.dataManager importFeatsAsXML];
-		[userDefaults setObject:[NSDate date] forKey:kCMFeatsUpdatedDateDefaultsKey];
-	}
-	
-	NSDate *weaponsLastUpdated = [userDefaults objectForKey:kCMWeaponsUpdatedDateDefaultsKey];
-	LOG_DEBUG(@"weaponsLastUpdated = %@", weaponsLastUpdated);
-	if (!weaponsLastUpdated) {
-		if ([self.dataManager importWeaponsAsXML]) {
-			[userDefaults setObject:[NSDate date] forKey:kCMWeaponsUpdatedDateDefaultsKey];
+
+	NSArray *sources = [PFSource fetchAllInContext:moc];
+	for (PFSource *aSource in sources) {
+		[self.dataManager importClassesForSource:aSource inManagedObjectContext:moc];
+		[self.dataManager importRacesForSource:aSource inManagedObjectContext:moc];
+		[self.dataManager importFeatsForSource:aSource inManagedObjectContext:moc];
+		[self.dataManager importWeaponsForSource:aSource inManagedObjectContext:moc];
+		if (![moc save:&error]) {
+			NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
 		}
 	}
-	
+
 	[userDefaults synchronize];
-	
 }
 
 - (void)saveContext
@@ -162,14 +138,8 @@
 	NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
 
 	[userDefaults removeObjectForKey:kCMCurrentCharacterDefaultsKey];
-	[userDefaults removeObjectForKey:kCMSourcesUpdatedDateDefaultsKey];
-	[userDefaults removeObjectForKey:kCMAbilitiesUpdatedDateDefaultsKey];
-	[userDefaults removeObjectForKey:kCMAlignmentsUpdatedDateDefaultsKey];
-	[userDefaults removeObjectForKey:kCMSkillsUpdatedDateDefaultsKey];
-	[userDefaults removeObjectForKey:kCMRacesUpdatedDateDefaultsKey];
-	[userDefaults removeObjectForKey:kCMClassesUpdatedDateDefaultsKey];
-	[userDefaults removeObjectForKey:kCMFeatsUpdatedDateDefaultsKey];
-	[userDefaults removeObjectForKey:kCMWeaponsUpdatedDateDefaultsKey];
+	[userDefaults removeObjectForKey:kCMCurrentPageDefaultsKey];
+	[userDefaults removeObjectForKey:kPFImportDatesDefaultsKey];
 
 	[userDefaults synchronize];
 }

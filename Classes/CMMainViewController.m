@@ -10,6 +10,7 @@
 
 #import "CMAppDelegate.h"
 #import "CMRootViewController.h"
+#import "CMSettings.h"
 
 #import "PFCreateCharacterViewController.h"
 
@@ -28,6 +29,8 @@
 #import "PFClassType.h"
 #import "PFRace.h"
 #import "PFSkill.h"
+
+#import "UIImage+PDF.h"
 
 #import <CoreData/CoreData.h>
 
@@ -82,7 +85,9 @@
 {
     [super viewDidLoad];
 	
-	self.view.layer.contents = (id)[UIImage imageNamed:@"browntexturedleather_edited.jpg"].CGImage;
+	self.view.layer.contents = (id)[[[CMSettings sharedSettings] pageBackgroundImage] CGImage];
+	//UIImage *image = [UIImage imageWithPDFNamed:@"PathfinderRPGCharacterSheet.pdf" atSize:self.view.frame.size atPage:1];
+	//self.view.layer.contents = (id)image.CGImage;
 	self.view.layer.contentsGravity = kCAGravityResize;
 
 	//self.createCharacterButton.tintColor = [UIColor brownColor];
@@ -90,7 +95,7 @@
 
 	//self.charactersTableView.backgroundColor = [UIColor colorWithWhite:0.9 alpha:0.8];
 	self.charactersTableView.backgroundColor = [UIColor clearColor];
-	self.charactersContainer.backgroundColor = [UIColor clearColor];
+	self.charactersContainer.backgroundColor = [UIColor colorWithWhite:0.9 alpha:0.7];
 	self.charactersContainer.layer.borderColor = [UIColor lightGrayColor].CGColor;
 	self.charactersContainer.layer.borderWidth = 2.0f;
 	self.charactersContainer.layer.cornerRadius = 6.0f;
@@ -227,11 +232,12 @@
 - (IBAction)showReferenceView:(id)sender;
 {
 	TRACE;
-	UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"ReferenceStoryboard" bundle:[NSBundle mainBundle]];
+	UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Reference" bundle:[NSBundle mainBundle]];
 	UIViewController *referenceViewController = [storyboard instantiateViewControllerWithIdentifier:@"ReferenceTabBarController"];
 	referenceViewController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
 	referenceViewController.modalPresentationStyle = UIModalPresentationFullScreen;
-	LOG_DEBUG(@"referenceViewController = %@", referenceViewController);
+	//LOG_DEBUG(@"referenceViewController = %@", referenceViewController);
+	[referenceViewController setNeedsStatusBarAppearanceUpdate];
 	[self presentViewController:referenceViewController animated:YES completion:^{}];
 }
 
@@ -289,25 +295,25 @@
 {
 	NSMutableArray *pages = [NSMutableArray arrayWithCapacity:10];
 	
-	UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"ProfileStoryboard" bundle:[NSBundle mainBundle]];
+	UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Profile" bundle:[NSBundle mainBundle]];
 	PFProfileViewController *profileViewController = [storyboard instantiateViewControllerWithIdentifier:@"PFProfileViewController"];
 	LOG_DEBUG(@"profileViewController = %@", profileViewController);
 	profileViewController.character = aCharacter;
 	[pages addObject:profileViewController];
 	
-	storyboard = [UIStoryboard storyboardWithName:@"CombatStoryboard" bundle:[NSBundle mainBundle]];
+	storyboard = [UIStoryboard storyboardWithName:@"Combat" bundle:[NSBundle mainBundle]];
 	PFCombatViewController *combatViewController = [storyboard instantiateViewControllerWithIdentifier:@"PFCombatViewController"];
 	LOG_DEBUG(@"combatViewController = %@", combatViewController);
 	combatViewController.character = aCharacter;
 	[pages addObject:combatViewController];
 	
-	storyboard = [UIStoryboard storyboardWithName:@"EquipmentStoryboard" bundle:[NSBundle mainBundle]];
+	storyboard = [UIStoryboard storyboardWithName:@"Equipment" bundle:[NSBundle mainBundle]];
 	PFEquipmentViewController *gearViewController = [storyboard instantiateViewControllerWithIdentifier:@"PFGearViewController"];
 	LOG_DEBUG(@"gearViewController = %@", gearViewController);
 	gearViewController.character = aCharacter;
 	[pages addObject:gearViewController];
 
-	storyboard = [UIStoryboard storyboardWithName:@"NotesStoryboard" bundle:[NSBundle mainBundle]];
+	storyboard = [UIStoryboard storyboardWithName:@"Notes" bundle:[NSBundle mainBundle]];
 	PFNotesViewController *notesViewController = [storyboard instantiateViewControllerWithIdentifier:@"PFNotesViewController"];
 	LOG_DEBUG(@"notesViewController = %@", notesViewController);
 	notesViewController.character = aCharacter;

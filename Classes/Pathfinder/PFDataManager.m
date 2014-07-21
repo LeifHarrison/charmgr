@@ -29,20 +29,50 @@
 
 @implementation PFDataManager
 
-- (void)importAbilitiesAsXML;
+- (GDataXMLDocument *)documentWithType:(NSString *)type forSource:(PFSource *)source
+{
+	NSString *directory = @"Data";
+	if (source && source.abbreviation.length > 0) {
+		directory = [directory stringByAppendingFormat:@"/%@", source.abbreviation];
+	}
+	NSString *filePath = [[NSBundle mainBundle] pathForResource:type ofType:@"xml" inDirectory:directory];
+
+	NSFileManager *fileManager = [NSFileManager defaultManager];
+	GDataXMLDocument *doc = nil;
+    NSError *error = nil;
+
+	if ([fileManager fileExistsAtPath:filePath]) {
+		NSDictionary *attributes = [fileManager attributesOfItemAtPath:filePath error:&error];
+		NSDate *modificationDate = [attributes fileModificationDate];
+
+		NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+		NSDictionary *importDates = [defaults valueForKey:kPFImportDatesDefaultsKey];
+		NSString *key = [NSString stringWithFormat:@"%@/%@", source.abbreviation, type];
+		NSDate *lastImportDate = [importDates valueForKey:key];
+		LOG_DEBUG(@"modificationDate = %@, lastImportDate = %@", modificationDate, lastImportDate);
+		if (!lastImportDate || ([lastImportDate compare:modificationDate] == NSOrderedAscending))
+		{
+			NSData *xmlData = [[NSMutableData alloc] initWithContentsOfFile:filePath];
+			doc = [[GDataXMLDocument alloc] initWithData:xmlData options:0 error:&error];
+
+			NSMutableDictionary *mutableImportDates = [importDates mutableCopy];
+			if (!mutableImportDates) mutableImportDates = [NSMutableDictionary dictionaryWithCapacity:1];
+			[mutableImportDates setValue:modificationDate forKey:key];
+			[defaults setValue:mutableImportDates forKey:kPFImportDatesDefaultsKey];
+		}
+	}
+
+	return doc;
+}
+
+- (void)importAbilitiesInManagedObjectContext:(NSManagedObjectContext *)moc;
 {
 	LOG_DEBUG(@"Importing abilities...");
-	CMAppDelegate *appDelegate = (CMAppDelegate*)[[UIApplication sharedApplication] delegate];
-	NSManagedObjectContext *moc = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
-	[moc setPersistentStoreCoordinator:[appDelegate persistentStoreCoordinator]];
-	
-	NSString *filePath = [[NSBundle mainBundle] pathForResource:@"Abilities" ofType:@"xml" inDirectory:@"Data/Core"];
-    NSData *xmlData = [[NSMutableData alloc] initWithContentsOfFile:filePath];
-    NSError *error;
-	
-    GDataXMLDocument *doc = [[GDataXMLDocument alloc] initWithData:xmlData options:0 error:&error];
+
+	PFSource *core = [PFSource fetchWithAbbreviation:@"Core" inContext:moc];
+    GDataXMLDocument *doc = [self documentWithType:@"Abilities" forSource:core];
     if (doc == nil) { return; }
-	
+
     //NSLog(@"%@", doc.rootElement);
 	NSInteger importCount = 0;
 
@@ -52,30 +82,18 @@
 		//LOG_DEBUG(@"newInstance = %@", newInstance.name);
 		if (newInstance) importCount++;
 	}
-	
+
 	LOG_DEBUG(@"  %ld abilities imported.", importCount);
-	
-	if (![moc save:&error]) {
-		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-		abort();
-	}
-	
 }
 
-- (void)importAlignmentsAsXML;
+- (void)importAlignmentsInManagedObjectContext:(NSManagedObjectContext *)moc;
 {
 	LOG_DEBUG(@"Importing alignments...");
-	CMAppDelegate *appDelegate = (CMAppDelegate*)[[UIApplication sharedApplication] delegate];
-	NSManagedObjectContext *moc = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
-	[moc setPersistentStoreCoordinator:[appDelegate persistentStoreCoordinator]];
-	
-	NSString *filePath = [[NSBundle mainBundle] pathForResource:@"Alignments" ofType:@"xml" inDirectory:@"Data/Core"];
-    NSData *xmlData = [[NSMutableData alloc] initWithContentsOfFile:filePath];
-    NSError *error;
-	
-    GDataXMLDocument *doc = [[GDataXMLDocument alloc] initWithData:xmlData options:0 error:&error];
+
+	PFSource *core = [PFSource fetchWithAbbreviation:@"Core" inContext:moc];
+    GDataXMLDocument *doc = [self documentWithType:@"Alignments" forSource:core];
     if (doc == nil) { return; }
-	
+
     //NSLog(@"%@", doc.rootElement);
 	NSInteger importCount = 0;
 
@@ -85,28 +103,56 @@
 		//LOG_DEBUG(@"newInstance = %@", newInstance.name);
 		if (newInstance) importCount++;
 	}
-	
+
 	LOG_DEBUG(@"  %ld alignments imported.", (long)importCount);
-	
-	if (![moc save:&error]) {
-		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-		abort();
-	}
-	
 }
 
-- (void)importClassTypesAsXML;
+- (void)importSkillsInManagedObjectContext:(NSManagedObjectContext *)moc;
 {
-	LOG_DEBUG(@"Importing classes...");
-	CMAppDelegate *appDelegate = (CMAppDelegate*)[[UIApplication sharedApplication] delegate];
-	NSManagedObjectContext *moc = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
-	[moc setPersistentStoreCoordinator:[appDelegate persistentStoreCoordinator]];
-	
-	NSString *filePath = [[NSBundle mainBundle] pathForResource:@"Classes" ofType:@"xml" inDirectory:@"Data/Core"];
-    NSData *xmlData = [[NSMutableData alloc] initWithContentsOfFile:filePath];
-    NSError *error;
-	
-    GDataXMLDocument *doc = [[GDataXMLDocument alloc] initWithData:xmlData options:0 error:&error];
+	LOG_DEBUG(@"Importing skills...");
+
+	PFSource *core = [PFSource fetchWithAbbreviation:@"Core" inContext:moc];
+    GDataXMLDocument *doc = [self documentWithType:@"Skills" forSource:core];
+    if (doc == nil) { return; }
+
+    //NSLog(@"%@", doc.rootElement);
+	NSInteger importCount = 0;
+
+	NSArray *elements = [doc.rootElement elementsForName:@"Skill"];
+	for (GDataXMLElement *anElement in elements) {
+		PFSkill *newInstance = [PFSkill insertedInstanceWithElement:anElement inManagedObjectContext:moc];
+		//LOG_DEBUG(@"newInstance = %@", newInstance.name);
+		if (newInstance) importCount++;
+	}
+
+	LOG_DEBUG(@"  %ld skills imported.", (long)importCount);
+}
+
+- (void)importSourcesInManagedObjectContext:(NSManagedObjectContext *)moc;
+{
+	LOG_DEBUG(@"Importing sources...");
+
+    GDataXMLDocument *doc = [self documentWithType:@"Sources" forSource:nil];
+    if (doc == nil) { return; }
+
+    //NSLog(@"%@", doc.rootElement);
+
+	NSArray *elements = [doc.rootElement elementsForName:@"Source"];
+	NSMutableArray *sources = [NSMutableArray arrayWithCapacity:elements.count];
+	for (GDataXMLElement *anElement in elements) {
+		PFSource *newInstance = [PFSource insertedInstanceWithElement:anElement inManagedObjectContext:moc];
+		//LOG_DEBUG(@"  newInstance = %@", newInstance.name);
+		if (newInstance) [sources addObject:newInstance];
+	}
+
+	LOG_DEBUG(@"  %lu sources imported.", (unsigned long)sources.count);
+}
+
+- (void)importClassesForSource:(PFSource*)source inManagedObjectContext:(NSManagedObjectContext *)moc;
+{
+	LOG_DEBUG(@"Importing classes for source %@...", source.name);
+
+    GDataXMLDocument *doc = [self documentWithType:@"Classes" forSource:source];
     if (doc == nil) { return; }
 	
     //NSLog(@"%@", doc.rootElement);
@@ -121,6 +167,7 @@
 	
 	LOG_DEBUG(@"  %ld classes imported.", (long)importCount);
 	
+    NSError *error = nil;
 	if (![moc save:&error]) {
 		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
 		abort();
@@ -128,18 +175,31 @@
 	
 }
 
-- (void)importFeatsAsXML;
+- (void)importRacesForSource:(PFSource*)source inManagedObjectContext:(NSManagedObjectContext *)moc;
 {
-	LOG_DEBUG(@"Importing feats...");
-	CMAppDelegate *appDelegate = (CMAppDelegate*)[[UIApplication sharedApplication] delegate];
-	NSManagedObjectContext *moc = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
-	[moc setPersistentStoreCoordinator:[appDelegate persistentStoreCoordinator]];
-	
-	NSString *filePath = [[NSBundle mainBundle] pathForResource:@"Feats" ofType:@"xml" inDirectory:@"Data/Core"];
-    NSData *xmlData = [[NSMutableData alloc] initWithContentsOfFile:filePath];
-    NSError *error;
-	
-    GDataXMLDocument *doc = [[GDataXMLDocument alloc] initWithData:xmlData options:0 error:&error];
+	LOG_DEBUG(@"Importing races for source %@...", source.name);
+
+    GDataXMLDocument *doc = [self documentWithType:@"Races" forSource:source];
+    if (doc == nil) { return; }
+
+    //NSLog(@"%@", doc.rootElement);
+	NSInteger importCount = 0;
+
+	NSArray *elements = [doc.rootElement elementsForName:@"Race"];
+	for (GDataXMLElement *anElement in elements) {
+		PFRace *newInstance = [PFRace insertedInstanceWithElement:anElement inManagedObjectContext:moc];
+		//LOG_DEBUG(@"newInstance = %@", newInstance.name);
+		if (newInstance) importCount++;
+	}
+
+	LOG_DEBUG(@"  %ld races imported.", (long)importCount);
+}
+
+- (void)importFeatsForSource:(PFSource*)source inManagedObjectContext:(NSManagedObjectContext *)moc;
+{
+	LOG_DEBUG(@"Importing feats for source %@...", source.name);
+
+    GDataXMLDocument *doc = [self documentWithType:@"Feats" forSource:source];
     if (doc == nil) { return; }
 	
     //NSLog(@"%@", doc.rootElement);
@@ -154,6 +214,7 @@
 	
 	LOG_DEBUG(@"  %ld feats imported.", (long)importCount);
 	
+    NSError *error = nil;
 	if (![moc save:&error]) {
 		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
 		abort();
@@ -161,122 +222,13 @@
 	
 }
 
-- (void)importRacesAsXML;
+- (void)importWeaponsForSource:(PFSource*)source inManagedObjectContext:(NSManagedObjectContext *)moc;
 {
-	LOG_DEBUG(@"Importing races...");
-	CMAppDelegate *appDelegate = (CMAppDelegate*)[[UIApplication sharedApplication] delegate];
-	NSManagedObjectContext *moc = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
-	[moc setPersistentStoreCoordinator:[appDelegate persistentStoreCoordinator]];
+	LOG_DEBUG(@"Importing weapons for source %@...", source.name);
 
-	NSString *filePath = [[NSBundle mainBundle] pathForResource:@"Races" ofType:@"xml" inDirectory:@"Data/Core"];
-    NSData *xmlData = [[NSMutableData alloc] initWithContentsOfFile:filePath];
-    NSError *error;
-	
-    GDataXMLDocument *doc = [[GDataXMLDocument alloc] initWithData:xmlData options:0 error:&error];
+    GDataXMLDocument *doc = [self documentWithType:@"Weapons" forSource:source];
     if (doc == nil) { return; }
-	
-    //NSLog(@"%@", doc.rootElement);
-	NSInteger importCount = 0;
 
-	NSArray *elements = [doc.rootElement elementsForName:@"Race"];
-	for (GDataXMLElement *anElement in elements) {
-		PFRace *newInstance = [PFRace insertedInstanceWithElement:anElement inManagedObjectContext:moc];
-		//LOG_DEBUG(@"newInstance = %@", newInstance.name);
-		if (newInstance) importCount++;
-	}
-	
-	LOG_DEBUG(@"  %ld races imported.", (long)importCount);
-	
-	if (![moc save:&error]) {
-		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-		abort();
-	}
-
-}
-
-- (void)importSkillsAsXML;
-{
-	LOG_DEBUG(@"Importing skills...");
-	CMAppDelegate *appDelegate = (CMAppDelegate*)[[UIApplication sharedApplication] delegate];
-	NSManagedObjectContext *moc = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
-	[moc setPersistentStoreCoordinator:[appDelegate persistentStoreCoordinator]];
-	
-	NSString *filePath = [[NSBundle mainBundle] pathForResource:@"Skills" ofType:@"xml" inDirectory:@"Data/Core"];
-    NSData *xmlData = [[NSMutableData alloc] initWithContentsOfFile:filePath];
-    NSError *error;
-	
-    GDataXMLDocument *doc = [[GDataXMLDocument alloc] initWithData:xmlData options:0 error:&error];
-    if (doc == nil) { return; }
-	
-    //NSLog(@"%@", doc.rootElement);
-	NSInteger importCount = 0;
-
-	NSArray *elements = [doc.rootElement elementsForName:@"Skill"];
-	for (GDataXMLElement *anElement in elements) {
-		PFSkill *newInstance = [PFSkill insertedInstanceWithElement:anElement inManagedObjectContext:moc];
-		//LOG_DEBUG(@"newInstance = %@", newInstance.name);
-		if (newInstance) importCount++;
-	}
-	
-	LOG_DEBUG(@"  %ld skills imported.", (long)importCount);
-	
-	if (![moc save:&error]) {
-		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-		abort();
-	}
-	
-}
-
-- (void)importSourcesAsXML;
-{
-	LOG_DEBUG(@"Importing sources...");
-	CMAppDelegate *appDelegate = (CMAppDelegate*)[[UIApplication sharedApplication] delegate];
-	NSManagedObjectContext *moc = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
-	[moc setPersistentStoreCoordinator:[appDelegate persistentStoreCoordinator]];
-	
-	NSString *filePath = [[NSBundle mainBundle] pathForResource:@"Sources" ofType:@"xml" inDirectory:@"Data"];
-    NSData *xmlData = [[NSMutableData alloc] initWithContentsOfFile:filePath];
-    NSError *error;
-	
-    GDataXMLDocument *doc = [[GDataXMLDocument alloc] initWithData:xmlData options:0 error:&error];
-    if (doc == nil) { return; }
-	
-    //NSLog(@"%@", doc.rootElement);
-	NSInteger importCount = 0;
-
-	NSArray *elements = [doc.rootElement elementsForName:@"Source"];
-	for (GDataXMLElement *anElement in elements) {
-		PFSource *newInstance = [PFSource insertedInstanceWithElement:anElement inManagedObjectContext:moc];
-		//LOG_DEBUG(@"  newInstance = %@", newInstance.name);
-		if (newInstance) importCount++;
-	}
-	
-	LOG_DEBUG(@"  %ld sources imported.", (long)importCount);
-	
-	if (![moc save:&error]) {
-		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-		abort();
-	}
-	
-}
-
-- (BOOL)importWeaponsAsXML;
-{
-	LOG_DEBUG(@"Importing weapons...");
-	CMAppDelegate *appDelegate = (CMAppDelegate*)[[UIApplication sharedApplication] delegate];
-	NSManagedObjectContext *moc = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
-	[moc setPersistentStoreCoordinator:[appDelegate persistentStoreCoordinator]];
-	
-	NSString *filePath = [[NSBundle mainBundle] pathForResource:@"Weapons" ofType:@"xml" inDirectory:@"Data/Core"];
-    NSData *xmlData = [[NSMutableData alloc] initWithContentsOfFile:filePath];
-    NSError *error;
-	
-    GDataXMLDocument *doc = [[GDataXMLDocument alloc] initWithData:xmlData options:0 error:&error];
-    if (doc == nil) {
-		if (error) NSLog(@"Error parsing XML: %@, %@", error, [error userInfo]);
-		return NO;
-	}
-	
     //NSLog(@"%@", doc.rootElement);
 	NSInteger importCount = 0;
 	
@@ -288,14 +240,6 @@
 	}
 	
 	LOG_DEBUG(@"  %ld weapons imported.", (long)importCount);
-	
-	if (![moc save:&error]) {
-		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-		[moc rollback];
-		return NO;
-	}
-	
-	return YES;
 }
 
 @end

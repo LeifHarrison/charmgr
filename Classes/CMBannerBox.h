@@ -8,18 +8,21 @@
 
 #import <UIKit/UIKit.h>
 
+IB_DESIGNABLE
 @interface CMBannerBox : UIView
 {
 }
 
-@property (nonatomic, strong) UIColor *bannerColor;
-@property (nonatomic, strong) UIColor *bannerTextColor;
-@property (nonatomic, strong) UIFont *bannerFont;
+@property (nonatomic) IBInspectable UIColor *bannerColor;
+@property (nonatomic) IBInspectable UIColor *bannerTextColor;
+@property (nonatomic) IBInspectable UIFont  *bannerFont;
 
-@property (nonatomic, strong) NSString *bannerTitle;
-@property (nonatomic, assign) CGFloat bannerHeight;
+@property (nonatomic) IBInspectable NSString *bannerTitle;
+@property (nonatomic) IBInspectable CGFloat bannerHeight;
 
-@property (nonatomic, assign) BOOL highlighted;
-@property (nonatomic, assign) BOOL selected;
+@property (nonatomic) UIButton *editButton;
+
+@property (nonatomic) BOOL highlighted;
+@property (nonatomic) BOOL selected;
 
 @end

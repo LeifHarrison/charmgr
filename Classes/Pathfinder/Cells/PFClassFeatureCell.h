@@ -13,6 +13,4 @@
 @property (nonatomic, strong) IBOutlet UILabel *featureNameLabel;
 @property (nonatomic, strong) IBOutlet UILabel *featureLevelLabel;
 
-+ (CGFloat)rowHeightForState:(PFContainerViewState)aState;
-
 @end

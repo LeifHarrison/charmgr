@@ -8,15 +8,18 @@
 
 #import <Foundation/Foundation.h>
 
+@class PFSource;
+
 @interface PFDataManager : NSObject
 
-- (void)importAbilitiesAsXML;
-- (void)importAlignmentsAsXML;
-- (void)importClassTypesAsXML;
-- (void)importFeatsAsXML;
-- (void)importRacesAsXML;
-- (void)importSkillsAsXML;
-- (void)importSourcesAsXML;
-- (BOOL)importWeaponsAsXML;
+- (void)importAbilitiesInManagedObjectContext:(NSManagedObjectContext *)moc;
+- (void)importAlignmentsInManagedObjectContext:(NSManagedObjectContext *)moc;
+- (void)importSkillsInManagedObjectContext:(NSManagedObjectContext *)moc;
+- (void)importSourcesInManagedObjectContext:(NSManagedObjectContext *)moc;
+
+- (void)importClassesForSource:(PFSource*)source inManagedObjectContext:(NSManagedObjectContext *)moc;
+- (void)importFeatsForSource:(PFSource*)source   inManagedObjectContext:(NSManagedObjectContext *)moc;
+- (void)importRacesForSource:(PFSource*)source   inManagedObjectContext:(NSManagedObjectContext *)moc;
+- (void)importWeaponsForSource:(PFSource*)source inManagedObjectContext:(NSManagedObjectContext *)moc;
 
 @end

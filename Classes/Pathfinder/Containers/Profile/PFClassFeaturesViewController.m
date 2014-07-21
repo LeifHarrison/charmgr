@@ -184,17 +184,6 @@ static const CGRect kPFFeaturesViewBoundsEditing	= { {   0,   0 }, { 345, 480 } 
 #pragma mark - UITableViewDelegate
 //------------------------------------------------------------------------------
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-	CGFloat cellHeight = 0;
-	
-	if (indexPath.section == kPFFeaturesTableViewSectionClassFeatures) {
-		cellHeight = [PFClassFeatureCell rowHeightForState:self.state];
-	}
-
-	//LOG_DEBUG(@"indexPath = %@, cellHeight = %lf", indexPath, cellHeight);
-	return cellHeight;
-}
 
 //------------------------------------------------------------------------------
 #pragma mark - Frame Sizes (for different states)
@@ -216,63 +205,6 @@ static const CGRect kPFFeaturesViewBoundsEditing	= { {   0,   0 }, { 345, 480 } 
 {
 	// Default implementation just returns our current view frame
 	return kPFFeaturesViewBoundsEditing;
-}
-
-//------------------------------------------------------------------------------
-#pragma mark - State Transitions
-//------------------------------------------------------------------------------
-
-- (void)willTransitionToState:(PFContainerViewState)newState;
-{
-	//LOG_DEBUG(@"newState = %d", newState);
-	[super willTransitionToState:newState];
-	
-	
-	if (newState == PFContainerViewStateStatic) {
-		[self.tableView setScrollEnabled:NO];
-		[self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
-		
-		for (PFContainerCell *aCell in self.tableView.visibleCells) {
-			[aCell setContainerState:newState animated:YES];
-		}
-		
-	}
-}
-
-- (void)didTransitionToState:(PFContainerViewState)newState;
-{
-	//LOG_DEBUG(@"newState = %d", newState);
-	[super didTransitionToState:newState];
-	
-	if (newState == PFContainerViewStateEditing) {
-		[self.tableView setScrollEnabled:YES];
-		[self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleSingleLine];
-		[self.tableView setSeparatorColor:[UIColor colorWithWhite:0.0 alpha:0.2]];
-		
-		for (PFContainerCell *aCell in self.tableView.visibleCells) {
-			[aCell setContainerState:newState animated:YES];
-		}
-		
-	}
-}
-
-- (void)animateTransitionToState:(PFContainerViewState)newState;
-{
-	//LOG_DEBUG(@"newState = %d", newState);
-	[super animateTransitionToState:newState];
-
-	if (newState == PFContainerViewStateEditing) {
-		[self.tableView beginUpdates];
-		for (PFContainerCell *aCell in self.tableView.visibleCells) {
-			[aCell setContainerState:newState];
-		}
-		[self.tableView endUpdates];
-	}
-	else {
-		for (PFContainerCell *aCell in self.tableView.visibleCells) {
-			[aCell setContainerState:newState];
-		}
-	}
 }
 
 @end

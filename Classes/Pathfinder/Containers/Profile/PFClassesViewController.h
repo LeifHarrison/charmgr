@@ -8,10 +8,7 @@
 
 #import "PFContainerViewController.h"
 
-#import "PFDetailViewController.h"
-
 @interface PFClassesViewController : PFContainerViewController
-	<UIPopoverControllerDelegate, PFDetailViewControllerDelegate>
 
 @property (nonatomic, strong) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) IBOutlet UITextField *levelAdjustmentTextField;

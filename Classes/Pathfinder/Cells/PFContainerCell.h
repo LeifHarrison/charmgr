@@ -12,8 +12,4 @@
 
 @interface PFContainerCell : UITableViewCell
 
-@property (nonatomic, assign) PFContainerViewState containerState;
-
-- (void)setContainerState:(PFContainerViewState)newState animated:(BOOL)animated;
-
 @end

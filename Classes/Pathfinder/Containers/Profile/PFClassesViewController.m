@@ -22,13 +22,6 @@
 #pragma mark - Constants
 //------------------------------------------------------------------------------
 
-static const CGRect kPFClassesViewFramePortrait		= { { 473,  10 }, { 285, 240 } };
-static const CGRect kPFClassesViewFrameLandscape	= { {  10, 498 }, { 285, 240 } };
-static const CGRect kPFClassesViewBoundsEditing		= { {   0,   0 }, { 385, 270 } };
-
-static const CGFloat kClassesViewRowHeightEditing = 31.0f;
-static const CGFloat kClassesViewRowHeightStatic = 25.0f;
-
 //------------------------------------------------------------------------------
 #pragma mark - Private Interface Declaration
 //------------------------------------------------------------------------------
@@ -136,7 +129,6 @@ static const CGFloat kClassesViewRowHeightStatic = 25.0f;
 	PFCharacterClass *characterClass = (PFCharacterClass *)[self.character.classes.allObjects objectAtIndex:indexPath.row];
 	PFClassTableViewCell *classCell = (PFClassTableViewCell*)cell;
 	classCell.characterClass = characterClass;
-	classCell.containerState = self.state;
 	classCell.classNameLabel.text = characterClass.classType.name;
 	classCell.hitDieTypeLabel.text = characterClass.classType.hitDieTypeDescription;
 	classCell.skillRanksLabel.text = [NSString stringWithFormat:@"%d", characterClass.classType.skillRanksPerLevel];
@@ -152,17 +144,16 @@ static const CGFloat kClassesViewRowHeightStatic = 25.0f;
 
 - (void)addClassButtonTapped:(id)sender;
 {
-	LOG_DEBUG(@"sender = %@", sender);
+	//LOG_DEBUG(@"sender = %@", sender);
 	UIButton *button = (UIButton*)sender;
 	
 	PFSelectClassViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"SelectClassDetailController"];
 	controller.character = self.character;
-	controller.delegate = self;
-	LOG_DEBUG(@"controller = %@", controller);
+	//LOG_DEBUG(@"controller = %@", controller);
 
 	UIPopoverController *detailPopover = [[UIPopoverController alloc] initWithContentViewController:controller];
 	self.detailPopover = detailPopover;
-	LOG_DEBUG(@"detailPopover = %@", self.detailPopover);
+	//LOG_DEBUG(@"detailPopover = %@", self.detailPopover);
 	[self.detailPopover presentPopoverFromRect:button.frame
 										inView:button.superview
 					  permittedArrowDirections:UIPopoverArrowDirectionAny
@@ -171,7 +162,7 @@ static const CGFloat kClassesViewRowHeightStatic = 25.0f;
 
 - (IBAction)stepperValueChanged:(id)sender;
 {
-	LOG_DEBUG(@"sender = %@", sender);
+	//LOG_DEBUG(@"sender = %@", sender);
 	[self updateFields];
 }
 
@@ -193,7 +184,7 @@ static const CGFloat kClassesViewRowHeightStatic = 25.0f;
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	LOG_DEBUG(@"indexPath = %@", indexPath);
+	//LOG_DEBUG(@"indexPath = %@", indexPath);
     static NSString *CellIdentifier = @"ClassesCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 	cell.backgroundColor = [UIColor clearColor];
@@ -206,7 +197,7 @@ static const CGFloat kClassesViewRowHeightStatic = 25.0f;
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	LOG_DEBUG(@"indexPath = %@", indexPath);
+	//LOG_DEBUG(@"indexPath = %@", indexPath);
 	PFClassTableViewCell *cell = (PFClassTableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
 	
 	[self.tableView beginUpdates];
@@ -230,7 +221,7 @@ static const CGFloat kClassesViewRowHeightStatic = 25.0f;
 
 - (void)tableView:(UITableView *)tableView willBeginEditingRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	LOG_DEBUG(@"indexPath = %@", indexPath);
+	//LOG_DEBUG(@"indexPath = %@", indexPath);
 	PFClassTableViewCell *cell = (PFClassTableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
 	cell.levelStepper.alpha = 0.0;
 
@@ -238,133 +229,9 @@ static const CGFloat kClassesViewRowHeightStatic = 25.0f;
 
 - (void)tableView:(UITableView *)tableView didEndEditingRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	LOG_DEBUG(@"indexPath = %@", indexPath);
+	//LOG_DEBUG(@"indexPath = %@", indexPath);
 	PFClassTableViewCell *cell = (PFClassTableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
 	cell.levelStepper.alpha = 1.0;
-}
-
-//------------------------------------------------------------------------------
-#pragma mark - Frame Sizes (for different states)
-//------------------------------------------------------------------------------
-
-- (CGRect)staticFramePortrait;
-{
-	// Default implementation just returns our current view frame
-	return kPFClassesViewFramePortrait;
-}
-
-- (CGRect)staticFrameLandscape;
-{
-	// Default implementation just returns our current view frame
-	return kPFClassesViewFrameLandscape;
-}
-
-- (CGRect)editingBounds;
-{
-	// Default implementation just returns our current view frame
-	return kPFClassesViewBoundsEditing;
-}
-
-//------------------------------------------------------------------------------
-#pragma mark - State Transitions
-//------------------------------------------------------------------------------
-
-- (void)willTransitionToState:(PFContainerViewState)newState;
-{
-	LOG_DEBUG(@"newState = %d", newState);
-	[super willTransitionToState:newState];
-	
-	
-	if (newState == PFContainerViewStateStatic) {
-		[self.tableView setScrollEnabled:NO];
-		[self.tableView setTableFooterView:nil];
-		self.tableView.sectionFooterHeight = 0.0f;
-
-		for (PFClassTableViewCell *aCell in self.tableView.visibleCells) {
-			[aCell setContainerState:newState animated:YES];
-		}
-
-	}
-}
-
-- (void)didTransitionToState:(PFContainerViewState)newState;
-{
-	LOG_DEBUG(@"newState = %d", newState);
-	//LOG_DEBUG(@"parentViewController = %@", self.parentViewController);
-	[super didTransitionToState:newState];
-	
-	if (newState == PFContainerViewStateEditing) {
-		[self.tableView setTableFooterView:self.footerView];
-		self.tableView.sectionFooterHeight = 30.0f;
-		[self.tableView setScrollEnabled:YES];
-		//LOG_DEBUG(@"footerView = %@", self.tableView.tableFooterView);
-
-		for (PFClassTableViewCell *aCell in self.tableView.visibleCells) {
-			[aCell setContainerState:newState animated:YES];
-		}
-		
-	}
-}
-
-- (void)animateTransitionToState:(PFContainerViewState)newState;
-{
-	LOG_DEBUG(@"newState = %d", newState);
-	[super animateTransitionToState:newState];
-	
-	if (newState == PFContainerViewStateEditing) {
-		[self.tableView beginUpdates];
-		self.tableView.rowHeight = kClassesViewRowHeightEditing;
-		[self.tableView endUpdates];
-	}
-	else {
-		[self.tableView beginUpdates];
-		self.tableView.rowHeight = kClassesViewRowHeightStatic;
-		[self.tableView endUpdates];
-	}
-	
-}
-
-//------------------------------------------------------------------------------
-#pragma mark - Storyboard
-//------------------------------------------------------------------------------
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-	LOG_DEBUG(@"segue = %@, sender = %@", segue.identifier, sender);
-	LOG_DEBUG(@"source = %@, destination = %@", segue.sourceViewController, segue.destinationViewController);
-	[super prepareForSegue:segue sender:sender];
-	//if ([segue.identifier hasSuffix:@"Container"]) {
-	//}
-    if ([segue isKindOfClass:[UIStoryboardPopoverSegue class]])
-    {
-        UIStoryboardPopoverSegue *popoverSegue = (UIStoryboardPopoverSegue*)segue;
-        popoverSegue.popoverController.delegate = self;
-		self.detailPopover = popoverSegue.popoverController;
-    }
-	
-    if ([segue.destinationViewController isKindOfClass:[PFDetailViewController class]])
-    {
-		PFDetailViewController *controller = segue.destinationViewController;
-		controller.delegate = self;
-	}
-}
-
-- (void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController;
-{
-	TRACE;
-	self.detailPopover = nil;
-	[self updateUI];
-}
-
-//------------------------------------------------------------------------------
-#pragma mark - PFDetailViewController Delegate
-//------------------------------------------------------------------------------
-
-- (void)detailViewControllerDidFinish:(PFDetailViewController*)viewController
-{
-	if (self.detailPopover) [self.detailPopover dismissPopoverAnimated:YES];
-	self.detailPopover = nil;
-	[self updateUI];
 }
 
 @end

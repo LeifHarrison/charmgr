@@ -16,25 +16,6 @@
 #pragma mark - Constants
 //------------------------------------------------------------------------------
 
-static const CGRect kPFDefenseViewFramePortrait		= { {  10, 395 }, { 305, 155 } };
-static const CGRect kPFDefenseViewFrameLandscape	= { {  10, 395 }, { 305, 155 } };
-static const CGRect kPFDefenseViewBoundsEditing		= { {   0,   0 }, { 660, 340 } };
-
-static const CGRect kPFArmorClassTitleRects[]		= { { {  10,  40 }, {  90,  15 } }, { {  10,  50 }, {  90,  15 } } };
-static const CGRect kPFArmorClassFieldRects[]		= { { {  10,  55 }, {  85,  30 } }, { {  10,  65 }, {  70,  30 } } };
-
-static const CGRect kPFFlatFootedACTitleRects[]		= { { { 110,  40 }, {  85,  15 } }, { {  10, 100 }, {  85,  15 } } };
-static const CGRect kPFFlatFootedACFieldRects[]		= { { { 110,  55 }, {  85,  30 } }, { {  10, 115 }, {  70,  30 } } };
-
-static const CGRect kPFTouchACTitleRects[]			= { { { 210,  40 }, {  85,  15 } }, { {  10, 150 }, {  85,  15 } } };
-static const CGRect kPFTouchACFieldRects[]			= { { { 210,  55 }, {  85,  30 } }, { {  10, 165 }, {  70,  30 } } };
-
-static const CGRect kPFCMDTitleRects[]				= { { {  10,  95 }, {  90,  15 } }, { {  10, 230 }, {  90,  15 } } };
-static const CGRect kPFCMDFieldRects[]				= { { {  10, 110 }, {  85,  30 } }, { {  10, 245 }, {  70,  30 } } };
-
-static const CGRect kPFFlatFootedCMDTitleRects[]	= { { { 110,  95 }, {  85,  15 } }, { {  10, 285 }, {  85,  15 } } };
-static const CGRect kPFFlatFootedCMDFieldRects[]	= { { { 110, 110 }, {  85,  30 } }, { {  10, 300 }, {  70,  30 } } };
-
 //------------------------------------------------------------------------------
 #pragma mark - Private Interface Declaration
 //------------------------------------------------------------------------------
@@ -131,89 +112,6 @@ static const CGRect kPFFlatFootedCMDFieldRects[]	= { { { 110, 110 }, {  85,  30 
 	self.flatFootedCMDBaseAttackField.text = [NSString stringWithFormat:@"%ld", (long)[self.character baseAttackBonusForAttackNumber:1]];
 	self.flatFootedCMDSizeField.text = [NSString stringWithFormat:@"%ld", (long)[self.character sizeModifier]];
 	//self.flatFootedCMDMiscField.text = [NSString stringWithFormat:@"%d", [self.character armorClass]];
-}
-
-//------------------------------------------------------------------------------
-#pragma mark - Frame Sizes (for different states)
-//------------------------------------------------------------------------------
-
-- (CGRect)staticFramePortrait;
-{
-	return kPFDefenseViewFramePortrait;
-}
-
-- (CGRect)staticFrameLandscape;
-{
-	return kPFDefenseViewFrameLandscape;
-}
-
-- (CGRect)editingBounds;
-{
-	return kPFDefenseViewBoundsEditing;
-}
-
-//------------------------------------------------------------------------------
-#pragma mark - State Transitions
-//------------------------------------------------------------------------------
-
-- (void)willTransitionToState:(PFContainerViewState)newState;
-{
-	//TRACE;
-	[super willTransitionToState:newState];
-	
-	if (newState == PFContainerViewStateStatic) {
-	}
-}
-
-- (void)didTransitionToState:(PFContainerViewState)newState;
-{
-	//TRACE;
-	[super didTransitionToState:newState];
-	
-	if (newState == PFContainerViewStateEditing) {
-	}
-}
-
-- (void)animateTransitionToState:(PFContainerViewState)newState;
-{
-	//TRACE;
-	[super animateTransitionToState:newState];
-	if (newState == PFContainerViewStateEditing) {
-	}
-	else {
-	}
-}
-
-- (void)layoutForState:(PFContainerViewState)aState
-{
-	LOG_DEBUG(@"state = %d", aState);
-	[super layoutForState:aState];
-	
-	//self.armorClassTitleLabel.alpha = 0.0f;
-	
-	self.armorClassTitleLabel.frame = kPFArmorClassTitleRects[aState];
-	self.armorClassField.frame = kPFArmorClassFieldRects[aState];
-	
-	self.flatFootedACTitleLabel.frame = kPFFlatFootedACTitleRects[aState];
-	self.flatFootedACField.frame = kPFFlatFootedACFieldRects[aState];
-	
-	self.touchACTitleLabel.frame = kPFTouchACTitleRects[aState];
-	self.touchACField.frame = kPFTouchACFieldRects[aState];
-	
-	self.cmdTitleLabel.frame = kPFCMDTitleRects[aState];
-	self.cmdField.frame = kPFCMDFieldRects[aState];
-	
-	self.flatFootedCMDTitleLabel.frame = kPFFlatFootedCMDTitleRects[aState];
-	self.flatFootedCMDField.frame = kPFFlatFootedCMDFieldRects[aState];
-	
-	//self.armorClassTitleLabel.alpha = 1.0f;
-	
-	if (aState == PFContainerViewStateEditing) {
-		self.editingContainer.alpha = 1.0f;
-	}
-	else {
-		self.editingContainer.alpha = 0.0f;
-	}
 }
 
 @end

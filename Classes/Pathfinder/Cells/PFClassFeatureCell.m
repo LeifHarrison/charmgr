@@ -34,7 +34,6 @@
 		//self.layer.borderColor = [UIColor redColor].CGColor;
 		//self.layer.borderWidth = 1.0f;
 		
-		self.containerState = PFContainerViewStateStatic;
 	}
 	return self;
 }
@@ -58,42 +57,6 @@
 {
 	[super prepareForReuse];
 	
-	self.containerState = PFContainerViewStateStatic;
-}
-
-//------------------------------------------------------------------------------
-#pragma mark - Container State
-//------------------------------------------------------------------------------
-
-- (void)setContainerState:(PFContainerViewState)newState;
-{
-	[super setContainerState:newState];
-	
-	if (newState == PFContainerViewStateStatic) {
-	}
-	else {
-	}
-}
-
-- (void)setContainerState:(PFContainerViewState)newState animated:(BOOL)animated;
-{
-	void (^animations) (void) = ^{
-		self.containerState = newState;
-    };
-    void (^completion) (BOOL) = ^(BOOL finished) {
-		self.containerState = newState;
-    };
-    [UIView animateWithDuration: (animated ? 0.3 : 0.0) animations:animations completion:completion];
-}
-
-+ (CGFloat)rowHeightForState:(PFContainerViewState)aState;
-{
-	if (aState == PFContainerViewStateStatic) {
-		return 18;
-	}
-	else {
-		return 26;
-	}
 }
 
 @end

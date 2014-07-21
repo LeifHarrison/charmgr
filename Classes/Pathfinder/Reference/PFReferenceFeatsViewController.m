@@ -23,7 +23,7 @@
 
 @property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
-
+@property (nonatomic) PFReferenceFeatCell *prototypeCell;
 @end
 
 //==============================================================================
@@ -41,6 +41,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+		_prototypeCell = [[PFReferenceFeatCell alloc] init];
     }
     return self;
 }
@@ -73,7 +74,7 @@
 	self.prerequisitesTextView.text = @"";
 	self.benefitTextView.text = @"";
 
-	LOG_DEBUG(@"benefitTextView insets = %@", NSStringFromUIEdgeInsets(self.benefitTextView.contentInset));
+	//LOG_DEBUG(@"benefitTextView insets = %@", NSStringFromUIEdgeInsets(self.benefitTextView.contentInset));
 	
 	self.managedObjectContext = [(CMAppDelegate*)[[UIApplication sharedApplication] delegate] managedObjectContext];
 	
@@ -106,15 +107,24 @@
 }
 
 //------------------------------------------------------------------------------
+#pragma mark - Layout
+//------------------------------------------------------------------------------
+
+- (BOOL)prefersStatusBarHidden
+{
+	return YES;
+}
+
+//------------------------------------------------------------------------------
 #pragma mark - Actions
 //------------------------------------------------------------------------------
 
 - (IBAction)dismissView:(id)sender;
 {
-	LOG_DEBUG(@"parentViewController = %@", self.parentViewController);
-	LOG_DEBUG(@"presentingViewController = %@", self.presentingViewController);
-	LOG_DEBUG(@"presentedViewController = %@", self.presentedViewController);
-	LOG_DEBUG(@"tabBarController = %@", self.tabBarController);
+	//LOG_DEBUG(@"parentViewController = %@", self.parentViewController);
+	//LOG_DEBUG(@"presentingViewController = %@", self.presentingViewController);
+	//LOG_DEBUG(@"presentedViewController = %@", self.presentedViewController);
+	//LOG_DEBUG(@"tabBarController = %@", self.tabBarController);
 	[self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -163,13 +173,54 @@
 	featCell.benefitLabel.text = feat.benefitString;
 }
 
+- (void)updateSearchWithString:(NSString *)searchString
+{
+	//LOG_DEBUG(@"searchString = %@", searchString);
+
+	if (searchString.length > 0)
+	{
+		//NSFetchRequest *fetchRequest = self.fetchedResultsController.fetchRequest;
+
+		// Create and configure a fetch request with the Book entity.
+		//NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+		//NSEntityDescription *entity = [NSEntityDescription entityForName:@"PFFeat" inManagedObjectContext:self.managedObjectContext];
+		//[fetchRequest setEntity:entity];
+
+		NSPredicate *searchPredicate = [NSPredicate predicateWithFormat:@"name contains[cd] %@", searchString];
+		self.fetchedResultsController.fetchRequest.predicate = searchPredicate;
+		//LOG_DEBUG(@"searchPredicate = %@", searchPredicate);
+
+		// Create the sort descriptors array.
+		//NSSortDescriptor *nameDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
+		//NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:nameDescriptor, nil];
+		//[fetchRequest setSortDescriptors:sortDescriptors];
+	}
+	else
+	{
+		self.fetchedResultsController.fetchRequest.predicate = nil;
+	}
+
+	[NSFetchedResultsController deleteCacheWithName:@"Feats"];
+
+	NSError *error = nil;
+	//LOG_DEBUG(@"fetchedResultsController = %@", self.fetchedResultsController);
+	if ([self.fetchedResultsController performFetch:&error]) {
+		//LOG_DEBUG(@"fetchedObjects = %@", self.fetchedResultsController.fetchedObjects);
+		[self.tableView reloadData];
+	}
+	else {
+		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+	}
+
+}
+
 //------------------------------------------------------------------------------
 #pragma mark - UITableViewDataSource
 //------------------------------------------------------------------------------
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-	LOG_DEBUG(@"sections = %lu", [[self.fetchedResultsController sections] count]);
+	//LOG_DEBUG(@"sections = %lu", [[self.fetchedResultsController sections] count]);
     return [[self.fetchedResultsController sections] count];
 }
 
@@ -178,7 +229,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     id <NSFetchedResultsSectionInfo> sectionInfo = [[self.fetchedResultsController sections] objectAtIndex:section];
-	LOG_DEBUG(@"section = %ld, rows = %lu", (long)section, [sectionInfo numberOfObjects]);
+	//LOG_DEBUG(@"section = %ld, rows = %lu", (long)section, [sectionInfo numberOfObjects]);
     return [sectionInfo numberOfObjects];
 }
 
@@ -226,13 +277,24 @@
 #pragma mark - UITableViewDelegate
 //------------------------------------------------------------------------------
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	static NSString *CellIdentifier = @"ReferenceFeatCell";
+	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+	[self configureCell:cell atIndexPath:indexPath];
+
+	CGSize contentSize = [cell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
+	//LOG_DEBUG(@"contentSize = %@", NSStringFromCGSize(contentSize));
+	return contentSize.height;
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	if ([self.searchTextField isFirstResponder])
 		[self.searchTextField resignFirstResponder];
 
 	PFFeat *selectedFeat = [self.fetchedResultsController objectAtIndexPath:indexPath];
-	LOG_DEBUG(@"selectedFeat = %@", selectedFeat);
+	//LOG_DEBUG(@"selectedFeat = %@", selectedFeat);
 	
 	self.featNameLabel.text = selectedFeat.name;
 	self.featTypeLabel.text = selectedFeat.type;
@@ -316,44 +378,11 @@
 #pragma mark - UITextField Delegate
 //------------------------------------------------------------------------------
 
-- (void)updateSearchWithString:(NSString *)searchString
-{
-	LOG_DEBUG(@"searchString = %@", searchString);
-	//NSFetchRequest *fetchRequest = self.fetchedResultsController.fetchRequest;
-
-	// Create and configure a fetch request with the Book entity.
-    //NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    //NSEntityDescription *entity = [NSEntityDescription entityForName:@"PFFeat" inManagedObjectContext:self.managedObjectContext];
-    //[fetchRequest setEntity:entity];
-    
-	NSPredicate *searchPredicate = [NSPredicate predicateWithFormat:@"name contains[cd] %@", searchString];
-	self.fetchedResultsController.fetchRequest.predicate = searchPredicate;
-	//LOG_DEBUG(@"searchPredicate = %@", searchPredicate);
-
-    // Create the sort descriptors array.
-    //NSSortDescriptor *nameDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
-    //NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:nameDescriptor, nil];
-    //[fetchRequest setSortDescriptors:sortDescriptors];
-
-	[NSFetchedResultsController deleteCacheWithName:@"Feats"];
-	
-	NSError *error = nil;
-	//LOG_DEBUG(@"fetchedResultsController = %@", self.fetchedResultsController);
-    if ([self.fetchedResultsController performFetch:&error]) {
-		//LOG_DEBUG(@"fetchedObjects = %@", self.fetchedResultsController.fetchedObjects);
-		[self.tableView reloadData];
-    }
-	else {
-        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-	}
-	
-}
-
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
-	LOG_DEBUG(@"textField.text = %@, string = %@ %@", textField.text, string, NSStringFromRange(range));
+	//LOG_DEBUG(@"textField.text = %@, string = %@ %@", textField.text, string, NSStringFromRange(range));
 	NSString *searchText = [textField.text stringByReplacingCharactersInRange:range withString:string];
-	LOG_DEBUG(@"searchText = %@", searchText);
+	//LOG_DEBUG(@"searchText = %@", searchText);
 	
 	[NSObject cancelPreviousPerformRequestsWithTarget:self];
 	[self performSelector:@selector(updateSearchWithString:) withObject:searchText afterDelay:0.2];

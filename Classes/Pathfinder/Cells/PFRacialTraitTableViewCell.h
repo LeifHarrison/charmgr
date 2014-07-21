@@ -15,8 +15,4 @@
 @property (nonatomic, strong) IBOutlet UILabel *traitNameLabel;
 @property (nonatomic, strong) IBOutlet UILabel *traitDescriptionLabel;
 
-+ (CGFloat)rowHeightForState:(PFContainerViewState)aState
-					   trait:(PFRacialTrait*)aTrait
-				   cellWidth:(CGFloat)cellWidth;
-
 @end

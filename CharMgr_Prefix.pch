@@ -29,15 +29,5 @@
 
 #define kCMCurrentCharacterDefaultsKey @"CurrentCharacter"
 #define kCMCurrentPageDefaultsKey	   @"CurrentPage"
-
-#define kCMAbilitiesUpdatedDateDefaultsKey	@"AbilitiesDateLastUpdated"
-#define kCMAlignmentsUpdatedDateDefaultsKey	@"AlignmentsDateLastUpdated"
-#define kCMClassesUpdatedDateDefaultsKey	@"ClassesDateLastUpdated"
-#define kCMFeatsUpdatedDateDefaultsKey		@"FeatsDateLastUpdated"
-#define kCMRacesUpdatedDateDefaultsKey		@"RacesDateLastUpdated"
-#define kCMSkillsUpdatedDateDefaultsKey		@"SkillsDateLastUpdated"
-#define kCMSourcesUpdatedDateDefaultsKey	@"SourcesDateLastUpdated"
-#define kCMSpellsUpdatedDateDefaultsKey		@"SpellsDateLastUpdated"
-#define kCMTraitsUpdatedDateDefaultsKey		@"TraitsDateLastUpdated"
-#define kCMWeaponsUpdatedDateDefaultsKey	@"WeaponsDateLastUpdated"
+#define kPFImportDatesDefaultsKey	   @"ImportDates"
 

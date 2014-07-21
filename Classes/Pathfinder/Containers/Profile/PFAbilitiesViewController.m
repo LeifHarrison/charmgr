@@ -20,13 +20,6 @@
 #pragma mark - Constants
 //------------------------------------------------------------------------------
 
-static const CGRect kPFAbilitiesViewFramePortrait	= { { 253,  10 }, { 215, 240 } };
-static const CGRect kPFAbilitiesViewFrameLandscape	= { {  10, 253 }, { 285, 240 } };
-static const CGRect kPFAbilitiesViewBoundsEditing	= { {   0,   0 }, { 305, 264 } };
-
-static const CGFloat kAbilitiesViewRowHeightEditing = 32.0f;
-static const CGFloat kAbilitiesViewRowHeightStatic = 28.0f;
-
 //------------------------------------------------------------------------------
 #pragma mark - Private Interface Declaration
 //------------------------------------------------------------------------------
@@ -108,17 +101,6 @@ static const CGFloat kAbilitiesViewRowHeightStatic = 28.0f;
 	abilityCell.abilityNameLabel.text = characterAbility.ability.name;
 	abilityCell.abilityScoreTextField.text = characterAbility.abilityScore.stringValue;
 	abilityCell.abilityBonusTextField.text = characterAbility.abilityBonus.stringValue;
-	if (characterAbility.temporaryScore != nil) {
-		abilityCell.temporaryScoreTextField.text = characterAbility.temporaryScore.stringValue;
-		abilityCell.temporaryBonusTextField.text = characterAbility.temporaryBonus.stringValue;
-	}
-	else {
-		abilityCell.temporaryScoreTextField.text = @"";
-		abilityCell.temporaryBonusTextField.text = @"";
-	}
-	abilityCell.abilityStepper.value = characterAbility.abilityScore.doubleValue;
-
-	abilityCell.containerState = self.state;
 	//LOG_DEBUG(@"borderWidth = %lf", abilityCell.abilityScoreTextField.layer.borderWidth);
 	//abilityCell.abilityScoreTextField.layer.borderWidth = 1.0f;
 	//abilityCell.abilityScoreTextField.layer.cornerRadius = 6.0f;
@@ -138,7 +120,7 @@ static const CGFloat kAbilitiesViewRowHeightStatic = 28.0f;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-	LOG_DEBUG(@"section = %ld, rows = %lu", section, (unsigned long)self.sortedAbilities.count);
+	LOG_DEBUG(@"section = %ld, rows = %lu", (long)section, (unsigned long)self.sortedAbilities.count);
     return self.sortedAbilities.count;
 }
 
@@ -164,80 +146,5 @@ static const CGFloat kAbilitiesViewRowHeightStatic = 28.0f;
 	header.backgroundColor = [UIColor clearColor];
 	return header;
 }
-
-//------------------------------------------------------------------------------
-#pragma mark - Frame Sizes (for different states)
-//------------------------------------------------------------------------------
-
-- (CGRect)staticFramePortrait;
-{
-	// Default implementation just returns our current view frame
-	return kPFAbilitiesViewFramePortrait;
-}
-
-- (CGRect)staticFrameLandscape;
-{
-	// Default implementation just returns our current view frame
-	return kPFAbilitiesViewFrameLandscape;
-}
-
-- (CGRect)editingBounds;
-{
-	// Default implementation just returns our current view frame
-	return kPFAbilitiesViewBoundsEditing;
-}
-
-//------------------------------------------------------------------------------
-#pragma mark - State Transitions
-//------------------------------------------------------------------------------
-
-- (void)willTransitionToState:(PFContainerViewState)newState;
-{
-	//TRACE;
-	[super willTransitionToState:newState];
-	
-	if (newState == PFContainerViewStateStatic) {
-		//for (PFAbilityTableViewCell *aCell in self.tableView.visibleCells) {
-		//	[aCell setContainerState:newState animated:YES];
-		//}
-		//[self setEditableFieldsEnabled:NO];
-	}
-}
-
-- (void)didTransitionToState:(PFContainerViewState)newState;
-{
-	//TRACE;
-	//LOG_DEBUG(@"parentViewController = %@", self.parentViewController);
-	[super didTransitionToState:newState];
-	
-	if (newState == PFContainerViewStateEditing) {
-		for (PFAbilityTableViewCell *aCell in self.tableView.visibleCells) {
-			[aCell setContainerState:newState animated:YES];
-		}
-		//[self setEditableFieldsEnabled:YES];
-	}
-}
-
-- (void)animateTransitionToState:(PFContainerViewState)newState;
-{
-	//TRACE;
-	[super animateTransitionToState:newState];
-	if (newState == PFContainerViewStateEditing) {
-		//self.view.superview.bounds = kPFAbilitiesViewBoundsEditing;
-		//self.view.bounds = kPFAbilitiesViewBoundsEditing;
-		[self.tableView beginUpdates];
-		self.tableView.rowHeight = kAbilitiesViewRowHeightEditing;
-		[self.tableView endUpdates];
-	}
-	else {
-		//self.view.superview.bounds = kPFAbilitiesViewFramePortrait;
-		//self.view.bounds = kPFAbilitiesViewFramePortrait;
-		[self.tableView beginUpdates];
-		self.tableView.rowHeight = kAbilitiesViewRowHeightStatic;
-		[self.tableView endUpdates];
-		
-	}
-}
-
 
 @end

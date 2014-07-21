@@ -12,7 +12,7 @@
 
 @class PFCharacter;
 
-@interface PFPageContentViewController : UIViewController <PFContainerViewControllerDelegate>
+@interface PFPageContentViewController : UIViewController
 
 @property (nonatomic, strong) PFCharacter *character;
 

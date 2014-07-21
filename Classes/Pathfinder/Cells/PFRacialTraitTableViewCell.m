@@ -40,7 +40,6 @@
 		//self.layer.borderColor = [UIColor redColor].CGColor;
 		//self.layer.borderWidth = 1.0f;
 		
-		self.containerState = PFContainerViewStateStatic;
 	}
 	return self;
 }
@@ -63,8 +62,6 @@
 - (void)prepareForReuse
 {
 	[super prepareForReuse];
-	
-	self.containerState = PFContainerViewStateStatic;
 }
 
 //------------------------------------------------------------------------------
@@ -82,50 +79,6 @@
 													 lineBreakMode:NSLineBreakByWordWrapping];
 	descriptionRect.size.height = descriptionSize.height;
 	self.traitDescriptionLabel.frame = descriptionRect;
-}
-
-//------------------------------------------------------------------------------
-#pragma mark - Container State
-//------------------------------------------------------------------------------
-
-- (void)setContainerState:(PFContainerViewState)newState;
-{
-	[super setContainerState:newState];
-	
-	if (newState == PFContainerViewStateStatic) {
-		self.traitDescriptionLabel.alpha = 0.0f;
-	}
-	else {
-		self.traitDescriptionLabel.alpha = 1.0f;
-	}
-}
-
-- (void)setContainerState:(PFContainerViewState)newState animated:(BOOL)animated;
-{
-	void (^animations) (void) = ^{
-		self.containerState = newState;
-    };
-    void (^completion) (BOOL) = ^(BOOL finished) {
-		self.containerState = newState;
-    };
-    [UIView animateWithDuration: (animated ? 0.3 : 0.0) animations:animations completion:completion];
-}
-
-+ (CGFloat)rowHeightForState:(PFContainerViewState)aState
-					   trait:(PFRacialTrait*)aTrait
-				   cellWidth:(CGFloat)cellWidth;
-{
-	if (aState == PFContainerViewStateStatic) {
-		return 20;
-	}
-	else {
-		CGFloat maxWidth = cellWidth - (2 * 10);
-		CGSize descriptionSize = [aTrait.descriptionShort sizeWithFont:[UIFont systemFontOfSize:10]
-													  constrainedToSize:CGSizeMake(maxWidth, 600)
-														  lineBreakMode:NSLineBreakByWordWrapping];
-		CGFloat height = 18 + descriptionSize.height + 2;
-		return height;
-	}
 }
 
 @end
