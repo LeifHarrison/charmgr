@@ -23,7 +23,6 @@
 
 @property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
-@property (nonatomic) PFReferenceFeatCell *prototypeCell;
 @end
 
 //==============================================================================
@@ -41,7 +40,6 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-		_prototypeCell = [[PFReferenceFeatCell alloc] init];
     }
     return self;
 }
@@ -58,24 +56,6 @@
 	self.tableView.layer.borderWidth = 1.5f;
 	self.tableView.layer.cornerRadius = 5.0f;
 
-	self.detailContainerView.backgroundColor = [UIColor colorWithWhite:0.9 alpha:1.0];
-	self.detailContainerView.layer.borderColor = [UIColor darkGrayColor].CGColor;
-	self.detailContainerView.layer.borderWidth = 1.5f;
-	self.detailContainerView.layer.cornerRadius = 5.0f;
-	
-	//self.prerequisitesTextView.layer.borderColor = [UIColor redColor].CGColor;
-	//self.prerequisitesTextView.layer.borderWidth = 1.0f;
-	//self.benefitTextView.layer.borderColor = [UIColor redColor].CGColor;
-	//self.benefitTextView.layer.borderWidth = 1.0f;
-
-	self.featNameLabel.text = @"";
-	self.featTypeLabel.text = @"";
-	self.featSourceLabel.text = @"";
-	self.prerequisitesTextView.text = @"";
-	self.benefitTextView.text = @"";
-
-	//LOG_DEBUG(@"benefitTextView insets = %@", NSStringFromUIEdgeInsets(self.benefitTextView.contentInset));
-	
 	self.managedObjectContext = [(CMAppDelegate*)[[UIApplication sharedApplication] delegate] managedObjectContext];
 	
 	NSError *error = nil;
@@ -145,15 +125,15 @@
     [fetchRequest setEntity:entity];
     
     // Create the sort descriptors array.
-    NSSortDescriptor *sourceDescriptor = [[NSSortDescriptor alloc] initWithKey:@"source.name" ascending:YES];
+	//NSSortDescriptor *sourceDescriptor = [[NSSortDescriptor alloc] initWithKey:@"source.name" ascending:YES];
     NSSortDescriptor *nameDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
-    NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sourceDescriptor, nameDescriptor, nil];
+    NSArray *sortDescriptors = [[NSArray alloc] initWithObjects: nameDescriptor, nil];
     [fetchRequest setSortDescriptors:sortDescriptors];
     
     // Create and initialize the fetch results controller.
     _fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
 																	managedObjectContext:self.managedObjectContext
-																	  sectionNameKeyPath:@"source.name"
+																	  sectionNameKeyPath:nil
 																			   cacheName:nil];
     _fetchedResultsController.delegate = self;
     
@@ -293,14 +273,8 @@
 	if ([self.searchTextField isFirstResponder])
 		[self.searchTextField resignFirstResponder];
 
-	PFFeat *selectedFeat = [self.fetchedResultsController objectAtIndexPath:indexPath];
+	//PFFeat *selectedFeat = [self.fetchedResultsController objectAtIndexPath:indexPath];
 	//LOG_DEBUG(@"selectedFeat = %@", selectedFeat);
-	
-	self.featNameLabel.text = selectedFeat.name;
-	self.featTypeLabel.text = selectedFeat.type;
-	self.featSourceLabel.text = selectedFeat.source.name;
-	self.prerequisitesTextView.text = selectedFeat.prerequisitesString;	
-	self.benefitTextView.text = selectedFeat.benefitString;
 }
 
 //------------------------------------------------------------------------------
@@ -354,7 +328,7 @@
 	TRACE;
     UITableView *tableView = self.tableView;
 	
-    switch(type) {
+    switch (type) {
             
         case NSFetchedResultsChangeInsert:
             [tableView insertSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
@@ -363,7 +337,11 @@
         case NSFetchedResultsChangeDelete:
             [tableView deleteSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
             break;
-    }
+
+		case NSFetchedResultsChangeMove:
+		case NSFetchedResultsChangeUpdate:
+			break;
+	}
 }
 
 

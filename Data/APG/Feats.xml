@@ -1,654 +1,654 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Feats>
-	<Feat name="Additional Traits" type="General" source="Advanced Players Guide">
+	<Feat name="Additional Traits" type="General" source="APG">
 		<Prerequisites>„</Prerequisites>
 		<Benefit>Gain two additional character traits</Benefit>
 	</Feat>
-	<Feat name="Arcane Blast" type="General" source="Advanced Players Guide">
+	<Feat name="Arcane Blast" type="General" source="APG">
 		<Prerequisites>Arcane spellcaster, caster level 10th</Prerequisites>
 		<Benefit>Sacrifice a spell to make a ray attack</Benefit>
 	</Feat>
-	<Feat name="Arcane Shield" type="General" source="Advanced Players Guide">
+	<Feat name="Arcane Shield" type="General" source="APG">
 		<Prerequisites>Arcane spellcaster, caster level 10th</Prerequisites>
 		<Benefit>Sacrifice a spell to gain deflection bonus to AC</Benefit>
 	</Feat>
-	<Feat name="Arcane Talent" type="General" source="Advanced Players Guide">
+	<Feat name="Arcane Talent" type="General" source="APG">
 		<Prerequisites>Cha 10; elf, half-elf, or gnome</Prerequisites>
 		<Benefit>Cast a 0-level spell 3 times per day as a spell-like ability</Benefit>
 	</Feat>
-	<Feat name="Aspect of the Beast" type="General" source="Advanced Players Guide">
+	<Feat name="Aspect of the Beast" type="General" source="APG">
 		<Prerequisites>Wild shape class feature</Prerequisites>
 		<Benefit>Gain one of four bestial advantages</Benefit>
 	</Feat>
-	<Feat name="Bashing Finish" type="Combat" source="Advanced Players Guide">
+	<Feat name="Bashing Finish" type="Combat" source="APG">
 		<Prerequisites>Shield Master, Two-Weapon Fighting, base attack bonus +11</Prerequisites>
 		<Benefit>Make a free shield bash after a critical hit</Benefit>
 	</Feat>
-	<Feat name="Bloody Assault" type="Combat" source="Advanced Players Guide">
+	<Feat name="Bloody Assault" type="Combat" source="APG">
 		<Prerequisites>Power Attack, base attack bonus +6</Prerequisites>
 		<Benefit>Trade melee attack bonus for bleed damage</Benefit>
 	</Feat>
-	<Feat name="Bodyguard" type="Combat" source="Advanced Players Guide">
+	<Feat name="Bodyguard" type="Combat" source="APG">
 		<Prerequisites>Combat Reflexes</Prerequisites>
 		<Benefit>Use attack of opportunity to add a bonus to adjacent ally's AC</Benefit>
 	</Feat>
-	<Feat name="In Harm's Way" type="Combat" source="Advanced Players Guide">
+	<Feat name="In Harm's Way" type="Combat" source="APG">
 		<Prerequisites>Bodyguard</Prerequisites>
 		<Benefit>Take the damage of a successful attack upon an adjacent ally</Benefit>
 	</Feat>
-	<Feat name="Breadth of Experience" type="General" source="Advanced Players Guide">
+	<Feat name="Breadth of Experience" type="General" source="APG">
 		<Prerequisites>Dwarf, elf, or gnome; 100+ years old</Prerequisites>
 		<Benefit>+2 bonus on all Knowledge and Profession checks</Benefit>
 	</Feat>
-	<Feat name="Bull Rush Strike" type="Combat" source="Advanced Players Guide">
+	<Feat name="Bull Rush Strike" type="Combat" source="APG">
 		<Prerequisites>Improved Bull Rush, base attack bonus +9</Prerequisites>
 		<Benefit>Attempt a bull rush on a successful critical hit</Benefit>
 	</Feat>
-	<Feat name="Charge Through" type="Combat" source="Advanced Players Guide">
+	<Feat name="Charge Through" type="Combat" source="APG">
 		<Prerequisites>Improved Overrun, base attack bonus +1</Prerequisites>
 		<Benefit>Make overrun as free action while charging</Benefit>
 	</Feat>
-	<Feat name="Childlike" type="General" source="Advanced Players Guide">
+	<Feat name="Childlike" type="General" source="APG">
 		<Prerequisites>Cha 13, halfling</Prerequisites>
 		<Benefit>+2 on Disguise checks to look like human child, take 10 on Bluff checks</Benefit>
 	</Feat>
-	<Feat name="Cockatrice Strike" type="Combat" source="Advanced Players Guide">
+	<Feat name="Cockatrice Strike" type="Combat" source="APG">
 		<Prerequisites>Medusa's Wrath, base attack bonus +16</Prerequisites>
 		<Benefit>Turn a target to stone with a critical hit</Benefit>
 	</Feat>
-	<Feat name="Combat Patrol" type="Combat" source="Advanced Players Guide">
+	<Feat name="Combat Patrol" type="Combat" source="APG">
 		<Prerequisites>Combat Reflexes, Mobility, base attack bonus +5</Prerequisites>
 		<Benefit>Increase threatened area for attack of opportunity</Benefit>
 	</Feat>
-	<Feat name="Cooperative Crafting" type="General" source="Advanced Players Guide">
+	<Feat name="Cooperative Crafting" type="General" source="APG">
 		<Prerequisites>1 rank in any Craft skill, any item creation feat</Prerequisites>
 		<Benefit>+2 bonus on Craft or Spellcraft checks while workingtogether</Benefit>
 	</Feat>
-	<Feat name="Cosmopolitan" type="General" source="Advanced Players Guide">
+	<Feat name="Cosmopolitan" type="General" source="APG">
 		<Prerequisites>„</Prerequisites>
 		<Benefit>Read and speak two additional languages</Benefit>
 	</Feat>
-	<Feat name="Covering Defense" type="Combat" source="Advanced Players Guide">
+	<Feat name="Covering Defense" type="Combat" source="APG">
 		<Prerequisites>Shield Focus, base attack bonus +6</Prerequisites>
 		<Benefit>Provide cover to an ally with total defense</Benefit>
 	</Feat>
-	<Feat name="Crippling Critical" type="Combat" source="Advanced Players Guide">
+	<Feat name="Crippling Critical" type="Combat" source="APG">
 		<Prerequisites>Critical Focus, base attack bonus +13</Prerequisites>
 		<Benefit>Whenever you score a critical hit, the target's speed is halved</Benefit>
 	</Feat>
-	<Feat name="Crossbow Mastery" type="Combat" source="Advanced Players Guide">
+	<Feat name="Crossbow Mastery" type="Combat" source="APG">
 		<Prerequisites>Dex 15, Rapid Reload, Rapid Shot</Prerequisites>
 		<Benefit>Reload crossbow as free action and make full attacks</Benefit>
 	</Feat>
-	<Feat name="Dastardly Finish" type="Combat" source="Advanced Players Guide">
+	<Feat name="Dastardly Finish" type="Combat" source="APG">
 		<Prerequisites>Sneak attack +5d6</Prerequisites>
 		<Benefit>Deliver coup de grace to cowering or stunned target</Benefit>
 	</Feat>
-	<Feat name="Dazing Assault" type="Combat" source="Advanced Players Guide">
+	<Feat name="Dazing Assault" type="Combat" source="APG">
 		<Prerequisites>Power Attack, base attack bonus +11</Prerequisites>
 		<Benefit>Trade melee attack bonus to daze opponents</Benefit>
 	</Feat>
-	<Feat name="Deep Drinker" type="General" source="Advanced Players Guide">
+	<Feat name="Deep Drinker" type="General" source="APG">
 		<Prerequisites>Con 13, monk level 11, drunken ki class feature</Prerequisites>
 		<Benefit>Gain 2 temporary ki from drunken ki</Benefit>
 	</Feat>
-	<Feat name="Deepsight" type="General" source="Advanced Players Guide">
+	<Feat name="Deepsight" type="General" source="APG">
 		<Prerequisites>Darkvision 60 feet</Prerequisites>
 		<Benefit>Your darkvision has a range of 120 feet</Benefit>
 	</Feat>
-	<Feat name="Disarming Strike" type="Combat" source="Advanced Players Guide">
+	<Feat name="Disarming Strike" type="Combat" source="APG">
 		<Prerequisites>Improved Disarm, base attack bonus +9</Prerequisites>
 		<Benefit>Attempt a disarm on a successful critical hit</Benefit>
 	</Feat>
-	<Feat name="Disrupting Shot" type="Combat" source="Advanced Players Guide">
+	<Feat name="Disrupting Shot" type="Combat" source="APG">
 		<Prerequisites>Dex 13, Point-Blank Shot, 6th-level fighter</Prerequisites>
 		<Benefit>Ranged attacks increase enemy's DC to cast spells</Benefit>
 	</Feat>
-	<Feat name="Diviner's Delving" type="General" source="Advanced Players Guide">
+	<Feat name="Diviner's Delving" type="General" source="APG">
 		<Prerequisites>Spell Focus (divination)</Prerequisites>
 		<Benefit>+2 bonus on caster level checks with divinations</Benefit>
 	</Feat>
-	<Feat name="Eagle Eyes" type="General" source="Advanced Players Guide">
+	<Feat name="Eagle Eyes" type="General" source="APG">
 		<Prerequisites>Wis 13, keen senses racial trait</Prerequisites>
 		<Benefit>Ignore up to _5 due to distance on visual Perception checks</Benefit>
 	</Feat>
-	<Feat name="Eclectic" type="General" source="Advanced Players Guide">
+	<Feat name="Eclectic" type="General" source="APG">
 		<Prerequisites>Human</Prerequisites>
 		<Benefit>Gain an additional favored class</Benefit>
 	</Feat>
-	<Feat name="Eldritch Claws" type="General" source="Advanced Players Guide">
+	<Feat name="Eldritch Claws" type="General" source="APG">
 		<Prerequisites>Str 15, natural weapons, base attack bonus +6</Prerequisites>
 		<Benefit>Natural weapons treated as magic and silver</Benefit>
 	</Feat>
-	<Feat name="Elemental Fist" type="Combat" source="Advanced Players Guide">
+	<Feat name="Elemental Fist" type="Combat" source="APG">
 		<Prerequisites>Con 13, Wis 13, Improved Unarmed Strike, base attack bonus +8</Prerequisites>
 		<Benefit>Deal 1d6 energy damage with an unarmed strike</Benefit>
 	</Feat>
-	<Feat name="Elemental Focus" type="General" source="Advanced Players Guide">
+	<Feat name="Elemental Focus" type="General" source="APG">
 		<Prerequisites>„</Prerequisites>
 		<Benefit>+1 bonus on save DCs for one energy type</Benefit>
 	</Feat>
-	<Feat name="Greater Elemental Focus" type="General" source="Advanced Players Guide">
+	<Feat name="Greater Elemental Focus" type="General" source="APG">
 		<Prerequisites>Elemental Focus</Prerequisites>
 		<Benefit>+1 bonus on save DCs for one energy type</Benefit>
 	</Feat>
-	<Feat name="Elven Accuracy" type="Combat" source="Advanced Players Guide">
+	<Feat name="Elven Accuracy" type="Combat" source="APG">
 		<Prerequisites>Elf</Prerequisites>
 		<Benefit>Reroll miss chance due to concealment when using a bow</Benefit>
 	</Feat>
-	<Feat name="Enforcer" type="Combat" source="Advanced Players Guide">
+	<Feat name="Enforcer" type="Combat" source="APG">
 		<Prerequisites>Intimidate 1 rank</Prerequisites>
 		<Benefit>Demoralize opponent as free action when you inflict nonlethal damage</Benefit>
 	</Feat>
-	<Feat name="Expanded Arcana" type="General" source="Advanced Players Guide">
+	<Feat name="Expanded Arcana" type="General" source="APG">
 		<Prerequisites>Caster level 1st, see feat</Prerequisites>
 		<Benefit>Add one or two spells to list of spells known</Benefit>
 	</Feat>
-	<Feat name="Extra Bombs" type="General" source="Advanced Players Guide">
+	<Feat name="Extra Bombs" type="General" source="APG">
 		<Prerequisites>Bomb class feature</Prerequisites>
 		<Benefit>Throw two additional bombs per day</Benefit>
 	</Feat>
-	<Feat name="Extra Discovery" type="General" source="Advanced Players Guide">
+	<Feat name="Extra Discovery" type="General" source="APG">
 		<Prerequisites>Discovery class feature</Prerequisites>
 		<Benefit>Gain one additional discovery</Benefit>
 	</Feat>
-	<Feat name="Extra Hex" type="General" source="Advanced Players Guide">
+	<Feat name="Extra Hex" type="General" source="APG">
 		<Prerequisites>Hex class feature</Prerequisites>
 		<Benefit>Gain one additional hex</Benefit>
 	</Feat>
-	<Feat name="Extra Rage Power" type="General" source="Advanced Players Guide">
+	<Feat name="Extra Rage Power" type="General" source="APG">
 		<Prerequisites>Rage power class feature</Prerequisites>
 		<Benefit>Gain one additional rage power</Benefit>
 	</Feat>
-	<Feat name="Extra Revelation" type="General" source="Advanced Players Guide">
+	<Feat name="Extra Revelation" type="General" source="APG">
 		<Prerequisites>Revelation class feature</Prerequisites>
 		<Benefit>Gain one additional revelation</Benefit>
 	</Feat>
-	<Feat name="Extra Rogue Talent" type="General" source="Advanced Players Guide">
+	<Feat name="Extra Rogue Talent" type="General" source="APG">
 		<Prerequisites>Rogue talent class feature</Prerequisites>
 		<Benefit>Gain one additional rogue talent</Benefit>
 	</Feat>
-	<Feat name="Fast Drinker" type="General" source="Advanced Players Guide">
+	<Feat name="Fast Drinker" type="General" source="APG">
 		<Prerequisites>Con 18, drunken ki class feature</Prerequisites>
 		<Benefit>Drink as a swift action</Benefit>
 	</Feat>
-	<Feat name="Fast Healer" type="General" source="Advanced Players Guide">
+	<Feat name="Fast Healer" type="General" source="APG">
 		<Prerequisites>Con 13, Diehard, Endurance</Prerequisites>
 		<Benefit>Regain additional hit points when healing</Benefit>
 	</Feat>
-	<Feat name="Favored Defense" type="General" source="Advanced Players Guide">
+	<Feat name="Favored Defense" type="General" source="APG">
 		<Prerequisites>Favored enemy class feature</Prerequisites>
 		<Benefit>Bonus to CMD and AC when attacked by favored enemy</Benefit>
 	</Feat>
-	<Feat name="Fight On" type="General" source="Advanced Players Guide">
+	<Feat name="Fight On" type="General" source="APG">
 		<Prerequisites>Con 13; dwarf, half-orc, or orc</Prerequisites>
 		<Benefit>Gain temporary hit points when reduced to 0</Benefit>
 	</Feat>
-	<Feat name="Focused Shot" type="Combat" source="Advanced Players Guide">
+	<Feat name="Focused Shot" type="Combat" source="APG">
 		<Prerequisites>Int 13, Precise Shot</Prerequisites>
 		<Benefit>Add Int modifier on damage rolls with bows or crossbows</Benefit>
 	</Feat>
-	<Feat name="Following Step" type="Combat" source="Advanced Players Guide">
+	<Feat name="Following Step" type="Combat" source="APG">
 		<Prerequisites>Dex 13, Step Up</Prerequisites>
 		<Benefit>Move up to 10 feet as an immediate action</Benefit>
 	</Feat>
-	<Feat name="Step Up and Strike" type="Combat" source="Advanced Players Guide">
+	<Feat name="Step Up and Strike" type="Combat" source="APG">
 		<Prerequisites>Following Step, base attack bonus +6</Prerequisites>
 		<Benefit>Follow adjacent creature and attack as an immediate action</Benefit>
 	</Feat>
-	<Feat name="Furious Focus" type="Combat" source="Advanced Players Guide">
+	<Feat name="Furious Focus" type="Combat" source="APG">
 		<Prerequisites>Str 13, Power Attack, base attack bonus +1</Prerequisites>
 		<Benefit>Do not take the Power Attack penalty on the first attack each round</Benefit>
 	</Feat>
-	<Feat name="Dreadful Carnage" type="Combat" source="Advanced Players Guide">
+	<Feat name="Dreadful Carnage" type="Combat" source="APG">
 		<Prerequisites>Str 15, Furious Focus, base attack bonus +11</Prerequisites>
 		<Benefit>Make a free Intimidate check when you knock down a foe</Benefit>
 	</Feat>
-	<Feat name="Gang Up" type="Combat" source="Advanced Players Guide">
+	<Feat name="Gang Up" type="Combat" source="APG">
 		<Prerequisites>Combat Expertise</Prerequisites>
 		<Benefit>Flank an opponent if at least two allies are adjacent to it</Benefit>
 	</Feat>
-	<Feat name="Team Up" type="Combat" source="Advanced Players Guide">
+	<Feat name="Team Up" type="Combat" source="APG">
 		<Prerequisites>Gang-Up, base attack bonus +6</Prerequisites>
 		<Benefit>Aid another as a move action with two adjacent allies</Benefit>
 	</Feat>
-	<Feat name="Gnome Trickster" type="General" source="Advanced Players Guide">
+	<Feat name="Gnome Trickster" type="General" source="APG">
 		<Prerequisites>Cha 13, gnome, gnome magic racial trait</Prerequisites>
 		<Benefit>Use mage hand and prestidigitation once per day</Benefit>
 	</Feat>
-	<Feat name="Go Unnoticed" type="General" source="Advanced Players Guide">
+	<Feat name="Go Unnoticed" type="General" source="APG">
 		<Prerequisites>Dex 13, Small size or smaller</Prerequisites>
 		<Benefit>Make Stealth check against flat-footed opponents during first round of combat</Benefit>
 	</Feat>
-	<Feat name="Groundling" type="General" source="Advanced Players Guide">
+	<Feat name="Groundling" type="General" source="APG">
 		<Prerequisites>Cha 13, gnome, gnome magic racial trait</Prerequisites>
 		<Benefit>Speak with burrowing animals as spell-like ability</Benefit>
 	</Feat>
-	<Feat name="Heroic Defiance" type="General" source="Advanced Players Guide">
+	<Feat name="Heroic Defiance" type="General" source="APG">
 		<Prerequisites>Diehard, base Fortitude save +8</Prerequisites>
 		<Benefit>Once per day, delay onset of harmful condition for 1 round</Benefit>
 	</Feat>
-	<Feat name="Heroic Recovery" type="General" source="Advanced Players Guide">
+	<Feat name="Heroic Recovery" type="General" source="APG">
 		<Prerequisites>Diehard, base Fortitude save +4</Prerequisites>
 		<Benefit>Once per day, gain new saving throw against harmful condition requiring Fort save</Benefit>
 	</Feat>
-	<Feat name="Improved Blind-Fight" type="Combat" source="Advanced Players Guide">
+	<Feat name="Improved Blind-Fight" type="Combat" source="APG">
 		<Prerequisites>Perception 10 ranks, Blind-Fight</Prerequisites>
 		<Benefit>Ignore miss chance for less than total concealment</Benefit>
 	</Feat>
-	<Feat name="Greater Blind-Fight" type="Combat" source="Advanced Players Guide">
+	<Feat name="Greater Blind-Fight" type="Combat" source="APG">
 		<Prerequisites>Perception 15 ranks, Improved Blind-Fight</Prerequisites>
 		<Benefit>Total concealment is considered normal concealment</Benefit>
 	</Feat>
-	<Feat name="Improved Dirty Trick" type="Combat" source="Advanced Players Guide">
+	<Feat name="Improved Dirty Trick" type="Combat" source="APG">
 		<Prerequisites>Combat Expertise</Prerequisites>
 		<Benefit>+2 bonus on dirty trick attempts, no attack of opportunity</Benefit>
 	</Feat>
-	<Feat name="Greater Dirty Trick" type="Combat" source="Advanced Players Guide">
+	<Feat name="Greater Dirty Trick" type="Combat" source="APG">
 		<Prerequisites>Improved Dirty Trick, base attack bonus +6</Prerequisites>
 		<Benefit>Dirty trick penalty lasts 1d4 rounds</Benefit>
 	</Feat>
-	<Feat name="Improved Drag" type="Combat" source="Advanced Players Guide">
+	<Feat name="Improved Drag" type="Combat" source="APG">
 		<Prerequisites>Power Attack</Prerequisites>
 		<Benefit>+2 bonus on drag attempts, no attack of opportunity</Benefit>
 	</Feat>
-	<Feat name="Greater Drag" type="Combat" source="Advanced Players Guide">
+	<Feat name="Greater Drag" type="Combat" source="APG">
 		<Prerequisites>Improved Drag, base attack bonus +6</Prerequisites>
 		<Benefit>Enemies you drag provoke attacks of opportunity</Benefit>
 	</Feat>
-	<Feat name="Improved Reposition" type="Combat" source="Advanced Players Guide">
+	<Feat name="Improved Reposition" type="Combat" source="APG">
 		<Prerequisites>Combat Expertise</Prerequisites>
 		<Benefit>+2 bonus on reposition attempts, no attack of opportunity</Benefit>
 	</Feat>
-	<Feat name="Greater Reposition" type="Combat" source="Advanced Players Guide">
+	<Feat name="Greater Reposition" type="Combat" source="APG">
 		<Prerequisites>Improved Reposition, base attack bonus +6</Prerequisites>
 		<Benefit>Enemies you reposition provoke attacks of opportunity</Benefit>
 	</Feat>
-	<Feat name="Improved Share Spells" type="General" source="Advanced Players Guide">
+	<Feat name="Improved Share Spells" type="General" source="APG">
 		<Prerequisites>Spellcraft 10 ranks, see feat</Prerequisites>
 		<Benefit>Spells affect both you and your bonded creature</Benefit>
 	</Feat>
-	<Feat name="Improved Steal" type="Combat" source="Advanced Players Guide">
+	<Feat name="Improved Steal" type="Combat" source="APG">
 		<Prerequisites>Combat Expertise</Prerequisites>
 		<Benefit>+2 bonus on steal attempts, no attack of opportunity</Benefit>
 	</Feat>
-	<Feat name="Greater Steal" type="Combat" source="Advanced Players Guide">
+	<Feat name="Greater Steal" type="Combat" source="APG">
 		<Prerequisites>Improved Steal, base attack bonus +6</Prerequisites>
 		<Benefit>Enemies don't notice theft until after combat</Benefit>
 	</Feat>
-	<Feat name="Improved Stonecunning" type="General" source="Advanced Players Guide">
+	<Feat name="Improved Stonecunning" type="General" source="APG">
 		<Prerequisites>Wis 13, dwarf, stonecunning racial trait</Prerequisites>
 		<Benefit>+4 bonus on Perception checks to notice unusual stonework</Benefit>
 	</Feat>
-	<Feat name="Stone Sense" type="General" source="Advanced Players Guide">
+	<Feat name="Stone Sense" type="General" source="APG">
 		<Prerequisites>Perception 10 ranks, Improved Stonecunning</Prerequisites>
 		<Benefit>Gain tremorsense 10 ft.</Benefit>
 	</Feat>
-	<Feat name="Ironguts" type="General" source="Advanced Players Guide">
+	<Feat name="Ironguts" type="General" source="APG">
 		<Prerequisites>Con 13; dwarf, half-orc, or orc</Prerequisites>
 		<Benefit>+2 on saves against nausea, sickening, and ingested poisons</Benefit>
 	</Feat>
-	<Feat name="Ironhide" type="General" source="Advanced Players Guide">
+	<Feat name="Ironhide" type="General" source="APG">
 		<Prerequisites>Con 13; dwarf, half-orc, or orc</Prerequisites>
 		<Benefit>+1 natural armor bonus to AC</Benefit>
 	</Feat>
-	<Feat name="Keen Scent" type="General" source="Advanced Players Guide">
+	<Feat name="Keen Scent" type="General" source="APG">
 		<Prerequisites>Wis 13, half-orc or orc</Prerequisites>
 		<Benefit>Gain the scent special ability</Benefit>
 	</Feat>
-	<Feat name="Smell Fear" type="General" source="Advanced Players Guide">
+	<Feat name="Smell Fear" type="General" source="APG">
 		<Prerequisites>Keen Scent, half-orc or orc</Prerequisites>
 		<Benefit>+4 on Perception checks to detect frightened creatures</Benefit>
 	</Feat>
-	<Feat name="Ki Throw" type="Combat" source="Advanced Players Guide">
+	<Feat name="Ki Throw" type="Combat" source="APG">
 		<Prerequisites>Improved Trip, Improved Unarmed Strike</Prerequisites>
 		<Benefit>Throw opponent into adjacent square with a trip attack</Benefit>
 	</Feat>
-	<Feat name="Improved Ki Throw" type="Combat" source="Advanced Players Guide">
+	<Feat name="Improved Ki Throw" type="Combat" source="APG">
 		<Prerequisites>Improved Bull Rush, Ki Throw</Prerequisites>
 		<Benefit>Throw opponent into occupied square as a bull rush</Benefit>
 	</Feat>
-	<Feat name="Leaf Singer" type="General" source="Advanced Players Guide">
+	<Feat name="Leaf Singer" type="General" source="APG">
 		<Prerequisites>Cha 13, bardic performance, elf or half-elf</Prerequisites>
 		<Benefit>Gain benefits to bardic performance in forests and against fey</Benefit>
 	</Feat>
-	<Feat name="Light Step" type="General" source="Advanced Players Guide">
+	<Feat name="Light Step" type="General" source="APG">
 		<Prerequisites>Acrobatic Steps, Nimble Moves, elf</Prerequisites>
 		<Benefit>Move normal speed in difficult terrain</Benefit>
 	</Feat>
-	<Feat name="Lingering Performance" type="General" source="Advanced Players Guide">
+	<Feat name="Lingering Performance" type="General" source="APG">
 		<Prerequisites>Bardic performance class ability</Prerequisites>
 		<Benefit>Bardic performance continues for 2 rounds after you stop performing</Benefit>
 	</Feat>
-	<Feat name="Low Profile" type="Combat" source="Advanced Players Guide">
+	<Feat name="Low Profile" type="Combat" source="APG">
 		<Prerequisites>Dex 13, Small size or smaller</Prerequisites>
 		<Benefit>+1 dodge bonus to AC against ranged attacks</Benefit>
 	</Feat>
-	<Feat name="Lucky Halfling" type="General" source="Advanced Players Guide">
+	<Feat name="Lucky Halfling" type="General" source="APG">
 		<Prerequisites>Halfling</Prerequisites>
 		<Benefit>You may roll saving throw for an ally once per day</Benefit>
 	</Feat>
-	<Feat name="Master Alchemist" type="General" source="Advanced Players Guide">
+	<Feat name="Master Alchemist" type="General" source="APG">
 		<Prerequisites>Craft (alchemy) 5 ranks</Prerequisites>
 		<Benefit>+2 on Craft (alchemy) checks, and you can create alchemical items and poisons faster</Benefit>
 	</Feat>
-	<Feat name="Minor Spell Expertise" type="General" source="Advanced Players Guide">
+	<Feat name="Minor Spell Expertise" type="General" source="APG">
 		<Prerequisites>Cast 4th-level spells</Prerequisites>
 		<Benefit>Cast 1st-level spell as spell-like ability 2/day</Benefit>
 	</Feat>
-	<Feat name="Major Spell Expertise" type="General" source="Advanced Players Guide">
+	<Feat name="Major Spell Expertise" type="General" source="APG">
 		<Prerequisites>Minor Spell Expertise, cast 9th-level spells</Prerequisites>
 		<Benefit>Cast 5th-level or lower spell as spell-like ability 2/day</Benefit>
 	</Feat>
-	<Feat name="Missile Shield" type="Combat" source="Advanced Players Guide">
+	<Feat name="Missile Shield" type="Combat" source="APG">
 		<Prerequisites>Dex 13, Shield Focus</Prerequisites>
 		<Benefit>Deflect one ranged attack per round with shield</Benefit>
 	</Feat>
-	<Feat name="Ray Shield" type="Combat" source="Advanced Players Guide">
+	<Feat name="Ray Shield" type="Combat" source="APG">
 		<Prerequisites>Dex 15, Missile Shield, Spellbreaker</Prerequisites>
 		<Benefit>Deflect one ranged touch attack per round with shield</Benefit>
 	</Feat>
-	<Feat name="Mounted Shield" type="Combat" source="Advanced Players Guide">
+	<Feat name="Mounted Shield" type="Combat" source="APG">
 		<Prerequisites>Mounted Combat, Shield Focus</Prerequisites>
 		<Benefit>Apply shield bonus to mount's AC</Benefit>
 	</Feat>
-	<Feat name="Parry Spell" type="General" source="Advanced Players Guide">
+	<Feat name="Parry Spell" type="General" source="APG">
 		<Prerequisites>Spellcraft 15 ranks, Improved Counterspell</Prerequisites>
 		<Benefit>Reflect a counterspelled spell back on its caster</Benefit>
 	</Feat>
-	<Feat name="Parting Shot" type="Combat" source="Advanced Players Guide">
+	<Feat name="Parting Shot" type="Combat" source="APG">
 		<Prerequisites>Shot on the Run, base attack bonus +6</Prerequisites>
 		<Benefit>Make a ranged attack when withdrawing</Benefit>
 	</Feat>
-	<Feat name="Pass for Human" type="General" source="Advanced Players Guide">
+	<Feat name="Pass for Human" type="General" source="APG">
 		<Prerequisites>Half-elf, half-orc, or halfling</Prerequisites>
 		<Benefit>+10 on Disguise checks to look like a human</Benefit>
 	</Feat>
-	<Feat name="Perfect Strike" type="Combat" source="Advanced Players Guide">
+	<Feat name="Perfect Strike" type="Combat" source="APG">
 		<Prerequisites>Dex 13, Wis 13, Improved Unarmed Strike, base attack bonus +8</Prerequisites>
 		<Benefit>Roll twice for attacks with monk weapons and take the better roll</Benefit>
 	</Feat>
-	<Feat name="Point-Blank Master" type="Combat" source="Advanced Players Guide">
+	<Feat name="Point-Blank Master" type="Combat" source="APG">
 		<Prerequisites>Weapon Specialization with a ranged weapon</Prerequisites>
 		<Benefit>Do not provoke attacks of opportunity while firing one ranged weapon</Benefit>
 	</Feat>
-	<Feat name="Practiced Tactician" type="General" source="Advanced Players Guide">
+	<Feat name="Practiced Tactician" type="General" source="APG">
 		<Prerequisites>Tactician class feature</Prerequisites>
 		<Benefit>Use tactician ability one additional time per day</Benefit>
 	</Feat>
-	<Feat name="Preferred Spell" type="General" source="Advanced Players Guide">
+	<Feat name="Preferred Spell" type="General" source="APG">
 		<Prerequisites>Spellcraft 5 ranks, Heighten Spell</Prerequisites>
 		<Benefit>Spontaneously cast a specific spell</Benefit>
 	</Feat>
-	<Feat name="Punishing Kick" type="Combat" source="Advanced Players Guide">
+	<Feat name="Punishing Kick" type="Combat" source="APG">
 		<Prerequisites>Con 13, Wis 13, Improved Unarmed Strike, base attack bonus +8</Prerequisites>
 		<Benefit>Knock down or push back foes with unarmed strikes</Benefit>
 	</Feat>
-	<Feat name="Pushing Assault" type="Combat" source="Advanced Players Guide">
+	<Feat name="Pushing Assault" type="Combat" source="APG">
 		<Prerequisites>Str 15, Power Attack, base attack bonus +1</Prerequisites>
 		<Benefit>Push a foe back with a two-handed weapon</Benefit>
 	</Feat>
-	<Feat name="Racial Heritage" type="General" source="Advanced Players Guide">
+	<Feat name="Racial Heritage" type="General" source="APG">
 		<Prerequisites>Human</Prerequisites>
 		<Benefit>Affected as though both human and another race</Benefit>
 	</Feat>
-	<Feat name="Raging Vitality" type="General" source="Advanced Players Guide">
+	<Feat name="Raging Vitality" type="General" source="APG">
 		<Prerequisites>Con 15, rage class feature</Prerequisites>
 		<Benefit>+2 bonus to Con when raging, and continue raging if unconscious</Benefit>
 	</Feat>
-	<Feat name="Razortusk" type="General" source="Advanced Players Guide">
+	<Feat name="Razortusk" type="General" source="APG">
 		<Prerequisites>Half-orc</Prerequisites>
 		<Benefit>Gain bite attack</Benefit>
 	</Feat>
-	<Feat name="Rending Claws" type="Combat" source="Advanced Players Guide">
+	<Feat name="Rending Claws" type="Combat" source="APG">
 		<Prerequisites>Str 13, two claw attacks, base attack bonus +6</Prerequisites>
 		<Benefit>Deal 1d6 extra damage if both claws hit</Benefit>
 	</Feat>
-	<Feat name="Repositioning Strike" type="Combat" source="Advanced Players Guide">
+	<Feat name="Repositioning Strike" type="Combat" source="APG">
 		<Prerequisites>Improved Repostion, base attack bonus +9</Prerequisites>
 		<Benefit>Attempt a reposition attack on a successful critical hit</Benefit>
 	</Feat>
-	<Feat name="Saving Shield" type="Combat" source="Advanced Players Guide">
+	<Feat name="Saving Shield" type="Combat" source="APG">
 		<Prerequisites>Shield Proficiency</Prerequisites>
 		<Benefit>Grant shield bonus to an adjacent ally</Benefit>
 	</Feat>
-	<Feat name="Second Chance" type="Combat" source="Advanced Players Guide">
+	<Feat name="Second Chance" type="Combat" source="APG">
 		<Prerequisites>Combat Expertise, base attack bonus +6</Prerequisites>
 		<Benefit>Exchange later attacks to reroll missed first attack</Benefit>
 	</Feat>
-	<Feat name="Improved Second Chance" type="Combat" source="Advanced Players Guide">
+	<Feat name="Improved Second Chance" type="Combat" source="APG">
 		<Prerequisites>Second Chance, base attack bonus +11</Prerequisites>
 		<Benefit>Take a _5 penalty on later attacks to reroll missed attack</Benefit>
 	</Feat>
-	<Feat name="Shadow Strike" type="Combat" source="Advanced Players Guide">
+	<Feat name="Shadow Strike" type="Combat" source="APG">
 		<Prerequisites>Base attack bonus +1</Prerequisites>
 		<Benefit>Deal precision damage against targets with concealment</Benefit>
 	</Feat>
-	<Feat name="Shared Insight" type="General" source="Advanced Players Guide">
+	<Feat name="Shared Insight" type="General" source="APG">
 		<Prerequisites>Wis 13, half-elf</Prerequisites>
 		<Benefit>Grant friendly creatures a +2 bonus on Perception checks</Benefit>
 	</Feat>
-	<Feat name="Sharp Senses" type="General" source="Advanced Players Guide">
+	<Feat name="Sharp Senses" type="General" source="APG">
 		<Prerequisites>Keen senses racial trait</Prerequisites>
 		<Benefit>+4 racial bonus on Perception checks</Benefit>
 	</Feat>
-	<Feat name="Shield of Swings" type="Combat" source="Advanced Players Guide">
+	<Feat name="Shield of Swings" type="Combat" source="APG">
 		<Prerequisites>Str 13, Power Attack, base attack bonus +1</Prerequisites>
 		<Benefit>Reduce damage with a two handed weapon to gain a +4 shield bonus</Benefit>
 	</Feat>
-	<Feat name="Shield Specialization" type="Combat" source="Advanced Players Guide">
+	<Feat name="Shield Specialization" type="Combat" source="APG">
 		<Prerequisites>Shield Focus, 4th-level fighter</Prerequisites>
 		<Benefit>+2 bonus to AC against criticals with one type of shield</Benefit>
 	</Feat>
-	<Feat name="Greater Shield Specialization" type="Combat" source="Advanced Players Guide">
+	<Feat name="Greater Shield Specialization" type="Combat" source="APG">
 		<Prerequisites>Greater Shield Focus, Shield Specialization, 12th-level fighter</Prerequisites>
 		<Benefit>+2 bonus to AC against criticals, and negate critical hit once per day</Benefit>
 	</Feat>
-	<Feat name="Sidestep" type="Combat" source="Advanced Players Guide">
+	<Feat name="Sidestep" type="Combat" source="APG">
 		<Prerequisites>Dex 13, Dodge, Mobility</Prerequisites>
 		<Benefit>Make 5-foot step immediately after an opponent misses</Benefit>
 	</Feat>
-	<Feat name="Improved Sidestep" type="Combat" source="Advanced Players Guide">
+	<Feat name="Improved Sidestep" type="Combat" source="APG">
 		<Prerequisites>Dex 15, Sidestep</Prerequisites>
 		<Benefit>Sidestep without using your 5-foot step on your next turn</Benefit>
 	</Feat>
-	<Feat name="Smash" type="Combat" source="Advanced Players Guide">
+	<Feat name="Smash" type="Combat" source="APG">
 		<Prerequisites>Power Attack, half-orc</Prerequisites>
 		<Benefit>Ignore 5 points of hardness when breaking an object</Benefit>
 	</Feat>
-	<Feat name="Sociable" type="General" source="Advanced Players Guide">
+	<Feat name="Sociable" type="General" source="APG">
 		<Prerequisites>Cha 13, half-elf</Prerequisites>
 		<Benefit>Grant friendly creatures a +2 bonus on Diplomacy checks</Benefit>
 	</Feat>
-	<Feat name="Spell Perfection" type="General" source="Advanced Players Guide">
+	<Feat name="Spell Perfection" type="General" source="APG">
 		<Prerequisites>Spellcraft 15 ranks, 3 metamagic feats</Prerequisites>
 		<Benefit>Apply any metamagic feat to one spell without penalty, up to 9th level</Benefit>
 	</Feat>
-	<Feat name="Spider Step" type="General" source="Advanced Players Guide">
+	<Feat name="Spider Step" type="General" source="APG">
 		<Prerequisites>Acrobatics 6 ranks, Climb 6 ranks, 6th-level monk</Prerequisites>
 		<Benefit>Walk on walls or ceilings for half your slow fall distance</Benefit>
 	</Feat>
-	<Feat name="Cloud Step" type="General" source="Advanced Players Guide">
+	<Feat name="Cloud Step" type="General" source="APG">
 		<Prerequisites>Spider Step, 12th-level monk</Prerequisites>
 		<Benefit>Air walk for half your slow fall distance</Benefit>
 	</Feat>
-	<Feat name="Stabbing Shot" type="Combat" source="Advanced Players Guide">
+	<Feat name="Stabbing Shot" type="Combat" source="APG">
 		<Prerequisites>Rapid Shot, elf</Prerequisites>
 		<Benefit>Use arrow as a melee attack to push enemies back</Benefit>
 	</Feat>
-	<Feat name="Steel Soul" type="General" source="Advanced Players Guide">
+	<Feat name="Steel Soul" type="General" source="APG">
 		<Prerequisites>Dwarf, hardy racial trait</Prerequisites>
 		<Benefit>+4 racial bonus on saves against spells and spell-like abilities</Benefit>
 	</Feat>
-	<Feat name="Stone-Faced" type="General" source="Advanced Players Guide">
+	<Feat name="Stone-Faced" type="General" source="APG">
 		<Prerequisites>Dwarf</Prerequisites>
 		<Benefit>+4 bonus on Bluff checks to lie or conceal motives</Benefit>
 	</Feat>
-	<Feat name="Stone Singer" type="General" source="Advanced Players Guide">
+	<Feat name="Stone Singer" type="General" source="APG">
 		<Prerequisites>Cha 13, bardic performance, dwarf</Prerequisites>
 		<Benefit>Gain benefits to bardic performance underground and against earth creatures</Benefit>
 	</Feat>
-	<Feat name="Stunning Assault" type="Combat" source="Advanced Players Guide">
+	<Feat name="Stunning Assault" type="Combat" source="APG">
 		<Prerequisites>Power Attack, base attack bonus +16</Prerequisites>
 		<Benefit>Trade melee attack bonus to stun opponents</Benefit>
 	</Feat>
-	<Feat name="Summoner's Call" type="General" source="Advanced Players Guide">
+	<Feat name="Summoner's Call" type="General" source="APG">
 		<Prerequisites>Eidolon class feature</Prerequisites>
 		<Benefit>Your eidolon gets a bonus when summoned</Benefit>
 	</Feat>
-	<Feat name="Sundering Strike" type="Combat" source="Advanced Players Guide">
+	<Feat name="Sundering Strike" type="Combat" source="APG">
 		<Prerequisites>Improved Sunder, base attack bonus</Prerequisites>
 		<Benefit>+9 Attempt a sunder attack on a successful critical hit</Benefit>
 	</Feat>
-	<Feat name="Swift Aid" type="Combat" source="Advanced Players Guide">
+	<Feat name="Swift Aid" type="Combat" source="APG">
 		<Prerequisites>Combat Expertise, base attack bonus</Prerequisites>
 		<Benefit>+6 Attempt to aid another as a swift action</Benefit>
 	</Feat>
-	<Feat name="Taunt" type="General" source="Advanced Players Guide">
+	<Feat name="Taunt" type="General" source="APG">
 		<Prerequisites>Cha 13, Small size or smaller</Prerequisites>
 		<Benefit>Demoralize opponents with Bluff instead of Intimidate</Benefit>
 	</Feat>
-	<Feat name="Teleport Tactician" type="Combat" source="Advanced Players Guide">
+	<Feat name="Teleport Tactician" type="Combat" source="APG">
 		<Prerequisites>Combat Reflexes, Disruptive, Spellbreaker</Prerequisites>
 		<Benefit>Teleporting creatures provoke attacks of opportunity</Benefit>
 	</Feat>
-	<Feat name="Tenacious Transmutation" type="General" source="Advanced Players Guide">
+	<Feat name="Tenacious Transmutation" type="General" source="APG">
 		<Prerequisites>Spell Focus (transmutation)</Prerequisites>
 		<Benefit>+2 to DC to dispel your transmutations</Benefit>
 	</Feat>
-	<Feat name="Touch of Serenity" type="Combat" source="Advanced Players Guide">
+	<Feat name="Touch of Serenity" type="Combat" source="APG">
 		<Prerequisites>Wis 18, Improved Unarmed Strike, base attack bonus +8</Prerequisites>
 		<Benefit>Foes hit by unarmed strikes cannot attack or cast spells</Benefit>
 	</Feat>
-	<Feat name="Trick Riding" type="Combat" source="Advanced Players Guide">
+	<Feat name="Trick Riding" type="Combat" source="APG">
 		<Prerequisites>Ride rank 9, Mounted Combat</Prerequisites>
 		<Benefit>Automatically pass simple Ride skill checks</Benefit>
 	</Feat>
-	<Feat name="Mounted Skirmisher" type="Combat" source="Advanced Players Guide">
+	<Feat name="Mounted Skirmisher" type="Combat" source="APG">
 		<Prerequisites>Ride rank 14, Trick Riding</Prerequisites>
 		<Benefit>Make a full attack if mount moves its speed or less</Benefit>
 	</Feat>
-	<Feat name="Tripping Strike" type="Combat" source="Advanced Players Guide">
+	<Feat name="Tripping Strike" type="Combat" source="APG">
 		<Prerequisites>Improved Trip, base attack bonus +9</Prerequisites>
 		<Benefit>Attempt a trip attack on a successful critical hit</Benefit>
 	</Feat>
-	<Feat name="Under and Over" type="Combat" source="Advanced Players Guide">
+	<Feat name="Under and Over" type="Combat" source="APG">
 		<Prerequisites>Agile Maneuvers, Small size or smaller</Prerequisites>
 		<Benefit>Failed grapples against you cause attacker to fall prone</Benefit>
 	</Feat>
-	<Feat name="Underfoot" type="Combat" source="Advanced Players Guide">
+	<Feat name="Underfoot" type="Combat" source="APG">
 		<Prerequisites>Dodge, Mobility, Small size or smaller</Prerequisites>
 		<Benefit>+4 on Acrobatics checks to move past larger opponents</Benefit>
 	</Feat>
-	<Feat name="Vermin Heart" type="General" source="Advanced Players Guide">
+	<Feat name="Vermin Heart" type="General" source="APG">
 		<Prerequisites>Wild empathy class feature</Prerequisites>
 		<Benefit>Target vermin with spells as if they were animals</Benefit>
 	</Feat>
-	<Feat name="War Singer" type="General" source="Advanced Players Guide">
+	<Feat name="War Singer" type="General" source="APG">
 		<Prerequisites>Cha 13, bardic performance, half-orc or orc</Prerequisites>
 		<Benefit>Gain benefits to bardic performance on battlefields and against orcs</Benefit>
 	</Feat>
-	<Feat name="Well-Prepared" type="General" source="Advanced Players Guide">
+	<Feat name="Well-Prepared" type="General" source="APG">
 		<Prerequisites>Halfling</Prerequisites>
 		<Benefit>Retrieve a specific mundane item from your person</Benefit>
 	</Feat>
-	<Feat name="Bouncing Spell" type="Metamagic" source="Advanced Players Guide">
+	<Feat name="Bouncing Spell" type="Metamagic" source="APG">
 		<Prerequisites>„</Prerequisites>
 		<Benefit>Redirect a spell that had no effect on initial target</Benefit>
 	</Feat>
-	<Feat name="Dazing Spell" type="Metamagic" source="Advanced Players Guide">
+	<Feat name="Dazing Spell" type="Metamagic" source="APG">
 		<Prerequisites>„</Prerequisites>
 		<Benefit>Daze creature with spell damage</Benefit>
 	</Feat>
-	<Feat name="Disruptive Spell" type="Metamagic" source="Advanced Players Guide">
+	<Feat name="Disruptive Spell" type="Metamagic" source="APG">
 		<Prerequisites>„</Prerequisites>
 		<Benefit>Target of spell must make concentration check to cast a spell in the next round</Benefit>
 	</Feat>
-	<Feat name="Ectoplasmic Spell" type="Metamagic" source="Advanced Players Guide">
+	<Feat name="Ectoplasmic Spell" type="Metamagic" source="APG">
 		<Prerequisites>„</Prerequisites>
 		<Benefit>Spell fully affects incorporeal and ethereal creatures</Benefit>
 	</Feat>
-	<Feat name="Elemental Spell" type="Metamagic" source="Advanced Players Guide">
+	<Feat name="Elemental Spell" type="Metamagic" source="APG">
 		<Prerequisites>„</Prerequisites>
 		<Benefit>Inflict energy damage instead of regular spell damage</Benefit>
 	</Feat>
-	<Feat name="Focused Spell" type="Metamagic" source="Advanced Players Guide">
+	<Feat name="Focused Spell" type="Metamagic" source="APG">
 		<Prerequisites>„</Prerequisites>
 		<Benefit>Increase save DC of spell for one target in a group</Benefit>
 	</Feat>
-	<Feat name="Intensified Spell" type="Metamagic" source="Advanced Players Guide">
+	<Feat name="Intensified Spell" type="Metamagic" source="APG">
 		<Prerequisites>„</Prerequisites>
 		<Benefit>Increase maximum damage dice by 5 levels</Benefit>
 	</Feat>
-	<Feat name="Lingering Spell" type="Metamagic" source="Advanced Players Guide">
+	<Feat name="Lingering Spell" type="Metamagic" source="APG">
 		<Prerequisites>„</Prerequisites>
 		<Benefit>Instantaneous area effect spell lasts for 1 round</Benefit>
 	</Feat>
-	<Feat name="Merciful Spell" type="Metamagic" source="Advanced Players Guide">
+	<Feat name="Merciful Spell" type="Metamagic" source="APG">
 		<Prerequisites>„</Prerequisites>
 		<Benefit>Spell inflicts nonlethal damage instead of lethal</Benefit>
 	</Feat>
-	<Feat name="Persistent Spell" type="Metamagic" source="Advanced Players Guide">
+	<Feat name="Persistent Spell" type="Metamagic" source="APG">
 		<Prerequisites>„</Prerequisites>
 		<Benefit>Creatures who saved against a spell must save again</Benefit>
 	</Feat>
-	<Feat name="Reach Spell" type="Metamagic" source="Advanced Players Guide">
+	<Feat name="Reach Spell" type="Metamagic" source="APG">
 		<Prerequisites>„</Prerequisites>
 		<Benefit>Increase spell range to higher range category</Benefit>
 	</Feat>
-	<Feat name="Selective Spell" type="Metamagic" source="Advanced Players Guide">
+	<Feat name="Selective Spell" type="Metamagic" source="APG">
 		<Prerequisites>Spellcraft 10 ranks</Prerequisites>
 		<Benefit>Exclude targets from an area effect spell</Benefit>
 	</Feat>
-	<Feat name="Sickening Spell" type="Metamagic" source="Advanced Players Guide">
+	<Feat name="Sickening Spell" type="Metamagic" source="APG">
 		<Prerequisites>„</Prerequisites>
 		<Benefit>Sicken creature with spell damage</Benefit>
 	</Feat>
-	<Feat name="Thundering Spell" type="Metamagic" source="Advanced Players Guide">
+	<Feat name="Thundering Spell" type="Metamagic" source="APG">
 		<Prerequisites>„</Prerequisites>
 		<Benefit>Deafen creature with spell damage</Benefit>
 	</Feat>
-	<Feat name="Allied Spellcaster" type="Teamwork" source="Advanced Players Guide">
+	<Feat name="Allied Spellcaster" type="Teamwork" source="APG">
 		<Prerequisites>Caster level 1st</Prerequisites>
 		<Benefit>+2 bonus on level checks to overcome spell resistance</Benefit>
 	</Feat>
-	<Feat name="Coordinated Defense" type="Teamwork" source="Advanced Players Guide">
+	<Feat name="Coordinated Defense" type="Teamwork" source="APG">
 		<Prerequisites>„</Prerequisites>
 		<Benefit>+2 bonus to CMD</Benefit>
 	</Feat>
-	<Feat name="Coordinated Maneuvers" type="Teamwork" source="Advanced Players Guide">
+	<Feat name="Coordinated Maneuvers" type="Teamwork" source="APG">
 		<Prerequisites>„</Prerequisites>
 		<Benefit>+2 bonus on combat maneuver checks</Benefit>
 	</Feat>
-	<Feat name="Duck and Cover" type="Teamwork" source="Advanced Players Guide">
+	<Feat name="Duck and Cover" type="Teamwork" source="APG">
 		<Prerequisites>„</Prerequisites>
 		<Benefit>Take ally's result on Reflex saving throw</Benefit>
 	</Feat>
-	<Feat name="Lookout" type="Teamwork" source="Advanced Players Guide">
+	<Feat name="Lookout" type="Teamwork" source="APG">
 		<Prerequisites>„</Prerequisites>
 		<Benefit>Act in surprise round if ally can act</Benefit>
 	</Feat>
-	<Feat name="Outflank" type="Teamwork" source="Advanced Players Guide">
+	<Feat name="Outflank" type="Teamwork" source="APG">
 		<Prerequisites>Base attack bonus +4</Prerequisites>
 		<Benefit>Gain +4 bonus on attack rolls when flanking</Benefit>
 	</Feat>
-	<Feat name="Paired Opportunists" type="Teamwork" source="Advanced Players Guide">
+	<Feat name="Paired Opportunists" type="Teamwork" source="APG">
 		<Prerequisites>„</Prerequisites>
 		<Benefit>+4 bonus on attacks of opportunity</Benefit>
 	</Feat>
-	<Feat name="Precise Strike" type="Teamwork" source="Advanced Players Guide">
+	<Feat name="Precise Strike" type="Teamwork" source="APG">
 		<Prerequisites>Dex 13, base attack bonus +1</Prerequisites>
 		<Benefit>Deal +1d6 points of precision damage with melee attacks</Benefit>
 	</Feat>
-	<Feat name="Shield Wall" type="Teamwork" source="Advanced Players Guide">
+	<Feat name="Shield Wall" type="Teamwork" source="APG">
 		<Prerequisites>Shield Proficiency</Prerequisites>
 		<Benefit>Increase your shield bonus to AC</Benefit>
 	</Feat>
-	<Feat name="Shielded Caster" type="Teamwork" source="Advanced Players Guide">
+	<Feat name="Shielded Caster" type="Teamwork" source="APG">
 		<Prerequisites>„</Prerequisites>
 		<Benefit>+4 bonus on concentration checks</Benefit>
 	</Feat>
-	<Feat name="Swap Places" type="Teamwork" source="Advanced Players Guide">
+	<Feat name="Swap Places" type="Teamwork" source="APG">
 		<Prerequisites>„</Prerequisites>
 		<Benefit>Switch places with an adjacent ally</Benefit>
 	</Feat>

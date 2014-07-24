@@ -13,20 +13,8 @@
 @interface PFReferenceFeatsViewController : UIViewController
 	<NSFetchedResultsControllerDelegate, UITableViewDataSource, UITableViewDelegate>
 
-@property (nonatomic, strong) IBOutlet UITextField *searchTextField;
-
-@property (nonatomic, strong) IBOutlet UITableView *tableView;
-@property (nonatomic, strong) IBOutlet UIView *detailContainerView;
-
-@property (nonatomic, strong) IBOutlet UILabel *featNameLabel;
-@property (nonatomic, strong) IBOutlet UILabel *featTypeLabel;
-@property (nonatomic, strong) IBOutlet UILabel *featSourceLabel;
-
-@property (nonatomic, strong) IBOutlet UITextView *prerequisitesTextView;
-@property (nonatomic, strong) IBOutlet UITextView *benefitTextView;
-
-//@property (nonatomic, strong) IBOutlet UITextField *featNameField;
-//@property (nonatomic, strong) IBOutlet UITextField *featTypeField;
+@property (nonatomic) IBOutlet UITextField *searchTextField;
+@property (nonatomic) IBOutlet UITableView *tableView;
 
 - (IBAction)dismissView:(id)sender;
 

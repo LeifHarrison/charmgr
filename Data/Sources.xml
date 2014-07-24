@@ -5,4 +5,5 @@
 	<Source index="2" abbreviation="ARG"  name="Advanced Race Guide" />
 	<Source index="3" abbreviation="UM"   name="Ultimate Magic" />
 	<Source index="4" abbreviation="UC"   name="Ultimate Combat" />
+	<Source index="5" abbreviation="UE"   name="Ultimate Equipment" />
 </Sources>

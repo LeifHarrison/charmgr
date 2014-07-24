@@ -99,6 +99,7 @@
 		29A51A411650B8B800952BB2 /* PFSelectGenderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29A51A401650B8B800952BB2 /* PFSelectGenderViewController.m */; };
 		29A51A441650B8D700952BB2 /* PFSelectSizeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29A51A431650B8D700952BB2 /* PFSelectSizeViewController.m */; };
 		29A51A471650B8F400952BB2 /* PFSelectAlignmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29A51A461650B8F400952BB2 /* PFSelectAlignmentViewController.m */; };
+		29AF2CCC197F2C6E00981D43 /* PFReferenceClassCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 29AF2CCB197F2C6E00981D43 /* PFReferenceClassCell.m */; };
 		29B7D65015F918250039C390 /* PFPageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B7D64F15F918250039C390 /* PFPageContentViewController.m */; };
 		29B7D65315F9186F0039C390 /* PFContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B7D65215F9186F0039C390 /* PFContainerViewController.m */; };
 		29B7D65615F918900039C390 /* PFCharacterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B7D65515F918900039C390 /* PFCharacterViewController.m */; };
@@ -286,6 +287,8 @@
 		29A51A431650B8D700952BB2 /* PFSelectSizeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFSelectSizeViewController.m; path = Pathfinder/Containers/Profile/Detail/PFSelectSizeViewController.m; sourceTree = "<group>"; };
 		29A51A451650B8F400952BB2 /* PFSelectAlignmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFSelectAlignmentViewController.h; path = Pathfinder/Containers/Profile/Detail/PFSelectAlignmentViewController.h; sourceTree = "<group>"; };
 		29A51A461650B8F400952BB2 /* PFSelectAlignmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFSelectAlignmentViewController.m; path = Pathfinder/Containers/Profile/Detail/PFSelectAlignmentViewController.m; sourceTree = "<group>"; };
+		29AF2CCA197F2C6E00981D43 /* PFReferenceClassCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFReferenceClassCell.h; path = Pathfinder/Reference/Cells/PFReferenceClassCell.h; sourceTree = "<group>"; };
+		29AF2CCB197F2C6E00981D43 /* PFReferenceClassCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFReferenceClassCell.m; path = Pathfinder/Reference/Cells/PFReferenceClassCell.m; sourceTree = "<group>"; };
 		29B7D64E15F918250039C390 /* PFPageContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFPageContentViewController.h; path = Pathfinder/PFPageContentViewController.h; sourceTree = "<group>"; };
 		29B7D64F15F918250039C390 /* PFPageContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFPageContentViewController.m; path = Pathfinder/PFPageContentViewController.m; sourceTree = "<group>"; };
 		29B7D65115F9186F0039C390 /* PFContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFContainerViewController.h; path = Pathfinder/PFContainerViewController.h; sourceTree = "<group>"; };
@@ -848,6 +851,8 @@
 			children = (
 				29F0660C1648F0B00088BA86 /* PFReferenceFeatCell.h */,
 				29F0660D1648F0B00088BA86 /* PFReferenceFeatCell.m */,
+				29AF2CCA197F2C6E00981D43 /* PFReferenceClassCell.h */,
+				29AF2CCB197F2C6E00981D43 /* PFReferenceClassCell.m */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -976,6 +981,7 @@
 				295F62F71602EFCF00EEF5ED /* PFAttacksViewController.m in Sources */,
 				295F62FC1602EFF900EEF5ED /* PFArmorViewController.m in Sources */,
 				295F63011602F3C900EEF5ED /* PFMovementViewController.m in Sources */,
+				29AF2CCC197F2C6E00981D43 /* PFReferenceClassCell.m in Sources */,
 				296B4F3A1970574F00E7B24F /* CMSettings.m in Sources */,
 				295F63061602F41700EEF5ED /* PFDefenseViewController.m in Sources */,
 				295F630B1602F46500EEF5ED /* PFSavingThrowsViewController.m in Sources */,

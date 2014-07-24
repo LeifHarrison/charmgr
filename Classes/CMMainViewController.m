@@ -93,13 +93,14 @@
 	//self.createCharacterButton.tintColor = [UIColor brownColor];
 	//[self.createCharacterButton setBackgroundImage:nil forState:UIControlStateNormal];
 
-	//self.charactersTableView.backgroundColor = [UIColor colorWithWhite:0.9 alpha:0.8];
-	self.charactersTableView.backgroundColor = [UIColor clearColor];
-	self.charactersContainer.backgroundColor = [UIColor colorWithWhite:0.9 alpha:0.7];
+	self.charactersTableView.backgroundColor = [UIColor colorWithWhite:0.9 alpha:0.8];
+	//self.charactersTableView.backgroundColor = [UIColor clearColor];
+	//self.charactersContainer.backgroundColor = [UIColor colorWithWhite:0.9 alpha:0.7];
 	self.charactersContainer.layer.borderColor = [UIColor lightGrayColor].CGColor;
 	self.charactersContainer.layer.borderWidth = 2.0f;
 	self.charactersContainer.layer.cornerRadius = 6.0f;
-
+	self.charactersContainer.clipsToBounds = YES;
+	
 	UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
 	UIVisualEffectView *blurEffectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
 	[blurEffectView setFrame:self.charactersContainer.bounds];
@@ -379,7 +380,11 @@
         case NSFetchedResultsChangeDelete:
             [tableView deleteSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
             break;
-    }
+
+		case NSFetchedResultsChangeMove:
+		case NSFetchedResultsChangeUpdate:
+			break;
+	}
 }
 
 

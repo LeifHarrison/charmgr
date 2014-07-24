@@ -9,22 +9,22 @@
 #ifndef CharMgr_PFTypes_h
 #define CharMgr_PFTypes_h
 
-typedef enum {
+typedef NS_ENUM (int16_t, PFGenderType) {
 	kPFGenderTypeMale,
 	kPFGenderTypeFemale,
 	kPFGenderTypeOther
-} PFGenderType;
+};
 
-typedef enum {
+typedef NS_ENUM (int16_t, PFAbilityType) {
 	kPFAbilityTypeStrength,
 	kPFAbilityTypeDexterity,
 	kPFAbilityTypeConstitution,
 	kPFAbilityTypeIntelligence,
 	kPFAbilityTypeWisdom,
 	kPFAbilityTypeCharisma
-} PFAbilityType;
+};
 
-typedef enum {
+typedef NS_ENUM (int16_t, PFAlignmentType) {
 	kPFAlignmentTypeLawfulGood,
 	kPFAlignmentTypeNeutralGood,
 	kPFAlignmentTypeChaoticGood,
@@ -34,9 +34,9 @@ typedef enum {
 	kPFAlignmentTypeLawfulEvil,
 	kPFAlignmentTypeNeutralEvil,
 	kPFAlignmentTypeChaoticEvil,
-} PFAlignmentType;
+};
 
-typedef enum {
+typedef NS_ENUM (int16_t, PFSizeType) {
 	kPFSizeTypeFine,
 	kPFSizeTypeDiminutive,
 	kPFSizeTypeTiny,
@@ -46,25 +46,25 @@ typedef enum {
 	kPFSizeTypeHuge,
 	kPFSizeTypeColossal,
 	kPFSizeTypeGargantuan
-} PFSizeType;
+};
 
-typedef enum {
+typedef NS_ENUM (int16_t, PFSpecialAbilityType) {
 	kPFSpecialAbilityTypeNone,
 	kPFSpecialAbilityTypeExtraordinary,
 	kPFSpecialAbilityTypeSpellLike,
 	kPFSpecialAbilityTypeSupernatural
-} PFSpecialAbilityType;
+};
 
-typedef enum {
+typedef NS_ENUM (int16_t, PFBaseAttackBonusType)  {
 	kPFBaseAttackBonusTypeLow,		// bonus = 1/2 level
 	kPFBaseAttackBonusTypeMedium,	// bonus = 3/4 level
 	kPFBaseAttackBonusTypeHigh,		// bonus = level
-} PFBaseAttackBonusType;
+};
 
-typedef enum {
-	kPFSavingThrowBonusTypeLow,	// bonus = 1/3 level
+typedef NS_ENUM (int16_t, PFSavingThrowBonusType) {
+	kPFSavingThrowBonusTypeLow,	    // bonus = 1/3 level
 	kPFSavingThrowBonusTypeHigh,	// bonus = 2 + 1/2 level
-} PFSavingThrowBonusType;
+};
 
 
 // Alignment and Ability have their own classes, so no need for mapping

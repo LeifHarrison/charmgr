@@ -18,8 +18,8 @@
 
 @interface PFClassType : NSManagedObject
 
-@property (nonatomic, retain) NSString * name;
-@property (nonatomic, retain) NSString * descriptionShort;
+@property (nonatomic) NSString * name;
+@property (nonatomic) NSString * descriptionShort;
 @property (nonatomic) int16_t hitDieType;
 @property (nonatomic) int16_t skillRanksPerLevel;
 @property (nonatomic) int16_t baseAttackBonusType;
@@ -27,11 +27,11 @@
 @property (nonatomic) int16_t reflexSaveBonusType;
 @property (nonatomic) int16_t willSaveBonusType;
 
-@property (nonatomic, retain) PFSource *source;
+@property (nonatomic) PFSource *source;
 
-@property (nonatomic, retain) NSSet *characterClasses;
-@property (nonatomic, retain) NSSet *features;
-@property (nonatomic, retain) NSSet *classSkills;
+@property (nonatomic) NSSet *characterClasses;
+@property (nonatomic) NSSet *features;
+@property (nonatomic) NSSet *classSkills;
 
 + (PFClassType *)insertedInstanceWithElement:(GDataXMLElement *)anElement
 					  inManagedObjectContext:(NSManagedObjectContext*)moc;

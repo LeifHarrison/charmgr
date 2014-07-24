@@ -137,7 +137,7 @@ static const CGRect kPFWeaponsViewBoundsEditing	 = { {   0,   0 }, { 428, 470 } 
 	
 	PFSelectWeaponViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"SelectWeaponDetailController"];
 	controller.character = self.character;
-	controller.delegate = self;
+	//controller.delegate = self;
 	LOG_DEBUG(@"controller = %@", controller);
 	
 	UIPopoverController *detailPopover = [[UIPopoverController alloc] initWithContentViewController:controller];

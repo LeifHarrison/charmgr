@@ -23,6 +23,7 @@
 
 - (void)drawRect:(CGRect)rect
 {
+/*
     CGRect	myBounds = self.bounds;
 	CGRect	drawBounds = CGRectInset(myBounds, 1.0f, 1.0f);
 
@@ -79,7 +80,7 @@
 		[title drawInRect:titleRect withFont:titleFont lineBreakMode:UILineBreakModeCharacterWrap alignment:UITextAlignmentCenter];
 		headerRect = CGRectOffset(headerRect, columnWidth, 0.0);
 	}
-	
+*/
 	[super drawRect:rect];
 }
 

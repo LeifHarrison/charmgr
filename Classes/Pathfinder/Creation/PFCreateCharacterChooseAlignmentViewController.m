@@ -190,6 +190,10 @@
             [self.tableView deleteSections:[NSIndexSet indexSetWithIndex:sectionIndex]
 						  withRowAnimation:UITableViewRowAnimationFade];
             break;
+
+		case NSFetchedResultsChangeMove:
+		case NSFetchedResultsChangeUpdate:
+			break;
     }
 }
 

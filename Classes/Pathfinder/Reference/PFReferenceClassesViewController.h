@@ -10,4 +10,9 @@
 
 @interface PFReferenceClassesViewController : UIViewController
 
+@property (nonatomic) IBOutlet UITextField *searchTextField;
+@property (nonatomic) IBOutlet UITableView *tableView;
+
+- (IBAction)dismissView:(id)sender;
+
 @end

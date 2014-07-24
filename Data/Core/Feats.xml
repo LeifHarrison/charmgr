@@ -790,59 +790,59 @@
         <Prerequisites>-</Prerequisites>
         <Benefit>You can alter a burst, emanation, or spread-shaped spell to increase its area. Any numeric measurements of the spell's area increase by 100%. A widened spell uses up a spell slot three levels higher than the spell's actual level.</Benefit>
     </Feat>
-	<Feat name="Ability Focus" type="Monster" source="Pathfinder Core Rulebook">
+	<Feat name="Ability Focus" type="Monster" source="Core">
 		<Prerequisites>Special attack.</Prerequisites>
 		<Benefit>+2 bonus to DC for saving throws against a monsters special ability.</Benefit>
 	</Feat>
-	<Feat name="Awesome Blow" type="Monster" source="Pathfinder Core Rulebook">
+	<Feat name="Awesome Blow" type="Monster" source="Core">
 		<Prerequisites>Str 25, Power Attack, Improved Bull Rush, size Large or larger.</Prerequisites>
 		<Benefit>Knock an opponent 10 feet away and prone.</Benefit>
 	</Feat>
-	<Feat name="Craft Construct" type="Monster" source="Pathfinder Core Rulebook">
+	<Feat name="Craft Construct" type="Monster" source="Core">
 		<Prerequisites>Caster level 5th, Craft Magic Arms and Armor, Craft Wondrous Item.</Prerequisites>
 		<Benefit>You can create any construct whose prerequisites you meet.</Benefit>
 	</Feat>
-	<Feat name="Empower Spell-Like Ability" type="Monster" source="Pathfinder Core Rulebook">
+	<Feat name="Empower Spell-Like Ability" type="Monster" source="Core">
 		<Prerequisites>Spell-like ability at caster level 6th or higher.</Prerequisites>
 		<Benefit>Choose one of the creature's spell-like abilities, subject to the restrictions below. The creature can use that ability as an empowered spell-like ability three times per day (or less, if the ability is normally usable only once or twice per day).</Benefit>
 	</Feat>
-	<Feat name="Flyby Attack" type="Monster" source="Pathfinder Core Rulebook">
+	<Feat name="Flyby Attack" type="Monster" source="Core">
 		<Prerequisites>Fly speed.</Prerequisites>
 		<Benefit>When flying, the creature can take a move action and another standard action at any point during the move. The creature cannot take a second move action during a round when it makes a flyby attack.</Benefit>
 	</Feat>
-	<Feat name="Hover" type="Monster" source="Pathfinder Core Rulebook">
+	<Feat name="Hover" type="Monster" source="Core">
 		<Prerequisites>Fly speed.</Prerequisites>
 		<Benefit>This creature can hover in place with ease and can kick up clouds of dust and debris.</Benefit>
 	</Feat>
-	<Feat name="Improved Natural Armor" type="Monster" source="Pathfinder Core Rulebook">
+	<Feat name="Improved Natural Armor" type="Monster" source="Core">
 		<Prerequisites>Natural armor, Con 13.</Prerequisites>
 		<Benefit>The creature's natural armor bonus increases by +1.</Benefit>
 	</Feat>
-	<Feat name="Improved Natural Attack" type="Monster" source="Pathfinder Core Rulebook">
+	<Feat name="Improved Natural Attack" type="Monster" source="Core">
 		<Prerequisites>Natural weapon, base attack bonus +4.</Prerequisites>
 		<Benefit>Increase damage from one of a creatures natural attacks by one step.</Benefit>
 	</Feat>
-	<Feat name="Multiattack" type="Monster" source="Pathfinder Core Rulebook">
+	<Feat name="Multiattack" type="Monster" source="Core">
 		<Prerequisites>Three or more natural attacks.</Prerequisites>
 		<Benefit>The creature's secondary attacks with natural weapons take only a äóñ2 penalty.</Benefit>
 	</Feat>
-	<Feat name="Multiweapon Fighting" type="Monster" source="Pathfinder Core Rulebook">
+	<Feat name="Multiweapon Fighting" type="Monster" source="Core">
 		<Prerequisites>Dex 13, three or more hands.</Prerequisites>
 		<Benefit>Penalties for fighting with multiple weapons are reduced by äóñ2 with the primary hand and by äóñ6 with off hands.</Benefit>
 	</Feat>
-	<Feat name="Noxious Bite" type="Monster" source="Pathfinder Core Rulebook">
+	<Feat name="Noxious Bite" type="Monster" source="Core">
 		<Prerequisites>Acidic breath weapon, bite attack</Prerequisites>
 		<Benefit>Deal extra acid damage with your bite attack along with nauseating the enemy.</Benefit>
 	</Feat>
-	<Feat name="Quicken Spell-Like Ability" type="Monster" source="Pathfinder Core Rulebook">
+	<Feat name="Quicken Spell-Like Ability" type="Monster" source="Core">
 		<Prerequisites>Spell-like ability at CL 10th or higher.</Prerequisites>
 		<Benefit>One of a creatures spell-like abilities is usable as a swift action.</Benefit>
 	</Feat>
-	<Feat name="Snatch" type="Monster" source="Pathfinder Core Rulebook">
+	<Feat name="Snatch" type="Monster" source="Core">
 		<Prerequisites>Size Huge or larger.</Prerequisites>
 		<Benefit>The creature can start a grapple when it hits with a claw or bite attack, as though it had the grab ability.</Benefit>
 	</Feat>
-	<Feat name="Wingover" type="Monster" source="Pathfinder Core Rulebook">
+	<Feat name="Wingover" type="Monster" source="Core">
 		<Prerequisites>Fly speed.</Prerequisites>
 		<Benefit>Once each round, a creature with this feat can turn up to 180 degrees as a free action without making a Fly skill check. This free turn does not consume any additional movement from the creature.</Benefit>
 	</Feat>
