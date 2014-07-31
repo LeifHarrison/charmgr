@@ -111,6 +111,7 @@
 		29CEF8011188FA7600E2D442 /* CMProfileView.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CEF8001188FA7600E2D442 /* CMProfileView.m */; };
 		29D403ED16DDBE1A002A5A56 /* paper_texture2.png in Resources */ = {isa = PBXBuildFile; fileRef = 29D403EB16DDBE1A002A5A56 /* paper_texture2.png */; };
 		29D403EE16DDBE1A002A5A56 /* paper_texture3.png in Resources */ = {isa = PBXBuildFile; fileRef = 29D403EC16DDBE1A002A5A56 /* paper_texture3.png */; };
+		29D636721987612100F519F3 /* CombatEditing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29D636711987612100F519F3 /* CombatEditing.storyboard */; };
 		29D960561668787200C57CA1 /* PFRacialTrait.m in Sources */ = {isa = PBXBuildFile; fileRef = 29D960551668787200C57CA1 /* PFRacialTrait.m */; };
 		29D960591669CA4600C57CA1 /* PFContainerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 29D960581669CA4600C57CA1 /* PFContainerCell.m */; };
 		29D9605C166B223700C57CA1 /* PFClassFeature.m in Sources */ = {isa = PBXBuildFile; fileRef = 29D9605B166B223700C57CA1 /* PFClassFeature.m */; };
@@ -309,6 +310,7 @@
 		29CEF8001188FA7600E2D442 /* CMProfileView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMProfileView.m; sourceTree = "<group>"; };
 		29D403EB16DDBE1A002A5A56 /* paper_texture2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = paper_texture2.png; path = Resources/images/paper_texture2.png; sourceTree = "<group>"; };
 		29D403EC16DDBE1A002A5A56 /* paper_texture3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = paper_texture3.png; path = Resources/images/paper_texture3.png; sourceTree = "<group>"; };
+		29D636711987612100F519F3 /* CombatEditing.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = CombatEditing.storyboard; path = Resources/Pathfinder/CombatEditing.storyboard; sourceTree = SOURCE_ROOT; };
 		29D960541668787200C57CA1 /* PFRacialTrait.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFRacialTrait.h; path = Pathfinder/Model/PFRacialTrait.h; sourceTree = "<group>"; };
 		29D960551668787200C57CA1 /* PFRacialTrait.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFRacialTrait.m; path = Pathfinder/Model/PFRacialTrait.m; sourceTree = "<group>"; };
 		29D960571669CA4600C57CA1 /* PFContainerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFContainerCell.h; path = Pathfinder/Cells/PFContainerCell.h; sourceTree = "<group>"; };
@@ -404,6 +406,7 @@
 				294E02AB167C5665003199CE /* Containers */,
 				297FC5E016F65F99002C3504 /* Detail */,
 				2900413A162530E20050EDDB /* Combat.storyboard */,
+				29D636711987612100F519F3 /* CombatEditing.storyboard */,
 				2906399F16044D1900CCBBC7 /* PFCombatViewController.h */,
 				290639A016044D1900CCBBC7 /* PFCombatViewController.m */,
 			);
@@ -921,6 +924,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2963ED4D19511257006C198F /* browntexturedleather_edited.jpg in Resources */,
+				29D636721987612100F519F3 /* CombatEditing.storyboard in Resources */,
 				293B59131950E184002564A8 /* LICENSE.txt in Resources */,
 				28D4B068107A5DE70093E739 /* WHProfileView.xib in Resources */,
 				2945352015F80B820012F88F /* paper_texture.png in Resources */,

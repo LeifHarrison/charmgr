@@ -13,7 +13,7 @@
 
 #import <CoreData/CoreData.h>
 
-#define DELETE_STORE
+//#define DELETE_STORE
 
 //------------------------------------------------------------------------------
 #pragma mark - Private Interface Declaration
