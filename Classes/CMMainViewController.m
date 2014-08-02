@@ -230,6 +230,41 @@
 #pragma mark - Actions
 //------------------------------------------------------------------------------
 
+- (IBAction)createCharacter:(id)sender;
+{
+	TRACE;
+	UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"CharacterCreation" bundle:[NSBundle mainBundle]];
+
+	UINavigationController *creationNav = [storyboard instantiateViewControllerWithIdentifier:@"CreationNavView"];
+	creationNav.modalPresentationStyle = UIModalPresentationFormSheet;
+
+	PFCreateCharacterViewController *creationVC = (PFCreateCharacterViewController*)[creationNav topViewController];
+	creationVC.delegate = self;
+	//creationVC.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+
+	// Create a new managed object context for the new character; set its parent to the fetched results controller's context.
+	NSManagedObjectContext *addingContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
+	[addingContext setParentContext:[self.fetchedResultsController managedObjectContext]];
+
+	// Create the new character
+	PFCharacter *newCharacter = (PFCharacter *)[NSEntityDescription insertNewObjectForEntityForName:@"PFCharacter"
+																			 inManagedObjectContext:addingContext];
+	creationVC.character = newCharacter;
+	creationVC.managedObjectContext = addingContext;
+
+	// Add the basic set of abilities
+	NSArray *abilities = [PFAbility fetchAllAbilitiesInContext:addingContext];
+	for (PFAbility *anAbility in abilities) {
+		PFCharacterAbility *newAbility = (PFCharacterAbility *)[NSEntityDescription insertNewObjectForEntityForName:@"PFCharacterAbility"
+																							 inManagedObjectContext:addingContext];
+		newAbility.character = newCharacter;
+		newAbility.ability = anAbility;
+		newAbility.abilityScore = [NSNumber numberWithInt:10];
+	}
+
+	[self presentViewController:creationNav animated:YES completion:^{}];
+}
+
 - (IBAction)showReferenceView:(id)sender;
 {
 	TRACE;

@@ -109,6 +109,7 @@
 		29CD513B1630BB5C001A639E /* PFAbilityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CD513A1630BB5C001A639E /* PFAbilityTableViewCell.m */; };
 		29CD513E1630CC96001A639E /* PFSkillTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CD513D1630CC95001A639E /* PFSkillTableViewCell.m */; };
 		29CEF8011188FA7600E2D442 /* CMProfileView.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CEF8001188FA7600E2D442 /* CMProfileView.m */; };
+		29D342C6198D74FD00CF921A /* CharacterCreation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29D342C5198D74FD00CF921A /* CharacterCreation.storyboard */; };
 		29D403ED16DDBE1A002A5A56 /* paper_texture2.png in Resources */ = {isa = PBXBuildFile; fileRef = 29D403EB16DDBE1A002A5A56 /* paper_texture2.png */; };
 		29D403EE16DDBE1A002A5A56 /* paper_texture3.png in Resources */ = {isa = PBXBuildFile; fileRef = 29D403EC16DDBE1A002A5A56 /* paper_texture3.png */; };
 		29D636721987612100F519F3 /* CombatEditing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29D636711987612100F519F3 /* CombatEditing.storyboard */; };
@@ -308,6 +309,7 @@
 		29CD513D1630CC95001A639E /* PFSkillTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFSkillTableViewCell.m; path = Pathfinder/Cells/PFSkillTableViewCell.m; sourceTree = "<group>"; };
 		29CEF7FF1188FA7600E2D442 /* CMProfileView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMProfileView.h; sourceTree = "<group>"; };
 		29CEF8001188FA7600E2D442 /* CMProfileView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMProfileView.m; sourceTree = "<group>"; };
+		29D342C5198D74FD00CF921A /* CharacterCreation.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = CharacterCreation.storyboard; path = Resources/Pathfinder/CharacterCreation.storyboard; sourceTree = SOURCE_ROOT; };
 		29D403EB16DDBE1A002A5A56 /* paper_texture2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = paper_texture2.png; path = Resources/images/paper_texture2.png; sourceTree = "<group>"; };
 		29D403EC16DDBE1A002A5A56 /* paper_texture3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = paper_texture3.png; path = Resources/images/paper_texture3.png; sourceTree = "<group>"; };
 		29D636711987612100F519F3 /* CombatEditing.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = CombatEditing.storyboard; path = Resources/Pathfinder/CombatEditing.storyboard; sourceTree = SOURCE_ROOT; };
@@ -761,6 +763,7 @@
 				29362C1B16253F9C0081EFA2 /* PFCreateCharacterInfoViewController.m */,
 				299ACDE915FAABB500E114E0 /* PFCreateCharacterViewController.h */,
 				299ACDEA15FAABB500E114E0 /* PFCreateCharacterViewController.m */,
+				29D342C5198D74FD00CF921A /* CharacterCreation.storyboard */,
 			);
 			name = Creation;
 			sourceTree = "<group>";
@@ -943,6 +946,7 @@
 				293372A116FEA386003A1013 /* PFEncumbranceView.xib in Resources */,
 				293372A3170008AF003A1013 /* PFEquippedItemsView.xib in Resources */,
 				293372A51700090D003A1013 /* PFInventoryView.xib in Resources */,
+				29D342C6198D74FD00CF921A /* CharacterCreation.storyboard in Resources */,
 				293372A717000935003A1013 /* PFMoneyView.xib in Resources */,
 				2946DBF0194AAD6700295F90 /* PathfinderRoleplayingGame.png in Resources */,
 				293372A91700094E003A1013 /* PFPotionsView.xib in Resources */,
