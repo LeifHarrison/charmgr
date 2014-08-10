@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6185.11" systemVersion="13E28" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="mbu-pJ-4Kg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6205" systemVersion="13E28" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="mbu-pJ-4Kg">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6190.4"/>
+        <deployment defaultVersion="1792" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6198"/>
+        <capability name="Constraints with attributes relative to the layout margin" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Spells-->
@@ -339,7 +341,7 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Metamagic" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Ul-Ep-Xm9">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Type" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Ul-Ep-Xm9">
                                                     <rect key="frame" x="230" y="6" width="70" height="15"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="70" id="OqV-w8-Yay"/>
@@ -363,11 +365,8 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Benefit" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="690" translatesAutoresizingMaskIntoConstraints="NO" id="ZP6-4Z-zui">
-                                                    <rect key="frame" x="20" y="21" width="690" height="15"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="690" id="6XT-eB-z7L"/>
-                                                    </constraints>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Benefit" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="710" translatesAutoresizingMaskIntoConstraints="NO" id="ZP6-4Z-zui">
+                                                    <rect key="frame" x="20" y="21" width="710" height="15"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -381,6 +380,7 @@
                                                 <constraint firstItem="sLz-e6-vuh" firstAttribute="leading" secondItem="uI7-wP-w1R" secondAttribute="trailing" constant="10" id="ivz-cn-hMR"/>
                                                 <constraint firstItem="0Ul-Ep-Xm9" firstAttribute="leading" secondItem="OYz-9t-t7e" secondAttribute="trailing" constant="10" id="nVY-t9-KtQ"/>
                                                 <constraint firstItem="ZP6-4Z-zui" firstAttribute="top" secondItem="OYz-9t-t7e" secondAttribute="bottom" id="pao-1V-Vx4"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="ZP6-4Z-zui" secondAttribute="trailing" constant="10" id="pwd-bL-vlp"/>
                                                 <constraint firstItem="uI7-wP-w1R" firstAttribute="baseline" secondItem="0Ul-Ep-Xm9" secondAttribute="baseline" id="pxN-F0-ILx"/>
                                                 <constraint firstItem="OYz-9t-t7e" firstAttribute="top" secondItem="xHY-hU-8MV" secondAttribute="top" constant="5" id="qOP-ic-csS"/>
                                                 <constraint firstItem="uI7-wP-w1R" firstAttribute="baseline" secondItem="sLz-e6-vuh" secondAttribute="baseline" id="qU1-Hw-n31"/>

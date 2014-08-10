@@ -10,20 +10,14 @@
 
 @implementation PFReferenceFeatCell
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+- (void)prepareForReuse
 {
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self) {
-        // Initialization code
-    }
-    return self;
-}
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
-{
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+	[super prepareForReuse];
+	self.featNameLabel.text = nil;
+	self.featSourceLabel.text = nil;
+	self.featTypeLabel.text = nil;
+	self.prerequisitesLabel.text = nil;
+	self.benefitLabel.text = nil;
 }
 
 @end

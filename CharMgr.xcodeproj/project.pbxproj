@@ -100,6 +100,7 @@
 		29A51A441650B8D700952BB2 /* PFSelectSizeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29A51A431650B8D700952BB2 /* PFSelectSizeViewController.m */; };
 		29A51A471650B8F400952BB2 /* PFSelectAlignmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29A51A461650B8F400952BB2 /* PFSelectAlignmentViewController.m */; };
 		29AF2CCC197F2C6E00981D43 /* PFReferenceClassCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 29AF2CCB197F2C6E00981D43 /* PFReferenceClassCell.m */; };
+		29B6A565198F3F5E007555B0 /* PFChooseRaceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B6A564198F3F5E007555B0 /* PFChooseRaceTableViewCell.m */; };
 		29B7D65015F918250039C390 /* PFPageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B7D64F15F918250039C390 /* PFPageContentViewController.m */; };
 		29B7D65315F9186F0039C390 /* PFContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B7D65215F9186F0039C390 /* PFContainerViewController.m */; };
 		29B7D65615F918900039C390 /* PFCharacterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B7D65515F918900039C390 /* PFCharacterViewController.m */; };
@@ -291,6 +292,8 @@
 		29A51A461650B8F400952BB2 /* PFSelectAlignmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFSelectAlignmentViewController.m; path = Pathfinder/Containers/Profile/Detail/PFSelectAlignmentViewController.m; sourceTree = "<group>"; };
 		29AF2CCA197F2C6E00981D43 /* PFReferenceClassCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFReferenceClassCell.h; path = Pathfinder/Reference/Cells/PFReferenceClassCell.h; sourceTree = "<group>"; };
 		29AF2CCB197F2C6E00981D43 /* PFReferenceClassCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFReferenceClassCell.m; path = Pathfinder/Reference/Cells/PFReferenceClassCell.m; sourceTree = "<group>"; };
+		29B6A563198F3F5E007555B0 /* PFChooseRaceTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFChooseRaceTableViewCell.h; path = Pathfinder/Creation/PFChooseRaceTableViewCell.h; sourceTree = "<group>"; };
+		29B6A564198F3F5E007555B0 /* PFChooseRaceTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFChooseRaceTableViewCell.m; path = Pathfinder/Creation/PFChooseRaceTableViewCell.m; sourceTree = "<group>"; };
 		29B7D64E15F918250039C390 /* PFPageContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFPageContentViewController.h; path = Pathfinder/PFPageContentViewController.h; sourceTree = "<group>"; };
 		29B7D64F15F918250039C390 /* PFPageContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFPageContentViewController.m; path = Pathfinder/PFPageContentViewController.m; sourceTree = "<group>"; };
 		29B7D65115F9186F0039C390 /* PFContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFContainerViewController.h; path = Pathfinder/PFContainerViewController.h; sourceTree = "<group>"; };
@@ -753,6 +756,7 @@
 		299ACDEC15FAAC0800E114E0 /* Creation */ = {
 			isa = PBXGroup;
 			children = (
+				29B6A562198F3F1D007555B0 /* Cells */,
 				298A9E06162E5FD30045F1D1 /* PFCreateCharacterChooseAlignmentViewController.h */,
 				298A9E07162E5FD30045F1D1 /* PFCreateCharacterChooseAlignmentViewController.m */,
 				29362C1716253D9D0081EFA2 /* PFCreateCharacterChooseClassViewController.h */,
@@ -766,6 +770,15 @@
 				29D342C5198D74FD00CF921A /* CharacterCreation.storyboard */,
 			);
 			name = Creation;
+			sourceTree = "<group>";
+		};
+		29B6A562198F3F1D007555B0 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				29B6A563198F3F5E007555B0 /* PFChooseRaceTableViewCell.h */,
+				29B6A564198F3F5E007555B0 /* PFChooseRaceTableViewCell.m */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 		29B7D64D15F916820039C390 /* Pathfinder */ = {
@@ -1017,6 +1030,7 @@
 				2925C1A9197746A1003B105E /* PFEditCharacterViewController.m in Sources */,
 				298A9E08162E5FD30045F1D1 /* PFCreateCharacterChooseAlignmentViewController.m in Sources */,
 				298A9E0C162FC1810045F1D1 /* PFClassTableViewCell.m in Sources */,
+				29B6A565198F3F5E007555B0 /* PFChooseRaceTableViewCell.m in Sources */,
 				29CD513B1630BB5C001A639E /* PFAbilityTableViewCell.m in Sources */,
 				29CD513E1630CC96001A639E /* PFSkillTableViewCell.m in Sources */,
 				2972FDB116325B9300B44692 /* PFCharacterSkill.m in Sources */,

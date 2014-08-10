@@ -16,9 +16,10 @@
 
 @interface PFCreateCharacterInfoViewController ()
 
-@property (nonatomic, weak) IBOutlet UITextField *nameField;
-@property (nonatomic, weak) IBOutlet UITextField *playerField;
-@property (nonatomic, weak) IBOutlet UITextField *campaignField;
+@property (nonatomic) IBOutlet UITextField *nameField;
+@property (nonatomic) IBOutlet UITextField *playerField;
+@property (nonatomic) IBOutlet UITextField *campaignField;
+@property (nonatomic) IBOutlet UISegmentedControl *genderControl;
 
 @end
 
@@ -92,7 +93,8 @@
 	self.character.name = self.nameField.text;
 	self.character.player = self.playerField.text;
 	self.character.campaign = self.campaignField.text;
-	
+	self.character.gender = self.genderControl.selectedSegmentIndex;
+
     [super save:sender];
 }
 
@@ -139,6 +141,7 @@
 		self.character.name = self.nameField.text;
 		self.character.player = self.playerField.text;
 		self.character.campaign = self.campaignField.text;
+		self.character.gender = self.genderControl.selectedSegmentIndex;
 	}
 }
 

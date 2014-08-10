@@ -13,8 +13,6 @@
 @interface PFCreateCharacterChooseRaceViewController : PFCreateCharacterViewController
 	<NSFetchedResultsControllerDelegate, UITableViewDataSource, UITableViewDelegate>
 
-@property (nonatomic, strong) IBOutlet UITableView *tableView;
-@property (nonatomic, strong) IBOutlet UITextView *descriptionTextView;
-@property (nonatomic, strong) IBOutlet UISegmentedControl *genderControl;
+@property (nonatomic) IBOutlet UITableView *tableView;
 
 @end

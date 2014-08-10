@@ -8,6 +8,8 @@
 
 #import "PFCreateCharacterChooseRaceViewController.h"
 
+#import "PFChooseRaceTableViewCell.h"
+
 #import "PFCharacter.h"
 #import "PFRace.h"
 
@@ -18,7 +20,8 @@
 
 @interface PFCreateCharacterChooseRaceViewController ()
 
-@property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
+@property (nonatomic) NSFetchedResultsController *fetchedResultsController;
+@property (nonatomic) PFChooseRaceTableViewCell *prototypeCell;
 
 @end
 
@@ -56,16 +59,13 @@
 {
     [super viewDidLoad];
 	
-	self.tableView.backgroundColor = [UIColor lightGrayColor];
+	//self.tableView.backgroundColor = [UIColor lightGrayColor];
 	self.tableView.layer.borderColor = [UIColor darkGrayColor].CGColor;
 	self.tableView.layer.borderWidth = 1.5f;
 	self.tableView.layer.cornerRadius = 4.0f;
 
-	self.descriptionTextView.backgroundColor = [UIColor lightGrayColor];
-	self.descriptionTextView.layer.borderColor = [UIColor darkGrayColor].CGColor;
-	self.descriptionTextView.layer.borderWidth = 1.5f;
-	self.descriptionTextView.layer.cornerRadius = 4.0f;
-	
+	self.prototypeCell = [self.tableView dequeueReusableCellWithIdentifier:@"RaceCell"];
+
 	NSError *error = nil;
     if (![[self fetchedResultsController] performFetch:&error]) {
         // Replace this implementation with code to handle the error appropriately.
@@ -76,8 +76,6 @@
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
         abort();
     }
-	
-	self.descriptionTextView.text = @"";
 }
 
 
@@ -128,8 +126,11 @@
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
+	PFChooseRaceTableViewCell *raceCell = (PFChooseRaceTableViewCell*)cell;
+
     PFRace *aRace = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.text = aRace.name;
+    raceCell.raceNameLabel.text = aRace.name;
+	raceCell.raceDescriptionLabel.text = aRace.descriptionShort;
 }
 
 
@@ -208,7 +209,14 @@
 	LOG_DEBUG(@"indexPath = %@", indexPath);
     PFRace *aRace = [self.fetchedResultsController objectAtIndexPath:indexPath];
 	LOG_DEBUG(@"aRace = %@", aRace);
-	self.descriptionTextView.text = aRace.descriptionShort;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	[self configureCell:self.prototypeCell atIndexPath:indexPath];
+	CGSize contentSize = [self.prototypeCell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
+	LOG_DEBUG(@"contentSize = %@", NSStringFromCGSize(contentSize));
+	return contentSize.height + 1.0f;
 }
 
 
@@ -223,7 +231,6 @@
 	PFRace *aRace = [self.fetchedResultsController objectAtIndexPath:self.tableView.indexPathForSelectedRow];
 	self.character.race = aRace;
 	self.character.size = aRace.size;
-	self.character.gender = self.genderControl.selectedSegmentIndex;
 	
     [super save:sender];
 }
@@ -235,15 +242,14 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-	LOG_DEBUG(@"seque = %@, sender = %@", segue.identifier, sender);
+	//LOG_DEBUG(@"seque = %@, sender = %@", segue.identifier, sender);
 	
 	if ([segue.identifier hasSuffix:@"NextController"]) {
-		LOG_DEBUG(@"selected index path = %@", self.tableView.indexPathForSelectedRow);
+		//LOG_DEBUG(@"selected index path = %@", self.tableView.indexPathForSelectedRow);
 		PFRace *aRace = [self.fetchedResultsController objectAtIndexPath:self.tableView.indexPathForSelectedRow];
-		LOG_DEBUG(@"selected race = %@", aRace);
+		//LOG_DEBUG(@"selected race = %@", aRace);
 		self.character.race = aRace;
-		self.character.gender = self.genderControl.selectedSegmentIndex;
-		LOG_DEBUG(@"character = %@", self.character);
+		//LOG_DEBUG(@"character = %@", self.character);
 	}
 	
 	[super prepareForSegue:segue sender:sender];

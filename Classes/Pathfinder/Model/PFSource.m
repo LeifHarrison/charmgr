@@ -64,8 +64,8 @@
 	[request setEntity:entityDescription];
 	
 	// Set sort orderings...
-	NSSortDescriptor *typeSortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES];
-	request.sortDescriptors = [NSArray arrayWithObject:typeSortDescriptor];
+	NSSortDescriptor *indexSort = [NSSortDescriptor sortDescriptorWithKey:@"index" ascending:YES];
+	request.sortDescriptors = [NSArray arrayWithObject:indexSort];
 	
 	NSError *error = nil;
 	NSArray *array = [moc executeFetchRequest:request error:&error];

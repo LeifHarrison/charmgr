@@ -128,6 +128,7 @@
 {
     PFAlignment *anAlignment = [self.fetchedResultsController objectAtIndexPath:indexPath];
     cell.textLabel.text = anAlignment.name;
+	cell.detailTextLabel.text = anAlignment.descriptionShort;
 }
 
 
@@ -292,14 +293,14 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-	LOG_DEBUG(@"seque = %@, sender = %@", segue.identifier, sender);
+	//LOG_DEBUG(@"seque = %@, sender = %@", segue.identifier, sender);
 	
 	if ([segue.identifier hasSuffix:@"NextController"]) {
-		LOG_DEBUG(@"selected index path = %@", self.tableView.indexPathForSelectedRow);
+		//LOG_DEBUG(@"selected index path = %@", self.tableView.indexPathForSelectedRow);
 		PFAlignment *anAlignment = [self.fetchedResultsController objectAtIndexPath:self.tableView.indexPathForSelectedRow];
-		LOG_DEBUG(@"selected alignment = %@", anAlignment);
+		//LOG_DEBUG(@"selected alignment = %@", anAlignment);
 		self.character.alignment = anAlignment;
-		LOG_DEBUG(@"character = %@", self.character);
+		//LOG_DEBUG(@"character = %@", self.character);
 	}
 	
 	[super prepareForSegue:segue sender:sender];

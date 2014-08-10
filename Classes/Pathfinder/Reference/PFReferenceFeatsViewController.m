@@ -21,8 +21,11 @@
 
 @interface PFReferenceFeatsViewController ()
 
-@property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
-@property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic) NSFetchedResultsController *fetchedResultsController;
+@property (nonatomic) NSManagedObjectContext *managedObjectContext;
+
+@property (nonatomic) PFReferenceFeatCell *prototypeCell;
+
 @end
 
 //==============================================================================
@@ -55,6 +58,8 @@
 	self.tableView.layer.borderColor = [UIColor darkGrayColor].CGColor;
 	self.tableView.layer.borderWidth = 1.5f;
 	self.tableView.layer.cornerRadius = 5.0f;
+
+	self.prototypeCell = [self.tableView dequeueReusableCellWithIdentifier:@"ReferenceFeatCell"];
 
 	self.managedObjectContext = [(CMAppDelegate*)[[UIApplication sharedApplication] delegate] managedObjectContext];
 	
@@ -125,16 +130,16 @@
     [fetchRequest setEntity:entity];
     
     // Create the sort descriptors array.
-	//NSSortDescriptor *sourceDescriptor = [[NSSortDescriptor alloc] initWithKey:@"source.name" ascending:YES];
+	NSSortDescriptor *sourceDescriptor = [[NSSortDescriptor alloc] initWithKey:@"source.index" ascending:YES];
     NSSortDescriptor *nameDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
-    NSArray *sortDescriptors = [[NSArray alloc] initWithObjects: nameDescriptor, nil];
+    NSArray *sortDescriptors = [[NSArray alloc] initWithObjects: sourceDescriptor, nameDescriptor, nil];
     [fetchRequest setSortDescriptors:sortDescriptors];
     
     // Create and initialize the fetch results controller.
     _fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
 																	managedObjectContext:self.managedObjectContext
-																	  sectionNameKeyPath:nil
-																			   cacheName:nil];
+																	  sectionNameKeyPath:@"source.name"
+																			   cacheName:@"Feats"];
     _fetchedResultsController.delegate = self;
     
     // Memory management.
@@ -146,6 +151,7 @@
 {
 	PFReferenceFeatCell *featCell = (PFReferenceFeatCell*)cell;
     PFFeat *feat = [self.fetchedResultsController objectAtIndexPath:indexPath];
+	//LOG_DEBUG(@"feat name = %@, benefitString = %@", feat.name, feat.benefitString);
     featCell.featNameLabel.text = feat.name;
     featCell.featTypeLabel.text = feat.type;
 	featCell.featSourceLabel.text = feat.source.abbreviation;
@@ -259,13 +265,10 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	static NSString *CellIdentifier = @"ReferenceFeatCell";
-	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-	[self configureCell:cell atIndexPath:indexPath];
-
-	CGSize contentSize = [cell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
+	[self configureCell:self.prototypeCell atIndexPath:indexPath];
+	CGSize contentSize = [self.prototypeCell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
 	//LOG_DEBUG(@"contentSize = %@", NSStringFromCGSize(contentSize));
-	return contentSize.height;
+	return contentSize.height + 1.0f; // Add 1 for the separator height
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

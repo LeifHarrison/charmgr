@@ -54,9 +54,9 @@
 {
 	[super viewDidLoad];
 
-	//self.tableView.layer.borderColor = [UIColor darkGrayColor].CGColor;
-	//self.tableView.layer.borderWidth = 1.5f;
-	//self.tableView.layer.cornerRadius = 5.0f;
+	self.tableView.layer.borderColor = [UIColor darkGrayColor].CGColor;
+	self.tableView.layer.borderWidth = 1.5f;
+	self.tableView.layer.cornerRadius = 5.0f;
 
 	self.managedObjectContext = [(CMAppDelegate*)[[UIApplication sharedApplication] delegate] managedObjectContext];
 

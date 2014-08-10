@@ -130,6 +130,7 @@
 {
     PFClassType *aClass = [self.fetchedResultsController objectAtIndexPath:indexPath];
     cell.textLabel.text = aClass.name;
+	cell.detailTextLabel.text = aClass.descriptionShort;
 }
 
 
@@ -303,7 +304,7 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-	LOG_DEBUG(@"seque = %@, sender = %@", segue.identifier, sender);
+	//LOG_DEBUG(@"seque = %@, sender = %@", segue.identifier, sender);
 	[super prepareForSegue:segue sender:sender];
 	
 	if ([segue.identifier hasSuffix:@"NextController"]) {
