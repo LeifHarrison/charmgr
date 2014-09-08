@@ -72,6 +72,7 @@
 		295F63011602F3C900EEF5ED /* PFMovementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 295F62FF1602F3C900EEF5ED /* PFMovementViewController.m */; };
 		295F63061602F41700EEF5ED /* PFDefenseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 295F63041602F41700EEF5ED /* PFDefenseViewController.m */; };
 		295F630B1602F46500EEF5ED /* PFSavingThrowsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 295F63091602F46500EEF5ED /* PFSavingThrowsViewController.m */; };
+		2960879E19BE26B10088E99C /* PFChooseClassTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2960879D19BE26B10088E99C /* PFChooseClassTableViewCell.m */; };
 		2962DEEA16228E1B00F11E0F /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 2962DEE916228E1B00F11E0F /* GDataXMLNode.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		2963ED4D19511257006C198F /* browntexturedleather_edited.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2963ED4C19511257006C198F /* browntexturedleather_edited.jpg */; };
 		2968E04F13BD0E0200811211 /* PFProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2968E04D13BD0E0200811211 /* PFProfileViewController.m */; };
@@ -240,6 +241,8 @@
 		295F63041602F41700EEF5ED /* PFDefenseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFDefenseViewController.m; path = Pathfinder/Containers/PFDefenseViewController.m; sourceTree = "<group>"; };
 		295F63081602F46500EEF5ED /* PFSavingThrowsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFSavingThrowsViewController.h; path = Pathfinder/Containers/PFSavingThrowsViewController.h; sourceTree = "<group>"; };
 		295F63091602F46500EEF5ED /* PFSavingThrowsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFSavingThrowsViewController.m; path = Pathfinder/Containers/PFSavingThrowsViewController.m; sourceTree = "<group>"; };
+		2960879C19BE26B10088E99C /* PFChooseClassTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFChooseClassTableViewCell.h; path = Pathfinder/Creation/PFChooseClassTableViewCell.h; sourceTree = "<group>"; };
+		2960879D19BE26B10088E99C /* PFChooseClassTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFChooseClassTableViewCell.m; path = Pathfinder/Creation/PFChooseClassTableViewCell.m; sourceTree = "<group>"; };
 		2962DEE816228E1B00F11E0F /* GDataXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataXMLNode.h; sourceTree = "<group>"; };
 		2962DEE916228E1B00F11E0F /* GDataXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDataXMLNode.m; sourceTree = "<group>"; };
 		2963ED4C19511257006C198F /* browntexturedleather_edited.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = browntexturedleather_edited.jpg; sourceTree = "<group>"; };
@@ -777,6 +780,8 @@
 			children = (
 				29B6A563198F3F5E007555B0 /* PFChooseRaceTableViewCell.h */,
 				29B6A564198F3F5E007555B0 /* PFChooseRaceTableViewCell.m */,
+				2960879C19BE26B10088E99C /* PFChooseClassTableViewCell.h */,
+				2960879D19BE26B10088E99C /* PFChooseClassTableViewCell.m */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -1001,6 +1006,7 @@
 				295F62F21602EFB000EEF5ED /* PFHealthViewController.m in Sources */,
 				295F62F71602EFCF00EEF5ED /* PFAttacksViewController.m in Sources */,
 				295F62FC1602EFF900EEF5ED /* PFArmorViewController.m in Sources */,
+				2960879E19BE26B10088E99C /* PFChooseClassTableViewCell.m in Sources */,
 				295F63011602F3C900EEF5ED /* PFMovementViewController.m in Sources */,
 				29AF2CCC197F2C6E00981D43 /* PFReferenceClassCell.m in Sources */,
 				296B4F3A1970574F00E7B24F /* CMSettings.m in Sources */,

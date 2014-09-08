@@ -8,6 +8,8 @@
 
 #import "PFCreateCharacterChooseClassViewController.h"
 
+#import "PFChooseClassTableViewCell.h"
+
 #import "PFCharacter.h"
 #import "PFCharacterClass.h"
 #import "PFClassType.h"
@@ -58,6 +60,9 @@
     [super viewDidLoad];
 	
 	self.tableView.backgroundColor = [UIColor lightGrayColor];
+	//self.tableView.rowHeight = UITableViewAutomaticDimension;
+	//self.tableView.estimatedRowHeight = 48.0;
+
 	self.tableView.layer.borderColor = [UIColor darkGrayColor].CGColor;
 	self.tableView.layer.borderWidth = 1.5f;
 	self.tableView.layer.cornerRadius = 4.0f;
@@ -128,9 +133,10 @@
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
+	PFChooseClassTableViewCell *classCell = (PFChooseClassTableViewCell*)cell;
     PFClassType *aClass = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.text = aClass.name;
-	cell.detailTextLabel.text = aClass.descriptionShort;
+    classCell.classNameLabel.text = aClass.name;
+	classCell.classDescriptionLabel.text = aClass.descriptionShort;
 }
 
 
@@ -277,6 +283,17 @@
 	self.descriptionTextView.text = aClass.descriptionShort;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	//LOG_DEBUG(@"indexPath = %@", indexPath);
+	//[self.prototypeCell prepareForReuse];
+	PFChooseClassTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"ClassCell"];
+	cell.frame = CGRectMake(0, 0, self.tableView.frame.size.width, self.tableView.estimatedRowHeight);
+	[self configureCell:cell atIndexPath:indexPath];
+	CGSize contentSize = [cell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
+	LOG_DEBUG(@"contentSize = %@", NSStringFromCGSize(contentSize));
+	return contentSize.height + 1.0f;
+}
 
 //------------------------------------------------------------------------------
 #pragma mark - Actions

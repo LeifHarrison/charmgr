@@ -49,7 +49,7 @@
 		NSDictionary *importDates = [defaults valueForKey:kPFImportDatesDefaultsKey];
 		NSString *key = [NSString stringWithFormat:@"%@/%@", source.abbreviation, type];
 		NSDate *lastImportDate = [importDates valueForKey:key];
-		LOG_DEBUG(@"modificationDate = %@, lastImportDate = %@", modificationDate, lastImportDate);
+		//LOG_DEBUG(@"modificationDate = %@, lastImportDate = %@", modificationDate, lastImportDate);
 		if (!lastImportDate || ([lastImportDate compare:modificationDate] == NSOrderedAscending))
 		{
 			NSData *xmlData = [[NSMutableData alloc] initWithContentsOfFile:filePath];
@@ -65,14 +65,32 @@
 	return doc;
 }
 
+- (void)importSourcesInManagedObjectContext:(NSManagedObjectContext *)moc;
+{
+	GDataXMLDocument *doc = [self documentWithType:@"Sources" forSource:nil];
+	if (doc == nil) { return; }
+
+	LOG_DEBUG(@"Importing sources...");
+	//NSLog(@"%@", doc.rootElement);
+
+	NSArray *elements = [doc.rootElement elementsForName:@"Source"];
+	NSMutableArray *sources = [NSMutableArray arrayWithCapacity:elements.count];
+	for (GDataXMLElement *anElement in elements) {
+		PFSource *newInstance = [PFSource insertedInstanceWithElement:anElement inManagedObjectContext:moc];
+		//LOG_DEBUG(@"  newInstance = %@", newInstance.name);
+		if (newInstance) [sources addObject:newInstance];
+	}
+
+	LOG_DEBUG(@"  %lu sources imported.", (unsigned long)sources.count);
+}
+
 - (void)importAbilitiesInManagedObjectContext:(NSManagedObjectContext *)moc;
 {
-	LOG_DEBUG(@"Importing abilities...");
-
 	PFSource *core = [PFSource fetchWithAbbreviation:@"Core" inContext:moc];
     GDataXMLDocument *doc = [self documentWithType:@"Abilities" forSource:core];
     if (doc == nil) { return; }
 
+	LOG_DEBUG(@"Importing abilities...");
     //NSLog(@"%@", doc.rootElement);
 	NSInteger importCount = 0;
 
@@ -88,12 +106,11 @@
 
 - (void)importAlignmentsInManagedObjectContext:(NSManagedObjectContext *)moc;
 {
-	LOG_DEBUG(@"Importing alignments...");
-
 	PFSource *core = [PFSource fetchWithAbbreviation:@"Core" inContext:moc];
     GDataXMLDocument *doc = [self documentWithType:@"Alignments" forSource:core];
     if (doc == nil) { return; }
 
+	LOG_DEBUG(@"Importing alignments...");
     //NSLog(@"%@", doc.rootElement);
 	NSInteger importCount = 0;
 
@@ -109,12 +126,11 @@
 
 - (void)importSkillsInManagedObjectContext:(NSManagedObjectContext *)moc;
 {
-	LOG_DEBUG(@"Importing skills...");
-
 	PFSource *core = [PFSource fetchWithAbbreviation:@"Core" inContext:moc];
     GDataXMLDocument *doc = [self documentWithType:@"Skills" forSource:core];
     if (doc == nil) { return; }
 
+	LOG_DEBUG(@"Importing skills...");
     //NSLog(@"%@", doc.rootElement);
 	NSInteger importCount = 0;
 
@@ -128,33 +144,12 @@
 	LOG_DEBUG(@"  %ld skills imported.", (long)importCount);
 }
 
-- (void)importSourcesInManagedObjectContext:(NSManagedObjectContext *)moc;
-{
-	LOG_DEBUG(@"Importing sources...");
-
-    GDataXMLDocument *doc = [self documentWithType:@"Sources" forSource:nil];
-    if (doc == nil) { return; }
-
-    //NSLog(@"%@", doc.rootElement);
-
-	NSArray *elements = [doc.rootElement elementsForName:@"Source"];
-	NSMutableArray *sources = [NSMutableArray arrayWithCapacity:elements.count];
-	for (GDataXMLElement *anElement in elements) {
-		PFSource *newInstance = [PFSource insertedInstanceWithElement:anElement inManagedObjectContext:moc];
-		//LOG_DEBUG(@"  newInstance = %@", newInstance.name);
-		if (newInstance) [sources addObject:newInstance];
-	}
-
-	LOG_DEBUG(@"  %lu sources imported.", (unsigned long)sources.count);
-}
-
 - (void)importClassesForSource:(PFSource*)source inManagedObjectContext:(NSManagedObjectContext *)moc;
 {
-	LOG_DEBUG(@"Importing classes for source %@...", source.name);
-
     GDataXMLDocument *doc = [self documentWithType:@"Classes" forSource:source];
     if (doc == nil) { return; }
 	
+	LOG_DEBUG(@"Importing classes for source %@...", source.name);
     //NSLog(@"%@", doc.rootElement);
 	NSInteger importCount = 0;
 
@@ -177,11 +172,10 @@
 
 - (void)importRacesForSource:(PFSource*)source inManagedObjectContext:(NSManagedObjectContext *)moc;
 {
-	LOG_DEBUG(@"Importing races for source %@...", source.name);
-
     GDataXMLDocument *doc = [self documentWithType:@"Races" forSource:source];
     if (doc == nil) { return; }
 
+	LOG_DEBUG(@"Importing races for source %@...", source.name);
     //NSLog(@"%@", doc.rootElement);
 	NSInteger importCount = 0;
 
@@ -197,11 +191,10 @@
 
 - (void)importFeatsForSource:(PFSource*)source inManagedObjectContext:(NSManagedObjectContext *)moc;
 {
-	LOG_DEBUG(@"Importing feats for source %@...", source.name);
-
     GDataXMLDocument *doc = [self documentWithType:@"Feats" forSource:source];
     if (doc == nil) { return; }
 	
+	LOG_DEBUG(@"Importing feats for source %@...", source.name);
     //NSLog(@"%@", doc.rootElement);
 	NSInteger importCount = 0;
 	
@@ -224,11 +217,10 @@
 
 - (void)importWeaponsForSource:(PFSource*)source inManagedObjectContext:(NSManagedObjectContext *)moc;
 {
-	LOG_DEBUG(@"Importing weapons for source %@...", source.name);
-
     GDataXMLDocument *doc = [self documentWithType:@"Weapons" forSource:source];
     if (doc == nil) { return; }
 
+	LOG_DEBUG(@"Importing weapons for source %@...", source.name);
     //NSLog(@"%@", doc.rootElement);
 	NSInteger importCount = 0;
 	

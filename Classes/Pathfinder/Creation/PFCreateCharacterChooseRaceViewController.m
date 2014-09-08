@@ -60,11 +60,12 @@
     [super viewDidLoad];
 	
 	//self.tableView.backgroundColor = [UIColor lightGrayColor];
+	self.tableView.rowHeight = UITableViewAutomaticDimension;
+	self.tableView.estimatedRowHeight = 48.0;
+
 	self.tableView.layer.borderColor = [UIColor darkGrayColor].CGColor;
 	self.tableView.layer.borderWidth = 1.5f;
 	self.tableView.layer.cornerRadius = 4.0f;
-
-	self.prototypeCell = [self.tableView dequeueReusableCellWithIdentifier:@"RaceCell"];
 
 	NSError *error = nil;
     if (![[self fetchedResultsController] performFetch:&error]) {
@@ -78,6 +79,17 @@
     }
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+	[super viewWillAppear:animated];
+	//self.prototypeCell = [self.tableView dequeueReusableCellWithIdentifier:@"RaceCell"];
+}
+
+- (void)viewDidLayoutSubviews
+{
+	[super viewDidLayoutSubviews];
+	//self.prototypeCell.frame = CGRectMake(0, 0, self.tableView.frame.size.width, self.tableView.estimatedRowHeight);
+}
 
 //------------------------------------------------------------------------------
 #pragma mark - Memory Management
@@ -124,6 +136,15 @@
     return _fetchedResultsController;
 }
 
+- (PFChooseRaceTableViewCell *)prototypeCell
+{
+	if (!_prototypeCell)
+	{
+		_prototypeCell = [self.tableView dequeueReusableCellWithIdentifier:@"RaceCell"];
+	}
+	return _prototypeCell;
+}
+
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
 	PFChooseRaceTableViewCell *raceCell = (PFChooseRaceTableViewCell*)cell;
@@ -131,6 +152,7 @@
     PFRace *aRace = [self.fetchedResultsController objectAtIndexPath:indexPath];
     raceCell.raceNameLabel.text = aRace.name;
 	raceCell.raceDescriptionLabel.text = aRace.descriptionShort;
+	//LOG_DEBUG(@"  descriptionShort = %@", aRace.descriptionShort);
 }
 
 
@@ -156,19 +178,20 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-	LOG_DEBUG(@"sections = %lu", [[self.fetchedResultsController sections] count]);
+	//LOG_DEBUG(@"sections = %lu", [[self.fetchedResultsController sections] count]);
     return [[self.fetchedResultsController sections] count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     id <NSFetchedResultsSectionInfo> sectionInfo = [[self.fetchedResultsController sections] objectAtIndex:section];
-	LOG_DEBUG(@"section = %ld, rows = %lu", (long)section, (unsigned long)[sectionInfo numberOfObjects]);
+	//LOG_DEBUG(@"section = %ld, rows = %lu", (long)section, (unsigned long)[sectionInfo numberOfObjects]);
     return [sectionInfo numberOfObjects];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+	//LOG_DEBUG(@"indexPath = %@", indexPath);
     static NSString *CellIdentifier = @"RaceCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 	
@@ -211,14 +234,24 @@
 	LOG_DEBUG(@"aRace = %@", aRace);
 }
 
+//- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//	return UITableViewAutomaticDimension;
+//}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+	//LOG_DEBUG(@"indexPath = %@", indexPath);
+	//[self.prototypeCell prepareForReuse];
+	//PFChooseRaceTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"RaceCell"];
+	//cell.frame = CGRectMake(0, 0, self.tableView.frame.size.width, self.tableView.estimatedRowHeight);
 	[self configureCell:self.prototypeCell atIndexPath:indexPath];
+	[self.prototypeCell layoutIfNeeded];
 	CGSize contentSize = [self.prototypeCell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
+	//CGSize contentSize = [cell.contentView systemLayoutSizeFittingSize:UILayoutFittingExpandedSize];
 	LOG_DEBUG(@"contentSize = %@", NSStringFromCGSize(contentSize));
 	return contentSize.height + 1.0f;
 }
-
 
 //------------------------------------------------------------------------------
 #pragma mark - Actions

@@ -10,7 +10,6 @@
 
 @implementation PFChooseRaceTableViewCell
 
-
 - (void)prepareForReuse
 {
 	[super prepareForReuse];
