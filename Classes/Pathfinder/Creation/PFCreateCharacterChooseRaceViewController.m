@@ -59,11 +59,7 @@
 {
     [super viewDidLoad];
 	
-	//self.tableView.backgroundColor = [UIColor lightGrayColor];
-	self.tableView.rowHeight = UITableViewAutomaticDimension;
-	self.tableView.estimatedRowHeight = 48.0;
-
-	self.tableView.layer.borderColor = [UIColor darkGrayColor].CGColor;
+	self.tableView.layer.borderColor = [UIColor lightGrayColor].CGColor;
 	self.tableView.layer.borderWidth = 1.5f;
 	self.tableView.layer.cornerRadius = 4.0f;
 
@@ -230,26 +226,15 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	LOG_DEBUG(@"indexPath = %@", indexPath);
-    PFRace *aRace = [self.fetchedResultsController objectAtIndexPath:indexPath];
+	PFRace *aRace = [self.fetchedResultsController objectAtIndexPath:indexPath];
 	LOG_DEBUG(@"aRace = %@", aRace);
 }
 
-//- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//	return UITableViewAutomaticDimension;
-//}
-
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	//LOG_DEBUG(@"indexPath = %@", indexPath);
-	//[self.prototypeCell prepareForReuse];
-	//PFChooseRaceTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"RaceCell"];
-	//cell.frame = CGRectMake(0, 0, self.tableView.frame.size.width, self.tableView.estimatedRowHeight);
 	[self configureCell:self.prototypeCell atIndexPath:indexPath];
-	[self.prototypeCell layoutIfNeeded];
 	CGSize contentSize = [self.prototypeCell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
-	//CGSize contentSize = [cell.contentView systemLayoutSizeFittingSize:UILayoutFittingExpandedSize];
-	LOG_DEBUG(@"contentSize = %@", NSStringFromCGSize(contentSize));
+	//LOG_DEBUG(@"contentSize = %@", NSStringFromCGSize(contentSize));
 	return contentSize.height + 1.0f;
 }
 

@@ -21,7 +21,8 @@
 
 @interface PFCreateCharacterChooseClassViewController ()
 
-@property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
+@property (nonatomic) NSFetchedResultsController *fetchedResultsController;
+@property (nonatomic) PFChooseClassTableViewCell *prototypeCell;
 
 @end
 
@@ -59,11 +60,7 @@
 {
     [super viewDidLoad];
 	
-	self.tableView.backgroundColor = [UIColor lightGrayColor];
-	//self.tableView.rowHeight = UITableViewAutomaticDimension;
-	//self.tableView.estimatedRowHeight = 48.0;
-
-	self.tableView.layer.borderColor = [UIColor darkGrayColor].CGColor;
+	self.tableView.layer.borderColor = [UIColor lightGrayColor].CGColor;
 	self.tableView.layer.borderWidth = 1.5f;
 	self.tableView.layer.cornerRadius = 4.0f;
 	
@@ -129,6 +126,15 @@
     // Memory management.
     
     return _fetchedResultsController;
+}
+
+- (PFChooseClassTableViewCell *)prototypeCell
+{
+	if (!_prototypeCell)
+	{
+		_prototypeCell = [self.tableView dequeueReusableCellWithIdentifier:@"ClassCell"];
+	}
+	return _prototypeCell;
 }
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
@@ -285,13 +291,9 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	//LOG_DEBUG(@"indexPath = %@", indexPath);
-	//[self.prototypeCell prepareForReuse];
-	PFChooseClassTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"ClassCell"];
-	cell.frame = CGRectMake(0, 0, self.tableView.frame.size.width, self.tableView.estimatedRowHeight);
-	[self configureCell:cell atIndexPath:indexPath];
-	CGSize contentSize = [cell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
-	LOG_DEBUG(@"contentSize = %@", NSStringFromCGSize(contentSize));
+	[self configureCell:self.prototypeCell atIndexPath:indexPath];
+	CGSize contentSize = [self.prototypeCell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
+	//LOG_DEBUG(@"contentSize = %@", NSStringFromCGSize(contentSize));
 	return contentSize.height + 1.0f;
 }
 

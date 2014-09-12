@@ -8,6 +8,8 @@
 
 #import "PFCreateCharacterChooseAlignmentViewController.h"
 
+#import "PFChooseAlignmentTableViewCell.h"
+
 #import "PFCharacter.h"
 #import "PFAlignment.h"
 
@@ -18,7 +20,8 @@
 
 @interface PFCreateCharacterChooseAlignmentViewController ()
 
-@property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
+@property (nonatomic) NSFetchedResultsController *fetchedResultsController;
+@property (nonatomic) PFChooseAlignmentTableViewCell *prototypeCell;
 
 @end
 
@@ -55,7 +58,6 @@
 {
     [super viewDidLoad];
 	
-	self.tableView.backgroundColor = [UIColor lightGrayColor];
 	self.tableView.layer.borderColor = [UIColor darkGrayColor].CGColor;
 	self.tableView.layer.borderWidth = 1.5f;
 	self.tableView.layer.cornerRadius = 4.0f;
@@ -124,11 +126,21 @@
     return _fetchedResultsController;
 }
 
+- (PFChooseAlignmentTableViewCell *)prototypeCell
+{
+	if (!_prototypeCell)
+	{
+		_prototypeCell = [self.tableView dequeueReusableCellWithIdentifier:@"AlignmentCell"];
+	}
+	return _prototypeCell;
+}
+
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
+	PFChooseAlignmentTableViewCell *alignmentCell = (PFChooseAlignmentTableViewCell*)cell;
     PFAlignment *anAlignment = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.text = anAlignment.name;
-	cell.detailTextLabel.text = anAlignment.descriptionShort;
+    alignmentCell.alignmentNameLabel.text = anAlignment.name;
+	alignmentCell.alignmentDescriptionLabel.text = anAlignment.descriptionShort;
 }
 
 
@@ -269,6 +281,14 @@
     PFAlignment *anAlignment = [self.fetchedResultsController objectAtIndexPath:indexPath];
 	LOG_DEBUG(@"anAlignment = %@", anAlignment);
 	self.descriptionTextView.text = anAlignment.descriptionShort;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	[self configureCell:self.prototypeCell atIndexPath:indexPath];
+	CGSize contentSize = [self.prototypeCell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
+	//LOG_DEBUG(@"contentSize = %@", NSStringFromCGSize(contentSize));
+	return contentSize.height + 1.0f;
 }
 
 

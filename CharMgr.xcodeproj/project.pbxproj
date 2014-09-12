@@ -101,6 +101,7 @@
 		29A51A441650B8D700952BB2 /* PFSelectSizeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29A51A431650B8D700952BB2 /* PFSelectSizeViewController.m */; };
 		29A51A471650B8F400952BB2 /* PFSelectAlignmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29A51A461650B8F400952BB2 /* PFSelectAlignmentViewController.m */; };
 		29AF2CCC197F2C6E00981D43 /* PFReferenceClassCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 29AF2CCB197F2C6E00981D43 /* PFReferenceClassCell.m */; };
+		29AFDF3F19C254FD00D59466 /* PFChooseAlignmentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 29AFDF3E19C254FD00D59466 /* PFChooseAlignmentTableViewCell.m */; };
 		29B6A565198F3F5E007555B0 /* PFChooseRaceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B6A564198F3F5E007555B0 /* PFChooseRaceTableViewCell.m */; };
 		29B7D65015F918250039C390 /* PFPageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B7D64F15F918250039C390 /* PFPageContentViewController.m */; };
 		29B7D65315F9186F0039C390 /* PFContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B7D65215F9186F0039C390 /* PFContainerViewController.m */; };
@@ -295,6 +296,8 @@
 		29A51A461650B8F400952BB2 /* PFSelectAlignmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFSelectAlignmentViewController.m; path = Pathfinder/Containers/Profile/Detail/PFSelectAlignmentViewController.m; sourceTree = "<group>"; };
 		29AF2CCA197F2C6E00981D43 /* PFReferenceClassCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFReferenceClassCell.h; path = Pathfinder/Reference/Cells/PFReferenceClassCell.h; sourceTree = "<group>"; };
 		29AF2CCB197F2C6E00981D43 /* PFReferenceClassCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFReferenceClassCell.m; path = Pathfinder/Reference/Cells/PFReferenceClassCell.m; sourceTree = "<group>"; };
+		29AFDF3D19C254FD00D59466 /* PFChooseAlignmentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFChooseAlignmentTableViewCell.h; path = Pathfinder/Creation/PFChooseAlignmentTableViewCell.h; sourceTree = "<group>"; };
+		29AFDF3E19C254FD00D59466 /* PFChooseAlignmentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFChooseAlignmentTableViewCell.m; path = Pathfinder/Creation/PFChooseAlignmentTableViewCell.m; sourceTree = "<group>"; };
 		29B6A563198F3F5E007555B0 /* PFChooseRaceTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFChooseRaceTableViewCell.h; path = Pathfinder/Creation/PFChooseRaceTableViewCell.h; sourceTree = "<group>"; };
 		29B6A564198F3F5E007555B0 /* PFChooseRaceTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFChooseRaceTableViewCell.m; path = Pathfinder/Creation/PFChooseRaceTableViewCell.m; sourceTree = "<group>"; };
 		29B7D64E15F918250039C390 /* PFPageContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFPageContentViewController.h; path = Pathfinder/PFPageContentViewController.h; sourceTree = "<group>"; };
@@ -778,10 +781,12 @@
 		29B6A562198F3F1D007555B0 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				29B6A563198F3F5E007555B0 /* PFChooseRaceTableViewCell.h */,
-				29B6A564198F3F5E007555B0 /* PFChooseRaceTableViewCell.m */,
+				29AFDF3D19C254FD00D59466 /* PFChooseAlignmentTableViewCell.h */,
+				29AFDF3E19C254FD00D59466 /* PFChooseAlignmentTableViewCell.m */,
 				2960879C19BE26B10088E99C /* PFChooseClassTableViewCell.h */,
 				2960879D19BE26B10088E99C /* PFChooseClassTableViewCell.m */,
+				29B6A563198F3F5E007555B0 /* PFChooseRaceTableViewCell.h */,
+				29B6A564198F3F5E007555B0 /* PFChooseRaceTableViewCell.m */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -1047,6 +1052,7 @@
 				293B59161950E184002564A8 /* PDFView.m in Sources */,
 				29F0660A16479BA00088BA86 /* PFDetailViewController.m in Sources */,
 				29F0660E1648F0B00088BA86 /* PFReferenceFeatCell.m in Sources */,
+				29AFDF3F19C254FD00D59466 /* PFChooseAlignmentTableViewCell.m in Sources */,
 				29A51A411650B8B800952BB2 /* PFSelectGenderViewController.m in Sources */,
 				29A51A441650B8D700952BB2 /* PFSelectSizeViewController.m in Sources */,
 				29A51A471650B8F400952BB2 /* PFSelectAlignmentViewController.m in Sources */,
