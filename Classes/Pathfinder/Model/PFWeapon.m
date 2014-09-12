@@ -35,11 +35,11 @@
 @dynamic source;
 
 //------------------------------------------------------------------------------
-#pragma mark - Creation/Inserting
+#pragma mark - Creating/Updating
 //------------------------------------------------------------------------------
 
-+ (PFWeapon *)insertedInstanceWithElement:(GDataXMLElement *)anElement
-				 inManagedObjectContext:(NSManagedObjectContext*)moc;
++ (PFWeapon *)newOrUpdatedInstanceWithElement:(GDataXMLElement *)anElement
+					   inManagedObjectContext:(NSManagedObjectContext*)moc;
 {
 	NSString *name = [[anElement attributeForName:@"name"] stringValue];
 	//LOG_DEBUG(@"name = %@", name);
@@ -47,31 +47,33 @@
 		return nil;
 	}
 	
-	PFWeapon *newInstance = (PFWeapon *)[NSEntityDescription insertNewObjectForEntityForName:@"PFWeapon"
-																  inManagedObjectContext:moc];
-	newInstance.name = name;
-	
-	newInstance.type = [[anElement attributeForName:@"type"] stringValue];
+	PFWeapon *instance = [self fetchWithName:name inContext:moc];
+	if (!instance) {
+		instance = (PFWeapon *)[NSEntityDescription insertNewObjectForEntityForName:@"PFWeapon" inManagedObjectContext:moc];
+		instance.name = name;
+	}
+
+	instance.type = [[anElement attributeForName:@"type"] stringValue];
 	
 	NSString *sourceAbbreviation = [[anElement attributeForName:@"source"] stringValue];
 	if (sourceAbbreviation) {
-		newInstance.source = [PFSource fetchWithAbbreviation:sourceAbbreviation inContext:moc];		
+		instance.source = [PFSource fetchWithAbbreviation:sourceAbbreviation inContext:moc];
 	}
 	
-	newInstance.classification = [[anElement attributeForName:@"class"] stringValue];
-	newInstance.category = [[anElement attributeForName:@"category"] stringValue];
-	//newInstance.classification = [[anElement attributeForName:@"displayName"] stringValue];
-	newInstance.type = [[anElement attributeForName:@"type"] stringValue];
-	newInstance.damageSmall = [[anElement attributeForName:@"dmgS"] stringValue];
-	newInstance.damageMedium = [[anElement attributeForName:@"dmgM"] stringValue];
-	newInstance.criticalThreat = [[anElement attributeForName:@"critThreat"] stringValue];
-	newInstance.criticalDamage = [[anElement attributeForName:@"critDmg"] stringValue];
-	newInstance.range = [[anElement attributeForName:@"range"] stringValue];
-	newInstance.cost = [[anElement attributeForName:@"cost"] stringValue];
-	newInstance.weight = [[anElement attributeForName:@"weight"] stringValue];
-	newInstance.special = [[anElement attributeForName:@"special"] stringValue];
+	instance.classification = [[anElement attributeForName:@"class"] stringValue];
+	instance.category = [[anElement attributeForName:@"category"] stringValue];
+	//instance.classification = [[anElement attributeForName:@"displayName"] stringValue];
+	instance.type = [[anElement attributeForName:@"type"] stringValue];
+	instance.damageSmall = [[anElement attributeForName:@"dmgS"] stringValue];
+	instance.damageMedium = [[anElement attributeForName:@"dmgM"] stringValue];
+	instance.criticalThreat = [[anElement attributeForName:@"critThreat"] stringValue];
+	instance.criticalDamage = [[anElement attributeForName:@"critDmg"] stringValue];
+	instance.range = [[anElement attributeForName:@"range"] stringValue];
+	instance.cost = [[anElement attributeForName:@"cost"] stringValue];
+	instance.weight = [[anElement attributeForName:@"weight"] stringValue];
+	instance.special = [[anElement attributeForName:@"special"] stringValue];
 
-	return newInstance;
+	return instance;
 }
 
 //------------------------------------------------------------------------------
@@ -80,8 +82,7 @@
 
 + (NSArray*)fetchAllInContext:(NSManagedObjectContext*)moc
 {
-	NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"PFWeapon"
-														 inManagedObjectContext:moc];
+	NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"PFWeapon" inManagedObjectContext:moc];
 	NSFetchRequest *request = [[NSFetchRequest alloc] init];
 	[request setEntity:entityDescription];
 	
@@ -92,7 +93,7 @@
 	NSError *error = nil;
 	NSArray *array = [moc executeFetchRequest:request error:&error];
 	if (!array) {
-		LOG_DEBUG(@"Error fetching skill!");
+		LOG_DEBUG(@"Error fetching weapons!");
 	}
 	
 	return array;
@@ -100,8 +101,7 @@
 
 + (PFFeat*)fetchWithName:(NSString *)aName inContext:(NSManagedObjectContext*)moc;
 {
-	NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"PFWeapon"
-														 inManagedObjectContext:moc];
+	NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"PFWeapon" inManagedObjectContext:moc];
 	NSFetchRequest *request = [[NSFetchRequest alloc] init];
 	[request setEntity:entityDescription];
 	

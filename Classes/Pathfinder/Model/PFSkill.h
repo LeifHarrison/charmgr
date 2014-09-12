@@ -28,11 +28,11 @@
 @property (nonatomic, retain) NSSet *characterSkills;
 @property (nonatomic, retain) NSSet *classTypes;
 
-+ (PFSkill *)insertedInstanceWithElement:(GDataXMLElement *)anElement
-				  inManagedObjectContext:(NSManagedObjectContext*)moc;
++ (PFSkill *)newOrUpdatedInstanceWithElement:(GDataXMLElement *)anElement
+					  inManagedObjectContext:(NSManagedObjectContext*)moc;
 
-+ (NSArray*)fetchAllSkillsInContext:(NSManagedObjectContext*)moc;
-+ (PFSkill*)fetchSkillWithName:(NSString *)aName inContext:(NSManagedObjectContext*)moc;
++ (NSArray*)fetchAllInContext:(NSManagedObjectContext*)moc;
++ (PFSkill*)fetchWithName:(NSString *)aName inContext:(NSManagedObjectContext*)moc;
 
 @end
 

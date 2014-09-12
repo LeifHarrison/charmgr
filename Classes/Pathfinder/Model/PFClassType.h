@@ -33,8 +33,11 @@
 @property (nonatomic) NSSet *features;
 @property (nonatomic) NSSet *classSkills;
 
-+ (PFClassType *)insertedInstanceWithElement:(GDataXMLElement *)anElement
-					  inManagedObjectContext:(NSManagedObjectContext*)moc;
++ (PFClassType *)newOrUpdatedInstanceWithElement:(GDataXMLElement *)anElement
+						  inManagedObjectContext:(NSManagedObjectContext*)moc;
+
++ (NSArray*)fetchAllInContext:(NSManagedObjectContext*)moc;
++ (PFClassType *)fetchWithName:(NSString *)aName inContext:(NSManagedObjectContext*)moc;
 
 - (NSString*)hitDieTypeDescription;
 

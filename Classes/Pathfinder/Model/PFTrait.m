@@ -28,41 +28,41 @@
 @dynamic race;
 
 //------------------------------------------------------------------------------
-#pragma mark - Creation/Inserting
+#pragma mark - Creating/Updating
 //------------------------------------------------------------------------------
 
-+ (PFTrait *)insertedInstanceWithElement:(GDataXMLElement *)anElement
-				  inManagedObjectContext:(NSManagedObjectContext*)moc;
++ (PFTrait *)newOrUpdatedInstanceWithElement:(GDataXMLElement *)anElement
+					  inManagedObjectContext:(NSManagedObjectContext*)moc;
 {
 	NSString *name = [[anElement attributeForName:@"name"] stringValue];
 	//LOG_DEBUG(@"name = %@", name);
-	if (!name) {
-		return nil;
+	if (!name) return nil;
+
+	PFTrait *instance = [self fetchWithName:name inContext:moc];
+	if (!instance) {
+		instance = (PFTrait *)[NSEntityDescription insertNewObjectForEntityForName:@"PFTrait" inManagedObjectContext:moc];
+		instance.name = name;
 	}
-	
-	PFTrait *newInstance = (PFTrait *)[NSEntityDescription insertNewObjectForEntityForName:@"PFTrait"
-																	inManagedObjectContext:moc];
-	newInstance.name = name;
-	
-	newInstance.displayName = [[anElement attributeForName:@"displayName"] stringValue];
-	//newInstance.source = [[anElement attributeForName:@"source"] stringValue];
+
+	instance.displayName = [[anElement attributeForName:@"displayName"] stringValue];
+	//instance.source = [[anElement attributeForName:@"source"] stringValue];
 	
 	NSArray *elements = nil;
 	
 	elements = [anElement elementsForName:@"ShortDescription"];
 	if (elements.count > 0) {
 		GDataXMLElement *firstElement = (GDataXMLElement *) [elements objectAtIndex:0];
-		newInstance.descriptionShort = firstElement.stringValue;
+		instance.descriptionShort = firstElement.stringValue;
 	};
 	
-	return newInstance;
+	return instance;
 }
 
 //------------------------------------------------------------------------------
 #pragma mark - Fetching
 //------------------------------------------------------------------------------
 
-+ (PFTrait*)fetchTraitWithName:(NSString *)aName inContext:(NSManagedObjectContext*)moc;
++ (PFTrait*)fetchWithName:(NSString *)aName inContext:(NSManagedObjectContext*)moc;
 {
 	NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"PFTrait"
 														 inManagedObjectContext:moc];
@@ -75,7 +75,7 @@
 	NSError *error = nil;
 	NSArray *array = [moc executeFetchRequest:request error:&error];
 	if (!array) {
-		LOG_DEBUG(@"Error fetching skill with name '%@'!", aName);
+		LOG_DEBUG(@"Error fetching trait with name '%@'!", aName);
 	}
 	
 	if (array.count > 0)

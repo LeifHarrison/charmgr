@@ -49,8 +49,9 @@
 #pragma mark - Creation/Inserting
 //------------------------------------------------------------------------------
 
-+ (PFClassFeature *)insertedInstanceWithElement:(GDataXMLElement *)anElement
-						 inManagedObjectContext:(NSManagedObjectContext*)moc;
++ (PFClassFeature *)newOrUpdatedInstanceForClassType:(PFClassType*)classType
+										 withElement:(GDataXMLElement *)anElement
+							 inManagedObjectContext:(NSManagedObjectContext*)moc;
 {
 	NSString *name = [[anElement attributeForName:@"name"] stringValue];
 	//LOG_DEBUG(@"name = %@", name);
@@ -58,23 +59,51 @@
 		return nil;
 	}
 	
-	PFClassFeature *newInstance = (PFClassFeature *)[NSEntityDescription insertNewObjectForEntityForName:@"PFClassFeature"
-																				inManagedObjectContext:moc];
-	newInstance.name = name;
-	newInstance.level = [[[anElement attributeForName:@"level"] stringValue] intValue];
+	PFClassFeature *instance = [self fetchWithClassType:classType name:name inContext:moc];
+	if (!instance) {
+		instance = (PFClassFeature *)[NSEntityDescription insertNewObjectForEntityForName:@"PFClassFeature" inManagedObjectContext:moc];
+		instance.name = name;
+	}
+
+	instance.level = [[[anElement attributeForName:@"level"] stringValue] intValue];
 	
 	NSString *typeString = [[anElement attributeForName:@"type"] stringValue];
-	newInstance.type = PFSpecialAbilityTypeFromString(typeString);
+	instance.type = PFSpecialAbilityTypeFromString(typeString);
 	
 	NSArray *elements = nil;
 	
 	elements = [anElement elementsForName:@"Benefit"];
 	if (elements.count > 0) {
 		GDataXMLElement *firstElement = (GDataXMLElement *) [elements objectAtIndex:0];
-		newInstance.benefit = firstElement.stringValue;
+		instance.benefit = firstElement.stringValue;
 	};
 	
-	return newInstance;
+	return instance;
+}
+
+//------------------------------------------------------------------------------
+#pragma mark - Fetching
+//------------------------------------------------------------------------------
+
++ (PFClassFeature *)fetchWithClassType:(PFClassType*)classType name:(NSString *)aName inContext:(NSManagedObjectContext*)moc;
+{
+	NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"PFClassFeature" inManagedObjectContext:moc];
+	NSFetchRequest *request = [[NSFetchRequest alloc] init];
+	[request setEntity:entityDescription];
+
+	NSPredicate *predicate = [NSPredicate predicateWithFormat: @"(classType == %@) AND (name like[cd] %@)", classType, aName];
+	[request setPredicate:predicate];
+
+	NSError *error = nil;
+	NSArray *array = [moc executeFetchRequest:request error:&error];
+	if (!array) {
+		LOG_DEBUG(@"Error fetching class feature with class type %@ and name '%@'!", classType.name, aName);
+	}
+
+	if (array.count > 0)
+		return [array objectAtIndex:0];
+
+	return nil;
 }
 
 @end

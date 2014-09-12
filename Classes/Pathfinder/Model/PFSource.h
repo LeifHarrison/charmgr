@@ -23,8 +23,8 @@
 @property (nonatomic, retain) NSSet *feats;
 @property (nonatomic, retain) NSSet *traits;
 
-+ (PFSource *)insertedInstanceWithElement:(GDataXMLElement *)anElement
-				   inManagedObjectContext:(NSManagedObjectContext*)moc;
++ (PFSource *)newOrUpdatedInstanceWithElement:(GDataXMLElement *)anElement
+					   inManagedObjectContext:(NSManagedObjectContext*)moc;
 
 + (NSArray*)fetchAllInContext:(NSManagedObjectContext*)moc;
 + (PFSource*)fetchWithAbbreviation:(NSString *)aName inContext:(NSManagedObjectContext*)moc;

@@ -44,83 +44,84 @@
 @dynamic traits;
 
 //------------------------------------------------------------------------------
-#pragma mark - Creation
+#pragma mark - Creating/Updating
 //------------------------------------------------------------------------------
 
-+ (PFRace *)insertedInstanceWithElement:(GDataXMLElement *)anElement
-				 inManagedObjectContext:(NSManagedObjectContext*)moc;
++ (PFRace *)newOrUpdatedInstanceWithElement:(GDataXMLElement *)anElement
+					 inManagedObjectContext:(NSManagedObjectContext*)moc;
 {
 	NSString *name = [[anElement attributeForName:@"name"] stringValue];
 	//LOG_DEBUG(@"name = %@", name);
-	if (!name) {
-		return nil;
-	}
-	
-	PFRace *newInstance = (PFRace *)[NSEntityDescription insertNewObjectForEntityForName:@"PFRace" inManagedObjectContext:moc];
-	newInstance.name = name;
-	
-	NSString *sourceAbbreviation = [[anElement attributeForName:@"source"] stringValue];
-	newInstance.source = [PFSource fetchWithAbbreviation:sourceAbbreviation inContext:moc];
+	if (!name) return nil;
 
-	newInstance.size = PFSizeTypeFromString([[anElement attributeForName:@"size"] stringValue]);
-	newInstance.type = [[anElement attributeForName:@"type"] stringValue];
-	newInstance.subtype = [[anElement attributeForName:@"subtype"] stringValue];
-	newInstance.speed = [[[anElement attributeForName:@"speed"] stringValue] intValue];
+	PFRace *instance = [self fetchWithName:name inContext:moc];
+	if (!instance) {
+		instance = (PFRace *)[NSEntityDescription insertNewObjectForEntityForName:@"PFRace" inManagedObjectContext:moc];
+		instance.name = name;
+	}
+
+	NSString *sourceAbbreviation = [[anElement attributeForName:@"source"] stringValue];
+	instance.source = [PFSource fetchWithAbbreviation:sourceAbbreviation inContext:moc];
+
+	instance.size = PFSizeTypeFromString([[anElement attributeForName:@"size"] stringValue]);
+	instance.type = [[anElement attributeForName:@"type"] stringValue];
+	instance.subtype = [[anElement attributeForName:@"subtype"] stringValue];
+	instance.speed = [[[anElement attributeForName:@"speed"] stringValue] intValue];
 
 	NSArray *elements = nil;
 	
 	elements = [anElement elementsForName:@"ShortDescription"];
 	if (elements.count > 0) {
 		GDataXMLElement *firstElement = (GDataXMLElement *) [elements objectAtIndex:0];
-		newInstance.descriptionShort = firstElement.stringValue;
+		instance.descriptionShort = firstElement.stringValue;
 	};
 	
 	elements = [anElement elementsForName:@"LongDescription"];
 	if (elements.count > 0) {
 		GDataXMLElement *firstElement = (GDataXMLElement *) [elements objectAtIndex:0];
-		newInstance.descriptionLong = firstElement.stringValue;
+		instance.descriptionLong = firstElement.stringValue;
 	};
 	
 	elements = [anElement elementsForName:@"PhysicalDescription"];
 	if (elements.count > 0) {
 		GDataXMLElement *firstElement = (GDataXMLElement *) [elements objectAtIndex:0];
-		newInstance.physicalDescription = firstElement.stringValue;
+		instance.physicalDescription = firstElement.stringValue;
 	};
 	
 	elements = [anElement elementsForName:@"Society"];
 	if (elements.count > 0) {
 		GDataXMLElement *firstElement = (GDataXMLElement *) [elements objectAtIndex:0];
-		newInstance.society = firstElement.stringValue;
+		instance.society = firstElement.stringValue;
 	};
 	
 	elements = [anElement elementsForName:@"Relations"];
 	if (elements.count > 0) {
 		GDataXMLElement *firstElement = (GDataXMLElement *) [elements objectAtIndex:0];
-		newInstance.relations = firstElement.stringValue;
+		instance.relations = firstElement.stringValue;
 	};
 	
 	elements = [anElement elementsForName:@"AlignmentAndReligion"];
 	if (elements.count > 0) {
 		GDataXMLElement *firstElement = (GDataXMLElement *) [elements objectAtIndex:0];
-		newInstance.alignmentAndReligion = firstElement.stringValue;
+		instance.alignmentAndReligion = firstElement.stringValue;
 	};
 	
 	elements = [anElement elementsForName:@"Adventurers"];
 	if (elements.count > 0) {
 		GDataXMLElement *firstElement = (GDataXMLElement *) [elements objectAtIndex:0];
-		newInstance.adventurers = firstElement.stringValue;
+		instance.adventurers = firstElement.stringValue;
 	};
 	
 	elements = [anElement elementsForName:@"FemaleNames"];
 	if (elements.count > 0) {
 		GDataXMLElement *firstElement = (GDataXMLElement *) [elements objectAtIndex:0];
-		newInstance.namesFemale = firstElement.stringValue;
+		instance.namesFemale = firstElement.stringValue;
 	};
 	
 	elements = [anElement elementsForName:@"MaleNames"];
 	if (elements.count > 0) {
 		GDataXMLElement *firstElement = (GDataXMLElement *) [elements objectAtIndex:0];
-		newInstance.namesMale = firstElement.stringValue;
+		instance.namesMale = firstElement.stringValue;
 	};
 	
 	GDataXMLElement *traitsArrayElement = nil;
@@ -135,13 +136,57 @@
 				//NSString *traitName = [[anElement attributeForName:@"name"] stringValue];
 				
 				PFRacialTrait *aTrait = [PFRacialTrait insertedInstanceWithElement:traitElement inManagedObjectContext:moc];
-				aTrait.race = newInstance;
+				aTrait.race = instance;
 			}
 		};
 	}
 		
-	//LOG_DEBUG(@"newInstance = %@", newInstance);
-	return newInstance;
+	//LOG_DEBUG(@"instance = %@", instance);
+	return instance;
+}
+
+//------------------------------------------------------------------------------
+#pragma mark - Fetching
+//------------------------------------------------------------------------------
+
++ (NSArray*)fetchAllInContext:(NSManagedObjectContext*)moc
+{
+	NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"PFRace" inManagedObjectContext:moc];
+	NSFetchRequest *request = [[NSFetchRequest alloc] init];
+	[request setEntity:entityDescription];
+
+	// Set sort orderings...
+	NSSortDescriptor *typeSortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES];
+	request.sortDescriptors = [NSArray arrayWithObject:typeSortDescriptor];
+
+	NSError *error = nil;
+	NSArray *array = [moc executeFetchRequest:request error:&error];
+	if (!array) {
+		LOG_DEBUG(@"Error fetching races!");
+	}
+
+	return array;
+}
+
++ (PFRace*)fetchWithName:(NSString *)aName inContext:(NSManagedObjectContext*)moc;
+{
+	NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"PFRace" inManagedObjectContext:moc];
+	NSFetchRequest *request = [[NSFetchRequest alloc] init];
+	[request setEntity:entityDescription];
+
+	NSPredicate *predicate = [NSPredicate predicateWithFormat: @"name like[cd] %@", aName];
+	[request setPredicate:predicate];
+
+	NSError *error = nil;
+	NSArray *array = [moc executeFetchRequest:request error:&error];
+	if (!array) {
+		LOG_DEBUG(@"Error fetching race with name '%@'!", aName);
+	}
+
+	if (array.count > 0)
+		return [array objectAtIndex:0];
+
+	return nil;
 }
 
 //------------------------------------------------------------------------------

@@ -26,10 +26,13 @@
 
 @property (nonatomic, retain) NSSet *characterAbilities;
 
-+ (PFAbility *)insertedInstanceWithElement:(GDataXMLElement *)anElement
-					inManagedObjectContext:(NSManagedObjectContext*)moc;
++ (PFAbility *)newOrUpdatedInstanceWithElement:(GDataXMLElement *)anElement
+						inManagedObjectContext:(NSManagedObjectContext*)moc;
 
-+ (NSArray*)fetchAllAbilitiesInContext:(NSManagedObjectContext*)moc;
++ (NSArray*)fetchAllInContext:(NSManagedObjectContext*)moc;
+
++ (PFAbility *)fetchWithName:(NSString *)aName inContext:(NSManagedObjectContext*)moc;
++ (PFAbility *)fetchWithAbbreviation:(NSString *)anAbbreviation inContext:(NSManagedObjectContext*)moc;
 
 @end
 

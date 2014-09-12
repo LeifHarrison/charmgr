@@ -12,21 +12,31 @@
 
 @implementation PFAlignment
 
+//------------------------------------------------------------------------------
+#pragma mark - Properties
+//------------------------------------------------------------------------------
+
+// Attributes
+
 @dynamic alignmentType;
 @dynamic name;
 @dynamic abbreviation;
 @dynamic descriptionShort;
 
+// Relationships
+
 @dynamic characters;
+
+//------------------------------------------------------------------------------
+#pragma mark - Creating/Updating
+//------------------------------------------------------------------------------
 
 + (PFAlignment *)newOrUpdatedInstanceWithElement:(GDataXMLElement *)anElement
 					inManagedObjectContext:(NSManagedObjectContext*)moc;
 {
 	NSString *name = [[anElement attributeForName:@"name"] stringValue];
 	//LOG_DEBUG(@"name = %@", name);
-	if (!name) {
-		return nil;
-	}
+	if (!name) return nil;
 
 	PFAlignment *instance = [self fetchWithName:name inContext:moc];
 	if (!instance) {
@@ -54,6 +64,10 @@
 	return instance;
 }
 
+//------------------------------------------------------------------------------
+#pragma mark - Fetching
+//------------------------------------------------------------------------------
+
 + (NSArray*)fetchAllInContext:(NSManagedObjectContext*)moc
 {
 	NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"PFAlignment"
@@ -68,7 +82,7 @@
 	NSError *error = nil;
 	NSArray *array = [moc executeFetchRequest:request error:&error];
 	if (!array) {
-		LOG_DEBUG(@"Error fetching abilities!");
+		LOG_DEBUG(@"Error fetching alignments!");
 	}
 	
 	return array;
@@ -86,7 +100,7 @@
 	NSError *error = nil;
 	NSArray *array = [moc executeFetchRequest:request error:&error];
 	if (!array) {
-		LOG_DEBUG(@"Error fetching skill with name '%@'!", aName);
+		LOG_DEBUG(@"Error fetching alignment with name '%@'!", aName);
 	}
 
 	if (array.count > 0)

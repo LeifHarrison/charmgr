@@ -34,8 +34,8 @@
 @property (nonatomic, retain) NSSet *characters;
 
 
-+ (PFWeapon *)insertedInstanceWithElement:(GDataXMLElement *)anElement
-				 inManagedObjectContext:(NSManagedObjectContext*)moc;
++ (PFWeapon *)newOrUpdatedInstanceWithElement:(GDataXMLElement *)anElement
+					   inManagedObjectContext:(NSManagedObjectContext*)moc;
 
 + (NSArray*)fetchAllInContext:(NSManagedObjectContext*)moc;
 + (PFWeapon*)fetchWithName:(NSString *)aName inContext:(NSManagedObjectContext*)moc;

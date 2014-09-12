@@ -38,8 +38,11 @@
 @property (nonatomic, retain) NSSet *characters;
 @property (nonatomic, retain) NSSet *traits;
 
-+ (PFRace *)insertedInstanceWithElement:(GDataXMLElement *)anElement
-				 inManagedObjectContext:(NSManagedObjectContext*)moc;
++ (PFRace *)newOrUpdatedInstanceWithElement:(GDataXMLElement *)anElement
+					 inManagedObjectContext:(NSManagedObjectContext*)moc;
+
++ (NSArray*)fetchAllInContext:(NSManagedObjectContext*)moc;
++ (PFRace*)fetchWithName:(NSString *)aName inContext:(NSManagedObjectContext*)moc;
 
 - (NSArray *)sortedTraits;
 

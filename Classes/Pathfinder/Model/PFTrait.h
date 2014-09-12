@@ -30,11 +30,11 @@
 
 // Creation
 
-+ (PFTrait *)insertedInstanceWithElement:(GDataXMLElement *)anElement
-				  inManagedObjectContext:(NSManagedObjectContext*)moc;
++ (PFTrait *)newOrUpdatedInstanceWithElement:(GDataXMLElement *)anElement
+					  inManagedObjectContext:(NSManagedObjectContext*)moc;
 
 // Fetching
 
-+ (PFTrait*)fetchTraitWithName:(NSString *)aName inContext:(NSManagedObjectContext*)moc;
++ (PFTrait*)fetchWithName:(NSString *)aName inContext:(NSManagedObjectContext*)moc;
 
 @end

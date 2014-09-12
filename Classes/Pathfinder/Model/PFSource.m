@@ -32,23 +32,24 @@
 #pragma mark - Creation/Inserting
 //------------------------------------------------------------------------------
 
-+ (PFSource *)insertedInstanceWithElement:(GDataXMLElement *)anElement
-				  inManagedObjectContext:(NSManagedObjectContext*)moc;
++ (PFSource *)newOrUpdatedInstanceWithElement:(GDataXMLElement *)anElement
+					   inManagedObjectContext:(NSManagedObjectContext*)moc;
 {
 	NSString *name = [[anElement attributeForName:@"name"] stringValue];
 	//LOG_DEBUG(@"name = %@", name);
-	if (!name) {
-		return nil;
+
+	if (!name) return nil;
+	
+	PFSource *instance = [self fetchWithName:name inContext:moc];
+	if (!instance) {
+		instance = (PFSource *)[NSEntityDescription insertNewObjectForEntityForName:@"PFSource" inManagedObjectContext:moc];
+		instance.name = name;
 	}
+
+	instance.abbreviation = [[anElement attributeForName:@"abbreviation"] stringValue];
+	instance.index = [[[anElement attributeForName:@"index"] stringValue] intValue];
 	
-	PFSource *newInstance = (PFSource *)[NSEntityDescription insertNewObjectForEntityForName:@"PFSource"
-																	  inManagedObjectContext:moc];
-	newInstance.name = name;
-	
-	newInstance.abbreviation = [[anElement attributeForName:@"abbreviation"] stringValue];
-	newInstance.index = [[[anElement attributeForName:@"index"] stringValue] intValue];
-	
-	return newInstance;
+	return instance;
 }
 
 
@@ -58,8 +59,7 @@
 
 + (NSArray*)fetchAllInContext:(NSManagedObjectContext*)moc;
 {
-	NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"PFSource"
-														 inManagedObjectContext:moc];
+	NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"PFSource" inManagedObjectContext:moc];
 	NSFetchRequest *request = [[NSFetchRequest alloc] init];
 	[request setEntity:entityDescription];
 	
@@ -76,20 +76,40 @@
 	return array;
 }
 
-+ (PFSource*)fetchWithAbbreviation:(NSString *)aName inContext:(NSManagedObjectContext*)moc;
++ (PFSource*)fetchWithName:(NSString *)aName inContext:(NSManagedObjectContext*)moc;
 {
-	NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"PFSource"
-														 inManagedObjectContext:moc];
+	NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"PFSource" inManagedObjectContext:moc];
+	NSFetchRequest *request = [[NSFetchRequest alloc] init];
+	[request setEntity:entityDescription];
+
+	NSPredicate *predicate = [NSPredicate predicateWithFormat: @"name like[cd] %@", aName];
+	[request setPredicate:predicate];
+
+	NSError *error = nil;
+	NSArray *array = [moc executeFetchRequest:request error:&error];
+	if (!array) {
+		LOG_DEBUG(@"Error fetching source with name '%@'!", aName);
+	}
+
+	if (array.count > 0)
+		return [array objectAtIndex:0];
+
+	return nil;
+}
+
++ (PFSource*)fetchWithAbbreviation:(NSString *)anAbbreviation inContext:(NSManagedObjectContext*)moc;
+{
+	NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"PFSource" inManagedObjectContext:moc];
 	NSFetchRequest *request = [[NSFetchRequest alloc] init];
 	[request setEntity:entityDescription];
 	
-	NSPredicate *predicate = [NSPredicate predicateWithFormat: @"abbreviation like[cd] %@", aName];
+	NSPredicate *predicate = [NSPredicate predicateWithFormat: @"abbreviation like[cd] %@", anAbbreviation];
 	[request setPredicate:predicate];
 	
 	NSError *error = nil;
 	NSArray *array = [moc executeFetchRequest:request error:&error];
 	if (!array) {
-		LOG_DEBUG(@"Error fetching skill with name '%@'!", aName);
+		LOG_DEBUG(@"Error fetching source with abbreviation '%@'!", anAbbreviation);
 	}
 	
 	if (array.count > 0)

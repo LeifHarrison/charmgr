@@ -49,7 +49,7 @@
 		NSDictionary *importDates = [defaults valueForKey:kPFImportDatesDefaultsKey];
 		NSString *key = [NSString stringWithFormat:@"%@/%@", source.abbreviation, type];
 		NSDate *lastImportDate = [importDates valueForKey:key];
-		//LOG_DEBUG(@"modificationDate = %@, lastImportDate = %@", modificationDate, lastImportDate);
+		LOG_DEBUG(@"modificationDate = %@, lastImportDate = %@", modificationDate, lastImportDate);
 		if (!lastImportDate || ([lastImportDate compare:modificationDate] == NSOrderedAscending))
 		{
 			NSData *xmlData = [[NSMutableData alloc] initWithContentsOfFile:filePath];
@@ -76,7 +76,7 @@
 	NSArray *elements = [doc.rootElement elementsForName:@"Source"];
 	NSMutableArray *sources = [NSMutableArray arrayWithCapacity:elements.count];
 	for (GDataXMLElement *anElement in elements) {
-		PFSource *newInstance = [PFSource insertedInstanceWithElement:anElement inManagedObjectContext:moc];
+		PFSource *newInstance = [PFSource newOrUpdatedInstanceWithElement:anElement inManagedObjectContext:moc];
 		//LOG_DEBUG(@"  newInstance = %@", newInstance.name);
 		if (newInstance) [sources addObject:newInstance];
 	}
@@ -96,7 +96,7 @@
 
 	NSArray *elements = [doc.rootElement elementsForName:@"Ability"];
 	for (GDataXMLElement *anElement in elements) {
-		PFAbility *newInstance = [PFAbility insertedInstanceWithElement:anElement inManagedObjectContext:moc];
+		PFAbility *newInstance = [PFAbility newOrUpdatedInstanceWithElement:anElement inManagedObjectContext:moc];
 		//LOG_DEBUG(@"newInstance = %@", newInstance.name);
 		if (newInstance) importCount++;
 	}
@@ -136,7 +136,7 @@
 
 	NSArray *elements = [doc.rootElement elementsForName:@"Skill"];
 	for (GDataXMLElement *anElement in elements) {
-		PFSkill *newInstance = [PFSkill insertedInstanceWithElement:anElement inManagedObjectContext:moc];
+		PFSkill *newInstance = [PFSkill newOrUpdatedInstanceWithElement:anElement inManagedObjectContext:moc];
 		//LOG_DEBUG(@"newInstance = %@", newInstance.name);
 		if (newInstance) importCount++;
 	}
@@ -155,7 +155,7 @@
 
 	NSArray *elements = [doc.rootElement elementsForName:@"Class"];
 	for (GDataXMLElement *anElement in elements) {
-		PFClassType *newInstance = [PFClassType insertedInstanceWithElement:anElement inManagedObjectContext:moc];
+		PFClassType *newInstance = [PFClassType newOrUpdatedInstanceWithElement:anElement inManagedObjectContext:moc];
 		//LOG_DEBUG(@"newInstance = %@", newInstance.name);
 		if (newInstance) importCount++;
 	}
@@ -181,7 +181,7 @@
 
 	NSArray *elements = [doc.rootElement elementsForName:@"Race"];
 	for (GDataXMLElement *anElement in elements) {
-		PFRace *newInstance = [PFRace insertedInstanceWithElement:anElement inManagedObjectContext:moc];
+		PFRace *newInstance = [PFRace newOrUpdatedInstanceWithElement:anElement inManagedObjectContext:moc];
 		//LOG_DEBUG(@"newInstance = %@", newInstance.name);
 		if (newInstance) importCount++;
 	}
@@ -200,7 +200,7 @@
 	
 	NSArray *elements = [doc.rootElement elementsForName:@"Feat"];
 	for (GDataXMLElement *anElement in elements) {
-		PFFeat *newInstance = [PFFeat insertedInstanceWithElement:anElement inManagedObjectContext:moc];
+		PFFeat *newInstance = [PFFeat newOrUpdatedInstanceWithElement:anElement inManagedObjectContext:moc];
 		//LOG_DEBUG(@"newInstance = %@", newInstance.name);
 		if (newInstance) importCount++;
 	}
@@ -226,7 +226,7 @@
 	
 	NSArray *elements = [doc.rootElement elementsForName:@"Weapon"];
 	for (GDataXMLElement *anElement in elements) {
-		PFWeapon *newInstance = [PFWeapon insertedInstanceWithElement:anElement inManagedObjectContext:moc];
+		PFWeapon *newInstance = [PFWeapon newOrUpdatedInstanceWithElement:anElement inManagedObjectContext:moc];
 		//LOG_DEBUG(@"newInstance = %@", newInstance.name);
 		if (newInstance) importCount++;
 	}

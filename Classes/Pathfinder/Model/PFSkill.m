@@ -29,40 +29,40 @@
 
 
 //------------------------------------------------------------------------------
-#pragma mark - Creation/Inserting
+#pragma mark - Creating/Updating
 //------------------------------------------------------------------------------
 
-+ (PFSkill *)insertedInstanceWithElement:(GDataXMLElement *)anElement
-				  inManagedObjectContext:(NSManagedObjectContext*)moc;
++ (PFSkill *)newOrUpdatedInstanceWithElement:(GDataXMLElement *)anElement
+					  inManagedObjectContext:(NSManagedObjectContext*)moc;
 {
 	NSString *name = [[anElement attributeForName:@"name"] stringValue];
 	//LOG_DEBUG(@"name = %@", name);
-	if (!name) {
-		return nil;
+	if (!name) return nil;
+
+	PFSkill *instance = [self fetchWithName:name inContext:moc];
+	if (!instance) {
+		instance = (PFSkill *)[NSEntityDescription insertNewObjectForEntityForName:@"PFSkill" inManagedObjectContext:moc];
+		instance.name = name;
 	}
 	
-	PFSkill *newInstance = (PFSkill *)[NSEntityDescription insertNewObjectForEntityForName:@"PFSkill"
-																	inManagedObjectContext:moc];
-	newInstance.name = name;
-	
-	newInstance.keyAbility = [[[anElement attributeForName:@"keyAbility"] stringValue] uppercaseString];
+	instance.keyAbility = [[[anElement attributeForName:@"keyAbility"] stringValue] uppercaseString];
 	
 	NSString *stringValue = [[anElement attributeForName:@"untrained"] stringValue];
-	newInstance.untrained = [[stringValue lowercaseString] isEqualToString:@"yes"] ? YES : NO;
+	instance.untrained = [[stringValue lowercaseString] isEqualToString:@"yes"] ? YES : NO;
 	stringValue = [[anElement attributeForName:@"armorCheckPenalty"] stringValue];
-	newInstance.armorCheckPenalty = [[stringValue lowercaseString] isEqualToString:@"yes"] ? YES : NO;
+	instance.armorCheckPenalty = [[stringValue lowercaseString] isEqualToString:@"yes"] ? YES : NO;
 	stringValue = [[anElement attributeForName:@"requiresDetail"] stringValue];
-	newInstance.requiresDetail = [[stringValue lowercaseString] isEqualToString:@"yes"] ? YES : NO;
+	instance.requiresDetail = [[stringValue lowercaseString] isEqualToString:@"yes"] ? YES : NO;
 	
 	NSArray *elements = nil;
 	
 	elements = [anElement elementsForName:@"ShortDescription"];
 	if (elements.count > 0) {
 		GDataXMLElement *firstElement = (GDataXMLElement *) [elements objectAtIndex:0];
-		newInstance.descriptionShort = firstElement.stringValue;
+		instance.descriptionShort = firstElement.stringValue;
 	};
 
-	return newInstance;
+	return instance;
 }
 
 
@@ -70,7 +70,7 @@
 #pragma mark - Fetching
 //------------------------------------------------------------------------------
 
-+ (NSArray*)fetchAllSkillsInContext:(NSManagedObjectContext*)moc
++ (NSArray*)fetchAllInContext:(NSManagedObjectContext*)moc
 {
 	NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"PFSkill"
 														 inManagedObjectContext:moc];
@@ -84,13 +84,13 @@
 	NSError *error = nil;
 	NSArray *array = [moc executeFetchRequest:request error:&error];
 	if (!array) {
-		LOG_DEBUG(@"Error fetching skill!");
+		LOG_DEBUG(@"Error fetching skills!");
 	}
 	
 	return array;
 }
 
-+ (PFSkill*)fetchSkillWithName:(NSString *)aName inContext:(NSManagedObjectContext*)moc;
++ (PFSkill*)fetchWithName:(NSString *)aName inContext:(NSManagedObjectContext*)moc;
 {
 	NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"PFSkill"
 														 inManagedObjectContext:moc];

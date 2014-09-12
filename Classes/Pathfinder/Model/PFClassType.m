@@ -21,6 +21,8 @@
 #pragma mark - Properties
 //------------------------------------------------------------------------------
 
+// Attributes
+
 @dynamic name;
 @dynamic source;
 @dynamic descriptionShort;
@@ -31,49 +33,43 @@
 @dynamic reflexSaveBonusType;
 @dynamic willSaveBonusType;
 
+// Relationships
+
 @dynamic characterClasses;
 @dynamic classSkills;
 @dynamic features;
 
 //------------------------------------------------------------------------------
-#pragma mark - General
+#pragma mark - Creating/Updating
 //------------------------------------------------------------------------------
 
-- (NSString*)hitDieTypeDescription;
-{
-	return [NSString stringWithFormat:@"d%d", self.hitDieType];
-}
-
-//------------------------------------------------------------------------------
-#pragma mark - Creation
-//------------------------------------------------------------------------------
-
-+ (PFClassType *)insertedInstanceWithElement:(GDataXMLElement *)anElement
-					  inManagedObjectContext:(NSManagedObjectContext*)moc;
++ (PFClassType *)newOrUpdatedInstanceWithElement:(GDataXMLElement *)anElement
+						  inManagedObjectContext:(NSManagedObjectContext*)moc;
 {
 	NSString *name = [[anElement attributeForName:@"name"] stringValue];
 	//LOG_DEBUG(@"name = %@", name);
-	if (!name) {
-		return nil;
+	if (!name) return nil;
+
+	PFClassType *instance = [self fetchWithName:name inContext:moc];
+	if (!instance) {
+		instance = (PFClassType *)[NSEntityDescription insertNewObjectForEntityForName:@"PFClassType" inManagedObjectContext:moc];
+		instance.name = name;
 	}
-	
-	PFClassType *newInstance = (PFClassType *)[NSEntityDescription insertNewObjectForEntityForName:@"PFClassType" inManagedObjectContext:moc];
-	newInstance.name = name;
-	
-	newInstance.hitDieType = [[[anElement attributeForName:@"hitDieType"] stringValue] intValue];
-	newInstance.skillRanksPerLevel = [[[anElement attributeForName:@"skillRanksPerLevel"] stringValue] intValue];
-	newInstance.baseAttackBonusType = [[[anElement attributeForName:@"baseAttackBonusType"] stringValue] intValue];
-	newInstance.fortitudeSaveBonusType = [[[anElement attributeForName:@"fortitudeSaveBonusType"] stringValue] intValue];
-	newInstance.reflexSaveBonusType = [[[anElement attributeForName:@"reflexSaveBonusType"] stringValue] intValue];
-	newInstance.willSaveBonusType = [[[anElement attributeForName:@"willSaveBonusType"] stringValue] intValue];
+
+	instance.hitDieType = [[[anElement attributeForName:@"hitDieType"] stringValue] intValue];
+	instance.skillRanksPerLevel = [[[anElement attributeForName:@"skillRanksPerLevel"] stringValue] intValue];
+	instance.baseAttackBonusType = [[[anElement attributeForName:@"baseAttackBonusType"] stringValue] intValue];
+	instance.fortitudeSaveBonusType = [[[anElement attributeForName:@"fortitudeSaveBonusType"] stringValue] intValue];
+	instance.reflexSaveBonusType = [[[anElement attributeForName:@"reflexSaveBonusType"] stringValue] intValue];
+	instance.willSaveBonusType = [[[anElement attributeForName:@"willSaveBonusType"] stringValue] intValue];
 
 	NSString *sourceAbbreviation = [[anElement attributeForName:@"source"] stringValue];
-	newInstance.source = [PFSource fetchWithAbbreviation:sourceAbbreviation inContext:moc];
+	instance.source = [PFSource fetchWithAbbreviation:sourceAbbreviation inContext:moc];
 
 	NSArray *elements = [anElement elementsForName:@"ShortDescription"];
 	if (elements.count > 0) {
 		GDataXMLElement *firstElement = (GDataXMLElement *) [elements objectAtIndex:0];
-		newInstance.descriptionShort = firstElement.stringValue;
+		instance.descriptionShort = firstElement.stringValue;
 	};
 	
 	elements = [anElement elementsForName:@"ClassSkills"];
@@ -82,8 +78,8 @@
 		
 		NSArray *skillNames = [[firstElement stringValue] componentsSeparatedByString:@","];
 		for (NSString *aName in skillNames) {
-			PFSkill *aSkill = [PFSkill fetchSkillWithName:aName inContext:moc];
-			[newInstance addClassSkillsObject:aSkill];
+			PFSkill *aSkill = [PFSkill fetchWithName:aName inContext:moc];
+			[instance addClassSkillsObject:aSkill];
 		}
 	};
 	
@@ -98,14 +94,67 @@
 				// Fetch existing feature, if there is one
 				//NSString *featureName = [[anElement attributeForName:@"name"] stringValue];
 				
-				PFClassFeature *aFeature = [PFClassFeature insertedInstanceWithElement:featureElement inManagedObjectContext:moc];
-				aFeature.classType = newInstance;
+				PFClassFeature *aFeature = [PFClassFeature newOrUpdatedInstanceForClassType:instance withElement:featureElement inManagedObjectContext:moc];
+				aFeature.classType = instance;
 			}
 		};
 	}
 	
-	//LOG_DEBUG(@"newInstance = %@", newInstance);
-	return newInstance;
+	//LOG_DEBUG(@"instance = %@", instance);
+	return instance;
+}
+
+//------------------------------------------------------------------------------
+#pragma mark - Fetching
+//------------------------------------------------------------------------------
+
++ (NSArray*)fetchAllInContext:(NSManagedObjectContext*)moc
+{
+	NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"PFClassType" inManagedObjectContext:moc];
+	NSFetchRequest *request = [[NSFetchRequest alloc] init];
+	[request setEntity:entityDescription];
+
+	// Set sort orderings...
+	NSSortDescriptor *typeSortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES];
+	request.sortDescriptors = [NSArray arrayWithObject:typeSortDescriptor];
+
+	NSError *error = nil;
+	NSArray *array = [moc executeFetchRequest:request error:&error];
+	if (!array) {
+		LOG_DEBUG(@"Error fetching classes!");
+	}
+
+	return array;
+}
+
++ (PFClassType *)fetchWithName:(NSString *)aName inContext:(NSManagedObjectContext*)moc;
+{
+	NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"PFClassType" inManagedObjectContext:moc];
+	NSFetchRequest *request = [[NSFetchRequest alloc] init];
+	[request setEntity:entityDescription];
+
+	NSPredicate *predicate = [NSPredicate predicateWithFormat: @"name like[cd] %@", aName];
+	[request setPredicate:predicate];
+
+	NSError *error = nil;
+	NSArray *array = [moc executeFetchRequest:request error:&error];
+	if (!array) {
+		LOG_DEBUG(@"Error fetching class with name '%@'!", aName);
+	}
+
+	if (array.count > 0)
+		return [array objectAtIndex:0];
+
+	return nil;
+}
+
+//------------------------------------------------------------------------------
+#pragma mark - General
+//------------------------------------------------------------------------------
+
+- (NSString*)hitDieTypeDescription;
+{
+	return [NSString stringWithFormat:@"d%d", self.hitDieType];
 }
 
 @end

@@ -253,7 +253,7 @@
 	creationVC.managedObjectContext = addingContext;
 
 	// Add the basic set of abilities
-	NSArray *abilities = [PFAbility fetchAllAbilitiesInContext:addingContext];
+	NSArray *abilities = [PFAbility fetchAllInContext:addingContext];
 	for (PFAbility *anAbility in abilities) {
 		PFCharacterAbility *newAbility = (PFCharacterAbility *)[NSEntityDescription insertNewObjectForEntityForName:@"PFCharacterAbility"
 																							 inManagedObjectContext:addingContext];
@@ -449,7 +449,7 @@
         createViewController.managedObjectContext = addingContext;
 		
 		// Add the basic set of abilities
-		NSArray *abilities = [PFAbility fetchAllAbilitiesInContext:addingContext];
+		NSArray *abilities = [PFAbility fetchAllInContext:addingContext];
 		for (PFAbility *anAbility in abilities) {
 	        PFCharacterAbility *newAbility = (PFCharacterAbility *)[NSEntityDescription insertNewObjectForEntityForName:@"PFCharacterAbility"
 																								 inManagedObjectContext:addingContext];
@@ -478,7 +478,7 @@
 		// Perform post-creation setup
 		
 		// Add the basic set of abilities
-		NSArray *skills = [PFSkill fetchAllSkillsInContext:moc];
+		NSArray *skills = [PFSkill fetchAllInContext:moc];
 		for (PFSkill *aSkill in skills) {
 			BOOL addSkill = aSkill.untrained;
 			BOOL isClassSkill = NO;

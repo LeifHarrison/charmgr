@@ -19,6 +19,8 @@
 #pragma mark - Properties
 //------------------------------------------------------------------------------
 
+// Attributes
+
 @dynamic name;
 @dynamic type;
 @dynamic descriptionShort;
@@ -26,13 +28,16 @@
 @dynamic benefitString;
 @dynamic special;
 @dynamic normal;
+
+// Relationships
+
 @dynamic source;
 
 //------------------------------------------------------------------------------
-#pragma mark - Creation/Inserting
+#pragma mark - Creating/Updating
 //------------------------------------------------------------------------------
 
-+ (PFFeat *)insertedInstanceWithElement:(GDataXMLElement *)anElement
++ (PFFeat *)newOrUpdatedInstanceWithElement:(GDataXMLElement *)anElement
 				  inManagedObjectContext:(NSManagedObjectContext*)moc;
 {
 	NSString *name = [[anElement attributeForName:@"name"] stringValue];
@@ -41,36 +46,38 @@
 		return nil;
 	}
 	
-	PFFeat *newInstance = (PFFeat *)[NSEntityDescription insertNewObjectForEntityForName:@"PFFeat"
-																	inManagedObjectContext:moc];
-	newInstance.name = name;
-	
-	newInstance.type = [[anElement attributeForName:@"type"] stringValue];
+	PFFeat *instance = [self fetchWithName:name inContext:moc];
+	if (!instance) {
+		instance = (PFFeat *)[NSEntityDescription insertNewObjectForEntityForName:@"PFFeat" inManagedObjectContext:moc];
+		instance.name = name;
+	}
+
+	instance.type = [[anElement attributeForName:@"type"] stringValue];
 	
 	NSString *sourceAbbreviation = [[anElement attributeForName:@"source"] stringValue];
-	newInstance.source = [PFSource fetchWithAbbreviation:sourceAbbreviation inContext:moc];
+	instance.source = [PFSource fetchWithAbbreviation:sourceAbbreviation inContext:moc];
 	
 	NSArray *elements = nil;
 	
 	elements = [anElement elementsForName:@"Prerequisites"];
 	if (elements.count > 0) {
 		GDataXMLElement *firstElement = (GDataXMLElement *) [elements objectAtIndex:0];
-		newInstance.prerequisitesString = firstElement.stringValue;
+		instance.prerequisitesString = firstElement.stringValue;
 	};
 	
 	elements = [anElement elementsForName:@"Benefit"];
 	if (elements.count > 0) {
 		GDataXMLElement *firstElement = (GDataXMLElement *) [elements objectAtIndex:0];
-		newInstance.benefitString = firstElement.stringValue;
+		instance.benefitString = firstElement.stringValue;
 	};
 	
 	elements = [anElement elementsForName:@"Normal"];
 	if (elements.count > 0) {
 		GDataXMLElement *firstElement = (GDataXMLElement *) [elements objectAtIndex:0];
-		newInstance.normal = firstElement.stringValue;
+		instance.normal = firstElement.stringValue;
 	};
 	
-	return newInstance;
+	return instance;
 }
 
 //------------------------------------------------------------------------------
@@ -79,8 +86,7 @@
 
 + (NSArray*)fetchAllInContext:(NSManagedObjectContext*)moc
 {
-	NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"PFFeat"
-														 inManagedObjectContext:moc];
+	NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"PFFeat" inManagedObjectContext:moc];
 	NSFetchRequest *request = [[NSFetchRequest alloc] init];
 	[request setEntity:entityDescription];
 	
@@ -91,7 +97,7 @@
 	NSError *error = nil;
 	NSArray *array = [moc executeFetchRequest:request error:&error];
 	if (!array) {
-		LOG_DEBUG(@"Error fetching skill!");
+		LOG_DEBUG(@"Error fetching feats!");
 	}
 	
 	return array;
@@ -99,8 +105,7 @@
 
 + (PFFeat*)fetchWithName:(NSString *)aName inContext:(NSManagedObjectContext*)moc;
 {
-	NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"PFFeat"
-														 inManagedObjectContext:moc];
+	NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"PFFeat" inManagedObjectContext:moc];
 	NSFetchRequest *request = [[NSFetchRequest alloc] init];
 	[request setEntity:entityDescription];
 	
@@ -110,7 +115,7 @@
 	NSError *error = nil;
 	NSArray *array = [moc executeFetchRequest:request error:&error];
 	if (!array) {
-		LOG_DEBUG(@"Error fetching skill with name '%@'!", aName);
+		LOG_DEBUG(@"Error fetching feat with name '%@'!", aName);
 	}
 	
 	if (array.count > 0)
@@ -118,6 +123,5 @@
 	
 	return nil;
 }
-
 
 @end

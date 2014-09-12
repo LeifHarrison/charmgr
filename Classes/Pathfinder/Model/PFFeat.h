@@ -26,7 +26,7 @@
 
 @property (nonatomic, retain) PFSource *source;
 
-+ (PFFeat *)insertedInstanceWithElement:(GDataXMLElement *)anElement
++ (PFFeat *)newOrUpdatedInstanceWithElement:(GDataXMLElement *)anElement
 				  inManagedObjectContext:(NSManagedObjectContext*)moc;
 
 + (NSArray*)fetchAllInContext:(NSManagedObjectContext*)moc;
