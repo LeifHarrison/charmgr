@@ -23,10 +23,11 @@
 
 @property (nonatomic, retain) NSSet *characters;
 
-+ (PFAlignment *)insertedInstanceWithElement:(GDataXMLElement *)anElement
-					  inManagedObjectContext:(NSManagedObjectContext*)moc;
++ (PFAlignment *)newOrUpdatedInstanceWithElement:(GDataXMLElement *)anElement
+						  inManagedObjectContext:(NSManagedObjectContext*)moc;
 
-+ (NSArray*)fetchAllAbilitiesInContext:(NSManagedObjectContext*)moc;
++ (NSArray*)fetchAllInContext:(NSManagedObjectContext*)moc;
++ (PFAlignment *)fetchWithName:(NSString *)aName inContext:(NSManagedObjectContext*)moc;
 
 @end
 

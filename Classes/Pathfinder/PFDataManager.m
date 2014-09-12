@@ -116,7 +116,7 @@
 
 	NSArray *elements = [doc.rootElement elementsForName:@"Alignment"];
 	for (GDataXMLElement *anElement in elements) {
-		PFAlignment *newInstance = [PFAlignment insertedInstanceWithElement:anElement inManagedObjectContext:moc];
+		PFAlignment *newInstance = [PFAlignment newOrUpdatedInstanceWithElement:anElement inManagedObjectContext:moc];
 		//LOG_DEBUG(@"newInstance = %@", newInstance.name);
 		if (newInstance) importCount++;
 	}

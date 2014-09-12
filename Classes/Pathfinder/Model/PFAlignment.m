@@ -19,7 +19,7 @@
 
 @dynamic characters;
 
-+ (PFAlignment *)insertedInstanceWithElement:(GDataXMLElement *)anElement
++ (PFAlignment *)newOrUpdatedInstanceWithElement:(GDataXMLElement *)anElement
 					inManagedObjectContext:(NSManagedObjectContext*)moc;
 {
 	NSString *name = [[anElement attributeForName:@"name"] stringValue];
@@ -27,31 +27,34 @@
 	if (!name) {
 		return nil;
 	}
-	
-	PFAlignment *newInstance = (PFAlignment *)[NSEntityDescription insertNewObjectForEntityForName:@"PFAlignment" inManagedObjectContext:moc];
-	newInstance.name = name;
-	
-	newInstance.abbreviation = [[anElement attributeForName:@"abbreviation"] stringValue];
-	newInstance.alignmentType = [[[anElement attributeForName:@"index"] stringValue] intValue];
+
+	PFAlignment *instance = [self fetchWithName:name inContext:moc];
+	if (!instance) {
+		instance = (PFAlignment *)[NSEntityDescription insertNewObjectForEntityForName:@"PFAlignment" inManagedObjectContext:moc];
+		instance.name = name;
+	}
+
+	instance.abbreviation = [[anElement attributeForName:@"abbreviation"] stringValue];
+	instance.alignmentType = [[[anElement attributeForName:@"index"] stringValue] intValue];
 	
 	NSArray *elements = nil;
 	
 	elements = [anElement elementsForName:@"ShortDescription"];
 	if (elements.count > 0) {
 		GDataXMLElement *firstElement = (GDataXMLElement *) [elements objectAtIndex:0];
-		newInstance.descriptionShort = firstElement.stringValue;
+		instance.descriptionShort = firstElement.stringValue;
 	};
 /*
 	elements = [anElement elementsForName:@"LongDescription"];
 	if (elements.count > 0) {
 		GDataXMLElement *firstElement = (GDataXMLElement *) [elements objectAtIndex:0];
-		newInstance.descriptionLong = firstElement.stringValue;
+		instance.descriptionLong = firstElement.stringValue;
 	};
 */	
-	return newInstance;
+	return instance;
 }
 
-+ (NSArray*)fetchAllAbilitiesInContext:(NSManagedObjectContext*)moc
++ (NSArray*)fetchAllInContext:(NSManagedObjectContext*)moc
 {
 	NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"PFAlignment"
 														 inManagedObjectContext:moc];
@@ -69,6 +72,27 @@
 	}
 	
 	return array;
+}
+
++ (PFAlignment *)fetchWithName:(NSString *)aName inContext:(NSManagedObjectContext*)moc;
+{
+	NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"PFAlignment" inManagedObjectContext:moc];
+	NSFetchRequest *request = [[NSFetchRequest alloc] init];
+	[request setEntity:entityDescription];
+
+	NSPredicate *predicate = [NSPredicate predicateWithFormat: @"name like[cd] %@", aName];
+	[request setPredicate:predicate];
+
+	NSError *error = nil;
+	NSArray *array = [moc executeFetchRequest:request error:&error];
+	if (!array) {
+		LOG_DEBUG(@"Error fetching skill with name '%@'!", aName);
+	}
+
+	if (array.count > 0)
+		return [array objectAtIndex:0];
+
+	return nil;
 }
 
 @end
