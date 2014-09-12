@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6206.9" systemVersion="13E28" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="mbu-pJ-4Kg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="mbu-pJ-4Kg">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7026.1"/>
-        <capability name="Constraints with attributes relative to the layout margin" minToolsVersion="6.0"/>
+        <deployment defaultVersion="1792" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
         <!--Spells-->
@@ -208,7 +208,7 @@
                             <constraint firstItem="gzE-tv-7Ug" firstAttribute="top" secondItem="INO-N6-l78" secondAttribute="bottom" id="6R0-QG-VDJ"/>
                             <constraint firstItem="3nL-6q-UvP" firstAttribute="leading" secondItem="wPF-Wq-0IF" secondAttribute="leading" constant="10" id="8Yd-gB-c2C"/>
                             <constraint firstItem="3nL-6q-UvP" firstAttribute="top" secondItem="gzE-tv-7Ug" secondAttribute="bottom" constant="10" id="BfH-Qe-T4S"/>
-                            <constraint firstItem="WPA-Pp-aIJ" firstAttribute="top" secondItem="3nL-6q-UvP" secondAttribute="bottom" constant="10" id="awn-QK-w8i"/>
+                            <constraint firstItem="WPA-Pp-aIJ" firstAttribute="top" secondItem="3nL-6q-UvP" secondAttribute="bottom" constant="10" id="YLa-g7-uUp"/>
                             <constraint firstAttribute="trailing" secondItem="3nL-6q-UvP" secondAttribute="trailing" constant="10" id="jfI-th-mKr"/>
                             <constraint firstAttribute="trailing" secondItem="gzE-tv-7Ug" secondAttribute="trailing" id="mIs-3i-VZ6"/>
                             <constraint firstItem="gzE-tv-7Ug" firstAttribute="leading" secondItem="wPF-Wq-0IF" secondAttribute="leading" id="xTn-gk-rvE"/>
@@ -365,7 +365,7 @@
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Benefit" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="710" translatesAutoresizingMaskIntoConstraints="NO" id="ZP6-4Z-zui">
-                                                    <rect key="frame" x="20" y="22" width="710" height="14"/>
+                                                    <rect key="frame" x="20" y="22" width="718" height="14"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -379,7 +379,7 @@
                                                 <constraint firstItem="sLz-e6-vuh" firstAttribute="leading" secondItem="uI7-wP-w1R" secondAttribute="trailing" constant="10" id="ivz-cn-hMR"/>
                                                 <constraint firstItem="0Ul-Ep-Xm9" firstAttribute="leading" secondItem="OYz-9t-t7e" secondAttribute="trailing" constant="10" id="nVY-t9-KtQ"/>
                                                 <constraint firstItem="ZP6-4Z-zui" firstAttribute="top" secondItem="OYz-9t-t7e" secondAttribute="bottom" constant="1" id="pao-1V-Vx4"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="ZP6-4Z-zui" secondAttribute="trailing" constant="10" id="pwd-bL-vlp"/>
+                                                <constraint firstAttribute="trailing" secondItem="ZP6-4Z-zui" secondAttribute="trailing" constant="10" id="pwd-bL-vlp"/>
                                                 <constraint firstItem="uI7-wP-w1R" firstAttribute="baseline" secondItem="0Ul-Ep-Xm9" secondAttribute="baseline" id="pxN-F0-ILx"/>
                                                 <constraint firstItem="OYz-9t-t7e" firstAttribute="top" secondItem="xHY-hU-8MV" secondAttribute="top" constant="5" id="qOP-ic-csS"/>
                                                 <constraint firstItem="uI7-wP-w1R" firstAttribute="baseline" secondItem="sLz-e6-vuh" secondAttribute="baseline" id="qU1-Hw-n31"/>
@@ -404,7 +404,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="PaZ-FJ-Gnd" secondAttribute="trailing" constant="10" id="0gO-FE-M6E"/>
-                            <constraint firstItem="pWC-HK-gGs" firstAttribute="top" secondItem="PaZ-FJ-Gnd" secondAttribute="bottom" constant="10" id="Fze-uJ-G33"/>
+                            <constraint firstItem="pWC-HK-gGs" firstAttribute="top" secondItem="PaZ-FJ-Gnd" secondAttribute="bottom" constant="10" id="GMw-Ml-AJ1"/>
                             <constraint firstItem="PaZ-FJ-Gnd" firstAttribute="leading" secondItem="2FF-d8-zXE" secondAttribute="leading" constant="10" id="fnf-xz-l9c"/>
                             <constraint firstAttribute="trailing" secondItem="COv-cS-xfK" secondAttribute="trailing" id="iql-TL-FIt"/>
                             <constraint firstItem="COv-cS-xfK" firstAttribute="top" secondItem="2FF-d8-zXE" secondAttribute="top" id="lVB-ES-Lp0"/>
@@ -451,9 +451,6 @@
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination">
-            <size key="portraitSize" width="768" height="1024"/>
-            <size key="landscapeSize" width="1024" height="768"/>
-        </simulatedScreenMetrics>
+        <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
 </document>
