@@ -15,6 +15,9 @@
 #import "PFRace.h"
 
 #import "CMBannerBox.h"
+#import "CMEditTransitioner.h"
+
+#import "PFEditCharacterViewController.h"
 
 #import "NSArray+CMExtensions.h"
 
@@ -60,6 +63,9 @@
     [super viewDidLoad];
     
     [(CMBannerBox*)self.view setBannerTitle:@"Character"];
+
+	UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(editCharacter:)];
+	[self.view addGestureRecognizer:tap];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -91,5 +97,20 @@
 #pragma mark - Actions
 //------------------------------------------------------------------------------
 
+- (IBAction)editCharacter:(id)sender
+{
+	TRACE;
+
+	UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"ProfileEditing" bundle:[NSBundle mainBundle]];
+	PFEditCharacterViewController *editVC = [storyboard instantiateViewControllerWithIdentifier:@"EditCharacter"];
+	editVC.modalPresentationStyle = UIModalPresentationCustom;
+
+	transitioningDelegate = [[CMEditTransitioningDelegate alloc] init];
+	[editVC setTransitioningDelegate:transitioningDelegate];
+
+	//LOG_DEBUG(@"editVC = %@", editVC);
+	editVC.character = self.character;
+	[self presentViewController:editVC animated:YES completion:^{}];
+}
 
 @end

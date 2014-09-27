@@ -9,6 +9,9 @@
 #import "PFContainerViewController.h"
 
 @interface PFCharacterViewController : PFContainerViewController
+{
+	id<UIViewControllerTransitioningDelegate> transitioningDelegate;
+}
 
 @property (nonatomic) IBOutlet UILabel *characterLabel;
 @property (nonatomic) IBOutlet UILabel *playerLabel;

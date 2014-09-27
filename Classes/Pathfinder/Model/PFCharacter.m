@@ -205,7 +205,7 @@
 {
 	NSInteger nextLevel = self.effectiveLevel+1;
 	NSInteger xpForLevel = [self xpForLevel:nextLevel];
-	LOG_DEBUG(@"xpForLevel = %ld", xpForLevel);
+	//LOG_DEBUG(@"xpForLevel = %ld", xpForLevel);
 	
 	if (nextLevel > 16) {
 		xpForLevel = [self roundIntegerValue:xpForLevel toNearest:50000];

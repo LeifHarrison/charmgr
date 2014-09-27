@@ -178,7 +178,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-	LOG_DEBUG(@"section = %ld, rows = %lu", (long)section, (unsigned long)self.character.classes.count);
+	//LOG_DEBUG(@"section = %ld, rows = %lu", (long)section, (unsigned long)self.character.classes.count);
     return self.character.classes.count;
 }
 

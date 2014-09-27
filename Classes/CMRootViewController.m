@@ -69,7 +69,9 @@
 	self.pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStylePageCurl
 															  navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal
 																			options:pageViewOptions];
-	//self.pageViewController.doubleSided = YES;
+//	self.pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll
+//															  navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal
+//																			options:pageViewOptions];
 	self.pageViewController.dataSource = self;
 	self.pageViewController.delegate = self;
 	self.pageViewController.view.frame = self.view.bounds;

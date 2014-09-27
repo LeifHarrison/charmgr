@@ -43,34 +43,10 @@
     return self;
 }
 
-//------------------------------------------------------------------------------
-#pragma mark - NSCoding
-//------------------------------------------------------------------------------
-
-- (id)initWithCoder:(NSCoder *)aDecoder
-{
-	//TRACE;
-	if (self = [super initWithCoder:aDecoder])
-	{
-		[self setup];
-	}
-	return self;
-}
-
 - (void)awakeFromNib
 {
 	[self setup];
-}
-
-- (void)prepareForInterfaceBuilder
-{
-	[self setup];
-}
-
-- (void)drawRect:(CGRect)rect
-{
-	[self setup];
-	[super drawRect:rect];
+	[super awakeFromNib];
 }
 
 //------------------------------------------------------------------------------
@@ -128,9 +104,20 @@
 	}
 }
 
+- (void)setBannerHeight:(CGFloat)bannerHeight
+{
+	if (_bannerHeight != bannerHeight)
+	{
+		_bannerHeight = bannerHeight;
+		[self setNeedsLayout];
+//		[self layoutIfNeeded];
+	}
+
+}
+
 - (void)setHighlighted:(BOOL)highlighted
 {
-	LOG_DEBUG(@"highlighted = %d", highlighted);
+	//LOG_DEBUG(@"highlighted = %d", highlighted);
 	if (highlighted != _highlighted) {
 		_highlighted = highlighted;
 		if (highlighted) {
@@ -151,12 +138,10 @@
 	if (selected != _selected) {
 		_selected = selected;
 		if (selected) {
-//			self.bannerHeight = 35.0f;
 			self.layer.borderColor = [UIColor darkGrayColor].CGColor;
 			self.bannerBackground.backgroundColor = [UIColor darkGrayColor];
 		}
 		else {
-//			self.bannerHeight = PFDefaultBannerHeight;
 			self.layer.borderColor = self.bannerColor.CGColor;
 			self.bannerBackground.backgroundColor = self.bannerColor;
 		}
@@ -186,54 +171,20 @@
 	self.layer.borderColor = self.bannerColor.CGColor;
 	self.layer.borderWidth = 1.5;
 	self.layer.cornerRadius = 8.0;
+}
+
+- (void)layoutSubviews
+{
+	[super layoutSubviews];
 
 	if (!self.bannerLabel) {
 		[self createBannerLabel];
 	}
 
-	if (!self.editButton)
-	{
-		self.editButton = [UIButton buttonWithType:UIButtonTypeCustom];
-		self.editButton.layer.borderColor = [UIColor darkGrayColor].CGColor;
-		self.editButton.layer.borderWidth = 1;
-		self.editButton.layer.cornerRadius = 9.0;
-		self.editButton.backgroundColor = [UIColor lightGrayColor];
-		//self.editButton.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin;
-		self.editButton.translatesAutoresizingMaskIntoConstraints = NO;
-		self.editButton.titleLabel.font = [UIFont systemFontOfSize:12];
-		[self.editButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-		[self.editButton setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
-		[self.editButton setTitle:@"edit" forState:UIControlStateNormal];
-		//self.editButton.alpha = 0.0;
-		[self.editButton sizeToFit];
-		[self.bannerBackground addSubview:self.editButton];
-
-		NSDictionary* views = @{ @"editButton" : self.editButton };
-		[self.bannerBackground addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-(>=0)-[editButton]-5-|"
-																	 options:0
-																	 metrics:nil
-																			 views:views]];
-
-		[self.bannerBackground addConstraint:[NSLayoutConstraint constraintWithItem:self.editButton
-																		   attribute:NSLayoutAttributeCenterY
-																		   relatedBy:NSLayoutRelationEqual
-																			  toItem:self.bannerBackground
-																		   attribute:NSLayoutAttributeCenterY
-																		  multiplier:1.0
-																			constant:0]];
-
-		[self.editButton addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[editButton(20)]"
-																					  options:0
-																					  metrics:nil
-																						views:views]];
-		[self.editButton addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[editButton(55)]"
-																				options:0
-																				metrics:nil
-																						views:views]];
-
-	}
-
-	[self setNeedsLayout];
+	CGRect bannerRect, contentRect;
+	CGRectDivide(self.bounds, &bannerRect, &contentRect, self.bannerHeight, CGRectMinYEdge);
+	self.bannerBackground.frame = bannerRect;
+	self.bannerLabel.frame = bannerRect;
 }
 
 - (void)createBannerLabel
@@ -262,27 +213,68 @@
 	[self.bannerBackground addSubview:self.bannerLabel];
 }
 
+- (void)createEditButton
+{
+	self.editButton = [UIButton buttonWithType:UIButtonTypeCustom];
+	self.editButton.layer.borderColor = [UIColor darkGrayColor].CGColor;
+	self.editButton.layer.borderWidth = 1;
+	self.editButton.layer.cornerRadius = 9.0;
+	self.editButton.backgroundColor = [UIColor lightGrayColor];
+	//self.editButton.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin;
+	self.editButton.translatesAutoresizingMaskIntoConstraints = NO;
+	self.editButton.titleLabel.font = [UIFont systemFontOfSize:12];
+	[self.editButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+	[self.editButton setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
+	[self.editButton setTitle:@"edit" forState:UIControlStateNormal];
+	self.editButton.hidden = YES;
+	[self.editButton sizeToFit];
+	[self.bannerBackground addSubview:self.editButton];
+
+	NSDictionary* views = @{ @"editButton" : self.editButton };
+	[self.bannerBackground addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-(>=0)-[editButton]-5-|"
+																				  options:0
+																				  metrics:nil
+																					views:views]];
+
+	[self.bannerBackground addConstraint:[NSLayoutConstraint constraintWithItem:self.editButton
+																	  attribute:NSLayoutAttributeCenterY
+																	  relatedBy:NSLayoutRelationEqual
+																		 toItem:self.bannerBackground
+																	  attribute:NSLayoutAttributeCenterY
+																	 multiplier:1.0
+																	   constant:0]];
+
+	[self.editButton addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[editButton(20)]"
+																			options:0
+																			metrics:nil
+																			  views:views]];
+	[self.editButton addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[editButton(55)]"
+																			options:0
+																			metrics:nil
+																			  views:views]];
+}
+/*
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-	LOG_DEBUG(@"event = %@", event);
+	//LOG_DEBUG(@"event = %@", event);
 	[super touchesBegan:touches withEvent:event];
-//	if (!self.selected) {
-//		self.highlighted = YES;
-//	}
+	if (!self.selected) {
+		self.highlighted = YES;
+	}
 }
 
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
 {
-	LOG_DEBUG(@"event = %@", event);
+	//LOG_DEBUG(@"event = %@", event);
 	[super touchesCancelled:touches withEvent:event];
 	self.highlighted = NO;
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-	LOG_DEBUG(@"event = %@", event);
+	//LOG_DEBUG(@"event = %@", event);
 	[super touchesEnded:touches withEvent:event];
 	self.highlighted = NO;
 }
-
+*/
 @end

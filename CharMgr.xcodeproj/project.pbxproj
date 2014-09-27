@@ -108,6 +108,8 @@
 		29B7D65615F918900039C390 /* PFCharacterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B7D65515F918900039C390 /* PFCharacterViewController.m */; };
 		29B7D6A515F938970039C390 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29B7D6A415F938970039C390 /* Main.storyboard */; };
 		29B7D6D715F948C00039C390 /* CMRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B7D6D615F948C00039C390 /* CMRootViewController.m */; };
+		29C4A1EB19D481B900606826 /* CMEditPresentationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C4A1EA19D481B900606826 /* CMEditPresentationController.m */; };
+		29C4A1EE19D4820E00606826 /* CMEditTransitioner.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C4A1ED19D4820E00606826 /* CMEditTransitioner.m */; };
 		29CA4E8B1664A1F300223AF3 /* PFSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CA4E8A1664A1F300223AF3 /* PFSource.m */; };
 		29CD513B1630BB5C001A639E /* PFAbilityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CD513A1630BB5C001A639E /* PFAbilityTableViewCell.m */; };
 		29CD513E1630CC96001A639E /* PFSkillTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CD513D1630CC95001A639E /* PFSkillTableViewCell.m */; };
@@ -310,6 +312,10 @@
 		29B7D6D515F948C00039C390 /* CMRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMRootViewController.h; sourceTree = "<group>"; };
 		29B7D6D615F948C00039C390 /* CMRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMRootViewController.m; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		29C4A1E919D481B900606826 /* CMEditPresentationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMEditPresentationController.h; sourceTree = "<group>"; };
+		29C4A1EA19D481B900606826 /* CMEditPresentationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMEditPresentationController.m; sourceTree = "<group>"; };
+		29C4A1EC19D4820E00606826 /* CMEditTransitioner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMEditTransitioner.h; sourceTree = "<group>"; };
+		29C4A1ED19D4820E00606826 /* CMEditTransitioner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMEditTransitioner.m; sourceTree = "<group>"; };
 		29CA4E891664A1F200223AF3 /* PFSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFSource.h; path = Pathfinder/Model/PFSource.h; sourceTree = "<group>"; };
 		29CA4E8A1664A1F300223AF3 /* PFSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFSource.m; path = Pathfinder/Model/PFSource.m; sourceTree = "<group>"; };
 		29CD51391630BB5C001A639E /* PFAbilityTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFAbilityTableViewCell.h; path = Pathfinder/Cells/PFAbilityTableViewCell.h; sourceTree = "<group>"; };
@@ -636,6 +642,10 @@
 		296B4F371970571500E7B24F /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				29C4A1E919D481B900606826 /* CMEditPresentationController.h */,
+				29C4A1EA19D481B900606826 /* CMEditPresentationController.m */,
+				29C4A1EC19D4820E00606826 /* CMEditTransitioner.h */,
+				29C4A1ED19D4820E00606826 /* CMEditTransitioner.m */,
 				296B4F381970574F00E7B24F /* CMSettings.h */,
 				296B4F391970574F00E7B24F /* CMSettings.m */,
 			);
@@ -739,6 +749,8 @@
 				29D9605B166B223700C57CA1 /* PFClassFeature.m */,
 				2902D08F161FED6D00C56E74 /* PFClassType.h */,
 				2902D090161FED6D00C56E74 /* PFClassType.m */,
+				2902D0A4161FEE6A00C56E74 /* PFDataManager.h */,
+				2902D0A5161FEE6A00C56E74 /* PFDataManager.m */,
 				2902D092161FED6D00C56E74 /* PFFeat.h */,
 				2902D093161FED6D00C56E74 /* PFFeat.m */,
 				2902D09E161FED6E00C56E74 /* PFRace.h */,
@@ -804,8 +816,6 @@
 				29B7D64F15F918250039C390 /* PFPageContentViewController.m */,
 				29B7D65115F9186F0039C390 /* PFContainerViewController.h */,
 				29B7D65215F9186F0039C390 /* PFContainerViewController.m */,
-				2902D0A4161FEE6A00C56E74 /* PFDataManager.h */,
-				2902D0A5161FEE6A00C56E74 /* PFDataManager.m */,
 				29F0660816479BA00088BA86 /* PFDetailViewController.h */,
 				29F0660916479BA00088BA86 /* PFDetailViewController.m */,
 			);
@@ -1023,6 +1033,7 @@
 				290442AA160C392A008DAF11 /* PFEffectsViewController.m in Sources */,
 				2902D08B161FED6D00C56E74 /* PFCharacterClass.m in Sources */,
 				2902D08E161FED6D00C56E74 /* PFCharacterAbility.m in Sources */,
+				29C4A1EB19D481B900606826 /* CMEditPresentationController.m in Sources */,
 				2902D091161FED6D00C56E74 /* PFClassType.m in Sources */,
 				2902D094161FED6D00C56E74 /* PFFeat.m in Sources */,
 				2902D097161FED6D00C56E74 /* PFTrait.m in Sources */,
@@ -1049,6 +1060,7 @@
 				293194271646112C00B10D70 /* PFReferenceFeatsViewController.m in Sources */,
 				2931942B16462A2900B10D70 /* PFSelectRaceViewController.m in Sources */,
 				293B59151950E184002564A8 /* NSString+MD5.m in Sources */,
+				29C4A1EE19D4820E00606826 /* CMEditTransitioner.m in Sources */,
 				293B59161950E184002564A8 /* PDFView.m in Sources */,
 				29F0660A16479BA00088BA86 /* PFDetailViewController.m in Sources */,
 				29F0660E1648F0B00088BA86 /* PFReferenceFeatCell.m in Sources */,

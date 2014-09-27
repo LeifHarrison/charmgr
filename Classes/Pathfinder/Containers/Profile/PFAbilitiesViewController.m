@@ -120,7 +120,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-	LOG_DEBUG(@"section = %ld, rows = %lu", (long)section, (unsigned long)self.sortedAbilities.count);
+	//LOG_DEBUG(@"section = %ld, rows = %lu", (long)section, (unsigned long)self.sortedAbilities.count);
     return self.sortedAbilities.count;
 }
 
