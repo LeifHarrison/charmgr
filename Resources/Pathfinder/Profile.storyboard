@@ -114,37 +114,37 @@
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="3" contentMode="left" text="Race" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e73-13-JiG">
-                                <rect key="frame" x="52" y="114" width="36" height="18"/>
+                                <rect key="frame" x="52" y="117" width="36" height="18"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="5" contentMode="left" text="Size" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jES-sb-nBu">
-                                <rect key="frame" x="58" y="160" width="30" height="18"/>
+                                <rect key="frame" x="58" y="165" width="30" height="18"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="4" contentMode="left" text="Gender" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uvj-4u-RGd">
-                                <rect key="frame" x="36" y="137" width="52" height="18"/>
+                                <rect key="frame" x="36" y="141" width="52" height="18"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="6" contentMode="left" text="Alignment" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PYA-1X-L8a">
-                                <rect key="frame" x="17" y="183" width="71" height="18"/>
+                                <rect key="frame" x="17" y="189" width="71" height="18"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="left" text="Player" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C3d-tO-WHW">
-                                <rect key="frame" x="44" y="68" width="44" height="18"/>
+                                <rect key="frame" x="44" y="69" width="44" height="18"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="left" text="Campaign" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0PU-lE-xKc">
-                                <rect key="frame" x="16" y="91" width="72" height="18"/>
+                                <rect key="frame" x="16" y="93" width="72" height="18"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -156,37 +156,37 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xgU-Co-xy4">
-                                <rect key="frame" x="93" y="68" width="135" height="18"/>
+                                <rect key="frame" x="93" y="69" width="135" height="18"/>
                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="15"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dXF-Mx-JrO">
-                                <rect key="frame" x="93" y="91" width="135" height="18"/>
+                                <rect key="frame" x="93" y="93" width="135" height="18"/>
                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="15"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RCT-3P-7eM">
-                                <rect key="frame" x="93" y="114" width="135" height="18"/>
+                                <rect key="frame" x="93" y="117" width="135" height="18"/>
                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="15"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2e9-sN-zge">
-                                <rect key="frame" x="93" y="137" width="135" height="18"/>
+                                <rect key="frame" x="93" y="141" width="135" height="18"/>
                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="15"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U54-Hh-EaO">
-                                <rect key="frame" x="93" y="160" width="135" height="18"/>
+                                <rect key="frame" x="93" y="165" width="135" height="18"/>
                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="15"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yHW-r0-IRM">
-                                <rect key="frame" x="93" y="183" width="135" height="18"/>
+                                <rect key="frame" x="93" y="189" width="135" height="18"/>
                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="15"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -194,21 +194,21 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="jES-sb-nBu" firstAttribute="top" secondItem="Uvj-4u-RGd" secondAttribute="bottom" constant="5" id="0Oz-4Q-VTm"/>
+                            <constraint firstItem="jES-sb-nBu" firstAttribute="top" secondItem="Uvj-4u-RGd" secondAttribute="bottom" constant="6" id="0Oz-4Q-VTm"/>
                             <constraint firstItem="yHW-r0-IRM" firstAttribute="leading" secondItem="PYA-1X-L8a" secondAttribute="trailing" constant="5" id="4bl-xH-Dp7"/>
                             <constraint firstItem="E5v-YK-lbo" firstAttribute="leading" secondItem="mcb-NG-fp7" secondAttribute="trailing" constant="5" id="7qi-Qk-D6Z"/>
                             <constraint firstItem="PYA-1X-L8a" firstAttribute="trailing" secondItem="jES-sb-nBu" secondAttribute="trailing" id="7xT-CA-jv5"/>
                             <constraint firstAttribute="trailing" secondItem="E5v-YK-lbo" secondAttribute="trailing" constant="10" id="Bv0-hb-msq"/>
                             <constraint firstAttribute="trailing" secondItem="xgU-Co-xy4" secondAttribute="trailing" constant="10" id="CdM-ia-OQC"/>
                             <constraint firstItem="E5v-YK-lbo" firstAttribute="baseline" secondItem="mcb-NG-fp7" secondAttribute="baseline" id="D5j-oR-jp0"/>
-                            <constraint firstItem="C3d-tO-WHW" firstAttribute="top" secondItem="mcb-NG-fp7" secondAttribute="bottom" constant="5" id="DfR-GX-Ddk"/>
+                            <constraint firstItem="C3d-tO-WHW" firstAttribute="top" secondItem="mcb-NG-fp7" secondAttribute="bottom" constant="6" id="DfR-GX-Ddk"/>
                             <constraint firstItem="mcb-NG-fp7" firstAttribute="trailing" secondItem="C3d-tO-WHW" secondAttribute="trailing" id="EsB-BC-joz"/>
                             <constraint firstItem="yHW-r0-IRM" firstAttribute="baseline" secondItem="PYA-1X-L8a" secondAttribute="baseline" id="HVc-hr-Bw9"/>
                             <constraint firstItem="Uvj-4u-RGd" firstAttribute="baseline" secondItem="2e9-sN-zge" secondAttribute="baseline" id="HbS-na-ZaP"/>
                             <constraint firstItem="RCT-3P-7eM" firstAttribute="leading" secondItem="e73-13-JiG" secondAttribute="trailing" constant="5" id="KdH-dA-D6c"/>
                             <constraint firstAttribute="trailing" secondItem="2e9-sN-zge" secondAttribute="trailing" constant="10" id="M3M-W8-8jw"/>
-                            <constraint firstItem="Uvj-4u-RGd" firstAttribute="top" secondItem="e73-13-JiG" secondAttribute="bottom" constant="5" id="Mat-V6-X0a"/>
-                            <constraint firstItem="e73-13-JiG" firstAttribute="top" secondItem="0PU-lE-xKc" secondAttribute="bottom" constant="5" id="Mpt-9A-WYG"/>
+                            <constraint firstItem="Uvj-4u-RGd" firstAttribute="top" secondItem="e73-13-JiG" secondAttribute="bottom" constant="6" id="Mat-V6-X0a"/>
+                            <constraint firstItem="e73-13-JiG" firstAttribute="top" secondItem="0PU-lE-xKc" secondAttribute="bottom" constant="6" id="Mpt-9A-WYG"/>
                             <constraint firstAttribute="trailing" secondItem="yHW-r0-IRM" secondAttribute="trailing" constant="10" id="NnI-Ua-1Zu"/>
                             <constraint firstItem="mcb-NG-fp7" firstAttribute="top" secondItem="pSW-2Q-E7Y" secondAttribute="bottom" constant="45" id="RL3-uF-NZ7"/>
                             <constraint firstAttribute="trailing" secondItem="U54-Hh-EaO" secondAttribute="trailing" constant="10" id="S9Y-Ji-gRL"/>
@@ -223,11 +223,11 @@
                             <constraint firstItem="xgU-Co-xy4" firstAttribute="leading" secondItem="C3d-tO-WHW" secondAttribute="trailing" constant="5" id="jUf-My-6IP"/>
                             <constraint firstItem="dXF-Mx-JrO" firstAttribute="leading" secondItem="0PU-lE-xKc" secondAttribute="trailing" constant="5" id="jo6-Hj-8PS"/>
                             <constraint firstAttribute="trailing" secondItem="dXF-Mx-JrO" secondAttribute="trailing" constant="10" id="klJ-WJ-fns"/>
-                            <constraint firstItem="0PU-lE-xKc" firstAttribute="top" secondItem="C3d-tO-WHW" secondAttribute="bottom" constant="5" id="nCe-Ps-9tw"/>
+                            <constraint firstItem="0PU-lE-xKc" firstAttribute="top" secondItem="C3d-tO-WHW" secondAttribute="bottom" constant="6" id="nCe-Ps-9tw"/>
                             <constraint firstAttribute="trailing" secondItem="RCT-3P-7eM" secondAttribute="trailing" constant="10" id="nzx-DL-GkD"/>
                             <constraint firstItem="U54-Hh-EaO" firstAttribute="leading" secondItem="jES-sb-nBu" secondAttribute="trailing" constant="5" id="o5H-Da-ujh"/>
                             <constraint firstItem="0PU-lE-xKc" firstAttribute="baseline" secondItem="dXF-Mx-JrO" secondAttribute="baseline" id="qzV-qi-0t3"/>
-                            <constraint firstItem="PYA-1X-L8a" firstAttribute="top" secondItem="jES-sb-nBu" secondAttribute="bottom" constant="5" id="rFt-X4-0rJ"/>
+                            <constraint firstItem="PYA-1X-L8a" firstAttribute="top" secondItem="jES-sb-nBu" secondAttribute="bottom" constant="6" id="rFt-X4-0rJ"/>
                             <constraint firstItem="2e9-sN-zge" firstAttribute="leading" secondItem="Uvj-4u-RGd" secondAttribute="trailing" constant="5" id="xtQ-Vl-Xip"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
@@ -238,6 +238,7 @@
                             <userDefinedRuntimeAttribute type="color" keyPath="bannerColor">
                                 <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="highlightWhenTapped" value="YES"/>
                         </userDefinedRuntimeAttributes>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
@@ -576,6 +577,9 @@ Ranks</string>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="string" keyPath="bannerTitle" value="Skills"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="bannerHeight">
+                                <real key="value" value="32"/>
+                            </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
                     <toolbarItems/>
@@ -648,6 +652,11 @@ Ranks</string>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="bannerHeight">
+                                <real key="value" value="32"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </view>
                     <toolbarItems/>
                     <connections>
@@ -921,6 +930,9 @@ Level</string>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="string" keyPath="bannerTitle" value="Classes"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="bannerHeight">
+                                <real key="value" value="32"/>
+                            </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
                     <toolbarItems/>

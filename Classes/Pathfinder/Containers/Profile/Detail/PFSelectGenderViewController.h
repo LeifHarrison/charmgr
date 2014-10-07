@@ -10,7 +10,7 @@
 
 @interface PFSelectGenderViewController : PFDetailViewController
 
-@property (nonatomic, strong) IBOutlet UISegmentedControl *segmentedControl;
+@property (nonatomic) IBOutlet UISegmentedControl *segmentedControl;
 
 - (IBAction)genderChanged:(id)sender;
 

@@ -6,20 +6,19 @@
 //  Copyright (c) 2014 Leif Harrison. All rights reserved.
 //
 
-#import "PFContainerViewController.h"
+#import "PFEditContainerViewController.h"
 
-@interface PFEditCharacterViewController : PFContainerViewController
+#import "PFDetailViewController.h"
 
-@property (nonatomic, strong) IBOutletCollection(UIView) NSArray *titleLabels;
-@property (nonatomic, strong) IBOutletCollection(UIView) NSArray *valueFields;
+@interface PFEditCharacterViewController : PFEditContainerViewController <UIPopoverControllerDelegate, PFDetailViewControllerDelegate>
 
-@property (nonatomic, strong) IBOutlet UITextField *characterField;
-@property (nonatomic, strong) IBOutlet UITextField *playerField;
-@property (nonatomic, strong) IBOutlet UITextField *campaignField;
+@property (nonatomic) IBOutlet UITextField *characterField;
+@property (nonatomic) IBOutlet UITextField *playerField;
+@property (nonatomic) IBOutlet UITextField *campaignField;
 
-@property (nonatomic, strong) IBOutlet UIButton *alignmentButton;
-@property (nonatomic, strong) IBOutlet UIButton *genderButton;
-@property (nonatomic, strong) IBOutlet UIButton *raceButton;
-@property (nonatomic, strong) IBOutlet UIButton *sizeButton;
+@property (nonatomic) IBOutlet UIButton *alignmentButton;
+@property (nonatomic) IBOutlet UIButton *genderButton;
+@property (nonatomic) IBOutlet UIButton *raceButton;
+@property (nonatomic) IBOutlet UIButton *sizeButton;
 
 @end

@@ -34,7 +34,7 @@
 //	presentedViewFrame.origin = CGPointMake(containerBounds.size.width / 2.0, containerBounds.size.height / 2.0);
 //	presentedViewFrame.origin.x -= presentedViewFrame.size.width / 2.0;
 //	presentedViewFrame.origin.y -= presentedViewFrame.size.height / 2.0;
-	LOG_DEBUG(@"presentedViewFrame = %@", NSStringFromCGRect(presentedViewFrame));
+//	LOG_DEBUG(@"presentedViewFrame = %@", NSStringFromCGRect(presentedViewFrame));
 	return presentedViewFrame;
 }
 
@@ -54,11 +54,13 @@
 
 - (void)containerViewWillLayoutSubviews
 {
+	[super containerViewWillLayoutSubviews];
 	[dimmingView setFrame:[[self containerView] bounds]];
 }
 
 - (void)containerViewDidLayoutSubviews
 {
+	[super containerViewDidLayoutSubviews];
 }
 
 - (void)dismissalTransitionWillBegin

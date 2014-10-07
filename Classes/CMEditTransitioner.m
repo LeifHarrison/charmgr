@@ -52,7 +52,7 @@
 
 - (NSTimeInterval)transitionDuration:(id <UIViewControllerContextTransitioning>)transitionContext
 {
-	return 0.75;
+	return 0.5;
 }
 
 - (void)animateTransition:(id <UIViewControllerContextTransitioning>)transitionContext
@@ -66,37 +66,47 @@
 
 	BOOL isPresentation = [self isPresentation];
 
-	if(isPresentation)
-	{
-		[containerView addSubview:toView];
-	}
-
 	UIViewController *animatingVC = isPresentation? toVC : fromVC;
 	UIView *animatingView = [animatingVC view];
 
 	CGRect sourceFrame = [containerView convertRect:self.sourceViewController.view.frame fromView:self.sourceViewController.view.superview];
 	CGRect finalFrame = [transitionContext finalFrameForViewController:animatingVC];
-	//CGFloat dx = CGRectGetMidX(sourceFrame) - CGRectGetMidX(finalFrame);
-	//CGFloat dy = CGRectGetMidY(sourceFrame) - CGRectGetMidY(finalFrame);
 
-	LOG_DEBUG(@"initial frame = %@", NSStringFromCGRect([transitionContext initialFrameForViewController:animatingVC]));
-	LOG_DEBUG(@"  final frame = %@", NSStringFromCGRect(finalFrame));
-	//[animatingView setFrame:[transitionContext finalFrameForViewController:animatingVC]];
-	[animatingView setFrame:isPresentation ? sourceFrame : finalFrame];
+	CGFloat sx = sourceFrame.size.width / finalFrame.size.width;
+	CGFloat sy = sourceFrame.size.height / finalFrame.size.height;
+	//CGFloat tx = sourceFrame.origin.x - finalFrame.origin.x;
+	//CGFloat ty = sourceFrame.origin.y - finalFrame.origin.y;
 
-	//CGAffineTransform presentedTransform = CGAffineTransformIdentity;
-	//CGAffineTransform dismissedTransform = CGAffineTransformConcat(CGAffineTransformMakeScale(0.001, 0.001), CGAffineTransformMakeTranslation(dx, dy));
+	CGPoint sourceCenter = CGPointMake(CGRectGetMidX(sourceFrame), CGRectGetMidY(sourceFrame));
+	CGPoint finalCenter = CGPointMake(CGRectGetMidX(finalFrame), CGRectGetMidY(finalFrame));
 
-	//[animatingView setTransform:isPresentation ? dismissedTransform : presentedTransform];
+	CGAffineTransform scale = CGAffineTransformMakeScale(sx, sy);
+	//CGAffineTransform offset = CGAffineTransformMakeTranslation(tx, ty);
+	//CGAffineTransform transform = CGAffineTransformConcat(scale, offset);
+
+	//LOG_DEBUG(@"initial frame = %@", NSStringFromCGRect([transitionContext initialFrameForViewController:animatingVC]));
+	//LOG_DEBUG(@"  source frame = %@", NSStringFromCGRect(sourceFrame));
+	//LOG_DEBUG(@"  final frame = %@", NSStringFromCGRect(finalFrame));
+	//LOG_DEBUG(@"  scale = %@", NSStringFromCGAffineTransform(scale));
+	//LOG_DEBUG(@"  offset = %@", NSStringFromCGAffineTransform(offset));
+	if (isPresentation) {
+		[animatingView setFrame:finalFrame];
+		animatingView.center = sourceCenter;
+		animatingView.transform = scale;
+		animatingView.alpha = 0.0;
+		[containerView addSubview:toView];
+	}
+
 
 	[UIView animateWithDuration:[self transitionDuration:transitionContext]
 						  delay:0
-		 usingSpringWithDamping:(isPresentation ? 0.7 : 1.0)
+		 usingSpringWithDamping:(isPresentation ? 1.0 : 1.0)
 		  initialSpringVelocity:5.0
-						options:UIViewAnimationOptionAllowUserInteraction | UIViewAnimationOptionBeginFromCurrentState
+						options:UIViewAnimationOptionAllowAnimatedContent | UIViewAnimationOptionBeginFromCurrentState
 					 animations:^{
-						 [animatingView setFrame:isPresentation ? finalFrame : sourceFrame];
-						 //[animatingView setTransform:isPresentation ? presentedTransform : dismissedTransform];
+						 animatingView.transform = isPresentation ? CGAffineTransformIdentity : scale;
+						 animatingView.center = isPresentation ? finalCenter : sourceCenter;
+						 animatingView.alpha = isPresentation ? 1.0 : 0.0;
 					 }
 					 completion:^(BOOL finished){
 						 if(![self isPresentation])

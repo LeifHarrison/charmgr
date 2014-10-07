@@ -20,7 +20,6 @@
 #import "PFRace.h"
 
 #import "CMBannerBox.h"
-#import "CMSettings.h"
 
 #import "NSArray+CMExtensions.h"
 
@@ -41,6 +40,8 @@
 //==============================================================================
 
 @interface PFEditCharacterViewController ()
+
+@property (nonatomic) NSArray *fieldArray;
 
 @end
 
@@ -71,13 +72,6 @@
 
 	[(CMBannerBox*)self.view setBannerTitle:@"Character"];
 
-	self.view.layer.contents = (id)[[[CMSettings sharedSettings] pageBackgroundImage] CGImage];
-	self.view.layer.contentsGravity = kCAGravityCenter;
-	self.view.backgroundColor = [UIColor blackColor];
-
-	//self.titleLabels = [self.titleLabels sortByUIViewOriginY];
-	//self.valueFields = [self.valueFields sortByUIViewOriginY];
-
 	self.raceButton.layer.borderColor = [UIColor darkGrayColor].CGColor;
 	self.raceButton.layer.borderWidth = 1.0f;
 	self.raceButton.layer.cornerRadius = 5.0f;
@@ -94,73 +88,14 @@
 	self.alignmentButton.layer.borderWidth = 1.0f;
 	self.alignmentButton.layer.cornerRadius = 5.0f;
 
-	[self createDoneButton];
+	self.fieldArray = @[self.characterField, self.playerField, self.campaignField];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
-	TRACE;
 	[super viewWillAppear:animated];
+	//LOG_DEBUG(@"bounds = %@, text rect = %@", NSStringFromCGRect(self.characterField.bounds), NSStringFromCGRect([self.characterField textRectForBounds:self.characterField.bounds]));
 	[self updateUI];
-}
-
-- (void)doneEditing:(id)sender
-{
-	[[self presentingViewController] dismissViewControllerAnimated:YES completion:NULL];
-}
-
-- (void)createDoneButton
-{
-	UIButton *doneButton = [UIButton buttonWithType:UIButtonTypeCustom];
-	doneButton.layer.borderColor = [UIColor darkGrayColor].CGColor;
-	doneButton.layer.borderWidth = 1;
-	doneButton.layer.cornerRadius = 9.0;
-	doneButton.backgroundColor = [UIColor lightGrayColor];
-	//doneButton.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin;
-	doneButton.translatesAutoresizingMaskIntoConstraints = NO;
-	doneButton.titleLabel.font = [UIFont systemFontOfSize:12];
-	[doneButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-	[doneButton setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
-	[doneButton setTitle:@"Done" forState:UIControlStateNormal];
-	//doneButton.hidden = YES;
-	[doneButton sizeToFit];
-	[doneButton addTarget:self action:@selector(doneEditing:) forControlEvents:UIControlEventTouchUpInside];
-	[self.view addSubview:doneButton];
-
-	NSDictionary* views = @{ @"doneButton" : doneButton };
-//	[self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-(>=0)-[doneButton]-5-|"
-//																				  options:0
-//																				  metrics:nil
-//																					views:views]];
-	[self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(>=0)-[doneButton]-10-|"
-																	  options:0
-																	  metrics:nil
-																		views:views]];
-
-	[self.view addConstraint:[NSLayoutConstraint constraintWithItem:doneButton
-														  attribute:NSLayoutAttributeCenterX
-														  relatedBy:NSLayoutRelationEqual
-															 toItem:self.view
-														  attribute:NSLayoutAttributeCenterX
-														 multiplier:1.0
-														   constant:0]];
-//	[self.view addConstraint:[NSLayoutConstraint constraintWithItem:doneButton
-//														  attribute:NSLayoutAttributeCenterY
-//														  relatedBy:NSLayoutRelationEqual
-//															 toItem:self.view
-//														  attribute:NSLayoutAttributeCenterY
-//														 multiplier:1.0
-//														   constant:0]];
-
-	[doneButton addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[doneButton(25)]"
-																	   options:0
-																	   metrics:nil
-																		 views:views]];
-	[doneButton addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[doneButton(60)]"
-																	   options:0
-																	   metrics:nil
-																		 views:views]];
-	[self.view setNeedsLayout];
 }
 
 //------------------------------------------------------------------------------
@@ -180,6 +115,55 @@
 	[self.sizeButton setTitle:self.character.sizeDescription forState:UIControlStateNormal];
 	[self.alignmentButton setTitle:self.character.alignment.name forState:UIControlStateNormal];
 
+}
+
+- (void)saveChanges
+{
+	self.character.name = self.characterField.text;
+	self.character.player = self.playerField.text;
+	self.character.campaign = self.campaignField.text;
+}
+
+//------------------------------------------------------------------------------
+#pragma mark - Storyboard
+//------------------------------------------------------------------------------
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+	LOG_DEBUG(@"segue = %@, sender = %@", segue.identifier, sender);
+	LOG_DEBUG(@"source = %@, destination = %@", segue.sourceViewController, segue.destinationViewController);
+	[super prepareForSegue:segue sender:sender];
+
+	if ([segue.destinationViewController isKindOfClass:[PFDetailViewController class]])
+	{
+		PFDetailViewController *controller = segue.destinationViewController;
+		controller.character = self.character;
+		controller.delegate = self;
+	}
+}
+
+- (BOOL) textFieldShouldReturn:(UITextField *) textField
+{
+	BOOL didResign = [textField resignFirstResponder];
+	if (!didResign) return NO;
+
+	NSUInteger index = [self.fieldArray indexOfObject:textField];
+	if (index == NSNotFound || index + 1 == self.fieldArray.count) return NO;
+
+	id nextField = [self.fieldArray objectAtIndex:index + 1];
+	//activeField = nextField;
+	[nextField becomeFirstResponder];
+
+	return NO;
+}
+
+//------------------------------------------------------------------------------
+#pragma mark - PFDetailViewController Delegate
+//------------------------------------------------------------------------------
+
+- (void)detailViewControllerDidFinish:(PFDetailViewController*)viewController
+{
+	[self updateUI];
 }
 
 @end

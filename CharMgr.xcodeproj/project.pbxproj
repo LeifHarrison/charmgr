@@ -111,6 +111,7 @@
 		29C4A1EB19D481B900606826 /* CMEditPresentationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C4A1EA19D481B900606826 /* CMEditPresentationController.m */; };
 		29C4A1EE19D4820E00606826 /* CMEditTransitioner.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C4A1ED19D4820E00606826 /* CMEditTransitioner.m */; };
 		29CA4E8B1664A1F300223AF3 /* PFSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CA4E8A1664A1F300223AF3 /* PFSource.m */; };
+		29CBE40E19DA0476007F90AA /* PFEditContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CBE40D19DA0476007F90AA /* PFEditContainerViewController.m */; };
 		29CD513B1630BB5C001A639E /* PFAbilityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CD513A1630BB5C001A639E /* PFAbilityTableViewCell.m */; };
 		29CD513E1630CC96001A639E /* PFSkillTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CD513D1630CC95001A639E /* PFSkillTableViewCell.m */; };
 		29CEF8011188FA7600E2D442 /* CMProfileView.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CEF8001188FA7600E2D442 /* CMProfileView.m */; };
@@ -318,6 +319,8 @@
 		29C4A1ED19D4820E00606826 /* CMEditTransitioner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMEditTransitioner.m; sourceTree = "<group>"; };
 		29CA4E891664A1F200223AF3 /* PFSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFSource.h; path = Pathfinder/Model/PFSource.h; sourceTree = "<group>"; };
 		29CA4E8A1664A1F300223AF3 /* PFSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFSource.m; path = Pathfinder/Model/PFSource.m; sourceTree = "<group>"; };
+		29CBE40C19DA0476007F90AA /* PFEditContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFEditContainerViewController.h; path = Pathfinder/PFEditContainerViewController.h; sourceTree = "<group>"; };
+		29CBE40D19DA0476007F90AA /* PFEditContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFEditContainerViewController.m; path = Pathfinder/PFEditContainerViewController.m; sourceTree = "<group>"; };
 		29CD51391630BB5C001A639E /* PFAbilityTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFAbilityTableViewCell.h; path = Pathfinder/Cells/PFAbilityTableViewCell.h; sourceTree = "<group>"; };
 		29CD513A1630BB5C001A639E /* PFAbilityTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFAbilityTableViewCell.m; path = Pathfinder/Cells/PFAbilityTableViewCell.m; sourceTree = "<group>"; };
 		29CD513C1630CC95001A639E /* PFSkillTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFSkillTableViewCell.h; path = Pathfinder/Cells/PFSkillTableViewCell.h; sourceTree = "<group>"; };
@@ -812,12 +815,14 @@
 				299ACDE315FA914A00E114E0 /* Model */,
 				295F630D1602F53B00EEF5ED /* Pages */,
 				297AA4B016438FBA0041C59D /* Reference */,
-				29B7D64E15F918250039C390 /* PFPageContentViewController.h */,
-				29B7D64F15F918250039C390 /* PFPageContentViewController.m */,
 				29B7D65115F9186F0039C390 /* PFContainerViewController.h */,
 				29B7D65215F9186F0039C390 /* PFContainerViewController.m */,
 				29F0660816479BA00088BA86 /* PFDetailViewController.h */,
 				29F0660916479BA00088BA86 /* PFDetailViewController.m */,
+				29CBE40C19DA0476007F90AA /* PFEditContainerViewController.h */,
+				29CBE40D19DA0476007F90AA /* PFEditContainerViewController.m */,
+				29B7D64E15F918250039C390 /* PFPageContentViewController.h */,
+				29B7D64F15F918250039C390 /* PFPageContentViewController.m */,
 			);
 			name = Pathfinder;
 			sourceTree = "<group>";
@@ -1082,6 +1087,7 @@
 				297FC5DF16F58030002C3504 /* PFWeaponTableViewCell.m in Sources */,
 				297FC5E316F65FF6002C3504 /* PFSelectWeaponViewController.m in Sources */,
 				297FC5E616F6C74C002C3504 /* PFCharacterWeapon.m in Sources */,
+				29CBE40E19DA0476007F90AA /* PFEditContainerViewController.m in Sources */,
 				2955A8411979CED700A2AC90 /* PFReferenceClassesViewController.m in Sources */,
 				297FC5EA16FD5E87002C3504 /* PFInventoryViewController.m in Sources */,
 				297FC5ED16FD5ED5002C3504 /* PFEquippedItemViewController.m in Sources */,

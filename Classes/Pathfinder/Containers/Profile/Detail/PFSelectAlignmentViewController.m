@@ -48,11 +48,12 @@
 {
     [super viewDidLoad];
 	
-	self.tableView.backgroundColor = [UIColor lightGrayColor];
-	self.tableView.layer.borderColor = [UIColor darkGrayColor].CGColor;
-	self.tableView.layer.borderWidth = 1.5f;
-	self.tableView.layer.cornerRadius = 4.0f;
-	
+//	self.tableView.backgroundColor = [UIColor lightGrayColor];
+//	self.tableView.layer.borderColor = [UIColor darkGrayColor].CGColor;
+//	self.tableView.layer.borderWidth = 1.5f;
+//	self.tableView.layer.cornerRadius = 4.0f;
+	[self.tableView addObserver:self forKeyPath:@"contentSize" options:NSKeyValueObservingOptionNew context:nil];
+
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -81,6 +82,16 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)dealloc
+{
+	[self.tableView removeObserver:self forKeyPath:@"contentSize"];
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+	self.preferredContentSize = self.tableView.contentSize;
 }
 
 //------------------------------------------------------------------------------

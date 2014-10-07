@@ -10,7 +10,11 @@
 
 #import "PFDetailViewController.h"
 
+#import "PFCharacter.h"
+
 #import "CMBannerBox.h"
+
+#import <CoreData/CoreData.h>
 
 //------------------------------------------------------------------------------
 #pragma mark - Constants
@@ -62,24 +66,28 @@
 - (void)viewWillAppear:(BOOL)animated
 {
 	[super viewWillAppear:animated];
-	
-	UIView *containerView = [self.view superview];
-	//LOG_DEBUG(@"view = %@, containerView = %@", self.view, containerView);
-	containerView.layer.cornerRadius = self.view.layer.cornerRadius;
-	//LOG_DEBUG(@"corner radius = %lf", containerView.layer.cornerRadius);
-	containerView.layer.masksToBounds = NO;
-	containerView.layer.shadowColor = [UIColor blackColor].CGColor;
-	containerView.layer.shadowOffset = CGSizeMake(0,8);
-	containerView.layer.shadowOpacity = 0.0;
-	containerView.layer.shadowRadius = 10.0;
+
+	[[NSNotificationCenter defaultCenter] addObserver:self
+											 selector:@selector(updateUI)
+												 name:NSManagedObjectContextDidSaveNotification
+											   object:self.character.managedObjectContext];
+
+//	UIView *containerView = [self.view superview];
+//	//LOG_DEBUG(@"view = %@, containerView = %@", self.view, containerView);
+//	containerView.layer.cornerRadius = self.view.layer.cornerRadius;
+//	//LOG_DEBUG(@"corner radius = %lf", containerView.layer.cornerRadius);
+//	containerView.layer.masksToBounds = NO;
+//	containerView.layer.shadowColor = [UIColor blackColor].CGColor;
+//	containerView.layer.shadowOffset = CGSizeMake(0,8);
+//	containerView.layer.shadowOpacity = 0.5;
+//	containerView.layer.shadowRadius = 10.0;
 }
 
-- (void)viewDidUnload
+- (void)viewWillDisappear:(BOOL)animated
 {
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
+	[[NSNotificationCenter defaultCenter] removeObserver:self name:NSManagedObjectContextDidSaveNotification object:self.character.managedObjectContext];
+	[super viewWillDisappear:animated];
 }
-
 
 //------------------------------------------------------------------------------
 #pragma mark - Interface Orientation

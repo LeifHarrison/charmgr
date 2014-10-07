@@ -13,6 +13,6 @@
 @interface PFSelectRaceViewController : PFDetailViewController
 	<NSFetchedResultsControllerDelegate, UITableViewDataSource, UITableViewDelegate>
 
-@property (nonatomic, strong) IBOutlet UITableView *tableView;
+@property (nonatomic) IBOutlet UITableView *tableView;
 
 @end
